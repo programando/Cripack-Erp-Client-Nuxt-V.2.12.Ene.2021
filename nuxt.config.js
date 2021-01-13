@@ -1,17 +1,31 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'Cripack-Erp-Client-Nuxt-V.2.12.Ene.2021',
+    title: 'Cripack S.A.S.',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui' },
+      { name: 'keywords', content: '' },
+      { hid: 'http-equiv', name: 'http-equiv', content: 'text/html' },
+      { hid: 'http-equiv', name: 'X-UA-Compatible', content: 'IE=edge' },
+      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
+    script: [
+      {
+        src: 'https://use.fontawesome.com/020bc864c9.js'
+      },
+    ],
+        
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;1,400&display=swap'
+      },
     ]
   },
 
+  
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
   ],
