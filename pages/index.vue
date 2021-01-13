@@ -1,78 +1,82 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        Cripack-Erp-Client-Nuxt-V.2.12.Ene.2021
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
+  <div>
+    <div
+      class="h-screen pt-24 bg-center bg-no-repeat bg-cover"
+      style="background-image: url('/images/fondoPrueba.png')"
+    >
+      <div class="mt-10">
+        <div class="flex justify-center text-4xl font-bold text-white">
+          <h2>Cripack S.A.S</h2>
+        </div>
+        <div
+          class="gap-10 mx-10 mt-10 md:mx-20 lg:mx-24 xl:mx-32 lg:grid lg:grid-cols-2"
         >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+          <div class="text-white">
+            <p class="lg:text-lg">
+              Se gana y se pierde, se sube y se baja, se nace y se muere. Y si
+              la historia es tan simple, ¿por qué te preocupas tanto?
+            </p>
+            <h3 class="flex justify-end mt-1 mr-4 font-semibold lg:text-lg">
+              -Fancundo Cabral
+            </h3>
+          </div>
+          <div
+            class="px-8 py-6 mt-6 bg-white border rounded-lg md:py-8 md:px-12 lg:mt-0"
+          >
+            <!-- label, titulo y descripcion -->
+
+            <LabelTitle
+              title="Bienvenid@"
+              description="Registre sus credenciales para ingreso al sistema"
+              align="center"
+              color="extra"
+            >
+            </LabelTitle>
+
+            <div class="mt-4">
+              <!-- inputText -->
+              <InputBasic
+                type="text"
+                text="jhonjamesmg@hotmail.com"
+                width="w-full"
+              ></InputBasic>
+
+              <!-- inputPassword -->
+              <InputBasic
+                type="password"
+                text="contraseña"
+                width="w-full"
+              ></InputBasic>
+            </div>
+
+            <div class="flex justify-between mt-4">
+              <ButtonBasic
+                text="Olvidé mi contraeña"
+                to="/modulos/Contraseña"
+              ></ButtonBasic>
+
+              <ButtonLoad
+                text="Ingresar al sistema"
+                to="/dashboard/"
+                variant="success"
+              ></ButtonLoad>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import LabelTitle from "@/components/library/LabelTitle";
+import InputBasic from "@/components/library/InputBasic";
+import ButtonBasic from "@/components/library/ButtonBasic";
+import ButtonLoad from "@/components/library/ButtonLoad";
+
+export default {
+  
+
+  
+};
 </script>
-
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
