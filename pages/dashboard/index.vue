@@ -5,7 +5,7 @@
     <!--header area start-->
     <header class="px-10 py-4 bg-blue-400 border">
       <label for="check">
-        <i class="fas fa-bars" id="sidebar_btn"></i>
+        <i class="fa fa-bars" id="sidebar_btn"></i>
       </label>
       <div class="left_area">
         <h3>Cripack </h3>
@@ -23,12 +23,12 @@
         <img src="/images/1.svg" class="profile_image" alt="">
         <h4>User</h4>
       </div>
-      <a href="#"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
-      <a href="#"><i class="fas fa-cogs"></i><span>Components</span></a>
-      <a href="#"><i class="fas fa-table"></i><span>Tables</span></a>
-      <a href="#"><i class="fas fa-th"></i><span>Forms</span></a>
-      <a href="#"><i class="fas fa-info-circle"></i><span>About</span></a>
-      <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a>
+      <a href="#"><i class="fa fa-desktop"></i><span>Dashboard</span></a>
+      <a href="#"><i class="fa fa-cogs"></i><span>Components</span></a>
+      <a href="#"><i class="fa fa-table"></i><span>Tables</span></a>
+      <a href="#"><i class="fa fa-th"></i><span>Forms</span></a>
+      <a href="#"><i class="fa fa-info-circle"></i><span>About</span></a>
+      <a href="#"><i class="fa fa-sliders-h"></i><span>Settings</span></a>
     </div>
     <!--sidebar end-->
 
