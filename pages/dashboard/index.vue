@@ -2,7 +2,7 @@
   <div>
     <input type="checkbox" id="check" />
     <!--header area start-->
-    <header class="px-10 py-4 bg-blue-400 border">
+    <header class="px-10 py-4 border bg-azul">
       <label for="check">
         <i
           class="px-4 py-1 opacity-0 sm:opacity-100 fa fa-bars"
@@ -13,7 +13,11 @@
         <h3>Cripack</h3>
       </div>
       <div class="right_area">
-        <a href="#" class="px-4 py-2 text-lg font-bold bg-blue-500 hover:bg-blue-700 logout_btn">Logout</a>
+        <a
+          href="#"
+          class="px-4 py-2 text-lg font-bold bg-blue-500 hover:bg-blue-700 logout_btn"
+          >Logout</a
+        >
       </div>
     </header>
 
@@ -22,44 +26,124 @@
     <div class="border-b border-r sidebar">
       <div class="profile_info">
         <img src="/images/1.svg" class="profile_image" alt="" />
-        <h4>User</h4>
+        <h4 class="text-lg text-gray-700">User</h4>
       </div>
-      <a href="#"><i class="fa fa-desktop"></i><span>Dashboard</span></a>
-      <a href="#"><i class="fa fa-cogs"></i><span>Components</span></a>
-      <a href="#"><i class="fa fa-table"></i><span>Tables</span></a>
-      <a href="#"><i class="fa fa-th"></i><span>Forms</span></a>
-      <a href="#"><i class="fa fa-info-circle"></i><span>About</span></a>
-      <a href="#"><i class="fa fa-sliders-h"></i><span>Settings</span></a>
+      
+      <a class="ml-4 text-lg text-gray-700" href="#"
+        ><i class="fa fa-desktop"></i><span>Dashboard</span></a
+      >
+      <a class="ml-4 text-lg text-gray-700" href="#"
+        ><i class="fa fa-cogs"></i><span>Components</span></a
+      >
+      <a class="ml-4 text-lg text-gray-700" href="#"
+        ><i class="fa fa-table"></i><span>Tables</span></a
+      >
+      <a class="ml-4 text-lg text-gray-700" href="#"
+        ><i class="fa fa-th"></i><span>Forms</span></a
+      >
+      <a class="ml-4 text-lg text-gray-700" href="#"
+        ><i class="fa fa-info-circle"></i><span>About</span></a
+      >
+      <a class="ml-4 text-lg text-gray-700" href="#"
+        ><i class="fa fa-sliders-h"></i><span>Settings</span></a
+      >
     </div>
     <!--sidebar end-->
 
+    <!-- content -->
     <div class="content">
-      <div class="flex mx-2 my-10">
+      <div class="grid gap-2 mt-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         <div
-          class="flex justify-around px-4 py-2 mx-10 border rounded-lg bg-rojo"
+          class="flex justify-around px-4 py-2 mx-2 border rounded-lg bg-verde"
         >
-          <div class="pr-20 my-6 ml-4">
-            <h2 class="text-2xl font-bold">Ventas de Hoy</h2>
-            <p class="mt-4 text-xl font-semibold">$6547</p>
+          <div class="my-6 ml-4 ">
+            <h2 class="text-lg font-bold text-white md:text-2xl">Ventas de Hoy</h2>
+            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$6547</p>
           </div>
           <div class="py-6">
-            <img class="h-32" src="/images/prueba.svg" alt="" />
+            <img class="h-24" src="/images/diagrama.svg" alt="" />
           </div>
         </div>
         <div
-        class="flex justify-around px-4 py-2 mx-10 border rounded-lg bg-verde"
-      >
-        <div class="pr-4 my-6 ml-4 ">
-          <h2 class="text-2xl font-bold">Ventas de la Semana</h2>
-          <p class="mt-4 text-xl font-semibold">$30056</p>
+          class="flex justify-around px-4 py-2 mx-2 border rounded-lg bg-rojo"
+        >
+          <div class="my-6 ml-4 ">
+            <h2 class="text-lg font-bold text-white md:text-2xl">Ventas de la Semana</h2>
+            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$30056</p>
+          </div>
+          <div class="py-6">
+            <img class="h-24" src="/images/ventas.svg" alt="" />
+          </div>
         </div>
-        <div class="py-6">
-          <img class="h-32" src="/images/grafico.svg" alt="" />
+        <div
+          class="flex justify-around px-4 py-2 mx-2 border rounded-lg bg-amarillo"
+        >
+          <div class="my-6 ml-4 ">
+            <h2 class="text-lg font-bold text-white md:text-2xl">Ventas del Mes</h2>
+            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$120056</p>
+          </div>
+          <div class="py-6">
+            <img class="h-24" src="/images/analitica.svg" alt="" />
+          </div>
+        </div>
+        <div
+          class="flex justify-around px-4 py-2 mx-2 border rounded-lg bg-verde"
+        >
+          <div class="my-6 ml-4 ">
+            <h2 class="text-lg font-bold text-white md:text-2xl">Ventas del Año</h2>
+            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$1530056</p>
+          </div>
+          <div class="py-6">
+            <img class="h-24" src="/images/rama.svg" alt="" />
+          </div>
         </div>
       </div>
-      </div>
-
-      
+      <div class="grid gap-2 mt-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div
+          class="flex justify-around px-4 py-2 mx-2 border rounded-lg bg-verde"
+        >
+          <div class="my-6 ml-4 ">
+            <h2 class="text-lg font-bold text-white md:text-2xl">Ventas de Hoy</h2>
+            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$6547</p>
+          </div>
+          <div class="py-6">
+            <img class="h-24" src="/images/diagrama.svg" alt="" />
+          </div>
+        </div>
+        <div
+          class="flex justify-around px-4 py-2 mx-2 border rounded-lg bg-rojo"
+        >
+          <div class="my-6 ml-4 ">
+            <h2 class="text-lg font-bold text-white md:text-2xl">Ventas de la Semana</h2>
+            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$30056</p>
+          </div>
+          <div class="py-6">
+            <img class="h-24" src="/images/ventas.svg" alt="" />
+          </div>
+        </div>
+        <div
+          class="flex justify-around px-4 py-2 mx-2 border rounded-lg bg-amarillo"
+        >
+          <div class="my-6 ml-4 ">
+            <h2 class="text-lg font-bold text-white md:text-2xl">Ventas del Mes</h2>
+            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$120056</p>
+          </div>
+          <div class="py-6">
+            <img class="h-24" src="/images/analitica.svg" alt="" />
+          </div>
+        </div>
+        <div
+          class="flex justify-around px-4 py-2 mx-2 border rounded-lg bg-verde"
+        >
+          <div class="my-6 ml-4 ">
+            <h2 class="text-lg font-bold text-white md:text-2xl">Ventas del Año</h2>
+            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$1500056</p>
+          </div>
+          <div class="py-6">
+            <img class="h-24" src="/images/rama.svg" alt="" />
+          </div>
+        </div>
+      </div>  
     </div>
   </div>
 </template>
@@ -102,8 +186,6 @@ header {
   transition-property: background;
 }
 
-
-
 .sidebar {
   z-index: 1;
   top: 0;
@@ -133,7 +215,6 @@ header {
 }
 
 .sidebar .profile_info h4 {
-  color: #ccc;
   margin-top: 0;
   margin-bottom: 20px;
 }
@@ -191,9 +272,6 @@ label #sidebar_btn:hover {
   margin-top: 60px;
   padding: 20px;
   margin-left: 250px;
-
-  background-position: center;
-  background-size: cover;
   height: 100vh;
   transition: 0.5s;
 }
