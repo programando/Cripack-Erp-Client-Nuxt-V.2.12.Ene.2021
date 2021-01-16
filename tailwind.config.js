@@ -7,11 +7,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        gris: '#D3500A',
         amarillo: '#F8AF3C',
-        verde: '#2ECC71',
-        rojo: '#E74A25'
-        
+        azul    : '#272C6B',
+        gris    : '#D3500A',
+        rojo    : '#E74A25',
+        verde   : '#2ECC71',
       }
     },
   },
