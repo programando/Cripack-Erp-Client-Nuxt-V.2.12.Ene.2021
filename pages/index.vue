@@ -2,7 +2,7 @@
   <div>
     <div
       class="h-screen pt-24 bg-center bg-no-repeat bg-cover"
-      style="background-image: url('/images/fondoPrueba.png')"
+      style="background-image: url('/images/background.jpg')"
     >
       <div class="mt-10">
         <div class="flex justify-center text-4xl font-bold text-white">
