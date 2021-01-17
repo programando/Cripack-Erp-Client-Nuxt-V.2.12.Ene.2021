@@ -92,3 +92,5 @@ sw.*
 
 # Vim swap files
 *.swp
+config/address.js
+config/address.js
