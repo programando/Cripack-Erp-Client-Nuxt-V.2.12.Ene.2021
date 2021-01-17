@@ -67,28 +67,10 @@
       <div class="pb-4 my-4 mt-6 border-2 border-black">
         <div class="flex justify-center border-b-2 border-black">
           <h2 class="text-4xl">Ventas</h2>
-
-      <div class="grid gap-2 mt-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        <div
-          class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-azul"
-        >
-          <div class="pt-3 ml-4 lg:pr-6 ">
-            <h2 class="text-xl text-white md:text-xl">Ventas {{ dtStarTodayText }}</h2>
-            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">{{ VentasHoy }}</p>
-          </div>
-          <div class="pt-3">
-            <img class="h-24" src="/images/diagrama.svg" alt="" />
-          </div>
-
         </div>
-
-        <div
-          class="grid gap-2 px-4 mt-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-        >
-
-          <div
-            class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-azul"
-          >
+        <div class="grid gap-2 px-4 mt-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"  >
+          
+          <div class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-azul"      >
             <div class="pt-3 ml-2 lg:pr-6">
               <h2 class="pr-2 text-2xl font-light text-white">Ventas de Hoy</h2>
               <p class="mt-2 text-4xl font-light text-white">$6547</p>
@@ -96,15 +78,9 @@
             <div class="pt-3">
               <img class="h-24" src="/images/diagrama.svg" alt="" />
             </div>
-
-          <div class="pt-3 ml-4 ">
-            <h2 class="text-lg text-white md:text-xl">Ventas {{ dtOneYearAgoStartText }}</h2>
-            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">{{ VentasHoyHaceUnAnio }}</p>
-
           </div>
-          <div
-            class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-rojo"
-          >
+
+          <div  class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-rojo"  >
             <div class="pt-3 ml-4">
               <h2 class="pr-2 text-2xl font-light text-white">
                 Ventas de la semana
@@ -116,9 +92,7 @@
             </div>
           </div>
 
-          <div
-            class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-verde"
-          >
+          <div class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-verde">
             <div class="pt-3 ml-4 lg:pr-4">
               <h2 class="pr-2 text-2xl font-light text-white">
                 Ventas del mes
@@ -129,9 +103,8 @@
               <img class="h-24" src="/images/analitica.svg" alt="" />
             </div>
           </div>
-          <div
-            class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-amarillo"
-          >
+
+          <div class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-amarillo" >
             <div class="pt-3 ml-2 lg:pr-2">
               <h2 class="pr-2 text-2xl font-light text-white">
                 Ventas del año
@@ -142,67 +115,19 @@
               <img class="h-24" src="/images/rama.svg" alt="" />
             </div>
           </div>
+
         </div>
       </div>
+
+
       <div class="pb-4 my-4 mt-16 border-2 border-black">
+        
         <div class="flex justify-center border-b-2 border-black">
           <h2 class="text-4xl">Ventas</h2>
+        </div>
 
-        </div>
-        <div
-          class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-verde"
-        >
-          <div class="pt-3 ml-4 lg:pr-4 ">
-            <h2 class="text-lg text-white md:text-xl">Ventas {{ dtMonthToTodayStartText }}</h2>
-            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">{{ VentasEsteMesHastaHoy }}</p>
-          </div>
-          <div class="pt-3">
-            <img class="h-24" src="/images/analitica.svg" alt="" />
-          </div>
-        </div>
-        <div
-          class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-amarillo"
-        >
-          <div class="pt-3 ml-4 lg:pr-4 ">
-            <h2 class="text-lg text-white md:text-xl">Ventas {{dtMonthToTodayOneYearAgoStartText }}</h2>
-            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">{{ VentasEsteMesHaceUnAnioHastaHoy }} </p>
-          </div>
-          <div class="pt-3">
-            <img class="h-24" src="/images/rama.svg" alt="" />
-          </div>
-        </div>
-      </div>
-      <div class="grid gap-2 mt-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        <div
-          class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-azul"
-        >
-          <div class="pt-3 ml-4 lg:pr-6 ">
-            <h2 class="text-lg text-white md:text-xl">Ventas de Hoy</h2>
-            <p class="mt-4 text-xl font-semibold text-white md:text-3xl"></p>
-          </div>
-          <div class="pt-3">
-            <img class="h-24" src="/images/diagrama.svg" alt="" />
-          </div>
-        </div>
-        <div
-          class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-rojo"
-        >
-          <div class="pt-3 ml-4 ">
-            <h2 class="text-lg text-white md:text-xl">Ventas de la semana</h2>
-            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$36547</p>
-          </div>
-          <div class="pt-3">
-            <img class="h-24" src="/images/ventas.svg" alt="" />
-          </div>
-
-        </div>
-        <div
-          class="grid gap-2 px-4 mt-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-        >
-
-          <div
-            class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-azul"
-          >
+        <div class="grid gap-2 px-4 mt-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"  >
+          <div  class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-azul"  >
             <div class="pt-3 ml-2 lg:pr-6">
               <h2 class="pr-2 text-2xl font-light text-white">Ventas de Hoy</h2>
               <p class="mt-2 text-4xl font-light text-white">$6547</p>
@@ -210,15 +135,9 @@
             <div class="pt-3">
               <img class="h-24" src="/images/diagrama.svg" alt="" />
             </div>
-
-          <div class="pt-3 ml-4 lg:pr-4 ">
-            <h2 class="text-lg text-white md:text-xl">Ventas del mes</h2>
-            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$126547</p>
-
           </div>
-          <div
-            class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-rojo"
-          >
+
+          <div class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-rojo" >
             <div class="pt-3 ml-4">
               <h2 class="pr-2 text-2xl font-light text-white">
                 Ventas de la semana
@@ -230,9 +149,7 @@
             </div>
           </div>
 
-          <div
-            class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-verde"
-          >
+          <div class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-verde" >
             <div class="pt-3 ml-4 lg:pr-4">
               <h2 class="pr-2 text-2xl font-light text-white">
                 Ventas del mes
@@ -242,19 +159,9 @@
             <div class="pt-3">
               <img class="h-24" src="/images/analitica.svg" alt="" />
             </div>
-
-        </div>
-        <div
-          class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-amarillo"
-        >
-          <div class="pt-3 ml-4 lg:pr-4 ">
-            <h2 class="text-lg text-white md:text-xl">Ventas del año</h2>
-            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$1436547</p>
-
           </div>
-          <div
-            class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-amarillo"
-          >
+
+          <div class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-amarillo" >
             <div class="pt-3 ml-2 lg:pr-2">
               <h2 class="pr-2 text-2xl font-light text-white">
                 Ventas del año
@@ -265,10 +172,16 @@
               <img class="h-24" src="/images/rama.svg" alt="" />
             </div>
           </div>
+
         </div>
       </div>
+
+
+
+      <h1>Hola</h1>
     </div>
   </div>
+   
 </template>
 
 <script>
