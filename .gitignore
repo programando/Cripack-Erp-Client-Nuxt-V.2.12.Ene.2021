@@ -1,6 +1,9 @@
-config/address.js
+
 # Created by .ignore support plugin (hsz.mobi)
 ### Node template
+
+/config/address.js
+
 # Logs
 /logs
 *.log
