@@ -52,13 +52,15 @@
 
     <!-- content -->
     <div class="content">
-      <div class="grid gap-2 mt-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+
+      <div class="">
+        <div class="grid gap-2 mt-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         <div
           class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-azul"
         >
           <div class="pt-3 ml-4 lg:pr-6 ">
-            <h2 class="text-lg font-bold text-white md:text-xl">Ventas de Hoy</h2>
-            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$6547</p>
+            <h2 class="text-2xl font-light text-white ">Ventas de Hoy</h2>
+            <p class="mt-2 text-4xl font-light text-white">$6547</p>
           </div>
           <div class="pt-3">
             <img class="h-24" src="/images/diagrama.svg" alt="" />
@@ -98,6 +100,10 @@
           </div>
         </div>
       </div>
+      </div>
+      
+
+
       <div class="grid gap-2 mt-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         <div
           class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-azul"
