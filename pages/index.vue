@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="font-rale">
     <div
       class="h-screen pt-24 bg-center bg-no-repeat bg-cover"
       style="background-image: url('/images/background.jpg')"

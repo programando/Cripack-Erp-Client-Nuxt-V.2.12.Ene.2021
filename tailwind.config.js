@@ -3,7 +3,13 @@ module.exports = {
     // removeDeprecatedGapUtilities: true,
     // purgeLayersByDefault: true,
   },
-  purge: [],
+  purge: [
+    './components/**/*.{vue,js}',
+     './layouts/**/*.vue',
+     './pages/**/*.vue',
+     './plugins/**/*.{js,ts}',
+     './nuxt.config.{js,ts}',
+  ],
   theme: {
     extend: {
       colors: {
@@ -12,7 +18,13 @@ module.exports = {
         gris    : '#D3500A',
         rojo    : '#E74A25',
         verde   : '#2ECC71',
+      },
+      fontFamily: {
+        rale: 'Raleway',
+        robo: 'Roboto',
+        latos: 'Lato'
       }
+     
     },
   },
   variants: {},
