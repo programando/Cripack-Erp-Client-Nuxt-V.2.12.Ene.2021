@@ -2,7 +2,7 @@
   <div>
     <input type="checkbox" id="check" />
     <!--header area start-->
-    <header class="px-10 py-4 border bg-azul">
+    <header class="px-10 py-4 bg-azul">
       <label for="check">
         <i
           class="px-4 py-1 opacity-0 sm:opacity-100 fa fa-bars"
@@ -26,25 +26,25 @@
     <div class="border-b border-r sidebar">
       <div class="profile_info">
         <img src="/images/1.svg" class="profile_image" alt="" />
-        <h4 class="text-lg text-gray-700">User</h4>
+        <h4 class="text-lg text-gray-700 ">User</h4>
       </div>
       
-      <a class="ml-4 text-lg text-gray-700" href="#"
+      <a class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white" href="#"
         ><i class="fa fa-desktop"></i><span>Dashboard</span></a
       >
-      <a class="ml-4 text-lg text-gray-700" href="#"
+      <a class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white" href="#"
         ><i class="fa fa-cogs"></i><span>Components</span></a
       >
-      <a class="ml-4 text-lg text-gray-700" href="#"
+      <a class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white" href="#"
         ><i class="fa fa-table"></i><span>Tables</span></a
       >
-      <a class="ml-4 text-lg text-gray-700" href="#"
+      <a class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white" href="#"
         ><i class="fa fa-th"></i><span>Forms</span></a
       >
-      <a class="ml-4 text-lg text-gray-700" href="#"
+      <a class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white" href="#"
         ><i class="fa fa-info-circle"></i><span>About</span></a
       >
-      <a class="ml-4 text-lg text-gray-700" href="#"
+      <a class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white" href="#"
         ><i class="fa fa-sliders-h"></i><span>Settings</span></a
       >
     </div>
@@ -54,96 +54,98 @@
     <div class="content">
       <div class="grid gap-2 mt-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         <div
-          class="flex justify-around px-4 py-2 mx-2 border rounded-lg bg-verde"
+          class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-azul"
         >
-          <div class="my-6 ml-4 ">
-            <h2 class="text-lg font-bold text-white md:text-2xl">Ventas de Hoy</h2>
+          <div class="pt-3 ml-4 lg:pr-6 ">
+            <h2 class="text-lg font-bold text-white md:text-xl">Ventas de Hoy</h2>
             <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$6547</p>
           </div>
-          <div class="py-6">
+          <div class="pt-3">
             <img class="h-24" src="/images/diagrama.svg" alt="" />
           </div>
         </div>
         <div
-          class="flex justify-around px-4 py-2 mx-2 border rounded-lg bg-rojo"
+          class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-rojo"
         >
-          <div class="my-6 ml-4 ">
-            <h2 class="text-lg font-bold text-white md:text-2xl">Ventas de la Semana</h2>
-            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$30056</p>
+          <div class="pt-3 ml-4 ">
+            <h2 class="text-lg font-bold text-white md:text-xl">Ventas de la semana</h2>
+            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$36547</p>
           </div>
-          <div class="py-6">
+          <div class="pt-3">
             <img class="h-24" src="/images/ventas.svg" alt="" />
           </div>
         </div>
         <div
-          class="flex justify-around px-4 py-2 mx-2 border rounded-lg bg-amarillo"
+          class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-verde"
         >
-          <div class="my-6 ml-4 ">
-            <h2 class="text-lg font-bold text-white md:text-2xl">Ventas del Mes</h2>
-            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$120056</p>
+          <div class="pt-3 ml-4 lg:pr-4 ">
+            <h2 class="text-lg font-bold text-white md:text-xl">Ventas del mes</h2>
+            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$126547</p>
           </div>
-          <div class="py-6">
+          <div class="pt-3">
             <img class="h-24" src="/images/analitica.svg" alt="" />
           </div>
         </div>
         <div
-          class="flex justify-around px-4 py-2 mx-2 border rounded-lg bg-verde"
+          class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-amarillo"
         >
-          <div class="my-6 ml-4 ">
-            <h2 class="text-lg font-bold text-white md:text-2xl">Ventas del Año</h2>
-            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$1530056</p>
+          <div class="pt-3 ml-4 lg:pr-4 ">
+            <h2 class="text-lg font-bold text-white md:text-xl">Ventas del año</h2>
+            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$1436547</p>
           </div>
-          <div class="py-6">
+          <div class="pt-3">
             <img class="h-24" src="/images/rama.svg" alt="" />
           </div>
         </div>
       </div>
       <div class="grid gap-2 mt-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         <div
-          class="flex justify-around px-4 py-2 mx-2 border rounded-lg bg-verde"
+          class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-azul"
         >
-          <div class="my-6 ml-4 ">
-            <h2 class="text-lg font-bold text-white md:text-2xl">Ventas de Hoy</h2>
+          <div class="pt-3 ml-4 lg:pr-6 ">
+            <h2 class="text-lg font-bold text-white md:text-xl">Ventas de Hoy</h2>
             <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$6547</p>
           </div>
-          <div class="py-6">
+          <div class="pt-3">
             <img class="h-24" src="/images/diagrama.svg" alt="" />
           </div>
         </div>
         <div
-          class="flex justify-around px-4 py-2 mx-2 border rounded-lg bg-rojo"
+          class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-rojo"
         >
-          <div class="my-6 ml-4 ">
-            <h2 class="text-lg font-bold text-white md:text-2xl">Ventas de la Semana</h2>
-            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$30056</p>
+          <div class="pt-3 ml-4 ">
+            <h2 class="text-lg font-bold text-white md:text-xl">Ventas de la semana</h2>
+            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$36547</p>
           </div>
-          <div class="py-6">
+          <div class="pt-3">
             <img class="h-24" src="/images/ventas.svg" alt="" />
           </div>
         </div>
         <div
-          class="flex justify-around px-4 py-2 mx-2 border rounded-lg bg-amarillo"
+          class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-verde"
         >
-          <div class="my-6 ml-4 ">
-            <h2 class="text-lg font-bold text-white md:text-2xl">Ventas del Mes</h2>
-            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$120056</p>
+          <div class="pt-3 ml-4 lg:pr-4 ">
+            <h2 class="text-lg font-bold text-white md:text-xl">Ventas del mes</h2>
+            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$126547</p>
           </div>
-          <div class="py-6">
+          <div class="pt-3">
             <img class="h-24" src="/images/analitica.svg" alt="" />
           </div>
         </div>
         <div
-          class="flex justify-around px-4 py-2 mx-2 border rounded-lg bg-verde"
+          class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-amarillo"
         >
-          <div class="my-6 ml-4 ">
-            <h2 class="text-lg font-bold text-white md:text-2xl">Ventas del Año</h2>
-            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$1500056</p>
+          <div class="pt-3 ml-4 lg:pr-4 ">
+            <h2 class="text-lg font-bold text-white md:text-xl">Ventas del año</h2>
+            <p class="mt-4 text-xl font-semibold text-white md:text-3xl">$1436547</p>
           </div>
-          <div class="py-6">
+          <div class="pt-3">
             <img class="h-24" src="/images/rama.svg" alt="" />
           </div>
         </div>
-      </div>  
+      </div>
+
+      
     </div>
   </div>
 </template>
@@ -151,11 +153,7 @@
 export default {};
 </script>
 <style>
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Roboto", sans-serif;
-}
+
 
 header {
   z-index: 10;
@@ -230,9 +228,6 @@ header {
   transition-property: background;
 }
 
-.sidebar a:hover {
-  background: #19b3d3;
-}
 
 .sidebar i {
   padding-right: 10px;
