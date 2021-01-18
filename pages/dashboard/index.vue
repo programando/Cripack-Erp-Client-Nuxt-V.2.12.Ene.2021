@@ -9,7 +9,7 @@
           id="sidebar_btn"
         ></i>
       </label>
-      <div class="left_area">
+      <div class="text-lg left_area">
         <h3>Cripack</h3>
       </div>
       <div class="right_area">
@@ -72,8 +72,8 @@
           
           <div class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-azul"      >
             <div class="pt-3 ml-2 lg:pr-6">
-              <h2 class="pr-2 text-2xl font-light text-white">Ventas de Hoy</h2>
-              <p class="mt-2 text-4xl font-light text-white">$6547</p>
+              <h2 class="pr-2 text-2xl font-light text-white">{{ dtStarTodayText}}</h2>
+              <p class="mt-2 text-4xl font-light text-white">{{ VentasHoy }}</p>
             </div>
             <div class="pt-3">
               <img class="h-24" src="/images/diagrama.svg" alt="" />
@@ -231,7 +231,7 @@ header {
 .left_area h3 {
   color: #fff;
   margin: 0;
-  text-transform: uppercase;
+   
   font-size: 22px;
   font-weight: 900;
 }
