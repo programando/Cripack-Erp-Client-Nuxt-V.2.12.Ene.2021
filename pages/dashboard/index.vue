@@ -68,12 +68,9 @@
         <div class="flex justify-center border-b-2 border-black">
           <h2 class="text-4xl">Ventas</h2>
         </div>
-        <div
-          class="grid gap-2 px-4 mt-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-        >
-          <div
-            class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-azul"
-          >
+        <div class="grid gap-2 px-4 mt-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"  >
+          
+          <div class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-azul"      >
             <div class="pt-3 ml-2 lg:pr-6">
               <h2 class="pr-2 text-2xl font-light text-white">Ventas de Hoy</h2>
               <p class="mt-2 text-4xl font-light text-white">$6547</p>
@@ -82,9 +79,8 @@
               <img class="h-24" src="/images/diagrama.svg" alt="" />
             </div>
           </div>
-          <div
-            class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-rojo"
-          >
+
+          <div  class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-rojo"  >
             <div class="pt-3 ml-4">
               <h2 class="pr-2 text-2xl font-light text-white">
                 Ventas de la semana
@@ -95,9 +91,8 @@
               <img class="h-24" src="/images/ventas.svg" alt="" />
             </div>
           </div>
-          <div
-            class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-verde"
-          >
+
+          <div class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-verde">
             <div class="pt-3 ml-4 lg:pr-4">
               <h2 class="pr-2 text-2xl font-light text-white">
                 Ventas del mes
@@ -108,9 +103,8 @@
               <img class="h-24" src="/images/analitica.svg" alt="" />
             </div>
           </div>
-          <div
-            class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-amarillo"
-          >
+
+          <div class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-amarillo" >
             <div class="pt-3 ml-2 lg:pr-2">
               <h2 class="pr-2 text-2xl font-light text-white">
                 Ventas del año
@@ -121,18 +115,19 @@
               <img class="h-24" src="/images/rama.svg" alt="" />
             </div>
           </div>
+
         </div>
       </div>
+
+
       <div class="pb-4 my-4 mt-16 border-2 border-black">
+        
         <div class="flex justify-center border-b-2 border-black">
           <h2 class="text-4xl">Ventas</h2>
         </div>
-        <div
-          class="grid gap-2 px-4 mt-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-        >
-          <div
-            class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-azul"
-          >
+
+        <div class="grid gap-2 px-4 mt-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"  >
+          <div  class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-azul"  >
             <div class="pt-3 ml-2 lg:pr-6">
               <h2 class="pr-2 text-2xl font-light text-white">Ventas de Hoy</h2>
               <p class="mt-2 text-4xl font-light text-white">$6547</p>
@@ -141,9 +136,8 @@
               <img class="h-24" src="/images/diagrama.svg" alt="" />
             </div>
           </div>
-          <div
-            class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-rojo"
-          >
+
+          <div class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-rojo" >
             <div class="pt-3 ml-4">
               <h2 class="pr-2 text-2xl font-light text-white">
                 Ventas de la semana
@@ -154,9 +148,8 @@
               <img class="h-24" src="/images/ventas.svg" alt="" />
             </div>
           </div>
-          <div
-            class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-verde"
-          >
+
+          <div class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-verde" >
             <div class="pt-3 ml-4 lg:pr-4">
               <h2 class="pr-2 text-2xl font-light text-white">
                 Ventas del mes
@@ -167,9 +160,8 @@
               <img class="h-24" src="/images/analitica.svg" alt="" />
             </div>
           </div>
-          <div
-            class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-amarillo"
-          >
+
+          <div class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-amarillo" >
             <div class="pt-3 ml-2 lg:pr-2">
               <h2 class="pr-2 text-2xl font-light text-white">
                 Ventas del año
@@ -182,12 +174,46 @@
           </div>
         </div>
       </div>
-      
     </div>
   </div>
+   
 </template>
+
 <script>
-export default {};
+import DashBoard from '@/models/dashBoard';
+import numeral from 'numeral';
+export default {
+  data: () => ({
+      dtMonthToTodayOneYearAgoStartText:'',
+      dtMonthToTodayStartText:'',
+      dtOneYearAgoStartText          : '',
+      dtStarTodayText                : '',
+      VentasEsteMesHaceUnAnioHastaHoy: 0,
+      VentasEsteMesHastaHoy          : 0,
+      VentasHoy                      : 0,
+      VentasHoyHaceUnAnio            : 0,
+  }),
+
+  mounted() {
+      DashBoard.ventas()
+      .then ( response => {
+        this.dtMonthToTodayOneYearAgoStartText = response.data[0].dtMonthToTodayOneYearAgoStartText;
+        this.dtMonthToTodayStartText           = response.data[0].dtMonthToTodayStartText;
+        this.dtOneYearAgoStartText             = response.data[0].dtOneYearAgoStartText;
+        this.dtStarTodayText                   = response.data[0].dtStarTodayText;
+        this.VentasEsteMesHaceUnAnioHastaHoy   = response.data[0].VentasEsteMesHaceUnAnioHastaHoy;
+        this.VentasEsteMesHastaHoy             = response.data[0].VentasEsteMesHastaHoy;
+        this.VentasHoy                         = response.data[0].VentasEsteMesHaceUnAnioHastaHoy;
+        this.VentasHoyHaceUnAnio               = response.data[0].VentasHoyHaceUnAnio;
+        this.VentasHoy                         = numeral(this.VentasHoy).format('$ 0,0');
+        this.VentasHoyHaceUnAnio               = numeral(this.VentasHoyHaceUnAnio).format('$ 0,0');
+        this.VentasEsteMesHastaHoy             = numeral(this.VentasEsteMesHastaHoy).format('$ 0,0');
+        this.VentasEsteMesHaceUnAnioHastaHoy   = numeral(this.VentasEsteMesHaceUnAnioHastaHoy).format('$ 0,0');
+      })
+  }
+
+};
+
 </script>
 <style>
 header {

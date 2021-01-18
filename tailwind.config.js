@@ -1,3 +1,4 @@
+// https://regenrek.com/posts/how-to-use-tailwind-css-with-nuxt/
 module.exports = {
   future: {
     // removeDeprecatedGapUtilities: true,
@@ -11,7 +12,12 @@ module.exports = {
      './nuxt.config.{js,ts}',
   ],
   theme: {
+
     extend: {
+     fontFamily: {
+       Montserrat: ['Montserrat']
+      },
+      
       colors: {
         amarillo: '#F8AF3C',
         azul    : '#272C6B',
