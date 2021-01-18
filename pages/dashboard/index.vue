@@ -5,7 +5,7 @@
     <header class="px-10 py-4 bg-azul">
       <label for="check">
         <i
-          class="px-4 py-1 opacity-0 sm:opacity-100 fa fa-bars"
+          class="px-4 py-1 opacity-0 md:opacity-100 fa fa-bars"
           id="sidebar_btn"
         ></i>
       </label>
@@ -64,157 +64,195 @@
 
     <!-- content -->
     <div class="content">
-      <div class="pb-4 my-4 mt-6 border-2 border-black">
-        <div class="flex justify-center border-b-2 border-black">
+      <div class="pb-4 my-4 mt-6 border-2 border-gray-300 ">
+        <div class="flex justify-center bg-gray-300 border-b -p-1">
           <h2 class="text-4xl">Ventas</h2>
         </div>
-        <div class="grid gap-2 px-4 mt-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"  >
-          
-          <div class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-azul"      >
-            <div class="pt-3 ml-2 lg:pr-6">
-              <h2 class="pr-2 text-2xl font-light text-white">{{ dtStarTodayText}}</h2>
-              <p class="mt-2 text-4xl font-light text-white">{{ VentasHoy }}</p>
-            </div>
-            <div class="pt-3">
-              <img class="h-24" src="/images/diagrama.svg" alt="" />
-            </div>
-          </div>
-
-          <div  class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-rojo"  >
-            <div class="pt-3 ml-4">
-              <h2 class="pr-2 text-2xl font-light text-white">
-                {{dtOneYearAgoStartText}}
+        <div
+          class="grid gap-2 px-4 mt-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+        >
+          <div
+            class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-azul"
+          >
+            <div class="pt-8">
+              <h2 class="text-lg font-light text-white xl:text-xl">
+                {{ dtStarTodayText }}
               </h2>
-              <p class="mt-2 text-4xl font-light text-white">{{VentasHoyHaceUnAnio}}</p>
+              <p class="mt-2 text-xl font-light text-white xl:text-2xl">
+                {{ VentasHoy }}
+              </p>
             </div>
-            <div class="pt-3">
-              <img class="h-24" src="/images/ventas.svg" alt="" />
+            <div class="pt-8">
+              <img class="h-16 xl:h-20" src="/images/diagrama.svg" alt="" />
             </div>
           </div>
 
-          <div class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-verde">
-            <div class="pt-3 ml-4 lg:pr-4">
-              <h2 class="pr-2 text-2xl font-light text-white">
-                {{dtMonthToTodayStartText}}
+          <div
+            class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-rojo"
+          >
+            <div class="pt-8">
+              <h2 class="text-lg font-light text-white xl:text-xl">
+                {{ dtOneYearAgoStartText }}
               </h2>
-              <p class="mt-2 text-4xl font-light text-white">{{VentasEsteMesHastaHoy}}</p>
+              <p class="mt-2 text-xl font-light text-white xl:text-2xl">
+                {{ VentasHoyHaceUnAnio }}
+              </p>
             </div>
-            <div class="pt-3">
-              <img class="h-24" src="/images/analitica.svg" alt="" />
+            <div class="pt-8">
+              <img class="h-16 xl:h-20" src="/images/ventas.svg" alt="" />
             </div>
           </div>
 
-          <div class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-amarillo" >
-            <div class="pt-3 ml-2 lg:pr-2">
-              <h2 class="pr-2 text-2xl font-light text-white">
-                {{dtMonthToTodayOneYearAgoStartText}}
+          <div
+            class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-verde"
+          >
+            <div class="pt-8">
+              <h2 class="text-lg font-light text-white xl:text-xl">
+                {{ dtMonthToTodayStartText }}
               </h2>
-              <p class="mt-2 text-4xl font-light text-white">{{VentasEsteMesHaceUnAnioHastaHoy}}</p>
+              <p class="mt-2 text-xl font-light text-white xl:text-2xl">
+                {{ VentasEsteMesHastaHoy }}
+              </p>
             </div>
-            <div class="pt-3">
-              <img class="h-24" src="/images/rama.svg" alt="" />
+            <div class="pt-8">
+              <img class="h-16 xl:h-20" src="/images/analitica.svg" alt="" />
             </div>
           </div>
 
+          <div
+            class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-amarillo"
+          >
+            <div class="pt-8">
+              <h2 class="text-lg font-light text-white xl:text-2xl">
+                {{ dtMonthToTodayOneYearAgoStartText }}
+              </h2>
+              <p class="mt-2 text-xl font-light text-white xl:text-2xl">
+                {{ VentasEsteMesHaceUnAnioHastaHoy }}
+              </p>
+            </div>
+            <div class="pt-8">
+              <img class="h-16 xl:h-20" src="/images/rama.svg" alt="" />
+            </div>
+          </div>
         </div>
       </div>
 
-
-      <div class="pb-4 my-4 mt-16 border-2 border-black">
-        
-        <div class="flex justify-center border-b-2 border-black">
-          <h2 class="text-4xl">Órdenes de trabajo</h2>
+      <div class="pb-4 my-4 mt-16 border-gray-300 border-3">
+        <div class="flex justify-center bg-gray-300 border-gray-300">
+          <h2 class="text-4xl">Ventas</h2>
         </div>
-
-        <div class="grid gap-2 px-4 mt-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"  >
-          <div  class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-azul"  >
-            <div class="pt-3 ml-2 lg:pr-6">
-              <h2 class="pr-2 text-2xl font-light text-white">Ventas de Hoy</h2>
-              <p class="mt-2 text-4xl font-light text-white">$6547</p>
+        <div
+          class="grid gap-2 px-4 mt-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+        >
+          <div
+            class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-azul"
+          >
+            <div class="pt-8">
+              <h2 class="text-lg font-light text-white xl:text-xl">
+                {{ dtStarTodayText }}
+              </h2>
+              <p class="mt-2 text-xl font-light text-white xl:text-2xl">
+                {{ VentasHoy }}
+              </p>
             </div>
-            <div class="pt-3">
-              <img class="h-24" src="/images/diagrama.svg" alt="" />
+            <div class="pt-8">
+              <img class="h-16 xl:h-20" src="/images/diagrama.svg" alt="" />
             </div>
           </div>
 
-          <div class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-rojo" >
-            <div class="pt-3 ml-4">
-              <h2 class="pr-2 text-2xl font-light text-white">
-                Ventas de la semana
+          <div
+            class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-rojo"
+          >
+            <div class="pt-8">
+              <h2 class="text-lg font-light text-white xl:text-xl">
+                {{ dtOneYearAgoStartText }}
               </h2>
-              <p class="mt-2 text-4xl font-light text-white">$16547</p>
+              <p class="mt-2 text-xl font-light text-white xl:text-2xl">
+                {{ VentasHoyHaceUnAnio }}
+              </p>
             </div>
-            <div class="pt-3">
-              <img class="h-24" src="/images/ventas.svg" alt="" />
+            <div class="pt-8">
+              <img class="h-16 xl:h-20" src="/images/ventas.svg" alt="" />
             </div>
           </div>
 
-          <div class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-verde" >
-            <div class="pt-3 ml-4 lg:pr-4">
-              <h2 class="pr-2 text-2xl font-light text-white">
-                Ventas del mes
+          <div
+            class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-verde"
+          >
+            <div class="pt-8">
+              <h2 class="text-lg font-light text-white xl:text-xl">
+                {{ dtMonthToTodayStartText }}
               </h2>
-              <p class="mt-2 text-4xl font-light text-white">$216547</p>
+              <p class="mt-2 text-xl font-light text-white xl:text-2xl">
+                {{ VentasEsteMesHastaHoy }}
+              </p>
             </div>
-            <div class="pt-3">
-              <img class="h-24" src="/images/analitica.svg" alt="" />
+            <div class="pt-8">
+              <img class="h-16 xl:h-20" src="/images/analitica.svg" alt="" />
             </div>
           </div>
 
-          <div class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-amarillo" >
-            <div class="pt-3 ml-2 lg:pr-2">
-              <h2 class="pr-2 text-2xl font-light text-white">
-                Ventas del año
+          <div
+            class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-amarillo"
+          >
+            <div class="pt-8">
+              <h2 class="text-lg font-light text-white xl:text-2xl">
+                {{ dtMonthToTodayOneYearAgoStartText }}
               </h2>
-              <p class="mt-2 text-4xl font-light text-white">$921654</p>
+              <p class="mt-2 text-xl font-light text-white xl:text-2xl">
+                {{ VentasEsteMesHaceUnAnioHastaHoy }}
+              </p>
             </div>
-            <div class="pt-3">
-              <img class="h-24" src="/images/rama.svg" alt="" />
+            <div class="pt-8">
+              <img class="h-16 xl:h-20" src="/images/rama.svg" alt="" />
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-   
 </template>
 
 <script>
-import DashBoard from '@/models/dashBoard';
-import numeral from 'numeral';
+import DashBoard from "@/models/dashBoard";
+import numeral from "numeral";
 export default {
   data: () => ({
-      dtMonthToTodayOneYearAgoStartText:'',
-      dtMonthToTodayStartText:'',
-      dtOneYearAgoStartText          : '',
-      dtStarTodayText                : '',
-      VentasEsteMesHaceUnAnioHastaHoy: 0,
-      VentasEsteMesHastaHoy          : 0,
-      VentasHoy                      : 0,
-      VentasHoyHaceUnAnio            : 0,
+    dtMonthToTodayOneYearAgoStartText: "",
+    dtMonthToTodayStartText: "",
+    dtOneYearAgoStartText: "",
+    dtStarTodayText: "",
+    VentasEsteMesHaceUnAnioHastaHoy: 0,
+    VentasEsteMesHastaHoy: 0,
+    VentasHoy: 0,
+    VentasHoyHaceUnAnio: 0,
   }),
 
   mounted() {
-      DashBoard.ventas()
-      .then ( response => {
-        this.dtMonthToTodayOneYearAgoStartText = response.data[0].dtMonthToTodayOneYearAgoStartText;
-        this.dtMonthToTodayStartText           = response.data[0].dtMonthToTodayStartText;
-        this.dtOneYearAgoStartText             = response.data[0].dtOneYearAgoStartText;
-        this.dtStarTodayText                   = response.data[0].dtStarTodayText;
-        this.VentasEsteMesHaceUnAnioHastaHoy   = response.data[0].VentasEsteMesHaceUnAnioHastaHoy;
-        this.VentasEsteMesHastaHoy             = response.data[0].VentasEsteMesHastaHoy;
-        this.VentasHoy                         = response.data[0].VentasEsteMesHaceUnAnioHastaHoy;
-        this.VentasHoyHaceUnAnio               = response.data[0].VentasHoyHaceUnAnio;
-        this.VentasHoy                         = numeral(this.VentasHoy).format('$ 0,0');
-        this.VentasHoyHaceUnAnio               = numeral(this.VentasHoyHaceUnAnio).format('$ 0,0');
-        this.VentasEsteMesHastaHoy             = numeral(this.VentasEsteMesHastaHoy).format('$ 0,0');
-        this.VentasEsteMesHaceUnAnioHastaHoy   = numeral(this.VentasEsteMesHaceUnAnioHastaHoy).format('$ 0,0');
-         
-      })
-  }
-
+    DashBoard.ventas().then((response) => {
+      this.dtMonthToTodayOneYearAgoStartText =
+        response.data[0].dtMonthToTodayOneYearAgoStartText;
+      this.dtMonthToTodayStartText = response.data[0].dtMonthToTodayStartText;
+      this.dtOneYearAgoStartText = response.data[0].dtOneYearAgoStartText;
+      this.dtStarTodayText = response.data[0].dtStarTodayText;
+      this.VentasEsteMesHaceUnAnioHastaHoy =
+        response.data[0].VentasEsteMesHaceUnAnioHastaHoy;
+      this.VentasEsteMesHastaHoy = response.data[0].VentasEsteMesHastaHoy;
+      this.VentasHoy = response.data[0].VentasEsteMesHaceUnAnioHastaHoy;
+      this.VentasHoyHaceUnAnio = response.data[0].VentasHoyHaceUnAnio;
+      this.VentasHoy = numeral(this.VentasHoy).format("$ 0,0");
+      this.VentasHoyHaceUnAnio = numeral(this.VentasHoyHaceUnAnio).format(
+        "$ 0,0"
+      );
+      this.VentasEsteMesHastaHoy = numeral(this.VentasEsteMesHastaHoy).format(
+        "$ 0,0"
+      );
+      this.VentasEsteMesHaceUnAnioHastaHoy = numeral(
+        this.VentasEsteMesHaceUnAnioHastaHoy
+      ).format("$ 0,0");
+    });
+  },
 };
-
 </script>
 <style>
 header {
@@ -227,7 +265,7 @@ header {
 .left_area h3 {
   color: #fff;
   margin: 0;
-   
+
   font-size: 22px;
   font-weight: 900;
 }
@@ -345,7 +383,7 @@ label #sidebar_btn:hover {
 }
 
 /* Responsive CSS */
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 768px) {
   .sidebar {
     left: -185px;
   }
