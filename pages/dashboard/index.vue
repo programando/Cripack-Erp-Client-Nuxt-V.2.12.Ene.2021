@@ -26,7 +26,7 @@
     <div class="border-b border-r sidebar">
       <div class="profile_info">
         <img src="/images/1.svg" class="profile_image" alt="" />
-        <h4 class="text-lg text-gray-700">User</h4>
+        <h4 class="text-lg text-gray-700">Jhon James</h4>
       </div>
 
       <a
@@ -37,36 +37,34 @@
       <a
         class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
         href="#"
-        ><i class="fa fa-cogs"></i><span>Components</span></a
+        ><i class="fa fa-cogs"></i><span>Reuniones</span></a
+      >
+
+      <a
+        class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
+        href="#"
+        ><i class="fa fa-cogs"></i><span>Órdenes trabajo</span></a
       >
       <a
         class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
         href="#"
-        ><i class="fa fa-table"></i><span>Tables</span></a
+        ><i class="fa fa-table"></i><span>Cartera</span></a
       >
       <a
         class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
         href="#"
-        ><i class="fa fa-th"></i><span>Forms</span></a
+        ><i class="fa fa-th"></i><span>Clientes</span></a
       >
-      <a
-        class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
-        href="#"
-        ><i class="fa fa-info-circle"></i><span>About</span></a
-      >
-      <a
-        class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
-        href="#"
-        ><i class="fa fa-sliders-h"></i><span>Settings</span></a
-      >
+ 
+ 
     </div>
     <!--sidebar end-->
 
     <!-- content -->
     <div class="content">
-      <div class="pb-4 my-4 mt-6 border-2 border-gray-300 ">
-        <div class="flex justify-center bg-gray-300 border-b -p-1">
-          <h2 class="text-4xl">Ventas</h2>
+      <div class="pb-4 my-4 mt-6 border-2 border-gray-100 ">
+        <div class="flex justify-center bg-gray-200 border-b -p-1">
+          <h2 class="p-2 text-3xl">Liquidaciones Ot's</h2>
         </div>
         <div
           class="grid gap-2 px-4 mt-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
@@ -137,9 +135,9 @@
         </div>
       </div>
 
-      <div class="pb-4 my-4 mt-16 border-gray-300 border-3">
-        <div class="flex justify-center bg-gray-300 border-gray-300">
-          <h2 class="text-4xl">Ventas</h2>
+      <div class="pb-4 my-4 mt-16 border-2 border-gray-100 rounded-lg">
+        <div class="flex justify-center bg-gray-200 border-gray-300 rounded-lg">
+          <h2 class="p-2 text-3xl">Órdenes de trabajo</h2>
         </div>
         <div
           class="grid gap-2 px-4 mt-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
@@ -219,37 +217,29 @@ import numeral from "numeral";
 export default {
   data: () => ({
     dtMonthToTodayOneYearAgoStartText: "",
-    dtMonthToTodayStartText: "",
-    dtOneYearAgoStartText: "",
-    dtStarTodayText: "",
-    VentasEsteMesHaceUnAnioHastaHoy: 0,
-    VentasEsteMesHastaHoy: 0,
-    VentasHoy: 0,
-    VentasHoyHaceUnAnio: 0,
+    dtMonthToTodayStartText          : "",
+    dtOneYearAgoStartText            : "",
+    dtStarTodayText                  : "",
+    VentasEsteMesHaceUnAnioHastaHoy  : 0,
+    VentasEsteMesHastaHoy            : 0,
+    VentasHoy                        : 0,
+    VentasHoyHaceUnAnio              : 0,
   }),
 
   mounted() {
     DashBoard.ventas().then((response) => {
-      this.dtMonthToTodayOneYearAgoStartText =
-        response.data[0].dtMonthToTodayOneYearAgoStartText;
-      this.dtMonthToTodayStartText = response.data[0].dtMonthToTodayStartText;
-      this.dtOneYearAgoStartText = response.data[0].dtOneYearAgoStartText;
-      this.dtStarTodayText = response.data[0].dtStarTodayText;
-      this.VentasEsteMesHaceUnAnioHastaHoy =
-        response.data[0].VentasEsteMesHaceUnAnioHastaHoy;
-      this.VentasEsteMesHastaHoy = response.data[0].VentasEsteMesHastaHoy;
-      this.VentasHoy = response.data[0].VentasEsteMesHaceUnAnioHastaHoy;
-      this.VentasHoyHaceUnAnio = response.data[0].VentasHoyHaceUnAnio;
-      this.VentasHoy = numeral(this.VentasHoy).format("$ 0,0");
-      this.VentasHoyHaceUnAnio = numeral(this.VentasHoyHaceUnAnio).format(
-        "$ 0,0"
-      );
-      this.VentasEsteMesHastaHoy = numeral(this.VentasEsteMesHastaHoy).format(
-        "$ 0,0"
-      );
-      this.VentasEsteMesHaceUnAnioHastaHoy = numeral(
-        this.VentasEsteMesHaceUnAnioHastaHoy
-      ).format("$ 0,0");
+      this.dtMonthToTodayOneYearAgoStartText = response.data[0].dtMonthToTodayOneYearAgoStartText;
+      this.dtMonthToTodayStartText           = response.data[0].dtMonthToTodayStartText;
+      this.dtOneYearAgoStartText             = response.data[0].dtOneYearAgoStartText;
+      this.dtStarTodayText                   = response.data[0].dtStarTodayText;
+      this.VentasEsteMesHaceUnAnioHastaHoy   = response.data[0].VentasEsteMesHaceUnAnioHastaHoy;
+      this.VentasEsteMesHastaHoy             = response.data[0].VentasEsteMesHastaHoy;
+      this.VentasHoy                         = response.data[0].VentasEsteMesHaceUnAnioHastaHoy;
+      this.VentasHoyHaceUnAnio               = response.data[0].VentasHoyHaceUnAnio;
+      this.VentasHoy                         = numeral(this.VentasHoy).format("$ 0,0");
+      this.VentasHoyHaceUnAnio               = numeral(this.VentasHoyHaceUnAnio).format("$ 0,0");
+      this.VentasEsteMesHastaHoy             = numeral(this.VentasEsteMesHastaHoy).format("$ 0,0");
+      this.VentasEsteMesHaceUnAnioHastaHoy   = numeral(this.VentasEsteMesHaceUnAnioHastaHoy).format("$ 0,0");
     });
   },
 };
