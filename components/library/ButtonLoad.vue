@@ -26,6 +26,10 @@ export default {
           break;
         case "primary":
           return "text-white bg-primary hover:bg-red-900";
+          break;
+        case "blue":
+          return "text-white bg-azul hover:bg-indigo-700";
+          break;
         
       }
     },

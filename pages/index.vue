@@ -11,14 +11,17 @@
         <div
           class="gap-10 mx-10 mt-10 md:mx-20 lg:mx-24 xl:mx-32 lg:grid lg:grid-cols-2"
         >
-          <div class="text-white">
-            <p class="lg:text-lg">
+          <div class="flex self-center justify-center text-white">
+            <div>
+              <p class="lg:text-lg">
               Se gana y se pierde, se sube y se baja, se nace y se muere. Y si
               la historia es tan simple, ¿por qué te preocupas tanto?
             </p>
             <h3 class="flex justify-end mt-1 mr-4 font-semibold lg:text-lg">
               -Fancundo Cabral
             </h3>
+            </div>
+            
           </div>
           <div
             class="px-8 py-6 mt-6 bg-white border rounded-lg md:py-8 md:px-12 lg:mt-0"
@@ -58,7 +61,7 @@
               <ButtonLoad
                 text="Ingresar al sistema"
                 to="/dashboard/"
-                variant="success"
+                variant="blue"
               ></ButtonLoad>
             </div>
           </div>

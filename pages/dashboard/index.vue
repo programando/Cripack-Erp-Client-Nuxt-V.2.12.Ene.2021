@@ -15,7 +15,7 @@
       <div class="right_area">
         <a
           href="#"
-          class="px-4 py-2 text-lg font-bold bg-blue-500 hover:bg-blue-700 logout_btn"
+          class="px-4 py-2 text-lg font-light bg-rojo hover:bg-red-700 logout_btn"
           >Logout</a
         >
       </div>
@@ -64,8 +64,8 @@
 
     <!-- content -->
     <div class="content">
-      <div class="pb-4 my-4 mt-6 border-2 border-gray-300 ">
-        <div class="flex justify-center bg-gray-300 border-b -p-1">
+      <div class="pb-4 my-4 mt-6 ">
+        <div class="flex justify-center bg-gray-300 border-b">
           <h2 class="text-4xl">Ventas</h2>
         </div>
         <div
@@ -78,7 +78,7 @@
               <h2 class="text-lg font-light text-white xl:text-xl">
                 {{ dtStarTodayText }}
               </h2>
-              <p class="mt-2 text-xl font-light text-white xl:text-2xl">
+              <p class="mt-6 text-xl font-light text-white xl:text-2xl">
                 {{ VentasHoy }}
               </p>
             </div>
@@ -94,7 +94,7 @@
               <h2 class="text-lg font-light text-white xl:text-xl">
                 {{ dtOneYearAgoStartText }}
               </h2>
-              <p class="mt-2 text-xl font-light text-white xl:text-2xl">
+              <p class="mt-6 text-xl font-light text-white xl:text-2xl">
                 {{ VentasHoyHaceUnAnio }}
               </p>
             </div>
@@ -110,7 +110,7 @@
               <h2 class="text-lg font-light text-white xl:text-xl">
                 {{ dtMonthToTodayStartText }}
               </h2>
-              <p class="mt-2 text-xl font-light text-white xl:text-2xl">
+              <p class="mt-6 text-xl font-light text-white xl:text-2xl">
                 {{ VentasEsteMesHastaHoy }}
               </p>
             </div>
@@ -126,7 +126,7 @@
               <h2 class="text-lg font-light text-white xl:text-2xl">
                 {{ dtMonthToTodayOneYearAgoStartText }}
               </h2>
-              <p class="mt-2 text-xl font-light text-white xl:text-2xl">
+              <p class="mt-6 text-xl font-light text-white xl:text-2xl">
                 {{ VentasEsteMesHaceUnAnioHastaHoy }}
               </p>
             </div>
@@ -151,7 +151,7 @@
               <h2 class="text-lg font-light text-white xl:text-xl">
                 {{ dtStarTodayText }}
               </h2>
-              <p class="mt-2 text-xl font-light text-white xl:text-2xl">
+              <p class="mt-6 text-xl font-light text-white xl:text-2xl">
                 {{ VentasHoy }}
               </p>
             </div>
@@ -167,7 +167,7 @@
               <h2 class="text-lg font-light text-white xl:text-xl">
                 {{ dtOneYearAgoStartText }}
               </h2>
-              <p class="mt-2 text-xl font-light text-white xl:text-2xl">
+              <p class="mt-6 text-xl font-light text-white xl:text-2xl">
                 {{ VentasHoyHaceUnAnio }}
               </p>
             </div>
@@ -183,7 +183,7 @@
               <h2 class="text-lg font-light text-white xl:text-xl">
                 {{ dtMonthToTodayStartText }}
               </h2>
-              <p class="mt-2 text-xl font-light text-white xl:text-2xl">
+              <p class="mt-6 text-xl font-light text-white xl:text-2xl">
                 {{ VentasEsteMesHastaHoy }}
               </p>
             </div>
@@ -199,7 +199,7 @@
               <h2 class="text-lg font-light text-white xl:text-2xl">
                 {{ dtMonthToTodayOneYearAgoStartText }}
               </h2>
-              <p class="mt-2 text-xl font-light text-white xl:text-2xl">
+              <p class="mt-6 text-xl font-light text-white xl:text-2xl">
                 {{ VentasEsteMesHaceUnAnioHastaHoy }}
               </p>
             </div>
