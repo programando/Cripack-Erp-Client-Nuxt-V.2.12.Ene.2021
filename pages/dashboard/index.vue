@@ -83,9 +83,9 @@
           <div  class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-rojo"  >
             <div class="pt-3 ml-4">
               <h2 class="pr-2 text-2xl font-light text-white">
-                Ventas de la semana
+                {{dtOneYearAgoStartText}}
               </h2>
-              <p class="mt-2 text-4xl font-light text-white">$16547</p>
+              <p class="mt-2 text-4xl font-light text-white">{{VentasHoyHaceUnAnio}}</p>
             </div>
             <div class="pt-3">
               <img class="h-24" src="/images/ventas.svg" alt="" />
@@ -95,9 +95,9 @@
           <div class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-verde">
             <div class="pt-3 ml-4 lg:pr-4">
               <h2 class="pr-2 text-2xl font-light text-white">
-                Ventas del mes
+                {{dtMonthToTodayStartText}}
               </h2>
-              <p class="mt-2 text-4xl font-light text-white">$216547</p>
+              <p class="mt-2 text-4xl font-light text-white">{{VentasEsteMesHastaHoy}}</p>
             </div>
             <div class="pt-3">
               <img class="h-24" src="/images/analitica.svg" alt="" />
@@ -107,9 +107,9 @@
           <div class="flex justify-around h-40 px-4 mx-2 border rounded-lg bg-amarillo" >
             <div class="pt-3 ml-2 lg:pr-2">
               <h2 class="pr-2 text-2xl font-light text-white">
-                Ventas del año
+                {{dtMonthToTodayOneYearAgoStartText}}
               </h2>
-              <p class="mt-2 text-4xl font-light text-white">$921654</p>
+              <p class="mt-2 text-4xl font-light text-white">{{VentasEsteMesHaceUnAnioHastaHoy}}</p>
             </div>
             <div class="pt-3">
               <img class="h-24" src="/images/rama.svg" alt="" />
@@ -123,7 +123,7 @@
       <div class="pb-4 my-4 mt-16 border-2 border-black">
         
         <div class="flex justify-center border-b-2 border-black">
-          <h2 class="text-4xl">Ventas</h2>
+          <h2 class="text-4xl">Órdenes de trabajo</h2>
         </div>
 
         <div class="grid gap-2 px-4 mt-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"  >
@@ -214,7 +214,7 @@ export default {
         this.VentasHoyHaceUnAnio               = numeral(this.VentasHoyHaceUnAnio).format('$ 0,0');
         this.VentasEsteMesHastaHoy             = numeral(this.VentasEsteMesHastaHoy).format('$ 0,0');
         this.VentasEsteMesHaceUnAnioHastaHoy   = numeral(this.VentasEsteMesHaceUnAnioHastaHoy).format('$ 0,0');
-        console.log( response.data );
+         
       })
   }
 
