@@ -214,6 +214,7 @@ export default {
         this.VentasHoyHaceUnAnio               = numeral(this.VentasHoyHaceUnAnio).format('$ 0,0');
         this.VentasEsteMesHastaHoy             = numeral(this.VentasEsteMesHastaHoy).format('$ 0,0');
         this.VentasEsteMesHaceUnAnioHastaHoy   = numeral(this.VentasEsteMesHaceUnAnioHastaHoy).format('$ 0,0');
+        console.log( response.data );
       })
   }
 
