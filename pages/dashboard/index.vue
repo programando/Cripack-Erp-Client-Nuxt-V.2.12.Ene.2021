@@ -67,10 +67,10 @@
     <!--sidebar end-->
 
     <!-- content -->
-    <div class="px-2 pt-8 content">
-      <div class="pb-4 my-4 mt-6">
+    <div class="px-10 pt-8 content">
+      <div class="pb-4 my-4 mt-6 border-2">
         <div class="flex justify-center bg-gray-200 border-b">
-          <h2 class="p-2 text-4xl">Ventas</h2>
+          <h2 class="p-2 text-3xl">Ventas</h2>
         </div>
         <div
           class="grid gap-2 px-4 mt-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
@@ -141,9 +141,9 @@
         </div>
       </div>
 
-      <div class="pb-4 my-4 mt-16 border-gray-300 border-3">
+      <div class="pb-4 my-4 mt-16 border-2 border-gray-300">
         <div class="flex justify-center bg-gray-300 border-gray-300">
-          <h2 class="text-4xl">Ventas</h2>
+          <h2 class="p-2 text-3xl">Ventas</h2>
         </div>
         <div
           class="grid gap-2 px-4 mt-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
