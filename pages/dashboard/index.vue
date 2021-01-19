@@ -17,7 +17,7 @@
       <div class="py-3 right_area">
         <a
           href="#"
-          class="px-4 py-2 text-lg font-light bg-rojo hover:bg-red-700 logout_btn"
+          class="px-4 py-2 font-light bg-rojo hover:bg-red-700 logout_btn"
           >Logout</a
         >
       </div>
@@ -27,36 +27,36 @@
     <!--sidebar start-->
     <div class="border-b border-r sidebar">
       <div class="profile_info">
-        <img src="/images/1.svg" class="profile_image" alt="" />
-        <h4 class="text-lg text-gray-700">Jhon James</h4>
+        <img src="/images/1.svg" class="h-20" alt="" />
+        <h4 class="mt-2 text-gray-700 ">Jhon James</h4>
       </div>
       <div>
         <nuxt-link
-          class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
+          class="ml-4 text-gray-700 hover:bg-azul hover:text-white"
           to="/"
         >
           <i class="fa fa-desktop"></i><span>Dashboard</span>
         </nuxt-link>
         <nuxt-link
-          class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
+          class="ml-4 text-gray-700 hover:bg-azul hover:text-white"
           to="/"
         >
           <i class="fa fa-cogs"></i><span>Órdenes trabajo</span>
         </nuxt-link>
         <nuxt-link
-          class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
+          class="ml-4 text-gray-700 hover:bg-azul hover:text-white"
           to="/"
         >
           <i class="fa fa-table"></i><span>Cartera</span>
         </nuxt-link>
         <nuxt-link
-          class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
+          class="ml-4 text-gray-700 hover:bg-azul hover:text-white"
           to="/"
         >
           <i class="fa fa-th"></i><span>Reuniones</span>
         </nuxt-link>
         <nuxt-link
-          class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
+          class="ml-4 text-gray-700 hover:bg-azul hover:text-white"
           to="/"
         >
           <i class="fa fa-info-circle"></i><span>Configuración</span>
@@ -68,12 +68,15 @@
     <!-- content -->
     <div class="px-10 pt-8 content">
 
-          <div class="pb-4 my-4 mt-6 border-2">
-                  <div class="flex justify-center bg-gray-200 border-b">
-          <h2 class="p-2 text-xl">Comparativo ventas</h2>
+        <div class="pb-4 my-4 mt-6 border-2 ">
+          <div class="flex justify-center bg-gray-200 border-b">
+            <h2 class="p-2 text-xl">Comparativo ventas</h2>
+          </div>
+          <div class="">
+            <LineChart/>
+          </div>
+          
         </div>
-        <LineChart/>
-      </div>
 
       <div class="pb-4 my-4 mt-6 border-2">
         <div class="flex justify-center bg-gray-200 border-b">
@@ -220,12 +223,6 @@
           </div>
         </div>
       </div>
-<<<<<<< HEAD
-=======
-
-
-      
->>>>>>> dd63df76ef4635e0a94e66879b40e4998752cbf9
     </div>
   </div>
 </template>
@@ -323,7 +320,7 @@ header {
 }
 
 .sidebar .profile_info h4 {
-  margin-top: 0;
+  
   margin-bottom: 20px;
 }
 
