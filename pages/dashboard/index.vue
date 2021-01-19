@@ -2,17 +2,19 @@
   <div class="font-robo">
     <input type="checkbox" id="check" />
     <!--header area start-->
-    <header class="px-10 py-4 bg-azul">
+    <header class="px-10 pt-2 pb-4 bg-azul">
       <label for="check">
         <i
-          class="px-4 py-1 opacity-0 md:opacity-100 fa fa-bars"
+          class="px-4 py-3 opacity-0 md:opacity-100 fa fa-bars"
           id="sidebar_btn"
         ></i>
       </label>
-      <div class="text-lg left_area">
-        <h3>Cripack</h3>
+      <div class="h-10 text-lg left_area">
+        <span
+          ><img class="-mt-4 -ml-8" src="/images/logoCripack.png" alt="logo"
+        /></span>
       </div>
-      <div class="right_area">
+      <div class="py-3 right_area">
         <a
           href="#"
           class="px-4 py-2 text-lg font-light bg-rojo hover:bg-red-700 logout_btn"
@@ -28,43 +30,50 @@
         <img src="/images/1.svg" class="profile_image" alt="" />
         <h4 class="text-lg text-gray-700">User</h4>
       </div>
-
-      <a
-        class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
-        href="#"
-        ><i class="fa fa-desktop"></i><span>Dashboard</span></a
-      >
-      <a
-        class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
-        href="#"
-        ><i class="fa fa-cogs"></i><span>Components</span></a
-      >
-      <a
-        class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
-        href="#"
-        ><i class="fa fa-table"></i><span>Tables</span></a
-      >
-      <a
-        class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
-        href="#"
-        ><i class="fa fa-th"></i><span>Forms</span></a
-      >
-      <a
-        class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
-        href="#"
-        ><i class="fa fa-info-circle"></i><span>About</span></a
-      >
-      <a
-        class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
-        href="#"
-        ><i class="fa fa-sliders-h"></i><span>Settings</span></a
-      >
+      <div>
+        <nuxt-link
+          class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
+          to="/"
+        >
+          <i class="fa fa-desktop"></i><span>Dashboard</span>
+        </nuxt-link>
+        <nuxt-link
+          class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
+          to="/"
+        >
+          <i class="fa fa-cogs"></i><span>Components</span>
+        </nuxt-link>
+        <nuxt-link
+          class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
+          to="/"
+        >
+          <i class="fa fa-table"></i><span>Tables</span>
+        </nuxt-link>
+        <nuxt-link
+          class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
+          to="/"
+        >
+          <i class="fa fa-th"></i><span>Forms</span>
+        </nuxt-link>
+        <nuxt-link
+          class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
+          to="/"
+        >
+          <i class="fa fa-info-circle"></i><span>About</span>
+        </nuxt-link>
+        <nuxt-link
+          class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
+          to="/"
+        >
+          <i class="fa fa-sliders-h"></i><span>Settings</span>
+        </nuxt-link>
+      </div>
     </div>
     <!--sidebar end-->
 
     <!-- content -->
-    <div class="content">
-      <div class="pb-4 my-4 mt-6 ">
+    <div class="px-2 pt-8 content">
+      <div class="pb-4 my-4 mt-6">
         <div class="flex justify-center bg-gray-300 border-b">
           <h2 class="text-4xl">Ventas</h2>
         </div>
@@ -83,7 +92,7 @@
               </p>
             </div>
             <div class="pt-8">
-              <img class="h-16 xl:h-20" src="/images/diagrama.svg" alt="" />
+              <img class="h-16 xl:h-20" src="/images/graph.svg" alt="" />
             </div>
           </div>
 
@@ -99,7 +108,7 @@
               </p>
             </div>
             <div class="pt-8">
-              <img class="h-16 xl:h-20" src="/images/ventas.svg" alt="" />
+              <img class="h-16 xl:h-20" src="/images/graph.svg" alt="" />
             </div>
           </div>
 
@@ -115,7 +124,7 @@
               </p>
             </div>
             <div class="pt-8">
-              <img class="h-16 xl:h-20" src="/images/analitica.svg" alt="" />
+              <img class="h-16 xl:h-20" src="/images/pie-chart.svg" alt="" />
             </div>
           </div>
 
@@ -131,7 +140,7 @@
               </p>
             </div>
             <div class="pt-8">
-              <img class="h-16 xl:h-20" src="/images/rama.svg" alt="" />
+              <img class="h-16 xl:h-20" src="/images/pie-chart.svg" alt="" />
             </div>
           </div>
         </div>
@@ -156,7 +165,7 @@
               </p>
             </div>
             <div class="pt-8">
-              <img class="h-16 xl:h-20" src="/images/diagrama.svg" alt="" />
+              <img class="h-16 xl:h-20" src="/images/graph.svg" alt="" />
             </div>
           </div>
 
@@ -172,7 +181,7 @@
               </p>
             </div>
             <div class="pt-8">
-              <img class="h-16 xl:h-20" src="/images/ventas.svg" alt="" />
+              <img class="h-16 xl:h-20" src="/images/graph.svg" alt="" />
             </div>
           </div>
 
@@ -188,7 +197,7 @@
               </p>
             </div>
             <div class="pt-8">
-              <img class="h-16 xl:h-20" src="/images/analitica.svg" alt="" />
+              <img class="h-16 xl:h-20" src="/images/pie-chart.svg" alt="" />
             </div>
           </div>
 
@@ -204,7 +213,7 @@
               </p>
             </div>
             <div class="pt-8">
-              <img class="h-16 xl:h-20" src="/images/rama.svg" alt="" />
+              <img class="h-16 xl:h-20" src="/images/pie-chart.svg" alt="" />
             </div>
           </div>
         </div>
@@ -349,6 +358,7 @@ label #sidebar_btn:hover {
 
 #check:checked ~ .sidebar {
   left: -185px;
+  
 }
 
 #check:checked ~ .sidebar a span {
@@ -359,12 +369,12 @@ label #sidebar_btn:hover {
   font-size: 20px;
   margin-left: 165px;
   width: 100%;
+  
 }
 
 .content {
   width: (100% - 250px);
   margin-top: 60px;
-  padding: 20px;
   margin-left: 250px;
   height: 100vh;
   transition: 0.5s;

@@ -6,7 +6,7 @@
     >
       <div class="mt-10">
         <div class="flex justify-center text-4xl font-bold text-white">
-          <h2>Cripack S.A.S</h2>
+          <span><img src="/images/logoCripack.png" alt=""></span>
         </div>
         <div
           class="gap-10 mx-10 mt-10 md:mx-20 lg:mx-24 xl:mx-32 lg:grid lg:grid-cols-2"
