@@ -75,7 +75,7 @@
           class="grid gap-2 px-4 mt-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
         >
           <div
-            class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-azul"
+            class="flex justify-around h-32 px-2 mx-2 border rounded-lg bg-azul"
           >
             <div class="pt-6">
               <h2 class="text-lg font-light text-white ">
@@ -91,7 +91,7 @@
           </div>
 
           <div
-            class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-rojo"
+            class="flex justify-around h-32 px-2 mx-2 border rounded-lg bg-rojo"
           >
             <div class="pt-6">
               <h2 class="text-lg font-light text-white ">
@@ -107,7 +107,7 @@
           </div>
 
           <div
-            class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-verde"
+            class="flex justify-around h-32 px-2 mx-2 border rounded-lg bg-verde"
           >
             <div class="pt-6">
               <h2 class="text-lg font-light text-white ">
@@ -123,7 +123,7 @@
           </div>
 
           <div
-            class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-amarillo"
+            class="flex justify-around h-32 px-2 mx-2 border rounded-lg bg-amarillo"
           >
             <div class="pt-6">
               <h2 class="text-lg font-light text-white ">
@@ -148,7 +148,7 @@
           class="grid gap-2 px-4 mt-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
         >
           <div
-            class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-azul"
+            class="flex justify-around h-32 px-2 mx-2 border rounded-lg bg-azul"
           >
             <div class="pt-6">
               <h2 class="text-lg font-light text-white ">
@@ -164,7 +164,7 @@
           </div>
 
           <div
-            class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-rojo"
+            class="flex justify-around h-32 px-2 mx-2 border rounded-lg bg-rojo"
           >
             <div class="pt-6">
               <h2 class="text-lg font-light text-white ">
@@ -180,7 +180,7 @@
           </div>
 
           <div
-            class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-verde"
+            class="flex justify-around h-32 px-2 mx-2 border rounded-lg bg-verde"
           >
             <div class="pt-6">
               <h2 class="text-lg font-light text-white ">
@@ -196,7 +196,7 @@
           </div>
 
           <div
-            class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-amarillo"
+            class="flex justify-around h-32 px-2 mx-2 border rounded-lg bg-amarillo"
           >
             <div class="pt-6">
               <h2 class="text-lg font-light text-white">
