@@ -75,13 +75,13 @@
           class="grid gap-2 px-4 mt-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
         >
           <div
-            class="flex justify-around h-32 px-2 mx-2 border rounded-lg bg-azul"
+            class="flex justify-around px-2 mx-2 border rounded-lg h-28 bg-azul"
           >
-            <div class="pt-6">
+            <div class="pt-4">
               <h2 class="text-lg font-light text-white ">
                 {{ dtStarTodayText }}
               </h2>
-              <p class="mt-6 text-xl font-light text-white ">
+              <p class="mt-4 text-xl font-light text-white ">
                 {{ VentasHoy }}
               </p>
             </div>
@@ -91,13 +91,13 @@
           </div>
 
           <div
-            class="flex justify-around h-32 px-2 mx-2 border rounded-lg bg-rojo"
+            class="flex justify-around px-2 mx-2 border rounded-lg h-28 bg-rojo"
           >
-            <div class="pt-6">
+            <div class="pt-4">
               <h2 class="text-lg font-light text-white ">
                 {{ dtOneYearAgoStartText }}
               </h2>
-              <p class="mt-6 text-xl font-light text-white ">
+              <p class="mt-4 text-xl font-light text-white ">
                 {{ VentasHoyHaceUnAnio }}
               </p>
             </div>
@@ -107,13 +107,13 @@
           </div>
 
           <div
-            class="flex justify-around h-32 px-2 mx-2 border rounded-lg bg-verde"
+            class="flex justify-around px-2 mx-2 border rounded-lg h-28 bg-verde"
           >
-            <div class="pt-6">
+            <div class="pt-4">
               <h2 class="text-lg font-light text-white ">
                 {{ dtMonthToTodayStartText }}
               </h2>
-              <p class="mt-6 text-xl font-light text-white ">
+              <p class="mt-4 text-xl font-light text-white ">
                 {{ VentasEsteMesHastaHoy }}
               </p>
             </div>
@@ -123,13 +123,13 @@
           </div>
 
           <div
-            class="flex justify-around h-32 px-2 mx-2 border rounded-lg bg-amarillo"
+            class="flex justify-around px-2 mx-2 border rounded-lg h-28 bg-amarillo"
           >
-            <div class="pt-6">
+            <div class="pt-4">
               <h2 class="text-lg font-light text-white ">
                 {{ dtMonthToTodayOneYearAgoStartText }}
               </h2>
-              <p class="mt-6 text-xl font-light text-white ">
+              <p class="mt-4 text-xl font-light text-white ">
                 {{ VentasEsteMesHaceUnAnioHastaHoy }}
               </p>
             </div>
@@ -148,13 +148,13 @@
           class="grid gap-2 px-4 mt-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
         >
           <div
-            class="flex justify-around h-32 px-2 mx-2 border rounded-lg bg-azul"
+            class="flex justify-around px-2 mx-2 border rounded-lg h-28 bg-azul"
           >
-            <div class="pt-6">
+            <div class="pt-4">
               <h2 class="text-lg font-light text-white ">
                 {{ dtStarTodayText }}
               </h2>
-              <p class="mt-6 text-xl font-light text-white ">
+              <p class="mt-4 text-xl font-light text-white ">
                 {{ VentasHoy }}
               </p>
             </div>
@@ -164,13 +164,13 @@
           </div>
 
           <div
-            class="flex justify-around h-32 px-2 mx-2 border rounded-lg bg-rojo"
+            class="flex justify-around px-2 mx-2 border rounded-lg h-28 bg-rojo"
           >
-            <div class="pt-6">
+            <div class="pt-4">
               <h2 class="text-lg font-light text-white ">
                 {{ dtOneYearAgoStartText }}
               </h2>
-              <p class="mt-6 text-xl font-light text-white ">
+              <p class="mt-4 text-xl font-light text-white ">
                 {{ VentasHoyHaceUnAnio }}
               </p>
             </div>
@@ -180,13 +180,13 @@
           </div>
 
           <div
-            class="flex justify-around h-32 px-2 mx-2 border rounded-lg bg-verde"
+            class="flex justify-around px-2 mx-2 border rounded-lg h-28 bg-verde"
           >
-            <div class="pt-6">
+            <div class="pt-4">
               <h2 class="text-lg font-light text-white ">
                 {{ dtMonthToTodayStartText }}
               </h2>
-              <p class="mt-6 text-xl font-light text-white ">
+              <p class="mt-4 text-xl font-light text-white ">
                 {{ VentasEsteMesHastaHoy }}
               </p>
             </div>
@@ -196,13 +196,13 @@
           </div>
 
           <div
-            class="flex justify-around h-32 px-2 mx-2 border rounded-lg bg-amarillo"
+            class="flex justify-around px-2 mx-2 border rounded-lg h-28 bg-amarillo"
           >
-            <div class="pt-6">
+            <div class="pt-4">
               <h2 class="text-lg font-light text-white">
                 {{ dtMonthToTodayOneYearAgoStartText }}
               </h2>
-              <p class="mt-6 text-xl font-light text-white ">
+              <p class="mt-4 text-xl font-light text-white ">
                 {{ VentasEsteMesHaceUnAnioHastaHoy }}
               </p>
             </div>
