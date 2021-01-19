@@ -28,7 +28,7 @@
     <div class="border-b border-r sidebar">
       <div class="profile_info">
         <img src="/images/1.svg" class="profile_image" alt="" />
-        <h4 class="text-lg text-gray-700">User</h4>
+        <h4 class="text-lg text-gray-700">Jhon James</h4>
       </div>
       <div>
         <nuxt-link
@@ -41,32 +41,27 @@
           class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
           to="/"
         >
-          <i class="fa fa-cogs"></i><span>Components</span>
+          <i class="fa fa-cogs"></i><span>Órdenes trabajo</span>
         </nuxt-link>
         <nuxt-link
           class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
           to="/"
         >
-          <i class="fa fa-table"></i><span>Tables</span>
+          <i class="fa fa-table"></i><span>Cartera</span>
         </nuxt-link>
         <nuxt-link
           class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
           to="/"
         >
-          <i class="fa fa-th"></i><span>Forms</span>
+          <i class="fa fa-th"></i><span>Reuniones</span>
         </nuxt-link>
         <nuxt-link
           class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
           to="/"
         >
-          <i class="fa fa-info-circle"></i><span>About</span>
+          <i class="fa fa-info-circle"></i><span>Configuración</span>
         </nuxt-link>
-        <nuxt-link
-          class="ml-4 text-lg text-gray-700 hover:bg-azul hover:text-white"
-          to="/"
-        >
-          <i class="fa fa-sliders-h"></i><span>Settings</span>
-        </nuxt-link>
+ 
       </div>
     </div>
     <!--sidebar end-->
@@ -74,8 +69,8 @@
     <!-- content -->
     <div class="px-2 pt-8 content">
       <div class="pb-4 my-4 mt-6">
-        <div class="flex justify-center bg-gray-300 border-b">
-          <h2 class="text-4xl">Ventas</h2>
+        <div class="flex justify-center bg-gray-200 border-b">
+          <h2 class="p-2 text-4xl">Ventas</h2>
         </div>
         <div
           class="grid gap-2 px-4 mt-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
