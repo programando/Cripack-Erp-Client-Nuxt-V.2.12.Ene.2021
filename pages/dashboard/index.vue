@@ -245,14 +245,16 @@ export default {
   
   mounted() {
     DashBoard.ventas().then((response) => {
+      this.VentasHoy                         = response.data[0].VentasHoy;
+      this.VentasHoyHaceUnAnio               = response.data[0].VentasHoyHaceUnAnio;
+      this.VentasEsteMesHastaHoy             = response.data[0].VentasEsteMesHastaHoy;
+      this.VentasEsteMesHaceUnAnioHastaHoy   = response.data[0].VentasEsteMesHaceUnAnioHastaHoy;
+
       this.dtMonthToTodayOneYearAgoStartText = response.data[0].dtMonthToTodayOneYearAgoStartText;
       this.dtMonthToTodayStartText           = response.data[0].dtMonthToTodayStartText;
       this.dtOneYearAgoStartText             = response.data[0].dtOneYearAgoStartText;
       this.dtStarTodayText                   = response.data[0].dtStarTodayText;
-      this.VentasEsteMesHaceUnAnioHastaHoy   = response.data[0].VentasEsteMesHaceUnAnioHastaHoy;
-      this.VentasEsteMesHastaHoy             = response.data[0].VentasEsteMesHastaHoy;
-      this.VentasHoy                         = response.data[0].VentasEsteMesHaceUnAnioHastaHoy;
-      this.VentasHoyHaceUnAnio               = response.data[0].VentasHoyHaceUnAnio;
+  
       this.VentasHoy                         = numeral(this.VentasHoy).format("$ 0,0");
       this.VentasHoyHaceUnAnio               = numeral(this.VentasHoyHaceUnAnio).format("$ 0,0");
       this.VentasEsteMesHastaHoy             = numeral(this.VentasEsteMesHastaHoy).format( "$ 0,0");
