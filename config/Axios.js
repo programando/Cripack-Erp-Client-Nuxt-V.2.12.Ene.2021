@@ -2,7 +2,7 @@ import { address } from '@/config/apiAddress';
 import axios from "axios";
 
 let Api = axios.create({
-  baseURL: 'http://localhost:3000/',
+   baseURL: address.apiUrl,
 });
  
 Api.defaults.withCredentials = true;
