@@ -78,7 +78,7 @@
             class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-azul"
           >
             <div class="pt-6">
-              <h2 class="text-lg font-light text-white xl:text-xl">
+              <h2 class="text-lg font-light text-white ">
                 {{ dtStarTodayText }}
               </h2>
               <p class="mt-6 text-xl font-light text-white ">
@@ -94,7 +94,7 @@
             class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-rojo"
           >
             <div class="pt-6">
-              <h2 class="text-lg font-light text-white xl:text-xl">
+              <h2 class="text-lg font-light text-white ">
                 {{ dtOneYearAgoStartText }}
               </h2>
               <p class="mt-6 text-xl font-light text-white ">
@@ -110,7 +110,7 @@
             class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-verde"
           >
             <div class="pt-6">
-              <h2 class="text-lg font-light text-white xl:text-xl">
+              <h2 class="text-lg font-light text-white ">
                 {{ dtMonthToTodayStartText }}
               </h2>
               <p class="mt-6 text-xl font-light text-white ">
@@ -126,7 +126,7 @@
             class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-amarillo"
           >
             <div class="pt-6">
-              <h2 class="text-lg font-light text-white xl:text-2xl">
+              <h2 class="text-lg font-light text-white ">
                 {{ dtMonthToTodayOneYearAgoStartText }}
               </h2>
               <p class="mt-6 text-xl font-light text-white ">
@@ -151,7 +151,7 @@
             class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-azul"
           >
             <div class="pt-6">
-              <h2 class="text-lg font-light text-white xl:text-xl">
+              <h2 class="text-lg font-light text-white ">
                 {{ dtStarTodayText }}
               </h2>
               <p class="mt-6 text-xl font-light text-white ">
@@ -167,7 +167,7 @@
             class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-rojo"
           >
             <div class="pt-6">
-              <h2 class="text-lg font-light text-white xl:text-xl">
+              <h2 class="text-lg font-light text-white ">
                 {{ dtOneYearAgoStartText }}
               </h2>
               <p class="mt-6 text-xl font-light text-white ">
@@ -183,7 +183,7 @@
             class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-verde"
           >
             <div class="pt-6">
-              <h2 class="text-lg font-light text-white xl:text-xl">
+              <h2 class="text-lg font-light text-white ">
                 {{ dtMonthToTodayStartText }}
               </h2>
               <p class="mt-6 text-xl font-light text-white ">
@@ -199,7 +199,7 @@
             class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-amarillo"
           >
             <div class="pt-6">
-              <h2 class="text-lg font-light text-white xl:text-2xl">
+              <h2 class="text-lg font-light text-white">
                 {{ dtMonthToTodayOneYearAgoStartText }}
               </h2>
               <p class="mt-6 text-xl font-light text-white ">
