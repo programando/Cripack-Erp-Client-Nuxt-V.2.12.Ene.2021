@@ -1,4 +1,4 @@
-import { address } from '@/config/address';
+import { address } from '@/config/apiAddress';
 import axios from "axios";
 
 let Api = axios.create({

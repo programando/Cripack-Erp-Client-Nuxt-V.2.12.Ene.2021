@@ -2,8 +2,8 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Node template
 
-/config/address.js
-
+/config/apiAddress.js
+documentation.txt
 # Logs
 /logs
 *.log
