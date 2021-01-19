@@ -212,6 +212,8 @@
           </div>
         </div>
       </div>
+
+      <h2>Prueba</h2>
     </div>
   </div>
 </template>
