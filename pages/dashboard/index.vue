@@ -67,9 +67,17 @@
 
     <!-- content -->
     <div class="px-10 pt-8 content">
+
+          <div class="pb-4 my-4 mt-6 border-2">
+                  <div class="flex justify-center bg-gray-200 border-b">
+          <h2 class="p-2 text-xl">Comparativo ventas</h2>
+        </div>
+        <LineChart/>
+      </div>
+
       <div class="pb-4 my-4 mt-6 border-2">
         <div class="flex justify-center bg-gray-200 border-b">
-          <h2 class="p-2 text-3xl">Ventas</h2>
+          <h2 class="p-2 text-xl">Liquidación OT's</h2>
         </div>
         <div
           class="grid gap-2 px-4 mt-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
@@ -140,9 +148,9 @@
         </div>
       </div>
 
-      <div class="pb-4 my-4 mt-16 border-2 border-gray-300">
-        <div class="flex justify-center bg-gray-300 border-gray-300">
-          <h2 class="p-2 text-3xl">Ventas</h2>
+      <div class="pb-4 my-4 mt-8 border-2 border-gray-300">
+        <div class="flex justify-center bg-gray-200 border-gray-300">
+          <h2 class="p-1 text-xl">Órdenes de trabajo registradas</h2>
         </div>
         <div
           class="grid gap-2 px-4 mt-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
@@ -212,6 +220,12 @@
           </div>
         </div>
       </div>
+<<<<<<< HEAD
+=======
+
+
+      
+>>>>>>> dd63df76ef4635e0a94e66879b40e4998752cbf9
     </div>
   </div>
 </template>
@@ -219,6 +233,7 @@
 <script>
 import DashBoard from "@/models/dashBoard";
 import numeral from "numeral";
+import LineChart from "@/components/vueChart/lineChart";
 export default {
   data: () => ({
     dtMonthToTodayOneYearAgoStartText: "",
@@ -230,7 +245,7 @@ export default {
     VentasHoy                        : 0,
     VentasHoyHaceUnAnio              : 0,
   }),
-
+  
   mounted() {
     DashBoard.ventas().then((response) => {
       this.dtMonthToTodayOneYearAgoStartText = response.data[0].dtMonthToTodayOneYearAgoStartText;
