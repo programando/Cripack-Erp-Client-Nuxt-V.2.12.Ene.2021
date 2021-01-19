@@ -61,7 +61,6 @@
         >
           <i class="fa fa-info-circle"></i><span>Configuración</span>
         </nuxt-link>
- 
       </div>
     </div>
     <!--sidebar end-->
@@ -78,7 +77,7 @@
           <div
             class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-azul"
           >
-            <div class="pt-8">
+            <div class="pt-6">
               <h2 class="text-lg font-light text-white xl:text-xl">
                 {{ dtStarTodayText }}
               </h2>
@@ -86,15 +85,15 @@
                 {{ VentasHoy }}
               </p>
             </div>
-            <div class="pt-8">
-              <img class="h-16 xl:h-20" src="/images/graph.svg" alt="" />
+            <div class="pt-6">
+              <img class="h-16 " src="/images/graph.svg" alt="" />
             </div>
           </div>
 
           <div
             class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-rojo"
           >
-            <div class="pt-8">
+            <div class="pt-6">
               <h2 class="text-lg font-light text-white xl:text-xl">
                 {{ dtOneYearAgoStartText }}
               </h2>
@@ -102,15 +101,15 @@
                 {{ VentasHoyHaceUnAnio }}
               </p>
             </div>
-            <div class="pt-8">
-              <img class="h-16 xl:h-20" src="/images/graph.svg" alt="" />
+            <div class="pt-6">
+              <img class="h-16" src="/images/graph.svg" alt="" />
             </div>
           </div>
 
           <div
             class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-verde"
           >
-            <div class="pt-8">
+            <div class="pt-6">
               <h2 class="text-lg font-light text-white xl:text-xl">
                 {{ dtMonthToTodayStartText }}
               </h2>
@@ -118,15 +117,15 @@
                 {{ VentasEsteMesHastaHoy }}
               </p>
             </div>
-            <div class="pt-8">
-              <img class="h-16 xl:h-20" src="/images/pie-chart.svg" alt="" />
+            <div class="pt-6">
+              <img class="h-16 " src="/images/pie-chart.svg" alt="" />
             </div>
           </div>
 
           <div
             class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-amarillo"
           >
-            <div class="pt-8">
+            <div class="pt-6">
               <h2 class="text-lg font-light text-white xl:text-2xl">
                 {{ dtMonthToTodayOneYearAgoStartText }}
               </h2>
@@ -134,8 +133,8 @@
                 {{ VentasEsteMesHaceUnAnioHastaHoy }}
               </p>
             </div>
-            <div class="pt-8">
-              <img class="h-16 xl:h-20" src="/images/pie-chart.svg" alt="" />
+            <div class="pt-6">
+              <img class="h-16" src="/images/pie-chart.svg" alt="" />
             </div>
           </div>
         </div>
@@ -151,7 +150,7 @@
           <div
             class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-azul"
           >
-            <div class="pt-8">
+            <div class="pt-6">
               <h2 class="text-lg font-light text-white xl:text-xl">
                 {{ dtStarTodayText }}
               </h2>
@@ -159,15 +158,15 @@
                 {{ VentasHoy }}
               </p>
             </div>
-            <div class="pt-8">
-              <img class="h-16 xl:h-20" src="/images/graph.svg" alt="" />
+            <div class="pt-6">
+              <img class="h-16 " src="/images/graph.svg" alt="" />
             </div>
           </div>
 
           <div
             class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-rojo"
           >
-            <div class="pt-8">
+            <div class="pt-6">
               <h2 class="text-lg font-light text-white xl:text-xl">
                 {{ dtOneYearAgoStartText }}
               </h2>
@@ -175,15 +174,15 @@
                 {{ VentasHoyHaceUnAnio }}
               </p>
             </div>
-            <div class="pt-8">
-              <img class="h-16 xl:h-20" src="/images/graph.svg" alt="" />
+            <div class="pt-6">
+              <img class="h-16" src="/images/graph.svg" alt="" />
             </div>
           </div>
 
           <div
             class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-verde"
           >
-            <div class="pt-8">
+            <div class="pt-6">
               <h2 class="text-lg font-light text-white xl:text-xl">
                 {{ dtMonthToTodayStartText }}
               </h2>
@@ -191,15 +190,15 @@
                 {{ VentasEsteMesHastaHoy }}
               </p>
             </div>
-            <div class="pt-8">
-              <img class="h-16 xl:h-20" src="/images/pie-chart.svg" alt="" />
+            <div class="pt-6">
+              <img class="h-16 " src="/images/pie-chart.svg" alt="" />
             </div>
           </div>
 
           <div
             class="flex justify-around px-2 mx-2 border rounded-lg h-36 bg-amarillo"
           >
-            <div class="pt-8">
+            <div class="pt-6">
               <h2 class="text-lg font-light text-white xl:text-2xl">
                 {{ dtMonthToTodayOneYearAgoStartText }}
               </h2>
@@ -207,8 +206,8 @@
                 {{ VentasEsteMesHaceUnAnioHastaHoy }}
               </p>
             </div>
-            <div class="pt-8">
-              <img class="h-16 xl:h-20" src="/images/pie-chart.svg" alt="" />
+            <div class="pt-6">
+              <img class="h-16" src="/images/pie-chart.svg" alt="" />
             </div>
           </div>
         </div>
@@ -353,7 +352,6 @@ label #sidebar_btn:hover {
 
 #check:checked ~ .sidebar {
   left: -185px;
-  
 }
 
 #check:checked ~ .sidebar a span {
@@ -364,7 +362,6 @@ label #sidebar_btn:hover {
   font-size: 20px;
   margin-left: 165px;
   width: 100%;
-  
 }
 
 .content {
