@@ -232,6 +232,7 @@ import DashBoard from "@/models/dashBoard";
 import numeral from "numeral";
 import LineChart from "@/components/vueChart/lineChart";
 export default {
+  transition: 'page',
   data: () => ({
     dtMonthToTodayOneYearAgoStartText: "",
     dtMonthToTodayStartText          : "",
@@ -263,6 +264,7 @@ export default {
   },
 };
 </script>
+
 <style>
 header {
   z-index: 10;
@@ -353,9 +355,7 @@ label #sidebar_btn {
   transition-property: color;
 }
 
-label #sidebar_btn:hover {
-}
-
+ 
 #check:checked ~ .sidebar {
   left: -185px;
 }
@@ -414,4 +414,7 @@ label #sidebar_btn:hover {
     display: none;
   }
 }
+
+
+
 </style>
