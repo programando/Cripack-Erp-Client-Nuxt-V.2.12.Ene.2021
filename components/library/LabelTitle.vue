@@ -51,6 +51,9 @@ export default {
         case "extra":
           return "text-extra";
           break;
+        case "white":
+          return "text-white";
+          break;
       }
     }
   }

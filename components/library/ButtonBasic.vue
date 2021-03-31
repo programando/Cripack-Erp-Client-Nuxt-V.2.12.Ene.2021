@@ -1,5 +1,5 @@
 <template>
-  <div :class="[setBorderColor, width]" class="px-4 py-2 rounded-lg">
+  <div :class="[setBorderColor, width, setColor]" class="px-4 py-2 rounded-lg">
     <nuxt-link :to="to">
       <p>{{ text }}</p>
     </nuxt-link>
@@ -12,7 +12,8 @@ export default {
     text: String,
     to: String,
     borderColor: String,
-    width: String
+    width: String,
+    color: String
   },
   computed: {
     setBorderColor() {
@@ -27,6 +28,25 @@ export default {
 
         case "extra":
           return "border border-extra";
+          break;
+      }
+    },
+
+    setColor() {
+      switch (this.color) {
+        case "primary":
+          return "text-primary";
+          break;
+
+        case "secondary":
+          return "text-secondary";
+          break;
+
+        case "extra":
+          return "text-extra";
+          break;
+        case "white":
+          return "text-white";
           break;
       }
     }

@@ -4,67 +4,69 @@
       class="h-screen pt-24 bg-center bg-no-repeat bg-cover"
       style="background-image: url('/images/background.jpg')"
     >
-      <div class="mt-10">
-        <div class="flex justify-center text-4xl font-bold text-white">
-          <span><img src="/images/logoCripack.png" alt=""></span>
-        </div>
+      <div class="flex justify-center mt-10">
         <div
-          class="gap-10 mx-10 mt-10 md:mx-20 lg:mx-24 xl:mx-32 lg:grid lg:grid-cols-2"
+          class="px-8 py-6 mt-6 md:py-8 md:px-12 lg:mt-0 opacity-90 fondo"
         >
-          <div class="flex self-center justify-center text-white">
-            <div>
-              <p class="lg:text-lg">
-              Se gana y se pierde, se sube y se baja, se nace y se muere. Y si
-              la historia es tan simple, ¿por qué te preocupas tanto?
-            </p>
-            <h3 class="flex justify-end mt-1 mr-4 font-semibold lg:text-lg">
-              -Fancundo Cabral
-            </h3>
-            </div>
-            
+          <!-- label, titulo y descripcion -->
+          <div class="flex justify-center text-4xl font-bold text-white">
+            <span><img class="h-24" src="/images/logoCripack.png" alt=""/></span>
           </div>
-          <div
-            class="px-8 py-6 mt-6 bg-white border rounded-lg md:py-8 md:px-12 lg:mt-0"
+
+          <LabelTitle
+            title="Bienvenid@"
+            description="Ingrese para hacer seguimiento a sus servicios y procesos"
+            align="center"
+            color="white"
           >
-            <!-- label, titulo y descripcion -->
+          </LabelTitle>
 
-            <LabelTitle
-              title="Bienvenid@"
-              description="Registre sus credenciales para ingreso al sistema"
-              align="center"
-              color="extra"
-            >
-            </LabelTitle>
-
-            <div class="mt-4">
-              <!-- inputText -->
-              <InputBasic
-                type="text"
-                text="jhonjamesmg@hotmail.com"
-                width="w-full"
-              ></InputBasic>
-
-              <!-- inputPassword -->
-              <InputBasic
-                type="password"
-                text="contraseña"
-                width="w-full"
-              ></InputBasic>
+          <div class="mt-4">
+            <!-- inputText -->
+            <div class="grid items-center lg:grid-cols-3">
+              <label class="pr-10 text-white">Email:</label>
+              <div class="w-full col-span-2">
+                <InputBasic
+                  type="text"
+                  text="jhonjamesmg@hotmail.com"
+                  width="w-full"
+                />
+              </div>
             </div>
 
-            <div class="flex justify-between mt-4">
-              <ButtonBasic
-                text="Olvidé mi contraeña"
-                to="/modulos/Contraseña"
-              ></ButtonBasic>
-
-              <ButtonLoad
-                text="Ingresar al sistema"
-                to="/dashboard/"
-                variant="blue"
-              ></ButtonLoad>
+            <!-- inputPassword -->
+            <div class="grid items-center lg:grid-cols-3">
+              <label class="pr-10 text-white">Contraseña:</label>
+              <div class="w-full col-span-2">
+                <InputBasic
+                  type="password"
+                  text="contraseña"
+                  width="w-full"
+                />
+              </div>
             </div>
           </div>
+
+          <div class="flex justify-center mt-8 mb-2 text-lg font-semibold">
+            <ButtonLoad
+              class="hover:bg-white hover:text-black"
+              text="Ingresar"
+              to="/dashboard/"
+              color="white"
+            />
+          </div>
+          <div class="flex justify-center text-sm text-white">
+            <button>Aun no estoy registrado,<span class="font-semibold">¡Registrarme!</span></button>
+          </div>
+          <div class="flex justify-center mt-2 text-sm text-white">
+            <button>He olvidado mi contraseña,<span class="font-semibold">¡deseo cambiarla!</span></button>
+          </div>
+          <div>
+            <div class="flex justify-center mt-2 text-sm text-white">
+            <button>Sistema de transcripcion Braille</button>
+          </div>
+          </div>
+          
         </div>
       </div>
     </div>
@@ -78,7 +80,16 @@ import ButtonBasic from "@/components/library/ButtonBasic";
 import ButtonLoad from "@/components/library/ButtonLoad";
 
 export default {
-  
-
-  
+  components: {
+    LabelTitle,
+    InputBasic,
+    ButtonBasic,
+    ButtonLoad
+  }
 };
+</script>
+<style>
+.fondo {
+  background: #16182f;
+}
+</style>

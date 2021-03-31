@@ -19,11 +19,14 @@ module.exports = {
       },
       
       colors: {
-        amarillo: '#F8AF3C',
-        azul    : '#272C6B',
-        gris    : '#D3500A',
-        rojo    : '#E74A25',
-        verde   : '#2ECC71',
+        amarillo: '#FFFD7C',
+        azul    : '#20286d',
+        gris    : '#EAEAEA',
+        rojo    : '#FF0000',
+        verde   : '#1EFF37',
+        celeste:  '#2E9AFE',
+        celesteClaro: '#00b4e9',
+        azulClaro: '#286090'
       },
       fontFamily: {
         rale: 'Raleway',
