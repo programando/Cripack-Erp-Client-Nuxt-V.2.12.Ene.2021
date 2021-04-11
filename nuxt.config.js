@@ -1,3 +1,4 @@
+import dotenv from "dotenv"; dotenv.config();
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -24,6 +25,14 @@ export default {
       },
     ]
   },
+    env: {
+     
+      URL_BASE: process.env.URL_BASE,
+      URL_API: process.env.URL_API,
+      URL_WEB: process.env.URL_WEB,
+      URL_RESET_PASS: process.env.URL_RESET_PASS,
+  },
+    
 
   
   // Global CSS (https://go.nuxtjs.dev/config-css)
