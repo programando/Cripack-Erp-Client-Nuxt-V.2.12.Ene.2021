@@ -4,8 +4,8 @@
       class="h-screen pt-24 bg-center bg-no-repeat bg-cover"
       style="background-image: url('/images/background.jpg')"
     >
-      <div class="flex justify-center mt-10">
-        <div class="px-8 py-6 mt-6 md:py-8 md:px-12 lg:mt-0 opacity-90 fondo">
+      <div class="flex justify-center mt-14">
+        <div class="px-8 py-6 mt-6 md:py-8 md:px-10 lg:mt-0 opacity-90 fondo">
           <!-- label, titulo y descripcion -->
           <div class="flex justify-center text-4xl font-bold text-white">
             <span

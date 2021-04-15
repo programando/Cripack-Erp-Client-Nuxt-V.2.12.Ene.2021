@@ -1,7 +1,7 @@
 <template>
   <div class="mt-2">
     <input
-      class="px-4 py-2 bg-gray-200"
+      class="px-4 py-2 text-black bg-gray-200"
       :class="[width,setBorderColor]" 
       :type="type"
       :placeholder="text" 

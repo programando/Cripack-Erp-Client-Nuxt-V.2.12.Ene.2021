@@ -23,7 +23,7 @@ export default {
     setVariant() {
       switch (this.variant) {
         case "success":
-          return "text-white bg-green-600 hover:bg-green-800";
+          return "text-white bg-green-600 hover:bg-green-800 hover:text-white";
           break;
         case "primary":
           return "text-white bg-primary hover:bg-red-900";
