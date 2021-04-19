@@ -3,8 +3,6 @@
     <button @click="toggleModal = !toggleModal">
       Aun no estoy registrado,<span class="font-semibold">¡Registrarme!</span>
     </button>
-
-    <!-- This example requires Tailwind CSS v2.0+ -->
     <transition
       enter-active-class="duration-300 ease-out"
       enter-class="translate-y-4 opacity-0 sm:translate-y-0 sm:scale-95"
@@ -21,7 +19,7 @@
         aria-modal="true"
       >
         <div
-          class="flex items-end justify-center min-h-screen px-4 pb-20 text-center sm:block sm:p-0"
+          class="flex items-end justify-center min-h-screen px-4 text-center sm:block sm:p-0"
         >
           <div
             class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75"
@@ -46,7 +44,7 @@
               v-if="toggleModal"
               class="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white shadow-xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
             >
-              <div class="flex justify-center ">
+              <div class="flex items-center justify-center ">
                 <div
                   class="px-8 py-6 mt-6 md:py-8 md:px-24 lg:mt-0 opacity-90 fondo"
                 >

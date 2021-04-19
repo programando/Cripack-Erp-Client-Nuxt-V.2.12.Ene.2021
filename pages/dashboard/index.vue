@@ -1,9 +1,11 @@
 <template>
   <div>
     <Header />
-    <div class="mx-2 mt-10">
+    <div class="mx-2 mt-4">
       <h2 class="text-xl text-azul md:text-3xl">Historial de OT's</h2>
-      <TableOts></TableOts>
+      <div class="mt-2">
+        <TableOts></TableOts>
+      </div>
     </div>
   </div>
   
@@ -23,3 +25,7 @@ export default {
 <style>
 
 </style>
+
+
+
+
