@@ -53,7 +53,7 @@
                     class="flex justify-center text-4xl font-bold text-white"
                   >
                     <span
-                      ><img class="h-24" src="/images/logoCripack.png" alt=""
+                      ><img class="h-24" src="/images/logo.png" alt=""
                     /></span>
                   </div>
                   <div class="mt-4">

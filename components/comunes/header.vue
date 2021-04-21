@@ -1,7 +1,7 @@
 <template>
-  <div class="flex items-center justify-between bg-azul">
+  <div class="fixed z-10 flex items-center justify-between w-full bg-azul">
     <div class="flex">
-      <img class="h-20" src="/images/logoCripack.png" alt=""/>
+      <img class="h-20" src="/images/logo.png" alt=""/>
       <div class="mt-4 ml-4 text-white">
         <h3>Bienvenido(a)</h3>
         <h3 class="font-semibold">CARTONES AMERICA S.A</h3>
