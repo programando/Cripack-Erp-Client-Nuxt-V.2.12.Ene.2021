@@ -7,75 +7,70 @@
       <input class="px-2 border focus:outline-none" type="text" />
     </div>
 
-    <!-- component -->
-    <div class="font-latos">
-      <div class="bg-gray-100 ">
-        <div class="w-full ">
-          <div class="bg-white rounded shadow-md ">
-            <table class="w-full ">
-              <thead class="w-full">
-                <tr class="text-sm text-gray-600 bg-gray-200 ">
-                  <th class="px-2 py-2 text-left ">#OT</th>
-                  <th class="px-2 py-2 text-left ">Solicitud</th>
-                  <th class="px-2 py-2 text-left ">Terminada</th>
-                  <th class="px-2 py-2 text-left ">Referencia</th>
-                  <th class="px-2 py-2 text-left ">Estilo</th>
-                  <th class="px-2 py-2 text-left ">Cantidad</th>
-                  <th class="px-2 py-2 text-left ">Cabidad</th>
-                  <th class="w-20 px-2 py-2 text-left ">Estado</th>
-                  <th class="px-2 py-2 text-left ">#Factura</th>
-                  <th class="px-2 py-2 text-left ">#Remisión</th>
-                  <th class="px-2 py-2 text-left ">#Guia</th>
-                  <th class="px-2 py-2 text-left ">Fecha Entrega</th>
-                </tr>
-              </thead>
-              <tbody class="text-gray-600">
-                <tr
-                  v-for="(producto, index) in productos"
-                  :key="index"
-                  class="text-xs border-b border-gray-200 hover:bg-gray-100"
-                >
-                  <td class="px-2 py-2 text-left ">
-                    {{ producto.ot }}
-                  </td>
-                  <td class="px-2 py-2 text-left ">
-                    {{ producto.solicitud }}
-                  </td>
-                  <td class="px-2 py-2 text-left ">
-                    {{ producto.terminada }}
-                  </td>
-                  <td class="px-2 py-2 text-left ">
-                    {{ producto.referencia }}
-                  </td>
-                  <td class="px-2 py-2 text-left ">
-                    {{ producto.estilo }}
-                  </td>
-                  <td class="px-2 py-2 text-left ">
-                    {{ producto.cantidad }}
-                  </td>
-                  <td class="px-2 py-2 text-left ">
-                    {{ producto.cabidad }}
-                  </td>
-                  <td class="w-1 px-2 py-2 text-left">
-                    {{ producto.estado }}
-                  </td>
-                  <td class="px-2 py-2 text-left ">
-                    {{ producto.factura }}
-                  </td>
-                  <td class="px-2 py-2 text-left ">
-                    {{ producto.remision }}
-                  </td>
-                  <td class="px-2 py-2 text-left ">
-                    {{ producto.guia }}
-                  </td>
-                  <td class="px-2 py-2 text-left ">
-                    {{ producto.fecha }}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+    <div class="w-full">
+      <div class="bg-white rounded shadow-md ">
+        <table class="w-full ">
+          <thead class="w-full">
+            <tr class="text-sm text-gray-600 bg-gray-200 ">
+              <th class="px-2 py-2 text-left ">#OT</th>
+              <th class="px-2 py-2 text-left ">Solicitud</th>
+              <th class="px-2 py-2 text-left ">Terminada</th>
+              <th class="px-2 py-2 text-left ">Referencia</th>
+              <th class="px-2 py-2 text-left ">Estilo</th>
+              <th class="px-2 py-2 text-left ">Cantidad</th>
+              <th class="px-2 py-2 text-left ">Cabidad</th>
+              <th class="w-20 px-2 py-2 text-left ">Estado</th>
+              <th class="px-2 py-2 text-left ">#Factura</th>
+              <th class="px-2 py-2 text-left ">#Remisión</th>
+              <th class="px-2 py-2 text-left ">#Guia</th>
+              <th class="px-2 py-2 text-left ">Fecha Entrega</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-600">
+            <tr
+              v-for="(producto, index) in productos"
+              :key="index"
+              class="text-xs border-b border-gray-200 hover:bg-gray-100"
+            >
+              <td class="px-2 py-2 text-left ">
+                {{ producto.ot }}
+              </td>
+              <td class="px-2 py-2 text-left ">
+                {{ producto.solicitud }}
+              </td>
+              <td class="px-2 py-2 text-left ">
+                {{ producto.terminada }}
+              </td>
+              <td class="px-2 py-2 text-left ">
+                {{ producto.referencia }}
+              </td>
+              <td class="px-2 py-2 text-left ">
+                {{ producto.estilo }}
+              </td>
+              <td class="px-2 py-2 text-left ">
+                {{ producto.cantidad }}
+              </td>
+              <td class="px-2 py-2 text-left ">
+                {{ producto.cabidad }}
+              </td>
+              <td class="w-1 px-2 py-2 text-left">
+                {{ producto.estado }}
+              </td>
+              <td class="px-2 py-2 text-left ">
+                {{ producto.factura }}
+              </td>
+              <td class="px-2 py-2 text-left ">
+                {{ producto.remision }}
+              </td>
+              <td class="px-2 py-2 text-left ">
+                {{ producto.guia }}
+              </td>
+              <td class="px-2 py-2 text-left ">
+                {{ producto.fecha }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
