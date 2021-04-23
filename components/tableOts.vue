@@ -1,175 +1,137 @@
 <template>
-  <div class="text-sm">
+  <div class="font-latos">
     <div class="flex justify-between my-2">
       <h3 class="mt-4">
         Mostrando registros del 1 al 10 de un total de 150 registros
       </h3>
       <input class="px-2 border focus:outline-none" type="text" />
     </div>
-    
-      <ve-table :columns="columns" :table-data="tableData" />
-      <div class="table-pagination">
-        <ve-pagination
-          :total="totalCount"
-          :page-index="pageIndex"
-          :page-size="pageSize"
-          @on-page-number-change="pageNumberChange"
-          @on-page-size-change="pageSizeChange"
-        />
+
+    <!-- component -->
+    <div class="font-latos">
+      <div class="bg-gray-100 ">
+        <div class="w-full ">
+          <div class="bg-white rounded shadow-md ">
+            <table class="w-full ">
+              <thead class="w-full">
+                <tr class="text-sm text-gray-600 bg-gray-200 ">
+                  <th class="px-2 py-2 text-left ">#OT</th>
+                  <th class="px-2 py-2 text-left ">Solicitud</th>
+                  <th class="px-2 py-2 text-left ">Terminada</th>
+                  <th class="px-2 py-2 text-left ">Referencia</th>
+                  <th class="px-2 py-2 text-left ">Estilo</th>
+                  <th class="px-2 py-2 text-left ">Cantidad</th>
+                  <th class="px-2 py-2 text-left ">Cabidad</th>
+                  <th class="w-20 px-2 py-2 text-left ">Estado</th>
+                  <th class="px-2 py-2 text-left ">#Factura</th>
+                  <th class="px-2 py-2 text-left ">#Remisión</th>
+                  <th class="px-2 py-2 text-left ">#Guia</th>
+                  <th class="px-2 py-2 text-left ">Fecha Entrega</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-600">
+                <tr
+                  v-for="(producto, index) in productos"
+                  :key="index"
+                  class="text-xs border-b border-gray-200 hover:bg-gray-100"
+                >
+                  <td class="px-2 py-2 text-left ">
+                    {{ producto.ot }}
+                  </td>
+                  <td class="px-2 py-2 text-left ">
+                    {{ producto.solicitud }}
+                  </td>
+                  <td class="px-2 py-2 text-left ">
+                    {{ producto.terminada }}
+                  </td>
+                  <td class="px-2 py-2 text-left ">
+                    {{ producto.referencia }}
+                  </td>
+                  <td class="px-2 py-2 text-left ">
+                    {{ producto.estilo }}
+                  </td>
+                  <td class="px-2 py-2 text-left ">
+                    {{ producto.cantidad }}
+                  </td>
+                  <td class="px-2 py-2 text-left ">
+                    {{ producto.cabidad }}
+                  </td>
+                  <td class="w-1 px-2 py-2 text-left">
+                    {{ producto.estado }}
+                  </td>
+                  <td class="px-2 py-2 text-left ">
+                    {{ producto.factura }}
+                  </td>
+                  <td class="px-2 py-2 text-left ">
+                    {{ producto.remision }}
+                  </td>
+                  <td class="px-2 py-2 text-left ">
+                    {{ producto.guia }}
+                  </td>
+                  <td class="px-2 py-2 text-left ">
+                    {{ producto.fecha }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
-    
+    </div>
   </div>
 </template>
 
-
 <script>
-// Simulation table data from database
-let DB_DATA = [];
-
 export default {
   data() {
     return {
-      // page index
-      pageIndex: 1,
-      // page size
-      pageSize: 8,
-      columns: [
+      productos: [
         {
-          field: "",
-          key: "a",
-          title: "#OT",
-          align: "center",
-          width: 20,
-          renderBodyCell: ({ row, column, rowIndex }, h) => {
-            return (this.pageIndex - 1) * this.pageSize + rowIndex + 1;
-          }
-        },
-        {
-          field: "solicitud",
-          key: "b",
-          title: "Solicitud",
-          align: "center",
-          width: 150
-        },
-        {
-          field: "terminada",
-          key: "c",
-          title: "Terminada",
-          align: "left",
-          width: 150
-        },
-        {
-          field: "referencia",
-          key: "d",
-          title: "Referencia",
-          align: "left",
-          width: 300
-        },
-        {
-          field: "estilo",
-          key: "e",
-          title: "Estilo",
-          align: "left",
-          width: 200
-        },
-        {
-          field: "cantidad",
-          key: "f",
-          title: "Cantidad",
-          align: "left",
-          width: 20
-        },
-        {
-          field: "cabidad",
-          key: "g",
-          title: "Cabidad",
-          align: "left",
-          width: 20
-        },
-        {
-          field: "estado",
-          key: "h",
-          title: "Estado",
-          align: "left",
-          width: 100
-        },
-        {
-          field: "factura",
-          key: "i",
-          title: "#Factura",
-          align: "left",
-          width: 100
-        },
-        {
-          field: "remision",
-          key: "j",
-          title: "#Remision",
-          align: "left",
-          width: 100
-        },
-        { field: "guia", key: "k", title: "#Guia", align: "left", width: 100 },
-        {
-          field: "fecha",
-          key: "l",
-          title: "Fecha entrega",
-          align: "left",
-          width: 100
-        }
-      ]
-    };
-  },
-  computed: {
-    // table data
-    tableData() {
-      const { pageIndex, pageSize } = this;
-      return DB_DATA.slice((pageIndex - 1) * pageSize, pageIndex * pageSize);
-    },
-    // total count
-    totalCount() {
-      return DB_DATA.length;
-    }
-  },
-  methods: {
-    // page number change
-    pageNumberChange(pageIndex) {
-      this.pageIndex = pageIndex;
-    },
-
-    // page size change
-    pageSizeChange(pageSize) {
-      this.pageIndex = 1;
-      this.pageSize = pageSize;
-    },
-
-    // Simulation table data
-    initDatabase() {
-      DB_DATA = [];
-      for (let i = 0; i < 100; i++) {
-        DB_DATA.push({
-          solicitud: `14-Apr-20${i}1`,
-          terminada: `14-Apr-20${i}1`,
-          referencia: `(P) TQ #252 PRODUCTORA DE PLAGUICIDAS COD 3449238${i}`,
-          estilo: `TROQUEL PLANO - NUEVO ${i}`,
+          ot: 80993,
+          solicitud: "14-Apr-2021",
+          terminada: "14-Apr-2021",
+          referencia: "(P) TQ#252 PRODUCTORA DE PLAGUICIDAS COD 3449238",
+          estilo: "PLANO PREALISTAMIEN - NUEVO",
           cantidad: 1,
           cabidad: 2,
-          estado: "En proceso",
+          estado: "En Proceso",
           factura: "N/A",
           remision: "",
           guia: "",
-          fecha: `14-Apr-20${i}1`
-        });
-      }
-    }
-  },
-  created() {
-    this.initDatabase();
+          fecha: "17-Apr-2021"
+        },
+        {
+          ot: 80993,
+          solicitud: "14-Apr-2021",
+          terminada: "14-Apr-2021",
+          referencia: "(P) TQ#252 PRODUCTORA DE PLAGUICIDAS COD 3449238",
+          estilo: "PLANO PREALISTAMIEN - NUEVO",
+          cantidad: 1,
+          cabidad: 2,
+          estado: "En Proceso",
+          factura: "N/A",
+          remision: "",
+          guia: "",
+          fecha: "17-Apr-2021"
+        },
+        {
+          ot: 80993,
+          solicitud: "14-Apr-2021",
+          terminada: "14-Apr-2021",
+          referencia: "(P) TQ#252 PRODUCTORA DE ",
+          estilo: "PLANO ",
+          cantidad: 1,
+          cabidad: 2,
+          estado: "En Proceso",
+          factura: "123133",
+          remision: "212223",
+          guia: "56657",
+          fecha: "17-Apr-2021"
+        }
+      ]
+    };
   }
 };
 </script>
 
-<style>
-.table-pagination {
-  margin-top: 20px;
-  text-align: right;
-}
-</style>
+<style></style>
