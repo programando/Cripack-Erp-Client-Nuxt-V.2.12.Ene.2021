@@ -4,7 +4,7 @@
       <h3 class="mt-4">
         Mostrando registros del 1 al 10 de un total de 150 registros
       </h3>
-      <input class="px-2 border focus:outline-none" type="text" v-model="value" placeholder="Buscar" @input="filterResults(value)"/>
+      <input class="px-2 border focus:outline-none" type="text" v-model="busqueda" placeholder="Buscar" />
     </div>
 
     <div class="w-full">
@@ -28,7 +28,7 @@
           </thead>
           <tbody class="text-gray-600">
             <tr
-              v-for="(producto, index) in filter"
+              v-for="(producto, index) in busquedaFiltrada"
               :key="index"
               class="text-xs border-b border-gray-200 hover:bg-gray-100"
             >
@@ -80,7 +80,7 @@
 export default {
   data() {
     return {
-      value: 'a',
+      busqueda: '',
       productos: [
         {
           ot: 70993,
@@ -125,21 +125,21 @@ export default {
           fecha: "17-Apr-2021"
         }
       ],
-      filter:[]
+      
       
     };
   },
   
-  methods: {
-    filterResults ( value ) {
-      this.filter = this.productos.filter(producto => producto.estilo.toLowerCase().startsWith(value.toLowerCase()));
+  computed: {
+    busquedaFiltrada(){
+      return this.productos.filter(producto => {
+        return producto.estilo.toLowerCase().includes(this.busqueda.toLowerCase())
+      })
       
     }
   },
 
-  mounted () {
-    this.value = ''
-  },
+  
   
 };
 </script>
