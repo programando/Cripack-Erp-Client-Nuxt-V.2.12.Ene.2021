@@ -4,7 +4,7 @@
       <h3 class="mt-4">
         Mostrando registros del 1 al 10 de un total de 150 registros
       </h3>
-      <input class="px-2 border focus:outline-none" type="text" />
+      <input class="px-2 border focus:outline-none" type="text" v-model="value" placeholder="Buscar" @input="filterResults(value)"/>
     </div>
 
     <div class="w-full">
@@ -28,7 +28,7 @@
           </thead>
           <tbody class="text-gray-600">
             <tr
-              v-for="(producto, index) in productos"
+              v-for="(producto, index) in filter"
               :key="index"
               class="text-xs border-b border-gray-200 hover:bg-gray-100"
             >
@@ -80,9 +80,10 @@
 export default {
   data() {
     return {
+      value: 'a',
       productos: [
         {
-          ot: 80993,
+          ot: 70993,
           solicitud: "14-Apr-2021",
           terminada: "14-Apr-2021",
           referencia: "(P) TQ#252 PRODUCTORA DE PLAGUICIDAS COD 3449238",
@@ -99,8 +100,8 @@ export default {
           ot: 80993,
           solicitud: "14-Apr-2021",
           terminada: "14-Apr-2021",
-          referencia: "(P) TQ#252 PRODUCTORA DE PLAGUICIDAS COD 3449238",
-          estilo: "PLANO PREALISTAMIEN - NUEVO",
+          referencia: "PRODUCTORA DE PLAGUICIDAS COD 3449238",
+          estilo: "TROPEL PREALISTAMIEN - NUEVO",
           cantidad: 1,
           cabidad: 2,
           estado: "En Proceso",
@@ -110,11 +111,11 @@ export default {
           fecha: "17-Apr-2021"
         },
         {
-          ot: 80993,
+          ot: 90993,
           solicitud: "14-Apr-2021",
           terminada: "14-Apr-2021",
-          referencia: "(P) TQ#252 PRODUCTORA DE ",
-          estilo: "PLANO ",
+          referencia: "TQ#252 PRODUCTORA DE ",
+          estilo: "LEVA",
           cantidad: 1,
           cabidad: 2,
           estado: "En Proceso",
@@ -123,9 +124,23 @@ export default {
           guia: "56657",
           fecha: "17-Apr-2021"
         }
-      ]
+      ],
+      filter:[]
+      
     };
-  }
+  },
+  
+  methods: {
+    filterResults ( value ) {
+      this.filter = this.productos.filter(producto => producto.estilo.toLowerCase().startsWith(value.toLowerCase()));
+      
+    }
+  },
+
+  mounted () {
+    this.value = ''
+  },
+  
 };
 </script>
 
