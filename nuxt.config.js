@@ -51,8 +51,30 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+     '@nuxtjs/auth-next'
   ],
+
+  auth: { 
+    strategies: {
+      'laravelSanctum': {
+        provider: 'laravel/sanctum',
+        url: process.env.URL_API,
+        endpoints: {
+          login: {
+              url:'/login',
+          },
+          user: {
+            url: '/user',
+          },
+          logout: {
+            url:'/logout'
+          }
+        }
+      },
+    },
+    
+  },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
@@ -61,7 +83,9 @@ export default {
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
+  axios: {
+    credentials: true,
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {

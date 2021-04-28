@@ -23,8 +23,8 @@
             <div class="w-full col-span-2">
               <InputBasic
                 type="text"
-                text="jhonjamesmg@hotmail.com"
                 width="w-full"
+                v-model="formLogin.email"
               />
             </div>
           </div>
@@ -32,10 +32,13 @@
           <div class="grid items-center lg:grid-cols-3">
             <label class="pr-10 text-white">Contraseña:</label>
             <div class="w-full col-span-2">
-              <InputBasic type="password" text="contraseña" width="w-full" />
+              <InputBasic type="password" text="contraseña" width="w-full" 
+              v-model="formLogin.password"
+              />
             </div>
           </div>
         </div>
+
 
         <div class="flex justify-center mt-8 mb-2 text-lg font-semibold">
           <ButtonLoad
@@ -83,12 +86,13 @@ export default {
   data() {
     return {
       modal: true,
-      form : {
-          emal:'',
-          password:'',
+      formLogin : {
+          emal:'jhonjamesmg@hotmail.com',
+          password:'cripack',
       }
     };
-  }
+  },
+  
 };
 </script>
 <style>

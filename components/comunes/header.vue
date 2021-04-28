@@ -3,7 +3,6 @@
     <div class="flex">
       <img class="h-20" src="/images/logo.png" alt=""/>
       <div class="mt-4 ml-4 text-white">
-        <h3>Bienvenido(a)</h3>
         <h3 class="font-semibold">CARTONES AMERICA S.A</h3>
       </div>
     </div>
