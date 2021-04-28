@@ -57,7 +57,7 @@
         </div>
         <div>
           <div class="flex justify-center mt-2 text-sm text-white">
-            <button>Sistema de transcripcion Braille</button>
+            <button>Sistema de transcripción Braille</button>
           </div>
         </div>
       </div>
@@ -82,7 +82,11 @@ export default {
   },
   data() {
     return {
-      modal: true
+      modal: true,
+      form : {
+          emal:'',
+          password:'',
+      }
     };
   }
 };
