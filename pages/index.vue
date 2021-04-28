@@ -9,9 +9,9 @@
         <div class="flex justify-center text-4xl font-bold text-white">
           <span><img class="h-24" src="/images/logo.png" alt=""/></span>
         </div>
+
         <LabelTitle
-          title="Bienvenid@"
-          description="Ingrese para hacer seguimiento a sus servicios y procesos"
+          description="Ingrese sus datos para ingresar a nuestro sistema"
           align="center"
           color="white"
         >
@@ -21,20 +21,24 @@
           <div class="grid items-center lg:grid-cols-3">
             <label class="pr-10 text-white">Email:</label>
             <div class="w-full col-span-2">
-              <InputBasic
-                type="text"
-                width="w-full"
-                v-model="formLogin.email"
-              />
+                <InputBasic type= "email"
+                        placeholder="Dirección electrónica (Email)"
+                        v-model="formLogin.email" 
+                        :errors="errors.email"
+                        @keyup="clearErrors">
+                 </InputBasic>
             </div>
           </div>
           <!-- inputPassword -->
           <div class="grid items-center lg:grid-cols-3">
             <label class="pr-10 text-white">Contraseña:</label>
             <div class="w-full col-span-2">
-              <InputBasic type="password" text="contraseña" width="w-full" 
-              v-model="formLogin.password"
-              />
+                <InputBasic type= "password"
+                        class="mt-6"
+                        placeholder="Password o contraseña"
+                        v-model="formLogin.password" 
+                        @keyup="clearErrors"
+                > </InputBasic>
             </div>
           </div>
         </div>
@@ -70,7 +74,7 @@
 
 <script>
 import LabelTitle from "@/components/library/LabelTitle";
-import InputBasic from "@/components/library/InputBasic";
+import InputBasic from "@/components/htmlControls/inputBasic";
 import ButtonBasic from "@/components/library/ButtonBasic";
 import ButtonLoad from "@/components/library/ButtonLoad";
 import ButtonRegister from "@/components/library/buttonRegister";
@@ -86,14 +90,25 @@ export default {
   data() {
     return {
       modal: true,
+      errors: [ ],
+      buttonIsDisabled: false,
       formLogin : {
-          emal:'jhonjamesmg@hotmail.com',
+          email:'jhonjamesmg@hotmail.com',
           password:'cripack',
       }
     };
   },
+
+  methods: {
+         clearErrors() {
+          this.errors = [];
+          this.buttonIsDisabled = false;
+      },
+  },
   
 };
+
+
 </script>
 <style>
 .fondo {

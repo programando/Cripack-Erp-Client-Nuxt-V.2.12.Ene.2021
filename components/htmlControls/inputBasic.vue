@@ -1,12 +1,12 @@
 <template>
   <div>
         <label v-if="label"
-            class="form-label block mb-1 font-semibold text-gray-700"
+            class="block mb-1 font-semibold text-gray-700 form-label"
             :for="id">
                {{ label }}
           </label >    
           <div class="relative">
-            <input class="rounded px-4 w-full py-1 bg-gray-200 text-sm border border-gray-400 text-gray-700 placeholder-gray-700 focus:bg-white outline-none" 
+            <input class="w-full px-4 py-1 text-sm text-gray-700 placeholder-gray-700 bg-gray-200 border border-gray-400 rounded outline-none focus:bg-white" 
                 :id="id"
                 ref="input"
                 v-bind="$attrs"       
@@ -22,8 +22,8 @@
                 @blur    = "$emit('blur', $event)"
                 @keyup   = "$emit('keyup', $event)"
             />
-            <div v-if="errors.length" class="text-red-600 mt-1 text-xs ml-1">
-                <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{ errors[0] }}
+            <div v-if="errors.length" class="mt-1 ml-1 text-xs text-red-600">
+                <font-awesome-icon :icon="['fas', 'exclamation-triangle']"/> {{ errors[0] }}
             </div>
         </div>        
   </div>

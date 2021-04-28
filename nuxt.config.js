@@ -52,7 +52,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-     '@nuxtjs/auth-next'
+    '@nuxtjs/auth-next',
+    '@nuxtjs/fontawesome'
   ],
 
   auth: { 
@@ -76,6 +77,12 @@ export default {
     
   },
 
+  fontawesome: {
+    icons: {
+      solid: true,
+      brands:true
+      }
+  },
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // https://go.nuxtjs.dev/axios
