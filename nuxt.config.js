@@ -91,7 +91,8 @@ export default {
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    credentials: true,
+    baseURL: process.env.URL_API,
+    credentials: true
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)

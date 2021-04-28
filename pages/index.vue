@@ -45,16 +45,20 @@
 
 
         <div class="flex justify-center mt-8 mb-2 text-lg font-semibold">
-          <ButtonLoad
-            class="hover:bg-white hover:text-black"
-            text="Ingresar"
-            to="/dashboard/"
-            color="white"
-          />
+           <BtnCallToAction 
+                @click.prevent="login" 
+                size="small" 
+                ref="ButtonLoading" 
+                variant="success"
+                variant-type="normal">  Ingresar
+            </BtnCallToAction>
         </div>
+
+
         <div class="flex justify-center text-sm text-white">
           <ButtonRegister />
         </div>
+
         <div class="flex justify-center mt-2 text-sm text-white">
           <button>
             He olvidado mi contraseña,<span class="font-semibold"
@@ -76,7 +80,7 @@
 import LabelTitle from "@/components/library/LabelTitle";
 import InputBasic from "@/components/htmlControls/inputBasic";
 import ButtonBasic from "@/components/library/ButtonBasic";
-import ButtonLoad from "@/components/library/ButtonLoad";
+import BtnCallToAction from "@/components/htmlControls/buttonCallToActionLoading";
 import ButtonRegister from "@/components/library/buttonRegister";
 
 export default {
@@ -84,7 +88,7 @@ export default {
     LabelTitle,
     InputBasic,
     ButtonBasic,
-    ButtonLoad,
+    BtnCallToAction,
     ButtonRegister
   },
   data() {
@@ -98,8 +102,29 @@ export default {
       }
     };
   },
-
+  mounted() {
+     this.$axios.$get('/sanctum/csrf-cookie');
+  },
   methods: {
+     async login() {
+       alert('login');
+      await this.$auth.loginWith('laravelSanctum', {
+        data: {
+          email: this.form.email,
+          password: this.form.password,
+        },
+      })
+       .then (()=> {          
+              this.$router.push('/dashboard')
+             })
+            .catch( error => {
+              if ( error.response.status == 422) {
+                this.errors = error.response.data.errors;  
+              }
+            });
+
+    },
+
          clearErrors() {
           this.errors = [];
           this.buttonIsDisabled = false;
