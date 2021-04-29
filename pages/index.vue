@@ -106,7 +106,9 @@ export default {
    
   },
   methods: {
- 
+        login() {
+            this.$cookiz.set('logueado', 'true')
+        },
 
          clearErrors() {
           this.errors = [];
