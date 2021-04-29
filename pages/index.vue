@@ -52,6 +52,12 @@
                 variant="success"
                 variant-type="normal">  Ingresar
             </BtnCallToAction>
+            <ButtonBasic
+              text="entrar"
+              to="dashboard"
+              color="white"
+              borderColor="primary"
+            ></ButtonBasic>
         </div>
 
 
@@ -83,6 +89,7 @@ import ButtonBasic from "@/components/library/ButtonBasic";
 import BtnCallToAction from "@/components/htmlControls/buttonCallToActionLoading";
 import ButtonRegister from "@/components/library/buttonRegister";
 
+
 export default {
   components: {
     LabelTitle,
@@ -90,6 +97,7 @@ export default {
     ButtonBasic,
     BtnCallToAction,
     ButtonRegister
+    
   },
   data() {
     return {

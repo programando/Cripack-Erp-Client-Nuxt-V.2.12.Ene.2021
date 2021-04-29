@@ -4,7 +4,19 @@
       <h3 class="mt-4">
         Mostrando registros del 1 al 10 de un total de 150 registros
       </h3>
-      <input class="px-2 border focus:outline-none" type="text" v-model="busqueda" placeholder="Buscar" />
+      <div class="flex items-center">
+        <img
+          class="z-20 inline h-6 -mr-8"
+          src="/images/search-repo.svg"
+          alt=""
+        />
+        <input
+          class="px-10 py-2 border-2 focus:outline-none"
+          type="text"
+          v-model="busqueda"
+          placeholder="Buscar por Nombre"
+        />
+      </div>
     </div>
 
     <div class="w-full">
@@ -80,7 +92,7 @@
 export default {
   data() {
     return {
-      busqueda: '',
+      busqueda: "",
       productos: [
         {
           ot: 70993,
@@ -124,23 +136,19 @@ export default {
           guia: "56657",
           fecha: "17-Apr-2021"
         }
-      ],
-      
-      
+      ]
     };
   },
-  
-  computed: {
-    busquedaFiltrada(){
-      return this.productos.filter(producto => {
-        return producto.estilo.toLowerCase().includes(this.busqueda.toLowerCase())
-      })
-      
-    }
-  },
 
-  
-  
+  computed: {
+    busquedaFiltrada() {
+      return this.productos.filter(producto => {
+        return producto.estilo
+          .toLowerCase()
+          .includes(this.busqueda.toLowerCase());
+      });
+    }
+  }
 };
 </script>
 
