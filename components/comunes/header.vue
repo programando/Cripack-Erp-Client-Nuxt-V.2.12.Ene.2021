@@ -9,7 +9,7 @@
     <div class="flex mr-4 space-x-6">
       <NavLinks 
         text="Historial"
-        to="/"
+        to="/dashboard"
       />
       <NavLinks 
         text="Estado OT's"
@@ -17,7 +17,7 @@
       />
       <NavLinks 
         text="Ventas"
-        to="/"
+        to="/dashboard/ventas"
       />
       <NavLinks 
         text="Braille"
@@ -25,7 +25,7 @@
       />
       <NavLinks 
         text="Contacto"
-        to="/"
+        to="/dashboard/contacto"
       />
       <NavLinks 
         text="Comercial"
