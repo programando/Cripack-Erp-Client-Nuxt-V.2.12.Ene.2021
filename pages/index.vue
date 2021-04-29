@@ -103,27 +103,10 @@ export default {
     };
   },
   mounted() {
-     this.$axios.$get('/sanctum/csrf-cookie');
+   
   },
   methods: {
-     async login() {
-       alert('login');
-      await this.$auth.loginWith('laravelSanctum', {
-        data: {
-          email: this.form.email,
-          password: this.form.password,
-        },
-      })
-       .then (()=> {          
-              this.$router.push('/dashboard')
-             })
-            .catch( error => {
-              if ( error.response.status == 422) {
-                this.errors = error.response.data.errors;  
-              }
-            });
-
-    },
+ 
 
          clearErrors() {
           this.errors = [];

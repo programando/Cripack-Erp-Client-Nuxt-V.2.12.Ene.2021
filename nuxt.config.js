@@ -52,30 +52,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/auth-next',
     '@nuxtjs/fontawesome'
   ],
-
-  auth: { 
-    strategies: {
-      'laravelSanctum': {
-        provider: 'laravel/sanctum',
-        url: process.env.URL_API,
-        endpoints: {
-          login: {
-              url:'/login',
-          },
-          user: {
-            url: '/user',
-          },
-          logout: {
-            url:'/logout'
-          }
-        }
-      },
-    },
-    
-  },
 
   fontawesome: {
     icons: {
