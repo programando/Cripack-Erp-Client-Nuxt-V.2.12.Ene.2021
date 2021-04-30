@@ -15,7 +15,7 @@
 import Header from '@/components/comunes/header'
 import TableOts from '@/components/tableOts'
 export default {
-    middleware:['auth'],
+    // middleware:['auth'],
   components: {
     Header,
     TableOts
