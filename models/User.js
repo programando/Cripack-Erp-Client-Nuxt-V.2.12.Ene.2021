@@ -11,7 +11,7 @@ export default {
       },
 
       async login ( formData ) {       
-          return Api.post('login', formData);
+        return  Api.post('login', formData);
       },
 
       async logout() {

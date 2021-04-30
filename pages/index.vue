@@ -88,9 +88,11 @@ import InputBasic from "@/components/htmlControls/inputBasic";
 import ButtonBasic from "@/components/library/ButtonBasic";
 import BtnCallToAction from "@/components/htmlControls/buttonCallToActionLoading";
 import ButtonRegister from "@/components/library/buttonRegister";
+import User from "@/models/User";
 
 
 export default {
+  middleware:['guest'],
   components: {
     LabelTitle,
     InputBasic,
@@ -105,17 +107,28 @@ export default {
       errors: [ ],
       buttonIsDisabled: false,
       formLogin : {
-          email:'jhonjamesmg@hotmail.com',
-          password:'cripack',
+          email:'serviclientes@cripack.com',
+          password:'1234567',
       }
     };
   },
   mounted() {
-   
+      User.getCokie();
   },
   methods: {
         login() {
-            this.$cookiz.set('logueado', 'true')
+            this.$cookiz.set('logueado', 'false')
+            User.login ( this.formLogin)
+            .then( response => {
+               this.$cookiz.set('logueado', 'true')
+               this.$store.dispatch('User/SetUser',response.data );
+               this.$router.push('/dashboard');
+            })
+            .catch ( error =>{
+               if (error.response.status ==422) {
+                  this.errors = error.response.data.errors;
+                }  
+            })
         },
 
          clearErrors() {

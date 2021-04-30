@@ -29,11 +29,11 @@ export default {
      
       URL_BASE: process.env.URL_BASE,
       URL_API: process.env.URL_API,
-      URL_WEB: process.env.URL_WEB,
-      URL_RESET_PASS: process.env.URL_RESET_PASS,
   },
     
-
+  server: {
+      port : process.env.PORT,
+  },
   
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
@@ -70,8 +70,7 @@ export default {
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    baseURL: process.env.URL_API,
-    credentials: true
+ 
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)

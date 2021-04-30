@@ -1,10 +1,13 @@
-export default function (ctx) {
+export default function ({app, redirect }) {
    
-   console.log( ctx.app.$cookiz.get('logueado'));
+   let isLoguedIn = Boolean(app.$cookiz.get('logueado'));
+   if (!isLoguedIn) {
+         return redirect('/');
+   }
    
    //console.log( localStorage.getItem('Logueado') )
 /*    if (store.state.auth.loggedIn) {
-      return redirect('/dashboard');
+      
    } 
    
    export default function ({ app, res, query }) {
