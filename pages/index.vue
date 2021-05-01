@@ -64,15 +64,17 @@
 
 
         <div class="flex justify-center text-sm text-white">
-          <ButtonRegister />
+          <nuxt-link to="registro">
+            Aun no estoy registrado,<span class="font-semibold">¡Registrarme!</span>
+          </nuxt-link>
         </div>
 
         <div class="flex justify-center mt-2 text-sm text-white">
-          <button>
+          <nuxt-link to="contraseña">
             He olvidado mi contraseña,<span class="font-semibold"
               >¡deseo cambiarla!</span
             >
-          </button>
+          </nuxt-link>
         </div>
         <div>
           <div class="flex justify-center mt-2 text-sm text-white">
