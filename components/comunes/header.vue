@@ -31,17 +31,31 @@
         text="Comercial"
         to="/"
       />
+       <button @click="logout" class="text-white"> Salir </button> 
     </div>
   </div>
 </template>
 
 <script>
 import NavLinks from '@/components/comunes/navLinks'
+import User from "@/models/User";
 export default {
   name: "Header",
   components: {
     NavLinks
+  },
+
+  methods: {
+      logout() {
+        User.logout()
+        .then( () => {
+            this.$cookies.removeAll();
+            this.$store.dispatch('User/UserLogout');
+            this.$router.push('/');
+        })
+      },
   }
+  
 
 };
 </script>

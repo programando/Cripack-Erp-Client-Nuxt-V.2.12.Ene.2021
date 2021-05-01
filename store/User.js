@@ -25,7 +25,6 @@ export const actions = {
    }
 }
 
-
 export const mutations = {
    SET_USER(  state  , UserData) {
       state.User           = UserData
@@ -35,10 +34,11 @@ export const mutations = {
    },
    
    USER_LOGOUT(state) {
-      state.User = null;
-      state.Logueado = false;
-      IdTercLogueado = 0;
-      IdTercero = 0;
+      state.IdTercero      = 0;
+      state.IdTercLogueado = 0;
+      state.Logueado       = false;
+      state.NomUser        = '';
+      state.User           = null;
    },
 
  

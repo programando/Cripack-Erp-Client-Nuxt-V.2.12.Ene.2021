@@ -4,14 +4,14 @@
       class="flex items-center justify-center h-screen bg-center bg-no-repeat bg-cover"
       style="background-image: url('/images/background.jpg')"
     >
-      <div class="px-8 py-6 mt-6 md:py-8 md:px-10 lg:mt-0 opacity-90 fondo">
+      <div class="px-8 py-6 mt-6 bg-azulBackGroundForm md:py-8 md:px-10 lg:mt-0 opacity-90">
         <!-- label, titulo y descripcion -->
         <div class="flex justify-center text-4xl font-bold text-white">
           <span><img class="h-24" src="/images/logo.png" alt=""/></span>
         </div>
 
         <LabelTitle
-          description="Ingrese sus datos para ingresar a nuestro sistema"
+          description="Sistema de información web - WebCross"
           align="center"
           color="white"
         >
@@ -52,12 +52,14 @@
                 variant="success"
                 variant-type="normal">  Ingresar
             </BtnCallToAction>
+
             <ButtonBasic
               text="entrar"
               to="dashboard"
               color="white"
               borderColor="primary"
             ></ButtonBasic>
+
         </div>
 
 
@@ -83,12 +85,12 @@
 </template>
 
 <script>
-import LabelTitle from "@/components/library/LabelTitle";
-import InputBasic from "@/components/htmlControls/inputBasic";
-import ButtonBasic from "@/components/library/ButtonBasic";
+import LabelTitle      from "@/components/library/LabelTitle";
+import InputBasic      from "@/components/htmlControls/inputBasic";
+import ButtonBasic     from "@/components/library/ButtonBasic";
 import BtnCallToAction from "@/components/htmlControls/buttonCallToActionLoading";
-import ButtonRegister from "@/components/library/buttonRegister";
-import User from "@/models/User";
+import ButtonRegister  from "@/components/library/buttonRegister";
+import User            from "@/models/User";
 
 
 export default {
@@ -117,10 +119,10 @@ export default {
   },
   methods: {
         login() {
-            this.$cookiz.set('logueado', 'false')
+            this.$cookies.set('logueado', 'false')
             User.login ( this.formLogin)
             .then( response => {
-               this.$cookiz.set('logueado', 'true')
+               this.$cookies.set('logueado', 'true')
                this.$store.dispatch('User/SetUser',response.data );
                this.$router.push('/dashboard');
             })
@@ -141,8 +143,3 @@ export default {
 
 
 </script>
-<style>
-.fondo {
-  background: #16182f;
-}
-</style>
