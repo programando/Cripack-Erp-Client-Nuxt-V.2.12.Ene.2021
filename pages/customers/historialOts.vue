@@ -40,7 +40,7 @@
           </thead>
           <tbody class="text-gray-600">
             <tr
-              v-for="(venta, index) in Ventas" :key="venta.idregistro_ot"
+              v-for="(venta) in Ventas" :key="venta.idregistro_ot"
               
               class="text-xs border-b border-gray-200 hover:bg-gray-100"
             >

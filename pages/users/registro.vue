@@ -17,7 +17,7 @@
             <div class="mt-4">
               <!-- inputText -->
               <div class="grid items-center mt-1 lg:grid-cols-3">
-                <label class="pr-10 text-white">ID/NIT:</label>
+                <label class="pr-10 text-white">CC/NIT:</label>
                 <div class="w-full col-span-2">
                   <InputBasic
                     type="text"

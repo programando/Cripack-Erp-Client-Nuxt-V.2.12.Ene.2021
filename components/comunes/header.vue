@@ -10,7 +10,7 @@
     <div class="flex mr-4 space-x-6">
       <NavLinks 
         text="Historial"
-        to="/dashboard"
+        to="/customers/historialOts"
       />
       <NavLinks 
         text="Estado OT's"
@@ -26,7 +26,7 @@
       />
       <NavLinks 
         text="Contacto"
-        to="/dashboard/contacto"
+        to="/customers/contact"
       />
       <NavLinks 
         text="Comercial"
