@@ -1,9 +1,9 @@
 <template>
   <div class="font-latos">
     <Header />
-    <div class="pt-24 mx-2">
-      <div class="flex justify-around mt-40">
-        <div class="mt-20">
+    <div class="mx-2 ">
+      <div class="flex items-center justify-center h-screen">
+        <div class="mt-20 mr-28 -ml-28">
           <div>
             <h2 class="text-xl text-celeste">Visítenos</h2>
             <p class="text-azulClaro">Carrera 6# 21 - 44 Barrio San Nicolás</p>
@@ -16,7 +16,7 @@
             <p class="text-azulClaro">Celular: +(57) 315 270 1964</p>
           </div>
         </div>
-        <div class="pr-20">
+        <div class="">
           <h2 class="text-5xl text-azul">¡Contáctenos!</h2>
           <p class="w-4/6 mt-2 text-azulClaro">Digilencie el siguiente formulario, uno de nuestros acesores se pondrá en contacto con usted</p>
           <div>
@@ -46,7 +46,7 @@
             />
           </div>
           <div class="mt-2">
-            <button class="px-4 py-2 border-2 rounded-full border-azul text-azul">Enviar</button>
+            <button class="px-4 py-2 text-lg text-white bg-green-600 border-2 border-green-600 rounded-lg hover:bg-green-700 hover:border-green-700">Enviar</button>
           </div>
         </div>
       </div>

@@ -13,7 +13,7 @@
 
 <script>
 import Header from '@/components/comunes/header'
- 
+
 export default {
     // middleware:['auth'],
   components: {

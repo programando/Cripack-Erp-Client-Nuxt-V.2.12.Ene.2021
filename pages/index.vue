@@ -64,13 +64,13 @@
 
 
         <div class="flex justify-center text-sm text-white">
-          <nuxt-link to="registro">
+          <nuxt-link to="/users/registro">
             Aun no estoy registrado,<span class="font-semibold">¡Registrarme!</span>
           </nuxt-link>
         </div>
 
         <div class="flex justify-center mt-2 text-sm text-white">
-          <nuxt-link to="contraseña">
+          <nuxt-link to="/users/passwordChange">
             He olvidado mi contraseña,<span class="font-semibold"
               >¡deseo cambiarla!</span
             >
