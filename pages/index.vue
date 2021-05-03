@@ -4,7 +4,7 @@
       class="flex items-center justify-center h-screen bg-center bg-no-repeat bg-cover"
       style="background-image: url('/images/background.jpg')"
     >
-      <div class="w-5/12 px-8 py-6 bg-azulBackGroundForm md:py-8 md:px-10 lg:mt-0 opacity-90">
+      <div class="w-4/12 px-4 py-6 bg-azulBackGroundForm md:py-8 lg:mt-0 opacity-90">
         <!-- label, titulo y descripcion -->
         <div class="flex justify-center text-4xl font-bold text-white">
           <span><img class="h-24" src="/images/logo.png" alt=""/></span>
