@@ -109,7 +109,7 @@ export default {
       errors: [ ],
       buttonIsDisabled: false,
       formLogin : {
-          email:'serviclientes@cripack.com',
+          email:'diseno4@graficasmodernas.com',
           password:'1234567',
       }
     };
@@ -122,8 +122,8 @@ export default {
             this.$cookies.set('logueado', 'false')
             User.login ( this.formLogin)
             .then( response => {
-               this.$cookies.set('logueado', 'true')
-               this.$store.dispatch('User/SetUser',response.data );
+               this.$cookies.set('User', response.data[0])
+               this.$store.dispatch('User/SetUser',response.data[0] );
                this.$router.push('/dashboard');
             })
             .catch ( error =>{

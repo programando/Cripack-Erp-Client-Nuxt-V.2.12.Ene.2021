@@ -3,7 +3,8 @@
     <div class="flex">
       <img class="h-20" src="/images/logo.png" alt=""/>
       <div class="mt-4 ml-4 text-white">
-        <h3 class="font-semibold">CARTONES AMERICA S.A</h3>
+        <h3 class="font-semibold"> {{ companyName }}</h3>
+        <h3 class="font-semibold"> {{ contactName }}</h3>
       </div>
     </div>
     <div class="flex mr-4 space-x-6">
@@ -44,12 +45,20 @@ export default {
   components: {
     NavLinks
   },
-
+  computed:{
+        companyName() {
+            return this.$cookies.get('User').nomtercero;
+        },
+        contactName() {
+          return this.$cookies.get('User').nombre_usuario;
+        },
+  },
   methods: {
       logout() {
         User.logout()
         .then( () => {
             this.$cookies.removeAll();
+            this.$cookies.set('logueado', false);
             this.$store.dispatch('User/UserLogout');
             this.$router.push('/');
         })

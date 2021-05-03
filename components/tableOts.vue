@@ -40,45 +40,45 @@
           </thead>
           <tbody class="text-gray-600">
             <tr
-              v-for="(producto, index) in busquedaFiltrada"
-              :key="index"
+              v-for="(venta, index) in Ventas" :key="venta.idregistro_ot"
+              
               class="text-xs border-b border-gray-200 hover:bg-gray-100"
             >
               <td class="px-2 py-2 text-left ">
-                {{ producto.ot }}
+                {{ venta.numero_ot }}
               </td>
               <td class="px-2 py-2 text-left ">
-                {{ producto.solicitud }}
+                {{ venta.fecha_solicitud }}
               </td>
               <td class="px-2 py-2 text-left ">
-                {{ producto.terminada }}
+                {{ venta.fecha_terminada }}
               </td>
               <td class="px-2 py-2 text-left ">
-                {{ producto.referencia }}
+                {{ venta.referencia }}
               </td>
               <td class="px-2 py-2 text-left ">
-                {{ producto.estilo }}
+                {{ venta.nomestilotrabajo }}
               </td>
               <td class="px-2 py-2 text-left ">
-                {{ producto.cantidad }}
+                {{ venta.cantidad }}
               </td>
               <td class="px-2 py-2 text-left ">
-                {{ producto.cabidad }}
+                {{ venta.cabida }}
               </td>
               <td class="w-1 px-2 py-2 text-left">
-                {{ producto.estado }}
+                {{ venta.idtercero }}
               </td>
               <td class="px-2 py-2 text-left ">
-                {{ producto.factura }}
+                {{ venta.numero_factura }}
               </td>
               <td class="px-2 py-2 text-left ">
-                {{ producto.remision }}
+                {{ venta.nro_remision }}
               </td>
               <td class="px-2 py-2 text-left ">
-                {{ producto.guia }}
+                {{ venta.nro_guia }}
               </td>
               <td class="px-2 py-2 text-left ">
-                {{ producto.fecha }}
+                {{ venta.fecha_entrega }}
               </td>
             </tr>
           </tbody>
@@ -89,55 +89,22 @@
 </template>
 
 <script>
+import Terceros from "@/models/Terceros";
 export default {
   data() {
     return {
       busqueda: "",
-      productos: [
-        {
-          ot: 70993,
-          solicitud: "14-Apr-2021",
-          terminada: "14-Apr-2021",
-          referencia: "(P) TQ#252 PRODUCTORA DE PLAGUICIDAS COD 3449238",
-          estilo: "PLANO PREALISTAMIEN - NUEVO",
-          cantidad: 1,
-          cabidad: 2,
-          estado: "En Proceso",
-          factura: "N/A",
-          remision: "",
-          guia: "",
-          fecha: "17-Apr-2021"
-        },
-        {
-          ot: 80993,
-          solicitud: "14-Apr-2021",
-          terminada: "14-Apr-2021",
-          referencia: "PRODUCTORA DE PLAGUICIDAS COD 3449238",
-          estilo: "TROPEL PREALISTAMIEN - NUEVO",
-          cantidad: 1,
-          cabidad: 2,
-          estado: "En Proceso",
-          factura: "N/A",
-          remision: "",
-          guia: "",
-          fecha: "17-Apr-2021"
-        },
-        {
-          ot: 90993,
-          solicitud: "14-Apr-2021",
-          terminada: "14-Apr-2021",
-          referencia: "TQ#252 PRODUCTORA DE ",
-          estilo: "LEVA",
-          cantidad: 1,
-          cabidad: 2,
-          estado: "En Proceso",
-          factura: "123133",
-          remision: "212223",
-          guia: "56657",
-          fecha: "17-Apr-2021"
-        }
-      ]
+      Ventas: [],
+      idtercero:''
     };
+  },
+
+  mounted() {
+      this.idtercero = this.$cookies.get('User').idtercero
+      Terceros.historialVentas ('/clientes/ots?idtercero='+this.idtercero)
+      .then ( response => {
+          this.Ventas = response.data.data;
+      })
   },
 
   computed: {
@@ -148,7 +115,8 @@ export default {
           .includes(this.busqueda.toLowerCase());
       });
     }
-  }
+  },
+
 };
 </script>
 
