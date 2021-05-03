@@ -25,6 +25,7 @@
                         placeholder="Dirección electrónica (Email)"
                         v-model="formLogin.email" 
                         :errors="errors.email"
+                        colorError="white"
                         @keyup="clearErrors">
                  </InputBasic>
             </div>
@@ -124,11 +125,13 @@ export default {
             this.$cookies.set('logueado', 'false')
             User.login ( this.formLogin)
             .then( response => {
+              console.log( response.data[0]);
                this.$cookies.set('User', response.data[0])
                this.$store.dispatch('User/SetUser',response.data[0] );
                this.$router.push('/dashboard');
             })
             .catch ( error =>{
+               //
                if (error.response.status ==422) {
                   this.errors = error.response.data.errors;
                 }  
