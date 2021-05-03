@@ -1,7 +1,7 @@
 <template>
-  <div class="mt-2">
+  <div class="flex items-center mt-2">
     <input
-      class="px-4 py-2 text-black bg-gray-200 rounded-md focus:outline-none"
+      class="px-4 py-2 pl-10 text-black bg-gray-200 rounded-md focus:outline-none"
       :class="[width,setBorderColor]" 
       :type="type"
       :placeholder="text" 
@@ -15,7 +15,8 @@ export default {
     type: String,
     text: String,
     width: String,
-    borderColor: String
+    borderColor: String,
+   
   },
 
   computed: {
