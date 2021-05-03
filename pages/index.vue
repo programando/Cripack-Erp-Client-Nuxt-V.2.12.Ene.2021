@@ -4,7 +4,7 @@
       class="flex items-center justify-center h-screen bg-center bg-no-repeat bg-cover"
       style="background-image: url('/images/background.jpg')"
     >
-      <div class="px-8 py-6 mt-6 bg-azulBackGroundForm md:py-8 md:px-10 lg:mt-0 opacity-90">
+      <div class="w-5/12 px-8 py-6 bg-azulBackGroundForm md:py-8 md:px-10 lg:mt-0 opacity-90">
         <!-- label, titulo y descripcion -->
         <div class="flex justify-center text-4xl font-bold text-white">
           <span><img class="h-24" src="/images/logo.png" alt=""/></span>
@@ -16,29 +16,32 @@
           color="white"
         >
         </LabelTitle>
-        <div class="mt-4">
+        <div class="mt-4 ">
           <!-- inputText -->
-          <div class="grid items-center lg:grid-cols-3">
-            <label class="pr-10 text-white">Email:</label>
-            <div class="w-full col-span-2">
+          <div class="flex items-center justify-center">
+            <!-- <label class="w-32 text-white">Email:</label> -->
+            <div class="w-5/6">
                 <InputBasic type= "email"
                         placeholder="Dirección electrónica (Email)"
                         v-model="formLogin.email" 
                         :errors="errors.email"
                         colorError="white"
-                        @keyup="clearErrors">
+                        @keyup="clearErrors"
+                        label="Email"
+                        >
+                        
                  </InputBasic>
             </div>
           </div>
           <!-- inputPassword -->
-          <div class="grid items-center lg:grid-cols-3">
-            <label class="pr-10 text-white">Contraseña:</label>
-            <div class="w-full col-span-2">
+          <div class="flex items-center justify-center mt-6">
+            <div class="w-5/6">
                 <InputBasic type= "password"
-                        class="mt-6"
+                        class=""
                         placeholder="Password o contraseña"
                         v-model="formLogin.password" 
                         @keyup="clearErrors"
+                        label="Contraseña"
                 > </InputBasic>
             </div>
           </div>

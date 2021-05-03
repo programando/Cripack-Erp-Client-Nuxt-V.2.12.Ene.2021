@@ -1,16 +1,17 @@
 <template>
   <div>
-        <label v-if="label"
-            class="block mb-1 font-semibold text-gray-700 form-label"
+      <div class="flex items-center justify-center">
+          <label v-if="label"
+            class="w-32 mb-1 font-semibold text-white form-label"
             :for="id">
                {{ label }}
           </label >    
-          <div class="relative flex items-center">
+          <div class="relative flex items-center w-full">
             <div class="z-10 -mr-8" v-if="icon">
                 <font-awesome-icon class="" :icon="['fas', 'envelope']"/>
             </div>
             
-            <input class="w-full px-4 py-2 text-sm text-gray-700 placeholder-gray-700 bg-gray-200 border border-gray-400 rounded outline-none focus:bg-white"
+            <input class="w-full px-4 py-2 text-sm text-gray-700 placeholder-gray-700 bg-gray-200 border-2 border-gray-400 rounded outline-none focus:bg-white"
                 
                 :id="id"
                 ref="input"
@@ -31,10 +32,13 @@
                 @keyup   = "$emit('keyup', $event)"
                 :placeholder="text"
             />
-            <div v-if="errors.length" class="mt-1 ml-1 text-xs " :class="[setColorError]">
-                <font-awesome-icon :icon="['fas', 'exclamation-triangle']"/> {{ errors[0] }}
-            </div>
-        </div>        
+            
+        </div>
+      </div>
+        
+        <div v-if="errors.length" class="pl-24 mt-1 ml-1 text-xs text-left " :class="[setColorError]">
+            <font-awesome-icon :icon="['fas', 'exclamation-triangle']"/> {{ errors[0] }}
+        </div>      
   </div>
 </template>
 
