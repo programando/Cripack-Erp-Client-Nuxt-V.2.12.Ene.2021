@@ -80,7 +80,9 @@
                     case 'green':
                         return 'text-green-600'
                         break;
-                
+                     case 'white':
+                        return 'text-white'
+                        break;               
             
                     default:
                         break;
