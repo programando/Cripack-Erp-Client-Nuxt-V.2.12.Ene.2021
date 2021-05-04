@@ -31,6 +31,9 @@
                    :errors="errors.email"
                   >
                   </InputBasic>
+                  <div class="mt-2 ml-1 text-xs text-left text-red-600 w-96" >
+                    <font-awesome-icon :icon="['fas', 'exclamation-triangle']"/> Cuenta de correo(email) no encontrada en nuestros registros
+                  </div>
                 </div>
                 
               </div>
