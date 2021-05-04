@@ -77,7 +77,7 @@ export default {
       resetPassword() {
           User.resetPassword ( this.form)
           .then( () =>{     
-              this.Message('Correo enviado!','Hemos enviado un correo electrónico a la cuenta registrada en el cual encontrará las instrucciones para el cambio de contraseña. No olvide revisar su bandeja de correo no deseado','success', 'Cerrar mensaje' );
+              this.Message('Proceso finalizado! En breves segundos recibirás un correo electrónico con las instrucciones para cambiar las credenciales de acceso a nuestro sistema. El token de acceso para cambio de contraseña (incluido en el correo) , tendrá una duración de 15 minutos. No olvides revisar tu bandeja de span en caso de que sea la primera vez que realizas este proceso','success', 'Cerrar mensaje' );
               this.$router.push('/');
           }).catch( error => {
               if (error.response.status ==422) {
@@ -91,8 +91,3 @@ export default {
   },  
 }
 </script>
-
-<style>
-  .home-enter-active, .home-leave-active { transition: opacity .5s; }
-  .home-enter, .home-leave-active { opacity: 0; }
-</style>
