@@ -22,18 +22,17 @@
                 
                 <div class="items-center ">
                   <InputBasic
-                    type="text"
-                    text="Cuenta de Correo electronico o email..."
-                    width="w-full"
-                    colorError="white"
-                    icon="true"
-                    v-model="form.email"
-                   :errors="errors.email"
+                      @keyup     = "clearErrors"
+                      colorError = "white"
+                      icon       = "true"
+                      text       = "Cuenta de Correo electronico o email..."
+                      type       = "text"
+                      v-model    = "form.email"
+                      width      = "w-full"
+                    :errors      = "errors.email"
                   >
                   </InputBasic>
-                  <div class="mt-2 ml-1 text-xs text-left text-red-600 w-96" >
-                    <font-awesome-icon :icon="['fas', 'exclamation-triangle']"/> Cuenta de correo(email) no encontrada en nuestros registros
-                  </div>
+
                 </div>
                 
               </div>
@@ -52,40 +51,48 @@
             
           </div>
         </div>
+
+
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import InputBasic from "@/components/htmlControls/inputBasic"
-import BtnCallToAction from "@/components/htmlControls/buttonCallToActionLoading";
-import User from "@/models/User";
+import BtnCallToAction    from "@/components/htmlControls/buttonCallToActionLoading";
+import InputBasic         from "@/components/htmlControls/inputBasic"
+import Messages           from "@/mixins/sweetalert2";
+import User               from "@/models/User";
+
 export default {
   name: 'passwordChange',
   components: { InputBasic, BtnCallToAction },
+   mixins: [Messages],
   data :()=>({
         errors:[],
-        form:{ email:''},
+        form:{ email:'preimpresion@graficima.com'},
   }),
 
   methods: {
       resetPassword() {
           User.resetPassword ( this.form)
-          .then( response =>{
-              if ( response.satus == 200) {
-                  console.log ("Mostrar mensaje");
-              }
+          .then( () =>{     
+              this.Message('Correo enviado!','Hemos enviado un correo electrónico a la cuenta registrada en el cual encontrará las instrucciones para el cambio de contraseña. No olvide revisar su bandeja de correo no deseado','success', 'Cerrar mensaje' );
+              this.$router.push('/');
           }).catch( error => {
               if (error.response.status ==422) {
                 this.errors = error.response.data.errors;
               }
           })
-      }
+      },
+      clearErrors() {
+          this.errors = [];
+      },
   },  
 }
 </script>
 
 <style>
-
+  .home-enter-active, .home-leave-active { transition: opacity .5s; }
+  .home-enter, .home-leave-active { opacity: 0; }
 </style>

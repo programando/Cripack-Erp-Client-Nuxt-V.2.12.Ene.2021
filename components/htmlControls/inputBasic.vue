@@ -35,8 +35,7 @@
             
         </div>
       </div>
-        
-        <div v-if="errors.length" class="pl-24 mt-1 ml-1 text-xs text-left w-96" :class="[setColorError]">
+        <div v-if="errors.length" class="mt-2 ml-1 text-xs text-left w-96" :class="[setColorError]">
             <font-awesome-icon :icon="['fas', 'exclamation-triangle']"/> {{ errors[0] }}
         </div>      
   </div>

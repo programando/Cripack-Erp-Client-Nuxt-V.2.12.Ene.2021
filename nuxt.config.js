@@ -52,7 +52,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/fontawesome'
+    '@nuxtjs/fontawesome',
+    'vue-sweetalert2/nuxt',
   ],
 
   fontawesome: {
