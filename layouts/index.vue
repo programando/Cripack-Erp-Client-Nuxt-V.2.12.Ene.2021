@@ -1,7 +1,7 @@
 <template>
   <div>
    
-   <Header></Header>
+    
    
     <Nuxt />
      
@@ -9,9 +9,9 @@
 </template>
 
 <script>
-import Header from '@/components/comunes/header'
+ 
   export default {
-      components: { Header},
+      
   }
   </script>
 

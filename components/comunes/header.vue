@@ -1,16 +1,16 @@
 <template>
-  <div class="fixed z-10 flex items-center justify-between w-full bg-azul">
+  <div class="fixed z-10 flex items-center justify-between w-full mt-0 bg-azul ">
     <div class="flex">
       <img class="h-20" src="/images/logo.png" alt=""/>
       <div class="mt-4 ml-4 text-white">
-        <!-- <h3 class="font-semibold"> {{ companyName }}</h3>
-        <h3 class="font-semibold"> {{ contactName }}</h3> -->
+<!--          <h3 class="font-semibold"> {{ companyName }}</h3>
+        <h3 class="font-semibold"> {{ contactName }}</h3>  --> 
       </div>
     </div>
     <div class="flex mr-4 space-x-6">
       <NavLinks 
         text="Historial"
-        to="/customers/historialOts"
+        to="/customers/ots-historial"
       />
       <NavLinks 
         text="Estado OT's"

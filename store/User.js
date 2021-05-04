@@ -29,7 +29,7 @@ export const mutations = {
    SET_USER(  state  , UserData) {
       state.User           = UserData
       state.Logueado       = true;
-      state.IdTercLogueado = UserData.idtercero;
+      //state.IdTercLogueado = UserData.idtercero;
  
    },
    

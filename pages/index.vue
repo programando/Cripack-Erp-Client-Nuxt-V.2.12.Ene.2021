@@ -57,12 +57,13 @@
                 variant-type="normal">  Ingresar
             </BtnCallToAction>
 
-            <ButtonBasic
-              text="entrar"
-              to="dashboard"
-              color="white"
-              borderColor="primary"
-            ></ButtonBasic>
+           <BtnCallToAction 
+                @click.prevent="loginAlterno" 
+                size="small" 
+                ref="ButtonLoading" 
+                variant="success"
+                variant-type="normal">  Entrar
+            </BtnCallToAction>
 
         </div>
 
@@ -93,15 +94,16 @@
 <script>
 import LabelTitle      from "@/components/library/LabelTitle";
 import InputBasic      from "@/components/htmlControls/inputBasic";
-import ButtonBasic     from "@/components/library/ButtonBasic";
+
 import BtnCallToAction from "@/components/htmlControls/buttonCallToActionLoading";
 import ButtonRegister  from "@/components/library/buttonRegister";
 import User            from "@/models/User";
 
 
 export default {
+  layout:'index',
   middleware:['guest'],
-  components: {    LabelTitle,    InputBasic,    ButtonBasic,  BtnCallToAction, ButtonRegister  },
+  components: {    LabelTitle,    InputBasic,     BtnCallToAction, ButtonRegister  },
   data() {
     return {
       modal: true,
@@ -117,14 +119,34 @@ export default {
       User.getCokie();
   },
   methods: {
+        loginAlterno() {
+            this.$cookies.set('logueado', 'false')
+            let $data =   {
+                        "logueado": 1,
+                        "idtercero": 299,
+                        "email": "diseno4@graficasmodernas.com",
+                        "uso_web_empresa": 0,
+                        "nomtercero": "GRAFICAS MODERNA SA",
+                        "identificacion": "890323692         ",
+                        "nombre_usuario": "",
+                        "proveedor": 0,
+                        "cliente": 1,
+                        "dias_sin_compra": 35
+                    };
+                  
+               this.$cookies.set('User',  $data )
+               this.$store.dispatch('User/SetUser', $data );
+               this.$router.push('/customers/ots-historial');
+
+        },
         login() {
             this.$cookies.set('logueado', 'false')
             User.login ( this.formLogin)
             .then( response => {
-              console.log( response.data[0]);
+ 
                this.$cookies.set('User', response.data[0])
                this.$store.dispatch('User/SetUser',response.data[0] );
-               this.$router.push('/dashboard');
+               this.$router.push('/customers/ots-historial');
             })
             .catch ( error =>{
                if (error.response.status ==422) {

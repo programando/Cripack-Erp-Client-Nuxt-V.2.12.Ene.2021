@@ -70,7 +70,7 @@ export default {
    mixins: [Messages],
   data :()=>({
         errors:[],
-        form:{ email:'preimpresion@graficima.com'},
+        form:{ email:''},
   }),
 
   methods: {
