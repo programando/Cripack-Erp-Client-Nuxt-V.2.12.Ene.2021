@@ -1,6 +1,6 @@
 <template>
   <div class="font-latos">
-    <Header />
+   
     <div class="mx-2 ">
       <div class="flex items-center justify-center h-screen">
         <div class="mt-20 mr-28 -ml-28">

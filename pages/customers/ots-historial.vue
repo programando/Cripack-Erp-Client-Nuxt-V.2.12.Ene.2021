@@ -1,5 +1,5 @@
 <template>
-  <div class="font-latos">
+  <div class="py-24 mx-4 font-latos">
     <div class="flex justify-between my-2">
       <h3 class="mt-4">
         Mostrando registros del 1 al 10 de un total de 150 registros
