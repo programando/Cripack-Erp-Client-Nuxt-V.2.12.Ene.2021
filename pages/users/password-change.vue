@@ -14,8 +14,8 @@
             <div class="flex justify-center text-4xl font-bold text-white">
               <span><img class="h-24" src="/images/logo.png" alt=""/></span>
             </div>
-            <p class="text-white">Enviaremos un correo electronico a la cuenta registrada en nuestro sistema</p> 
-             <p class="flex justify-center text-white"> las instrucciones para que cambie los datos de acceso</p>
+            <p class="text-white">Enviaremos un correo electrónico a la cuenta registrada en nuestro sistema</p> 
+             <p class="flex justify-center text-white"> con las instrucciones para que modifique los datos de acceso</p>
             <div class="mt-4">
               <!-- inputText -->
               <div class="py-2 mx-20 mt-1">
@@ -25,16 +25,25 @@
                     type="text"
                     text="Cuenta de Correo electronico o email..."
                     width="w-full"
-                    colorError="red"
+                    colorError="white"
                     icon="true"
-                  />
+                    v-model="form.email"
+                   :errors="errors.email"
+                  >
+                  </InputBasic>
                 </div>
                 
               </div>
             </div>
 
             <div class="flex justify-center mt-8 mb-2 font-semibold">
-              <button class="px-4 py-2 text-white border rounded-md bg-azulClaro">Enviar Correo</button>
+             <BtnCallToAction 
+                @click.prevent="resetPassword" 
+                size="small" 
+                ref="ButtonLoading" 
+                variant="success"
+                variant-type="normal">  Enviar correo
+            </BtnCallToAction>
               
             </div>
             
@@ -47,13 +56,30 @@
 
 <script>
 import InputBasic from "@/components/htmlControls/inputBasic"
-import ButtonLoad from "@/components/library/ButtonLoad";
+import BtnCallToAction from "@/components/htmlControls/buttonCallToActionLoading";
+import User from "@/models/User";
 export default {
-  name: 'contraseña',
-  components: {
-    InputBasic,
-    ButtonLoad
-  }
+  name: 'passwordChange',
+  components: { InputBasic, BtnCallToAction },
+  data :()=>({
+        errors:[],
+        form:{ email:''},
+  }),
+
+  methods: {
+      resetPassword() {
+          User.resetPassword ( this.form)
+          .then( response =>{
+              if ( response.satus == 200) {
+                  console.log ("Mostrar mensaje");
+              }
+          }).catch( error => {
+              if (error.response.status ==422) {
+                this.errors = error.response.data.errors;
+              }
+          })
+      }
+  },  
 }
 </script>
 

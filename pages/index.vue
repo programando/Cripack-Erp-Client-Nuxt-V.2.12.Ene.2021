@@ -74,7 +74,7 @@
         </div>
 
         <div class="flex justify-center mt-2 text-sm text-white">
-          <nuxt-link to="/users/passwordChange">
+          <nuxt-link to="/users/password-change">
             He olvidado mi contraseña,<span class="font-semibold"
               >¡deseo cambiarla!</span
             >
@@ -101,14 +101,7 @@ import User            from "@/models/User";
 
 export default {
   middleware:['guest'],
-  components: {
-    LabelTitle,
-    InputBasic,
-    ButtonBasic,
-    BtnCallToAction,
-    ButtonRegister
-    
-  },
+  components: {    LabelTitle,    InputBasic,    ButtonBasic,  BtnCallToAction, ButtonRegister  },
   data() {
     return {
       modal: true,
@@ -134,7 +127,6 @@ export default {
                this.$router.push('/dashboard');
             })
             .catch ( error =>{
-               //
                if (error.response.status ==422) {
                   this.errors = error.response.data.errors;
                 }  
