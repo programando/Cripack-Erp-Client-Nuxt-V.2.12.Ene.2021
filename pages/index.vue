@@ -110,8 +110,8 @@ export default {
       errors: [ ],
       buttonIsDisabled: false,
       formLogin : {
-          email:'diseno4@graficasmodernas.com',
-          password:'1234567',
+          email:process.env.EMAIL_TEMP,
+          password:process.env.EMAIL_PASS_TEMP,
       }
     };
   },
@@ -124,10 +124,10 @@ export default {
             let $data =   {
                         "logueado": 1,
                         "idtercero": 299,
-                        "email": "diseno4@graficasmodernas.com",
+                        "email": process.env.EMAIL_TEMP,
                         "uso_web_empresa": 0,
-                        "nomtercero": "GRAFICAS MODERNA SA",
-                        "identificacion": "890323692         ",
+                        "nomtercero": "EMPRESA DE PRUEBA",
+                        "identificacion": "123456         ",
                         "nombre_usuario": "",
                         "proveedor": 0,
                         "cliente": 1,
