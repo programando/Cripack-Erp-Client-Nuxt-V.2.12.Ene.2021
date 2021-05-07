@@ -5,11 +5,10 @@
         Mostrando registros del 1 al 10 de un total de 150 registros
       </h3>
       <div class="flex items-center">
-        <img
-          class="z-20 inline h-6 -mr-8"
-          src="/images/search-repo.svg"
-          alt=""
-        />
+        <div class="z-10 -mr-8">
+          <font-awesome-icon class="" :icon="['fas', 'search']" />
+        </div>
+
         <input
           class="px-10 py-2 border-2 focus:outline-none"
           type="text"
@@ -19,65 +18,68 @@
       </div>
     </div>
 
-    <div class="w-full">
+    <div class="w-full text-left">
       <div class="bg-white rounded shadow-md ">
-        <table class="w-full ">
-          <thead class="w-full">
-            <tr class="text-sm text-gray-600 bg-gray-200 ">
-              <th class="px-2 py-2 text-left ">#OT</th>
-              <th class="px-2 py-2 text-left ">Solicitud</th>
-              <th class="px-2 py-2 text-left ">Terminada</th>
-              <th class="px-2 py-2 text-left ">Referencia</th>
-              <th class="px-2 py-2 text-left ">Estilo</th>
-              <th class="px-2 py-2 text-left ">Cantidad</th>
-              <th class="px-2 py-2 text-left ">Cabidad</th>
-              <th class="w-20 px-2 py-2 text-left ">Estado</th>
-              <th class="px-2 py-2 text-left ">#Factura</th>
-              <th class="px-2 py-2 text-left ">#Remisión</th>
-              <th class="px-2 py-2 text-left ">#Guia</th>
-              <th class="px-2 py-2 text-left ">Fecha Entrega</th>
+        <table class="w-full">
+          <thead class="flex w-full margen">
+            <tr class="flex w-full text-sm text-gray-600 bg-gray-200">
+              <th class="w-1/12 py-2 text-left ">#OT</th>
+              <th class="w-1/12 py-2 text-left ">Solicitud</th>
+              <th class="w-1/12 py-2 text-left ">Terminada</th>
+              <th class="w-2/12 py-2 text-left ">Referencia</th>
+              <th class="w-2/12 py-2 text-left ">Estilo</th>
+              <th class="w-1/12 py-2 text-left ">Cantidad</th>
+              <th class="w-1/12 py-2 text-left ">Cabidad</th>
+              <th class="w-1/12 py-2 text-left ">Estado</th>
+              <th class="w-1/12 py-2 text-left ">#Factura</th>
+              <th class="w-1/12 py-2 text-left ">#Remisión</th>
+              <th class="w-1/12 py-2 text-left ">#Guia</th>
+              <th class="w-1/12 py-2 text-left ">Fecha Entrega</th>
             </tr>
           </thead>
-          <tbody class="text-gray-600">
+          <tbody
+            class="flex flex-col w-full overflow-y-scroll text-xs text-gray-600 bg-white"
+            style="height: 64vh;"
+          >
             <tr
-              v-for="(venta) in Ventas" :key="venta.idregistro_ot"
-              
-              class="text-xs border-b border-gray-200 hover:bg-gray-100"
+              v-for="venta in Ventas"
+              :key="venta.idregistro_ot"
+              class="flex w-full text-xs bg-white border-b border-gray-200 hover:bg-gray-100 tr"
             >
-              <td class="px-2 py-2 text-left ">
+              <td class="w-1/12 py-2 text-left ">
                 {{ venta.numero_ot }}
               </td>
-              <td class="px-2 py-2 text-left ">
+              <td class="w-1/12 py-2 text-left ">
                 {{ venta.fecha_solicitud }}
               </td>
-              <td class="px-2 py-2 text-left ">
+              <td class="w-1/12 py-2 text-left ">
                 {{ venta.fecha_terminada }}
               </td>
-              <td class="px-2 py-2 text-left ">
+              <td class="w-2/12 py-2 text-left ">
                 {{ venta.referencia }}
               </td>
-              <td class="px-2 py-2 text-left ">
+              <td class="w-2/12 py-2 text-left ">
                 {{ venta.nomestilotrabajo }}
               </td>
-              <td class="px-2 py-2 text-left ">
+              <td class="w-1/12 py-2 text-left ">
                 {{ venta.cantidad }}
               </td>
-              <td class="px-2 py-2 text-left ">
+              <td class="w-1/12 py-2 text-left ">
                 {{ venta.cabida }}
               </td>
-              <td class="w-1 px-2 py-2 text-left">
+              <td class="w-1/12 py-2 text-left ">
                 {{ venta.idtercero }}
               </td>
-              <td class="px-2 py-2 text-left ">
+              <td class="w-1/12 py-2 text-left ">
                 {{ venta.numero_factura }}
               </td>
-              <td class="px-2 py-2 text-left ">
+              <td class="w-1/12 py-2 text-left ">
                 {{ venta.nro_remision }}
               </td>
-              <td class="px-2 py-2 text-left ">
+              <td class="w-1/12 py-2 text-left ">
                 {{ venta.nro_guia }}
               </td>
-              <td class="px-2 py-2 text-left ">
+              <td class="w-1/12 py-2 text-left ">
                 {{ venta.fecha_entrega }}
               </td>
             </tr>
@@ -95,16 +97,17 @@ export default {
     return {
       busqueda: "",
       Ventas: [],
-      idtercero:''
+      idtercero: ""
     };
   },
 
   mounted() {
-      this.idtercero = this.$cookies.get('User').idtercero
-      Terceros.historialVentas ('/clientes/ots?idtercero='+this.idtercero)
-      .then ( response => {
-          this.Ventas = response.data.data;
-      })
+    this.idtercero = this.$cookies.get("User").idtercero;
+    Terceros.historialVentas("/clientes/ots?idtercero=" + this.idtercero).then(
+      response => {
+        this.Ventas = response.data.data;
+      }
+    );
   },
 
   computed: {
@@ -115,9 +118,12 @@ export default {
           .includes(this.busqueda.toLowerCase());
       });
     }
-  },
-
+  }
 };
 </script>
 
-<style></style>
+<style>
+.margen {
+    padding-right: 16px;
+  }
+</style>

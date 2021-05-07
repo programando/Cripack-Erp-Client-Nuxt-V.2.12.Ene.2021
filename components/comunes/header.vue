@@ -32,7 +32,7 @@
         text="Comercial"
         to="/"
       />
-       <button @click="logout" class="text-white"> Salir </button> 
+       <button @click="logout" class="font-semibold text-white"> Salir </button> 
     </div>
   </div>
 </template>
