@@ -40,7 +40,8 @@
                 Actualizar contraseña
               </BtnCallToAction>
             </div>
-            <div v-if="errorToken" class="text-white">
+            
+            <div  class="text-white">
               <nuxt-link to="/"> Ir a Incio</nuxt-link>
             </div>
 
