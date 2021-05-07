@@ -65,6 +65,7 @@ import Messages           from "@/mixins/sweetalert2";
 import User               from "@/models/User";
 
 export default {
+  layout: 'blank-layout',
   name: 'passwordChange',
   components: { InputBasic, BtnCallToAction },
    mixins: [Messages],

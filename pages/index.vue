@@ -70,25 +70,24 @@
 
         <div class="flex justify-center text-sm text-white">
           <nuxt-link to="/users/registro">
-            Aun no estoy registrado,<span class="font-semibold">¡Registrarme!</span>
+            <p v-t="'welcome'"></p>  Aun no estoy registrado,<span class="font-semibold">¡Registrarme!</span>
           </nuxt-link>
         </div>
 
         <div class="flex justify-center mt-2 text-sm text-white">
           <nuxt-link to="/users/password-change">
-            He olvidado mi contraseña,<span class="font-semibold"
-              >¡deseo cambiarla!</span
+            He olvidado mi contraseña,&nbsp; <span class="font-semibold"
+              >Recordármela !</span
             >
           </nuxt-link>
         </div>
         <div>
-          <div class="flex justify-center mt-2 text-sm text-white">
+<!--           <div class="flex justify-center mt-2 text-sm text-white">
             <button>Sistema de transcripción Braille</button>
-          </div>
+          </div> -->
         </div>
-        <nuxt-link to="/users/new-password" class="px-4 py-2 mt-10 text-white bg-green-600">
-            Nueva Contraseña
-          </nuxt-link>
+
+  
           
       </div>
     </div>
@@ -124,7 +123,7 @@ export default {
   },
   methods: {
         loginAlterno() {
-            this.$cookies.set('logueado', 'false')
+            this.$cookies.set('logueado', 'true')
             let $data =   {
                         "logueado": 1,
                         "idtercero": 299,
@@ -147,10 +146,10 @@ export default {
             this.$cookies.set('logueado', 'false')
             User.login ( this.formLogin)
             .then( response => {
- 
                this.$cookies.set('User', response.data[0])
                this.$store.dispatch('User/SetUser',response.data[0] );
                this.$router.push('/customers/ots-historial');
+               this.$cookies.set('logueado', 'true')
             })
             .catch ( error =>{
                if (error.response.status ==422) {

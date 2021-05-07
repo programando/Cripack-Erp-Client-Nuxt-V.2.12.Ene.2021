@@ -6,14 +6,14 @@
       <div class="w-6/12 text-center text-white font-latos">
         <h2 class="text-5xl">Oops!</h2>
         <h2 class=" text-9xl">404</h2>
-        <p class="px-8 text-xl">El enlace que esta buscando no existe o fue eliminado. Puede volver a la <nuxt-link class="text-celesteClaro" to="/">pagina de incio</nuxt-link>  y continuar navegando o <nuxt-link class="text-celesteClaro" to="/customers/contact">contactarse con nosotros</nuxt-link></p>
+        <p class="px-8 text-xl">La página que estás buscando no existe o fue eliminada. Puedes volver a la <nuxt-link class="text-celesteClaro" to="/">página de incio</nuxt-link>  y continuar navegando o <nuxt-link class="text-celesteClaro" to="/customers/contact">contactarte con nosotros</nuxt-link></p>
       </div>
   </div>
 </template>
 
 <script>
 export default {
-
+  layout: 'blank-layout'
 }
 </script>
 

@@ -94,6 +94,7 @@
 import InputBasic from "@/components/htmlControls/inputBasic";
 import ButtonLoad from "@/components/library/ButtonLoad";
 export default {
+  layout: 'blank-layout',
   name: "registro",
   components: {
     InputBasic,

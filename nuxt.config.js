@@ -68,7 +68,23 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     ['cookie-universal-nuxt', { alias: 'cookies' }],
+    ['nuxt-i18n', {
+          locales: [
+            {
+              code: 'en',
+              file: 'en-US.js'
+            },
+            {
+              code: 'es',
+              file: 'es-ES.js'
+            },
+          ],
+          lazy: true,
+          langDir: 'lang/',
+          defaultLocale: 'en'
+        }]
   ],
+  
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
