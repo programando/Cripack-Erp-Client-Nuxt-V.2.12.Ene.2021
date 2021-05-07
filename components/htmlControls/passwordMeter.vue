@@ -16,7 +16,7 @@
         variant="success"
         variant-type="normal"
       >
-        Actualizar Contraseña
+        Actualizar contraseña
       </BtnCallToAction>
     </div>
   </div>
