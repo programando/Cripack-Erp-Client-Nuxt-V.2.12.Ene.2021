@@ -30,7 +30,10 @@
                       v-model="formUser.password_confirmation" >
               </InputPassword>
 
-            <div class="flex justify-center mt-4 font-semibold">
+            <div class="flex justify-center mt-4 space-x-4">
+              <div  class="px-4 py-2 text-white bg-green-600 border-green-600 rounded-md hover:bg-green-700 hover:border-green-700">
+                <nuxt-link to="/"> Ir a Incio</nuxt-link>
+              </div>
               <BtnCallToAction 
                 @click.prevent="updatePassword"
                 size="small"
@@ -40,11 +43,6 @@
                 Actualizar contraseña
               </BtnCallToAction>
             </div>
-            
-            <div  class="text-white">
-              <nuxt-link to="/"> Ir a Incio</nuxt-link>
-            </div>
-
           </div>
         </div>
       </div>

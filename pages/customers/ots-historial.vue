@@ -1,9 +1,22 @@
 <template>
-  <div class="py-24 mx-4 font-latos">
+  <div class="py-24 mx-2 font-latos">
     <div class="flex justify-between my-2">
       <h3 class="mt-4">
         Mostrando registros del 1 al 10 de un total de 150 registros
       </h3>
+      <div class="mt-4">
+        <div class="flex space-x-2">
+          <!-- calendario1 -->
+          <client-only>
+            <date-picker v-model="time" valueType="format"></date-picker>
+          </client-only>
+          <!-- calendario2 -->
+          <client-only>
+            <date-picker v-model="time2" valueType="format"></date-picker>
+          </client-only>
+          <button class="px-4 py-1 text-white rounded-md bg-celeste hover:bg-blue-500">Consultar ventas</button>
+        </div>
+      </div>
       <div class="flex items-center">
         <div class="z-10 -mr-8">
           <font-awesome-icon class="" :icon="['fas', 'search']" />
@@ -35,6 +48,7 @@
               <th class="w-1/12 py-2 text-left ">#Remisión</th>
               <th class="w-1/12 py-2 text-left ">#Guia</th>
               <th class="w-1/12 py-2 text-left ">Fecha Entrega</th>
+              <th class="w-1/12 py-2 text-left ">Vr Venta</th>
             </tr>
           </thead>
           <tbody
@@ -82,6 +96,9 @@
               <td class="w-1/12 py-2 text-left ">
                 {{ venta.fecha_entrega }}
               </td>
+              <td class="w-1/12 py-2 text-left ">
+                {{ venta.vrVenta }}
+              </td>
             </tr>
           </tbody>
         </table>
@@ -92,14 +109,19 @@
 
 <script>
 import Terceros from "@/models/Terceros";
+
 export default {
   data() {
     return {
+      time:'',
+      time2: '',
       busqueda: "",
       Ventas: [],
       idtercero: ""
     };
   },
+
+  
 
   mounted() {
     this.idtercero = this.$cookies.get("User").idtercero;
@@ -124,6 +146,6 @@ export default {
 
 <style>
 .margen {
-    padding-right: 16px;
-  }
+  padding-right: 16px;
+}
 </style>
