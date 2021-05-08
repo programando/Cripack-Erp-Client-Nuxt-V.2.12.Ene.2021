@@ -69,19 +69,22 @@ export default {
     '@nuxtjs/axios',
     ['cookie-universal-nuxt', { alias: 'cookies' }],
     ['nuxt-i18n', {
+          lazy         : true,
+          langDir      : 'lang/',
+          defaultLocale: 'es',
+          //strategy     : 'prefix',
           locales: [
             {
-              code: 'en',
-              file: 'en-US.js'
-            },
-            {
               code: 'es',
-              file: 'es-ES.js'
+              file: 'es-ES.js',
+              name:"Español"
+           },
+            {
+              code: 'en',
+              file: 'en-US.js',
+              name:'English',
             },
           ],
-          lazy: true,
-          langDir: 'lang/',
-          defaultLocale: 'en'
         }]
   ],
   

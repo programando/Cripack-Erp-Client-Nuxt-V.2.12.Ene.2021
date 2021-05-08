@@ -10,12 +10,13 @@
           <span><img class="h-24" src="/images/logo.png" alt=""/></span>
         </div>
 
-        <LabelTitle
-          description="Sistema de información web - WebCross"
-          align="center"
-          color="white"
-        >
-        </LabelTitle>
+     
+
+
+      <div class="flex justify-center text-white">
+        <p class="mt-4 text-sm text-center lg:text-base" v-t="'Login_Title'"> </p>
+      </div>
+
         <div class="mt-4 ">
           <!-- inputText -->
           <div class="flex items-center justify-center">
@@ -28,8 +29,7 @@
                         colorError="white"
                         @keyup="clearErrors"
                         label="Email"
-                        >
-                        
+                        >          
                  </InputBasic>
             </div>
           </div>
@@ -41,14 +41,14 @@
                         placeholder="Password o contraseña"
                         v-model="formLogin.password" 
                         @keyup="clearErrors"
-                        label="Contraseña"
+                        label="Password"
                 > </InputBasic>
             </div>
           </div>
         </div>
 
 
-        <div class="flex justify-center mt-8 mb-2 text-lg font-semibold">
+        <div class="flex justify-center mt-8 mb-8 text-lg font-semibold">
            <BtnCallToAction 
                 @click.prevent="login" 
                 size="small" 
@@ -70,15 +70,15 @@
 
         <div class="flex justify-center text-sm text-white">
           <nuxt-link to="/users/registro">
-            <p v-t="'welcome'"></p>  Aun no estoy registrado,<span class="font-semibold">¡Registrarme!</span>
+             <!-- Aun no estoy registrado,<span class="font-semibold">¡Registrarme!</span> -->
+             <p v-t="'Login_Register'"></p> 
+             
           </nuxt-link>
         </div>
 
         <div class="flex justify-center mt-2 text-sm text-white">
           <nuxt-link to="/users/password-change">
-            He olvidado mi contraseña,&nbsp; <span class="font-semibold"
-              >Recordármela !</span
-            >
+            <p v-t="'Login_RememberPassword'"></p> 
           </nuxt-link>
         </div>
         <div>
@@ -120,6 +120,11 @@ export default {
   },
   mounted() {
       User.getCokie();
+  },
+  computed: {
+        loginTitle(){
+            return 'mensaje';
+        }
   },
   methods: {
         loginAlterno() {
