@@ -1,10 +1,10 @@
 <template>
   <div class="py-24 mx-2 font-latos">
     <div class="flex justify-between my-2">
-      <h3 class="mt-4">
-        Mostrando registros del 1 al 10 de un total de 150 registros
+      <h3 class="mt-1 text-3xl">
+        Historial Órdenes de trabajo
       </h3>
-      <div class="mt-4">
+      <div class="mt-2">
         <div class="flex space-x-2">
           <!-- calendario1 -->
           <client-only>
@@ -36,19 +36,19 @@
         <table class="w-full">
           <thead class="flex w-full margen">
             <tr class="flex w-full text-sm text-gray-600 bg-gray-200">
-              <th class="w-1/12 py-2 text-center ">#OT</th>
-              <th class="w-1/12 py-2 text-center ">Solicitud</th>
-              <th class="w-1/12 py-2 text-center ">Terminada</th>
-              <th class="w-2/12 py-2 text-center ">Referencia</th>
-              <th class="w-2/12 py-2 text-center ">Estilo</th>
-              <th class="w-1/12 py-2 text-center ">Cantidad</th>
-              <th class="w-1/12 py-2 text-center ">Cabidad</th>
-              <th class="w-1/12 py-2 text-center ">Estado</th>
-              <th class="w-1/12 py-2 text-center ">#Factura</th>
-              <th class="w-1/12 py-2 text-center ">#Remisión</th>
-              <th class="w-1/12 py-2 text-center ">#Guia</th>
-              <th class="w-1/12 py-2 text-center ">Fecha Entrega</th>
-              <th class="w-1/12 py-2 text-center ">Vr Venta</th>
+              <th class="w-1/12 px-2 py-2 text-left">Estado</th>
+              <th class="w-1/12 px-2 py-2 text-left">#OT</th>
+              <th class="w-1/12 px-2 py-2 text-left">Solicitud</th>
+              <th class="w-1/12 px-2 py-2 text-left">Terminada</th>
+              <th class="w-3/12 px-2 py-2 text-left">Referencia</th>
+              <th class="w-3/12 px-2 py-2 text-left">Estilo</th>
+              <th class="px-2 py-2 text-left w-14">Can</th>
+              <th class="px-2 py-2 text-left w-14">Cab</th>
+              <th class="w-20 px-2 py-2 text-left">#Factura</th>
+              <th class="w-1/12 px-2 py-2 text-left">Vr Venta</th>
+              <th class="w-20 px-2 py-2 text-left">#Guía</th>
+              <th class="w-1/12 py-2 text-left">Fecha Entrega</th>
+              
             </tr>
           </thead>
           <tbody
@@ -60,45 +60,46 @@
               :key="venta.idregistro_ot"
               class="flex w-full text-xs bg-white border-b border-gray-200 hover:bg-gray-100 tr"
             >
+              <td class="flex items-center w-1/12 px-2 py-2 space-x-2 text-left">
+                 <div class="w-1/3 h-4 px-2 py-2 bg-green-400 border-green-400 rounded-lg"></div>
+                 <div class="w-1/3 h-4 px-2 py-2 bg-yellow-300 border-yellow-300 rounded-lg"></div>
+              </td>
+
               <td class="w-1/12 px-2 py-2 text-left ">
                 {{ venta.numero_ot }}
               </td>
               <td class="w-1/12 px-2 py-2 text-left ">
-                {{ venta.fecha_solicitud }}
+                {{ venta.fecha_solicitud | FechaLarga }}
               </td>
               <td class="w-1/12 px-2 py-2 text-left ">
-                {{ venta.fecha_terminada }}
+                {{ venta.fecha_terminada | FechaLarga}}
               </td>
-              <td class="w-2/12 px-2 py-2 text-left ">
+              <td class="w-3/12 px-2 py-2 text-left ">
                 {{ venta.referencia }}
               </td>
-              <td class="w-2/12 px-2 py-2 text-left ">
+              <td class="w-3/12 px-2 py-2 text-left ">
                 {{ venta.nomestilotrabajo }}
               </td>
-              <td class="w-1/12 px-2 py-2 text-right ">
+              <td class="px-4 py-2 text-right w-14 ">
                 {{ venta.cantidad }}
               </td>
-              <td class="w-1/12 px-2 py-2 text-right ">
+              <td class="px-4 py-2 text-right w-14 ">
                 {{ venta.cabida }}
               </td>
-              <td class="w-1/12 px-2 py-2 text-right ">
-                {{ venta.idtercero }}
-              </td>
-              <td class="w-1/12 px-2 py-2 text-right ">
+
+              <td class="w-20 px-2 py-2 text-right ">
                 {{ venta.numero_factura }}
-              </td>
-              <td class="w-1/12 px-2 py-2 text-right ">
-                {{ venta.nro_remision }}
-              </td>
-              <td class="w-1/12 px-2 py-2 text-right ">
-                {{ venta.nro_guia }}
-              </td>
-              <td class="w-1/12 px-2 py-2 text-right ">
-                {{ venta.fecha_entrega }}
               </td>
               <td class="w-1/12 px-2 py-2 text-right ">
                 {{ venta.vrVenta }}
               </td>
+               <td class="w-20 px-2 py-2 text-right ">
+                {{ venta.nro_guia }}
+              </td>
+              <td class="w-1/12 px-2 py-2 text-left">
+                {{ venta.fecha_entrega | FechaLarga }}
+              </td>
+
             </tr>
           </tbody>
         </table>
@@ -113,8 +114,8 @@ import Terceros from "@/models/Terceros";
 export default {
   data() {
     return {
-      time:'',
-      time2: '',
+      time:'2021-05-09',
+      time2: '2021-05-10',
       busqueda: "",
       Ventas: [],
       idtercero: ""
