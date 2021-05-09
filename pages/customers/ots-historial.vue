@@ -1,8 +1,8 @@
 <template>
   <div class="py-24 mx-2 font-latos">
     <div class="flex justify-between my-2">
-      <h3 class="mt-4">
-        Mostrando registros del 1 al 10 de un total de 150 registros
+      <h3 class="mt-4 text-2xl">
+        Historial Órdenes de trabajo
       </h3>
       <div class="mt-4">
         <div class="flex space-x-2">
@@ -36,6 +36,7 @@
         <table class="w-full">
           <thead class="flex w-full margen">
             <tr class="flex w-full text-sm text-gray-600 bg-gray-200">
+              <th class="w-1/12 py-2 text-left ">Estado</th>
               <th class="w-1/12 py-2 text-left ">#OT</th>
               <th class="w-1/12 py-2 text-left ">Solicitud</th>
               <th class="w-1/12 py-2 text-left ">Terminada</th>
@@ -43,12 +44,12 @@
               <th class="w-2/12 py-2 text-left ">Estilo</th>
               <th class="w-1/12 py-2 text-left ">Cantidad</th>
               <th class="w-1/12 py-2 text-left ">Cabidad</th>
-              <th class="w-1/12 py-2 text-left ">Estado</th>
+              
               <th class="w-1/12 py-2 text-left ">#Factura</th>
-              <th class="w-1/12 py-2 text-left ">#Remisión</th>
-              <th class="w-1/12 py-2 text-left ">#Guia</th>
-              <th class="w-1/12 py-2 text-left ">Fecha Entrega</th>
               <th class="w-1/12 py-2 text-left ">Vr Venta</th>
+              <th class="w-1/12 py-2 text-left ">#Guía</th>
+              <th class="w-1/12 py-2 text-left ">Fecha Entrega</th>
+              
             </tr>
           </thead>
           <tbody
@@ -61,13 +62,17 @@
               class="flex w-full text-xs bg-white border-b border-gray-200 hover:bg-gray-100 tr"
             >
               <td class="w-1/12 py-2 text-left ">
+                 estado
+              </td>
+
+              <td class="w-1/12 py-2 text-left ">
                 {{ venta.numero_ot }}
               </td>
               <td class="w-1/12 py-2 text-left ">
-                {{ venta.fecha_solicitud }}
+                {{ venta.fecha_solicitud | FechaLarga }}
               </td>
               <td class="w-1/12 py-2 text-left ">
-                {{ venta.fecha_terminada }}
+                {{ venta.fecha_terminada | FechaLarga}}
               </td>
               <td class="w-2/12 py-2 text-left ">
                 {{ venta.referencia }}
@@ -81,24 +86,20 @@
               <td class="w-1/12 py-2 text-left ">
                 {{ venta.cabida }}
               </td>
-              <td class="w-1/12 py-2 text-left ">
-                {{ venta.idtercero }}
-              </td>
+
               <td class="w-1/12 py-2 text-left ">
                 {{ venta.numero_factura }}
               </td>
               <td class="w-1/12 py-2 text-left ">
-                {{ venta.nro_remision }}
+                {{ venta.vrVenta }}
               </td>
-              <td class="w-1/12 py-2 text-left ">
+               <td class="w-1/12 py-2 text-left ">
                 {{ venta.nro_guia }}
               </td>
               <td class="w-1/12 py-2 text-left ">
-                {{ venta.fecha_entrega }}
+                {{ venta.fecha_entrega | FechaLarga }}
               </td>
-              <td class="w-1/12 py-2 text-left ">
-                {{ venta.vrVenta }}
-              </td>
+
             </tr>
           </tbody>
         </table>
