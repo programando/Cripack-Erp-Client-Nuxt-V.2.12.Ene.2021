@@ -32,7 +32,7 @@
       />
       <NavLinks 
         text="Comercial"
-        to="/"
+        to="/customers/ordenes"
       />
        <button @click="logout" class="font-semibold text-white"> Salir </button> 
     </div>
