@@ -29,7 +29,8 @@ export default {
       URL_BASE       : process.env.URL_BASE,
       URL_API        : process.env.URL_API,
       EMAIL_TEMP     : process.env.EMAIL_TEMP,
-      EMAIL_PASS_TEMP: process.env.EMAIL_PASS_TEMP
+      EMAIL_PASS_TEMP: process.env.EMAIL_PASS_TEMP,
+      NODE_ENV       : process.env.NODE_ENV
   },
     
   server: {

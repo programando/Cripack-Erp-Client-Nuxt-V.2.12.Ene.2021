@@ -80,10 +80,6 @@
           <nuxt-link to="/users/password-change">
             <p v-t="'Login_RememberPassword'"></p> 
           </nuxt-link>
-          <nuxt-link to="/users/_password-change">
-            cambiar contraseña
-            >
-          </nuxt-link>
         </div>
         <div>
 <!--           <div class="flex justify-center mt-2 text-sm text-white">

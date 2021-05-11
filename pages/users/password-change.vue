@@ -78,7 +78,7 @@ export default {
       resetPassword() {
           User.resetPassword ( this.form)
           .then( () =>{     
-              this.Message('Proceso finalizado!' ,this.$t('User[0].PasswordMessaje'),'success', 'Cerrar mensaje' );
+              this.Message('Proceso finalizado!' ,this.$t('UserPasswordChangeMessaje'),'success', 'Cerrar ventana' );
               this.$router.push('/');
           }).catch( error => {
               if (error.response.status ==422) {
