@@ -61,8 +61,8 @@
               class="flex w-full text-xs bg-white border-b border-gray-200 hover:bg-gray-100 tr"
             >
               <td class="flex items-center w-1/12 px-2 py-2 space-x-2 text-left">
-                 <div class="w-1/3 h-4 px-2 py-2 bg-green-400 border-green-400 rounded-lg"></div>
-                 <div class="w-1/3 h-4 px-2 py-2 bg-yellow-300 border-yellow-300 rounded-lg"></div>
+                 <div class="w-1/3 h-4 px-2 py-2 bg-green-400 border-green-400 rounded-lg"> Terminada</div>
+                 <div class="w-1/3 h-4 px-2 py-2 bg-yellow-300 border-yellow-300 rounded-lg">En proceso</div>
               </td>
 
               <td class="w-1/12 px-2 py-2 text-left ">
