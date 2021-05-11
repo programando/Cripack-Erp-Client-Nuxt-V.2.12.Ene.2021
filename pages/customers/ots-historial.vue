@@ -39,14 +39,14 @@
               <th class="w-1/12 px-2 py-2 text-center">#OT</th>
               <th class="w-1/12 px-2 py-2 text-center">Solicitud</th>
               <th class="w-1/12 px-2 py-2 text-center">Terminada</th>
-              <th class="w-3/12 px-2 py-2 text-center">Referencia</th>
+              <th class="w-5/12 px-2 py-2 text-center">Referencia</th>
               <th class="w-2/12 px-2 py-2 text-center">Estilo</th>
               <th class="px-2 py-2 text-center w-14">Can</th>
               <th class="px-2 py-2 text-center w-14">Cab</th>
               <th class="w-20 px-2 py-2 text-center">#Factura</th>
               <th class="w-1/12 px-2 py-2 text-center">Vr Venta</th>
               <th class="w-20 px-2 py-2 text-center">#Guía</th>
-              <th class="w-1/12 py-2 text-center">Fecha Entrega</th>
+              <th class="w-1/12 py-2 text-center">Fecha</th>
             </tr>
           </thead>
           <tbody
@@ -74,7 +74,7 @@
               <td class="w-1/12 px-2 py-2 text-right ">
                 {{ venta.fecha_terminada | FechaLarga}}
               </td>
-              <td class="w-3/12 px-2 py-2 text-xs text-left ">
+              <td class="w-5/12 px-2 py-2 text-xs text-left ">
                 {{ venta.referencia }}
               </td>
               <td class="w-2/12 px-2 py-2 text-left ">

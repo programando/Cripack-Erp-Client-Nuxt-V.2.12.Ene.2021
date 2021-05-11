@@ -71,8 +71,7 @@
         <div class="flex justify-center text-sm text-white">
           <nuxt-link to="/users/registro">
              <!-- Aun no estoy registrado,<span class="font-semibold">¡Registrarme!</span> -->
-             <p v-t="'Login_Register'"></p> 
-             
+             <p v-t="'Login_Register'"></p>    
           </nuxt-link>
         </div>
 
@@ -81,15 +80,17 @@
             <p v-t="'Login_RememberPassword'"></p> 
           </nuxt-link>
         </div>
-        <div>
-<!--           <div class="flex justify-center mt-2 text-sm text-white">
-            <button>Sistema de transcripción Braille</button>
-          </div> -->
-        </div>
-
-  
+        <div @click="idioma = !idioma" class="flex items-end justify-end mr">
+          <div v-if="idioma" class="transition duration-500 ease-in-out transform cursor-pointer hover:scale-110">
+            <img class="h-7" src="/images/spain.svg" alt="">
+          </div>
+          <div v-else class="transition duration-500 ease-in-out transform cursor-pointer hover:scale-110">
+            <img  class="h-7" src="/images/united-states.svg" alt="">
+          </div>
           
+        </div>
       </div>
+      
     </div>
   </div>
 </template>
@@ -109,6 +110,7 @@ export default {
   components: {    LabelTitle,    InputBasic,     BtnCallToAction, ButtonRegister  },
   data() {
     return {
+      idioma: false,
       modal: true,
       errors: [ ],
       buttonIsDisabled: false,
@@ -173,3 +175,9 @@ export default {
 
 
 </script>
+<style scoped>
+.mr {
+  margin-right: -78px;
+  margin-bottom: -31px;
+}
+</style>
