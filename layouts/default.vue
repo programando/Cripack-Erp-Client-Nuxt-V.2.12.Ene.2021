@@ -11,6 +11,7 @@
 <script>
 import Header from '@/components/comunes/header'
   export default {
+     name:'defaulLayout',
       components: { Header},
   }
   </script>

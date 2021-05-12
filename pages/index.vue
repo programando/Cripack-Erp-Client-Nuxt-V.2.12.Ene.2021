@@ -14,7 +14,7 @@
 
 
       <div class="flex justify-center text-white">
-        <p class="mt-4 text-sm text-center lg:text-base" v-t="'Login_Title'"> </p>
+        <p class="mt-4 text-sm text-center lg:text-base">{{  $t("LoginTitle") }} </p>
       </div>
 
         <div class="mt-4 ">
@@ -71,24 +71,28 @@
         <div class="flex justify-center text-sm text-white">
           <nuxt-link to="/users/registro">
              <!-- Aun no estoy registrado,<span class="font-semibold">¡Registrarme!</span> -->
-             <p v-t="'Login_Register'"></p>    
+            <!--  <p v-t="'Login_Register'"></p>    --> 
           </nuxt-link>
         </div>
 
         <div class="flex justify-center mt-2 text-sm text-white">
           <nuxt-link to="/users/password-change">
-            <p v-t="'Login_RememberPassword'"></p> 
+            <!-- <p v-t="'Login_RememberPassword'"></p>  -->
           </nuxt-link>
         </div>
+
         <div @click="idioma = !idioma" class="flex items-end justify-end mr">
+         
           <div v-if="idioma" class="transition duration-500 ease-in-out transform cursor-pointer hover:scale-110">
-            <img class="h-7" src="/images/spain.svg" alt="">
+            <img @click="changeLanguage('es')" class="h-7" src="/images/spain.svg" alt="">
           </div>
+
           <div v-else class="transition duration-500 ease-in-out transform cursor-pointer hover:scale-110">
-            <img  class="h-7" src="/images/united-states.svg" alt="">
+            <img  @click="changeLanguage('en')" class="h-7" src="/images/united-states.svg" alt="">
           </div>
           
         </div>
+        
       </div>
       
     </div>
@@ -105,7 +109,8 @@ import User            from "@/models/User";
 
 
 export default {
-  layout:'index',
+  name:'loginPage',
+  layout:'blank-layout',
   middleware:['guest'],
   components: {    LabelTitle,    InputBasic,     BtnCallToAction, ButtonRegister  },
   data() {
@@ -169,6 +174,12 @@ export default {
           this.errors = [];
           this.buttonIsDisabled = false;
       },
+      changeLanguage(lang) {  
+          // Change the i18n context object's locale
+          // This makes it so the correct locale file is used
+          this.$i18n.locale = lang;
+      },
+
   },
   
 };

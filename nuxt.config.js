@@ -74,17 +74,23 @@ export default {
           lazy         : true,
           langDir      : 'lang/',
           defaultLocale: 'es',
-          //strategy     : 'prefix',
+      locale: 'es',
+          silentTranslationWarn: true,
+          loadLanguagesAsync: true,
+/*            messages: {
+            "en": require("lang/en-US.js"),
+            "es": require("lang/es-ES.js"),
+          }, */
           locales: [
             {
               code: 'es',
-              file: 'es-ES.js',
-              name:"Español"
+              file: 'es.json',
+              name: "Español",
            },
             {
               code: 'en',
-              file: 'en-US.js',
-              name:'English',
+              file: 'en.json',
+              name: 'English',
             },
           ],
         }]
