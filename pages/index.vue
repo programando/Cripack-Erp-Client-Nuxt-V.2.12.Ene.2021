@@ -1,77 +1,82 @@
 <template>
   <div class="font-rale">
     <div
-      class="flex items-center justify-center h-screen bg-center bg-no-repeat bg-cover"
+      class="z-30 flex items-center justify-center h-screen bg-center bg-no-repeat bg-cover"
       style="background-image: url('/images/background.jpg')"
     >
-      <div class="px-8 py-6 bg-azulBackGroundForm md:py-8 md:px-10 lg:mt-0 opacity-90">
+      <div
+        class="z-30 px-8 py-6 bg-azulBackGroundForm md:py-8 md:px-10 lg:mt-0 "
+      >
         <!-- label, titulo y descripcion -->
         <div class="flex justify-center text-4xl font-bold text-white">
           <span><img class="h-24" src="/images/logo.png" alt=""/></span>
         </div>
 
-     
-
-
-      <div class="flex justify-center text-white">
-        <p class="mt-4 text-sm text-center lg:text-base">{{  $t("LoginTitle") }} </p>
-      </div>
+        <div class="flex justify-center text-white">
+          <p class="mt-4 text-sm text-center lg:text-base">
+            {{ $t("LoginTitle") }}
+          </p>
+        </div>
 
         <div class="mt-4 ">
           <!-- inputText -->
           <div class="flex items-center justify-center">
             <!-- <label class="w-32 text-white">Email:</label> -->
             <div class="w-full">
-                <InputBasic type= "email"
-                        placeholder="Dirección electrónica (Email)"
-                        v-model="formLogin.email" 
-                        :errors="errors.email"
-                        colorError="white"
-                        @keyup="clearErrors"
-                        label="Email"
-                        >          
-                 </InputBasic>
+              <InputBasic
+                type="email"
+                placeholder="Dirección electrónica (Email)"
+                v-model="formLogin.email"
+                :errors="errors.email"
+                colorError="white"
+                @keyup="clearErrors"
+                label="Email"
+              >
+              </InputBasic>
             </div>
           </div>
           <!-- inputPassword -->
           <div class="flex items-center justify-center mt-6">
             <div class="w-full">
-                <InputBasic type= "password"
-                        class=""
-                        placeholder="Password o contraseña"
-                        v-model="formLogin.password" 
-                        @keyup="clearErrors"
-                        label="Password"
-                > </InputBasic>
+              <InputBasic
+                type="password"
+                class=""
+                placeholder="Password o contraseña"
+                v-model="formLogin.password"
+                @keyup="clearErrors"
+                label="Password"
+              >
+              </InputBasic>
             </div>
           </div>
         </div>
 
-
         <div class="flex justify-center mt-8 mb-8 text-lg font-semibold">
-           <BtnCallToAction 
-                @click.prevent="login" 
-                size="small" 
-                ref="ButtonLoading" 
-                variant="success"
-                variant-type="normal">  Ingresar
-            </BtnCallToAction>
+          <BtnCallToAction
+            @click.prevent="login"
+            size="small"
+            ref="ButtonLoading"
+            variant="success"
+            variant-type="normal"
+          >
+            Ingresar
+          </BtnCallToAction>
 
-           <BtnCallToAction 
-                @click.prevent="loginAlterno" 
-                size="small" 
-                ref="ButtonLoading" 
-                variant="success"
-                variant-type="normal">  Entrar
-            </BtnCallToAction>
-
+          <BtnCallToAction
+            @click.prevent="loginAlterno"
+            size="small"
+            ref="ButtonLoading"
+            variant="success"
+            variant-type="normal"
+          >
+            Entrar
+          </BtnCallToAction>
         </div>
-
 
         <div class="flex justify-center text-sm text-white">
           <nuxt-link to="/users/registro">
-             <!-- Aun no estoy registrado,<span class="font-semibold">¡Registrarme!</span> -->
-            <!--  <p v-t="'Login_Register'"></p>    --> 
+            <!-- Aun no estoy registrado,<span class="font-semibold">¡Registrarme!</span> -->
+            <!--  <p v-t="'Login_Register'"></p>    -->
           </nuxt-link>
         </div>
 
@@ -80,115 +85,124 @@
             <!-- <p v-t="'Login_RememberPassword'"></p>  -->
           </nuxt-link>
         </div>
-
-        <div @click="idioma = !idioma" class="flex items-end justify-end mr">
-         
-          <div v-if="idioma" class="transition duration-500 ease-in-out transform cursor-pointer hover:scale-110">
-            <img @click="changeLanguage('es')" class="h-7" src="/images/spain.svg" alt="">
-          </div>
-
-          <div v-else class="transition duration-500 ease-in-out transform cursor-pointer hover:scale-110">
-            <img  @click="changeLanguage('en')" class="h-7" src="/images/united-states.svg" alt="">
-          </div>
-          
-        </div>
-        
       </div>
-      
+      <div @click="idioma = !idioma" class="flex items-end justify-end mr">
+        <div class="">
+          <div
+            v-if="idioma"
+            class="z-10 transition duration-500 ease-in-out transform cursor-pointer hover:translate-x-5 hover:scale-110"
+          >
+            <img
+              @click="changeLanguage('es')"
+              class="h-7"
+              src="/images/spain.svg"
+              alt=""
+            />
+          </div>
+
+          <div
+            v-else
+            class="z-10 transition duration-500 ease-in-out transform cursor-pointer hover:translate-x-5 hover:scale-110"
+          >
+            <img
+              @click="changeLanguage('en')"
+              class="h-7"
+              src="/images/united-states.svg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import LabelTitle      from "@/components/library/LabelTitle";
-import InputBasic      from "@/components/htmlControls/inputBasic";
+import LabelTitle from "@/components/library/LabelTitle";
+import InputBasic from "@/components/htmlControls/inputBasic";
 
 import BtnCallToAction from "@/components/htmlControls/buttonCallToActionLoading";
-import ButtonRegister  from "@/components/library/buttonRegister";
-import User            from "@/models/User";
-
+import ButtonRegister from "@/components/library/buttonRegister";
+import User from "@/models/User";
 
 export default {
-  name:'loginPage',
-  layout:'blank-layout',
-  middleware:['guest'],
-  components: {    LabelTitle,    InputBasic,     BtnCallToAction, ButtonRegister  },
+  name: "loginPage",
+  layout: "blank-layout",
+  middleware: ["guest"],
+  components: { LabelTitle, InputBasic, BtnCallToAction, ButtonRegister },
   data() {
     return {
       idioma: false,
       modal: true,
-      errors: [ ],
+      errors: [],
       buttonIsDisabled: false,
-      formLogin : {
-          email:process.env.EMAIL_TEMP,
-          password:process.env.EMAIL_PASS_TEMP,
+      formLogin: {
+        email: process.env.EMAIL_TEMP,
+        password: process.env.EMAIL_PASS_TEMP
       }
     };
   },
   mounted() {
-      User.getCokie();
+    User.getCokie();
   },
   computed: {
-        loginTitle(){
-            return 'mensaje';
-        }
+    loginTitle() {
+      return "mensaje";
+    }
   },
   methods: {
-        loginAlterno() {
-            this.$cookies.set('logueado', 'true')
-            let $data =   {
-                        "logueado": 1,
-                        "idtercero": 299,
-                        "email": process.env.EMAIL_TEMP,
-                        "uso_web_empresa": 0,
-                        "nomtercero": "EMPRESA DE PRUEBA",
-                        "identificacion": "123456         ",
-                        "nombre_usuario": "",
-                        "proveedor": 0,
-                        "cliente": 1,
-                        "dias_sin_compra": 35
-                    };
-                  
-               this.$cookies.set('User',  $data )
-               this.$store.dispatch('User/SetUser', $data );
-               this.$router.push('/customers/ots-historial');
+    loginAlterno() {
+      this.$cookies.set("logueado", "true");
+      let $data = {
+        logueado: 1,
+        idtercero: 299,
+        email: process.env.EMAIL_TEMP,
+        uso_web_empresa: 0,
+        nomtercero: "EMPRESA DE PRUEBA",
+        identificacion: "123456         ",
+        nombre_usuario: "",
+        proveedor: 0,
+        cliente: 1,
+        dias_sin_compra: 35
+      };
 
-        },
-        login() {
-            this.$cookies.set('logueado', 'false')
-            User.login ( this.formLogin)
-            .then( response => {
-               this.$cookies.set('User', response.data[0])
-               this.$store.dispatch('User/SetUser',response.data[0] );
-               this.$router.push('/customers/ots-historial');
-               this.$cookies.set('logueado', 'true')
-            })
-            .catch ( error =>{
-               if (error.response.status ==422) {
-                  this.errors = error.response.data.errors;
-                }  
-            })
-        },
+      this.$cookies.set("User", $data);
+      this.$store.dispatch("User/SetUser", $data);
+      this.$router.push("/customers/ots-historial");
+    },
+    login() {
+      this.$cookies.set("logueado", "false");
+      User.login(this.formLogin)
+        .then(response => {
+          this.$cookies.set("User", response.data[0]);
+          this.$store.dispatch("User/SetUser", response.data[0]);
+          this.$router.push("/customers/ots-historial");
+          this.$cookies.set("logueado", "true");
+        })
+        .catch(error => {
+          if (error.response.status == 422) {
+            this.errors = error.response.data.errors;
+          }
+        });
+    },
 
-         clearErrors() {
-          this.errors = [];
-          this.buttonIsDisabled = false;
-      },
-      changeLanguage(lang) {  
-          // Change the i18n context object's locale
-          // This makes it so the correct locale file is used
-          this.$i18n.locale = lang;
-      },
-
-  },
-  
+    clearErrors() {
+      this.errors = [];
+      this.buttonIsDisabled = false;
+    },
+    changeLanguage(lang) {
+      // Change the i18n context object's locale
+      // This makes it so the correct locale file is used
+      this.$i18n.locale = lang;
+    }
+  }
 };
-
-
 </script>
 <style scoped>
 .mr {
-  margin-right: -78px;
-  margin-bottom: -31px;
+  margin-left: -20px;
+  margin-top: 400px;
 }
+
+
 </style>
