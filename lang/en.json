@@ -1,3 +1,8 @@
- {
-  "LoginTitle": "hellooooo i18n !!"
+{
+   "LoginForm": {
+            "BtnLoginCaption" : "Enter",
+            "Register"        : "I'm not registered yet, sign up!",
+            "RememberPassWord": "I have forgotten my password, remind me!",
+            "Title"           : "Information system - WebCross"
+   }
 }
