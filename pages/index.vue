@@ -30,8 +30,7 @@
                 :errors="errors.email"
                 colorError="white"
                 @keyup="clearErrors"
-                label="Email"
-              >
+                label="Email" >
               </InputBasic>
             </div>
           </div>
@@ -126,7 +125,7 @@ import ButtonRegister from "@/components/library/buttonRegister";
 import User from "@/models/User";
 
 export default {
-  name: "loginPage",
+  name: "LoginForm",
   layout: "blank-layout",
   middleware: ["guest"],
   components: { LabelTitle, InputBasic, BtnCallToAction, ButtonRegister },

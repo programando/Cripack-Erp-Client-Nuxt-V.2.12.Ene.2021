@@ -2,7 +2,7 @@ import dotenv from "dotenv"; dotenv.config();
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'Cripack S.A.S.',
+    title: 'Cripack S.A.S. - WebCross',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui' },

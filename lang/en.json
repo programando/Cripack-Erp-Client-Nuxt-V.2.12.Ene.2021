@@ -10,5 +10,20 @@
       "CompanyName"       : "Name or company :",
       "IdentifyNumber"    : "Identification :",
       "RegisterOk"        : "I'm already registered, login!"
-   }
+   },
+   "PasswordChageForm" :{
+         "BtnSendEmail": "Send email",
+         "TitleP1"     : "We'll send a email to account registred ",
+         "TitleP2"     : "with the instrucctions to change access data",
+         "BtnCloseWindow": "Close window",
+         "MessageOkBody" : "In a few seconds you will receive an email with the instructions to change the access credentials to our system. The access token for password change (included in the email) will last 15 minutes. Don't forget to check your span tray in case this is the first time you are doing this process.",
+         "MessageOkTitle": "Finalized"
+   }  ,
+      "PasswordChangeNewForm" : {
+         "BtnGoIndex"          : "Go home",
+         "BtnUpdatePassword"   : "Update password",
+         "PasswordPlaceHolder1": "New password",
+         "PasswordPlaceHolder2": "Confirm password",
+         "Title"               : "Register the new password information with which you will enter our system"
+   } 
 }

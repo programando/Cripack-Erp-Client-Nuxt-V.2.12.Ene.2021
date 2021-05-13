@@ -5,10 +5,26 @@
       "RememberPassWord": "He olvidado mi contraseña,  Recordármela !",
       "Title"           : "Sistema de información - WebCross"
    },
-   "FormRegister": {
+   "RegisterForm": {
       "BtnRegisterCaption": "Registrar datos",
       "CompanyName"       : "Nombre o empresa :",
       "IdentifyNumber"    : "Número de identificación :",
       "RegisterOk"        : "Ya estoy registrado, ingresar!"
+   },
+   "PasswordChageForm" :{
+         "BtnCloseWindow": "Cerrar ventana",
+         "BtnSendEmail"  : "Enviar correo",
+         "MessageOkBody" : "En breves segundos recibirás un correo electrónico con las instrucciones para cambiar las credenciales de acceso a nuestro sistema. El token de acceso para cambio de contraseña (incluido en el correo), tendrá una duración de 15 minutos. No olvides revisar tu bandeja de span en caso de que sea la primera vez que realizas este proceso.",
+         "MessageOkTitle": "Proceso finalizado!",
+         "TitleP1"       : "Enviaremos un correo electrónico a la cuenta registrada en nuestro sistema",
+         "TitleP2"       : "con las instrucciones para que modifique los datos de acceso"
+   },
+   "PasswordChangeNewForm" : {
+         "BtnGoIndex"          : "Ir a inicio",
+         "BtnUpdatePassword"   : "Actualizar contraseña",
+         "PasswordPlaceHolder1": "Nueva contraseña",
+         "PasswordPlaceHolder2": "Confirme la contraseña",
+         "Title"               : "Registre los nuevos datos de la contraseña con la que ingresará a nuestro sistema"
    }
+
 }
