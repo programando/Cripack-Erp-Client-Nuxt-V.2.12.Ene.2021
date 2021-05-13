@@ -14,8 +14,8 @@
             <div class="flex justify-center text-4xl font-bold text-white">
               <span><img class="h-24" src="/images/logo.png" alt=""/></span>
             </div>
-            <p class="text-white">Enviaremos un correo electrónico a la cuenta registrada en nuestro sistema</p> 
-             <p class="flex justify-center text-white"> con las instrucciones para que modifique los datos de acceso</p>
+            <p class="text-white" v-t="'PasswordChageForm.TitleP1'"></p> 
+             <p class="flex justify-center text-white"  v-t="'PasswordChageForm.TitleP2'"> </p>
             <div class="mt-4">
               <!-- inputText -->
               <div class="py-2 mx-20 mt-1">
@@ -25,7 +25,7 @@
                       @keyup     = "clearErrors"
                       colorError = "white"
                       icon       = "true"
-                      text       = "Cuenta de Correo electronico o email..."
+                      text       = "email..."
                       type       = "text"
                       v-model    = "form.email"
                       width      = "w-full"
@@ -44,7 +44,7 @@
                 size="small" 
                 ref="ButtonLoading" 
                 variant="success"
-                variant-type="normal">  Enviar correo
+                variant-type="normal">   {{ $t('PasswordChageForm.BtnSendEmail')}}
             </BtnCallToAction>
               
             </div>
@@ -78,7 +78,7 @@ export default {
       resetPassword() {
           User.resetPassword ( this.form)
           .then( () =>{     
-              this.Message('Proceso finalizado!' ,this.$t('UserPasswordChangeMessaje'),'success', 'Cerrar ventana' );
+              this.Message(this.$t('PasswordChageForm.MessageOkTitle') ,this.$t('PasswordChageForm.MessageOkBody'),'success', this.$t('PasswordChageForm.BtnCloseWindow') );
               this.$router.push('/');
           }).catch( error => {
               if (error.response.status ==422) {

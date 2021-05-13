@@ -17,7 +17,7 @@
             <div class="mt-4">
               <!-- inputText -->
               <div class="grid items-center mt-1 lg:grid-cols-3">
-                <label class="pr-10 text-white" v-t="'FormRegister.IdentifyNumber'"></label>
+                <label class="pr-10 text-white" v-t="'RegisterForm.IdentifyNumber'"></label>
                 <div class="w-full col-span-2">
                   <InputBasic
                     type="text"
@@ -29,7 +29,7 @@
 
               <!-- inputPassword -->
               <div class="grid items-center mt-1 lg:grid-cols-3">
-                <label class="pr-10 text-white" v-t="'FormRegister.CompanyName'"></label>
+                <label class="pr-10 text-white" v-t="'RegisterForm.CompanyName'"></label>
                 <div class="w-full col-span-2">
                   <InputBasic
                     type="text"
@@ -72,7 +72,7 @@
             <nuxt-link to="/"
               class="flex items-center justify-center text-white cursor-pointer"
             >
-              <h3 v-t="'FormRegister.RegisterOk'"></h3>
+              <h3 v-t="'RegisterForm.RegisterOk'"></h3>
             </nuxt-link>
           </div>
         </div>
@@ -85,8 +85,8 @@
 import InputBasic from "@/components/htmlControls/inputBasic";
 import ButtonLoad from "@/components/library/ButtonLoad";
 export default {
+  name: "RegisterForm",
   layout: 'blank-layout',
-  name: "registro",
   components: {
     InputBasic,
     ButtonLoad
