@@ -98,7 +98,7 @@
         <div class="">
           <div
             v-if="idioma"
-            class="z-10 transition duration-500 ease-in-out transform cursor-pointer hover:translate-x-5 hover:scale-110"
+            class="z-10 transition duration-500 ease-in-out transform cursor-pointer hover:translate-x-7 hover:scale-110"
           >
             <img
               @click="changeLanguage('es')"
@@ -110,7 +110,7 @@
 
           <div
             v-else
-            class="z-10 transition duration-500 ease-in-out transform cursor-pointer hover:translate-x-5 hover:scale-110"
+            class="z-10 transition duration-500 ease-in-out transform cursor-pointer hover:translate-x-7 hover:scale-110"
           >
             <img
               @click="changeLanguage('en')"
