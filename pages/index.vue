@@ -5,7 +5,7 @@
       style="background-image: url('/images/background.jpg')"
     >
       <div
-        class="z-30 px-8 py-6 bg-azulBackGroundForm md:py-8 md:px-10 lg:mt-0 "
+        class="z-30 px-8 py-6 bg-azulBackGroundForm md:py-8 md:px-10 lg:mt-0"
       >
         <!-- label, titulo y descripcion -->
         <div class="flex justify-center text-4xl font-bold text-white">
@@ -51,6 +51,7 @@
         </div>
 
         <div class="flex justify-center mt-8 mb-8 text-lg font-semibold">
+          
           <BtnCallToAction
             @click.prevent="login"
             size="small"
@@ -69,6 +70,7 @@
             variant-type="normal"
           >
             Entrar
+            
           </BtnCallToAction>
         </div>
 
@@ -84,8 +86,9 @@
             <p v-t="'LoginForm.RememberPassWord'"></p> 
           </nuxt-link>
         </div>
+        
       </div>
-      <div @click="idioma = !idioma" class="flex items-end justify-end mr">
+      <div @click="idioma = !idioma" class="flex items-end justify-end h-96 mr">
         <div class="">
           <div
             v-if="idioma"
@@ -94,7 +97,7 @@
             <img
               @click="changeLanguage('es')"
               class="h-7"
-              src="/images/spain.svg"
+              src="/images/colombia.svg"
               alt=""
             />
           </div>
@@ -199,9 +202,24 @@ export default {
 </script>
 <style scoped>
 .mr {
-  margin-left: -30px;
-  margin-top: 400px;
+  margin-top: 67px;
+  margin-left: -20px;
 }
 
+@media screen and (min-width: 768px){
+  .mr {
+  margin-top: 80px;
+  margin-left: -20px;
+}
+
+}
+
+@media screen and (min-width: 1200px){
+  .mr {
+  margin-top: 85px;
+  margin-left: -20px;
+}
+
+}
 
 </style>
