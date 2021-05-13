@@ -58,6 +58,7 @@
             ref="ButtonLoading"
             variant="success"
             variant-type="normal"
+            colorIcon="white"
             :showBtnAnimation="showBtnAnimation"
           >
             {{ $t('LoginForm.BtnLoginCaption')}}
