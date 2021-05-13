@@ -9,18 +9,18 @@
       >
         <!-- label, titulo y descripcion -->
         <div class="flex items-center justify-center ">
-          <div class="px-8 py-6 mt-6 md:py-8 md:px-24 lg:mt-0 ">
+          <div class="px-10 py-6 mt-6 md:py-8 md:px-24 lg:mt-0 ">
             <!-- label, titulo y descripcion -->
-            <div class="flex justify-center text-4xl font-bold text-white">
+            <div class="flex justify-center text-4xl font-bold text-white px-28">
               <span><img class="h-24" src="/images/logo.png" alt=""/></span>
             </div>
-            <p class="text-white" v-t="'PasswordChageForm.TitleP1'"></p> 
-             <p class="flex justify-center text-white"  v-t="'PasswordChageForm.TitleP2'"> </p>
+            <p class="flex justify-center text-white" v-t="'PasswordChageForm.TitleP1'"></p> 
+            <p class="flex justify-center text-white "  v-t="'PasswordChageForm.TitleP2'"> </p>
             <div class="mt-4">
               <!-- inputText -->
               <div class="py-2 mx-20 mt-1">
                 
-                <div class="items-center ">
+                <div class="items-center w-full">
                   <InputBasic
                       @keyup     = "clearErrors"
                       colorError = "white"
