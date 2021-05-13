@@ -17,7 +17,7 @@
             <div class="mt-4">
               <!-- inputText -->
               <div class="grid items-center mt-1 lg:grid-cols-3">
-                <label class="pr-10 text-white">CC/NIT:</label>
+                <label class="pr-10 text-white" v-t="'FormRegister.IdentifyNumber'"></label>
                 <div class="w-full col-span-2">
                   <InputBasic
                     type="text"
@@ -29,7 +29,7 @@
 
               <!-- inputPassword -->
               <div class="grid items-center mt-1 lg:grid-cols-3">
-                <label class="pr-10 text-white">Nombre Empresa:</label>
+                <label class="pr-10 text-white" v-t="'FormRegister.CompanyName'"></label>
                 <div class="w-full col-span-2">
                   <InputBasic
                     type="text"
@@ -39,7 +39,7 @@
                 </div>
               </div>
               <div class="grid items-center mt-1 lg:grid-cols-3">
-                <label class="pr-10 text-white">Email:</label>
+                <label class="pr-10 text-white">Email :</label>
                 <div class="w-full col-span-2">
                   <InputBasic
                     type="text"
@@ -49,7 +49,7 @@
                 </div>
               </div>
               <div class="grid items-center mt-1 lg:grid-cols-3">
-                <label class="pr-10 text-white">Contraseña:</label>
+                <label class="pr-10 text-white">Password :</label>
                 <div class="w-full col-span-2">
                   <InputBasic
                     type="password"
@@ -58,16 +58,7 @@
                   />
                 </div>
               </div>
-              <div class="grid items-center mt-1 lg:grid-cols-3">
-                <label class="pr-10 text-white">Repite Contraseña:</label>
-                <div class="w-full col-span-2">
-                  <InputBasic
-                    type="password"
-                    text="contraseña"
-                    width="w-full"
-                  />
-                </div>
-              </div>
+
             </div>
 
             <div class="flex justify-center mt-8 mb-2 text-lg font-semibold">
@@ -81,7 +72,7 @@
             <nuxt-link to="/"
               class="flex items-center justify-center text-white cursor-pointer"
             >
-              <h3>Ya estoy registrado, <span>¡Ingresar!</span></h3>
+              <h3 v-t="'FormRegister.RegisterOk'"></h3>
             </nuxt-link>
           </div>
         </div>

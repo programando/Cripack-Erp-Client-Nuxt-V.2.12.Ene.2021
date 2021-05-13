@@ -1,8 +1,14 @@
 {
    "LoginForm": {
-            "BtnLoginCaption" : "Ingresar",
-            "Register"        : "Aún no estoy registrado, ¡Registrarme!",
-            "RememberPassWord": "He olvidado mi contraseña,  Recordármela !",
-            "Title"           : "Sistema de información - WebCross"
+      "BtnLoginCaption" : "Ingresar",
+      "Register"        : "Aún no estoy registrado, ¡Registrarme!",
+      "RememberPassWord": "He olvidado mi contraseña,  Recordármela !",
+      "Title"           : "Sistema de información - WebCross"
+   },
+   "FormRegister": {
+      "BtnRegisterCaption": "Registrar datos",
+      "CompanyName"       : "Nombre o empresa :",
+      "IdentifyNumber"    : "Número de identificación :",
+      "RegisterOk"        : "Ya estoy registrado, ingresar!"
    }
 }

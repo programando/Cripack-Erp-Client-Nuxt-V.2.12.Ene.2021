@@ -1,8 +1,14 @@
 {
    "LoginForm": {
-            "BtnLoginCaption" : "Enter",
-            "Register"        : "I'm not registered yet, sign up!",
-            "RememberPassWord": "I have forgotten my password, remind me!",
-            "Title"           : "Information system - WebCross"
+      "BtnLoginCaption" : "Sign in!",
+      "Register"        : "I'm not registered yet, sign up!",
+      "RememberPassWord": "I have forgotten my password, remind me!",
+      "Title"           : "Information system - WebCross"
+   },
+      "FormRegister": {
+      "BtnRegisterCaption": "Save data",
+      "CompanyName"       : "Name or company :",
+      "IdentifyNumber"    : "Identification :",
+      "RegisterOk"        : "I'm already registered, login!"
    }
 }

@@ -14,7 +14,7 @@
 
         <div class="flex justify-center text-white">
           <p class="mt-4 text-sm text-center lg:text-base">
-            {{ $t("LoginTitle") }}
+            {{ $t('LoginForm.Title') }}
           </p>
         </div>
 
@@ -59,7 +59,7 @@
             variant="success"
             variant-type="normal"
           >
-            Ingresar
+            {{ $t('LoginForm.BtnLoginCaption')}}
           </BtnCallToAction>
 
           <BtnCallToAction
@@ -76,13 +76,13 @@
         <div class="flex justify-center text-sm text-white">
           <nuxt-link to="/users/registro">
             <!-- Aun no estoy registrado,<span class="font-semibold">¡Registrarme!</span> -->
-            <!--  <p v-t="'Login_Register'"></p>    -->
+              <p v-t="'LoginForm.Register'"></p>    
           </nuxt-link>
         </div>
 
         <div class="flex justify-center mt-2 text-sm text-white">
           <nuxt-link to="/users/password-change">
-            <!-- <p v-t="'Login_RememberPassword'"></p>  -->
+            <p v-t="'LoginForm.RememberPassWord'"></p> 
           </nuxt-link>
         </div>
       </div>
@@ -200,7 +200,7 @@ export default {
 </script>
 <style scoped>
 .mr {
-  margin-left: -20px;
+  margin-left: -30px;
   margin-top: 400px;
 }
 

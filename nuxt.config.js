@@ -46,6 +46,7 @@ export default {
   plugins: [
      { src: '~/plugins/filters.js' },
      { src: '~/plugins/datepicker', ssr: false },
+     { src: '~/plugins/i18n.js' },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -70,17 +71,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     ['cookie-universal-nuxt', { alias: 'cookies' }],
-    ['nuxt-i18n', {
-          lazy         : true,
-          langDir      : 'lang/',
-          defaultLocale: 'es',
-      locale: 'es',
-          silentTranslationWarn: true,
-          loadLanguagesAsync: true,
-/*            messages: {
-            "en": require("lang/en-US.js"),
-            "es": require("lang/es-ES.js"),
-          }, */
+/*     ['nuxt-i18n', {
           locales: [
             {
               code: 'es',
@@ -92,8 +83,14 @@ export default {
               file: 'en.json',
               name: 'English',
             },
-          ],
-        }]
+      ],
+          lazy                 : true,
+          langDir              : 'lang/',
+          defaultLocale        : 'es',
+          locale               : 'es',
+          silentTranslationWarn: true,
+          loadLanguagesAsync   : true,      
+        }] */
   ],
   
 
