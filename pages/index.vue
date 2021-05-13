@@ -225,7 +225,7 @@ export default {
 @media screen and (min-width: 1200px){
   .mr {
   margin-top: 85px;
-  margin-left: -30px;
+  margin-left: -25px;
 }
 
 }
