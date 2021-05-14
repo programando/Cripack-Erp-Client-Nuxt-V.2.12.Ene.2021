@@ -44,7 +44,9 @@
                 size="small" 
                 ref="ButtonLoading" 
                 variant="success"
-                variant-type="normal">   {{ $t('PasswordChageForm.BtnSendEmail')}}
+                variant-type="normal"
+                :showBtnAnimation="showBtnAnimation"
+                >   {{ $t('PasswordChageForm.BtnSendEmail')}}
             </BtnCallToAction>
               
             </div>
@@ -70,6 +72,7 @@ export default {
   components: { InputBasic, BtnCallToAction },
    mixins: [Messages],
   data :()=>({
+        showBtnAnimation:false,
         errors:[],
         form:{ email:''},
   }),

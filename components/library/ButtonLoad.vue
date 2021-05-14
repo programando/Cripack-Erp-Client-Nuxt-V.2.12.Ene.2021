@@ -1,8 +1,12 @@
 <template>
   <div
-    class="px-4 py-1 rounded-lg"
-    :class="[width, setVariant, setColor]" 
+    class="flex px-4 py-1 rounded-lg"
+    :class="[width, setVariant, setColor]"
+    @click="showBtnAnimation = true"
   >
+    <span v-if="showBtnAnimation" class="h-6 mr-2" :class="[setColorIcon]">
+        <font-awesome-icon class="h-6 animate-spin" :icon="['fa', 'spinner']"/>
+    </span>
     <nuxt-link :to="to">
       <p>{{ text }}</p>
     </nuxt-link>
@@ -11,6 +15,11 @@
 <script>
 export default {
   name: "ButtonLoad",
+  data() {
+    return {
+      showBtnAnimation: false
+    }
+  },
   props: {
     text: String,
     to: String,
@@ -19,6 +28,8 @@ export default {
     variant: String,
     color: String
   },
+  
+
   computed: {
     setVariant() {
       switch (this.variant) {
