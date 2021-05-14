@@ -8,13 +8,24 @@
         <div class="flex space-x-2">
           <!-- calendario1 -->
           <client-only>
-            <date-picker v-model="time" valueType="format"></date-picker>
+            <date-picker v-model="fechaIni" valueType="format"></date-picker>
           </client-only>
           <!-- calendario2 -->
           <client-only>
-            <date-picker v-model="time2" valueType="format"></date-picker>
+            <date-picker v-model="fechaFin" valueType="format"></date-picker>
           </client-only>
-          <button class="px-4 py-1 text-white rounded-md bg-celeste hover:bg-blue-500">Consultar ventas</button>
+
+                    <BtnCallToAction
+            @click.prevent="login"
+            size="small"
+            ref="ButtonLoading"
+            variant="success"
+            variant-type="normal"
+            :showBtnAnimation="showBtnAnimation"
+          >
+            Consultar Ot's
+          </BtnCallToAction>
+        
         </div>
       </div>
       <div class="flex items-center">
@@ -109,40 +120,63 @@
 </template>
 
 <script>
-import Terceros from "@/models/Terceros";
+    var Moment = require('moment');
+    import Terceros from "@/models/Terceros";
+    import BtnCallToAction    from "@/components/htmlControls/buttonCallToActionLoading";
+    
+    
+    export default {
+      components : {BtnCallToAction},
+      data() {
+        return {
+          fechaIni        : '',
+          fechaFin        : '',
+          busqueda        : "",
+          Ventas          : [],
+          showBtnAnimation: false,
+          formParams: {
+              idtercero:0,
+              fechaIni: '',
+              fechaFin:''
+          }
+        };
+      },
+      mounted() {
+        this.fechaIni = Moment().subtract(30,'d').format('YYYY-MM-DD');
+        this.fechaFin = Moment().format('YYYY-MM-DD');;
+        this.getOts();
+        this.showBtnAnimation     = false;
+      },
 
-export default {
-  data() {
-    return {
-      time:'2021-05-09',
-      time2: '2021-05-10',
-      busqueda: "",
-      Ventas: [],
-      idtercero: ""
-    };
-  },
+    methods: {
+            getOts() {
+              this.getParams(); 
+              Terceros.historialVentas(this.formParams)
+              .then(response => {
+                  this.Ventas = response.data.data;
+                  console.log ( response)
+                }
+              ); 
+              
+            },
+            getParams() {
+                  this.formParams.fechaFin  = this.fechaFin +' 23:59:59';
+                  this.formParams.fechaIni  = this.fechaIni +' 00:01:01';
+                  this.formParams.idtercero = this.$cookies.get("User").idtercero;
+                  this.showBtnAnimation     = true;
+            }
+    },
 
-  
-
-  mounted() {
-    this.idtercero = this.$cookies.get("User").idtercero;
-    Terceros.historialVentas("/clientes/ots?idtercero=" + this.idtercero).then(
-      response => {
-        this.Ventas = response.data.data;
+      computed: {
+        busquedaFiltrada() {
+          return this.productos.filter(producto => {
+            return producto.estilo
+              .toLowerCase()
+              .includes(this.busqueda.toLowerCase());
+          });
+        }
       }
-    );
-  },
-
-  computed: {
-    busquedaFiltrada() {
-      return this.productos.filter(producto => {
-        return producto.estilo
-          .toLowerCase()
-          .includes(this.busqueda.toLowerCase());
-      });
-    }
-  }
-};
+    };
 </script>
 
 <style>

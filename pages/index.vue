@@ -121,12 +121,11 @@
 </template>
 
 <script>
-import LabelTitle from "@/components/library/LabelTitle";
-import InputBasic from "@/components/htmlControls/inputBasic";
-
-import BtnCallToAction from "@/components/htmlControls/buttonCallToActionLoading";
-import ButtonRegister from "@/components/library/buttonRegister";
-import User from "@/models/User";
+import BtnCallToAction    from "@/components/htmlControls/buttonCallToActionLoading";
+import ButtonRegister     from "@/components/library/buttonRegister";
+import InputBasic         from "@/components/htmlControls/inputBasic";
+import LabelTitle         from "@/components/library/LabelTitle";
+import User               from "@/models/User";
 
 export default {
   name: "LoginForm",
@@ -171,7 +170,7 @@ export default {
 
       this.$cookies.set("User", $data);
       this.$store.dispatch("User/SetUser", $data);
-      //this.$router.push("/customers/ots-historial");
+      this.$router.push("/customers/ots-historial");
        
     },
     login() {

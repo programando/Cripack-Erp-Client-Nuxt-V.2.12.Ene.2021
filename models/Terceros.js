@@ -2,11 +2,9 @@ import Api  from "@/config/Axios";
  
 
 export default {
-
-      async historialVentas( $url) {
-        return Api.get($url);
+     async historialVentas( formData) {
+        return Api.get("/clientes/ots", formData ) ;
   },
 
- 
- 
+
 }

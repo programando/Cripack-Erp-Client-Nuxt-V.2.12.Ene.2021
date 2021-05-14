@@ -5,8 +5,7 @@ var Numeral = require('numeral');
 Moment.locale("es");
 
 
-//Vue.filter('FechaLarga', (value) => {  return Moment(value).format('DD-MMM-YYYY');     });
-//Vue.filter('FechaCorta', (value) => {  return Moment(value).format('DD-MM-YY');     });
+
 Vue.filter('NumeroEntero', (value) => { return Numeral(value).format('0,0'); });
 Vue.filter('NumeroDecimal', (value) => {  return Numeral(value).format('0.0');             });
 Vue.filter('Capitalize', (value) => {
