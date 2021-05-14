@@ -1,7 +1,7 @@
 <template>
   <div class="py-24 mx-2 font-latos">
     <div class="flex justify-between my-2">
-      <h3 class="mt-1 text-3xl">
+      <h3 class="mt-1 text-2xl">
         Historial Órdenes de trabajo
       </h3>
       <div class="mt-2">
@@ -15,14 +15,13 @@
             <date-picker v-model="fechaFin" valueType="format"></date-picker>
           </client-only>
 
-                    <BtnCallToAction
-            @click.prevent="login"
-            size="small"
-            ref="ButtonLoading"
-            variant="success"
-            variant-type="normal"
-            :showBtnAnimation="showBtnAnimation"
-          >
+           <BtnCallToAction
+              @click.prevent  = "getOts"
+              ref             = "ButtonLoading"
+              size            = "small"
+              variant         = "success"
+              variant-type    = "normal"
+            :showBtnAnimation = "showBtnAnimation" >
             Consultar Ot's
           </BtnCallToAction>
         
@@ -34,10 +33,10 @@
         </div>
 
         <input
-          class="px-10 py-2 border-2 focus:outline-none"
+          class="px-10 py-1 border-2 focus:outline-none"
           type="text"
           v-model="busqueda"
-          placeholder="Buscar por Nombre"
+          placeholder="Buscar por referencia"
         />
       </div>
     </div>
@@ -64,54 +63,30 @@
             class="flex flex-col w-full overflow-y-scroll text-xs text-gray-600 bg-white"
             style="height: 64vh;"
           >
-            <tr
-              v-for="venta in Ventas"
+            <tr 
+              v-for="venta in filtroReferencia"
               :key="venta.idregistro_ot"
-              class="flex w-full text-xs bg-white border-b border-gray-200 hover:bg-gray-100 tr"
-            >
+              class="flex w-full text-xs bg-white border-b border-gray-200 hover:bg-gray-100 tr" >
  
               <td class="flex items-center justify-start w-1/12 px-2 py-2 space-x-2 text-left">
                  <div  v-if="venta.fecha_entrega" class="flex items-center justify-center h-6 px-2 py-2 text-xs text-white bg-green-700 border-green-700 rounded-lg ">Terminada</div>
                  <div v-else class="flex items-center justify-center h-6 px-2 py-2 text-xs bg-yellow-300 border-yellow-300 rounded-lg">En proceso</div>
-
               </td>
 
-              <td class="w-1/12 px-2 py-2 text-center ">
-                {{ venta.numero_ot }}
-              </td>
-              <td class="w-1/12 px-2 py-2 text-right ">
-                {{ venta.fecha_solicitud | FechaLarga }}
-              </td>
-              <td class="w-1/12 px-2 py-2 text-right ">
-                {{ venta.fecha_terminada | FechaLarga}}
-              </td>
-              <td class="w-4/12 px-2 py-2 text-xs text-left ">
-                {{ venta.referencia }}
-              </td>
-              <td class="w-2/12 px-2 py-2 text-left ">
-                {{ venta.nomestilotrabajo }}
-              </td>
-              <td class="px-4 py-2 text-right w-14 ">
-                {{ venta.cantidad }}
-              </td>
-              <td class="px-4 py-2 text-right w-14 ">
-                {{ venta.cabida }}
-              </td>
-
-              <td class="w-20 px-2 py-2 text-right ">
-                {{ venta.numero_factura }}
-              </td>
-              <td class="w-1/12 px-2 py-2 text-right ">
-                {{ venta.vrVenta }}
-              </td>
-               <td class="w-20 px-2 py-2 text-right ">
-                {{ venta.nro_guia }}
-              </td>
-              <td class="w-1/12 px-2 py-2 text-left">
-                {{ venta.fecha_entrega | FechaLarga }}
-              </td>
+                <td class="w-1/12 px-2 py-2 text-center ">        {{ venta.numero_ot }}                     </td>
+                <td class="w-1/12 px-2 py-2 text-right ">         {{ venta.fecha_solicitud | FechaLarga }}  </td>
+                <td class="w-1/12 px-2 py-2 text-right ">         {{ venta.fecha_terminada | FechaLarga}}   </td>
+                <td class="w-4/12 px-2 py-2 text-xs text-left ">  {{ venta.referencia }}                    </td>
+                <td class="w-2/12 px-2 py-2 text-left ">          {{ venta.nomestilotrabajo }}              </td>
+                <td class="px-4 py-2 text-right w-14 ">           {{ venta.cantidad }}                      </td>
+                <td class="px-4 py-2 text-right w-14 ">           {{ venta.cabida }}                        </td>
+                <td class="w-20 px-2 py-2 text-right ">           {{ venta.numero_factura }}                </td>
+                <td class="w-1/12 px-2 py-2 text-right ">         {{ venta.vrVenta }}                       </td>
+                <td class="w-20 px-2 py-2 text-right ">           {{ venta.nro_guia }}                      </td>
+                <td class="w-1/12 px-2 py-2 text-left">           {{ venta.fecha_entrega | FechaLarga }}    </td>
 
             </tr>
+
           </tbody>
         </table>
       </div>
@@ -121,12 +96,13 @@
 
 <script>
     var Moment = require('moment');
-    import Terceros from "@/models/Terceros";
     import BtnCallToAction    from "@/components/htmlControls/buttonCallToActionLoading";
+    import Terceros           from "@/models/Terceros";
     
     
     export default {
-      components : {BtnCallToAction},
+      name:'ClientesHistorialForm',
+      components : { BtnCallToAction },
       data() {
         return {
           fechaIni        : '',
@@ -154,7 +130,7 @@
               Terceros.historialVentas(this.formParams)
               .then(response => {
                   this.Ventas = response.data.data;
-                  console.log ( response)
+                  this.showBtnAnimation = false;
                 }
               ); 
               
@@ -168,9 +144,9 @@
     },
 
       computed: {
-        busquedaFiltrada() {
-          return this.productos.filter(producto => {
-            return producto.estilo
+        filtroReferencia() {
+          return this.Ventas.filter(row => {
+            return row.referencia
               .toLowerCase()
               .includes(this.busqueda.toLowerCase());
           });

@@ -7,10 +7,10 @@
         <h2 class="text-5xl">Oops!</h2>
         <h2 class=" text-9xl">404</h2>
         <p class="px-8 text-xl">La página que estás buscando no existe o fue eliminada. Puedes volver a la 
-        <nuxt-link class="text-celesteClaro" to="/">
+        <nuxt-link class="text-celesteClaro" to="/index">
             página de incio
         </nuxt-link>  
-        y continuar navegando o <nuxt-link class="text-celesteClaro" to="/customers/contact">contactarte con nosotros</nuxt-link></p>
+        y continuar navegando o <nuxt-link class="text-celesteClaro" to="/clientes/contact">contactáte con nosotros</nuxt-link></p>
       </div>
   </div>
 </template>

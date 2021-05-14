@@ -77,14 +77,14 @@
         </div>
 
         <div class="flex justify-center text-sm text-white">
-          <nuxt-link to="/users/registro">
+          <nuxt-link to="/usuarios/registro">
             <!-- Aun no estoy registrado,<span class="font-semibold">¡Registrarme!</span> -->
               <p v-t="'LoginForm.Register'"></p>    
           </nuxt-link>
         </div>
 
         <div class="flex justify-center mt-2 text-sm text-white">
-          <nuxt-link to="/users/password-change">
+          <nuxt-link to="/usuarios/password-change">
             <p v-t="'LoginForm.RememberPassWord'"></p> 
           </nuxt-link>
         </div>
@@ -171,7 +171,7 @@ export default {
 
       this.$cookies.set("User", $data);
       this.$store.dispatch("User/SetUser", $data);
-      this.$router.push("/customers/ots-historial");
+      this.$router.push("/clientes/ots-historial");
        
     },
     login() {
@@ -181,7 +181,7 @@ export default {
         .then(response => {
           this.$cookies.set("User", response.data[0]);
           this.$store.dispatch("User/SetUser", response.data[0]);
-          this.$router.push("/customers/ots-historial");
+          this.$router.push("/clientes/ots-historial");
           this.$cookies.set("logueado", "true");
         })
         .catch(error => {

@@ -8,11 +8,11 @@
       </div>
     </div>
     <div class="flex mr-4 space-x-6">
-       <NavLinks  text="Historial" to="/customers/ots-historial" />
+       <NavLinks  text="Historial" to="/clientes/ots-historial" />
       
        <NavLinks  text="Solicitud OT"  to="" />
 
-      <NavLinks  text="Estado OT's" to="/customers/ots-estado" />
+      <NavLinks  text="Estado OT's" to="/clientes/ots-estado" />
 
 
 
@@ -20,11 +20,11 @@
         text="Braille"
         to="/"
       /> -->
-      <NavLinks text="Contacto"  to="/customers/contact"  />
+      <NavLinks text="Contacto"  to="/clientes/contact"  />
       
 <!--       <NavLinks 
         text="Comercial"
-        to="/customers/ordenes"
+        to="/clientes/ordenes"
       /> -->
        <button @click="logout" class="font-semibold text-white"> Salir </button> 
     </div>

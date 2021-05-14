@@ -2,7 +2,7 @@ export default function ({app, redirect }) {
    
    let isLoguedIn = Boolean(app.$cookies.get('logueado'));
    if ( isLoguedIn ) {
-         return redirect('/customers/ots-historial');
+         return redirect('/clientes/ots-historial');
    }
    
    //console.log( localStorage.getItem('Logueado') )
