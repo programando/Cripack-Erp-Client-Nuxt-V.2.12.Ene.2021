@@ -38,7 +38,9 @@
                 size="small"
                 ref="ButtonLoading"
                 variant="success"
-                variant-type="normal" >
+                variant-type="normal" 
+                :showBtnAnimation="showBtnAnimation"
+                >
                 {{$t('PasswordChangeNewForm.BtnUpdatePassword')}}
               </BtnCallToAction>
             </div>
@@ -58,6 +60,7 @@ export default {
   layout: 'blank-layout',
   components: { InputPassword, BtnCallToAction },
   data: ()=> ({
+       showBtnAnimation:false,
        formUser :{
             password             : null,
             password_confirmation: null,
