@@ -65,7 +65,7 @@
           </BtnCallToAction>
 
 
-          <BtnCallToAction
+<!--           <BtnCallToAction
             @click.prevent="loginAlterno"
             size="small"
             ref="ButtonLoading"
@@ -73,7 +73,7 @@
             variant-type="normal"
           >
             Entrar 
-          </BtnCallToAction>
+          </BtnCallToAction> -->
         </div>
 
         <div class="flex justify-center text-sm text-white">

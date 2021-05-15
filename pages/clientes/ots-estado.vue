@@ -1,8 +1,10 @@
 <template>
   <div class="py-24 mx-2 font-latos">
     <div class="flex justify-between my-2">
+
+
       <h3 class="mt-1 text-3xl">
-        Estado Órdenes de Producción
+        Estado Órdenes Trabajo
       </h3>
       <div class="mt-2"></div>
       <div class="flex items-center">
@@ -11,10 +13,10 @@
         </div>
 
         <input
-          class="px-10 py-2 border-2 focus:outline-none"
+          class="px-10 py-1 border-2 focus:outline-none"
           type="text"
           v-model="busqueda"
-          placeholder="Buscar por Nombre"
+          placeholder="Buscar referencia"
         />
       </div>
     </div>
@@ -35,92 +37,91 @@
             class="flex flex-col w-full overflow-y-scroll text-xs text-gray-600 bg-white"
             style="height: 64vh;"
           >
-            <tr
-              v-for="registro in busquedaFiltrada"
-              :key="registro.id"
-              class="flex w-full text-xs bg-white border-b border-gray-200 hover:bg-gray-100 tr"
-            >
-              <td class="w-1/12 px-2 py-2 text-center ">
-                {{ registro.ot }}
-              </td>
+            <tr v-for="OTs in  otsEnProduccion"   :key="OTs.numero_ot"
+              class="flex w-full text-xs bg-white border-b border-gray-200 hover:bg-gray-100 tr" >
+              <td class="w-1/12 px-2 py-2 text-center ">        {{  OTs.numero_ot         }}  </td>
+              <td class="w-3/12 px-2 py-2 text-left ">          {{  OTs.referencia        }}  </td>
+              <td class="w-2/12 px-2 py-2 text-center ">        {{  OTs.nomestilotrabajo  }}  </td>
+              <td class="w-1/12 px-4 py-2 text-center ">        {{  OTs.nomtipotrabajo    }}  </td>
 
-              <td class="w-3/12 px-2 py-2 text-left ">
-                {{ registro.referencia }}
-              </td>
-              <td class="w-2/12 px-2 py-2 text-center ">
-                {{ registro.estilo }}
-              </td>
-              <td class="w-1/12 px-4 py-2 text-center ">
-                {{ registro.tipo }}
-              </td>
               <td class="flex w-3/12 py-2 text-xs text-center">
-                <div class="flex items-center justify-center w-16 h-6 px-2 py-2 text-white bg-azul">CREATEOT</div>
-                <div class="flex items-center justify-center w-16 h-6 px-2 py-2 bg-verde">TRZ</div>
-                <div class="flex items-center justify-center w-16 h-6 px-2 py-2 bg-verde">CAL</div>
-                <div class="flex items-center justify-center w-16 h-6 px-2 py-2 bg-amarillo">DBO</div>
-                <div class="flex items-center justify-center w-16 h-6 px-2 py-2 bg-amarillo">ENCU</div>
-                <div class="flex items-center justify-center w-16 h-6 px-2 py-2 text-white bg-azul">GRFP</div>
-                <div class="flex items-center justify-center w-16 h-6 px-2 py-2 text-white bg-azul">ENCA</div>
+                <div class="labores " :class="[ colorLabor (OTs.color1) ]">  {{  OTs.labor1  }}</div>
+                <div class="labores " :class="[ colorLabor (OTs.color2) ]" > {{  OTs.labor2  }}</div>
+                <div class="labores " :class="[ colorLabor (OTs.color3) ]" > {{  OTs.labor3  }}</div>
+                <div class="labores " :class="[ colorLabor (OTs.color4) ]">  {{  OTs.labor4  }}</div>
+                <div class="labores " :class="[ colorLabor (OTs.color5) ]">  {{  OTs.labor5  }}</div>
+                <div class="labores " :class="[ colorLabor (OTs.color6) ]">  {{  OTs.labor6  }}</div>
+                <div class="labores " :class="[ colorLabor (OTs.color7) ]">  {{  OTs.labor7  }}</div>
+                <div class="labores " :class="[ colorLabor (OTs.color8) ]">  {{  OTs.labor8  }}</div>
+                <div class="labores " :class="[ colorLabor (OTs.color9) ]">  {{  OTs.labor9  }}</div>
+                <div class="labores " :class="[ colorLabor (OTs.color10) ]"> {{  OTs.labor10 }}</div>
               </td>
               <td class="w-2/12 px-2 py-2 text-right ">
-                {{ registro.fecha }}
+                {{ OTs.fecha_confirmada | FechaCorta }}
               </td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
-    <div class="flex justify-end mt-2">
+    <div class="flex justify-end mt-2 text-sm">
       <div class="flex space-x-1">
         <p class="mr-2">Convenciones de color utilizadas en las OT's</p>
-        <div class="flex items-center justify-center h-6 px-2 py-2 bg-verde">Finalizadas</div>
-        <div class="flex items-center justify-center h-6 px-2 py-2 bg-amarillo">Iniciadas</div>
-        <div class="flex items-center justify-center h-6 px-2 py-2 text-white bg-azul">Por Iniciar</div>
-        <div class="flex items-center justify-center h-6 px-2 py-2 text-white bg-rojo">Suspendidas</div>
+        <div class="convenciones bg-verde">Finalizadas</div>
+        <div class="convenciones bg-amarillo">Iniciadas</div>
+        <div class="text-white convenciones bg-azul">Por Iniciar</div>
+        <div class="text-white convenciones bg-rojo">Suspendidas</div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      busqueda: '',
-      registros: [
-        {
-          id: 1,
-          ot: 80982,
-          referencia: "TQ #252 PRODUCTORA DE PLAGUICIDAS COD 3449238",
-          estilo: "TROQUEL PLANO",
-          tipo: "NUEVO",
-          fecha: ""
-        },
-        {
-          id: 2,
-          ot: 80982,
-          referencia: "TQ #252 PRODUCTORA DE PLAGUICIDAS COD 3449238",
-          estilo: "PLANO PREALISTIAMEN",
-          tipo: "NUEVO",
-          fecha: ""
+    import Terceros           from "@/models/Terceros";
+    export default {
+      name:'ClientesOtsEstado',
+      data: () => ({
+            otsEnProduccion: [],
+            busqueda:'',
+      }),
+      
+      
+
+      mounted() {
+             Terceros.OTsEstadoProduccion ( this.$cookies.get("User").idtercero)
+            .then( response => {
+                this.otsEnProduccion = response.data
+            })  
+      },
+
+      methods: {
+          colorLabor ( color) {
+              if ( color=='AMARILLO') return ' text-black bg-amarillo';
+              if ( color=='AZUL')     return ' text-white bg-azul';
+              if ( color=='ROJO')     return ' text-white bg-rojo';
+              if ( color=='VERDE')    return ' text-black bg-verde';
+          }
+      },
+
+      computed: {
+ 
+        busquedaFiltrada() {
+          return this.registros.filter(registro => {
+            return registro.estilo
+              .toLowerCase()
+              .includes(this.busqueda.toLowerCase());
+          });
         }
-      ]
+      }
     };
-  },
-  computed: {
-    busquedaFiltrada() {
-      return this.registros.filter(registro => {
-        return registro.estilo
-          .toLowerCase()
-          .includes(this.busqueda.toLowerCase());
-      });
-    }
-  }
-};
 </script>
 
-<style>
-.margen {
-  padding-right: 16px;
-}
+<style lang="postcss" scoped>
+  .labores {
+      @apply flex items-center justify-center w-16 h-6 px-2 py-2;
+  }
+  .convenciones {
+    @apply flex items-center justify-center h-6 px-2 py-2;
+  }
+
 </style>
