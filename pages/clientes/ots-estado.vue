@@ -123,5 +123,4 @@
   .convenciones {
     @apply flex items-center justify-center h-6 px-2 py-2;
   }
-
 </style>
