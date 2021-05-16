@@ -69,7 +69,7 @@
               class="flex w-full text-xs bg-white border-b border-gray-200 hover:bg-gray-100 tr" >
  
               <td class="flex items-center justify-start w-1/12 px-2 py-2 space-x-2 text-left">
-                 <div  v-if="venta.fecha_entrega" class="flex items-center justify-center h-6 px-2 py-2 text-xs text-white bg-green-700 border-green-700 rounded-lg ">Terminada</div>
+                 <div  v-if="venta.fecha_terminada" class="flex items-center justify-center h-6 px-2 py-2 text-xs text-white bg-green-700 border-green-700 rounded-lg ">Terminada</div>
                  <div v-else class="flex items-center justify-center h-6 px-2 py-2 text-xs bg-yellow-300 border-yellow-300 rounded-lg">En proceso</div>
               </td>
 
