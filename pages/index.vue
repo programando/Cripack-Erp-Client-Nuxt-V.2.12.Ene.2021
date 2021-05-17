@@ -65,7 +65,7 @@
           </BtnCallToAction>
 
 
-<!--           <BtnCallToAction
+          <!-- <BtnCallToAction
             @click.prevent="loginAlterno"
             size="small"
             ref="ButtonLoading"

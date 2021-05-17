@@ -45,18 +45,18 @@
         <table class="w-full">
           <thead class="flex w-full margen">
             <tr class="flex w-full text-sm text-gray-600 bg-gray-200">
-              <th class="w-1/12 px-2 py-2 text-center">Estado</th>
-              <th class="w-1/12 px-2 py-2 text-center">#OT</th>
-              <th class="w-1/12 px-2 py-2 text-center">Solicitud</th>
-              <th class="w-1/12 px-2 py-2 text-center">Terminada</th>
-              <th class="w-4/12 px-2 py-2 text-center">Referencia</th>
-              <th class="w-2/12 px-2 py-2 text-center">Estilo</th>
-              <th class="px-2 py-2 text-center w-14">Can</th>
-              <th class="px-2 py-2 text-center w-14">Cab</th>
-              <th class="w-20 px-2 py-2 text-center">#Factura</th>
-              <th class="w-1/12 px-2 py-2 text-center">Vr Venta</th>
-              <th class="w-20 px-2 py-2 text-center">#Guía</th>
-              <th class="w-1/12 py-2 text-center">Fecha</th>
+              <th class="w-1/12 ali-center">Estado</th>
+              <th class="w-1/12 ali-center">#OT</th>
+              <th class="w-1/12 ali-center">Solicitud</th>
+              <th class="w-1/12 ali-center">Terminada</th>
+              <th class="w-4/12 ali-center">Referencia</th>
+              <th class="w-2/12 ali-center">Estilo</th>
+              <th class="ali-center w-14">Can</th>
+              <th class="ali-center w-14">Cab</th>
+              <th class="w-20 ali-center">#Factura</th>
+              <th class="w-1/12 ali-center">Vr Venta</th>
+              <th class="w-20 ali-center">#Guía</th>
+              <th class="w-1/12 ali-center">Fecha</th>
             </tr>
           </thead>
           <tbody
@@ -67,26 +67,22 @@
               v-for="venta in filtroReferencia"
               :key="venta.idregistro_ot"
               class="flex w-full text-xs bg-white border-b border-gray-200 hover:bg-gray-100 tr" >
- 
               <td class="flex items-center justify-start w-1/12 px-2 py-2 space-x-2 text-left">
                  <div  v-if="venta.fecha_terminada" class="flex items-center justify-center h-6 px-2 py-2 text-xs text-white bg-green-700 border-green-700 rounded-lg ">Terminada</div>
                  <div v-else class="flex items-center justify-center h-6 px-2 py-2 text-xs bg-yellow-300 border-yellow-300 rounded-lg">En proceso</div>
               </td>
-
-                <td class="w-1/12 px-2 py-2 text-center ">        {{ venta.numero_ot }}                     </td>
-                <td class="w-1/12 px-2 py-2 text-right ">         {{ venta.fecha_solicitud | FechaLarga }}  </td>
-                <td class="w-1/12 px-2 py-2 text-right ">         {{ venta.fecha_terminada | FechaLarga}}   </td>
-                <td class="w-4/12 px-2 py-2 text-xs text-left ">  {{ venta.referencia }}                    </td>
-                <td class="w-2/12 px-2 py-2 text-left ">          {{ venta.nomestilotrabajo }}              </td>
-                <td class="px-4 py-2 text-right w-14 ">           {{ venta.cantidad }}                      </td>
-                <td class="px-4 py-2 text-right w-14 ">           {{ venta.cabida }}                        </td>
-                <td class="w-20 px-2 py-2 text-right ">           {{ venta.numero_factura }}                </td>
-                <td class="w-1/12 px-2 py-2 text-right ">         {{ venta.vrVenta }}                       </td>
-                <td class="w-20 px-2 py-2 text-right ">           {{ venta.nro_guia }}                      </td>
-                <td class="w-1/12 px-2 py-2 text-left">           {{ venta.fecha_entrega | FechaLarga }}    </td>
-
+                <td class="w-1/12 ali-center">        {{ venta.numero_ot }}                     </td>
+                <td class="w-1/12 ali-right ">         {{ venta.fecha_solicitud | FechaLarga }}  </td>
+                <td class="w-1/12 ali-right ">         {{ venta.fecha_terminada | FechaLarga}}   </td>
+                <td class="w-4/12 ali-left ">  {{ venta.referencia }}                    </td>
+                <td class="w-2/12 ali-left ">          {{ venta.nomestilotrabajo }}              </td>
+                <td class="ali-rigth w-14 ">           {{ venta.cantidad }}                      </td>
+                <td class="ali-rigth w-14 ">           {{ venta.cabida }}                        </td>
+                <td class="w-20 ali-right ">           {{ venta.numero_factura }}                </td>
+                <td class="w-1/12 ali-right ">         {{ venta.vrVenta }}                       </td>
+                <td class="w-20 ali-right ">           {{ venta.nro_guia }}                      </td>
+                <td class="w-1/12 ali-left">           {{ venta.fecha_entrega | FechaLarga }}    </td>
             </tr>
-
           </tbody>
         </table>
       </div>
@@ -155,8 +151,20 @@
     };
 </script>
 
-<style>
+<style lang="postcss" scoped>
 .margen {
   padding-right: 16px;
+}
+
+.ali-center {
+    @apply px-2 py-2 text-center
+}
+
+.ali-left {
+  @apply px-2 py-2 text-left
+}
+
+.ali-right {
+  @apply px-2 py-2 text-right
 }
 </style>
