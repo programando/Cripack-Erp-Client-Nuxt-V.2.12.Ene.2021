@@ -21,11 +21,13 @@ if (!value) return ''
 });
 
 Vue.filter('FechaLarga', (value) => {
-   let fecha = Moment(value).format('DD-MMM-YYYY');
-   return fecha == 'Fecha inválida' ? '' : fecha;
+   if (value == null) { return ''; }
+   let anio = Moment(value).format('YYYY');
+   return anio == '1900' ? '' :  Moment(value).format('DD-MMM-YYYY');
 });
 
 Vue.filter('FechaCorta', (value) => {
-   let fecha = Moment(value).format('DD-MM-YY');
-   return fecha == 'Fecha inválida' ? '' : fecha;
+   if (value == null) { return ''; }
+   let anio = Moment(value).format('YYYY');
+   return anio == '1900'  ? '' :  Moment(value).format('DD-MM-YY');
 });

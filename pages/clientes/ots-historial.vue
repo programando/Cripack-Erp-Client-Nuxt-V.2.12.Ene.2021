@@ -68,19 +68,24 @@
               :key="venta.idregistro_ot"
               class="flex w-full text-xs bg-white border-b border-gray-200 hover:bg-gray-100 tr" >
               <td class="flex items-center justify-start w-1/12 px-2 py-2 space-x-2 text-left">
-                 <div  v-if="venta.fecha_terminada" class="flex items-center justify-center h-6 px-2 py-2 text-xs text-white bg-green-700 border-green-700 rounded-lg ">Terminada</div>
+                 <div  v-if="venta.terminada" class="flex items-center justify-center h-6 px-2 py-2 text-xs text-white bg-green-700 border-green-700 rounded-lg ">Terminada</div>
                  <div v-else class="flex items-center justify-center h-6 px-2 py-2 text-xs bg-yellow-300 border-yellow-300 rounded-lg">En proceso</div>
               </td>
-                <td class="w-1/12 ali-center">        {{ venta.numero_ot }}                     </td>
+                <td class="w-1/12 ali-center">         {{ venta.numero_ot }}                     </td>
                 <td class="w-1/12 ali-right ">         {{ venta.fecha_solicitud | FechaLarga }}  </td>
                 <td class="w-1/12 ali-right ">         {{ venta.fecha_terminada | FechaLarga}}   </td>
-                <td class="w-4/12 ali-left ">  {{ venta.referencia }}                    </td>
+                <td class="w-4/12 ali-left ">          {{ venta.referencia }}                    </td>
                 <td class="w-2/12 ali-left ">          {{ venta.nomestilotrabajo }}              </td>
                 <td class="ali-rigth w-14 ">           {{ venta.cantidad }}                      </td>
                 <td class="ali-rigth w-14 ">           {{ venta.cabida }}                        </td>
                 <td class="w-20 ali-right ">           {{ venta.numero_factura }}                </td>
                 <td class="w-1/12 ali-right ">         {{ venta.vrVenta }}                       </td>
-                <td class="w-20 ali-right ">           {{ venta.nro_guia }}                      </td>
+                <td class="w-20 ali-right text-decoration:underline text-blue">      
+                  
+                  <a  :href="'https://www.tcc.com.co/rastreo?tipo=RE&documento='+ venta.nro_guia" _target="_blank"> {{ venta.nro_guia }} </a>    
+
+                      
+                </td>
                 <td class="w-1/12 ali-left">           {{ venta.fecha_entrega | FechaLarga }}    </td>
             </tr>
           </tbody>
@@ -116,7 +121,7 @@
       },
       mounted() {
         this.fechaIni = Moment().subtract(30,'d').format('YYYY-MM-DD');
-        this.fechaFin = Moment().format('YYYY-MM-DD');;
+        this.fechaFin = Moment().format('YYYY-MM-DD');
         this.getOts();
         this.showBtnAnimation     = false;
       },
@@ -128,7 +133,6 @@
               .then(response => {
                   this.Ventas = response.data.data;
                   this.showBtnAnimation = false;
-                  console.log ( response.data.data);
                 }
               ); 
               
