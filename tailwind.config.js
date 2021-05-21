@@ -15,7 +15,8 @@ module.exports = {
 
     extend: {
      fontFamily: {
-       Montserrat: ['Montserrat']
+        Montserrat: ['Montserrat'],
+        Raleway   : ['Raleway'],
       },
       
       colors: {
