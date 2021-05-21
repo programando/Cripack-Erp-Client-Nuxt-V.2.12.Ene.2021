@@ -1,5 +1,5 @@
 <template>
-  <div class="py-24 mx-2 font-latos">
+  <div class="py-24 mx-2 font-Raleway">
     <div class="flex justify-between my-2">
 
 

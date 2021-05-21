@@ -1,5 +1,5 @@
 <template>
-  <div class="py-24 mx-2 font-latos">
+  <div class="py-24 mx-2 font-Raleway">
     <div class="flex justify-between my-2">
       <h3 class="mt-1 text-2xl">
         Historial Órdenes de trabajo
