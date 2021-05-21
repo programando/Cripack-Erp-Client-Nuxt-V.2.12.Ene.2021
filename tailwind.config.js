@@ -15,7 +15,7 @@ module.exports = {
 
     extend: {
      fontFamily: {
-       Montserrat: ['Raleway']
+       Montserrat: ['Montserrat']
       },
       
       colors: {
@@ -30,9 +30,10 @@ module.exports = {
         verde             : '#1EFF37',
       },
       fontFamily: {
-        rale: 'Raleway',
-        robo: 'Roboto',
-        latos: 'Lato'
+        latos     : 'Lato',
+        Montserrat: 'Montserrat',
+        rale      : 'Raleway',
+        robo      : 'Roboto',
       }
      
     },
