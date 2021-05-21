@@ -128,6 +128,7 @@
               .then(response => {
                   this.Ventas = response.data.data;
                   this.showBtnAnimation = false;
+                  console.log ( response.data.data);
                 }
               ); 
               
