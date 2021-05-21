@@ -64,7 +64,20 @@
         </table>
       </div>
     </div>
-    <div class="flex justify-end mt-2 text-sm">
+    <div class="flex justify-between mt-2 text-sm">
+      <div class="flex space-x-1">
+             <BtnCallToAction
+                  @click.prevent="OTsEstadoProduccion"
+                  size="small"
+                  ref="ButtonLoading"
+                  variant="success"
+                  variant-type="normal"
+                  colorIcon="white"
+                  :showBtnAnimation="showBtnAnimation"
+                >
+            {{ $t('App.UpdateList')}}
+          </BtnCallToAction>
+     </div>
       <div class="flex space-x-1">
         <p class="mr-2">Convenciones de color utilizadas en las OT's</p>
         <div class="convenciones bg-verde">Finalizadas</div>
@@ -77,24 +90,39 @@
 </template>
 
 <script>
+    import BtnCallToAction    from "@/components/htmlControls/buttonCallToActionLoading";
     import Terceros           from "@/models/Terceros";
     export default {
       name:'ClientesOtsEstado',
+      components: { BtnCallToAction},
       data: () => ({
+            showBtnAnimation : false,
             otsEnProduccion: [],
             busqueda:'',
+            formData: {
+                idTercero:0, 
+                userCripack:false
+            }
       }),
       
       
 
       mounted() {
-             Terceros.OTsEstadoProduccion ( this.$cookies.get("User").idtercero)
-            .then( response => {
-                this.otsEnProduccion = response.data
-            })  
+          this.OTsEstadoProduccion();
       },
 
       methods: {
+          OTsEstadoProduccion () {
+             this.showBtnAnimation =  true;
+             this.formData.idTercero   = this.$cookies.get("User").idtercero;
+             this.formData.userCripack = this.$cookies.get("User").uso_web_empresa;   
+             Terceros.OTsEstadoProduccion (  this.formData)
+            .then( response => {
+                this.otsEnProduccion = response.data;
+                this.showBtnAnimation =  false;
+            }) 
+            
+          },
           colorLabor ( color) {
               if ( color=='AMARILLO') return ' text-black bg-amarillo';
               if ( color=='AZUL')     return ' text-white bg-azul';
@@ -104,7 +132,6 @@
       },
 
       computed: {
- 
         busquedaFiltrada() {
           return this.registros.filter(registro => {
             return registro.estilo

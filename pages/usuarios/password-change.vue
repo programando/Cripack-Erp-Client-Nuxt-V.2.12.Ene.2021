@@ -79,6 +79,7 @@ export default {
 
   methods: {
       resetPassword() {
+          this.showBtnAnimation = true;
           User.resetPassword ( this.form)
           .then( () =>{     
               this.Message(this.$t('PasswordChageForm.MessageOkTitle') ,this.$t('PasswordChageForm.MessageOkBody'),'success', this.$t('PasswordChageForm.BtnCloseWindow') );
@@ -86,11 +87,13 @@ export default {
           }).catch( error => {
               if (error.response.status ==422) {
                 this.errors = error.response.data.errors;
+                this.showBtnAnimation = false;
               }
           })
       },
       clearErrors() {
           this.errors = [];
+          this.showBtnAnimation = false;
       },
   },  
 }

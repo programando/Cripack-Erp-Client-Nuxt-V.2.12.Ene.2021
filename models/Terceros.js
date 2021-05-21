@@ -7,8 +7,8 @@ export default {
     return Api.get("/clientes/historial/ots", { params:   formData   } ) ;
   },
 
-  async OTsEstadoProduccion(idTercero) {
-    return Api.get("/clientes/estado/ots", { params: { idTercero }   }  ) ;
+  async OTsEstadoProduccion(formData) {
+    return Api.get("/clientes/estado/ots", { params:   formData   }     ) ;
   },
 
 }

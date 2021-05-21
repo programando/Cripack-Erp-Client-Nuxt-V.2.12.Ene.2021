@@ -53,12 +53,15 @@
 
 <script>
 
-import InputPassword      from  "@/components/htmlControls/inputPassword";
 import BtnCallToAction    from "@/components/htmlControls/buttonCallToActionLoading";
+import InputPassword      from  "@/components/htmlControls/inputPassword";
+import Messages           from "@/mixins/sweetalert2";
 import User               from "@/models/User";
+
 export default {
   layout: 'blank-layout',
   components: { InputPassword, BtnCallToAction },
+  mixins: [Messages],
   data: ()=> ({
        showBtnAnimation:false,
        formUser :{
@@ -70,15 +73,18 @@ export default {
         errorToken:false,
   }),
   mounted() {  
-      this.formUser.token = this.$route.params.password_change; 
+      this.formUser.token = this.$route.params.passwordchange; 
     },
   methods:  {
       updatePassword() {
+          this.showBtnAnimation = true;
           User.updatePassword( this.formUser)
-          .then( response=>{
-             console.log( response.data);
+          .then( ()=>{
+              this.$router.push('/');
+              this.Message(this.$t('PasswordChangeNewUpdated.MessageOkTitle') ,this.$t('PasswordChangeNewUpdated.MessageOkBody'),'success', this.$t('PasswordChangeNewUpdated.BtnCloseWindow') );
+              this.showBtnAnimation = false;
           })
-          .catch ( error => {
+/*           .catch ( error => {
              
              if (error.response.status ==422) {
                   this.errors = error.response.data.errors;
@@ -86,8 +92,8 @@ export default {
                     this.errorToken = true;
                   }
              }     
-          })
-
+          }) */
+          
       }
   },
 };

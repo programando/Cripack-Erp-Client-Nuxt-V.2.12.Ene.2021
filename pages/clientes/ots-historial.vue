@@ -107,9 +107,10 @@
           Ventas          : [],
           showBtnAnimation: false,
           formParams: {
-              idtercero:0,
+              idTercero:0,
               fechaIni: '',
-              fechaFin:''
+              fechaFin:'',
+              userCripack: false
           }
         };
       },
@@ -132,9 +133,10 @@
               
             },
             getParams() {
-                  this.formParams.fechaFin  = this.fechaFin +' 23:59:59';
-                  this.formParams.fechaIni  = this.fechaIni +' 00:01:01';
-                  this.formParams.idtercero = this.$cookies.get("User").idtercero;
+                  this.formParams.fechaFin    = this.fechaFin +' 23:59:59';
+                  this.formParams.fechaIni    = this.fechaIni +' 00:01:01';
+                  this.formParams.idTercero   = this.$cookies.get("User").idtercero;
+                  this.formParams.userCripack = this.$cookies.get("User").uso_web_empresa;
                   this.showBtnAnimation     = true;
             }
     },
