@@ -16,7 +16,7 @@ export default {
     text: String,
     width: String,
     borderColor: String,
-   
+    
   },
 
   computed: {
@@ -35,6 +35,8 @@ export default {
           break;
       }
     }
+
+    
   }
 
 

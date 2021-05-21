@@ -2,7 +2,8 @@
   <div>
       <div class="flex items-center justify-center">
           <label v-if="label"
-            class="w-32 mb-1 font-semibold text-white form-label"
+            class="w-32 mb-1 font-semibold form-label"
+            :class="[setColorLabel]"
             :for="id">
                {{ label }}
           </label >    
@@ -68,8 +69,8 @@
             
             icon: String,
             text: String,
-            colorError: String
-            
+            colorError: String,
+            colorLabel: String
 
         },
 
@@ -90,6 +91,15 @@
                     default:
                         break;
                 } 
+            },
+            setColorLabel() {
+                switch (this.colorLabel){
+                    case 'black':
+                        return 'text-black'
+                        break;
+                    case 'white':
+                        return 'text-white'
+                }
             }
         },
 

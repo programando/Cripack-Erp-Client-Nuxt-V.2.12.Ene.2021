@@ -30,7 +30,9 @@
                 :errors="errors.email"
                 colorError="white"
                 @keyup="clearErrors"
-                label="Email" >
+                label="Email" 
+                colorLabel="white"
+                >
               </InputBasic>
             </div>
           </div>
@@ -44,6 +46,7 @@
                 v-model="formLogin.password"
                 @keyup="clearErrors"
                 label="Password"
+                colorLabel="white"
               >
               </InputBasic>
             </div>
