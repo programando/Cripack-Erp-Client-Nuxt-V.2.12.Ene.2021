@@ -37,9 +37,7 @@ body {
   font-family: "Roboto";
 }
 
-a {
-  color: #ff4136;
-}
+
 
 .wrap {
   width: 90%;

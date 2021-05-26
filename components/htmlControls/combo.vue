@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
     <label class="w-32 font-semibold">{{label}}</label>
-    <select class="w-40 px-2 py-1 text-gray-700 placeholder-gray-700 bg-gray-200 border-2 border-gray-400 rounded-md outline-none focus:bg-white" v-model="arreglo">
+    <select class="w-40 px-2 py-1 text-gray-700 placeholder-gray-700 bg-white border-2 border-gray-400 rounded-md outline-none focus:bg-gray-100" v-model="arreglo">
       <option v-for="(arreglos, index) in tiposArreglos" :key="index">
         {{ arreglos }}
       </option>
