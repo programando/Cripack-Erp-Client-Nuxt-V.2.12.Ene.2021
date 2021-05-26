@@ -1,4 +1,5 @@
 <template>
+<client-only>
   <div
     class="flex items-center justify-center h-screen bg-center bg-no-repeat bg-cover"
     style="background-image: url('/images/background.jpg')"
@@ -49,6 +50,7 @@
       </div>
     </div>
   </div>
+  </client-only>
 </template>
 
 <script>
@@ -84,15 +86,14 @@ export default {
               this.Message(this.$t('PasswordChangeNewUpdated.MessageOkTitle') ,this.$t('PasswordChangeNewUpdated.MessageOkBody'),'success', this.$t('PasswordChangeNewUpdated.BtnCloseWindow') );
               this.showBtnAnimation = false;
           })
-/*           .catch ( error => {
-             
+            .catch ( error => {  
              if (error.response.status ==422) {
                   this.errors = error.response.data.errors;
                   if ( this.errors.errorToken != 'null' ){
                     this.errorToken = true;
                   }
              }     
-          }) */
+          })  
           
       }
   },
