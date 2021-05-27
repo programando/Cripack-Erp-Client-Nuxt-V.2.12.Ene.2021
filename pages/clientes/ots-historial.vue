@@ -80,7 +80,7 @@
                 <td class="ali-rigth w-14 ">           {{ venta.cabida }}                        </td>
                 <td class="w-20 ali-right ">           {{ venta.numero_factura }}                </td>
                 <td class="w-1/12 ali-right ">         {{ venta.vrVenta }}                       </td>
-                <td class="w-20 ali-right text-decoration:underline text-blue">      
+                <td class="w-20 ali-right enlace">      
                   <a  :href="'https://www.tcc.com.co/rastreo?tipo=RE&documento='+ venta.nro_guia" target="_blank"> {{ venta.nro_guia }} </a>           
                 </td>
                 <td class="w-1/12 ali-left">           {{ venta.fecha_entrega | FechaLarga }}    </td>
@@ -170,5 +170,10 @@
 
 .ali-right {
   @apply px-2 py-2 text-right
+}
+
+.enlace {
+  color: blue;
+  text-decoration: underline;
 }
 </style>
