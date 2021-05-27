@@ -56,7 +56,7 @@
               <th class="w-20 ali-center">#Factura</th>
               <th class="w-1/12 ali-center">Vr Venta</th>
               <th class="w-20 ali-center">#Guía</th>
-              <th class="w-1/12 ali-center">Fecha</th>
+              <th class="w-1/12 ali-center">Entrega</th>
             </tr>
           </thead>
           <tbody
@@ -71,16 +71,16 @@
                  <div  v-if="venta.terminada" class="flex items-center justify-center h-6 px-2 py-2 text-xs text-white bg-green-700 border-green-700 rounded-lg ">Terminada</div>
                  <div v-else class="flex items-center justify-center h-6 px-2 py-2 text-xs bg-yellow-300 border-yellow-300 rounded-lg">En proceso</div>
               </td>
-                <td class="w-1/12 ali-center">         {{ venta.numero_ot }}                     </td>
+                <td class="w-1/12 ali-center">         {{ venta.numero_ot | NoShowZero}}                     </td>
                 <td class="w-1/12 ali-right ">         {{ venta.fecha_solicitud | FechaLarga }}  </td>
                 <td class="w-1/12 ali-right ">         {{ venta.fecha_terminada | FechaLarga}}   </td>
                 <td class="w-4/12 ali-left ">          {{ venta.referencia }}                    </td>
                 <td class="w-2/12 ali-left ">          {{ venta.nomestilotrabajo }}              </td>
-                <td class="ali-rigth w-14 ">           {{ venta.cantidad }}                      </td>
-                <td class="ali-rigth w-14 ">           {{ venta.cabida }}                        </td>
+                <td class="ali-rigth w-14 ">           {{ venta.cantidad | NoShowZero}}                      </td>
+                <td class="ali-rigth w-14 ">           {{ venta.cabida | NoShowZero}}                        </td>
                 <td class="w-20 ali-right ">           {{ venta.numero_factura }}                </td>
  
-                <td class="w-1/12 ali-right ">         {{ venta.vrVenta | NumeroEntero}}                       </td>
+                <td class="w-1/12 ali-right ">         {{ venta.vrVenta | NoShowZero}}                       </td>
                
  
                 <td class="w-20 ali-right enlace">      
@@ -89,7 +89,7 @@
                 </td>
                
                
-                <td class="w-1/12 ali-left">           {{ venta.fecha_entrega | FechaLarga }}    </td>
+                <td class="w-1/12 ali-right">           {{ venta.fecha_entrega | FechaLarga }}    </td>
             </tr>
           </tbody>
         </table>

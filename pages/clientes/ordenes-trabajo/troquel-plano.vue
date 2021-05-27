@@ -38,6 +38,7 @@
             </div>
           </div>
           <div class="grid grid-cols-3 mt-10">
+          
             <div class="col-start-2">
               <Combo label="Máquina"></Combo>
             </div>
