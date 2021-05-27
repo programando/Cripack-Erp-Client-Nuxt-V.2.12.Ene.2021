@@ -31,9 +31,12 @@
          "Title"               : "Register the new password information with which you will enter our system"
    } ,
     "PasswordChangeNewUpdated" : {
-         "BtnCloseWindow": "Close window",
-         "MessageOkBody" : "Se han actualizado sus credenciales de acceso. Ahora podrá ingresar a nuestro sistema con éstos nuevos datos",
-         "MessageOkTitle": "Password changed" 
+         "_ViewReference"   : "Pages/usuarios/__passwordchange",
+         "BtnCloseWindow"   : "Cerrar ventana",
+         "MessageErrorBody" : "El token de validación ha expirado o no es válido. No se ha podido validar identidad del usuario. Por favor inicie el proceso nuevamente.",
+         "MessageErrorTitle": "Proceso no realizado",
+         "MessageOkBody"    : "Se han actualizado sus credenciales de acceso. Ahora podrá ingresar a nuestro sistema con éstos nuevos datos",
+         "MessageOkTitle"   : "Contraseña actualizada"
    }
 
 }

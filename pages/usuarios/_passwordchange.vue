@@ -19,9 +19,7 @@
           <div class="mt-4">
                <InputPassword
                       :text= "$t('PasswordChangeNewForm.PasswordPlaceHolder1')"
-                      
-                      v-model="formUser.password"
-                      :errors="errors.password"
+                      v-model="formUser.password"                
                       colorError="white">
               </InputPassword>
   
@@ -71,8 +69,6 @@ export default {
             password_confirmation: null,
             token                : '',
         },
-        errors : [],
-        errorToken:false,
   }),
   mounted() {  
       this.formUser.token = this.$route.params.passwordchange; 
@@ -88,10 +84,9 @@ export default {
           })
             .catch ( error => {  
              if (error.response.status ==422) {
-                  this.errors = error.response.data.errors;
-                  if ( this.errors.errorToken != 'null' ){
-                    this.errorToken = true;
-                  }
+                   
+              this.Message(this.$t('PasswordChangeNewUpdated.MessageErrorTitle') ,error.response.data.errors.password[0] ,'error', this.$t('PasswordChangeNewUpdated.BtnCloseWindow') );
+              this.showBtnAnimation = false;
              }     
           })  
           

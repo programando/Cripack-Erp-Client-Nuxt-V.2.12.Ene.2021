@@ -6,7 +6,9 @@ Moment.locale("es");
 
 
 
-Vue.filter('NumeroEntero', (value) => { return Numeral(value).format('0,0'); });
+Vue.filter('NumeroEntero', (value) => {
+   return parseInt(value) === 0 ? '' : Numeral(value).format('0,0');
+});
 Vue.filter('NumeroDecimal', (value) => {  return Numeral(value).format('0.0');             });
 Vue.filter('Capitalize', (value) => {
    if (!value) return ''
