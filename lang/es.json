@@ -13,7 +13,10 @@
       "BtnRegisterCaption": "Registrar datos",
       "CompanyName"       : "Nombre o empresa :",
       "IdentifyNumber"    : "Número de identificación :",
-      "RegisterOk"        : "Ya estoy registrado, ingresar!"
+      "RegisterOk"        : "Ya estoy registrado, ingresar!",
+      "Password"          : "Contraseña :",
+      "PasswordConfirmation"   : "Confirmar contraseña :",
+      "Email": "Correo electrónico :"
    },
    "PasswordChageForm" :{
          "BtnCloseWindow": "Cerrar ventana",

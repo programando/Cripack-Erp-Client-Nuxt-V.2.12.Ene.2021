@@ -12,7 +12,7 @@
                 <font-awesome-icon class="" :icon="['fas', 'envelope']"/>
             </div>
             
-            <input class="w-full px-4 py-2 text-sm text-gray-700 placeholder-gray-700 bg-white border-2 border-gray-400 rounded outline-none focus:bg-gray-100"
+            <input class="w-full px-4 py-1 text-sm text-gray-700 placeholder-gray-700 bg-white border-2 border-gray-400 rounded outline-none focus:bg-gray-100"
                 
                 :id="id"
                 ref="input"

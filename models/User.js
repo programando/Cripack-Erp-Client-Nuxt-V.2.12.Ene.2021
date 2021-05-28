@@ -6,16 +6,12 @@ export default {
       await Csrf.getCookie();
     },
   
-    async register( formData ) {
-          return Api.post("register", formData ) ;
-      },
-
       async login ( formData ) {       
-        return  Api.post('login', formData);
+        return  Api.post('usuarios/login', formData);
       },
 
       async logout() {
-        return Api.post('logout');
+        return Api.post('usuarios/logout');
       },
 
       async auth(){
@@ -23,9 +19,14 @@ export default {
       },
       
       async resetPassword(formData) {
-        return Api.post('reset/password', formData);
+        return Api.post('usuarios/reset/password', formData);
       },
       async updatePassword(formData) {
-        return Api.post('update/password', formData);
-      }
+        return Api.post('usuarios/update/password', formData);
+      },
+      
+  async getDataToRegister(formData) {
+         return Api.get('usuarios/registro', { params:   formData   } );
+      },       
+      
 }

@@ -68,15 +68,7 @@
           </BtnCallToAction>
 
 
-          <!-- <BtnCallToAction
-            @click.prevent="loginAlterno"
-            size="small"
-            ref="ButtonLoading"
-            variant="success"
-            variant-type="normal"
-          >
-            Entrar 
-          </BtnCallToAction> -->
+ 
         </div>
 
         <div class="flex justify-center text-sm text-white">
@@ -157,26 +149,7 @@ export default {
     }
   },
   methods: {
-    loginAlterno() {
-      this.$cookies.set("logueado", "true");
-      let $data = {
-        logueado: 1,
-        idtercero: 299,
-        email: process.env.EMAIL_TEMP,
-        uso_web_empresa: 0,
-        nomtercero: "EMPRESA DE PRUEBA",
-        identificacion: "123456         ",
-        nombre_usuario: "",
-        proveedor: 0,
-        cliente: 1,
-        dias_sin_compra: 35
-      };
-
-      this.$cookies.set("User", $data);
-      this.$store.dispatch("User/SetUser", $data);
-      this.$router.push("/clientes/ots-historial");
-       
-    },
+  
     login() {
       this.$cookies.set("logueado", "false");
       this.showBtnAnimation = true;
