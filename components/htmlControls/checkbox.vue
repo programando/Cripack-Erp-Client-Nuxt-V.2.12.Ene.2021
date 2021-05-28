@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center formulario">
-    <label class="mr-4 font-semibold w-28">{{ label }}</label>
+    <label class="mr-4 w-28">{{ label }}</label>
     <div class="checkbox">
       <input type="checkbox" name="checkbox" id="checkbox1" />
       <label for="checkbox1"> 1</label>

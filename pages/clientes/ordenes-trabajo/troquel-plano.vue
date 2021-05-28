@@ -4,15 +4,12 @@
       <h2 class="flex justify-center text-3xl font-semibold">Troquel plano</h2>
       <div class="mx-20 mt-10">
         <div class="mx-20 ">
-          <div>
-            <InputBasic
-              width="w-full"
-              colorLabel="black"
-              label="Referencia"
-            ></InputBasic>
+          <div class="flex items-center ">
+            <label class="w-28">Referencia</label>
+            <input class="w-3/6 px-4 py-2 text-sm text-gray-700 placeholder-gray-700 bg-white border-2 border-gray-400 rounded outline-none focus:bg-gray-100" type="text">
           </div>
           <div class="flex items-center mt-2">
-            <label class="mr-1 font-semibold w-28">Archivos</label>
+            <label class=" w-28">Archivos</label>
             
             <input type="file" />
           </div>
@@ -27,8 +24,8 @@
               <Combo label="Frecuencia"></Combo>
               <Combo label="Cabida"></Combo>
             </div>
-            <div class="flex justify-center mt-4">
-              <label class="font-semibold w-28">Observaciones</label>
+            <div class="flex mt-4">
+              <label class=" w-28">Observaciones</label>
               <textarea
                 class="px-4 py-2 text-gray-700 placeholder-gray-700 bg-white border border-gray-400 rounded outline-none focus:outline-none focus:bg-gray-100"
                 name="observaciones"

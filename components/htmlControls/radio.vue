@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center formulario">
-    <label class="mr-4 font-semibold">{{ label }}</label>
+    <label class="mr-4 ">{{ label }}</label>
     <div class="radio">
       <input type="radio" name="sexo" id="hombre" />
       <label for="hombre">Si</label>
