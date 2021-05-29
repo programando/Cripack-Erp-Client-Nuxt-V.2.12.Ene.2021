@@ -1,6 +1,7 @@
 {
    "App" : {
-      "UpdateList" : "Update list"
+      "UpdateList" : "Update list",
+      "CloseWindow" : "Close"
   },
 
    "LoginForm": {
@@ -10,10 +11,15 @@
       "Title"           : "Information system - WebCross"
    },
       "FormRegister": {
-      "BtnRegisterCaption": "Save data",
-      "CompanyName"       : "Name or company :",
-      "IdentifyNumber"    : "Identification :",
-      "RegisterOk"        : "I'm already registered, login!"
+         "BtnRegisterCaption"  : "Save data",
+         "CompanyName"         : "Company :",
+         "Email"               : "Email address :",
+         "FinishOkBody"        : "El proceso de registro ha finalizado con éxito. Ahora podrá ingresar al sistema con los datos registrados.",
+         "FinishOkTitle"     : "Fisnish",
+         "IdentifyNumber"      : "Identification number:",
+         "Password"            : "Password:",
+         "PasswordConfirmation": "Password confirm :",
+         "RegisterOk"          : "I'm already registred, log in!"
    },
    "PasswordChageForm" :{
          "BtnSendEmail": "Send email",

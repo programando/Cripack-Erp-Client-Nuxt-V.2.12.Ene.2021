@@ -111,14 +111,15 @@
 
 <script>
 import BtnCallToAction    from "@/components/htmlControls/buttonCallToActionLoading";
-import InputBasic from "@/components/htmlControls/inputBasic";
-
-import User from   "@/models/User";
+import InputBasic         from "@/components/htmlControls/inputBasic";
+import Messages           from "@/mixins/sweetalert2";
+import User               from   "@/models/User";
 
 export default {
       name: "RegisterForm",
       layout: 'blank-layout',
       components: { BtnCallToAction,   InputBasic  },
+      mixins: [Messages],
       data: ()=> ( {
           formData : {
                 email                : '',
@@ -147,6 +148,14 @@ export default {
 
           grabarRegistro () {
               this.showBtnAnimation = true;
+              User.registroUsuarioWeb ( this.formData)
+              .then ( response => {
+              this.Message(this.$t('RegisterForm.FinishOkTitle') ,this.$t('RegisterForm.FinishOkBody') ,'success', this.$t('App.CloseWindow') );
+              this.showBtnAnimation = false;
+              })
+              .catch ( error => {
+                  this.errors = error.response.data.errors;
+              })
           },
       }
 };
