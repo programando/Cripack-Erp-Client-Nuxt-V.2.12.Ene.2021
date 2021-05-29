@@ -20,14 +20,14 @@
                 <label class="pr-10 text-white" v-t="'RegisterForm.IdentifyNumber'"></label>
                 <div class="w-full col-span-2">
                   <InputBasic
-                    type="text"
-                    text="Nit o cédula"
-                    width="w-full"
-                    @blur='getDatosContactos'
-                    @keyup.enter='getDatosContactos'
-                    v-model ="formData.identificacion"
-                    :errors="errors.identificacion"
-                    colorError="white"
+                      @blur        = 'getDatosContactos'
+                      @keyup.enter = 'getDatosContactos'
+                      colorError   = "white"
+                      text         = "Nit o cédula"
+                      type         = "text"
+                      v-model      = "formData.idtercero"
+                      width        = "w-full"
+                    :errors        = "errors.idtercero"
                   />
                 </div>
               </div>
@@ -49,12 +49,14 @@
                 <label class="pr-10 text-white" v-t="'RegisterForm.Email'"></label>
                 
                 <div class="w-full col-span-2">
-                  
-                  <InputBasic
-                    type="text"
-                    width="w-full"
-                  />
-
+                  <v-select 
+                        class   = "style-chooser"
+                        label   = "email"
+                        v-model = "emailSelected"
+                      :options  = "emailSelectOptions"
+                      :reduce   = "emails => emails.email"
+                      >
+                      </v-select>
                 </div>
 
               </div>
@@ -114,23 +116,26 @@ import BtnCallToAction    from "@/components/htmlControls/buttonCallToActionLoad
 import InputBasic         from "@/components/htmlControls/inputBasic";
 import Messages           from "@/mixins/sweetalert2";
 import User               from   "@/models/User";
+import vSelect from 'vue-select'
 
 export default {
       name: "RegisterForm",
       layout: 'blank-layout',
-      components: { BtnCallToAction,   InputBasic  },
+      components: { BtnCallToAction,   InputBasic,vSelect  },
       mixins: [Messages],
       data: ()=> ( {
           formData : {
                 email                : '',
-                identificacion       : '8903236921',
-                idtercero            : 0,
+                identificacion       : '',
+                idtercero            : '',
                 password             : '',
                 password_confirmation: '',
           }, 
           nomEmpresa :'',
           errors: [],
           showBtnAnimation:false,
+          emailSelectOptions: [],
+          emailSelected: '',
       }),
 
       methods: {
@@ -140,6 +145,7 @@ export default {
               .then ( response => {
                    this.formData.idtercero = response.data[0].idtercero;
                    this.nomEmpresa         = response.data[0].nomtercero;
+                   this.emailSelectOptions = response.data;
               })
               .catch( error => {
                   this.errors = error.response.data.errors;
@@ -148,17 +154,35 @@ export default {
 
           grabarRegistro () {
               this.showBtnAnimation = true;
+              this.formData.email   = this.emailSelected;
               User.registroUsuarioWeb ( this.formData)
-              .then ( response => {
-              this.Message(this.$t('RegisterForm.FinishOkTitle') ,this.$t('RegisterForm.FinishOkBody') ,'success', this.$t('App.CloseWindow') );
-              this.showBtnAnimation = false;
+              .then ( ()=> {
+                    this.$router.push('/');
+                    this.Message(this.$t('RegisterForm.FinishOkTitle') ,this.$t('RegisterForm.FinishOkBody') ,'success', this.$t('App.CloseWindow') );
+                    this.showBtnAnimation = false;
+                    
               })
               .catch ( error => {
                   this.errors = error.response.data.errors;
+                  this.showBtnAnimation = false;
               })
           },
       }
 };
 </script>
 
-<style></style>
+<style>
+  .style-chooser .vs__search::placeholder,
+  .style-chooser .vs__dropdown-toggle,
+  .style-chooser .vs__dropdown-menu {
+    background: white;
+    border: none;
+    color: #394066;
+    text-transform: lowercase;
+  }
+
+  .style-chooser .vs__clear,
+  .style-chooser .vs__open-indicator {
+    fill: #394066;
+  }
+</style>

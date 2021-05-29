@@ -28,7 +28,8 @@ export default {
   async getDataToRegister(formData) {
          return Api.get('usuarios/registro', { params:   formData   } );
       },       
-   async registroUsuarioWeb(formData) {
-         return Api.post('usuarios/registro', { params:   formData   } );
+  async registroUsuarioWeb(formData) {
+     
+         return Api.post('usuarios/registro',  formData );
       },         
 }
