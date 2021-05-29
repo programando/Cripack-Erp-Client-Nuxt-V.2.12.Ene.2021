@@ -71,26 +71,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     ['cookie-universal-nuxt', { alias: 'cookies' }],
-/*     ['nuxt-i18n', {
-          locales: [
-            {
-              code: 'es',
-              file: 'es.json',
-              name: "Español",
-           },
-            {
-              code: 'en',
-              file: 'en.json',
-              name: 'English',
-            },
-      ],
-          lazy                 : true,
-          langDir              : 'lang/',
-          defaultLocale        : 'es',
-          locale               : 'es',
-          silentTranslationWarn: true,
-          loadLanguagesAsync   : true,      
-        }] */
+    'nuxt-vue-select',                                    /// https://www.npmjs.com/package/nuxt-vue-select,   https://vue-select.org/
   ],
   
 
