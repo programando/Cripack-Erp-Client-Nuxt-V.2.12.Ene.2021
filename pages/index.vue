@@ -156,21 +156,21 @@ export default {
 </script>
 <style scoped>
 .mr {
-  margin-top: 67px;
-  margin-left: -30px;
+  margin-top: 53px;
+  margin-left: -25px;
 }
 
 @media screen and (min-width: 768px){
   .mr {
-  margin-top: 80px;
-  margin-left: -30px;
+  margin-top: 68px;
+  margin-left: -25px;
 }
 
 }
 
 @media screen and (min-width: 1200px){
   .mr {
-  margin-top: 85px;
+  margin-top: 72px;
   margin-left: -25px;
 }
 
