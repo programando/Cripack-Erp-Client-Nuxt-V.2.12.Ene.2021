@@ -85,33 +85,11 @@
         </div>
         
       </div>
-      <div @click="idioma = !idioma" class="flex items-end justify-end h-96 mr">
-        <div class="">
-          <div
-            v-if="idioma"
-            class="z-10 transition duration-500 ease-in-out transform cursor-pointer hover:translate-x-7 hover:scale-110"
-          >
-            <img
-              @click="changeLanguage('es')"
-              class="h-7"
-              src="/images/colombia.svg"
-              alt=""
-            />
-          </div>
-
-          <div
-            v-else
-            class="z-10 transition duration-500 ease-in-out transform cursor-pointer hover:translate-x-7 hover:scale-110"
-          >
-            <img
-              @click="changeLanguage('en')"
-              class="h-7"
-              src="/images/united-states.svg"
-              alt=""
-            />
-          </div>
+        <div class="flex items-end justify-end h-96 mr"> 
+            <LanguajeChange
+              tipoTransicion='derecha'>
+            </LanguajeChange>
         </div>
-      </div>
     </div>
   </div>
 </template>
@@ -121,13 +99,14 @@ import BtnCallToAction    from "@/components/htmlControls/buttonCallToActionLoad
 import ButtonRegister     from "@/components/library/buttonRegister";
 import InputBasic         from "@/components/htmlControls/inputBasic";
 import LabelTitle         from "@/components/library/LabelTitle";
+import LanguajeChange     from "@/components/htmlControls/languajeChange";
 import User               from "@/models/User";
 
 export default {
   name: "LoginForm",
   layout: "blank-layout",
   middleware: ["guest"],
-  components: { LabelTitle, InputBasic, BtnCallToAction, ButtonRegister },
+  components: { LabelTitle, InputBasic, BtnCallToAction, ButtonRegister, LanguajeChange },
   data() {
     return {
       idioma: false,
@@ -171,11 +150,7 @@ export default {
     clearErrors() {
       this.errors = [];
     },
-    changeLanguage(lang) {
-      // Change the i18n context object's locale
-      // This makes it so the correct locale file is used
-      this.$i18n.locale = lang;
-    }
+ 
   }
 };
 </script>
