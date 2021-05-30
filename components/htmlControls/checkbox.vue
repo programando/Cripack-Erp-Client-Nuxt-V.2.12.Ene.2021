@@ -1,16 +1,18 @@
 <template>
-  <div class="flex items-center formulario">
-    <label class="mr-4 w-28">{{ label }}</label>
-    <div class="checkbox">
-      <input type="checkbox" name="checkbox" id="checkbox1" />
-      <label for="checkbox1"> 1</label>
-
-      <input type="checkbox" name="checkbox" id="checkbox2" />
-      <label for="checkbox2"> 2</label>
+   <div class="flex items-center mb-2 mr-4 ">
+    <input type="checkbox" id="A3-yes" name="A3-confirmation" value="yes" class="w-8 h-8 opacity-0 cursor-pointer " />
+    <div class="flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 bg-white border-2 border-blue-400 rounded-md focus-within:border-blue-500">
       
-      <input type="checkbox" name="checkbox" id="checkbox3" />
-      <label for="checkbox3"> 3</label>
+      <svg class="hidden w-3 h-3 text-blue-600 pointer-events-none fill-current" version="1.1" viewBox="0 0 17 12" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" fill-rule="evenodd">
+          <g transform="translate(-9 -11)" fill="#1F73F1" fill-rule="nonzero">
+            <path d="m25.576 11.414c0.56558 0.55188 0.56558 1.4439 0 1.9961l-9.404 9.176c-0.28213 0.27529-0.65247 0.41385-1.0228 0.41385-0.37034 0-0.74068-0.13855-1.0228-0.41385l-4.7019-4.588c-0.56584-0.55188-0.56584-1.4442 0-1.9961 0.56558-0.55214 1.4798-0.55214 2.0456 0l3.679 3.5899 8.3812-8.1779c0.56558-0.55214 1.4798-0.55214 2.0456 0z" />
+          </g>
+        </g>
+      </svg>
+      
     </div>
+    <label for="A3-yes" class="cursor-pointer select-none">{{label}}</label>
   </div>
 </template>
 
@@ -24,108 +26,11 @@ export default {
 </script>
 
 <style>
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+    input:checked + div {
+      @apply border-blue-500;
+    }
+    input:checked + div svg {
+      @apply block;
+    }
 
-body {
-  font-size: 16px;
-  background: #fff;
-  font-family: "Roboto";
-}
-
-
-
-.wrap {
-  width: 90%;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.info {
-  text-align: center;
-  padding: 20px;
-  color: #001f3f;
-  border-bottom: 1px solid #ccc;
-}
-.info p {
-  margin-top: 20px;
-}
-
-.formulario {
-  /* --------------------------------------- */
-  /* ----- Radio Button */
-  /* --------------------------------------- */
-  /* --------------------------------------- */
-  /* ----- Checkbox */
-  /* --------------------------------------- */
-}
-.formulario h2 {
-  font-size: 16px;
-  color: #001f3f;
-  margin-bottom: 20px;
-  margin-left: 20px;
-}
-.formulario > div {
-  padding: 20px 0;
-}
-.formulario .radio label,
-.formulario .checkbox label {
-  display: inline-block;
-  cursor: pointer;
-  color: #ff4136;
-  position: relative;
-  padding: 5px 15px 5px 51px;
-  font-size: 1em;
-  border-radius: 5px;
-  -webkit-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-.formulario .radio label:hover,
-.formulario .checkbox label:hover {
-  background: rgba(255, 65, 54, 0.1);
-}
-.formulario .radio label:before,
-.formulario .checkbox label:before {
-  content: "";
-  display: inline-block;
-  width: 17px;
-  height: 17px;
-  position: absolute;
-  left: 15px;
-  border-radius: 50%;
-  background: none;
-  border: 3px solid #ff4136;
-}
-.formulario input[type="radio"] {
-  display: none;
-}
-.formulario input[type="radio"]:checked + label:before {
-  display: none;
-}
-.formulario input[type="radio"]:checked + label {
-  padding: 5px 15px;
-  background: #ff4136;
-  border-radius: 2px;
-  color: #fff;
-}
-.formulario .checkbox label:before {
-  border-radius: 3px;
-}
-.formulario .checkbox input[type="checkbox"] {
-  display: none;
-}
-.formulario .checkbox input[type="checkbox"]:checked + label:before {
-  display: none;
-}
-.formulario .checkbox input[type="checkbox"]:checked + label {
-  background: #ff4136;
-  color: #fff;
-  padding: 5px 15px;
-}
 </style>
