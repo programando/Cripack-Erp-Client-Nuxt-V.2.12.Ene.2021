@@ -1,21 +1,18 @@
 <template>
   <div class="flex items-center formulario">
-    <label class="mr-4 ">{{ label }}</label>
+    <label class="w-32">{{ label }}</label>
     <div class="radio">
       <input type="radio" name="sexo" id="hombre" />
       <label for="hombre">Si</label>
-
       <input type="radio" name="sexo" id="mujer" />
       <label for="mujer">No</label>
-
-      
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name:'radio',
+  name: "radio",
   props: {
     label: String
   }
@@ -36,8 +33,6 @@ body {
   background: #fff;
   font-family: "Roboto";
 }
-
-
 
 .wrap {
   width: 90%;
