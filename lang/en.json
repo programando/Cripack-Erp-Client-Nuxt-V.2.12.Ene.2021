@@ -10,16 +10,16 @@
       "RememberPassWord": "I have forgotten my password, remind me!",
       "Title"           : "Information system - WebCross"
    },
-      "FormRegister": {
-         "BtnRegisterCaption"  : "Save data",
-         "CompanyName"         : "Company :",
-         "Email"               : "Email address :",
-         "FinishOkBody"        : "El proceso de registro ha finalizado con éxito. Ahora podrá ingresar al sistema con los datos registrados.",
-         "FinishOkTitle"     : "Fisnish",
-         "IdentifyNumber"      : "Identification number:",
-         "Password"            : "Password:",
-         "PasswordConfirmation": "Password confirm :",
-         "RegisterOk"          : "I'm already registred, log in!"
+    "RegisterForm": {
+      "BtnRegisterCaption"  : "Registrar datos",
+      "CompanyName"         : "Nombre o empresa :",
+      "Email"               : "Correo electrónico :",
+      "FinishOkBody"        : "El proceso de registro ha finalizado con éxito. Ahora podrá ingresar al sistema con los datos registrados.",
+      "FinishOkTitle"       : "Registro finalizado",
+      "IdentifyNumber"      : "Número de identificación :",
+      "Password"            : "Contraseña :",
+      "PasswordConfirmation": "Confirmar contraseña :",
+      "RegisterOk"          : "Ya estoy registrado, ingresar!"
    },
    "PasswordChageForm" :{
          "BtnSendEmail": "Send email",
@@ -38,11 +38,11 @@
    } ,
     "PasswordChangeNewUpdated" : {
          "_ViewReference"   : "Pages/usuarios/__passwordchange",
-         "BtnCloseWindow"   : "Cerrar ventana",
+         "BtnCloseWindow"   : "Close window",
          "MessageErrorBody" : "El token de validación ha expirado o no es válido. No se ha podido validar identidad del usuario. Por favor inicie el proceso nuevamente.",
          "MessageErrorTitle": "Proceso no realizado",
          "MessageOkBody"    : "Se han actualizado sus credenciales de acceso. Ahora podrá ingresar a nuestro sistema con éstos nuevos datos",
-         "MessageOkTitle"   : "Contraseña actualizada"
+         "MessageOkTitle"   : "Password updated"
    }
 
 }
