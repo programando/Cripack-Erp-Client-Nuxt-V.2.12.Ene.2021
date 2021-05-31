@@ -1,6 +1,6 @@
 <template>
  
-  <div>
+  <div class="font-Raleway">
     <div
       class="fixed z-20 flex items-center justify-between w-full mt-0 bg-azul "
     >
@@ -16,7 +16,7 @@
       <div class="flex items-center justify-end mr-4 space-x-6">
         <NavLinks text="Historial" to="/clientes/ots-historial" />
 
-        <div class="relative text-white">
+<!--         <div class="relative text-white">
           <button @click="menu = !menu" class="px-2 ">
             Solicitud OT
           </button>
@@ -46,7 +46,7 @@
               >
             </div>
           </div>
-        </div>
+        </div> -->
 
         <NavLinks text="Estado OT's" to="/clientes/ots-estado" />
 

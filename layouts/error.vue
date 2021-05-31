@@ -1,6 +1,6 @@
 <template>
   <div
-      class="flex items-center justify-center h-screen bg-center bg-no-repeat bg-cover"
+      class="flex items-center justify-center h-screen bg-center bg-no-repeat bg-cover font-Raleway"
       style="background-image: url('/images/background.jpg')"
     >
       <div class="w-6/12 text-center text-white ">

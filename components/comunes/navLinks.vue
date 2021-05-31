@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <nuxt-link :to="to">
       <h3 class="text-white ">{{text}}</h3>
     </nuxt-link>
