@@ -1,5 +1,5 @@
 <template>
-  <div class="font-latos">
+  <div >
     <div class="flex justify-between my-2">
       
     </div>

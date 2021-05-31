@@ -1,5 +1,5 @@
 <template>
-  <div class="font-latos">
+  <div>
     <div
       class="flex items-center justify-center h-screen bg-center bg-no-repeat bg-cover"
       style="background-image: url('/images/background.jpg')"

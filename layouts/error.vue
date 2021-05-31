@@ -3,7 +3,7 @@
       class="flex items-center justify-center h-screen bg-center bg-no-repeat bg-cover"
       style="background-image: url('/images/background.jpg')"
     >
-      <div class="w-6/12 text-center text-white font-latos">
+      <div class="w-6/12 text-center text-white ">
         <h2 class="text-5xl">Oops!</h2>
         <h2 class=" text-9xl">404</h2>
         <p class="px-8 text-xl">La página que estás buscando no existe o fue eliminada. Puedes volver a la 

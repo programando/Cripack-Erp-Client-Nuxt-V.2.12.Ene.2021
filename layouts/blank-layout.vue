@@ -1,8 +1,6 @@
 <template>
-  <div>
-   
-    
-   
+  <div class="font-Raleway">
+  
     <Nuxt />
      
   </div>
