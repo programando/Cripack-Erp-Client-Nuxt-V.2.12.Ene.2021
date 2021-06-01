@@ -46,9 +46,6 @@
     export default {
         name: 'InputTextBasic',
         inheritAttrs: false,
-
-    
-
         props: {
             id: {
                 type: String,

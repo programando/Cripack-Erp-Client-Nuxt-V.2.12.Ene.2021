@@ -66,10 +66,9 @@
           >
             {{ $t('LoginForm.BtnLoginCaption')}}
           </BtnCallToAction>
-
-
- 
         </div>
+
+        
 
         <div class="flex justify-center text-sm text-white">
           <nuxt-link to="/usuarios/registro">
@@ -101,17 +100,18 @@ import InputBasic         from "@/components/htmlControls/inputBasic";
 import LabelTitle         from "@/components/library/LabelTitle";
 import LanguajeChange     from "@/components/htmlControls/languajeChange";
 import User               from "@/models/User";
-
+import Checkbox from "@/components/htmlControls/checkbox";
 export default {
   name: "LoginForm",
   layout: "blank-layout",
   middleware: ["guest"],
-  components: { LabelTitle, InputBasic, BtnCallToAction, ButtonRegister, LanguajeChange },
+  components: { LabelTitle, InputBasic, BtnCallToAction, ButtonRegister, LanguajeChange, Checkbox },
   data() {
     return {
       idioma: false,
       modal: true,
       errors: [],
+      checkValue :false,
       showBtnAnimation:false,
       formLogin: {
         email: process.env.EMAIL_TEMP,
