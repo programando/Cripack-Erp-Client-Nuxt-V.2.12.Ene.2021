@@ -7,6 +7,7 @@
       <div
         class="px-8 py-6 mt-6 bg-azulBackGroundForm md:py-8 md:px-10 lg:mt-0 opacity-90"
       >
+        
         <!-- label, titulo y descripcion -->
         <div class="flex items-center justify-center ">
           <div class="px-8 py-6 mt-6 md:py-8 md:px-24 lg:mt-0 ">
@@ -14,25 +15,25 @@
             <div class="flex justify-center text-4xl font-bold text-white">
               <span><img class="h-24" src="/images/logo.png" alt=""/></span>
             </div>
+<form @submit.prevent="">
             <div class="mt-4">
               <!-- inputText -->
               <div class="grid items-center mt-1 lg:grid-cols-3">
                 <label class="pr-10 text-white" v-t="'RegisterForm.IdentifyNumber'"></label>
                 <div class="w-full col-span-2">
                   <InputBasic
-                      @blur        = 'getDatosContactos'
-                      @keyup.enter = 'getDatosContactos'
+                      @keyup.enter.prevent = 'getDatosContactos'
                       colorError   = "white"
                       text         = "Nit o cédula"
                       type         = "text"
-                      v-model      = "formData.idtercero"
+                      v-model      = "formData.identificacion"
                       width        = "w-full"
                     :errors        = "errors.idtercero"
                   />
                 </div>
               </div>
 
-              <!-- inputPassword -->
+              
               <div class="grid items-center mt-1 lg:grid-cols-3">
                 <label class="pr-10 text-white" v-t="'RegisterForm.CompanyName'"></label>
                 <div class="w-full col-span-2">
@@ -87,6 +88,9 @@
 
             </div>
 
+
+</form>
+
             <div class="flex justify-center mt-8 mb-2 text-lg font-semibold">
              <BtnCallToAction
                   @click.prevent="grabarRegistro"
@@ -106,6 +110,8 @@
             </nuxt-link>
           </div>
         </div>
+
+        
       </div>
     </div>
   </div>
@@ -153,6 +159,7 @@ export default {
           },
 
           grabarRegistro () {
+            alert('fkfkf');
               this.showBtnAnimation = true;
               this.formData.email   = this.emailSelected;
               User.registroUsuarioWeb ( this.formData)
