@@ -29,7 +29,7 @@ export default {
          return Api.get('usuarios/registro', { params:   formData   } );
       },       
   async registroUsuarioWeb(formData) {   
-         return Api.post('usuarios/registro',  formData );
+         return Api.post('usuarios/registro/save',  formData );
   },
   
     async contactoUsuarioWeb(formData) {   
