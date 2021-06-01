@@ -65,7 +65,7 @@
       </div>
  
     </div>
-    <div class="z-10 flex justify-end pt-16 bandera">
+    <div class="fixed right-0 z-10 pt-16 bandera">
          <LanguajeChange
               tipoTransicion='arriba'>
          </LanguajeChange>

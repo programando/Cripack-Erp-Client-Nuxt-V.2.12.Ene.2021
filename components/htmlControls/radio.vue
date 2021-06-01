@@ -43,7 +43,7 @@ body {
 .info {
   text-align: center;
   padding: 20px;
-  color: #001f3f;
+  color: #000000;
   border-bottom: 1px solid #ccc;
 }
 .info p {
@@ -60,7 +60,7 @@ body {
 }
 .formulario h2 {
   font-size: 16px;
-  color: #001f3f;
+  color: #000000;
   margin-bottom: 20px;
   margin-left: 20px;
 }
@@ -71,7 +71,7 @@ body {
 .formulario .checkbox label {
   display: inline-block;
   cursor: pointer;
-  color: #ff4136;
+  color: #000000;
   position: relative;
   padding: 5px 15px 5px 51px;
   font-size: 1em;
@@ -94,7 +94,7 @@ body {
   left: 15px;
   border-radius: 50%;
   background: none;
-  border: 3px solid #ff4136;
+  border: 3px solid #000000;
 }
 .formulario input[type="radio"] {
   display: none;
@@ -104,7 +104,7 @@ body {
 }
 .formulario input[type="radio"]:checked + label {
   padding: 5px 15px;
-  background: #ff4136;
+  background:#000000;
   border-radius: 2px;
   color: #fff;
 }
@@ -118,7 +118,7 @@ body {
   display: none;
 }
 .formulario .checkbox input[type="checkbox"]:checked + label {
-  background: #ff4136;
+  background: #000000;
   color: #fff;
   padding: 5px 15px;
 }
