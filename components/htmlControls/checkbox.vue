@@ -1,5 +1,6 @@
 <template>
    <div class="flex items-center mb-2 mr-4 " @click="changeValue">
+    <label :for="idCheck" class="cursor-pointer ">{{label}}</label>
     <input    
           @change = "onChange"
           class   = "w-8 h-8 opacity-0 cursor-pointer "
@@ -21,7 +22,7 @@
       </svg>
       
     </div>
-    <label :for="idCheck" class="cursor-pointer ">{{label}}</label>
+    
   </div>
 </template>
 

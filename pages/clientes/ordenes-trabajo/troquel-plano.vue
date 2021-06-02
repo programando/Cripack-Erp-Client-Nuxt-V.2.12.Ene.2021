@@ -50,8 +50,10 @@
             </div>
           </div>
           <div class="grid grid-cols-3 mt-10">
-            <div class="">
+            <div class="flex">
               <Checkbox label="Perforadora"></Checkbox>
+              <Checkbox></Checkbox>
+              
             </div>
             <div class="">
               <div class="flex items-center justify-center">
@@ -67,8 +69,10 @@
             </div>
           </div>
           <div class="grid grid-cols-3">
-            <div class="mt-5">
+            <div class="flex mt-5">
               <Checkbox label="Corte Hendido"></Checkbox>
+              <Checkbox></Checkbox>
+              
             </div>
             <div class="flex justify-center">
               <Radio label="Encauche"></Radio>
@@ -112,6 +116,8 @@ import Checkbox from "@/components/htmlControls/checkbox";
 import Radio from "@/components/htmlControls/radio";
 import vSelect from "vue-select";
 import vueDropzone from "@/components/vueDropzone";
+
+
 export default {
   components: {
     InputBasic,
@@ -120,6 +126,8 @@ export default {
     Radio,
     vSelect,
     vueDropzone
+    
+    
   }
 };
 </script>
