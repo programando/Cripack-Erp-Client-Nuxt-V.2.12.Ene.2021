@@ -1,9 +1,28 @@
 {
   "App" : {
-      "UpdateList" : "Actualizar listado",
-      "CloseWindow" : "Cerrar"
+      "CloseWindow"     : "Cerrar",
+      "CompanyAddress"  : "Carrera 6 # 21 - 44 Barrio San Nicolás",
+      "CompanyCellPhone": "Celular : +(57) 315 270 19 64",
+      "CompanyCity"     : "Cali - Colombia",
+      "CompanyPhone"    : "Teléfono : +( 57 ) 2 387 31 64",
+      "CompayEmail"     : "info@cripack.com",
+      "UpdateList"      : "Actualizar listado",
+      "BtnSednData"  :  "Enviar datos"
   },
-  
+   "ContactForm" : {
+            "BodyMessage"       : "Digilencie el siguiente formulario, uno de nuestros acesores se pondrá en contacto para atender su solicitud.",
+            "MessageOkBody"     : "Los datos ha sido enviados al departamento comercial. Una de nuestros asesores se colocará en contacto para tener el gusto de atenderle.",
+            "MessageOkTitle"    : "Datos enviados!",
+            "PlaceHolderContac" : "Persona a contactar",
+            "PlaceHolderEmail"  : "Correo electrónico",
+            "PlaceHolderMessage": "Describa detalles del motivo de la consulta",
+            "PlaceHolderSubject": "Motivo del contacto",
+            "TitleLeftOne"      : "Visítenos",
+            "TitleLeftTwo"      : "Llámenos",
+            "TitleRight"        : "¡Contáctenos!"
+            
+   },
+
    "LoginForm": {
       "BtnLoginCaption" : "Ingresar",
       "Register"        : "Aún no estoy registrado, ¡Registrarme!",

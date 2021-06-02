@@ -54,7 +54,7 @@
         text="Braille"
         to="/clientes/ordenes-trabajo/braile"
       /> -->
-        <NavLinks text="Contacto" to="/clientes/contact" />
+        <NavLinks text="Contacto" to="/clientes/contacto" />
 
         <!--       <NavLinks 
         text="Comercial"

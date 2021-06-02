@@ -1,8 +1,27 @@
 {
    "App" : {
-      "UpdateList" : "Update list",
-      "CloseWindow" : "Close"
+      "CloseWindow"     : "Close",
+      "CompanyAddress"  : "Carrera 6 # 21 - 44 Barrio San Nicolás",
+      "CompanyCellPhone": "Celular : +(57) 315 270 19 64",
+      "CompanyCity"     : "Cali - Colombia",
+      "CompanyPhone"    : "Teléfono : +( 57 ) 2 387 31 64",
+      "CompayEmail"     : "info@cripack.com",
+      "UpdateList"      : "Update list",
+      "BtnSednData"  :  " Send "
   },
+   "ContactForm" : {
+            "BodyMessage"       : "Enter the following form, one of our adviser will contact you to answer your request.",
+            "MessageOkBody"     : "The data has been sent to the commercial department. One of our advisors will be in contact to have the pleasure of serving you.",
+            "MessageOkTitle"    : "Data sent!",
+            "PlaceHolderContac" : "Contact to...",
+            "PlaceHolderEmail"  : "Email",
+            "PlaceHolderMessage": "Describe the details of your question",
+            "PlaceHolderSubject": "Subject",
+            "TitleLeftOne"      : "Visit us",
+            "TitleLeftTwo"      : "Call us",
+            "TitleRight"        : "¡Contact us !"
+            
+   },
 
    "LoginForm": {
       "BtnLoginCaption" : "Sign in!",
