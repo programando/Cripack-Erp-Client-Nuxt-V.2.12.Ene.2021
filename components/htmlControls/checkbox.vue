@@ -45,7 +45,7 @@ export default {
    },
     methods: {
       changeValue() {
-        let checkControl     = document.getElementById(this.identifyCheck ) ; //.checked
+        let checkControl     = document.getElementById(this.identifyCheck ) ;  
         checkControl.checked = !checkControl.checked;
         this.checkValue      = checkControl.checked;
         this.onChange();
