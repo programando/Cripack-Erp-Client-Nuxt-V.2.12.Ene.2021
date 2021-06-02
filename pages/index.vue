@@ -68,8 +68,6 @@
           </BtnCallToAction>
         </div>
 
-        
-
         <div class="flex justify-center text-sm text-white">
           <nuxt-link to="/usuarios/registro">
             <!-- Aun no estoy registrado,<span class="font-semibold">¡Registrarme!</span> -->
@@ -108,13 +106,12 @@ export default {
   components: { LabelTitle, InputBasic, BtnCallToAction, ButtonRegister, LanguajeChange },
   data() {
     return {
-      idioma: false,
-      modal: true,
-      errors: [],
-      checkValue :false,
-      showBtnAnimation:false,
+      errors          : [],
+      idioma          : false,
+      modal           : true,
+      showBtnAnimation: false,
       formLogin: {
-        email: process.env.EMAIL_TEMP,
+        email   : process.env.EMAIL_TEMP,
         password: process.env.EMAIL_PASS_TEMP
       }
     };
