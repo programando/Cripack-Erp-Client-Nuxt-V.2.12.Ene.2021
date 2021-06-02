@@ -1,5 +1,8 @@
 <template>
    <div class="flex items-center mb-2 " @click="changeValue">
+     <div v-if="label">
+       <label> {{ label}}</label>
+     </div>
     <input    
           @change = "onChange"
           class   = "w-8 h-8 opacity-0 cursor-pointer "
@@ -32,6 +35,7 @@ export default {
       return {
         checkValue   : false,
         identifyCheck: false,
+        
       }
      },
 

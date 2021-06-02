@@ -30,12 +30,7 @@ module.exports = {
         rojo              : '#FF0000',
         verde             : '#1EFF37',
       },
-      fontFamily: {
-        latos     : 'Lato',
-        Montserrat: 'Montserrat',
-        rale      : 'Raleway',
-        robo      : 'Roboto',
-      }
+      
      
     },
   },

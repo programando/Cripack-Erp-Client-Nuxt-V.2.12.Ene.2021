@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-center h-screen pt-24 mt-0 font-Raleway">
+  <div class="flex items-center justify-center h-screen pt-24 mt-0">
     <div class="flex">
 
  

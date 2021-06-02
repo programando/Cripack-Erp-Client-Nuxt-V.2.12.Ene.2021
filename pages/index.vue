@@ -1,7 +1,7 @@
 <template>
-  <div >
+  <div>
     <div
-      class="z-30 flex items-center justify-center h-screen bg-center bg-no-repeat bg-cover"
+      class="z-30 flex items-center justify-center h-screen bg-center bg-no-repeat bg-cover "
       style="background-image: url('/images/background.jpg')"
     >
       <div

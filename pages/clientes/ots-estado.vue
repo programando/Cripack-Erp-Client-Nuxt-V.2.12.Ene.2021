@@ -1,8 +1,6 @@
 <template>
   <div class="pt-24 mx-2 font-Montserrat">
     <div class="flex justify-between my-2">
-
-
       <h3 class="mt-1 text-3xl">
         Estado Órdenes Trabajo
       </h3>
@@ -11,7 +9,6 @@
         <div class="z-10 -mr-8">
           <font-awesome-icon class="" :icon="['fas', 'search']" />
         </div>
-
         <input
           class="px-10 py-1 border-2 focus:outline-none"
           type="text"
