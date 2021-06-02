@@ -1,6 +1,6 @@
 <template>
  
-  <div class="font-Raleway">
+  <div class="text-sm font-Montserrat">
     <div
       class="fixed z-20 flex items-center justify-between w-full mt-0 bg-azul "
     >

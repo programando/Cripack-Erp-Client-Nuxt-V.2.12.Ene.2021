@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-24 mx-2 font-Raleway">
+  <div class="pt-24 mx-2 font-Montserrat">
     <div class="flex justify-between my-2">
 
 

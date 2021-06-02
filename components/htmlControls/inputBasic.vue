@@ -2,7 +2,7 @@
   <div>
       <div class="flex items-center justify-center">
           <label v-if="label"
-            class="w-32 mb-1 font-semibold form-label"
+            class="w-32 mb-1 form-label"
             :class="[setColorLabel]"
             :for="id">
                {{ label }}
@@ -12,7 +12,8 @@
                 <font-awesome-icon class="" :icon="['fas', 'envelope']"/>
             </div>
             
-            <input class="w-full px-4 py-1 text-sm text-gray-700 placeholder-gray-700 bg-white border-2 border-gray-400 rounded outline-none focus:bg-gray-100"
+            <input 
+             class="w-full px-4 py-1 text-xs text-gray-700 placeholder-gray-700 bg-white border-2 border-gray-400 rounded outline-none focus:bg-gray-100"
                 
                 :id="id"
                 ref="input"
