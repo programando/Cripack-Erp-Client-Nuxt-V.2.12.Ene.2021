@@ -23,6 +23,7 @@
         <p class="w-4/6 mt-2 text-azulClaro">
           Digilencie el siguiente formulario, uno de nuestros acesores se pondrá en contacto con usted.
         </p>
+        <form @submit.prevent="">
         <div>
           
           <div class="w-4/6 mt-2">
@@ -32,6 +33,8 @@
               width="w-3/6"
               borderColor="extra"
               v-model="formData.contacto"
+              :errors="errors.contacto"
+              colorError="red"
             />
           </div>
           
@@ -42,17 +45,21 @@
               width="w-3/6"
               borderColor="extra"
               v-model="formData.asunto"
+              :errors="errors.asunto"
+              colorError="red"              
              />
 
 
           </div>
           <div class="w-4/6 mt-2">
             <InputBasic
-              type="text"
+              type="email"
               text="Correo electrónico"
               width="w-3/6"
               borderColor="extra"
               v-model="formData.email"
+              :errors="errors.email"
+              colorError="red"               
             />
           </div>
           <div class="mt-2">
@@ -66,6 +73,8 @@
             ></textarea>
           </div>
         </div>
+        </form>
+
         <div class="mt-2">
          
           <BtnCallToAction
