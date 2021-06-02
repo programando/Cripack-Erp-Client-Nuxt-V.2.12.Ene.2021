@@ -1,6 +1,5 @@
 <template>
-   <div class="flex items-center mb-2 mr-4 " @click="changeValue">
-    <label :for="idCheck" class="cursor-pointer ">{{label}}</label>
+   <div class="flex items-center mb-2 " @click="changeValue">
     <input    
           @change = "onChange"
           class   = "w-8 h-8 opacity-0 cursor-pointer "
@@ -10,7 +9,6 @@
         :id       = "idCheck"
         :value    = "val"
      />
-   
     <div class="flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 bg-white border-2 border-blue-400 rounded-md cursor-pointer focus-within:border-blue-500">
       
       <svg   class="hidden w-3 h-3 cursor-pointer fill-current text-azul " version="1.1" viewBox="0 0 17 12" xmlns="http://www.w3.org/2000/svg">

@@ -1,7 +1,9 @@
 <template>
   <div class="pt-20">
     <div class="mx-20 mt-2 border shadow-md">
-      <h2 class="flex justify-center w-full py-2 text-2xl font-semibold border-b ">
+      <h2
+        class="flex justify-center w-full py-2 text-2xl font-semibold border-b "
+      >
         Troqueles planos
       </h2>
       <div class="mx-20 mt-4">
@@ -50,10 +52,13 @@
             </div>
           </div>
           <div class="grid grid-cols-3 mt-10">
-            <div class="flex">
-              <Checkbox label="Perforadora"></Checkbox>
+            <div class="flex items-center">
+              <div class="flex items-center">
+                <label class="-mt-2 w-28">Perforadora</label>
+                <Checkbox></Checkbox>
+              </div>
               <Checkbox></Checkbox>
-              
+              <Checkbox></Checkbox>
             </div>
             <div class="">
               <div class="flex items-center justify-center">
@@ -69,12 +74,15 @@
             </div>
           </div>
           <div class="grid grid-cols-3">
-            <div class="flex mt-5">
-              <Checkbox label="Corte Hendido"></Checkbox>
+            <div class="flex items-center">
+              <div class="flex items-center ">
+                <label class="-mt-2 w-28">Perforadora</label>
+                <Checkbox></Checkbox>
+              </div>
               <Checkbox></Checkbox>
-              
+              <Checkbox></Checkbox>
             </div>
-            <div class="flex justify-center">
+            <div class="flex justify-center ml-2">
               <Radio label="Encauche"></Radio>
             </div>
           </div>
@@ -117,7 +125,6 @@ import Radio from "@/components/htmlControls/radio";
 import vSelect from "vue-select";
 import vueDropzone from "@/components/vueDropzone";
 
-
 export default {
   components: {
     InputBasic,
@@ -126,8 +133,6 @@ export default {
     Radio,
     vSelect,
     vueDropzone
-    
-    
   }
 };
 </script>
