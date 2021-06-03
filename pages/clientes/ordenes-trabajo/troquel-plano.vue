@@ -81,13 +81,14 @@
               <Checkbox></Checkbox>
             </div>
             <div class="flex justify-center ml-4 text-sm ">
-              
+                  <label class="w-32 ml-4 text-sm">Encauche :</label>
+                  <RadioButton></RadioButton>
             </div>
           </div>
           <div class="flex items-center mt-1 space-x-2">
             <label class="w-32 text-sm ">Archivos:</label>
             <div class="w-full ">
-              <vueDropzone> Algo</vueDropzone>
+              <vueDropzone>  </vueDropzone>
             </div>
           </div>
 
@@ -128,9 +129,10 @@ import InputBasic       from "@/components/htmlControls/inputBasic";
 import vSelect          from "vue-select";
 import vueDropzone      from "@/components/vueDropzone";
 import BtnCallToAction    from "@/components/htmlControls/buttonCallToActionLoading";
+import RadioButton       from "@/components/htmlControls/radioButton";
 
 export default {
-  components: {BtnCallToAction,  InputBasic, Checkbox, vSelect, vueDropzone },
+  components: {BtnCallToAction,  InputBasic, Checkbox, vSelect, vueDropzone , RadioButton},
   data:() => ({
           showBtnAnimation: false,
   }),
