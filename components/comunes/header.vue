@@ -7,8 +7,8 @@
       <div class="flex">
         <img class="h-20" src="/images/logo.png" alt="" />
         <div class="mt-4 ml-4 text-white">
-          <h3 class="">{{ companyName }}</h3>
-          <h3 class="">{{ contactName }}</h3>
+          <h3 class="text-xs">{{ companyName }}</h3>
+          <h3 class="text-xs">{{ contactName }}</h3>
         </div>
       </div>
  
@@ -16,7 +16,7 @@
       <div class="flex items-center justify-end mr-4 space-x-6">
         <NavLinks text="Historial" to="/clientes/ots-historial" />
 
-        <div class="relative text-white">
+       <!--  <div class="relative text-white">
           <button @click="menu = !menu" class="px-2 ">
             Solicitud OT
           </button>
@@ -26,27 +26,27 @@
           >
             <div @click="menu = !menu" class="mt-2 hover:opacity-90">
               <nuxt-link
-                class="px-2 py-1 text-white "
+                class="px-2 py-1 text-xs text-white "
                 to="/clientes/ordenes-trabajo/troquel-plano"
                 >Troquel Plano</nuxt-link
               >
             </div>
             <div @click="menu = !menu" class="mt-2 hover:opacity-90">
               <nuxt-link
-                class="px-2 py-1 text-white "
+                class="px-2 py-1 text-xs text-white"
                 to="/clientes/ordenes-trabajo/troquel-plano"
-                >Troquel Curso</nuxt-link
+                >Troquel Curvo</nuxt-link
               >
             </div>
             <div @click="menu = !menu" class="mt-2 hover:opacity-90">
               <nuxt-link
-                class="px-2 py-1 text-white "
+                class="px-2 py-1 text-xs text-white"
                 to="/clientes/ordenes-trabajo/troquel-plano"
                 >Descartone</nuxt-link
               >
             </div>
           </div>
-        </div>
+        </div> -->
 
         <NavLinks text="Estado OT's" to="/clientes/ots-estado" />
 
@@ -75,17 +75,17 @@
 </template>
 
 <script>
-import NavLinks from "@/components/comunes/navLinks";
 import LanguajeChange     from "@/components/htmlControls/languajeChange";
-import User from "@/models/User";
+import NavLinks           from "@/components/comunes/navLinks";
+import User               from "@/models/User";
 export default {
   name: "Header",
   components: {  NavLinks, LanguajeChange  },
 
   data() {
     return {
-      menu: false,
-       idioma: false,
+      idioma: false,
+      menu  : false,
     };
   },
   computed: {

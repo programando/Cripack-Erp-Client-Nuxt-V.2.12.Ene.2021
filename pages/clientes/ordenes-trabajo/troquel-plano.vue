@@ -17,35 +17,35 @@
             <div class="grid grid-cols-3">
               <div class="flex items-center">
                 <label class="w-32 text-sm ">Tipo de arreglo : </label>
-                <v-select class="w-40 " label="Tipo de arreglo"> </v-select>
+                <v-select class="w-40 "> </v-select>
               </div>
               <div class="flex items-center justify-center">
                 <label class="w-32 ml-4 text-sm">Sustrato : </label>
-                <v-select class="w-40 " label="Tipo de arreglo"> </v-select>
+                <v-select class="w-40 "> </v-select>
               </div>
               <div class="flex items-center justify-end">
                 <label class="w-32 ml-4 text-sm">Calibre : </label>
-                <v-select class="w-40 " label="Tipo de arreglo"> </v-select>
+                <v-select class="w-40 "> </v-select>
               </div>
             </div>
             <div class="grid grid-cols-3 mt-2">
               <div class="flex items-center">
                 <label class="w-32 text-sm ">Tiraje :</label>
-                <v-select class="w-40 " label="Tipo de arreglo"> </v-select>
+                <v-select class="w-40 "> </v-select>
               </div>
               <div class="flex items-center justify-center">
                 <label class="w-32 ml-4 text-sm">Frecuencia :</label>
-                <v-select class="w-40 " label="Tipo de arreglo"> </v-select>
+                <v-select class="w-40 "> </v-select>
               </div>
               <div class="flex items-center justify-end">
                 <label class="w-32 ml-4 text-sm ">Cabida :</label>
-                <v-select class="w-40 " label="Tipo de arreglo"> </v-select>
+                <v-select class="w-40 "> </v-select>
               </div>
             </div>
             <div class="grid grid-cols-3 mt-2">
               <div class="flex items-center">
                 <label class="w-32 text-sm ">Máquina :</label>
-                <v-select class="w-40 " label="Tipo de arreglo"> </v-select>
+                <v-select class="w-40 "> </v-select>
               </div>
             </div>
           </div>
@@ -61,13 +61,13 @@
             <div class="">
               <div class="flex items-center justify-center">
                 <label class="w-32 ml-4 text-sm">Ayuda pega :</label>
-                <v-select class="w-40 " label="Tipo de arreglo"> </v-select>
+                <v-select class="w-40 " > </v-select>
               </div>
             </div>
             <div class="">
               <div class="flex items-center justify-end">
                 <label class="w-32 ml-4 text-sm">Punzones :</label>
-                <v-select class="w-40 " label="Tipo de arreglo"> </v-select>
+                <v-select class="w-40 " > </v-select>
               </div>
             </div>
           </div>
@@ -103,11 +103,18 @@
             </div>
           </div>
           <div class="flex justify-center w-full my-4">
-            <button
-              class="px-2 py-1 text-white bg-green-600 border rounded-md hover:bg-green-700"
-            >
-              Enviar Solicitud
-            </button>
+          <BtnCallToAction
+            :showBtnAnimation = "showBtnAnimation"
+              @click.prevent  = "grabarOdenTrabajo"
+              colorIcon       = "white"
+              ref             = "ButtonLoading"
+              size            = "small"
+              variant-type    = "normal"
+              variant         = "success"
+          >
+             Enviar solicitud
+          </BtnCallToAction>
+
           </div>
         </div>
       </div>
@@ -116,21 +123,22 @@
 </template>
 
 <script>
-import InputBasic from "@/components/htmlControls/inputBasic";
-import Combo from "@/components/htmlControls/combo";
-import Checkbox from "@/components/htmlControls/checkbox";
-import Radio from "@/components/htmlControls/radio";
-import vSelect from "vue-select";
-import vueDropzone from "@/components/vueDropzone";
+import Checkbox         from "@/components/htmlControls/checkbox";
+import InputBasic       from "@/components/htmlControls/inputBasic";
+import vSelect          from "vue-select";
+import vueDropzone      from "@/components/vueDropzone";
+import BtnCallToAction    from "@/components/htmlControls/buttonCallToActionLoading";
 
 export default {
-  components: {
-    InputBasic,
-    Combo,
-    Checkbox,
-    Radio,
-    vSelect,
-    vueDropzone
+  components: {BtnCallToAction,  InputBasic, Checkbox, vSelect, vueDropzone },
+  data:() => ({
+          showBtnAnimation: false,
+  }),
+
+  methods:{
+      grabarOdenTrabajo() {
+
+      },
   }
 };
 </script>
@@ -155,4 +163,9 @@ export default {
   .vue-dropzon {
     height: 20px;
   }
+  .wn-menu-content-list .v-select-select {
+	border: none;
+}
+
+ 
 </style>
