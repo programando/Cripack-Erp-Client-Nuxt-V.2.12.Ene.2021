@@ -9,7 +9,7 @@
           <div class="flex items-center space-x-2">
             <label class="w-32 mr-2 text-sm">Referencia :</label>
             <input
-              class="w-full px-1 py-1 text-sm text-gray-700 placeholder-gray-700 bg-white border border-gray-300 rounded-md outline-none focus:bg-gray-100"
+              class="w-full px-4 py-1 text-sm text-gray-700 placeholder-gray-700 bg-white border border-gray-300 rounded-md outline-none focus:bg-gray-100"
               type="text"
             />
           </div>
@@ -80,8 +80,8 @@
               <Checkbox></Checkbox>
               <Checkbox></Checkbox>
             </div>
-            <div class="flex justify-center ml-4 text-sm ">
-                  <label class="w-32 ml-4 text-sm">Encauche :</label>
+            <div class="flex justify-center text-sm ">
+                  <label class="-ml-4 text-sm w-28">Encauche :</label>
                   <RadioButton></RadioButton>
             </div>
           </div>

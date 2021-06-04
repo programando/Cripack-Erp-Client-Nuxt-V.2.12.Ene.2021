@@ -16,11 +16,7 @@
       <div class="flex items-center justify-end mr-4 space-x-6">
         <NavLinks text="Historial" to="/clientes/ots-historial" />
 
-<<<<<<< HEAD
-        <div class="relative text-white">
-=======
          <div v-if="isDevelopment='development'" class="relative text-white">
->>>>>>> 375be0b59ac2896f55c22ea3a1716ab17f53222f
           <button @click="menu = !menu" class="px-2 ">
             Solicitud OT
           </button>
@@ -50,11 +46,7 @@
               >
             </div>
           </div>
-<<<<<<< HEAD
-        </div>
-=======
         </div>  
->>>>>>> 375be0b59ac2896f55c22ea3a1716ab17f53222f
 
         <NavLinks text="Estado OT's" to="/clientes/ots-estado" />
 
