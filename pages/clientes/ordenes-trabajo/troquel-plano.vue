@@ -1,12 +1,12 @@
 <template>
   <div class="pt-20">
-    <div class="mx-20 mt-2 border shadow-2xl">
+    <div class="mx-40 mt-2 border shadow-2xl">
       <h2
         class="flex justify-center w-full py-2 text-2xl text-black bg-gray-100 "
       >
         Troqueles planos
       </h2>
-      <div class="mx-10 mt-4 ">
+      <div class="mx-16 mt-4 ">
         <div class="flex items-center space-x-2">
           <label class="w-32 mr-2 text-sm">Referencia :</label>
           <input
