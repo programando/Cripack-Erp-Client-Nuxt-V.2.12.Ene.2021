@@ -14,7 +14,7 @@
 
         <div class="flex justify-center text-white">
           <p class="mt-4 text-sm text-center lg:text-base">
-            {{ $t('LoginForm.Title') }}
+            {{ $t("LoginForm.Title") }}
           </p>
         </div>
 
@@ -30,9 +30,9 @@
                 :errors="errors.email"
                 colorError="white"
                 @keyup="clearErrors"
-                label="Email" 
+                label="Email"
                 colorLabel="white"
-                >
+              >
               </InputBasic>
             </div>
           </div>
@@ -54,7 +54,6 @@
         </div>
 
         <div class="flex justify-center mt-8 mb-8 text-lg font-semibold">
-          
           <BtnCallToAction
             @click.prevent="login"
             size="small"
@@ -64,54 +63,68 @@
             colorIcon="white"
             :showBtnAnimation="showBtnAnimation"
           >
-            {{ $t('LoginForm.BtnLoginCaption')}}
+            {{ $t("LoginForm.BtnLoginCaption") }}
           </BtnCallToAction>
         </div>
 
         <div class="flex justify-center text-sm text-white">
           <nuxt-link to="/usuarios/registro">
             <!-- Aun no estoy registrado,<span class="font-semibold">¡Registrarme!</span> -->
-              <p v-t="'LoginForm.Register'"></p>    
+            <p v-t="'LoginForm.Register'"></p>
           </nuxt-link>
         </div>
 
         <div class="flex justify-center mt-2 text-sm text-white">
           <nuxt-link to="/usuarios/password-change">
-            <p v-t="'LoginForm.RememberPassWord'"></p> 
+            <p v-t="'LoginForm.RememberPassWord'"></p>
           </nuxt-link>
         </div>
-        
       </div>
-        <div class="flex items-end justify-end h-96 mr"> 
-            <LanguajeChange
-              tipoTransicion='derecha'>
-            </LanguajeChange>
-        </div>
+      <div class="flex items-end justify-end h-96 mr">
+        <LanguajeChange tipoTransicion="derecha"> </LanguajeChange>
+      </div>
+      <div class="absolute cursor-pointer contenedor-principal ">
+        <nuxt-link class="flex items-center contenedor" to="/">
+          <img class="z-20 h-14 imagen" src="/images/whatsapp.svg" alt="" />
+          <div
+            class="z-10 py-1 text-sm text-white bg-green-600 rounded-full cursor-pointer px-14 boton "
+          >
+            <p>Acesoria inmediata</p>
+            <p class="text-center">por Whatsapp</p>
+          </div>
+        </nuxt-link>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import BtnCallToAction    from "@/components/htmlControls/buttonCallToActionLoading";
-import ButtonRegister     from "@/components/library/buttonRegister";
-import InputBasic         from "@/components/htmlControls/inputBasic";
-import LabelTitle         from "@/components/library/LabelTitle";
-import LanguajeChange     from "@/components/htmlControls/languajeChange";
-import User               from "@/models/User";
+import BtnCallToAction from "@/components/htmlControls/buttonCallToActionLoading";
+import ButtonRegister from "@/components/library/buttonRegister";
+import InputBasic from "@/components/htmlControls/inputBasic";
+import LabelTitle from "@/components/library/LabelTitle";
+import LanguajeChange from "@/components/htmlControls/languajeChange";
+import User from "@/models/User";
 
 export default {
   name: "LoginForm",
   layout: "blank-layout",
   middleware: ["guest"],
-  components: { LabelTitle, InputBasic, BtnCallToAction, ButtonRegister, LanguajeChange },
+  components: {
+    LabelTitle,
+    InputBasic,
+    BtnCallToAction,
+    ButtonRegister,
+    LanguajeChange
+  },
   data() {
     return {
-      errors          : [],
-      idioma          : false,
-      modal           : true,
+      errors: [],
+      idioma: false,
+      modal: true,
       showBtnAnimation: false,
       formLogin: {
-        email   : process.env.EMAIL_TEMP,
+        email: process.env.EMAIL_TEMP,
         password: process.env.EMAIL_PASS_TEMP
       }
     };
@@ -125,7 +138,6 @@ export default {
     }
   },
   methods: {
-  
     login() {
       this.$cookies.set("logueado", "false");
       this.showBtnAnimation = true;
@@ -146,8 +158,7 @@ export default {
 
     clearErrors() {
       this.errors = [];
-    },
- 
+    }
   }
 };
 </script>
@@ -157,20 +168,50 @@ export default {
   margin-left: -25px;
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
   .mr {
-  margin-top: 68px;
-  margin-left: -25px;
+    margin-top: 68px;
+    margin-left: -25px;
+  }
 }
 
-}
-
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1200px) {
   .mr {
-  margin-top: 72px;
-  margin-left: -25px;
+    margin-top: 72px;
+    margin-left: -25px;
+  }
 }
 
+.contenedor-principal {
+  bottom: 50px;
+  right: 0px;
 }
 
+.contenedor {
+  height: 50px;
+  width: 270px;
+  transition: width 0.8s;
+}
+
+.boton {
+  display: none;
+}
+
+.imagen {
+  margin-right: -50px;
+  margin-left: 200px;
+  transition: width 0.8s
+}
+
+.contenedor:hover > .imagen {
+  margin-left: 0;
+}
+
+.contenedor:hover > .boton {
+  display: block;
+}
+
+.contenedor:hover {
+  width: 300px;
+}
 </style>
