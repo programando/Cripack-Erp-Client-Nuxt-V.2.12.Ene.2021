@@ -95,6 +95,9 @@
         </table>
       </div>
     </div>
+    <div class="absolute contenedor-principal">
+      <WsContact />
+    </div>
   </div>
 </template>
 
@@ -102,11 +105,11 @@
     var Moment = require('moment');
     import BtnCallToAction    from "@/components/htmlControls/buttonCallToActionLoading";
     import Terceros           from "@/models/Terceros";
-    
+    import WsContact from "@/components/htmlControls/wsContact.vue"
     
     export default {
       name:'ClientesHistorialForm',
-      components : { BtnCallToAction },
+      components : { BtnCallToAction, WsContact },
       data() {
         return {
           fechaIni        : '',
@@ -182,4 +185,10 @@
   color: blue;
   text-decoration: underline;
 }
+
+.contenedor-principal {
+  bottom: 15px;
+  right: 0px;
+}
+
 </style>

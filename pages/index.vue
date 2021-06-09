@@ -83,16 +83,8 @@
       <div class="flex items-end justify-end h-96 mr">
         <LanguajeChange tipoTransicion="derecha"> </LanguajeChange>
       </div>
-      <div class="absolute cursor-pointer contenedor-principal ">
-        <nuxt-link class="flex items-center contenedor" to="/">
-          <img class="z-20 h-14 imagen" src="/images/whatsapp.svg" alt="" />
-          <div
-            class="z-10 py-1 text-sm text-white bg-green-600 rounded-full cursor-pointer px-14 boton "
-          >
-            <p>Acesoria inmediata</p>
-            <p class="text-center">por Whatsapp</p>
-          </div>
-        </nuxt-link>
+      <div class="absolute contenedor-principal">
+        <WsContact />
       </div>
     </div>
   </div>
@@ -105,6 +97,7 @@ import InputBasic from "@/components/htmlControls/inputBasic";
 import LabelTitle from "@/components/library/LabelTitle";
 import LanguajeChange from "@/components/htmlControls/languajeChange";
 import User from "@/models/User";
+import WsContact from "@/components/htmlControls/wsContact.vue"
 
 export default {
   name: "LoginForm",
@@ -115,7 +108,8 @@ export default {
     InputBasic,
     BtnCallToAction,
     ButtonRegister,
-    LanguajeChange
+    LanguajeChange,
+    WsContact
   },
   data() {
     return {
@@ -183,35 +177,8 @@ export default {
 }
 
 .contenedor-principal {
-  bottom: 50px;
+  bottom: 20px;
   right: 0px;
 }
 
-.contenedor {
-  height: 50px;
-  width: 270px;
-  transition: width 0.8s;
-}
-
-.boton {
-  display: none;
-}
-
-.imagen {
-  margin-right: -50px;
-  margin-left: 200px;
-  transition: width 0.8s
-}
-
-.contenedor:hover > .imagen {
-  margin-left: 0;
-}
-
-.contenedor:hover > .boton {
-  display: block;
-}
-
-.contenedor:hover {
-  width: 300px;
-}
 </style>
