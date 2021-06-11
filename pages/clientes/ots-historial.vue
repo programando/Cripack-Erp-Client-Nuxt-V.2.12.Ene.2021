@@ -69,15 +69,15 @@
               class="flex w-full bg-white border-b border-gray-200 hover:bg-gray-100 tr" >
               
               <td class="flex items-center justify-start w-1/12 px-2 py-2 space-x-2 text-left">
-                 <div  v-if="venta.terminada" class="flex items-center justify-center h-3 px-2 py-2 text-white bg-green-600 border-green-600 rounded-lg lower-xs ">Terminada</div>
-                 <div v-else class="flex items-center justify-center h-3 px-2 py-2 bg-yellow-300 border-yellow-300 rounded-lg lower-xs">En proceso</div>
+                 <div  v-if="venta.terminada" class="flex items-center justify-center h-3 px-2 py-2 leading-3 text-white bg-green-600 border-green-600 rounded-lg text-lowerxs ">Terminada</div>
+                 <div v-else class="flex items-center justify-center h-3 px-2 py-2 leading-3 bg-yellow-300 border-yellow-300 rounded-lg text-lowerxs">En proceso</div>
               </td>
 
-                <td class="w-1/12 ali-center upper-xs">        {{ venta.numero_ot | NoShowZero}}                     </td>
-                <td class="w-1/12 ali-right upper-xs">         {{ venta.fecha_solicitud | FechaLarga }}  </td>
-                <td class="w-1/12 ali-right upper-xs">         {{ venta.fecha_terminada | FechaLarga}}   </td>
-                <td class="w-4/12 ali-left upper-xs">          {{ venta.referencia }}                    </td>
-                <td class="w-2/12 ali-left upper-xs">          {{ venta.nomestilotrabajo }}              </td>
+                <td class="w-1/12 leading-3 ali-center text-upperxs ">        {{ venta.numero_ot | NoShowZero}}                     </td>
+                <td class="w-1/12 leading-3 ali-right text-upperxs">         {{ venta.fecha_solicitud | FechaLarga }}  </td>
+                <td class="w-1/12 leading-3 ali-right text-upperxs">         {{ venta.fecha_terminada | FechaLarga}}   </td>
+                <td class="w-4/12 leading-3 ali-left text-upperxs">          {{ venta.referencia }}                    </td>
+                <td class="w-2/12 leading-3 ali-left text-upperxs">          {{ venta.nomestilotrabajo }}              </td>
                 <td class="ali-rigth w-14 ">                   {{ venta.cantidad | NoShowZero}}                      </td>
                 <td class="ali-rigth w-14 ">                   {{ venta.cabida | NoShowZero}}                        </td>
                 <td class="w-20 ali-right ">                   {{ venta.numero_factura }}                </td>
@@ -192,14 +192,6 @@
   right: 0px;
 }
 
-.upper-xs {
-  font-size: 0.65rem ;
-  line-height: 0.8rem ;
-}
 
-.lower-xs{
-  font-size: 0.55rem ;
-  line-height: 0.6rem ;
-}
 
 </style>

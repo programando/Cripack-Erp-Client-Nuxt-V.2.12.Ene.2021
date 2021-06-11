@@ -18,6 +18,16 @@ module.exports = {
         Montserrat: ['Montserrat'],
         Raleway   : ['Raleway'],
       },
+
+      fontSize: {
+        'upperxs': '.65rem',
+        'lowerxs': '.55rem',
+      },
+
+      lineHeight: {
+        'leading-2': '.80rem',
+        'leading-1': '.60rem',
+       },
       
       colors: {
         amarillo          : '#FFFD7C',

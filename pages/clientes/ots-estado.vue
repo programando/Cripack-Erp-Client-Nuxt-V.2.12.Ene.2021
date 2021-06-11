@@ -36,10 +36,10 @@
           >
             <tr v-for="OTs in  otsEnProduccion"   :key="OTs.numero_ot"
               class="flex w-full text-xs bg-white border-b border-gray-200 hover:bg-gray-100 tr" >
-              <td class="w-1/12 ali-center">        {{  OTs.numero_ot         }}  </td>
-              <td class="w-3/12 ali-left">          {{  OTs.referencia        }}  </td>
-              <td class="w-2/12 ali-center">        {{  OTs.nomestilotrabajo  }}  </td>
-              <td class="w-1/12 ali-center">        {{  OTs.nomtipotrabajo    }}  </td>
+              <td class="w-1/12 leading-3 ali-center text-upperxs">        {{  OTs.numero_ot         }}  </td>
+              <td class="w-3/12 leading-3 ali-left text-upperxs">          {{  OTs.referencia        }}  </td>
+              <td class="w-2/12 leading-3 ali-center text-upperxs">        {{  OTs.nomestilotrabajo  }}  </td>
+              <td class="w-1/12 leading-3 ali-center text-upperxs">        {{  OTs.nomtipotrabajo    }}  </td>
 
               <td class="flex w-3/12 py-2 text-xs text-center">
                 <div class="labores" :class="[ colorLabor (OTs.color1) ]">  {{  OTs.labor1  }}</div>
@@ -142,7 +142,7 @@
 
 <style lang="postcss" scoped>
   .labores {
-      @apply flex items-center justify-center w-16 h-6 px-2 py-2;
+      @apply flex items-center justify-center w-16 h-6 px-2 py-2 text-upperxs leading-3;
   }
   .convenciones {
     @apply flex items-center justify-center h-6 px-2 py-2;
