@@ -1,14 +1,16 @@
 <template>
   <div class="absolute cursor-pointer contenedor-principal ">
-    <nuxt-link class="flex items-center contenedor" to="/">
+    <a class="flex items-center contenedor" href="https://api.whatsapp.com/send?phone=573152701964">
+    
       <img class="z-20 h-14 imagen" src="/images/whatsapp.svg" alt="" />
       <div
         class="z-10 py-1 text-sm text-white bg-green-600 rounded-full cursor-pointer px-14 boton "
       >
-        <p>Acesoria inmediata</p>
+       <p>Contáctenos</p> 
         <p class="text-center">por Whatsapp</p>
       </div>
-    </nuxt-link>
+    
+    </a>
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <div class="pt-24 mx-2 font-Montserrat">
     <div class="flex justify-between my-2">
-      <h3 class="mt-1 text-2xl">
+      <h3 class="mt-1 text-xl">
         Historial Órdenes de trabajo
       </h3>
       <div class="mt-2">
@@ -33,7 +33,7 @@
         </div>
 
         <input
-          class="px-10 py-1 border-2 focus:outline-none"
+          class="px-10 py-1 text-xs border-2 focus:outline-none"
           type="text"
           v-model="busqueda"
           placeholder="Buscar por referencia"
@@ -44,7 +44,7 @@
       <div class="bg-white rounded shadow-md ">
         <table class="w-full">
           <thead class="flex w-full margen">
-            <tr class="flex w-full text-sm text-gray-600 bg-gray-200">
+            <tr class="flex w-full text-xs text-gray-600 bg-gray-200">
               <th class="w-1/12 ali-center">Estado</th>
               <th class="w-1/12 ali-center">#OT</th>
               <th class="w-1/12 ali-center">Solicitud</th>
@@ -66,21 +66,22 @@
             <tr 
               v-for="venta in filtroReferencia"
               :key="venta.idregistro_ot"
-              class="flex w-full text-xs bg-white border-b border-gray-200 hover:bg-gray-100 tr" >
+              class="flex w-full bg-white border-b border-gray-200 hover:bg-gray-100 tr" >
+              
               <td class="flex items-center justify-start w-1/12 px-2 py-2 space-x-2 text-left">
-                 <div  v-if="venta.terminada" class="flex items-center justify-center h-6 px-2 py-2 text-xs text-white bg-green-700 border-green-700 rounded-lg ">Terminada</div>
-                 <div v-else class="flex items-center justify-center h-6 px-2 py-2 text-xs bg-yellow-300 border-yellow-300 rounded-lg">En proceso</div>
+                 <div  v-if="venta.terminada" class="flex items-center justify-center h-3 px-2 py-2 text-white bg-green-600 border-green-600 rounded-lg lower-xs ">Terminada</div>
+                 <div v-else class="flex items-center justify-center h-3 px-2 py-2 bg-yellow-300 border-yellow-300 rounded-lg lower-xs">En proceso</div>
               </td>
-                <td class="w-1/12 ali-center">         {{ venta.numero_ot | NoShowZero}}                     </td>
-                <td class="w-1/12 ali-right ">         {{ venta.fecha_solicitud | FechaLarga }}  </td>
-                <td class="w-1/12 ali-right ">         {{ venta.fecha_terminada | FechaLarga}}   </td>
-                <td class="w-4/12 ali-left ">          {{ venta.referencia }}                    </td>
-                <td class="w-2/12 ali-left ">          {{ venta.nomestilotrabajo }}              </td>
-                <td class="ali-rigth w-14 ">           {{ venta.cantidad | NoShowZero}}                      </td>
-                <td class="ali-rigth w-14 ">           {{ venta.cabida | NoShowZero}}                        </td>
-                <td class="w-20 ali-right ">           {{ venta.numero_factura }}                </td>
- 
-                <td class="w-1/12 ali-right ">         {{ venta.vrVenta | NoShowZero}}                       </td>
+
+                <td class="w-1/12 ali-center upper-xs">        {{ venta.numero_ot | NoShowZero}}                     </td>
+                <td class="w-1/12 ali-right upper-xs">         {{ venta.fecha_solicitud | FechaLarga }}  </td>
+                <td class="w-1/12 ali-right upper-xs">         {{ venta.fecha_terminada | FechaLarga}}   </td>
+                <td class="w-4/12 ali-left upper-xs">          {{ venta.referencia }}                    </td>
+                <td class="w-2/12 ali-left upper-xs">          {{ venta.nomestilotrabajo }}              </td>
+                <td class="ali-rigth w-14 ">                   {{ venta.cantidad | NoShowZero}}                      </td>
+                <td class="ali-rigth w-14 ">                   {{ venta.cabida | NoShowZero}}                        </td>
+                <td class="w-20 ali-right ">                   {{ venta.numero_factura }}                </td>
+                <td class="w-1/12 ali-right ">                 {{ venta.vrVenta | NoShowZero}}                       </td>
                
  
                 <td class="w-20 ali-right enlace">      
@@ -189,6 +190,16 @@
 .contenedor-principal {
   bottom: 15px;
   right: 0px;
+}
+
+.upper-xs {
+  font-size: 0.65rem ;
+  line-height: 0.8rem ;
+}
+
+.lower-xs{
+  font-size: 0.55rem ;
+  line-height: 0.6rem ;
 }
 
 </style>
