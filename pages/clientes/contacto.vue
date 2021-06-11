@@ -98,6 +98,9 @@
         </div>
       </div>
     </div>
+    <div class="absolute contenedor-principal">
+      <WsContact />
+    </div>
   </div>
 </template>
 
@@ -108,11 +111,12 @@ import InputBasic         from "@/components/htmlControls/inputBasic";
 import User               from "@/models/User";
 import ClearErrors        from "@/mixins/clearErrors";
 import Messages           from "@/mixins/sweetalert2";
+import WsContact from "@/components/htmlControls/wsContact.vue"
 
 export default {
   layout: 'default3',
   name: "ContactoClientes",
-  components: {  BtnCallToAction,  InputBasic  },
+  components: {  BtnCallToAction,  InputBasic, WsContact  },
   mixins: [ClearErrors, Messages],
   data: ()=> ({
       formData : {
@@ -142,3 +146,9 @@ export default {
   }
 };
 </script>
+<style scoped>
+  .contenedor-principal {
+  bottom: 15px;
+  right: 0px;
+}
+</style>

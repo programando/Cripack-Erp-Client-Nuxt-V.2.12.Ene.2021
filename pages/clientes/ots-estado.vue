@@ -83,15 +83,19 @@
         <div class="text-white convenciones bg-rojo">Suspendidas</div>
       </div>
     </div>
+    <div class="absolute contenedor-principal">
+      <WsContact />
+    </div>
   </div>
 </template>
 
 <script>
     import BtnCallToAction    from "@/components/htmlControls/buttonCallToActionLoading";
     import Terceros           from "@/models/Terceros";
+    import WsContact from "@/components/htmlControls/wsContact.vue"
     export default {
       name:'ClientesOtsEstado',
-      components: { BtnCallToAction},
+      components: { BtnCallToAction, WsContact},
       data: () => ({
             showBtnAnimation : false,
             otsEnProduccion: [],
@@ -155,4 +159,10 @@
   .ali-left {
     @apply px-2 py-2 text-left
   }
+
+  .contenedor-principal {
+  bottom: 5px;
+  right: 0px;
+}
+
 </style>
