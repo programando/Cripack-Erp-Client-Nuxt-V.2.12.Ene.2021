@@ -78,13 +78,13 @@
                 <td class="w-1/12 leading-3 ali-right text-upperxs">         {{ venta.fecha_terminada | FechaLarga}}   </td>
                 <td class="w-4/12 leading-3 ali-left text-upperxs">          {{ venta.referencia }}                    </td>
                 <td class="w-2/12 leading-3 ali-left text-upperxs">          {{ venta.nomestilotrabajo }}              </td>
-                <td class="ali-rigth w-14 ">                   {{ venta.cantidad | NoShowZero}}                      </td>
-                <td class="ali-rigth w-14 ">                   {{ venta.cabida | NoShowZero}}                        </td>
+                <td class="ali-right w-14">                   {{ venta.cantidad | NoShowZero}}                      </td>
+                <td class="ali-right w-14 ">                   {{ venta.cabida | NoShowZero}}                        </td>
                 <td class="w-20 ali-right ">                   {{ venta.numero_factura }}                </td>
                 <td class="w-1/12 ali-right ">                 {{ venta.vrVenta | NoShowZero}}                       </td>
                
  
-                <td class="w-20 ali-right enlace">      
+                <td class="w-24 ali-right enlace">      
                   <a  :href="'https://www.tcc.com.co/rastreo?tipo=RE&documento='+ venta.nro_guia" target="_blank"> {{ venta.nro_guia }} </a>           
  
                 </td>
