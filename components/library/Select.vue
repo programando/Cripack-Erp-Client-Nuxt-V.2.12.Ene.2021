@@ -1,5 +1,5 @@
 <template>
-  <div class="space-y-1">
+  <div class="z-20 space-y-1">
     <label id="listbox-label" class="block text-xs font-medium leading-5 text-gray-700">
       <slot name="SelectLabel"></slot>
     </label>
