@@ -160,6 +160,10 @@
     @apply px-2 py-2 text-left
   }
 
+  .ali-right {
+  @apply px-2 py-2 text-right
+}
+
   .contenedor-principal {
   bottom: 5px;
   right: 0px;

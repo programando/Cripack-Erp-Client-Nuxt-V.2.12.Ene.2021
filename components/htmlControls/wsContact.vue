@@ -24,7 +24,7 @@ export default {
 <style>
 .contenedor {
   height: 50px;
-  width: 270px;
+  width: 265px;
   transition: width 0.8s;
 }
 
@@ -35,7 +35,7 @@ export default {
 .imagen {
   margin-right: -50px;
   margin-left: 200px;
-  transition: width 0.2s;
+  transition: width 0.8s;
 }
 
 .contenedor:hover > .imagen {
@@ -47,6 +47,6 @@ export default {
 }
 
 .contenedor:hover {
-  width: 300px;
+  width: 350px;
 }
 </style>
