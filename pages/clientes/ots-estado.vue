@@ -10,7 +10,7 @@
           <font-awesome-icon class="" :icon="['fas', 'search']" />
         </div>
         <input
-          class="px-10 py-1 border-2 focus:outline-none"
+          class="px-10 py-1 text-xs border-2 focus:outline-none"
           type="text"
           v-model="busqueda"
           placeholder="Buscar referencia"
@@ -22,12 +22,12 @@
         <table class="w-full">
           <thead class="flex w-full margen">
             <tr class="flex w-full text-sm text-gray-600 bg-gray-200">
-              <th class="w-1/12 px-2 ali-center">#OT</th>
-              <th class="w-3/12 px-2 ali-center">Referencia</th>
-              <th class="w-2/12 px-2 ali-center">Estilo</th>
-              <th class="w-1/12 px-2 ali-center">Tipo</th>
-              <th class="w-3/12 px-2 ali-center"></th>
-              <th class="w-2/12 px-2 ali-center">Fecha Confirmada</th>
+              <th class="w-1/12 px-2 ali-left">#OT</th>
+              <th class="w-3/12 px-2 ali-left">Referencia</th>
+              <th class="w-2/12 px-2 ali-left">Estilo</th>
+              <th class="w-1/12 px-2 ali-left">Tipo</th>
+              <th class="w-3/12 px-2 ali-left"></th>
+              <th class="w-2/12 px-2 ali-left">Fecha Confirmada</th>
             </tr>
           </thead>
           <tbody
@@ -38,8 +38,8 @@
               class="flex w-full text-xs bg-white border-b border-gray-200 hover:bg-gray-100 tr" >
               <td class="w-1/12 leading-3 ali-center text-upperxs">        {{  OTs.numero_ot         }}  </td>
               <td class="w-3/12 leading-3 ali-left text-upperxs">          {{  OTs.referencia        }}  </td>
-              <td class="w-2/12 leading-3 ali-center text-upperxs">        {{  OTs.nomestilotrabajo  }}  </td>
-              <td class="w-1/12 leading-3 ali-center text-upperxs">        {{  OTs.nomtipotrabajo    }}  </td>
+              <td class="w-2/12 leading-3 ali-left text-upperxs">        {{  OTs.nomestilotrabajo  }}  </td>
+              <td class="w-1/12 leading-3 ali-left text-upperxs">        {{  OTs.nomtipotrabajo    }}  </td>
 
               <td class="flex w-3/12 py-2 text-xs text-center">
                 <div class="labores" :class="[ colorLabor (OTs.color1) ]">  {{  OTs.labor1  }}</div>
@@ -75,12 +75,12 @@
             {{ $t('App.UpdateList')}}
           </BtnCallToAction>
      </div>
-      <div class="flex space-x-1">
+      <div class="flex space-x-1 text-xs">
         <p class="mr-2">Convenciones de color utilizadas en las OT's</p>
-        <div class="convenciones bg-verde">Finalizadas</div>
-        <div class="convenciones bg-amarillo">Iniciadas</div>
-        <div class="text-white convenciones bg-azul">Por Iniciar</div>
-        <div class="text-white convenciones bg-rojo">Suspendidas</div>
+        <div class="text-xs convenciones bg-verde">Finalizadas</div>
+        <div class="text-xs convenciones bg-amarillo">Iniciadas</div>
+        <div class="text-xs text-white convenciones bg-azul">Por Iniciar</div>
+        <div class="text-xs text-white convenciones bg-rojo">Suspendidas</div>
       </div>
     </div>
     <div class="absolute contenedor-principal">
@@ -149,7 +149,7 @@
       @apply flex items-center justify-center w-16 h-6 px-2 py-2 text-upperxs leading-3;
   }
   .convenciones {
-    @apply flex items-center justify-center h-6 px-2 py-2;
+    @apply flex items-center justify-center h-4 px-2 py-1;
   }
 
   .ali-center {
