@@ -18,7 +18,7 @@
           <div class="grid grid-cols-3">
             <div class="flex items-center">
               <label class="w-32 text-sm ">Tipo de arreglo : </label>
-              <v-select class="w-40 "> </v-select>
+              <TiposArreglos width="w-40" ></TiposArreglos>
             </div>
             <div class="flex items-center justify-center">
               <label class="w-32 ml-4 text-sm">Sustrato : </label>
@@ -129,15 +129,17 @@ import vSelect from "vue-select";
 import vueDropzone from "@/components/vueDropzone";
 import BtnCallToAction from "@/components/htmlControls/buttonCallToActionLoading";
 import RadioButton from "@/components/htmlControls/radioButton";
+import TiposArreglos from "@/components/solicitudesOts/tipoArreglo.vue";
 
 export default {
-  components: {
+  components: { 
     BtnCallToAction,
     InputBasic,
     Checkbox,
     vSelect,
     vueDropzone,
-    RadioButton
+    RadioButton,
+    TiposArreglos
   },
   data: () => ({
     showBtnAnimation: false
