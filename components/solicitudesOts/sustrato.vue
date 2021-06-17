@@ -1,20 +1,20 @@
 <template>
   <div  class="z-20" :class="width">
-      <VueSelect :data="tiposArreglo" v-model="itemSelected" v-on:valueSelect="onValueSelect"> </VueSelect>
+      <VueSelect :data="sustratos" v-model="itemSelected" v-on:valueSelect="onValueSelect"> </VueSelect>
   </div>
 </template>
 
 <script>
   import VueSelect from "@/components/htmlControls/select.vue"
-  import TiposArreglo from "@/models/SolicitudesOts.js";
+  import Sustratos from "@/models/SolicitudesOts.js";
   export default {
-    name:'SolitiducOtTipoArreglo'  ,
+    name:'SolitiducOtSustrato'  ,
     props: [ 'width' ],
     components: { VueSelect  },
     data() {
       return  {
           dataInicial :[],
-          tiposArreglo: [],
+          sustratos: [],
           itemSelected: 'Seleccione una opción...',
           idItemSelected:0,
       }
@@ -24,20 +24,20 @@
     onValueSelect(value) {
       this.itemSelected   = value ;
       this.idItemSelected = this.dataInicial.filter(function (item) {
-          return item.nom_tp_arreglo === value;
+          return item.nom_sustrato === value;
       });
-     this.$emit('input', this.idItemSelected[0]['id_tp_arreglo']);
+     this.$emit('input', this.idItemSelected[0]['id_sustrato']);
     },
     getAloneArray ( Data) {
-      return Data.map( row => row.nom_tp_arreglo );
+      return Data.map( row => row.nom_sustrato );
     }
   },
 
     mounted() {
-          TiposArreglo.getTiposArreglo() 
+          Sustratos.getSustratos() 
           .then( response => {
               this.dataInicial = response.data;
-              this.tiposArreglo= this.getAloneArray( response.data );
+              this.sustratos   = this.getAloneArray( response.data );
           })
     },
 

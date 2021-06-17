@@ -91,23 +91,20 @@
 </template>
 
 <script>
-import BtnCallToAction from "@/components/htmlControls/buttonCallToActionLoading";
-import ButtonRegister from "@/components/library/buttonRegister";
-import InputBasic from "@/components/htmlControls/inputBasic";
-import LabelTitle from "@/components/library/LabelTitle";
-import LanguajeChange from "@/components/htmlControls/languajeChange";
-import User from "@/models/User";
-import WsContact from "@/components/htmlControls/wsContact.vue"
+import BtnCallToAction    from "@/components/htmlControls/buttonCallToActionLoading";
+import InputBasic         from "@/components/htmlControls/inputBasic";
+import LanguajeChange     from "@/components/htmlControls/languajeChange";
+import User               from "@/models/User";
+import WsContact          from "@/components/htmlControls/wsContact.vue"
 
 export default {
   name: "LoginForm",
   layout: "blank-layout",
   middleware: ["guest"],
   components: {
-    LabelTitle,
+ 
     InputBasic,
     BtnCallToAction,
-    ButtonRegister,
     LanguajeChange,
     WsContact
   },

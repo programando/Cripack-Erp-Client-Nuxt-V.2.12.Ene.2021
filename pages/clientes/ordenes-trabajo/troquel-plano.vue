@@ -18,11 +18,11 @@
           <div class="grid grid-cols-3">
             <div class="flex items-center">
               <label class="w-32 text-sm ">Tipo de arreglo : </label>
-              <TiposArreglos width="w-40" ></TiposArreglos>
+              <OtsTiposArreglos width="w-40" v-model="formData.id_tp_arreglo" ></OtsTiposArreglos>
             </div>
             <div class="flex items-center justify-center">
               <label class="w-32 ml-4 text-sm">Sustrato : </label>
-              <v-select class="w-40 "> </v-select>
+              <OtsSustratos width="w-40" v-model="formData.id_sustrato" ></OtsSustratos>
             </div>
             <div class="flex items-center justify-end">
               <label class="w-32 ml-4 text-sm">Calibre : </label>
@@ -123,15 +123,17 @@
 </template>
 
 <script>
-import Checkbox from "@/components/htmlControls/checkbox";
-import InputBasic from "@/components/htmlControls/inputBasic";
-import vSelect from "vue-select";
-import vueDropzone from "@/components/vueDropzone";
-import BtnCallToAction from "@/components/htmlControls/buttonCallToActionLoading";
-import RadioButton from "@/components/htmlControls/radioButton";
-import TiposArreglos from "@/components/solicitudesOts/tipoArreglo.vue";
+  import BtnCallToAction          from "@/components/htmlControls/buttonCallToActionLoading";
+  import Checkbox                 from "@/components/htmlControls/checkbox";
+  import InputBasic               from "@/components/htmlControls/inputBasic";
+  import OtsSustratos             from "@/components/solicitudesOts/sustrato.vue";
+  import OtsTiposArreglos            from "@/components/solicitudesOts/tipoArreglo.vue";
+  import RadioButton              from "@/components/htmlControls/radioButton";
+  import vSelect                  from "vue-select";
+  import vueDropzone              from "@/components/vueDropzone";
 
 export default {
+  name:'FormTroquelPlano',
   components: { 
     BtnCallToAction,
     InputBasic,
@@ -139,10 +141,16 @@ export default {
     vSelect,
     vueDropzone,
     RadioButton,
-    TiposArreglos
+    OtsTiposArreglos,OtsSustratos
   },
   data: () => ({
-    showBtnAnimation: false
+    showBtnAnimation: false,
+ 
+    
+    formData : {
+        id_sustrato : 0,
+        id_tp_arreglo:0,
+    }
   }),
 
   methods: {
