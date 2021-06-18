@@ -26,27 +26,27 @@
             </div>
             <div class="flex items-center justify-end">
               <label class="w-32 ml-4 text-sm">Calibre : </label>
-              <v-select class="w-40 "> </v-select>
+              <OtsCalibre width="w-40"></OtsCalibre>
             </div>
           </div>
           <div class="grid grid-cols-3 mt-2">
             <div class="flex items-center">
               <label class="w-32 text-sm ">Tiraje :</label>
-              <v-select class="w-40 "> </v-select>
+              <OtsTiraje width="w-40"></OtsTiraje>
             </div>
             <div class="flex items-center justify-center">
               <label class="w-32 ml-4 text-sm">Frecuencia :</label>
-              <v-select class="w-40 "> </v-select>
+              <OtsFrecuencia width="w-40"></OtsFrecuencia>
             </div>
             <div class="flex items-center justify-end">
               <label class="w-32 ml-4 text-sm ">Cabida :</label>
-              <v-select class="w-40 "> </v-select>
+              <OtsCabida width="w-40"></OtsCabida>
             </div>
           </div>
           <div class="grid grid-cols-3 mt-2">
             <div class="flex items-center">
               <label class="w-32 text-sm ">Máquina :</label>
-              <v-select class="w-40 "> </v-select>
+              <OtsMaquina width="w-40"></OtsMaquina>
             </div>
           </div>
         </div>
@@ -62,13 +62,13 @@
           <div class="">
             <div class="flex items-center justify-center">
               <label class="w-32 ml-4 text-sm">Ayuda pega :</label>
-              <v-select class="w-40 "> </v-select>
+              <OtsAyudaPega width="w-40"></OtsAyudaPega>
             </div>
           </div>
           <div class="">
             <div class="flex items-center justify-end">
               <label class="w-32 ml-4 text-sm">Punzones :</label>
-              <v-select class="w-40 "> </v-select>
+              <OtsPunzones width="w-40"></OtsPunzones>
             </div>
           </div>
         </div>
@@ -128,6 +128,13 @@
   import InputBasic               from "@/components/htmlControls/inputBasic";
   import OtsSustratos             from "@/components/solicitudesOts/sustrato.vue";
   import OtsTiposArreglos            from "@/components/solicitudesOts/tipoArreglo.vue";
+  import OtsCalibre            from "@/components/solicitudesOts/calibre.vue";
+  import OtsTiraje            from "@/components/solicitudesOts/tiraje.vue";
+  import OtsFrecuencia            from "@/components/solicitudesOts/frecuencia.vue";
+  import OtsCabida            from "@/components/solicitudesOts/cabidad.vue";
+  import OtsMaquina            from "@/components/solicitudesOts/maquina.vue";
+  import OtsAyudaPega            from "@/components/solicitudesOts/ayudaPega.vue";
+  import OtsPunzones            from "@/components/solicitudesOts/punzones.vue";
   import RadioButton              from "@/components/htmlControls/radioButton";
   import vSelect                  from "vue-select";
   import vueDropzone              from "@/components/vueDropzone";
@@ -141,7 +148,7 @@ export default {
     vSelect,
     vueDropzone,
     RadioButton,
-    OtsTiposArreglos,OtsSustratos
+    OtsTiposArreglos,OtsSustratos, OtsCalibre, OtsTiraje, OtsFrecuencia, OtsCabida, OtsMaquina, OtsAyudaPega, OtsPunzones
   },
   data: () => ({
     showBtnAnimation: false,

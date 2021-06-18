@@ -2,7 +2,7 @@
  
   <div class="text-sm font-Montserrat">
     <div
-      class="fixed z-20 flex items-center justify-between w-full mt-0 bg-azul "
+      class="fixed z-50 flex items-center justify-between w-full mt-0 bg-azul "
     >
       <div class="flex">
         <img class="h-20" src="/images/logo.png" alt="" />

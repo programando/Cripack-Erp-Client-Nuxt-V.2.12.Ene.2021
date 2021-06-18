@@ -1,5 +1,5 @@
 <template>
-  <div  class="z-20" :class="width">
+  <div :class="width">
       <VueSelect :data="tiposArreglo" v-model="itemSelected" v-on:valueSelect="onValueSelect"> </VueSelect>
   </div>
 </template>

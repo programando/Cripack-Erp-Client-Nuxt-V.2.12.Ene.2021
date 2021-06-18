@@ -1,5 +1,5 @@
 <template>
-  <div class="z-20 space-y-1">
+  <div class="space-y-1 ">
     <label id="listbox-label" class="block text-xs font-medium leading-5 text-gray-700">
       <slot name="SelectLabel"></slot>
     </label>
@@ -22,7 +22,7 @@
       </span>
 
       <!-- Select popover, show/hide based on select state. -->
-      <div v-show="isOpen" class="absolute w-full mt-1 bg-white rounded-md shadow-lg">
+      <div v-show="isOpen" class="absolute z-30 w-full mt-1 bg-white rounded-md shadow-lg">
         <ul tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-item-3" class="py-1 overflow-auto text-base leading-6 rounded-md shadow-xs max-h-56 focus:outline-none sm:text-xs sm:leading-5">
 
           <!--

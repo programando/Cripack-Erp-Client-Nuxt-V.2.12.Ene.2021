@@ -8,7 +8,7 @@
   import VueSelect from "@/components/htmlControls/select.vue"
   import Sustratos from "@/models/SolicitudesOts.js";
   export default {
-    name:'SolitiducOtSustrato'  ,
+    name:'SolitiducOtTiraje'  ,
     props: [ 'width' ],
     components: { VueSelect  },
     data() {
