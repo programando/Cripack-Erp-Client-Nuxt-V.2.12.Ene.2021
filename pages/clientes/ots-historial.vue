@@ -33,7 +33,7 @@
         </div>
 
         <input
-          class="px-10 py-1 text-xs border-2 focus:outline-none"
+          class="px-10 py-2 text-xs border rounded-md focus:outline-none text-azul"
           type="text"
           v-model="busqueda"
           placeholder="Buscar por referencia"

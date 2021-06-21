@@ -41,11 +41,11 @@ input[type="radio"] + label:hover span {
 }
 
 input[type="radio"]:checked + label span {
-  background-color: #3490dc;
+  background-color: #20286d;
   box-shadow: 0px 0px 0px 2px white inset;
 }
 
 input[type="radio"]:checked + label {
-  color: #3490dc;
+  color: #20286d;
 }
 </style>

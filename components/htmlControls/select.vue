@@ -28,9 +28,9 @@
           <!--
             Select option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation.
 
-            Highlighted: "text-white bg-indigo-600", Not Highlighted: "text-gray-900"
+            Highlighted: "text-white bg-azul", Not Highlighted: "text-gray-900"
           -->
-          <li tabindex="0" @click="select(d)" id="listbox-item-0" role="option" v-for="d in data" v-bind:key="d" class="relative py-2 pl-3 text-gray-900 bg-gray-200 cursor-pointer select-none pr-9 hover:text-white hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600">
+          <li tabindex="0" @click="select(d)" id="listbox-item-0" role="option" v-for="d in data" v-bind:key="d" class="relative py-2 pl-3 text-gray-900 bg-gray-100 cursor-pointer select-none pr-9 hover:text-white hover:bg-azul focus:outline-none focus:text-white focus:bg-azul">
             <div class="flex items-center space-x-3">
               <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
               <span class="block truncate" v-bind:class="{ 'font-normal' : !isSelected(d) , 'font-semibold' : isSelected(d)}">

@@ -67,7 +67,7 @@
           </div>
           <div class="mt-2">
             <textarea
-              class="w-4/6 px-4 py-2 text-gray-700 placeholder-gray-700 bg-white border-2 border-gray-400 rounded outline-none focus:outline-none focus:bg-gray-100"
+              class="w-4/6 px-4 py-2 bg-white border-2 border-gray-400 rounded outline-none text-azul placeholder-azul focus:outline-none focus:bg-gray-100"
               :placeholder = "$t('ContactForm.PlaceHolderMessage')"
               cols        = "47"
               rows        = "3"

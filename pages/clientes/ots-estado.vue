@@ -10,7 +10,7 @@
           <font-awesome-icon class="" :icon="['fas', 'search']" />
         </div>
         <input
-          class="px-10 py-1 text-xs border-2 focus:outline-none"
+          class="px-10 py-2 text-xs border rounded-md text-azul focus:outline-none"
           type="text"
           v-model="busqueda"
           placeholder="Buscar referencia"

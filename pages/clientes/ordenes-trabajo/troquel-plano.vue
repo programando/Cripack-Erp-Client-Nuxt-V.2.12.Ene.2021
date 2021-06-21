@@ -10,7 +10,7 @@
         <div class="flex items-center space-x-2">
           <label class="w-32 mr-2 text-sm">Referencia :</label>
           <input
-            class="w-full px-4 py-1 text-sm text-gray-700 placeholder-gray-700 bg-white border border-gray-300 rounded-md outline-none focus:bg-gray-100"
+            class="w-full px-4 py-1 text-sm placeholder-gray-700 bg-white border border-gray-300 rounded-md outline-none text-azul focus:bg-gray-100"
             type="text"
           />
         </div>
@@ -88,16 +88,15 @@
         </div>
         <div class="flex items-center mt-1 space-x-2">
           <label class="w-32 text-sm ">Archivos:</label>
-          <div class="w-full ">
+          <div class="w-full h-40">
             <vueDropzone> </vueDropzone>
           </div>
         </div>
-
         <div>
           <div class="flex justify-center mt-2 space-x-2 ">
             <label class="w-32 text-sm ">Observaciones :</label>
             <textarea
-              class="w-full px-4 py-2 text-gray-700 placeholder-gray-700 bg-white border border-gray-300 rounded-md outline-none focus:outline-none focus:bg-gray-100"
+              class="w-full px-4 py-2 placeholder-gray-700 bg-white border border-gray-300 rounded-md outline-none text-azul focus:outline-none focus:bg-gray-100"
               name="observaciones"
               cols="80"
               rows="2"

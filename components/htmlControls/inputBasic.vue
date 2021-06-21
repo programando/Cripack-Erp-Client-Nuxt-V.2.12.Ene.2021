@@ -13,7 +13,7 @@
             </div>
             
             <input 
-             class="w-full px-4 py-1 text-xs text-gray-700 placeholder-gray-700 bg-white border-2 border-gray-400 rounded outline-none focus:bg-gray-100"
+             class="w-full px-4 py-1 text-xs bg-white border-2 border-gray-400 rounded outline-none text-azul placeholder-azul focus:bg-gray-100"
                 
                 :id="id"
                 ref="input"

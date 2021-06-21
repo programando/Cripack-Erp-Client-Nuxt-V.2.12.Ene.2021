@@ -12,7 +12,7 @@
         :id       = "idCheck"
         :value    = "val"
      />
-    <div class="flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 bg-white border-2 border-blue-400 rounded-md cursor-pointer focus-within:border-blue-500">
+    <div class="flex items-center justify-center flex-shrink-0 w-6 h-6 mr-2 bg-white border-2 rounded-md cursor-pointer border-azul ">
       
       <svg   class="hidden w-3 h-3 cursor-pointer fill-current text-azul " version="1.1" viewBox="0 0 17 12" xmlns="http://www.w3.org/2000/svg">
         <g fill="none" fill-rule="evenodd">
@@ -65,7 +65,7 @@ export default {
 
 <style>
     input:checked + div {
-      @apply border-blue-500;
+      
     }
     input:checked + div svg {
       @apply block;
