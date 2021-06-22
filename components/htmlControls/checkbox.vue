@@ -34,8 +34,7 @@ export default {
      data () {
       return {
         checkValue   : false,
-        identifyCheck: false,
-        
+        identifyCheck: false, 
       }
      },
 

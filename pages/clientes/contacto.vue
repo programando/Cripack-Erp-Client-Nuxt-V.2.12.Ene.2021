@@ -63,7 +63,7 @@
                 v-model     = "formData.email"
                 width       = "w-3/6"
               :errors       = "errors.email"
-            />
+            ></InputBasic>
           </div>
           <div class="mt-2">
             <textarea

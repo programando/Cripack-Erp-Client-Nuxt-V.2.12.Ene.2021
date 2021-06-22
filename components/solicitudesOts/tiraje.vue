@@ -1,12 +1,12 @@
 <template>
   <div :class="width">
-      <VueSelect :data="sustratos" v-model="itemSelected" v-on:valueSelect="onValueSelect"> </VueSelect>
+      <VueSelect :data="Tirajes" v-model="itemSelected" v-on:valueSelect="onValueSelect"> </VueSelect>
   </div>
 </template>
 
 <script>
   import VueSelect from "@/components/htmlControls/select.vue"
-  import Sustratos from "@/models/SolicitudesOts.js";
+  import Tirajes from "@/models/SolicitudesOts.js";
   export default {
     name:'SolitiducOtTiraje'  ,
     props: [ 'width' ],
@@ -14,7 +14,7 @@
     data() {
       return  {
           dataInicial :[],
-          sustratos: [],
+          Tirajes: [],
           itemSelected: 'Seleccione una opción...',
           idItemSelected:0,
       }
@@ -24,20 +24,20 @@
     onValueSelect(value) {
       this.itemSelected   = value ;
       this.idItemSelected = this.dataInicial.filter(function (item) {
-          return item.nom_sustrato === value;
+          return item.nom_tiraje === value;
       });
-     this.$emit('input', this.idItemSelected[0]['id_sustrato']);
+     this.$emit('input', this.idItemSelected[0]['id_tiraje']);
     },
     getAloneArray ( Data) {
-      return Data.map( row => row.nom_sustrato );
+      return Data.map( row => row.nom_tiraje );
     }
   },
 
     mounted() {
-          Sustratos.getSustratos() 
+          Tirajes.getTirajes() 
           .then( response => {
               this.dataInicial = response.data;
-              this.sustratos   = this.getAloneArray( response.data );
+              this.Tirajes   = this.getAloneArray( response.data );
           })
     },
 

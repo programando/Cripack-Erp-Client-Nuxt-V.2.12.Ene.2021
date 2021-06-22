@@ -7,12 +7,17 @@
         Troqueles planos
       </h2>
       <div class="mx-16 mt-4 ">
-        <div class="flex items-center space-x-2">
+        <div class="flex items-centerspace-x-2">
           <label class="w-32 mr-2 text-sm">Referencia :</label>
-          <input
-            class="w-full px-4 py-1 text-sm placeholder-gray-700 bg-white border border-gray-300 rounded-md outline-none text-azul focus:bg-gray-100"
-            type="text"
-          />
+            <InputBasic
+                 borderColor = "extra"
+                colorError  = "red"      
+                type        = "text"
+                v-model     = "formData.referencia"
+                width       = "w-full"
+              :errors       = "errors.referencia"
+            ></InputBasic>
+
         </div>
         <div class="mt-2 ">
           <div class="grid grid-cols-3">
@@ -26,27 +31,35 @@
             </div>
             <div class="flex items-center justify-end">
               <label class="w-32 ml-4 text-sm">Calibre : </label>
-              <OtsCalibre width="w-40"></OtsCalibre>
+              <OtsCalibre width="w-40" v-model="formData.id_calibre"></OtsCalibre>
             </div>
           </div>
           <div class="grid grid-cols-3 mt-2">
             <div class="flex items-center">
               <label class="w-32 text-sm ">Tiraje :</label>
-              <OtsTiraje width="w-40"></OtsTiraje>
+              <OtsTiraje width="w-40" v-model="formData.id_tiraje"></OtsTiraje>
             </div>
             <div class="flex items-center justify-center">
               <label class="w-32 ml-4 text-sm">Frecuencia :</label>
-              <OtsFrecuencia width="w-40"></OtsFrecuencia>
+              <OtsFrecuencia width="w-40" v-model="formData.id_frecuencia"></OtsFrecuencia>
             </div>
             <div class="flex items-center justify-end">
               <label class="w-32 ml-4 text-sm ">Cabida :</label>
-              <OtsCabida width="w-40"></OtsCabida>
+              <InputBasic
+                
+                borderColor = "extra"
+                colorError  = "red"      
+                type        = "text"
+                v-model     = "formData.cabida"
+                width       = "w-40"
+              :errors       = "errors.cabida"
+            ></InputBasic>
             </div>
           </div>
           <div class="grid grid-cols-3 mt-2">
             <div class="flex items-center">
               <label class="w-32 text-sm ">Máquina :</label>
-              <OtsMaquina width="w-40"></OtsMaquina>
+              <OtsMaquina width="w-40" v-model="formData.id_maquina"></OtsMaquina>
             </div>
           </div>
         </div>
@@ -54,21 +67,21 @@
           <div class="flex items-center">
             <div class="flex items-center">
               <label class="-mt-2 text-sm w-28 ">Perforadora :</label>
-              <Checkbox></Checkbox>
+              <Checkbox v-model="formData.perforadra_1"></Checkbox>
             </div>
-            <Checkbox></Checkbox>
-            <Checkbox></Checkbox>
+            <Checkbox v-model="formData.perforadra_2"></Checkbox>
+            <Checkbox v-model="formData.perforadra_3"></Checkbox>
           </div>
           <div class="">
             <div class="flex items-center justify-center">
               <label class="w-32 ml-4 text-sm">Ayuda pega :</label>
-              <OtsAyudaPega width="w-40"></OtsAyudaPega>
+              <OtsAyudaPega width="w-40" v-model="formData.id_ayudapega"></OtsAyudaPega>
             </div>
           </div>
           <div class="">
             <div class="flex items-center justify-end">
               <label class="w-32 ml-4 text-sm">Punzones :</label>
-              <OtsPunzones width="w-40"></OtsPunzones>
+              <OtsPunzones width="w-40" v-model="formData.id_punzon"></OtsPunzones>
             </div>
           </div>
         </div>
@@ -76,16 +89,17 @@
           <div class="flex items-center">
             <div class="flex items-center ">
               <label class="-mt-2 text-sm w-28 ">Corte-Hendido :</label>
-              <Checkbox></Checkbox>
+              <Checkbox v-model="formData.cortehendido_1"></Checkbox>
             </div>
-            <Checkbox></Checkbox>
-            <Checkbox></Checkbox>
+            <Checkbox v-model="formData.cortehendido_2"></Checkbox>
+            <Checkbox v-model="formData.cortehendido_3"></Checkbox>
           </div>
           <div class="flex justify-center text-sm ">
             <label class="-ml-4 text-sm w-28">Encauche :</label>
             <RadioButton></RadioButton>
           </div>
         </div>
+
         <div class="flex items-center mt-1 space-x-2">
           <label class="w-32 text-sm ">Archivos:</label>
           <div class="w-full h-40">
@@ -154,9 +168,24 @@ export default {
  
     
     formData : {
-        id_sustrato : 0,
-        id_tp_arreglo:0,
-    }
+        cabida       : '',
+        id_calibre   : 0,
+        id_frecuencia: 0,
+        id_sustrato  : 0,
+        id_tiraje    : 0,
+        id_tp_arreglo: 0,
+        referencia   : '',
+        id_maquina:0,
+        id_ayudapega:0,
+        id_punzon:0,
+        perforadra_1:false,
+        perforadra_2:false,
+        perforadra_3:false,
+        cortehendido_1:false,
+        cortehendido_2:false,
+        cortehendido_3:false,
+    },
+    errors:[],
   }),
 
   methods: {
@@ -164,28 +193,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.style-chooser .vs__search::placeholder,
-.style-chooser .vs__dropdown-toggle,
-.style-chooser .vs__dropdown-menu {
-  background: white;
-  border: none;
-  color: #394066;
-  text-transform: lowercase;
-}
-
-.style-chooser .vs__clear,
-.style-chooser .vs__open-indicator {
-  fill: #394066;
-}
-.vs__selected-options {
-  height: 20px;
-}
-.vue-dropzon {
-  height: 20px;
-}
-.wn-menu-content-list .v-select-select {
-  border: none;
-}
-</style>
