@@ -104,7 +104,7 @@
         <div class="flex items-center mt-1 space-x-2">
           <label class="w-32 text-sm ">Archivos:</label>
           <div class="w-full h-40">
-            <vueDropzone> </vueDropzone>
+            <vueDropzone v-model="filesAdded"> </vueDropzone>
           </div>
         </div>
         <div>
@@ -186,11 +186,14 @@ export default {
         perforadra_3  : false,
         referencia    : '',
     },
+    filesAdded:[],
     errors:[],
   }),
 
   methods: {
-    grabarOdenTrabajo() {}
+    grabarOdenTrabajo() {
+      console.log ( this.filesAdded);
+    }
   }
 };
 </script>
