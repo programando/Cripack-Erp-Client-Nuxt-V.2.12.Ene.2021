@@ -2,6 +2,7 @@
   <div>
     <!-- Regular Dropzone -->
     <dropzone
+       width="200px" height="80px" 
       id="foo"
       ref="foo"
       :options="dropzoneOptions"
@@ -22,7 +23,7 @@ export default {
       dropzoneOptions: {
         url: "http://httpbin.org/anything",
         addRemoveLinks: true,
-        dictDefaultMessage: "<i class='fa fa-cloud-upload'></i>   SUBIR ARCHIVO"
+        dictDefaultMessage: "<i class='fa fa-cloud-upload'></i>   Presione aquí para subir archivos"
       }
     };
   },

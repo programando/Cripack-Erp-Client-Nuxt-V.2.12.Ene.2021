@@ -1,78 +1,111 @@
+/* 
+ * @usage:
+ *
+ *   <RadioBox label="Foo" value="foo" v-model="MySelectedValue" />
+ *   <RadioBox label="Bar" value="bar" v-model="MySelectedValue" />
+ *   <RadioBox label="Baz" value="baz" v-model="MySelectedValue" />
+ * 
+ * data(){
+ *    return {
+ *      MySelectedValue: "",
+ *    }
+ *  }
+ */
+
 <template>
-  <div class="flex items-center w-36 ">
-    <div class="flex flex-wrap justify-center max-w-sm mx-auto text-center">
-      <div class="flex items-center mb-4 mr-8">
-
-        <input type="radio" name="radio1" class="hidden" :value="1" v-model="radioValue" @change="onChange" :id="idCheck"/>
-        <label   class="flex items-center cursor-pointer">
-          <span class="inline-block w-4 h-4 mr-1 border rounded-full border-grey" ></span>
-          Si
-        </label>
-
-      </div>
-
-
-      <div class="flex items-center mb-4 mr-4">
-        <input   type="radio" name="radio2" class="hidden" :value="0" v-model="radioValue" @change="onChange" :id="idCheck"/>
-        <label    class="flex items-center cursor-pointer">
-          <span
-            class="inline-block w-4 h-4 mr-1 border rounded-full border-grey"
-          ></span>
-          No</label
-        >
-      </div>
-    </div>
-  </div>
+  <label class="flex items-center wrapper">
+    {{label}}
+    <input class="checkbox" type="radio" :checked="isChecked" :value="value" @change="$emit('change', $event.target.value)" />
+    <span class="checkmark"></span>
+  </label>
 </template>
- 
-        
 
 <script>
 export default {
-  name: "radioSelect",
-     data () {
-      return {
-        radioValue   : false,
-        identifyRadio: false, 
-      }
-     },
-
-  computed:{
-       idCheck() {
-            this.identifyRadio = `input-option-${this._uid}`
-            return this.identifyRadio ;
-          }, 
-   },
-    methods: {
-      changeValue() {
-        let checkControl     = document.getElementById(this.identifyRadio ) ;  
-        checkControl.checked = !checkControl.checked;
-        this.radioValue      = checkControl.checked;
-        this.onChange();
-      },
-    onChange () {
-      this.$emit('input', this.radioValue );
+  name:"FormRadioButton",
+  model: {
+    prop: 'modelValue',
+    event: 'change'
+  },
+  props: {
+    "label": { type: String, default: "", required:true },
+    "modelValue": { default: "" },
+    "value": { type: String, default: undefined }
+  },
+  computed: {
+    isChecked() {
+      return this.modelValue == this.value
     }
-},
+  }
 }
 </script>
 
-<style>
-input[type="radio"] + label span {
-  transition: background 0.2s, transform 0.2s;
+<style lang="postcss" scoped>
+/* Customize the label (the wrapper) */
+.wrapper {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 16px;
 }
 
-input[type="radio"] + label span:hover,
-input[type="radio"] + label:hover span {
-  transform: scale(1.2);
+/* Hide the browser's default radio button */
+.wrapper input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
 
-input[type="radio"]:checked + label span {
-  background-color: #20286d;
-  box-shadow: 0px 0px 0px 2px white inset;
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 21px;
+  width: 21px;
+  border-radius: 50%;
+  background-color: #eee;
+  border: 1px solid #ccc;
 }
 
-input[type="radio"]:checked + label {
-  color: #20286d;
+/* On mouse-over, add a grey background color */
+.wrapper:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.wrapper input:checked ~ .checkmark {
+  background-color: #1CD4A7;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.wrapper input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.wrapper .checkmark:after {
+  top: 5px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
 }
 </style>

@@ -96,7 +96,8 @@
           </div>
           <div class="flex justify-center text-sm ">
             <label class="-ml-4 text-sm w-28">Encauche :</label>
-            <RadioButton></RadioButton>
+            <RadioButton  label="Si" value="1" v-model="formData.encauche" ></RadioButton>
+            <RadioButton class="ml-6"  label="No" value="0" v-model="formData.encauche" ></RadioButton>
           </div>
         </div>
 
@@ -139,23 +140,22 @@
   import BtnCallToAction          from "@/components/htmlControls/buttonCallToActionLoading";
   import Checkbox                 from "@/components/htmlControls/checkbox";
   import InputBasic               from "@/components/htmlControls/inputBasic";
-  import OtsSustratos             from "@/components/solicitudesOts/sustrato.vue";
-  import OtsTiposArreglos            from "@/components/solicitudesOts/tipoArreglo.vue";
-  import OtsCalibre            from "@/components/solicitudesOts/calibre.vue";
-  import OtsTiraje            from "@/components/solicitudesOts/tiraje.vue";
+  import OtsAyudaPega             from "@/components/solicitudesOts/ayudaPega.vue";
+  import OtsCabida                from "@/components/solicitudesOts/cabidad.vue";
+  import OtsCalibre               from "@/components/solicitudesOts/calibre.vue";
   import OtsFrecuencia            from "@/components/solicitudesOts/frecuencia.vue";
-  import OtsCabida            from "@/components/solicitudesOts/cabidad.vue";
-  import OtsMaquina            from "@/components/solicitudesOts/maquina.vue";
-  import OtsAyudaPega            from "@/components/solicitudesOts/ayudaPega.vue";
-  import OtsPunzones            from "@/components/solicitudesOts/punzones.vue";
-  import RadioButton              from "@/components/htmlControls/radioButton";
+  import OtsMaquina               from "@/components/solicitudesOts/maquina.vue";
+  import OtsPunzones              from "@/components/solicitudesOts/punzones.vue";
+  import OtsSustratos             from "@/components/solicitudesOts/sustrato.vue";
+  import OtsTiposArreglos         from "@/components/solicitudesOts/tipoArreglo.vue";
+  import OtsTiraje                from "@/components/solicitudesOts/tiraje.vue";
+  import RadioButton              from "~/components/htmlControls/radioButton.vue";
   import vSelect                  from "vue-select";
   import vueDropzone              from "@/components/vueDropzone";
 
 export default {
   name:'FormTroquelPlano',
-  components: { 
-    BtnCallToAction,
+  components: {     BtnCallToAction,
     InputBasic,
     Checkbox,
     vSelect,
@@ -168,22 +168,23 @@ export default {
  
     
     formData : {
-        cabida       : '',
-        id_calibre   : 0,
-        id_frecuencia: 0,
-        id_sustrato  : 0,
-        id_tiraje    : 0,
-        id_tp_arreglo: 0,
-        referencia   : '',
-        id_maquina:0,
-        id_ayudapega:0,
-        id_punzon:0,
-        perforadra_1:false,
-        perforadra_2:false,
-        perforadra_3:false,
-        cortehendido_1:false,
-        cortehendido_2:false,
-        cortehendido_3:false,
+        cabida        : '',
+        cortehendido_1: false,
+        cortehendido_2: false,
+        cortehendido_3: false,
+        encauche      : '',
+        id_ayudapega  : 0,
+        id_calibre    : 0,
+        id_frecuencia : 0,
+        id_maquina    : 0,
+        id_punzon     : 0,
+        id_sustrato   : 0,
+        id_tiraje     : 0,
+        id_tp_arreglo : 0,
+        perforadra_1  : false,
+        perforadra_2  : false,
+        perforadra_3  : false,
+        referencia    : '',
     },
     errors:[],
   }),
