@@ -20,18 +20,18 @@ export default {
     return {
       // See https://rowanwins.github.io/vue-dropzone/docs/dist/index.html#/props
       dropzoneOptions: {
-        url: "http://httpbin.org/anything",
-        addRemoveLinks: true,
-        duplicateCheck:true,
-        dictDefaultMessage: "<i class='fa fa-cloud-upload'></i>   Presione aquí para subir archivos"
+        addRemoveLinks    : true,
+        dictDefaultMessage: "<i class='fa fa-cloud-upload'></i>   Presione aquí para subir archivos",
+        duplicateCheck    : true,
+        url               : "http://httpbin.org/anything",
       },
       filesAdd:[],
     };
   },
-  mounted() {
+/*   mounted() {
     // Everything is mounted and you can access the dropzone instance
     const instance = this.$refs.uploadFiles.dropzone;
-  },
+  }, */
   methods: {
       getUploadingFiles(){
         this.filesAdd= this.$refs.uploadFiles.getAcceptedFiles();
@@ -39,8 +39,7 @@ export default {
       },
       removeFile(file) {
         this.filesAdd= this.$refs.uploadFiles.getAcceptedFiles();
-          //this.$refs.uploadFiles.removeFile(file);
-          this.$emit('input', this.filesAdd); 
+         this.$emit('input', this.filesAdd); 
       }
   }
   
