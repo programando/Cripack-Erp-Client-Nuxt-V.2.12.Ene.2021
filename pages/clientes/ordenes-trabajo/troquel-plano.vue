@@ -15,7 +15,6 @@
                 type        = "text"
                 v-model     = "formData.referencia"
                 width       = "w-full"
-              :errors       = "errors.referencia"
             ></InputBasic>
 
         </div>
@@ -52,7 +51,7 @@
                 type        = "text"
                 v-model     = "formData.cabida"
                 width       = "w-40"
-              :errors       = "errors.cabida"
+
             ></InputBasic>
             </div>
           </div>
@@ -104,7 +103,7 @@
         <div class="flex items-center mt-1 space-x-2">
           <label class="w-32 text-sm ">Archivos:</label>
           <div class="w-full h-40">
-            <vueDropzone v-model="filesAdded"> </vueDropzone>
+            <vueDropzone v-model="formData.filesAdded"> </vueDropzone>
           </div>
         </div>
         <div>
@@ -115,6 +114,7 @@
               name="observaciones"
               cols="80"
               rows="2"
+              v-model="formData.observaciones"
             ></textarea>
           </div>
         </div>
@@ -137,6 +137,8 @@
 </template>
 
 <script>
+  import OrdenesTrabajo           from "@/models/OrdenesTrabajo";
+  
   import BtnCallToAction          from "@/components/htmlControls/buttonCallToActionLoading";
   import Checkbox                 from "@/components/htmlControls/checkbox";
   import InputBasic               from "@/components/htmlControls/inputBasic";
@@ -166,33 +168,45 @@ export default {
   data: () => ({
     showBtnAnimation: false,
  
-    
     formData : {
-        cabida        : '',
-        cortehendido_1: false,
-        cortehendido_2: false,
-        cortehendido_3: false,
-        encauche      : '',
-        id_ayudapega  : 0,
-        id_calibre    : 0,
-        id_frecuencia : 0,
-        id_maquina    : 0,
-        id_punzon     : 0,
-        id_sustrato   : 0,
-        id_tiraje     : 0,
-        id_tp_arreglo : 0,
-        perforadra_1  : false,
-        perforadra_2  : false,
-        perforadra_3  : false,
-        referencia    : '',
+        cabida           : '',
+        cortehendido_1   : false,
+        cortehendido_2   : false,
+        cortehendido_3   : false,
+        encauche         : '',
+        filesAdded       : [],
+        id_ayudapega     : 0,
+        id_calibre       : 0,
+        id_frecuencia    : 0,
+        id_maquina       : 0,
+        id_punzon        : 0,
+        id_sustrato      : 0,
+        id_tiraje        : 0,
+        id_tp_arreglo    : 0,
+        idtecero_vendedor: 0,
+        idtercero        : 0,       // Identificador de cliente
+        observaciones    : '',
+        perforadra_1     : false,
+        perforadra_2     : false,
+        perforadra_3     : false,
+        referencia       : '',
     },
-    filesAdded:[],
+    
     errors:[],
   }),
 
   methods: {
     grabarOdenTrabajo() {
-      console.log ( this.filesAdded);
+      this.formData.idtercero         = this.$cookies.get("User").idtercero;
+      this.formData.idtecero_vendedor = this.$cookies.get("User").idtecero_vendedor;
+      OrdenesTrabajo.SolicitudTroquelPlano (this.formData ) 
+      .then ( response => {
+          console.log( response.data)
+      })
+      .catch ( error=> {
+          this.errors = error.response.data.errors;
+      })
+       
     }
   }
 };

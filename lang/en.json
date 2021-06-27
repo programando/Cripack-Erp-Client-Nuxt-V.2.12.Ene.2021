@@ -30,14 +30,14 @@
       "Title"           : "Information system - WebCross"
    },
     "RegisterForm": {
-      "BtnRegisterCaption"  : "Registrar datos",
-      "CompanyName"         : "Nombre o empresa :",
-      "Email"               : "Correo electrónico :",
+      "BtnRegisterCaption"  : "Data register",
+      "CompanyName"         : "Name or Company :",
+      "Email"               : "Email address :",
       "FinishOkBody"        : "El proceso de registro ha finalizado con éxito. Ahora podrá ingresar al sistema con los datos registrados.",
-      "FinishOkTitle"       : "Registro finalizado",
-      "IdentifyNumber"      : "Número de identificación :",
-      "Password"            : "Contraseña :",
-      "PasswordConfirmation": "Confirmar contraseña :",
+      "FinishOkTitle"       : "Finish",
+      "IdentifyNumber"      : "Identification number :",
+      "Password"            : "Password :",
+      "PasswordConfirmation": "Password confirm:",
       "RegisterOk"          : "Ya estoy registrado, ingresar!"
    },
    "PasswordChageForm" :{

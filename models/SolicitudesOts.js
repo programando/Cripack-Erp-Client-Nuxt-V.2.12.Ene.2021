@@ -26,5 +26,6 @@ export default {
   },
        async getPunzones() {
     return Api.get("/solicitudes/ots/punzones"  ) ;
-  }, 
+  },
+ 
 }
