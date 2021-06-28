@@ -8,13 +8,14 @@
       </h2>
       <div class="mx-16 mt-4 ">
         <div class="flex items-centerspace-x-2">
-          <label class="w-32 mr-2 text-sm">Referencia :</label>
+          <label class="w-32 mr-4 text-sm">Referencia :</label>
             <InputBasic
-                 borderColor = "extra"
+                borderColor = "extra"
                 colorError  = "red"      
                 type        = "text"
                 v-model     = "formData.referencia"
                 width       = "w-full"
+                border = "border"
             ></InputBasic>
 
         </div>
@@ -51,6 +52,7 @@
                 type        = "text"
                 v-model     = "formData.cabida"
                 width       = "w-40"
+                border = "border"
 
             ></InputBasic>
             </div>
@@ -93,7 +95,7 @@
             <Checkbox v-model="formData.cortehendido_2"></Checkbox>
             <Checkbox v-model="formData.cortehendido_3"></Checkbox>
           </div>
-          <div class="flex justify-center text-sm ">
+          <div class="flex justify-center text-sm margen-top">
             <label class="-ml-4 text-sm w-28">Encauche :</label>
             <RadioButton  label="Si" value="1" v-model="formData.encauche" ></RadioButton>
             <RadioButton class="ml-6"  label="No" value="0" v-model="formData.encauche" ></RadioButton>
@@ -211,3 +213,8 @@ export default {
   }
 };
 </script>
+<style scoped>
+.margen-top {
+  margin-top: 7px;
+}
+</style>

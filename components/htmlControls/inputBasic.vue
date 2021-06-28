@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="[width]">
       <div class="flex items-center justify-center">
           <label v-if="label"
             class="w-32 mb-1 form-label"
@@ -13,7 +13,7 @@
             </div>
             
             <input 
-             class="w-full px-4 py-1 text-xs bg-white border-2 border-gray-400 rounded outline-none text-azul placeholder-azul focus:bg-gray-100"
+             class="w-full px-4 py-1 text-xs bg-white border-gray-300 rounded outline-none text-azul placeholder-azul focus:bg-gray-100"
                 
                 :id="id"
                 ref="input"
@@ -24,7 +24,8 @@
                     },
                     {
                         'px-10': icon
-                    }
+                    },
+                    border
                 ]"
                 :type    = "type"
                 :value   = "value"
@@ -68,7 +69,9 @@
             icon: String,
             text: String,
             colorError: String,
-            colorLabel: String
+            colorLabel: String,
+            width: String,
+            border: String
 
         },
 
@@ -98,7 +101,8 @@
                     case 'white':
                         return 'text-white'
                 }
-            }
+            },
+            
         },
 
         
