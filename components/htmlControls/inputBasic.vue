@@ -13,7 +13,7 @@
             </div>
             
             <input 
-             class="w-full px-4 py-1 text-xs bg-white border-gray-300 rounded outline-none text-azul placeholder-azul focus:bg-gray-100"
+             class="w-full px-4 py-1 text-xs bg-white border border-gray-300 rounded outline-none text-azul placeholder-azul focus:bg-gray-100"
                 
                 :id="id"
                 ref="input"
@@ -25,7 +25,7 @@
                     {
                         'px-10': icon
                     },
-                    border
+                    
                 ]"
                 :type    = "type"
                 :value   = "value"

@@ -15,7 +15,7 @@
                 type        = "text"
                 v-model     = "formData.referencia"
                 width       = "w-full"
-                border = "border"
+               
             ></InputBasic>
 
         </div>
@@ -96,7 +96,7 @@
             <Checkbox v-model="formData.cortehendido_3"></Checkbox>
           </div>
           <div class="flex justify-center text-sm margen-top">
-            <label class="-ml-4 text-sm w-28">Encauche :</label>
+            <label class="w-32 -ml-4 text-sm">Encauche :</label>
             <RadioButton  label="Si" value="1" v-model="formData.encauche" ></RadioButton>
             <RadioButton class="ml-6"  label="No" value="0" v-model="formData.encauche" ></RadioButton>
           </div>

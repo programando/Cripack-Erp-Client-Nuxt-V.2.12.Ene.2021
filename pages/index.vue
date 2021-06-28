@@ -32,7 +32,6 @@
                 @keyup="clearErrors"
                 label="Email"
                 colorLabel="white"
-                border="border-2"
               >
               </InputBasic>
             </div>
@@ -48,7 +47,6 @@
                 @keyup="clearErrors"
                 label="Password"
                 colorLabel="white"
-                border="border-2"
               >
               </InputBasic>
             </div>
