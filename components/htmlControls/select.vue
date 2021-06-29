@@ -6,7 +6,7 @@
 
     <div class="relative" v-click-outside="closeDropdown">
       <span class="inline-block w-full rounded-md shadow-sm">
-        <button type="button" @click="openDropdown" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label" class="relative w-full py-1 pl-3 pr-10 text-left transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md cursor-pointer focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-xs sm:leading-5">
+        <button type="button" @click="openDropdown" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label" class="relative w-full py-1 pl-3 pr-10 text-left text-blue-600 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md cursor-pointer focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-xs sm:leading-5">
           <div class="flex items-center space-x-3">
 
             <span class="block truncate">

@@ -99,7 +99,7 @@ export default {
   },
   methods: {
     logout() {
-      User.logout().then(() => {
+        User.logout( this.$cookies.get("User").idtercero).then(() => {
         this.$cookies.removeAll();
         this.$cookies.set("logueado", false);
         this.$store.dispatch("User/UserLogout");

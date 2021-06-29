@@ -10,8 +10,8 @@ export default {
         return  Api.post('usuarios/login', formData);
       },
 
-      async logout() {
-        return Api.post('usuarios/logout');
+      async logout( formData) {
+        return Api.post('usuarios/logout', {  idtercero:    formData   });
       },
 
       async auth(){

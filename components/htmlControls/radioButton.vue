@@ -13,7 +13,7 @@
  */
 
 <template>
-  <label class="flex items-center wrapper">
+  <label class="flex items-center text-blue-600 wrapper">
     {{label}}
     <input class="checkbox" type="radio" :checked="isChecked" :value="value" @change="$emit('change', $event.target.value)" />
     <span class="checkmark"></span>
