@@ -6,9 +6,11 @@
       >
         Troqueles planos
       </h2>
+      <form enctype="multipart/form-data"  accept-charset="UTF-8">
       <div class="mx-16 mt-4 ">
         <div class="flex items-centerspace-x-2">
           <label class="w-32 mr-4 text-sm">Referencia :</label>
+  
           <InputBasic
             borderColor="extra"
             colorError="red"
@@ -17,6 +19,7 @@
             error="true"
             width="w-full"
           ></InputBasic>
+ 
         </div>
         <div class="mt-2 ">
           <div class="grid grid-cols-3">
@@ -169,6 +172,7 @@
           </BtnCallToAction>
         </div>
       </div>
+      </form>
     </div>
   </div>
 </template>
