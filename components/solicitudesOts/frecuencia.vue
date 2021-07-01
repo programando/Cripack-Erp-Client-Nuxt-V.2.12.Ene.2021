@@ -1,6 +1,9 @@
 <template>
   <div :class="width">
       <VueSelect :data="Frecuencias" v-model="itemSelected" v-on:valueSelect="onValueSelect"> </VueSelect>
+      <div v-if="errors.length" class="mt-2 ml-1 text-xs text-left w-96" :class="[setColorError]">
+          <font-awesome-icon :icon="['fas', 'exclamation-triangle']"/> {{ errors[0] }}
+      </div>   
   </div>
 </template>
 
@@ -9,7 +12,13 @@
   import Frecuencias from "@/models/SolicitudesOts.js";
   export default {
     name:'SolitiducOtFrecuencia'  ,
-    props: [ 'width' ],
+    props: {
+      width: String,
+      errors: {
+                type: Array,
+                default: () => []
+            },
+    } ,
     components: { VueSelect  },
     data() {
       return  {
@@ -39,6 +48,26 @@
               this.dataInicial = response.data;
               this.Frecuencias   = this.getAloneArray( response.data );
           })
+    },
+
+    computed: {
+      setColorError() {
+                switch (this.colorError) {
+                    case 'red':
+                        return 'text-red-600'
+                        break;
+
+                    case 'green':
+                        return 'text-green-600'
+                        break;
+                     case 'white':
+                        return 'text-white'
+                        break;               
+            
+                    default:
+                        break;
+                } 
+            },
     },
 
   }
