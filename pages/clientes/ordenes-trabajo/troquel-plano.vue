@@ -6,6 +6,7 @@
       >
         Troqueles planos
       </h2>
+      <form enctype="multipart/form-data"  accept-charset="UTF-8">
       <div class="mx-16 mt-4 ">
         <div class="flex items-centerspace-x-2">
           <label class="w-32 mr-4 text-sm">Referencia :</label>
@@ -15,9 +16,7 @@
                 type        = "text"
                 v-model     = "formData.referencia"
                 width       = "w-full"
-               
             ></InputBasic>
-
         </div>
         <div class="mt-2 ">
           <div class="grid grid-cols-3">
@@ -134,6 +133,7 @@
           </BtnCallToAction>
         </div>
       </div>
+      </form>
     </div>
   </div>
 </template>
@@ -201,7 +201,8 @@ export default {
     grabarOdenTrabajo() {
       this.formData.idtercero         = this.$cookies.get("User").idtercero;
       this.formData.idtecero_vendedor = this.$cookies.get("User").idtecero_vendedor;
-      OrdenesTrabajo.SolicitudTroquelPlano (this.formData ) 
+     
+      OrdenesTrabajo.SolicitudTroquelPlano (this.formData ) // modelo definido por nosotros
       .then ( response => {
           console.log( response.data)
       })

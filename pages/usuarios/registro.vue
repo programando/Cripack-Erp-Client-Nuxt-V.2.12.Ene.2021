@@ -159,7 +159,6 @@ export default {
           },
 
           grabarRegistro () {
-            alert('fkfkf');
               this.showBtnAnimation = true;
               this.formData.email   = this.emailSelected;
               User.registroUsuarioWeb ( this.formData)

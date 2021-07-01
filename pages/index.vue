@@ -132,6 +132,7 @@ export default {
     login() {
       this.$cookies.set("logueado", "false");
       this.showBtnAnimation = true;
+
       User.login(this.formLogin)
         .then(response => {
           this.$cookies.set("User", response.data[0]);
@@ -145,6 +146,7 @@ export default {
             this.showBtnAnimation = false;
           }
         });
+        
     },
 
     clearErrors() {
