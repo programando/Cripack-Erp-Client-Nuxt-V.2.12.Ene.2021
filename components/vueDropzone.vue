@@ -9,6 +9,9 @@
         :destroyDropzone         = "true"
         :options                 = "dropzoneOptions"
     ></dropzone>
+    <div v-if="errors.length" class="mt-2 ml-1 text-xs text-left w-96" :class="[setColorError]">
+          <font-awesome-icon :icon="['fas', 'exclamation-triangle']"/> {{ errors[0] }}
+    </div>  
   </div>
 </template>
 <script>
@@ -16,6 +19,13 @@ import Dropzone from "nuxt-dropzone";
 import "nuxt-dropzone/dropzone.css";
 export default {
   components: {  Dropzone },
+  props: {
+     width: String,
+      errors: {
+                type: Array,
+                default: () => []
+            },
+  },
   data() {
     return {
       // See https://rowanwins.github.io/vue-dropzone/docs/dist/index.html#/props
@@ -41,7 +51,27 @@ export default {
         this.filesAdd= this.$refs.uploadFiles.getAcceptedFiles();
          this.$emit('input', this.filesAdd); 
       }
-  }
+  },
+  computed: {
+      setColorError() {
+                switch (this.colorError) {
+                    case 'red':
+                        return 'text-red-600'
+                        break;
+
+                    case 'green':
+                        return 'text-green-600'
+                        break;
+                     case 'white':
+                        return 'text-white'
+                        break;               
+            
+                    default:
+                        break;
+                } 
+            },
+    },
+
   
 };
 </script>

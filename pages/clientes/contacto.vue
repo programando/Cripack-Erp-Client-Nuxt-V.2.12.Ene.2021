@@ -1,8 +1,6 @@
 <template>
   <div class="flex items-center justify-center h-screen pt-24 mt-0">
     <div class="flex">
-
- 
       <div class="mt-16 ml-40">
         <div>
           <h2 class="text-3xl text-azul" v-t="'ContactForm.TitleLeftOne'"></h2>
