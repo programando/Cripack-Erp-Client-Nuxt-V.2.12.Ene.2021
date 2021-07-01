@@ -14,6 +14,7 @@
             colorError="red"
             type="text"
             v-model="formData.referencia"
+            error="true"
             width="w-full"
           ></InputBasic>
         </div>
