@@ -38,7 +38,7 @@
             
         </div>
       </div>
-        <div v-if="errors" class="mt-2 ml-1 text-xs text-left w-96" :class="[setColorError]">
+        <div v-if="errors" class="mt-2 ml-1 text-xs text-left " :class="[setColorError]">
             <font-awesome-icon :icon="['fas', 'exclamation-triangle']"/>  Ha ocurrido un error 
         </div>      
   </div>
