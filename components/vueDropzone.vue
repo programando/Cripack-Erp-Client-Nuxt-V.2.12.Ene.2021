@@ -12,6 +12,8 @@
     <div v-if="errors.length" class="mt-2 ml-1 text-xs text-left w-96" :class="[setColorError]">
           <font-awesome-icon :icon="['fas', 'exclamation-triangle']"/> {{ errors[0] }}
     </div>  
+    <button @click="enviar">  Presione
+    </button>
   </div>
 </template>
 <script>
@@ -31,9 +33,12 @@ export default {
       // See https://rowanwins.github.io/vue-dropzone/docs/dist/index.html#/props
       dropzoneOptions: {
         addRemoveLinks    : true,
+        autoProcessQueue  : false,
         dictDefaultMessage: "<i class='fa fa-cloud-upload'></i>   Presione aquí para subir archivos",
         duplicateCheck    : true,
-        url               : "http://httpbin.org/anything",
+        parallelUploads   : 4,
+        uploadMultiple    : true,
+        url               : process.env.URL_API +"ordenes-trabajo/solicitud/plano",
       },
       filesAdd:[],
     };
@@ -43,6 +48,9 @@ export default {
     const instance = this.$refs.uploadFiles.dropzone;   paddre -> hijo
   }, */
   methods: {
+      enviar()  {
+          this.$refs.uploadFiles.processQueue();
+      },
       getUploadingFiles(){
         this.filesAdd= this.$refs.uploadFiles.getAcceptedFiles();
         this.$emit('input', this.filesAdd);  

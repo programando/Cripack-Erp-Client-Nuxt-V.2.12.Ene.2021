@@ -146,7 +146,10 @@
         <div class="flex items-center mt-1 space-x-2">
           <label class="w-32 text-sm ">Archivos:</label>
           <div class="w-full h-40">
-            <vueDropzone v-model="formData.filesAdded"> </vueDropzone>
+            <vueDropzone id="FilesDrop"
+              v-model="formData.filesAdded"
+              @vdropzone-sending-multiple="addDataToSending"
+            > </vueDropzone>
           </div>
         </div>
         <div>
@@ -178,6 +181,7 @@
 </template>
 
 <script>
+ 
 import OrdenesTrabajo from "@/models/OrdenesTrabajo";
 
 import BtnCallToAction from "@/components/htmlControls/buttonCallToActionLoading";
@@ -248,18 +252,20 @@ export default {
   }),
 
   methods: {
+    addDataToSending ( files, xhr, formData ) {
+        formData.append('formData', this.formData);
+    },
     grabarOdenTrabajo() {
-      this.formData.idtercero = this.$cookies.get("User").idtercero;
-      this.formData.idtecero_vendedor = this.$cookies.get(
-        "User"
-      ).idtecero_vendedor;
+        //console.log( this.$refs.uploadFiles.VueDropzone ) ; //.processQueue()
+/*       this.formData.idtercero = this.$cookies.get("User").idtercero;
+      this.formData.idtecero_vendedor = this.$cookies.get("User").idtecero_vendedor;
       OrdenesTrabajo.SolicitudTroquelPlano(this.formData)
         .then(response => {
           console.log(response.data);
         })
         .catch(error => {
           this.errors = error.response.data.errors;
-        });
+        }); */
     }
   }
 };
