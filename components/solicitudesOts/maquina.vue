@@ -1,8 +1,10 @@
 <template>
   <div :class="width">
-      <VueSelect :data="Maquinas" v-model="itemSelected" v-on:valueSelect="onValueSelect"> </VueSelect>
-      <div v-if="errors.length" class="mt-2 ml-1 text-xs text-left w-96" :class="[setColorError]">
-          <font-awesome-icon :icon="['fas', 'exclamation-triangle']"/> {{ errors[0] }}
+    <div>
+       <VueSelect :data="Maquinas" v-model="itemSelected" v-on:valueSelect="onValueSelect"> </VueSelect>
+    </div>
+      <div v-if="prueba" class="mt-2 ml-1 text-xs text-left text-red-500" :class="[setColorError]">
+          <font-awesome-icon :icon="['fas', 'exclamation-triangle']"/> Ha ocurrido un error
       </div> 
   </div>
 </template>
@@ -26,6 +28,7 @@
           Maquinas: [],
           itemSelected: 'Seleccione una opción...',
           idItemSelected:0,
+          prueba: true
       }
     },
 

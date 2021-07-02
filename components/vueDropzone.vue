@@ -9,8 +9,8 @@
         :destroyDropzone         = "true"
         :options                 = "dropzoneOptions"
     ></dropzone>
-    <div v-if="errors.length" class="mt-2 ml-1 text-xs text-left w-96" :class="[setColorError]">
-          <font-awesome-icon :icon="['fas', 'exclamation-triangle']"/> {{ errors[0] }}
+    <div v-if="prueba" class="mt-2 ml-1 text-xs text-left text-red-500" :class="[setColorError]">
+          <font-awesome-icon :icon="['fas', 'exclamation-triangle']"/>ha ocurrido un error
     </div>  
   </div>
 </template>
@@ -36,6 +36,7 @@ export default {
         url               : "http://httpbin.org/anything",
       },
       filesAdd:[],
+      prueba: true
     };
   },
 /*   mounted() {

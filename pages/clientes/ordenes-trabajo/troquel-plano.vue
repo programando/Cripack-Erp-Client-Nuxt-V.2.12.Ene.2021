@@ -23,24 +23,24 @@
         </div>
         <div class="mt-2 ">
           <div class="grid grid-cols-3">
-            <div class="flex items-center">
-              <label class="w-32 text-sm ">Tipo de arreglo : </label>
+            <div class="flex ">
+              <label class="w-32 mt-2 text-sm">Tipo de arreglo : </label>
               <OtsTiposArreglos
                 width="w-40"
                 v-model="formData.id_tp_arreglo"
                 colorError="red"
               ></OtsTiposArreglos>
             </div>
-            <div class="flex items-center justify-center">
-              <label class="w-32 ml-4 text-sm">Sustrato : </label>
+            <div class="flex justify-center">
+              <label class="w-32 mt-2 ml-4 text-sm">Sustrato : </label>
               <OtsSustratos
                 width="w-40"
                 v-model="formData.id_sustrato"
                 colorError="red"
               ></OtsSustratos>
             </div>
-            <div class="flex items-center justify-end">
-              <label class="w-32 ml-4 text-sm">Calibre : </label>
+            <div class="flex justify-end">
+              <label class="w-32 mt-2 ml-4 text-sm">Calibre : </label>
               <OtsCalibre
                 width="w-40"
                 v-model="formData.id_calibre"
@@ -49,25 +49,26 @@
             </div>
           </div>
           <div class="grid grid-cols-3 mt-2">
-            <div class="flex items-center">
-              <label class="w-32 text-sm ">Tiraje :</label>
+            <div class="flex">
+              <label class="w-32 mt-2 text-sm">Tiraje :</label>
               <OtsTiraje
                 width="w-40"
                 v-model="formData.id_tiraje"
                 colorError="red"
               ></OtsTiraje>
             </div>
-            <div class="flex items-center justify-center">
-              <label class="w-32 ml-4 text-sm">Frecuencia :</label>
+            <div class="flex justify-center">
+              <label class="w-32 mt-2 ml-4 text-sm">Frecuencia :</label>
               <OtsFrecuencia
                 width="w-40"
                 v-model="formData.id_frecuencia"
                 colorError="red"
               ></OtsFrecuencia>
             </div>
-            <div class="flex items-center justify-end">
-              <label class="w-32 ml-4 text-sm ">Cabida :</label>
-              <InputBasic
+            <div class="flex justify-end">
+              <label class="w-32 mt-2 ml-4 text-sm ">Cabida :</label>
+              <div class="mt-1">
+                <InputBasic
                 borderColor="extra"
                 colorError="red"
                 type="text"
@@ -75,6 +76,8 @@
                 width="w-40"
                 border="border"
               ></InputBasic>
+              </div>
+              
             </div>
           </div>
           <div class="grid grid-cols-3 mt-2">
@@ -150,7 +153,7 @@
           </div>
         </div>
         <div>
-          <div class="flex items-center mt-2 space-x-2">
+          <div class="flex items-center mt-6 space-x-2">
             <label class="w-32 text-sm ">Observaciones :</label>
             <TextArea
               v-model="formData.observaciones"
