@@ -16,7 +16,7 @@
             colorError="red"
             type="text"
             v-model="formData.referencia"
-            error="true"
+            :errors="errors.referencia"
             width="w-full"
           ></InputBasic>
  
@@ -69,12 +69,13 @@
               <label class="w-32 mt-2 ml-4 text-sm ">Cabida :</label>
               <div class="mt-1">
                 <InputBasic
-                borderColor="extra"
-                colorError="red"
-                type="text"
-                v-model="formData.cabida"
-                width="w-40"
-                border="border"
+                  border      = "border"
+                  borderColor = "extra"
+                  colorError  = "red"
+                  type        = "text"
+                  v-model     = "formData.cabida"
+                  width       = "w-40"
+                :errors       = "errors.cabida"
               ></InputBasic>
               </div>
               
@@ -87,6 +88,7 @@
                 width="w-40"
                 v-model="formData.id_maquina"
                 colorError="red"
+                :errors       = "errors.id_maquina"
               ></OtsMaquina>
             </div>
           </div>
@@ -149,10 +151,20 @@
         <div class="flex items-center mt-1 space-x-2">
           <label class="w-32 text-sm ">Archivos:</label>
           <div class="w-full h-40">
-            <vueDropzone id="FilesDrop"
-              v-model="formData.filesAdded"
-              @vdropzone-sending-multiple="addDataToSending"
-            > </vueDropzone>
+              <dropzone
+                  @vdropzone-sending-multiple = "addDataToSending"
+                  @vdropzone-complete="afterUploadComplete"
+                  id                          = "uploadFiles"
+                  ref                         = "uploadFiles"
+                  :destroyDropzone              = "true"
+                  :options                      = "dropzoneOptions"
+                >
+                </dropzone>
+                  <div   class="mt-2 ml-1 text-xs text-left text-red-500" >
+                        <font-awesome-icon :icon="['fas', 'exclamation-triangle']"/>ha ocurrido un error
+                  </div>  
+              
+                 
           </div>
         </div>
         <div>
@@ -184,25 +196,26 @@
 </template>
 
 <script>
- 
-import OrdenesTrabajo from "@/models/OrdenesTrabajo";
+  import Dropzone from "nuxt-dropzone";
+  import "nuxt-dropzone/dropzone.css";
+  import OrdenesTrabajo from "@/models/OrdenesTrabajo";
 
-import BtnCallToAction from "@/components/htmlControls/buttonCallToActionLoading";
-import Checkbox from "@/components/htmlControls/checkbox";
-import InputBasic from "@/components/htmlControls/inputBasic";
-import OtsAyudaPega from "@/components/solicitudesOts/ayudaPega.vue";
-import OtsCabida from "@/components/solicitudesOts/cabidad.vue";
-import OtsCalibre from "@/components/solicitudesOts/calibre.vue";
-import OtsFrecuencia from "@/components/solicitudesOts/frecuencia.vue";
-import OtsMaquina from "@/components/solicitudesOts/maquina.vue";
-import OtsPunzones from "@/components/solicitudesOts/punzones.vue";
-import OtsSustratos from "@/components/solicitudesOts/sustrato.vue";
-import OtsTiposArreglos from "@/components/solicitudesOts/tipoArreglo.vue";
-import OtsTiraje from "@/components/solicitudesOts/tiraje.vue";
-import RadioButton from "~/components/htmlControls/radioButton.vue";
-import TextArea from "@/components/htmlControls/textArea.vue"
-import vSelect from "vue-select";
-import vueDropzone from "@/components/vueDropzone";
+  import BtnCallToAction from "@/components/htmlControls/buttonCallToActionLoading";
+  import Checkbox from "@/components/htmlControls/checkbox";
+  import InputBasic from "@/components/htmlControls/inputBasic";
+  import OtsAyudaPega from "@/components/solicitudesOts/ayudaPega.vue";
+  import OtsCabida from "@/components/solicitudesOts/cabidad.vue";
+  import OtsCalibre from "@/components/solicitudesOts/calibre.vue";
+  import OtsFrecuencia from "@/components/solicitudesOts/frecuencia.vue";
+  import OtsMaquina from "@/components/solicitudesOts/maquina.vue";
+  import OtsPunzones from "@/components/solicitudesOts/punzones.vue";
+  import OtsSustratos from "@/components/solicitudesOts/sustrato.vue";
+  import OtsTiposArreglos from "@/components/solicitudesOts/tipoArreglo.vue";
+  import OtsTiraje from "@/components/solicitudesOts/tiraje.vue";
+  import RadioButton from "~/components/htmlControls/radioButton.vue";
+  import TextArea from "@/components/htmlControls/textArea.vue"
+  import vSelect from "vue-select";
+  
 
 export default {
   name: "FormTroquelPlano",
@@ -211,7 +224,7 @@ export default {
     InputBasic,
     Checkbox,
     vSelect,
-    vueDropzone,
+    Dropzone,
     RadioButton,
     OtsTiposArreglos,
     OtsSustratos,
@@ -250,16 +263,39 @@ export default {
       perforadra_3: false,
       referencia: ""
     },
-
-    errors: []
+      dropzoneOptions: {
+        acceptedFiles     : 'image/jpeg,jpg,png,application/pdf',
+        addRemoveLinks    : true,
+        autoProcessQueue  : false,
+        dictDefaultMessage: "<i class='fa fa-cloud-upload'></i>   Presione aquí para subir archivos",
+        duplicateCheck    : true,
+        parallelUploads   : 4,
+        uploadMultiple    : true,
+        url               : process.env.URL_API +"ordenes-trabajo/solicitud/plano",
+      },
+    errors: [],
+    sendSuccess: false, //
   }),
-
+ 
   methods: {
+      afterUploadComplete: async function (response) {
+            if (response.status == "success") {
+              this.sendSuccess = true;
+            } else {
+                this.$refs.uploadFiles.removeAllFiles();
+                this.errors = JSON.parse(response.xhr.response);
+                 this.errors = this.errors.errors 
+ 
+            }
+          },
     addDataToSending ( files, xhr, formData ) {
-        formData.append('formData', this.formData);
+        formData.append('observaciones', this.formData.observaciones);
+        formData.append('referencia', this.formData.referencia);
     },
     grabarOdenTrabajo() {
-        //console.log( this.$refs.uploadFiles.VueDropzone ) ; //.processQueue()
+       this.$refs.uploadFiles.processQueue()
+     
+        
 /*       this.formData.idtercero = this.$cookies.get("User").idtercero;
       this.formData.idtecero_vendedor = this.$cookies.get("User").idtecero_vendedor;
       OrdenesTrabajo.SolicitudTroquelPlano(this.formData)
@@ -273,8 +309,56 @@ export default {
   }
 };
 </script>
-<style scoped>
-.margen-top {
-  margin-top: 7px;
+<style scope>
+    .margen-top {
+      margin-top: 7px;
+    }
+
+ #customdropzone {
+    background-color: orange;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 0.2px;
+    color: #777;
+    transition: background-color .2s linear;
+    height: 100px;
+    padding: 40px;
+  }
+  .dropzone {
+    height: 40px !important;
+    padding: 10px 10px 10px 10px !important;
+  }
+.dropzone .dz-preview {
+    height: 25px !important;
+    width: 140px !important;
 }
+  #customdropzone .dz-preview {
+    width: 160px;
+    display: inline-block;
+        
+  }
+ #customdropzone .dz-preview .dz-image {
+    width: 20px;
+    height: 20px;
+    margin-left: 40px;
+    margin-bottom: 10px;
+  }
+  #customdropzone .dz-preview .dz-image > div {
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    background-size: contain;
+  }
+  #customdropzone .dz-preview .dz-image > img {
+    width: 100%;
+  }
+
+   #customdropzone .dz-preview .dz-details {
+    color: white;
+    transition: opacity .2s linear;
+    text-align: center;
+  }
+  #customdropzone .dz-success-mark, .dz-error-mark, .dz-remove {
+    display: none;
+  }
+  
 </style>

@@ -20,7 +20,7 @@
                 v-bind="$attrs"       
                 :class="[
                     {
-                        'border-red-400': errors
+                        'border-red-400': errors.length 
                     },
                     {
                         'px-10': icon
@@ -38,8 +38,8 @@
             
         </div>
       </div>
-        <div v-if="errors" class="mt-2 ml-1 text-xs text-left " :class="[setColorError]">
-            <font-awesome-icon :icon="['fas', 'exclamation-triangle']"/>  Ha ocurrido un error 
+        <div v-if="errors.length" class="mt-2 ml-1 text-xs text-left " :class="[setColorError]">
+            <font-awesome-icon :icon="['fas', 'exclamation-triangle']"/> {{ errors[0] }}
         </div>      
   </div>
 </template>

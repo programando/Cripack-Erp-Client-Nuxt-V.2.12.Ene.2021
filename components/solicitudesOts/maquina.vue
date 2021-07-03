@@ -3,8 +3,8 @@
     <div>
        <VueSelect :data="Maquinas" v-model="itemSelected" v-on:valueSelect="onValueSelect"> </VueSelect>
     </div>
-      <div v-if="prueba" class="mt-2 ml-1 text-xs text-left text-red-500" :class="[setColorError]">
-          <font-awesome-icon :icon="['fas', 'exclamation-triangle']"/> Ha ocurrido un error
+      <div v-if="errors.length" class="mt-2 ml-1 text-xs text-left text-red-500" :class="[setColorError]">
+          <font-awesome-icon :icon="['fas', 'exclamation-triangle']"/> {{ errors[0] }}
       </div> 
   </div>
 </template>
@@ -24,11 +24,11 @@
     components: { VueSelect  },
     data() {
       return  {
-          dataInicial :[],
-          Maquinas: [],
-          itemSelected: 'Seleccione una opción...',
-          idItemSelected:0,
-          prueba: true
+          dataInicial   : [],
+          idItemSelected: 0,
+          itemSelected  : 'Seleccione una opción...',
+          Maquinas      : [],
+          hasError : this.errors,
       }
     },
 
@@ -38,6 +38,7 @@
       this.idItemSelected = this.dataInicial.filter(function (item) {
           return item.nom_maquina === value;
       });
+      this.hasError=[];
      this.$emit('input', this.idItemSelected[0]['id_maquina']);
     },
     getAloneArray ( Data) {

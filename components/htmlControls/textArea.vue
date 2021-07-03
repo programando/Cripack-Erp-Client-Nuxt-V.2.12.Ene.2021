@@ -5,10 +5,15 @@
     name="observaciones"
     cols="80"
     rows="2"
+    :value   = "value"    
+    @input   = "$emit('input', $event.target.value)"
+    @keydown = "$emit('keydown', $event)"
+    @blur    = "$emit('blur', $event)"
+    @keyup   = "$emit('keyup', $event)"    
   ></textarea>
-    <div v-if="prueba" class="mt-2 ml-1 text-xs text-left text-red-500" :class="[setColorError]">
+    <div v-if="errors" class="mt-2 ml-1 text-xs text-left text-red-500" :class="[setColorError]">
         <font-awesome-icon :icon="['fas', 'exclamation-triangle']"/> ha ocurrido un error
-    </div>  
+    </div>    
   </div>
   
 </template>
@@ -17,12 +22,12 @@
 export default {
   name: 'TextArea',
   data() {
-    return {
-      prueba: true
-    }
+      return {
+        
+      }
   },
   props: {
-      
+      value: String,
       errors: {
                 type: Array,
                 default: () => []
