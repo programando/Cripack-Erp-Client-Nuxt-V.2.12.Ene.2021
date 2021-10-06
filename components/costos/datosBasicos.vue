@@ -20,7 +20,7 @@
           <td class="w-40 px-4 py-3 border ">
             <div class="flex items-center text-sm">
               <input
-                class="px-2 py-1 border focus:outline-none"
+                class="w-32 px-2 py-1 border focus:outline-none"
                 type="number"
                 v-model="datosBasicos.salarioPromedio"
               />
@@ -32,7 +32,7 @@
           <td class="w-40 px-4 py-3 text-xs border ">
             <div class="flex items-center text-sm">
               <input
-                class="px-2 py-1 border focus:outline-none"
+                class="w-32 px-2 py-1 border focus:outline-none"
                 type="text"
                 v-model="datosBasicos.golpesPromedioHora"
               />
@@ -41,7 +41,7 @@
           <td class="w-40 px-4 py-3 text-sm border ">
             <div class="flex items-center text-sm">
               <input
-                class="px-2 py-1 border focus:outline-none"
+                class="w-32 px-2 py-1 border focus:outline-none"
                 type="text"
                 v-model="datosBasicos.valorPromedioGolpe"
               />
@@ -81,7 +81,7 @@
           <td class="w-40 px-4 py-3 border ">
             <div class="flex items-center text-sm">
               <input
-                class="px-2 py-1 border focus:outline-none"
+                class="w-32 px-2 py-1 border focus:outline-none"
                 type="number"
                 v-model="encauche.tiempoPromedioLabor"
               />
@@ -110,7 +110,7 @@
           <td class="w-40 px-4 py-3 border ">
             <div class="flex items-center text-sm">
               <input
-                class="px-2 py-1 border focus:outline-none"
+                class="w-32 px-2 py-1 border focus:outline-none"
                 type="number"
                 v-model="puestaPunto.tiempoPromedioLabor"
               />
