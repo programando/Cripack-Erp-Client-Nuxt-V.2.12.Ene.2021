@@ -1,13 +1,13 @@
 <template>
   <div class="pt-24 mx-2 font-Montserrat">
     <div class="flex items-center justify-center mx-auto mt-10">
-      <h2 class="text-2xl font-semibold">
+      <h2 class="text-2xl font-semibold text-azul">
         Evaluación costos de arreglos y encauches v/s
       </h2>
     </div>
     <section class="container p-6 mx-auto font-mono">
-      <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
-        <div class="w-full ">
+      <div class="w-full mb-8 overflow-hidden rounded-lg ">
+        <div class=" xl:px-40">
           <DatosBasicos />
         </div>
       </div>

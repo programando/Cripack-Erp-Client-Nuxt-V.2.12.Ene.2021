@@ -1,141 +1,174 @@
 <template>
   <div>
-    <table class="w-full ">
+    <table class="w-full text-azul">
       <thead>
         <tr
-          class="text-left text-gray-900 uppercase bg-gray-100 border-b border-gray-600"
+          class="relative text-left uppercase border-t border-l text-azul"
         >
-          <th class="w-40 px-4 py-3 ">Datos Básicos</th>
-          <th class="w-40 px-4 py-3">Salario Promedio Operario</th>
-          <th class="w-40 px-4 py-3">Valor Hora</th>
-          <th class="w-40 px-4 py-3">Golpes Promedio Hora</th>
-          <th class="w-40 px-4 py-3">Valor Promedio Golpe</th>
-          <th class="w-40 px-4 py-3">Valor encauche($/cm)</th>
-          <th class="w-40 px-4 py-3">Valor Contra-hendido($/cm)</th>
+          <th class="relative px-2 py-3 mt-10 text-lg border-r w-60 top-10">Datos Básicos</th>
+          <th class="px-2 py-3 border-r w-60">Salario Promedio Operario</th>
+          <th class="px-2 py-3 border-r w-60">Valor Hora</th>
+          <th class="px-2 py-3 border-r w-60">Golpes Promedio Hora</th>
+          <th class="px-2 py-3 border-r w-60">Valor Promedio Golpe</th>
+          <th class="px-2 py-3 border-r w-60 ">Valor encauche($/cm)</th>
+          <th class="px-2 py-3 border-r w-60">Valor Contra-hendido($/cm)</th>
         </tr>
       </thead>
       <tbody class="bg-white">
-        <tr class="text-gray-700">
-          <td class="w-40 px-4 py-3 text-sm border "></td>
-          <td class="w-40 px-4 py-3 border ">
+        <tr class="text-right text-gray-700">
+          <td class="px-2 py-3 border-b border-l w-60"></td>
+          <td class="px-2 py-3 border w-60 ">
             <div class="flex items-center text-sm">
               <input
-                class="w-32 px-2 py-1 border focus:outline-none"
+                @blur="operaciones"
+                class="w-24 px-2 py-1 text-right border focus:outline-none"
                 type="number"
                 v-model="datosBasicos.salarioPromedio"
               />
             </div>
           </td>
-          <td class="w-40 px-4 py-3 border text-ms">
+          <td class="px-2 py-3 border w-60 text-ms">
             <div>{{ datosBasicos.valorHora }}</div>
           </td>
-          <td class="w-40 px-4 py-3 text-xs border ">
+          <td class="px-2 py-3 border w-60 ">
             <div class="flex items-center text-sm">
               <input
-                class="w-32 px-2 py-1 border focus:outline-none"
-                type="text"
+                @blur="operaciones"
+                class="w-24 px-2 py-1 border focus:outline-none"
+                type="number"
                 v-model="datosBasicos.golpesPromedioHora"
               />
             </div>
           </td>
-          <td class="w-40 px-4 py-3 text-sm border ">
+          <td class="px-2 py-3 text-sm border w-60 ">
             <div class="flex items-center text-sm">
               <input
-                class="w-32 px-2 py-1 border focus:outline-none"
-                type="text"
+                @blur="operaciones"
+                class="w-24 px-2 py-1 border focus:outline-none"
+                type="number"
                 v-model="datosBasicos.valorPromedioGolpe"
               />
             </div>
           </td>
-          <td class="w-40 px-4 py-3 border text-ms">
+          <td class="px-2 py-3 border w-60 text-ms">
             <div class="">
               {{ datosBasicos.valorEncauche }}
             </div>
           </td>
 
-          <td class="w-40 px-4 py-3 border text-ms">
+          <td class="px-2 py-3 border w-60 text-ms">
             <div class="">
               {{ datosBasicos.valorContraHendido }}
             </div>
           </td>
         </tr>
+        
       </tbody>
     </table>
     <table class="w-full mt-10 ">
       <thead>
         <tr
-          class="text-left text-gray-900 uppercase bg-gray-100 border-b border-gray-600"
+          class="text-left uppercase border text-azul "
         >
-          <th class="w-40 px-4 py-3">Labor</th>
-          <th class="w-40 px-4 py-3">Tiempo promedio labor</th>
-          <th class="w-40 px-4 py-3">Valor labor</th>
-          <th class="w-40 px-4 py-3">Golpes sin realizar</th>
-          <th class="w-40 px-4 py-3">Valor tiempo sin producir</th>
-          <th class="w-40 px-4 py-3">Valor total labor</th>
-          <th class="w-40 px-4 py-3">Cantidad Cms</th>
+          <th class="px-2 py-3 text-lg border-r w-60 ">Labor</th>
+          <th class="px-2 py-3 border-r w-60 ">Tiempo promedio labor</th>
+          <th class="px-2 py-3 border-r w-60 ">Valor labor</th>
+          <th class="px-2 py-3 border-r w-60 ">Golpes sin realizar</th>
+          <th class="px-2 py-3 border-r w-60 ">Valor tiempo sin producir</th>
+          <th class="px-2 py-3 border-r w-60 ">Valor total labor</th>
+          <th class="px-2 py-3 border-r w-60 ">Cantidad Cms</th>
         </tr>
       </thead>
       <tbody class="bg-white">
         <tr class="text-gray-700">
-          <td class="w-40 px-4 py-3 text-sm font-semibold border">Encauche</td>
-          <td class="w-40 px-4 py-3 border ">
+          <td class="px-2 py-3 text-sm font-semibold border w-60">Encauche</td>
+          <td class="px-2 py-3 border w-60 ">
             <div class="flex items-center text-sm">
               <input
-                class="w-32 px-2 py-1 border focus:outline-none"
+                @blur="operaciones"
+                class="w-24 px-2 py-1 border focus:outline-none"
                 type="number"
                 v-model="encauche.tiempoPromedioLabor"
               />
             </div>
           </td>
-          <td class="w-40 px-4 py-3 border text-ms">
+          <td class="px-2 py-3 border w-60 text-ms">
             <div>{{ encauche.valorLabor }}</div>
           </td>
-          <td class="w-40 px-4 py-3 text-xs border ">
+          <td class="px-2 py-3 border w-60 ">
             <div>{{ encauche.golpesSinRealizar }}</div>
           </td>
-          <td class="w-40 px-4 py-3 text-sm border ">
+          <td class="px-2 py-3 text-sm border w-60 ">
             <div>{{ encauche.valorTiempoSinProducir }}</div>
           </td>
-          <td class="w-40 px-4 py-3 border text-ms">
+          <td class="px-2 py-3 border w-60 text-ms">
             <div>{{ encauche.ValorTotalLabor }}</div>
           </td>
-          <td class="w-40 px-4 py-3 border text-ms">
+          <td class="px-2 py-3 border w-60 text-ms">
             <div>{{ encauche.cantidadCms }}</div>
           </td>
         </tr>
         <tr class="text-gray-700">
-          <td class="w-40 px-4 py-3 text-sm font-semibold border">
-            Puesta a Punto
+          <td class="px-2 py-3 text-sm font-semibold border w-60">
+            Puesta a punto
           </td>
-          <td class="w-40 px-4 py-3 border ">
+          <td class="px-2 py-3 border w-60 ">
             <div class="flex items-center text-sm">
               <input
-                class="w-32 px-2 py-1 border focus:outline-none"
+                @blur="operaciones"
+                class="w-24 px-2 py-1 border focus:outline-none"
                 type="number"
                 v-model="puestaPunto.tiempoPromedioLabor"
               />
             </div>
           </td>
-          <td class="w-40 px-4 py-3 border text-ms">
+          <td class="px-2 py-3 border w-60 text-ms">
             <div>{{ puestaPunto.valorLabor }}</div>
           </td>
-          <td class="w-40 px-4 py-3 text-xs border ">
+          <td class="px-2 py-3 border w-60 ">
             <div>{{ puestaPunto.golpesSinRealizar }}</div>
           </td>
-          <td class="w-40 px-4 py-3 text-sm border ">
+          <td class="px-2 py-3 text-sm border w-60 ">
             <div>{{ puestaPunto.valorTiempoSinProducir }}</div>
           </td>
-          <td class="w-40 px-4 py-3 border text-ms">
+          <td class="px-2 py-3 border w-60 text-ms">
             <div>{{ puestaPunto.ValorTotalLabor }}</div>
           </td>
-          <td class="w-40 px-4 py-3 border text-ms">
+          <td class="px-2 py-3 border w-60 text-ms">
             <div>{{ puestaPunto.cantidadCms }}</div>
           </td>
         </tr>
       </tbody>
     </table>
-    <!-- ESTE ES UN BOTON DE PRUEBA, DEBE SER ELIMINADO  -->
-    <buton @click="operaciones"> Realizar operaciones </buton> 
+    <table class="mt-10">
+      <tbody class="mt-10 bg-white">
+        <tr class="text-gray-700">
+          <td class="px-2 py-3 text-sm font-semibold border w-60">Totales</td>
+          <td class="px-2 py-3 border w-60 ">
+            <div>{{ totales.c12 }}</div>
+          </td>
+          <td class="px-2 py-3 border w-60 text-ms">
+            <div>{{ totales.d12  }}</div>
+          </td>
+          <td class="px-2 py-3 border w-60 ">
+            <div>{{ totales.e12  }}</div>
+          </td>
+          <td class="px-2 py-3 text-sm border w-60 ">
+            <div>{{ totales.f12  }}</div>
+          </td>
+          <td class="px-2 py-3 border w-60 text-ms">
+            <div>{{ totales.g12  }}</div>
+          </td>
+          <td class="px-2 py-3 border w-60 text-ms">
+            <div>{{ totales.h12  }}</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    
+     <!-- ESTE ES UN BOTON DE PRUEBA, DEBE SER ELIMINADO  -->
+    <!-- <buton @click="operaciones"> Realizar operaciones </buton>  -->
   </div>
 </template>
 
@@ -154,31 +187,80 @@ export default {
       },
       encauche: {
         tiempoPromedioLabor: 0.8,
-        valorLabor: 0,
-        golpesSinRealizar: 0,
-        valorTiempoSinProducir: 0,
-        ValorTotalLabor: 0,
-        cantidadCms: 0
+        valorLabor: 7.650,
+        golpesSinRealizar: 400,
+        valorTiempoSinProducir: 31.200,
+        ValorTotalLabor: 38.850,
+        cantidadCms: 1.022
       },
       puestaPunto: {
         tiempoPromedioLabor: 9.0,
-        valorLabor: 0,
-        golpesSinRealizar: 0,
-        valorTiempoSinProducir: 0,
-        ValorTotalLabor: 0,
-        cantidadCms: 0
+        valorLabor: 86.063,
+        golpesSinRealizar: 4.500,
+        valorTiempoSinProducir: 351.000,
+        ValorTotalLabor: 437.063,
+        cantidadCms: 4.371
+      },
+      totales: {
+        c12: 0,
+        d12: 0,
+        e12:0,
+        f12:0,
+        g12:0,
+        h12:0
+
       }
     };
   },
 
   mounted() {
     this.datosBasicos.valorHora     =   (this.datosBasicos.salarioPromedio / 240) * 1.53;
+
+          this.encauche.valorLabor     = this.datosBasicos.valorHora * this.encauche.tiempoPromedioLabor;
+          this.encauche.golpesSinRealizar = this.encauche.tiempoPromedioLabor * this.datosBasicos.golpesPromedioHora;
+          this.encauche.valorTiempoSinProducir = this.encauche.golpesSinRealizar * this.datosBasicos.valorPromedioGolpe;
+          this.encauche.ValorTotalLabor = this.encauche.valorTiempoSinProducir + this.encauche.valorLabor;
+          this.encauche.cantidadCms = this.encauche.ValorTotalLabor / this.datosBasicos.valorEncauche;
+
+
+          this.puestaPunto.valorLabor  = this.puestaPunto.tiempoPromedioLabor * this.datosBasicos.valorHora;
+          this.puestaPunto.golpesSinRealizar  = this.puestaPunto.tiempoPromedioLabor * this.datosBasicos.golpesPromedioHora;
+          this.puestaPunto.valorTiempoSinProducir  = this.puestaPunto.golpesSinRealizar * this.datosBasicos.valorPromedioGolpe;
+          this.puestaPunto.ValorTotalLabor  = this.puestaPunto.valorTiempoSinProducir + this.puestaPunto.valorLabor;
+          this.puestaPunto.cantidadCms = this.puestaPunto.ValorTotalLabor / this.datosBasicos.valorContraHendido;
+
+          this.totales.c12 = this.encauche.tiempoPromedioLabor + this.puestaPunto.tiempoPromedioLabor;
+          this.totales.d12 = this.encauche.valorLabor + this.puestaPunto.valorLabor;
+          this.totales.e12 = this.encauche.golpesSinRealizar + this.puestaPunto.golpesSinRealizar;
+          this.totales.f12 = this.encauche.valorTiempoSinProducir + this.puestaPunto.valorTiempoSinProducir;
+          this.totales.g12 = this.encauche.ValorTotalLabor + this.puestaPunto.ValorTotalLabor;
+          this.totales.h12 = this.encauche.cantidadCms + this.puestaPunto.cantidadCms;
     
   },
   methods: {
       operaciones () {
+          this.datosBasicos.valorHora     =   (this.datosBasicos.salarioPromedio / 240) * 1.53;
+
           this.encauche.valorLabor     = this.datosBasicos.valorHora * this.encauche.tiempoPromedioLabor;
+          this.encauche.golpesSinRealizar = this.encauche.tiempoPromedioLabor * this.datosBasicos.golpesPromedioHora;
+          this.encauche.valorTiempoSinProducir = this.encauche.golpesSinRealizar * this.datosBasicos.valorPromedioGolpe;
+          this.encauche.ValorTotalLabor = this.encauche.valorTiempoSinProducir + this.encauche.valorLabor;
+          this.encauche.cantidadCms = this.encauche.ValorTotalLabor / this.datosBasicos.valorEncauche;
+
+
           this.puestaPunto.valorLabor  = this.puestaPunto.tiempoPromedioLabor * this.datosBasicos.valorHora;
+          this.puestaPunto.golpesSinRealizar  = this.puestaPunto.tiempoPromedioLabor * this.datosBasicos.golpesPromedioHora;
+          this.puestaPunto.valorTiempoSinProducir  = this.puestaPunto.golpesSinRealizar * this.datosBasicos.valorPromedioGolpe;
+          this.puestaPunto.ValorTotalLabor  = this.puestaPunto.valorTiempoSinProducir + this.puestaPunto.valorLabor;
+          this.puestaPunto.cantidadCms = this.puestaPunto.ValorTotalLabor / this.datosBasicos.valorContraHendido;
+
+          this.totales.c12 = this.encauche.tiempoPromedioLabor + this.puestaPunto.tiempoPromedioLabor;
+          this.totales.d12 = this.encauche.valorLabor + this.puestaPunto.valorLabor;
+          this.totales.e12 = this.encauche.golpesSinRealizar + this.puestaPunto.golpesSinRealizar;
+          this.totales.f12 = this.encauche.valorTiempoSinProducir + this.puestaPunto.valorTiempoSinProducir;
+          this.totales.g12 = this.encauche.ValorTotalLabor + this.puestaPunto.ValorTotalLabor;
+          this.totales.h12 = this.encauche.cantidadCms + this.puestaPunto.cantidadCms;
+
       }
   }
 };
