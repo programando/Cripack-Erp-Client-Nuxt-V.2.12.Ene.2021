@@ -81,7 +81,7 @@ export default {
       resetPassword() {
           this.showBtnAnimation = true;
           User.resetPassword ( this.form)
-          .then( () =>{     
+          .then( (res) =>{     
               this.Message(this.$t('PasswordChageForm.MessageOkTitle') ,this.$t('PasswordChageForm.MessageOkBody'),'success', this.$t('PasswordChageForm.BtnCloseWindow') );
               this.$router.push('/');
           }).catch( error => {

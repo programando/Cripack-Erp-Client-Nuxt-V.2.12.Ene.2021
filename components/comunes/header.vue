@@ -50,10 +50,10 @@
 
         <NavLinks text="Estado OT's" to="/clientes/ots-estado" />
 
-        <!--       <NavLinks 
+        <NavLinks 
         text="Braille"
-        to="/clientes/ordenes-trabajo/braile"
-      /> -->
+        to="/braile/transcripcion-texto"
+      /> 
         <NavLinks text="Contacto" to="/clientes/contacto" />
 
         <!--       <NavLinks 
