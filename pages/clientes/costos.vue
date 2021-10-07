@@ -2,7 +2,7 @@
   <div class="pt-24 mx-2 font-Montserrat">
     <div class="flex items-center justify-center mx-auto mt-10">
       <h2 class="text-2xl font-semibold">
-        Evaluacion costos de arreglos y encauches v/s
+        Evaluación costos de arreglos y encauches v/s
       </h2>
     </div>
     <section class="container p-6 mx-auto font-mono">

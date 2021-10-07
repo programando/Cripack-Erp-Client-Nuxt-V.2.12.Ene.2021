@@ -5,7 +5,7 @@
         <tr
           class="text-left text-gray-900 uppercase bg-gray-100 border-b border-gray-600"
         >
-          <th class="w-40 px-4 py-3 ">Datos Basicos</th>
+          <th class="w-40 px-4 py-3 ">Datos Básicos</th>
           <th class="w-40 px-4 py-3">Salario Promedio Operario</th>
           <th class="w-40 px-4 py-3">Valor Hora</th>
           <th class="w-40 px-4 py-3">Golpes Promedio Hora</th>
@@ -134,6 +134,8 @@
         </tr>
       </tbody>
     </table>
+    <!-- ESTE ES UN BOTON DE PRUEBA, DEBE SER ELIMINADO  -->
+    <buton @click="operaciones"> Realizar operaciones </buton> 
   </div>
 </template>
 
@@ -170,8 +172,14 @@ export default {
   },
 
   mounted() {
-    this.datosBasicos.valorHora =
-      (this.datosBasicos.salarioPromedio / 240) * 1.53;
+    this.datosBasicos.valorHora     =   (this.datosBasicos.salarioPromedio / 240) * 1.53;
+    
+  },
+  methods: {
+      operaciones () {
+          this.encauche.valorLabor     = this.datosBasicos.valorHora * this.encauche.tiempoPromedioLabor;
+          this.puestaPunto.valorLabor  = this.puestaPunto.tiempoPromedioLabor * this.datosBasicos.valorHora;
+      }
   }
 };
 </script>
