@@ -16,6 +16,8 @@
       <div class="flex items-center justify-end mr-4 space-x-6">
         <NavLinks text="Historial" to="/clientes/ots-historial" />
 
+        <NavLinks text="Costos" to="/clientes/costos" />
+
          <div v-if="isDevelopment=='development'" class="relative text-white">
           <button @click="menu = !menu" class="px-2 ">
             Solicitud OT
