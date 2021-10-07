@@ -6,23 +6,23 @@
           class="relative text-left uppercase border-t border-l text-azul"
         >
           <th class="relative px-2 py-3 mt-10 text-lg border-r w-60 top-10">Datos Básicos</th>
-          <th class="px-2 py-3 border-r w-60">Salario Promedio Operario</th>
-          <th class="px-2 py-3 border-r w-60">Valor Hora</th>
-          <th class="px-2 py-3 border-r w-60">Golpes Promedio Hora</th>
-          <th class="px-2 py-3 border-r w-60">Valor Promedio Golpe</th>
-          <th class="px-2 py-3 border-r w-60 ">Valor encauche($/cm)</th>
-          <th class="px-2 py-3 border-r w-60">Valor Contra-hendido($/cm)</th>
+          <th class="px-2 py-3 text-center border-r w-60">Salario Promedio Operario</th>
+          <th class="px-2 py-3 text-center border-r w-60">Valor Hora</th>
+          <th class="px-2 py-3 text-center border-r w-60">Golpes Promedio Hora</th>
+          <th class="px-2 py-3 text-center border-r w-60">Valor Promedio Golpe</th>
+          <th class="px-2 py-3 text-center border-r w-60 ">Valor encauche($/cm)</th>
+          <th class="px-2 py-3 text-center border-r w-60">Valor Contra-hendido($/cm)</th>
         </tr>
       </thead>
       <tbody class="bg-white">
         <tr class="text-right text-gray-700">
           <td class="px-2 py-3 border-b border-l w-60"></td>
           <td class="px-2 py-3 border w-60 ">
-            <div class="flex items-center text-sm">
+            <div class="flex items-center text-sm text-right">
               <input
                 @blur="operaciones"
-                class="w-24 px-2 py-1 text-right border focus:outline-none"
-                type="number"
+                class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
+                type="text"
                 v-model="datosBasicos.salarioPromedio"
               />
             </div>
@@ -34,8 +34,8 @@
             <div class="flex items-center text-sm">
               <input
                 @blur="operaciones"
-                class="w-24 px-2 py-1 border focus:outline-none"
-                type="number"
+                class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
+                type="text"
                 v-model="datosBasicos.golpesPromedioHora"
               />
             </div>
@@ -44,8 +44,8 @@
             <div class="flex items-center text-sm">
               <input
                 @blur="operaciones"
-                class="w-24 px-2 py-1 border focus:outline-none"
-                type="number"
+                class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
+                type="text"
                 v-model="datosBasicos.valorPromedioGolpe"
               />
             </div>
@@ -54,8 +54,8 @@
             <div class="flex items-center text-sm">
               <input
                 @blur="operaciones"
-                class="w-24 px-2 py-1 border focus:outline-none"
-                type="number"
+                class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
+                type="text"
                 v-model="datosBasicos.valorEncauche"
               />
             </div>
@@ -65,8 +65,8 @@
             <div class="flex items-center text-sm">
               <input
                 @blur="operaciones"
-                class="w-24 px-2 py-1 border focus:outline-none"
-                type="number"
+                class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
+                type="text"
                 v-model="datosBasicos.valorContraHendido"
               />
             </div>
@@ -80,13 +80,13 @@
         <tr
           class="text-left uppercase border text-azul "
         >
-          <th class="px-2 py-3 text-lg border-r w-60 ">Labor</th>
-          <th class="px-2 py-3 border-r w-60 ">Tiempo promedio labor</th>
-          <th class="px-2 py-3 border-r w-60 ">Valor labor</th>
-          <th class="px-2 py-3 border-r w-60 ">Golpes sin realizar</th>
-          <th class="px-2 py-3 border-r w-60 ">Valor tiempo sin producir</th>
-          <th class="px-2 py-3 border-r w-60 ">Valor total labor</th>
-          <th class="px-2 py-3 border-r w-60 ">Cantidad Cms</th>
+          <th class="px-2 py-3 text-lg text-center border-r w-60 ">Labor</th>
+          <th class="px-2 py-3 text-center border-r w-60 ">Tiempo promedio labor</th>
+          <th class="px-2 py-3 text-center border-r w-60 ">Valor labor</th>
+          <th class="px-2 py-3 text-center border-r w-60 ">Golpes sin realizar</th>
+          <th class="px-2 py-3 text-center border-r w-60 ">Valor tiempo sin producir</th>
+          <th class="px-2 py-3 text-center border-r w-60 ">Valor total labor</th>
+          <th class="px-2 py-3 text-center border-r w-60 ">Cantidad Cms</th>
         </tr>
       </thead>
       <tbody class="bg-white">
@@ -96,56 +96,56 @@
             <div class="flex items-center text-sm">
               <input
                 @blur="operaciones"
-                class="w-24 px-2 py-1 border focus:outline-none"
-                type="number"
+                class="w-24 px-2 py-1 text-right text-white border focus:outline-none bg-azul "
+                type="text"
                 v-model="encauche.tiempoPromedioLabor"
               />
             </div>
           </td>
-          <td class="px-2 py-3 border w-60 text-ms">
-            <div>{{ encauche.valorLabor }}</div>
+          <td class="px-2 py-3 text-right border w-60 text-ms">
+            <div>{{ encauche.valorLabor | NumeroDecimal }}</div>
           </td>
-          <td class="px-2 py-3 border w-60 ">
-            <div>{{ encauche.golpesSinRealizar }}</div>
+          <td class="px-2 py-3 text-right border w-60">
+            <div>{{ encauche.golpesSinRealizar | NumeroDecimal }}</div>
           </td>
-          <td class="px-2 py-3 text-sm border w-60 ">
-            <div>{{ encauche.valorTiempoSinProducir }}</div>
+          <td class="px-2 py-3 text-sm text-right border w-60">
+            <div>{{ encauche.valorTiempoSinProducir | NumeroDecimal }}</div>
           </td>
-          <td class="px-2 py-3 border w-60 text-ms">
-            <div>{{ encauche.ValorTotalLabor }}</div>
+          <td class="px-2 py-3 text-right border w-60 text-ms">
+            <div>{{ encauche.ValorTotalLabor | NumeroDecimal }}</div>
           </td>
-          <td class="px-2 py-3 border w-60 text-ms">
-            <div>{{ encauche.cantidadCms }}</div>
+          <td class="px-2 py-3 text-right border w-60 text-ms">
+            <div>{{ encauche.cantidadCms | NumeroDecimal }}</div>
           </td>
         </tr>
         <tr class="text-gray-700">
-          <td class="px-2 py-3 text-sm font-semibold border w-60">
+          <td class="px-2 py-3 text-sm font-semibold border w-60 ">
             Puesta a punto
           </td>
           <td class="px-2 py-3 border w-60 ">
             <div class="flex items-center text-sm">
               <input
                 @blur="operaciones"
-                class="w-24 px-2 py-1 border focus:outline-none"
-                type="number"
+                class="w-24 px-2 py-1 text-right text-white focus:outline-none bg-azul "
+                type="text"
                 v-model="puestaPunto.tiempoPromedioLabor"
               />
             </div>
           </td>
-          <td class="px-2 py-3 border w-60 text-ms">
-            <div>{{ puestaPunto.valorLabor }}</div>
+          <td class="px-2 py-3 text-right border w-60 text-ms">
+            <div>{{ puestaPunto.valorLabor | NumeroDecimal }}</div>
           </td>
-          <td class="px-2 py-3 border w-60 ">
-            <div>{{ puestaPunto.golpesSinRealizar }}</div>
+          <td class="px-2 py-3 text-right border w-60">
+            <div>{{ puestaPunto.golpesSinRealizar | NumeroDecimal }}</div>
           </td>
-          <td class="px-2 py-3 text-sm border w-60 ">
-            <div>{{ puestaPunto.valorTiempoSinProducir }}</div>
+          <td class="px-2 py-3 text-sm text-right border w-60">
+            <div>{{ puestaPunto.valorTiempoSinProducir | NumeroDecimal }}</div>
           </td>
-          <td class="px-2 py-3 border w-60 text-ms">
-            <div>{{ puestaPunto.ValorTotalLabor }}</div>
+          <td class="px-2 py-3 text-right border w-60 text-ms">
+            <div>{{ puestaPunto.ValorTotalLabor | NumeroDecimal }}</div>
           </td>
-          <td class="px-2 py-3 border w-60 text-ms">
-            <div>{{ puestaPunto.cantidadCms }}</div>
+          <td class="px-2 py-3 text-right border w-60 text-ms">
+            <div>{{ puestaPunto.cantidadCms | NumeroDecimal  }}</div>
           </td>
         </tr>
       </tbody>
@@ -154,23 +154,23 @@
       <tbody class="mt-10 bg-white">
         <tr class="text-gray-700">
           <td class="px-2 py-3 text-sm font-semibold border w-60">Totales</td>
-          <td class="px-2 py-3 border w-60 ">
-            <div>{{ totales.c12 }}</div>
+          <td class="px-2 py-3 text-right border w-60">
+            <div>{{ totales.c12 | NumeroDecimal }}</div>
           </td>
-          <td class="px-2 py-3 border w-60 text-ms">
-            <div>{{ totales.d12  }}</div>
+          <td class="px-2 py-3 text-right border w-60 text-ms">
+            <div>{{ totales.d12  | NumeroDecimal }}</div>
           </td>
-          <td class="px-2 py-3 border w-60 ">
-            <div>{{ totales.e12  }}</div>
+          <td class="px-2 py-3 text-right border w-60">
+            <div>{{ totales.e12  | NumeroDecimal }}</div>
           </td>
-          <td class="px-2 py-3 text-sm border w-60 ">
-            <div>{{ totales.f12  }}</div>
+          <td class="px-2 py-3 text-sm text-right border w-60">
+            <div>{{ totales.f12  | NumeroDecimal }}</div>
           </td>
-          <td class="px-2 py-3 border w-60 text-ms">
-            <div>{{ totales.g12  }}</div>
+          <td class="px-2 py-3 text-right border w-60 text-ms">
+            <div>{{ totales.g12  | NumeroDecimal }}</div>
           </td>
-          <td class="px-2 py-3 border w-60 text-ms">
-            <div>{{ totales.h12  }}</div>
+          <td class="px-2 py-3 text-right border w-60 text-ms">
+            <div>{{ totales.h12  | NumeroDecimal }}</div>
           </td>
         </tr>
       </tbody>
@@ -183,6 +183,7 @@
 </template>
 
 <script>
+
 export default {
   name: "DatosBasicos",
   data() {
