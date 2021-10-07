@@ -51,14 +51,24 @@
             </div>
           </td>
           <td class="px-2 py-3 border w-60 text-ms">
-            <div class="">
-              {{ datosBasicos.valorEncauche }}
+            <div class="flex items-center text-sm">
+              <input
+                @blur="operaciones"
+                class="w-24 px-2 py-1 border focus:outline-none"
+                type="number"
+                v-model="datosBasicos.valorEncauche"
+              />
             </div>
           </td>
 
           <td class="px-2 py-3 border w-60 text-ms">
-            <div class="">
-              {{ datosBasicos.valorContraHendido }}
+            <div class="flex items-center text-sm">
+              <input
+                @blur="operaciones"
+                class="w-24 px-2 py-1 border focus:outline-none"
+                type="number"
+                v-model="datosBasicos.valorContraHendido"
+              />
             </div>
           </td>
         </tr>
