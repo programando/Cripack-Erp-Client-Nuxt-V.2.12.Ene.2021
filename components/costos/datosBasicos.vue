@@ -189,63 +189,43 @@ export default {
   data() {
     return {
       datosBasicos: {
-        salarioPromedio: 1500000,
-        valorHora: 0,
-        golpesPromedioHora: 500,
-        valorPromedioGolpe: 78,
-        valorEncauche: 38,
-        valorContraHendido: 100
+        golpesPromedioHora: 0,
+        salarioPromedio   : 0,
+        valorContraHendido: 0,
+        valorEncauche     : 0,
+        valorHora         : 0,
+        valorPromedioGolpe: 0,
       },
       encauche: {
-        tiempoPromedioLabor: 0.8,
-        valorLabor: 7.650,
-        golpesSinRealizar: 400,
-        valorTiempoSinProducir: 31.200,
-        ValorTotalLabor: 38.850,
-        cantidadCms: 1.022
+        cantidadCms           : 0,
+        golpesSinRealizar     : 0,
+        tiempoPromedioLabor   : 0,
+        valorLabor            : 0,
+        valorTiempoSinProducir: 0,
+        ValorTotalLabor       : 0,
       },
       puestaPunto: {
-        tiempoPromedioLabor: 9.0,
-        valorLabor: 86.063,
-        golpesSinRealizar: 4.500,
-        valorTiempoSinProducir: 351.000,
-        ValorTotalLabor: 437.063,
-        cantidadCms: 4.371
+        cantidadCms           : 0,
+        golpesSinRealizar     : 0,
+        tiempoPromedioLabor   : 0,
+        valorLabor            : 0,
+        valorTiempoSinProducir: 0,
+        ValorTotalLabor       : 0,
       },
       totales: {
         c12: 0,
         d12: 0,
-        e12:0,
-        f12:0,
-        g12:0,
-        h12:0
+        e12: 0,
+        f12: 0,
+        g12: 0,
+        h12: 0
 
       }
     };
   },
 
   mounted() {
-    this.datosBasicos.valorHora     =   (this.datosBasicos.salarioPromedio / 240) * 1.53;
-
-          this.encauche.valorLabor     = this.datosBasicos.valorHora * this.encauche.tiempoPromedioLabor;
-          this.encauche.golpesSinRealizar = this.encauche.tiempoPromedioLabor * this.datosBasicos.golpesPromedioHora;
-          this.encauche.valorTiempoSinProducir = this.encauche.golpesSinRealizar * this.datosBasicos.valorPromedioGolpe;
-          this.encauche.ValorTotalLabor = this.encauche.valorTiempoSinProducir + this.encauche.valorLabor;
-          this.encauche.cantidadCms = this.encauche.ValorTotalLabor / this.datosBasicos.valorEncauche;
-
-
-          this.puestaPunto.valorLabor  = this.puestaPunto.tiempoPromedioLabor * this.datosBasicos.valorHora;
-          this.puestaPunto.golpesSinRealizar  = this.puestaPunto.tiempoPromedioLabor * this.datosBasicos.golpesPromedioHora;
-          this.puestaPunto.valorTiempoSinProducir  = this.puestaPunto.golpesSinRealizar * this.datosBasicos.valorPromedioGolpe;
-          this.puestaPunto.ValorTotalLabor  = this.puestaPunto.valorTiempoSinProducir + this.puestaPunto.valorLabor;
-          this.puestaPunto.cantidadCms = this.puestaPunto.ValorTotalLabor / this.datosBasicos.valorContraHendido;
-
-          this.totales.c12 = this.encauche.tiempoPromedioLabor + this.puestaPunto.tiempoPromedioLabor;
-          this.totales.d12 = this.encauche.valorLabor + this.puestaPunto.valorLabor;
-          this.totales.e12 = this.encauche.golpesSinRealizar + this.puestaPunto.golpesSinRealizar;
-          this.totales.f12 = this.encauche.valorTiempoSinProducir + this.puestaPunto.valorTiempoSinProducir;
-          this.totales.g12 = this.encauche.ValorTotalLabor + this.puestaPunto.ValorTotalLabor;
-          this.totales.h12 = this.encauche.cantidadCms + this.puestaPunto.cantidadCms;
+    this.operaciones ();
     
   },
   methods: {
