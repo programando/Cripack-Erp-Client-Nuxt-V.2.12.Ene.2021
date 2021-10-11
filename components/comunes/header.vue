@@ -1,94 +1,129 @@
 <template>
- 
   <div class="text-sm font-Montserrat">
     <div
       class="fixed z-50 flex items-center justify-between w-full mt-0 bg-azul "
     >
       <div class="flex">
         <img class="h-20" src="/images/logo.png" alt="" />
-        
       </div>
-      <div class="flex -mt-8 space-x-6 text-white">
-          <h3 class="text-sm">{{ companyName }}</h3>
-          <h3 class="text-sm">{{ contactName  }} DILIA CASTRO</h3>
+      <div class="flex ml-20 -mt-8 space-x-6 text-white">
+        <h3 class="text-sm">{{ companyName }}</h3>
+        <h3 class="text-sm">{{ contactName }} DILIA CASTRO</h3>
       </div>
 
-      <div class="flex items-center justify-end mr-4 space-x-6">
+      <div class="flex items-center justify-end mr-4 space-x-12">
         <NavLinks text="Historial" to="/clientes/ots-historial" />
 
-        <NavLinks text="Costos" to="/clientes/costos" />
+        <NavLinks text="Estos Ot's" to="/clientes/costos" />
 
-         <div v-if="isDevelopment=='development'" class="relative text-white">
+        <div v-if="isDevelopment == 'development'" class="relative text-white">
           <button @click="menu = !menu" class="px-2 ">
-            Solicitud OT
+            Utilidades
           </button>
           <div
             v-if="menu"
-            class="absolute z-20 flex flex-col pb-2 text-sm border border-white rounded-md top-7 w-28 bg-azul"
+            class="absolute z-20 flex flex-col w-40 pb-2 text-sm border border-white rounded-md top-7 bg-azul"
           >
-            <div @click="menu = !menu" class="mt-2 hover:opacity-90">
-              <nuxt-link
-                class="px-2 py-1 text-xs text-white "
-                to="/clientes/ordenes-trabajo/troquel-plano"
-                >Troquel Plano</nuxt-link
+            <div
+              @click="subMenu = !subMenu"
+              class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"
+              v-if="menu"
+            >
+              Solicitud OT
+              <div
+                @click="menu = false"
+                v-if="subMenu"
+                class="absolute z-20 flex flex-col w-40 pb-2 -ml-3 text-sm border border-white rounded-md left-40 bg-azul"
               >
+                <nuxt-link
+                  class="px-2 py-1 text-xs text-white"
+                  to="/clientes/ordenes-trabajo/troquel-plano"
+                  >Plano</nuxt-link
+                >
+                <nuxt-link
+                  class="px-2 py-1 text-xs text-white"
+                  to="/clientes/ordenes-trabajo/troquel-plano"
+                  >Curvo</nuxt-link
+                >
+                <nuxt-link
+                  class="px-2 py-1 text-xs text-white"
+                  to="/clientes/ordenes-trabajo/troquel-plano"
+                  >Descartone</nuxt-link
+                >
+              </div>
             </div>
-            <div @click="menu = !menu" class="mt-2 hover:opacity-90">
-              <nuxt-link
-                class="px-2 py-1 text-xs text-white"
-                to="/clientes/ordenes-trabajo/troquel-plano"
-                >Troquel Curvo</nuxt-link
-              >
-            </div>
-            <div @click="menu = !menu" class="mt-2 hover:opacity-90">
-              <nuxt-link
-                class="px-2 py-1 text-xs text-white"
-                to="/clientes/ordenes-trabajo/troquel-plano"
-                >Descartone</nuxt-link
+            <div
+              @click="menu = false"
+              class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"
+            >
+              <nuxt-link to="/braile/transcripcion-texto"
+                >Transcriptor Braile</nuxt-link
               >
             </div>
           </div>
-        </div>  
+        </div>
 
-        <NavLinks text="Estado OT's" to="/clientes/ots-estado" />
+        <div v-if="isDevelopment == 'development'" class="relative text-white">
+          <button @click="gestion = !gestion" class="px-2 ">
+            Gestión
+          </button>
+          <div
+            v-if="gestion"
+            class="absolute z-20 flex flex-col w-40 pb-2 text-sm border border-white rounded-md top-7 bg-azul"
+          >
+            <div
+              class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"
+              @click="gestion = false"
+            >
+              <nuxt-link to="/clientes/ots-historial"
+                >Evaluación costos alimento</nuxt-link
+              >
+              
+            </div>
+            <div
+              @click="gestion = false"
+              class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"
+            >
+              <nuxt-link to="/clientes/ots-historial"
+                >Bitácora documentos</nuxt-link
+              >
+            </div>
+          </div>
+        </div>
 
-        <NavLinks 
-        text="Braille"
-        to="/braile/transcripcion-texto"
-      /> 
+        <!-- <NavLinks text="Estado OT's" to="/clientes/ots-estado" /> -->
+
         <NavLinks text="Contacto" to="/clientes/contacto" />
 
         <!--       <NavLinks 
         text="Comercial"
         to="/clientes/ordenes"
       /> -->
- 
+
         <button @click="logout" class="text-white ">Salir</button>
       </div>
- 
     </div>
     <div class="fixed right-0 z-10 pt-16 bandera">
-         <LanguajeChange
-              tipoTransicion='arriba'>
-         </LanguajeChange>
+      <LanguajeChange tipoTransicion="arriba"> </LanguajeChange>
     </div>
-
   </div>
 </template>
 
 <script>
-import LanguajeChange     from "@/components/htmlControls/languajeChange";
-import NavLinks           from "@/components/comunes/navLinks";
-import User               from "@/models/User";
+import LanguajeChange from "@/components/htmlControls/languajeChange";
+import NavLinks from "@/components/comunes/navLinks";
+import User from "@/models/User";
 export default {
   name: "Header",
-  components: {  NavLinks, LanguajeChange  },
+  components: { NavLinks, LanguajeChange },
 
   data() {
     return {
       idioma: false,
-      menu  : false,
-      isDevelopment : process.env.NODE_ENV,
+      menu: false,
+      isDevelopment: process.env.NODE_ENV,
+      subMenu: false,
+      gestion: false
     };
   },
   computed: {
@@ -101,7 +136,7 @@ export default {
   },
   methods: {
     logout() {
-        User.logout( this.$cookies.get("User").idtercero).then(() => {
+      User.logout(this.$cookies.get("User").idtercero).then(() => {
         this.$cookies.removeAll();
         this.$cookies.set("logueado", false);
         this.$store.dispatch("User/UserLogout");
@@ -115,6 +150,5 @@ export default {
 <style>
 .bandera {
   margin-right: 20px;
-  
 }
 </style>

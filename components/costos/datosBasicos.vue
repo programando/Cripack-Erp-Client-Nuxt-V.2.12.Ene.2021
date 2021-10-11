@@ -17,8 +17,8 @@
       <tbody class="bg-white">
         <tr class="text-right text-gray-700">
           <td class="px-2 py-3 border-b border-l w-60"></td>
-          <td class="px-2 py-3 border w-60 ">
-            <div class="flex items-center text-sm text-right">
+          <td class="px-2 py-3 border w-60">
+            <div class="flex items-center justify-center text-sm text-right">
               <input
                 @blur="operaciones"
                 class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
@@ -28,10 +28,10 @@
             </div>
           </td>
           <td class="px-2 py-3 border w-60 text-ms">
-            <div>{{ datosBasicos.valorHora }}</div>
+            <div>{{ datosBasicos.valorHora | NumeroEntero}}</div>
           </td>
           <td class="px-2 py-3 border w-60 ">
-            <div class="flex items-center text-sm">
+            <div class="flex items-center justify-center text-sm">
               <input
                 @blur="operaciones"
                 class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
@@ -41,7 +41,7 @@
             </div>
           </td>
           <td class="px-2 py-3 text-sm border w-60 ">
-            <div class="flex items-center text-sm">
+            <div class="flex items-center justify-center text-sm">
               <input
                 @blur="operaciones"
                 class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
@@ -51,7 +51,7 @@
             </div>
           </td>
           <td class="px-2 py-3 border w-60 text-ms">
-            <div class="flex items-center text-sm">
+            <div class="flex items-center justify-center text-sm">
               <input
                 @blur="operaciones"
                 class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
@@ -62,7 +62,7 @@
           </td>
 
           <td class="px-2 py-3 border w-60 text-ms">
-            <div class="flex items-center text-sm">
+            <div class="flex items-center justify-center text-sm">
               <input
                 @blur="operaciones"
                 class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
@@ -93,7 +93,7 @@
         <tr class="text-gray-700">
           <td class="px-2 py-3 text-sm font-semibold border w-60">Encauche</td>
           <td class="px-2 py-3 border w-60 ">
-            <div class="flex items-center text-sm">
+            <div class="flex items-center justify-center text-sm">
               <input
                 @blur="operaciones"
                 class="w-24 px-2 py-1 text-right text-white border focus:outline-none bg-azul "
@@ -103,19 +103,19 @@
             </div>
           </td>
           <td class="px-2 py-3 text-right border w-60 text-ms">
-            <div>{{ encauche.valorLabor | NumeroDecimal }}</div>
+            <div>{{ encauche.valorLabor | NumeroEntero }}</div>
           </td>
           <td class="px-2 py-3 text-right border w-60">
-            <div>{{ encauche.golpesSinRealizar | NumeroDecimal }}</div>
+            <div>{{ encauche.golpesSinRealizar | NumeroEntero }}</div>
           </td>
           <td class="px-2 py-3 text-sm text-right border w-60">
-            <div>{{ encauche.valorTiempoSinProducir | NumeroDecimal }}</div>
+            <div>{{ encauche.valorTiempoSinProducir | NumeroEntero }}</div>
           </td>
           <td class="px-2 py-3 text-right border w-60 text-ms">
-            <div>{{ encauche.ValorTotalLabor | NumeroDecimal }}</div>
+            <div>{{ encauche.ValorTotalLabor | NumeroEntero }}</div>
           </td>
           <td class="px-2 py-3 text-right border w-60 text-ms">
-            <div>{{ encauche.cantidadCms | NumeroDecimal }}</div>
+            <div>{{ encauche.cantidadCms | NumeroEntero }}</div>
           </td>
         </tr>
         <tr class="text-gray-700">
@@ -123,7 +123,7 @@
             Puesta a punto
           </td>
           <td class="px-2 py-3 border w-60 ">
-            <div class="flex items-center text-sm">
+            <div class="flex items-center justify-center text-sm">
               <input
                 @blur="operaciones"
                 class="w-24 px-2 py-1 text-right text-white focus:outline-none bg-azul "
@@ -133,19 +133,19 @@
             </div>
           </td>
           <td class="px-2 py-3 text-right border w-60 text-ms">
-            <div>{{ puestaPunto.valorLabor | NumeroDecimal }}</div>
+            <div>{{ puestaPunto.valorLabor | NumeroEntero }}</div>
           </td>
           <td class="px-2 py-3 text-right border w-60">
-            <div>{{ puestaPunto.golpesSinRealizar | NumeroDecimal }}</div>
+            <div>{{ puestaPunto.golpesSinRealizar | NumeroEntero }}</div>
           </td>
           <td class="px-2 py-3 text-sm text-right border w-60">
-            <div>{{ puestaPunto.valorTiempoSinProducir | NumeroDecimal }}</div>
+            <div>{{ puestaPunto.valorTiempoSinProducir | NumeroEntero }}</div>
           </td>
           <td class="px-2 py-3 text-right border w-60 text-ms">
-            <div>{{ puestaPunto.ValorTotalLabor | NumeroDecimal }}</div>
+            <div>{{ puestaPunto.ValorTotalLabor | NumeroEntero }}</div>
           </td>
           <td class="px-2 py-3 text-right border w-60 text-ms">
-            <div>{{ puestaPunto.cantidadCms | NumeroDecimal  }}</div>
+            <div>{{ puestaPunto.cantidadCms | NumeroEntero  }}</div>
           </td>
         </tr>
       </tbody>
@@ -155,22 +155,22 @@
         <tr class="text-gray-700">
           <td class="px-2 py-3 text-sm font-semibold border w-60">Totales</td>
           <td class="px-2 py-3 text-right border w-60">
-            <div>{{ totales.c12 | NumeroDecimal }}</div>
+            <div>{{ totales.c12 | NumeroEntero }}</div>
           </td>
           <td class="px-2 py-3 text-right border w-60 text-ms">
-            <div>{{ totales.d12  | NumeroDecimal }}</div>
+            <div>{{ totales.d12  | NumeroEntero }}</div>
           </td>
           <td class="px-2 py-3 text-right border w-60">
-            <div>{{ totales.e12  | NumeroDecimal }}</div>
+            <div>{{ totales.e12  | NumeroEntero }}</div>
           </td>
           <td class="px-2 py-3 text-sm text-right border w-60">
-            <div>{{ totales.f12  | NumeroDecimal }}</div>
+            <div>{{ totales.f12  | NumeroEntero }}</div>
           </td>
           <td class="px-2 py-3 text-right border w-60 text-ms">
-            <div>{{ totales.g12  | NumeroDecimal }}</div>
+            <div>{{ totales.g12  | NumeroEntero }}</div>
           </td>
           <td class="px-2 py-3 text-right border w-60 text-ms">
-            <div>{{ totales.h12  | NumeroDecimal }}</div>
+            <div>{{ totales.h12  | NumeroEntero }}</div>
           </td>
         </tr>
       </tbody>
@@ -189,28 +189,28 @@ export default {
   data() {
     return {
       datosBasicos: {
-        golpesPromedioHora: 0,
-        salarioPromedio   : 0,
-        valorContraHendido: 0,
-        valorEncauche     : 0,
-        valorHora         : 0,
-        valorPromedioGolpe: 0,
+        golpesPromedioHora: 500,
+        salarioPromedio   : 1500000,
+        valorContraHendido: 100,
+        valorEncauche     : 38,
+        valorHora         : 9563,
+        valorPromedioGolpe: 78,
       },
       encauche: {
-        cantidadCms           : 0,
-        golpesSinRealizar     : 0,
-        tiempoPromedioLabor   : 0,
-        valorLabor            : 0,
-        valorTiempoSinProducir: 0,
-        ValorTotalLabor       : 0,
+        cantidadCms           : 1022,
+        golpesSinRealizar     : 400,
+        tiempoPromedioLabor   : 0.8,
+        valorLabor            : 7650,
+        valorTiempoSinProducir: 31200,
+        ValorTotalLabor       : 38850,
       },
       puestaPunto: {
-        cantidadCms           : 0,
-        golpesSinRealizar     : 0,
-        tiempoPromedioLabor   : 0,
-        valorLabor            : 0,
-        valorTiempoSinProducir: 0,
-        ValorTotalLabor       : 0,
+        cantidadCms           : 4371,
+        golpesSinRealizar     : 400,
+        tiempoPromedioLabor   : 9.0,
+        valorLabor            : 86063,
+        valorTiempoSinProducir: 351000,
+        ValorTotalLabor       : 437063,
       },
       totales: {
         c12: 0,
