@@ -23,6 +23,7 @@
                 @blur="operaciones"
                 class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
                 type="text"
+                id="txtSalario"
                 v-model="datosBasicos.salarioPromedio"
               />
             </div>
@@ -155,7 +156,7 @@
         <tr class="text-gray-700">
           <td class="px-2 py-3 text-sm font-semibold border w-60">Totales</td>
           <td class="px-2 py-3 text-right border w-60">
-            <div>{{ totales.c12 | NumeroEntero }}</div>
+            <div>{{ totales.c12 | NumeroDecimal }}</div>
           </td>
           <td class="px-2 py-3 text-right border w-60 text-ms">
             <div>{{ totales.d12  | NumeroEntero }}</div>
@@ -189,28 +190,28 @@ export default {
   data() {
     return {
       datosBasicos: {
-        golpesPromedioHora: 500,
-        salarioPromedio   : 1500000,
-        valorContraHendido: 100,
-        valorEncauche     : 38,
-        valorHora         : 9563,
-        valorPromedioGolpe: 78,
+        golpesPromedioHora: 0,
+        salarioPromedio   : 0,
+        valorContraHendido: 0,
+        valorEncauche     : 0,
+        valorHora         : 0,
+        valorPromedioGolpe: 0,
       },
       encauche: {
-        cantidadCms           : 1022,
-        golpesSinRealizar     : 400,
-        tiempoPromedioLabor   : 0.8,
-        valorLabor            : 7650,
-        valorTiempoSinProducir: 31200,
-        ValorTotalLabor       : 38850,
+        cantidadCms           : 0,
+        golpesSinRealizar     : 0,
+        tiempoPromedioLabor   : 0,
+        valorLabor            : 0,
+        valorTiempoSinProducir: 0,
+        ValorTotalLabor       : 0,
       },
       puestaPunto: {
-        cantidadCms           : 4371,
-        golpesSinRealizar     : 400,
-        tiempoPromedioLabor   : 9.0,
-        valorLabor            : 86063,
-        valorTiempoSinProducir: 351000,
-        ValorTotalLabor       : 437063,
+        cantidadCms           : 0,
+        golpesSinRealizar     : 0,
+        tiempoPromedioLabor   : 0,
+        valorLabor            : 0,
+        valorTiempoSinProducir: 0,
+        ValorTotalLabor       : 0,
       },
       totales: {
         c12: 0,
@@ -228,7 +229,23 @@ export default {
     this.operaciones ();
     
   },
+  
+/* computed: {
+     Salario() {
+        let Salarios = document.getElementById('txtSalario').value; 
+        this.datosBasicos.salarioPromedio = Salarios; 
+       return this.formatoNumero (Salarios );
+     }
+     
+}, */
+
+  //
   methods: {
+      formatoNumero ( Value ) {
+            let val = (Value / 1).toFixed(0).replace('.', ',');
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+      },
       operaciones () {
           this.datosBasicos.valorHora     =   (this.datosBasicos.salarioPromedio / 240) * 1.53;
 
@@ -245,7 +262,7 @@ export default {
           this.puestaPunto.ValorTotalLabor  = this.puestaPunto.valorTiempoSinProducir + this.puestaPunto.valorLabor;
           this.puestaPunto.cantidadCms = this.puestaPunto.ValorTotalLabor / this.datosBasicos.valorContraHendido;
 
-          this.totales.c12 = this.encauche.tiempoPromedioLabor + this.puestaPunto.tiempoPromedioLabor;
+          this.totales.c12 = parseFloat(this.encauche.tiempoPromedioLabor) + parseFloat(this.puestaPunto.tiempoPromedioLabor);
           this.totales.d12 = this.encauche.valorLabor + this.puestaPunto.valorLabor;
           this.totales.e12 = this.encauche.golpesSinRealizar + this.puestaPunto.golpesSinRealizar;
           this.totales.f12 = this.encauche.valorTiempoSinProducir + this.puestaPunto.valorTiempoSinProducir;

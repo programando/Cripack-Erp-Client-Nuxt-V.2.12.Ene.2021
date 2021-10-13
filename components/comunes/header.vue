@@ -75,8 +75,8 @@
               class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"
               @click="gestion = false"
             >
-              <nuxt-link to="/clientes/ots-historial"
-                >Evaluación costos alimento</nuxt-link
+              <nuxt-link to="/clientes/costos"
+                >Evaluación costos alistamiento</nuxt-link
               >
               
             </div>
@@ -84,7 +84,7 @@
               @click="gestion = false"
               class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"
             >
-              <nuxt-link to="/clientes/ots-historial"
+              <nuxt-link to=""
                 >Bitácora documentos</nuxt-link
               >
             </div>
