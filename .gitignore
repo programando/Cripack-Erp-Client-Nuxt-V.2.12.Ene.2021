@@ -97,4 +97,5 @@ sw.*
 *.swp
  
 *.txt
+.vscode
 .vscode/settings.json
