@@ -84,7 +84,7 @@
               @click="gestion = false"
               class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"
             >
-              <nuxt-link to=""
+              <nuxt-link to="/gestion/bitacora"
                 >Bitácora documentos</nuxt-link
               >
             </div>

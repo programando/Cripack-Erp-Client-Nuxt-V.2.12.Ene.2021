@@ -22,9 +22,9 @@
               <input
                 @blur="operaciones"
                 class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
-                type="text"
+                type="number"
                 id="txtSalario"
-                v-model="datosBasicos.salarioPromedio"
+                v-model.number="datosBasicos.salarioPromedio"
               />
             </div>
           </td>
@@ -36,8 +36,8 @@
               <input
                 @blur="operaciones"
                 class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
-                type="text"
-                v-model="datosBasicos.golpesPromedioHora"
+                type="number"
+                v-model.number="datosBasicos.golpesPromedioHora"
               />
             </div>
           </td>
@@ -46,8 +46,8 @@
               <input
                 @blur="operaciones"
                 class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
-                type="text"
-                v-model="datosBasicos.valorPromedioGolpe"
+                type="number"
+                v-model.number="datosBasicos.valorPromedioGolpe"
               />
             </div>
           </td>
@@ -56,8 +56,8 @@
               <input
                 @blur="operaciones"
                 class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
-                type="text"
-                v-model="datosBasicos.valorEncauche"
+                type="number"
+                v-model.number="datosBasicos.valorEncauche"
               />
             </div>
           </td>
@@ -67,8 +67,8 @@
               <input
                 @blur="operaciones"
                 class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
-                type="text"
-                v-model="datosBasicos.valorContraHendido"
+                type="number"
+                v-model.number="datosBasicos.valorContraHendido"
               />
             </div>
           </td>
@@ -98,8 +98,8 @@
               <input
                 @blur="operaciones"
                 class="w-24 px-2 py-1 text-right text-white border focus:outline-none bg-azul "
-                type="text"
-                v-model="encauche.tiempoPromedioLabor"
+                type="number"
+                v-model.number="encauche.tiempoPromedioLabor"
               />
             </div>
           </td>
@@ -128,8 +128,8 @@
               <input
                 @blur="operaciones"
                 class="w-24 px-2 py-1 text-right text-white focus:outline-none bg-azul "
-                type="text"
-                v-model="puestaPunto.tiempoPromedioLabor"
+                type="number"
+                v-model.number="puestaPunto.tiempoPromedioLabor"
               />
             </div>
           </td>
@@ -190,28 +190,28 @@ export default {
   data() {
     return {
       datosBasicos: {
-        golpesPromedioHora: 0,
-        salarioPromedio   : 0,
-        valorContraHendido: 0,
-        valorEncauche     : 0,
-        valorHora         : 0,
-        valorPromedioGolpe: 0,
+        golpesPromedioHora: 500,
+        salarioPromedio   : 1500000,
+        valorContraHendido: 100,
+        valorEncauche     : 38,
+        valorHora         : 9563,
+        valorPromedioGolpe: 78,
       },
       encauche: {
-        cantidadCms           : 0,
-        golpesSinRealizar     : 0,
-        tiempoPromedioLabor   : 0,
-        valorLabor            : 0,
-        valorTiempoSinProducir: 0,
-        ValorTotalLabor       : 0,
+        cantidadCms           : 1022,
+        golpesSinRealizar     : 400,
+        tiempoPromedioLabor   : 0.8,
+        valorLabor            : 7650,
+        valorTiempoSinProducir: 31200,
+        ValorTotalLabor       : 38850,
       },
       puestaPunto: {
-        cantidadCms           : 0,
-        golpesSinRealizar     : 0,
-        tiempoPromedioLabor   : 0,
-        valorLabor            : 0,
-        valorTiempoSinProducir: 0,
-        ValorTotalLabor       : 0,
+        cantidadCms           : 4371,
+        golpesSinRealizar     : 4500,
+        tiempoPromedioLabor   : 9.0,
+        valorLabor            : 86063,
+        valorTiempoSinProducir: 351000,
+        ValorTotalLabor       : 437063,
       },
       totales: {
         c12: 0,
