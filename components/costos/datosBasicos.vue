@@ -22,9 +22,9 @@
               <input
                 @blur="operaciones"
                 class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
-                type="number"
+                type="text"
                 id="txtSalario"
-                v-model.number="datosBasicos.salarioPromedio"
+                v-model="datosBasicos.salarioPromedio"
               />
             </div>
           </td>
@@ -36,8 +36,8 @@
               <input
                 @blur="operaciones"
                 class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
-                type="number"
-                v-model.number="datosBasicos.golpesPromedioHora"
+                type="text"
+                v-model="datosBasicos.golpesPromedioHora"
               />
             </div>
           </td>
@@ -46,8 +46,8 @@
               <input
                 @blur="operaciones"
                 class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
-                type="number"
-                v-model.number="datosBasicos.valorPromedioGolpe"
+                type="text"
+                v-model="datosBasicos.valorPromedioGolpe"
               />
             </div>
           </td>
@@ -56,8 +56,8 @@
               <input
                 @blur="operaciones"
                 class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
-                type="number"
-                v-model.number="datosBasicos.valorEncauche"
+                type="text"
+                v-model="datosBasicos.valorEncauche"
               />
             </div>
           </td>
@@ -67,8 +67,8 @@
               <input
                 @blur="operaciones"
                 class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
-                type="number"
-                v-model.number="datosBasicos.valorContraHendido"
+                type="text"
+                v-model="datosBasicos.valorContraHendido"
               />
             </div>
           </td>
@@ -98,8 +98,8 @@
               <input
                 @blur="operaciones"
                 class="w-24 px-2 py-1 text-right text-white border focus:outline-none bg-azul "
-                type="number"
-                v-model.number="encauche.tiempoPromedioLabor"
+                type="text"
+                v-model="encauche.tiempoPromedioLabor"
               />
             </div>
           </td>
@@ -128,8 +128,8 @@
               <input
                 @blur="operaciones"
                 class="w-24 px-2 py-1 text-right text-white focus:outline-none bg-azul "
-                type="number"
-                v-model.number="puestaPunto.tiempoPromedioLabor"
+                type="text"
+                v-model="puestaPunto.tiempoPromedioLabor"
               />
             </div>
           </td>
