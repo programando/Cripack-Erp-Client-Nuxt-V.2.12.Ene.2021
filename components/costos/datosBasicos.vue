@@ -19,13 +19,10 @@
           <td class="px-2 py-3 border-b border-l w-60"></td>
           <td class="px-2 py-3 border w-60">
             <div class="flex items-center justify-center text-sm text-right">
-              <input
-                @blur="operaciones"
-                class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
-                type="text"
-                id="txtSalario"
-                v-model="datosBasicos.salarioPromedio"
-              />
+               <vue-numeric  separator="," v-model="datosBasicos.salarioPromedio"
+                    class="w-32 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
+                    @blur="operaciones"
+               ></vue-numeric>
             </div>
           </td>
           <td class="px-2 py-3 border w-60 text-ms">
@@ -33,43 +30,43 @@
           </td>
           <td class="px-2 py-3 border w-60 ">
             <div class="flex items-center justify-center text-sm">
-              <input
-                @blur="operaciones"
-                class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
-                type="text"
-                v-model="datosBasicos.golpesPromedioHora"
-              />
+              <vue-numeric   separator="," v-model="datosBasicos.golpesPromedioHora"
+                    class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
+                    @blur="operaciones"
+               ></vue-numeric>
+
             </div>
           </td>
           <td class="px-2 py-3 text-sm border w-60 ">
             <div class="flex items-center justify-center text-sm">
-              <input
-                @blur="operaciones"
-                class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
-                type="text"
-                v-model="datosBasicos.valorPromedioGolpe"
-              />
+ 
+              <vue-numeric   separator="," v-model="datosBasicos.valorPromedioGolpe"
+                    class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
+                    @blur="operaciones"
+               ></vue-numeric>
+
             </div>
           </td>
           <td class="px-2 py-3 border w-60 text-ms">
             <div class="flex items-center justify-center text-sm">
-              <input
-                @blur="operaciones"
-                class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
-                type="text"
-                v-model="datosBasicos.valorEncauche"
-              />
+ 
+              <vue-numeric   separator="," v-model="datosBasicos.valorEncauche"
+                    class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
+                    @blur="operaciones"
+               ></vue-numeric>
+                             
             </div>
           </td>
 
           <td class="px-2 py-3 border w-60 text-ms">
             <div class="flex items-center justify-center text-sm">
-              <input
-                @blur="operaciones"
-                class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
-                type="text"
-                v-model="datosBasicos.valorContraHendido"
-              />
+ 
+
+              <vue-numeric    separator="," v-model="datosBasicos.valorContraHendido"
+                    class="w-24 px-2 py-1 text-right text-white border bg-azul focus:outline-none"
+                    @blur="operaciones"
+               ></vue-numeric>
+
             </div>
           </td>
         </tr>
@@ -184,11 +181,16 @@
 </template>
 
 <script>
+import VueNumeric from 'vue-numeric'
 
 export default {
   name: "DatosBasicos",
+    components: {
+    VueNumeric
+  },
   data() {
     return {
+      price: 0,
       datosBasicos: {
         golpesPromedioHora: 500,
         salarioPromedio   : 1500000,
@@ -229,45 +231,37 @@ export default {
     this.operaciones ();
     
   },
-  
-/* computed: {
-     Salario() {
-        let Salarios = document.getElementById('txtSalario').value; 
-        this.datosBasicos.salarioPromedio = Salarios; 
-       return this.formatoNumero (Salarios );
-     }
-     
-}, */
-
-  //
+ 
   methods: {
-      formatoNumero ( Value ) {
-            let val = (Value / 1).toFixed(0).replace('.', ',');
-      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
-      },
+ 
       operaciones () {
-          this.datosBasicos.valorHora     =   (this.datosBasicos.salarioPromedio / 240) * 1.53;
+          this.datosBasicos.valorHora          = parseFloat( this.datosBasicos.salarioPromedio   ) / 240 * 1.53;
+          this.encauche.valorLabor             = parseFloat( this.datosBasicos.valorHora          ) * parseFloat(this.encauche.tiempoPromedioLabor);
+          this.encauche.golpesSinRealizar      = parseFloat( this.encauche.tiempoPromedioLabor    ) * parseFloat(this.datosBasicos.golpesPromedioHora);
+          this.encauche.valorTiempoSinProducir = parseFloat( this.encauche.golpesSinRealizar      ) * parseFloat(this.datosBasicos.valorPromedioGolpe);
+          this.encauche.ValorTotalLabor        = parseFloat( this.encauche.valorTiempoSinProducir ) + parseFloat(this.encauche.valorLabor);
+          if ( parseFloat(this.datosBasicos.valorEncauche) > 0 ) {
+              this.encauche.cantidadCms = parseFloat(this.encauche.ValorTotalLabor) / parseFloat(this.datosBasicos.valorEncauche);
+          }else {
+            this.encauche.cantidadCms = 0;
+          }
 
-          this.encauche.valorLabor     = this.datosBasicos.valorHora * this.encauche.tiempoPromedioLabor;
-          this.encauche.golpesSinRealizar = this.encauche.tiempoPromedioLabor * this.datosBasicos.golpesPromedioHora;
-          this.encauche.valorTiempoSinProducir = this.encauche.golpesSinRealizar * this.datosBasicos.valorPromedioGolpe;
-          this.encauche.ValorTotalLabor = this.encauche.valorTiempoSinProducir + this.encauche.valorLabor;
-          this.encauche.cantidadCms = this.encauche.ValorTotalLabor / this.datosBasicos.valorEncauche;
+          this.puestaPunto.valorLabor             = parseFloat( this.puestaPunto.tiempoPromedioLabor      ) * parseFloat( this.datosBasicos.valorHora );
+          this.puestaPunto.golpesSinRealizar      = parseFloat( this.puestaPunto.tiempoPromedioLabor      ) * parseFloat( this.datosBasicos.golpesPromedioHora );
+          this.puestaPunto.valorTiempoSinProducir = parseFloat( this.puestaPunto.golpesSinRealizar        ) * parseFloat( this.datosBasicos.valorPromedioGolpe);
+          this.puestaPunto.ValorTotalLabor        = parseFloat( this.puestaPunto.valorTiempoSinProducir   ) + parseFloat(  this.puestaPunto.valorLabor );
+          if ( parseFloat( this.datosBasicos.valorContraHendido) > 0 ) {
+              this.puestaPunto.cantidadCms = parseFloat( this.puestaPunto.ValorTotalLabor) / parseFloat( this.datosBasicos.valorContraHendido);
+          } else {
+              this.puestaPunto.cantidadCms = 0;
+          }
 
-
-          this.puestaPunto.valorLabor  = this.puestaPunto.tiempoPromedioLabor * this.datosBasicos.valorHora;
-          this.puestaPunto.golpesSinRealizar  = this.puestaPunto.tiempoPromedioLabor * this.datosBasicos.golpesPromedioHora;
-          this.puestaPunto.valorTiempoSinProducir  = this.puestaPunto.golpesSinRealizar * this.datosBasicos.valorPromedioGolpe;
-          this.puestaPunto.ValorTotalLabor  = this.puestaPunto.valorTiempoSinProducir + this.puestaPunto.valorLabor;
-          this.puestaPunto.cantidadCms = this.puestaPunto.ValorTotalLabor / this.datosBasicos.valorContraHendido;
-
-          this.totales.c12 = parseFloat(this.encauche.tiempoPromedioLabor) + parseFloat(this.puestaPunto.tiempoPromedioLabor);
-          this.totales.d12 = this.encauche.valorLabor + this.puestaPunto.valorLabor;
-          this.totales.e12 = this.encauche.golpesSinRealizar + this.puestaPunto.golpesSinRealizar;
-          this.totales.f12 = this.encauche.valorTiempoSinProducir + this.puestaPunto.valorTiempoSinProducir;
-          this.totales.g12 = this.encauche.ValorTotalLabor + this.puestaPunto.ValorTotalLabor;
-          this.totales.h12 = this.encauche.cantidadCms + this.puestaPunto.cantidadCms;
+          this.totales.c12 = parseFloat(this.encauche.tiempoPromedioLabor       ) + parseFloat(this.puestaPunto.tiempoPromedioLabor);
+          this.totales.d12 = parseFloat( this.encauche.valorLabor               ) + parseFloat( this.puestaPunto.valorLabor );
+          this.totales.e12 = parseFloat( this.encauche.golpesSinRealizar        ) + parseFloat( this.puestaPunto.golpesSinRealizar );
+          this.totales.f12 = parseFloat( this.encauche.valorTiempoSinProducir   ) + parseFloat( this.puestaPunto.valorTiempoSinProducir );
+          this.totales.g12 = parseFloat( this.encauche.ValorTotalLabor          ) + parseFloat( this.puestaPunto.ValorTotalLabor );
+          this.totales.h12 = parseFloat( this.encauche.cantidadCms              ) + parseFloat( this.puestaPunto.cantidadCms );
 
       }
   }
