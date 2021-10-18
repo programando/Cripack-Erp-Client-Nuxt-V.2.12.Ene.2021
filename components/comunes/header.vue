@@ -17,7 +17,7 @@
         <NavLinks text="Estado Ot's" to="/clientes/ots-estado" />
 
         <div v-if="isDevelopment == 'development'" class="relative text-white">
-          <button @click="menu = !menu" class="px-2 ">
+          <button @click="viewUtilidades" class="px-2 ">
             Utilidades
           </button>
           <div
@@ -64,7 +64,7 @@
         </div>
 
         <div v-if="isDevelopment == 'development'" class="relative text-white">
-          <button @click="gestion = !gestion" class="px-2 ">
+          <button @click="viewGestion" class="px-2 ">
             Gestión
           </button>
           <div
@@ -142,6 +142,15 @@ export default {
         this.$store.dispatch("User/UserLogout");
         this.$router.push("/");
       });
+    },
+
+    viewUtilidades(){
+      this.menu = !this.menu
+      this.gestion = false
+    },
+    viewGestion(){
+      this.gestion = !this.gestion
+      this.menu = false
     }
   }
 };

@@ -108,6 +108,7 @@
     import Terceros           from "@/models/Terceros";
     import WsContact from "@/components/htmlControls/wsContact.vue"
     
+    
     export default {
       name:'ClientesHistorialForm',
       components : { BtnCallToAction, WsContact },
@@ -124,13 +125,14 @@
               fechaFin:'',
               userCripack: false
           }
+          
         };
       },
       mounted() {
         this.fechaIni = Moment().subtract(30,'d').format('YYYY-MM-DD');
         this.fechaFin = Moment().format('YYYY-MM-DD');
         this.getOts();
-        this.showBtnAnimation     = false;
+        this.showBtnAnimation    = false;
       },
 
     methods: {
@@ -150,7 +152,8 @@
                   this.formParams.idTercero   = this.$cookies.get("User").idtercero;
                   this.formParams.userCripack = this.$cookies.get("User").uso_web_empresa;
                   this.showBtnAnimation     = true;
-            }
+            },
+           
     },
 
       computed: {
