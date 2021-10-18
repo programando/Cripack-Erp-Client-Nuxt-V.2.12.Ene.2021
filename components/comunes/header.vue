@@ -8,13 +8,13 @@
       </div>
       <div class="flex ml-20 -mt-8 space-x-6 text-white">
         <h3 class="text-sm">{{ companyName }}</h3>
-        <h3 class="text-sm">{{ contactName }} DILIA CASTRO</h3>
+        <h3 class="text-sm">{{ contactName }}  </h3>
       </div>
 
       <div class="flex items-center justify-end mr-4 space-x-12">
         <NavLinks text="Historial" to="/clientes/ots-historial" />
 
-        <NavLinks text="Estos Ot's" to="/clientes/costos" />
+        <NavLinks text="Estado Ot's" to="/clientes/ots-estado" />
 
         <div v-if="isDevelopment == 'development'" class="relative text-white">
           <button @click="menu = !menu" class="px-2 ">
@@ -69,14 +69,14 @@
           </button>
           <div
             v-if="gestion"
-            class="absolute z-20 flex flex-col w-40 pb-2 text-sm border border-white rounded-md top-7 bg-azul"
+            class="absolute z-20 flex flex-col w-48 pb-2 text-sm border border-white rounded-md top-7 bg-azul"
           >
             <div
               class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"
               @click="gestion = false"
             >
               <nuxt-link to="/clientes/costos"
-                >Evaluación costos alistamiento</nuxt-link
+                >Costos alistamiento</nuxt-link
               >
               
             </div>
@@ -84,8 +84,8 @@
               @click="gestion = false"
               class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"
             >
-              <nuxt-link to="/gestion/bitacora"
-                >Bitácora documentos</nuxt-link
+              <nuxt-link to="/gestion/documentos"
+                >Consulta documentos</nuxt-link
               >
             </div>
           </div>

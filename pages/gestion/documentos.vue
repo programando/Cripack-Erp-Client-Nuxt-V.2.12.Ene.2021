@@ -21,15 +21,15 @@
           <thead class="w-full">
             <tr>
               <th class="w-4/12 px-4 text-lg text-left">Nombre</th>
-              <th class="w-7/12 text-lg text-left">Observación</th>
+              <th class="w-7/12 text-lg text-left">Tipo de documento</th>
               <th class="w-1/12"></th>
             </tr>
           </thead>
           <tbody class="w-full">
-            <tr v-for="usuario in usuarioFiltrado" :key="usuario.idarchivo" class="border">
-              <td class="w-4/12 px-4 py-1 text-sm">{{ usuario.nomarchivo | Capitalize }}</td>
-              <td class="w-7/12 py-1 text-sm">{{ usuario.observacion | Capitalize}}</td>
-              <td class="w-1/12 cursor-pointer"><img class="w-8 h-5 lg:ml-14 xl:ml-16" src="/images/pdf.svg" alt="" @click = "pdfView ( usuario.file_key)" > </td>
+            <tr v-for="documento in documentoFiltrado" :key="documento.idarchivo" class="border">
+              <td class="w-4/12 px-4 py-1 text-sm">{{ documento.nomarchivo | Capitalize }}</td>
+              <td class="w-7/12 py-1 text-sm">{{ documento.observacion | Capitalize}}</td>
+              <td class="w-1/12 cursor-pointer"><img class="w-8 h-5 lg:ml-14 xl:ml-14" src="/images/pdf.svg" alt="" @click = "pdfView ( documento.file_key)" > </td>
             </tr>
           </tbody>
         </table>
@@ -92,10 +92,10 @@ export default {
 
   computed: {
     //  la busqueda se hace en el campo  "palabrasclave"
-    usuarioFiltrado() {
-      return this.archivos.filter(usuario => {
+    documentoFiltrado() {
+      return this.archivos.filter(documento => {
         let nameUp = this.buscarArchivo.toUpperCase()
-        return usuario.palabrasclave.includes(nameUp)
+        return documento.palabrasclave.includes(nameUp)
       })
     } 
   },
@@ -104,7 +104,7 @@ export default {
       getDocuments () {
           Documentacion.getDocuments ()
           .then ( response => {           
-              // this.archivos = response.data;
+               this.archivos = response.data;
           })
       },
     pdfView ( pdfFile ) {
