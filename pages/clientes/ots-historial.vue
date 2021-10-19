@@ -40,6 +40,12 @@
         />
       </div>
     </div>
+    <div v-show="spiner" class="relative">
+      <div class="absolute flex items-center justify-center top-28 left-1/3">
+         <div class="border-b-2 rounded-full border-azul animate-spin h-96 w-96"></div>
+      </div>
+    </div>
+    
     <div class="w-full text-left">
       <div class="bg-white rounded shadow-md ">
         <table class="w-full">
@@ -96,6 +102,7 @@
         </table>
       </div>
     </div>
+    
     <div class="absolute contenedor-principal">
       <WsContact />
     </div>
@@ -124,8 +131,8 @@
               fechaIni: '',
               fechaFin:'',
               userCripack: false
-          }
-          
+          },
+          spiner: true
         };
       },
       mounted() {
@@ -137,11 +144,12 @@
 
     methods: {
             getOts() {
-              this.getParams(); 
+              this.getParams();
               Terceros.historialVentas(this.formParams)
               .then(response => {
                   this.Ventas = response.data.data;
                   this.showBtnAnimation = false;
+                  this.spiner = false
                 }
               ); 
               
@@ -152,6 +160,8 @@
                   this.formParams.idTercero   = this.$cookies.get("User").idtercero;
                   this.formParams.userCripack = this.$cookies.get("User").uso_web_empresa;
                   this.showBtnAnimation     = true;
+                  this.spiner = true
+                  
             },
            
     },
@@ -193,6 +203,21 @@
 .contenedor-principal {
   bottom: 15px;
   right: 0px;
+}
+
+.spinner {
+  border-left-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 
