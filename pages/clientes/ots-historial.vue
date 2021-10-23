@@ -40,11 +40,7 @@
         />
       </div>
     </div>
-    <div v-show="spiner" class="relative">
-      <div class="absolute flex items-center justify-center top-28 left-1/3">
-         <div class="border-b-2 rounded-full border-azul animate-spin h-96 w-96"></div>
-      </div>
-    </div>
+    <Spinner  :spiner="spiner"/>
     
     <div class="w-full text-left">
       <div class="bg-white rounded shadow-md ">
@@ -114,11 +110,11 @@
     import BtnCallToAction    from "@/components/htmlControls/buttonCallToActionLoading";
     import Terceros           from "@/models/Terceros";
     import WsContact from "@/components/htmlControls/wsContact.vue"
-    
+    import Spinner from "@/components/comunes/spinner.vue"
     
     export default {
       name:'ClientesHistorialForm',
-      components : { BtnCallToAction, WsContact },
+      components : { BtnCallToAction, WsContact, Spinner },
       data() {
         return {
           fechaIni        : '',
@@ -161,6 +157,7 @@
                   this.formParams.userCripack = this.$cookies.get("User").uso_web_empresa;
                   this.showBtnAnimation     = true;
                   this.spiner = true
+                  
                   
             },
            

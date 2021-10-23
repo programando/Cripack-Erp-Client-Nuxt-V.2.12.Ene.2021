@@ -17,6 +17,7 @@
         />
       </div>
     </div>
+    <Spinner :spiner="spiner" />
     <div class="w-full text-left">
       <div class="bg-white rounded shadow-md ">
         <table class="w-full">
@@ -93,9 +94,11 @@
     import BtnCallToAction    from "@/components/htmlControls/buttonCallToActionLoading";
     import Terceros           from "@/models/Terceros";
     import WsContact from "@/components/htmlControls/wsContact.vue"
+    import Spinner from "@/components/comunes/spinner.vue"
+
     export default {
       name:'ClientesOtsEstado',
-      components: { BtnCallToAction, WsContact},
+      components: { BtnCallToAction, WsContact, Spinner},
       data: () => ({
             showBtnAnimation : false,
             otsEnProduccion: [],
@@ -103,7 +106,8 @@
             formData: {
                 idTercero:0, 
                 userCripack:false
-            }
+            },
+            spiner: false
       }),
       
       
@@ -115,12 +119,14 @@
       methods: {
           OTsEstadoProduccion () {
              this.showBtnAnimation =  true;
+             this.spiner = true;
              this.formData.idTercero   = this.$cookies.get("User").idtercero;
              this.formData.userCripack = this.$cookies.get("User").uso_web_empresa;   
              Terceros.OTsEstadoProduccion (  this.formData)
             .then( response => {
                 this.otsEnProduccion = response.data;
                 this.showBtnAnimation =  false;
+                this.spiner = false
             }) 
             
           },
