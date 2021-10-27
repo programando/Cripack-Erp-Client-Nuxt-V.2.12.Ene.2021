@@ -88,6 +88,14 @@
                 >Consulta documentos</nuxt-link
               >
             </div>
+            <div
+              @click="gestion = false"
+              class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"
+            >
+              <nuxt-link to="/gestion/datos-caja-maquina"
+                >Datos</nuxt-link
+              >
+            </div>
           </div>
         </div>
 
