@@ -3,26 +3,26 @@
     <div class="mx-10 mt-10">
       <div class="flex flex-wrap">
         <div class="w-full">
-          <ul class="flex justify-center pt-3 pb-4 mb-0 space-x-4 list-none">
-            <li class="flex-auto mr-2 text-center ">
+          <ul class="flex justify-center pt-3 pb-4 mb-0 list-none">
+            <li class="flex-auto text-center ">
               <a
-                class="block px-5 py-3 text-xs font-bold leading-normal uppercase rounded shadow-lg"
+                class="block px-5 py-3 text-xs font-bold leading-normal uppercase rounded"
                 v-on:click="toggleTabs(1)"
                 v-bind:class="{
-                  'text-azul bg-white': openTab !== 1,
-                  'text-white bg-azul': openTab === 1
+                  'text-gray-600 bg-white border-b': openTab !== 1,
+                  'text-azul bg-white border-l border-t border-r': openTab === 1
                 }"
               >
                 Datos Caja-Máquina
               </a>
             </li>
-            <li class="flex-auto mr-2 text-center ">
+            <li class="flex-auto text-center ">
               <a
-                class="block px-5 py-3 text-xs font-bold leading-normal uppercase rounded shadow-lg"
+                class="block px-5 py-3 text-xs font-bold leading-normal uppercase rounded"
                 v-on:click="toggleTabs(2)"
                 v-bind:class="{
-                  'text-azul bg-white': openTab !== 2,
-                  'text-white bg-azul': openTab === 2
+                  'text-gray-600 bg-white border-b': openTab !== 2,
+                  'text-azul bg-white border-l border-t border-r': openTab === 2
                 }"
               >
                 Datos Caja-Máquina
@@ -30,15 +30,15 @@
             </li>
           </ul>
           <div
-            class="relative w-full min-h-full mb-6 break-words bg-white rounded shadow-lg"
+            class="relative w-full h-full mb-6 break-words bg-white rounded"
           >
-            <div class="py-5 ">
+            <div class="py-5">
               <div class="">
                 <div
                   v-bind:class="{ hidden: openTab !== 1, block: openTab === 1 }"
-                  class="flex space-x-4"
+                  class="flex items-start justify-start space-x-2"
                 >
-                  <table class="w-full">
+                  <table class="w-full h-auto">
                     <thead
                       class="items-center w-full text-xl font-semibold border text-azul"
                     >
@@ -51,21 +51,21 @@
                         <td class="w-6/12 px-4 border">Dimensiones</td>
                         <td class="w-2/12 text-center border ">
                           <input
-                            class="w-40 px-4 text-right focus:outline-none"
+                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
                             type="text"
                             v-model="datos.cajMaq_Largo"
                           />
                         </td>
                         <td class="w-2/12 text-center border ">
                           <input
-                            class="w-40 px-4 text-right focus:outline-none"
+                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
                             type="text"
                             v-model="datos.cajMaq_Ancho"
                           />
                         </td>
                         <td class="w-2/12 text-center border ">
                           <input
-                            class="w-40 px-4 text-right focus:outline-none"
+                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
                             type="text"
                             v-model="datos.cajMaq_Alto"
                           />
@@ -74,7 +74,7 @@
                       <tr class="border">
                         <td class="w-6/12 px-4 border">Estilos</td>
                         <td colspan="3" class="text-center">
-                          <select class="w-40 px-2" name="select">
+                          <select class="w-40 px-2 cursor-pointer" name="select">
                             <option value="baul">Baul</option>
                             <option value="automatico">Automatico</option>
                             <option value="cuatroPuntas">Cuatro Puntas</option>
@@ -88,7 +88,7 @@
                         <td class="w-6/12 px-4 border">Cabida</td>
                         <td colspan="3" class="text-center">
                           <input
-                            class="w-40 px-4 text-right focus:outline-none"
+                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
                             type="text"
                             v-model="datos.cajMaq_Cabida"
                           />
@@ -98,7 +98,7 @@
                         <td class="w-6/12 px-4 border">Tiraje</td>
                         <td colspan="3" class="text-center">
                           <input
-                            class="w-40 px-4 text-right focus:outline-none"
+                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
                             type="text"
                             v-model="datos.cajMaq_Tiraje"
                           />
@@ -107,7 +107,7 @@
                       <tr class="border">
                         <td class="w-6/12 px-4 border">Formato-Máquina</td>
                         <td colspan="3" class="text-center">
-                          <select class="w-40 px-2" name="select">
+                          <select class="w-40 px-2 cursor-pointer" name="select">
                             <option value="formatoMaquina"
                               >Formato Máquina</option
                             >
@@ -122,7 +122,7 @@
                         <td class="w-6/12 px-4 border">Pedidos al año</td>
                         <td colspan="3" class="text-center">
                           <input
-                            class="w-40 px-4 text-right focus:outline-none"
+                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
                             type="text"
                             v-model="datos.cajMaq_PedAnio"
                           />
@@ -134,7 +134,7 @@
                         </td>
                         <td colspan="3" class="text-center">
                           <input
-                            class="w-40 px-4 text-right focus:outline-none"
+                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
                             type="text"
                             v-model="datos.cajMaq_VrHrMaq"
                           />
@@ -146,7 +146,7 @@
                         </td>
                         <td colspan="3" class="text-center">
                           <input
-                            class="w-40 px-4 text-right focus:outline-none"
+                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
                             type="text"
                             v-model="datos.cajMaq_VrPnHrMaq"
                           />
@@ -158,7 +158,7 @@
                         </td>
                         <td colspan="3" class="text-center">
                           <input
-                            class="w-40 px-4 text-right focus:outline-none"
+                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
                             type="text"
                             v-model="datos.cajMaq_Velocidad"
                           />
@@ -182,7 +182,7 @@
                           Contra-Hendido a usar
                         </td>
                         <td colspan="3" class="text-center border ">
-                          <select class="w-40 px-2" name="select">
+                          <select class="w-40 px-2 cursor-pointer" name="select">
                             <option value="baul">Basic</option>
                             <option value="automatico">Dinamic</option>
                             <option value="cuatroPuntas">Prpo RS</option>
@@ -197,13 +197,13 @@
                           Duracion Teórica(filtros)
                         </td>
                         <td colspan="3" class="text-center">
-                          Formula
+                          {{contraHendido.contraHendTiras_Duracion}}
                         </td>
                       </tr>
                       <tr class="border">
                         <td class="w-6/12 px-4 border">Vida util considerada(%)</td>
                         <td colspan="3" class="text-center">
-                          75%
+                           {{contraHendido.contraHendTiras_VidaUtil}}
                         </td>
                       </tr>
                       <tr class="border">
@@ -234,25 +234,72 @@
                       </tr>
                       <tr class="border">
                         <td class="w-6/12 px-4 border">
-                          Relación Valor Producido/ Valor Hora Máquina
+                          Area Caja (cm2)
                         </td>
                         <td colspan="3" class="text-center">
                           <input
-                            class="w-40 px-4 text-right focus:outline-none"
+                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
                             type="text"
-                            v-model="datos.cajMaq_VrPnHrMaq"
+                            
                           />
                         </td>
                       </tr>
                       <tr class="border">
                         <td class="w-6/12 px-4 border">
-                          Velocidad de Trabajo(golpes/hora)
+                          Duracion  Teórica (tiros)
                         </td>
                         <td colspan="3" class="text-center">
                           <input
-                            class="w-40 px-4 text-right focus:outline-none"
+                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
                             type="text"
-                            v-model="datos.cajMaq_Velocidad"
+                            
+                          />
+                        </td>
+                      </tr>
+                      <tr class="border">
+                        <td class="w-6/12 px-4 border">
+                         Vida útil considerada (%)
+                        <td colspan="3" class="text-center">
+                          <input
+                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
+                            type="text"
+                            
+                          />
+                        </td>
+                      </tr>
+                      <tr class="border">
+                        <td class="w-6/12 px-4 border">
+                          Duracion Estimada (tiros)
+                        </td>
+                        <td colspan="3" class="text-center">
+                          <input
+                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
+                            type="text"
+                            
+                          />
+                        </td>
+                      </tr>
+                      <tr class="border">
+                        <td class="w-6/12 px-4 border">
+                          Pines Pertinax Requeridos por cabida
+                        </td>
+                        <td colspan="3" class="text-center">
+                          <input
+                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
+                            type="text"
+                            
+                          />
+                        </td>
+                      </tr>
+                      <tr class="border">
+                        <td class="w-6/12 px-4 border">
+                          Pines Totales
+                        </td>
+                        <td colspan="3" class="text-center">
+                          <input
+                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
+                            type="text"
+                            
                           />
                         </td>
                       </tr>
@@ -296,6 +343,22 @@ export default {
         cajMaq_VrHrMaq: 50.0,
         cajMaq_VrPnHrMaq: 2.0,
         cajMaq_Velocidad: 5.0
+      },
+      contraHendido: {
+        contraHendTiras_Duracion: "formula",
+        contraHendTiras_VidaUtil: 75,
+        contraHendTiras_Cambios: "formula",
+        contraHendTiras_LongGrafa: "formula",
+        contraHendTiras_Dsprdcio: 15,
+        contraHendTiras_LongEstimada: "formula",
+      },
+      petrinax: {
+        contraHendiPrtnax_AreaCaja: "formula",
+        contraHendiPrtnax_Duracion: "formula",
+        contraHendiPrtnax_VidaUtil: 100,
+        contraHendiPrtnax_DuracEstimada: "formula",
+        contraHendiPrtnax_PinesRquridos: 6,
+        contraHendiPrtnax_PinesTotales: "formula"
       }
     };
   },
