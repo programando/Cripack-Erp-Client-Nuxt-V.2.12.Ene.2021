@@ -63,7 +63,7 @@
           </div>
         </div>
 
-        <div v-if="isDevelopment == 'development'" class="relative text-white">
+        <div v-if="esUsuarioCripack" class="relative text-white">
           <button @click="viewGestion" class="px-2 ">
             Gestión
           </button>
@@ -80,6 +80,16 @@
               >
               
             </div>
+             
+            <div
+              @click="gestion = false"
+              class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"
+            >
+              <nuxt-link to="/gestion/datos-caja-maquina"
+                >Cito vs Pertinax</nuxt-link
+              >
+            </div>
+
             <div
               @click="gestion = false"
               class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"
@@ -88,14 +98,9 @@
                 >Consulta documentos</nuxt-link
               >
             </div>
-            <div
-              @click="gestion = false"
-              class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"
-            >
-              <nuxt-link to="/gestion/datos-caja-maquina"
-                >Datos</nuxt-link
-              >
-            </div>
+
+
+
           </div>
         </div>
 
@@ -127,20 +132,25 @@ export default {
 
   data() {
     return {
-      idioma: false,
-      menu: false,
+      idioma       : false,
+      menu         : false,
       isDevelopment: process.env.NODE_ENV,
-      subMenu: false,
-      gestion: false
+      subMenu      : false,
+      gestion      : false 
+ 
     };
   },
+ 
   computed: {
     companyName() {
       return this.$cookies.get("User").nomtercero;
     },
     contactName() {
       return this.$cookies.get("User").nombre_usuario;
-    }
+    },
+    esUsuarioCripack() {
+        return this.$cookies.get("User").uso_web_empresa;   
+    },
   },
   methods: {
     logout() {

@@ -48,7 +48,7 @@
                     </thead>
                     <tbody class="w-full">
                       <tr class="border">
-                        <td class="w-6/12 px-4 border">Dimensiones</td>
+                        <td class="w-6/12 px-4 text-sm border">Dimensiones</td>
                         <td class="w-2/12 text-center border ">
                           <input
                             class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
@@ -72,7 +72,7 @@
                         </td>
                       </tr>
                       <tr class="border">
-                        <td class="w-6/12 px-4 border">Estilos</td>
+                        <td class="w-6/12 px-4 text-sm border">Estilos</td>
                         <td colspan="3" class="text-center">
                           <select class="w-40 px-2 cursor-pointer" name="select">
                             <option value="baul">Baul</option>
