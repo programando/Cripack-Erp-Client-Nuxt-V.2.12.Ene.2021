@@ -92,10 +92,11 @@
       data: () => ({
             showBtnAnimation : false,
             formData: {
+                alto     : '',
+                ancho    : '',
                 idTercero: 0,
                 largo    : '',
-                ancho    : '',
-                alto     : ''
+                texto    : ''
             },
             errors :[],
       }),
