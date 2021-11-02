@@ -2,7 +2,7 @@
   <div class="pt-24 mx-2 font-Montserrat">
     <div class="flex justify-between my-2">
       <h3 class="mt-1 text-3xl">
-        Estado Órdenes Trabajo
+        Estado Órdenes de Trabajo
       </h3>
       <div class="mt-2"></div>
       <div class="flex items-center">
@@ -93,8 +93,8 @@
 <script>
     import BtnCallToAction    from "@/components/htmlControls/buttonCallToActionLoading";
     import Terceros           from "@/models/Terceros";
-    import WsContact from "@/components/htmlControls/wsContact.vue"
-    import Spinner from "@/components/comunes/spinner.vue"
+    import WsContact          from "@/components/htmlControls/wsContact.vue"
+    import Spinner            from "@/components/comunes/spinner.vue"
 
     export default {
       name:'ClientesOtsEstado',

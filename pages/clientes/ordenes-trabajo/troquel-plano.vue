@@ -2,12 +2,27 @@
   <div class="pt-20">
     <div class="mx-40 mt-2 border shadow-2xl">
       <h2
-        class="flex justify-center w-full py-2 text-2xl text-black bg-gray-100 "
+        class="flex justify-center w-full py-1 text-2xl text-black bg-gray-100 "
       >
         Troqueles planos
       </h2>
       <form enctype="multipart/form-data"  accept-charset="UTF-8">
       <div class="mx-16 mt-4 ">
+        
+         <div class="flex mb-2 items-centerspace-x-2">
+          <label class="w-32 mr-4 text-sm">Cliente :</label>
+  
+          <InputBasic
+            borderColor="extra"
+            colorError="red"
+            type="text"
+            v-model="formData.referencia"
+            :errors="errors.referencia"
+            width="w-full"
+          ></InputBasic>
+ 
+        </div>
+
         <div class="flex items-centerspace-x-2">
           <label class="w-32 mr-4 text-sm">Referencia :</label>
   
@@ -21,6 +36,7 @@
           ></InputBasic>
  
         </div>
+
         <div class="mt-2 ">
           <div class="grid grid-cols-3">
             <div class="flex ">
@@ -200,21 +216,21 @@
   import "nuxt-dropzone/dropzone.css";
   import OrdenesTrabajo from "@/models/OrdenesTrabajo";
 
-  import BtnCallToAction from "@/components/htmlControls/buttonCallToActionLoading";
-  import Checkbox from "@/components/htmlControls/checkbox";
-  import InputBasic from "@/components/htmlControls/inputBasic";
-  import OtsAyudaPega from "@/components/solicitudesOts/ayudaPega.vue";
-  import OtsCabida from "@/components/solicitudesOts/cabidad.vue";
-  import OtsCalibre from "@/components/solicitudesOts/calibre.vue";
-  import OtsFrecuencia from "@/components/solicitudesOts/frecuencia.vue";
-  import OtsMaquina from "@/components/solicitudesOts/maquina.vue";
-  import OtsPunzones from "@/components/solicitudesOts/punzones.vue";
-  import OtsSustratos from "@/components/solicitudesOts/sustrato.vue";
-  import OtsTiposArreglos from "@/components/solicitudesOts/tipoArreglo.vue";
-  import OtsTiraje from "@/components/solicitudesOts/tiraje.vue";
-  import RadioButton from "~/components/htmlControls/radioButton.vue";
-  import TextArea from "@/components/htmlControls/textArea.vue"
-  import vSelect from "vue-select";
+  import BtnCallToAction      from "@/components/htmlControls/buttonCallToActionLoading";
+  import Checkbox             from "@/components/htmlControls/checkbox";
+  import InputBasic           from "@/components/htmlControls/inputBasic";
+  import OtsAyudaPega         from "@/components/solicitudesOts/ayudaPega.vue";
+  import OtsCabida            from "@/components/solicitudesOts/cabidad.vue";
+  import OtsCalibre           from "@/components/solicitudesOts/calibre.vue";
+  import OtsFrecuencia        from "@/components/solicitudesOts/frecuencia.vue";
+  import OtsMaquina           from "@/components/solicitudesOts/maquina.vue";
+  import OtsPunzones          from "@/components/solicitudesOts/punzones.vue";
+  import OtsSustratos         from "@/components/solicitudesOts/sustrato.vue";
+  import OtsTiposArreglos     from "@/components/solicitudesOts/tipoArreglo.vue";
+  import OtsTiraje            from "@/components/solicitudesOts/tiraje.vue";
+  import RadioButton          from "~/components/htmlControls/radioButton.vue";
+  import TextArea             from "@/components/htmlControls/textArea.vue"
+  import vSelect              from "vue-select";
   
 
 export default {

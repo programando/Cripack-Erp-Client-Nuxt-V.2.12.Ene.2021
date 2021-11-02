@@ -28,7 +28,7 @@
           tiposArreglo: [],
           itemSelected: 'Seleccione una opción...',
           idItemSelected:0,
-          prueba: true
+          prueba: false
       }
     },
 
