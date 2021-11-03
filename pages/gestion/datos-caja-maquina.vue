@@ -29,9 +29,7 @@
               </a>
             </li>
           </ul>
-          <div
-            class="relative w-full h-full mb-6 break-words bg-white rounded"
-          >
+          <div class="relative w-full h-full mb-6 break-words bg-white rounded">
             <div class="py-5">
               <div class="">
                 <div
@@ -48,33 +46,38 @@
                     </thead>
                     <tbody class="w-full">
                       <tr class="border">
-                        <td class="w-6/12 px-4 text-sm border">Dimensiones</td>
-                        <td class="w-2/12 text-center border ">
-                          <input
-                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
-                            type="text"
+                        <td class="w-6/12 px-4 py-1 text-sm border">
+                          Dimensiones
+                        </td>
+                        <td class="w-2/12 text-center border bg-azul">
+                          <vue-numeric
+                            separator=","
+                            class="w-32 px-2 py-1 text-right text-white bg-azul focus:outline-none"
                             v-model="datos.cajMaq_Largo"
-                          />
+                          ></vue-numeric>
                         </td>
-                        <td class="w-2/12 text-center border ">
-                          <input
-                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
-                            type="text"
+                        <td class="w-2/12 text-center border bg-azul">
+                          <vue-numeric
+                            separator=","
+                            class="w-32 px-2 py-1 text-right text-white bg-azul focus:outline-none"
                             v-model="datos.cajMaq_Ancho"
-                          />
+                          ></vue-numeric>
                         </td>
-                        <td class="w-2/12 text-center border ">
-                          <input
-                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
-                            type="text"
+                        <td class="w-2/12 text-center border bg-azul">
+                          <vue-numeric
+                            separator=","
+                            class="w-32 px-2 py-1 text-right text-white bg-azul focus:outline-none"
                             v-model="datos.cajMaq_Alto"
-                          />
+                          ></vue-numeric>
                         </td>
                       </tr>
                       <tr class="border">
-                        <td class="w-6/12 px-4 text-sm border">Estilos</td>
+                        <td class="w-6/12 px-4 py-1 text-sm border">Estilos</td>
                         <td colspan="3" class="text-center">
-                          <select class="w-40 px-2 cursor-pointer" name="select">
+                          <select
+                            class="w-40 px-2 py-1 text-sm cursor-pointer"
+                            name="select"
+                          >
                             <option value="baul">Baul</option>
                             <option value="automatico">Automatico</option>
                             <option value="cuatroPuntas">Cuatro Puntas</option>
@@ -85,7 +88,7 @@
                         </td>
                       </tr>
                       <tr class="border">
-                        <td class="w-6/12 px-4 border">Cabida</td>
+                        <td class="w-6/12 px-4 py-1 text-sm border">Cabida</td>
                         <td colspan="3" class="text-center">
                           <input
                             class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
@@ -95,7 +98,7 @@
                         </td>
                       </tr>
                       <tr class="border">
-                        <td class="w-6/12 px-4 border">Tiraje</td>
+                        <td class="w-6/12 px-4 py-1 text-sm border">Tiraje</td>
                         <td colspan="3" class="text-center">
                           <input
                             class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
@@ -105,9 +108,14 @@
                         </td>
                       </tr>
                       <tr class="border">
-                        <td class="w-6/12 px-4 border">Formato-Máquina</td>
+                        <td class="w-6/12 px-4 py-1 text-sm border">
+                          Formato-Máquina
+                        </td>
                         <td colspan="3" class="text-center">
-                          <select class="w-40 px-2 cursor-pointer" name="select">
+                          <select
+                            class="w-40 px-2 py-1 text-sm cursor-pointer"
+                            name="select"
+                          >
                             <option value="formatoMaquina"
                               >Formato Máquina</option
                             >
@@ -119,7 +127,9 @@
                         </td>
                       </tr>
                       <tr class="border">
-                        <td class="w-6/12 px-4 border">Pedidos al año</td>
+                        <td class="w-6/12 px-4 py-1 text-sm border">
+                          Pedidos al año
+                        </td>
                         <td colspan="3" class="text-center">
                           <input
                             class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
@@ -129,7 +139,7 @@
                         </td>
                       </tr>
                       <tr class="border">
-                        <td class="w-6/12 px-4 border">
+                        <td class="w-6/12 px-4 py-1 text-sm border">
                           Valor Hora Máquina($)
                         </td>
                         <td colspan="3" class="text-center">
@@ -141,7 +151,7 @@
                         </td>
                       </tr>
                       <tr class="border">
-                        <td class="w-6/12 px-4 border">
+                        <td class="w-6/12 px-4 py-1 text-sm border">
                           Relación Valor Producido/ Valor Hora Máquina
                         </td>
                         <td colspan="3" class="text-center">
@@ -153,7 +163,7 @@
                         </td>
                       </tr>
                       <tr class="border">
-                        <td class="w-6/12 px-4 border">
+                        <td class="w-6/12 px-4 py-1 text-sm border">
                           Velocidad de Trabajo(golpes/hora)
                         </td>
                         <td colspan="3" class="text-center">
@@ -178,11 +188,14 @@
                     </thead>
                     <tbody class="w-full">
                       <tr class="border">
-                        <td class="w-6/12 px-4 border">
+                        <td class="w-6/12 px-4 py-1 text-sm border">
                           Contra-Hendido a usar
                         </td>
                         <td colspan="3" class="text-center border ">
-                          <select class="w-40 px-2 cursor-pointer" name="select">
+                          <select
+                            class="w-40 px-2 py-1 text-sm cursor-pointer"
+                            name="select"
+                          >
                             <option value="baul">Basic</option>
                             <option value="automatico">Dinamic</option>
                             <option value="cuatroPuntas">Prpo RS</option>
@@ -193,113 +206,117 @@
                         </td>
                       </tr>
                       <tr class="border">
-                        <td class="w-6/12 px-4 border">
+                        <td class="w-6/12 px-4 py-1 text-sm border">
                           Duracion Teórica(filtros)
                         </td>
-                        <td colspan="3" class="text-center">
-                          {{contraHendido.contraHendTiras_Duracion}}
+                        <td colspan="3" class="py-1 text-sm text-center">
+                          {{ contraHendido.contraHendTiras_Duracion }}
                         </td>
                       </tr>
                       <tr class="border">
-                        <td class="w-6/12 px-4 border">Vida util considerada(%)</td>
-                        <td colspan="3" class="text-center">
-                           {{contraHendido.contraHendTiras_VidaUtil}}
+                        <td class="w-6/12 px-4 py-1 text-sm border">
+                          Vida util considerada(%)
+                        </td>
+                        <td colspan="3" class="py-1 text-sm text-center">
+                          {{ contraHendido.contraHendTiras_VidaUtil }}
                         </td>
                       </tr>
                       <tr class="border">
-                        <td class="w-6/12 px-4 border">Cambios requeridos</td>
-                        <td colspan="3" class="text-center">
+                        <td class="w-6/12 px-4 py-1 text-sm border">
+                          Cambios requeridos
+                        </td>
+                        <td colspan="3" class="py-1 text-sm text-center">
                           Formula
                         </td>
                       </tr>
                       <tr class="border">
-                        <td class="w-6/12 px-4 border">Logintud Grafas(cm)</td>
-                        <td colspan="3" class="text-center">
+                        <td class="w-6/12 px-4 py-1 text-sm border">
+                          Logintud Grafas(cm)
+                        </td>
+                        <td colspan="3" class="py-1 text-sm text-center">
                           Formula
                         </td>
                       </tr>
                       <tr class="border">
-                        <td class="w-6/12 px-4 border">Despercico Estimado Contra - Hendido</td>
-                        <td colspan="3" class="text-center">
+                        <td class="w-6/12 px-4 py-1 text-sm border">
+                          Despercico Estimado Contra - Hendido
+                        </td>
+                        <td colspan="3" class="py-1 text-sm text-center">
                           15%
                         </td>
                       </tr>
                       <tr class="border">
-                        <td class="w-6/12 px-4 border">
+                        <td class="w-6/12 px-4 py-1 text-sm border">
                           Loong. Contra-Hendido Estimada(cms)
                         </td>
-                        <td colspan="3" class="text-center">
+                        <td colspan="3" class="py-1 text-sm text-center">
                           Formula
                         </td>
                       </tr>
                       <tr class="border">
-                        <td class="w-6/12 px-4 border">
+                        <td class="w-6/12 px-4 py-1 text-sm border">
                           Area Caja (cm2)
                         </td>
                         <td colspan="3" class="text-center">
                           <input
                             class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
                             type="text"
-                            
                           />
                         </td>
                       </tr>
                       <tr class="border">
-                        <td class="w-6/12 px-4 border">
-                          Duracion  Teórica (tiros)
+                        <td class="w-6/12 px-4 py-1 text-sm border">
+                          Duracion Teórica (tiros)
                         </td>
                         <td colspan="3" class="text-center">
                           <input
                             class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
                             type="text"
-                            
                           />
                         </td>
                       </tr>
                       <tr class="border">
-                        <td class="w-6/12 px-4 border">
-                         Vida útil considerada (%)
+                        <td class="w-6/12 px-4 py-1 text-sm border">
+                          Vida útil considerada (%)
+                        </td>
+
                         <td colspan="3" class="text-center">
                           <input
                             class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
                             type="text"
-                            
                           />
                         </td>
                       </tr>
                       <tr class="border">
-                        <td class="w-6/12 px-4 border">
+                        <td class="w-6/12 px-4 py-1 text-sm border">
                           Duracion Estimada (tiros)
                         </td>
                         <td colspan="3" class="text-center">
                           <input
                             class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
                             type="text"
-                            
                           />
                         </td>
                       </tr>
                       <tr class="border">
-                        <td class="w-6/12 px-4 border">
+                        <td class="w-6/12 px-4 py-1 text-sm border">
                           Pines Pertinax Requeridos por cabida
                         </td>
                         <td colspan="3" class="text-center">
                           <input
                             class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
                             type="text"
-                            
                           />
                         </td>
                       </tr>
                       <tr class="border">
-                        <td class="w-6/12 px-4 border">
+                        <td class="w-6/12 px-4 py-1 text-sm border">
                           Pines Totales
                         </td>
                         <td colspan="3" class="text-center">
                           <input
                             class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
                             type="text"
-                            
                           />
                         </td>
                       </tr>
@@ -329,7 +346,9 @@
 </template>
 
 <script>
+import VueNumeric from "vue-numeric";
 export default {
+  components: { VueNumeric },
   data() {
     return {
       openTab: 1,
@@ -350,7 +369,7 @@ export default {
         contraHendTiras_Cambios: "formula",
         contraHendTiras_LongGrafa: "formula",
         contraHendTiras_Dsprdcio: 15,
-        contraHendTiras_LongEstimada: "formula",
+        contraHendTiras_LongEstimada: "formula"
       },
       petrinax: {
         contraHendiPrtnax_AreaCaja: "formula",

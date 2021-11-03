@@ -10,7 +10,7 @@
         <div class="mx-16 mt-4 ">
           <div class="flex mb-2 items-centerspace-x-2">
             <label class="w-32 mr-4 text-sm">Cliente :</label>
-            <div>
+            <div class="ml-5">
               <button
                 class="px-3 py-1 text-white bg-green-600 bg-opacity-75 rounded-lg focus:outline-none "
                 @click.prevent="modal = !modal"
@@ -19,42 +19,39 @@
               </button>
             </div>
             <input
-              class="w-40 mx-4 border rounded focus:outline-none"
+              class="mx-4 border rounded w-28 focus:outline-none"
               type="text"
             />
-            <input class="w-full px-4 border rounded" placeholder="Nombre del cliente" disabled type="text">
+            <input
+              class="w-full px-4 border rounded"
+              placeholder="Nombre del cliente"
+              disabled
+              type="text"
+            />
           </div>
 
-          <div
-            class="fixed inset-0 z-10 overflow-y-auto"
-            aria-labelledby="modal-title"
-            role="dialog"
-            aria-modal="true"
-            v-if="modal"
-          >
-            <div
-              class="min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0"
-            >
+          <div class="fixed inset-0 z-10 " v-if="modal">
+            <div class="px-4 pt-4 pb-20 text-center sm:block sm:p-0">
               <div
                 class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75"
                 aria-hidden="true"
               ></div>
 
-              <span
-                class="hidden sm:inline-block sm:align-middle sm:h-screen"
-                aria-hidden="true"
-                >&#8203;</span
-              >
-
               <div
-                class="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-lg md:w-full"
+                class="relative inline-block w-3/6 overflow-hidden transition-all transform bg-white rounded-lg shadow-xl top-60"
               >
                 <div class="px-4 pt-5 pb-4 bg-white">
                   <div class="">
-                    <div class="mt-3 sm:mt-0">
-                      <input class="px-4 py-1 border rounded w-80 focus:outline-none" type="text">
+                    <div
+                      class="flex items-center justify-center mt-3 space-x-4 sm:mt-0"
+                    >
+                      <input
+                        class="px-4 py-1 border rounded w-80 focus:outline-none"
+                        type="text"
+                      />
+                      <label>Buscar Cliente</label>
                     </div>
-                    <div>
+                    <div class="mx-10">
                       <table class="w-full mt-2 border">
                         <thead class="border">
                           <tr>
@@ -67,7 +64,13 @@
                           <tr>
                             <td class="w-5/12 px-2 border-l">00014</td>
                             <td class="w-5/12 px-2 border-l">Luis</td>
-                            <td class="flex items-end justify-end mr-1"><img class="w-6 h-6 cursor-pointer" src="/images/flecha-derecha.svg" alt=""></td>
+                            <td class="flex items-end justify-end mr-1">
+                              <img
+                                class="w-6 h-6 cursor-pointer"
+                                src="/images/flecha-derecha.svg"
+                                alt=""
+                              />
+                            </td>
                           </tr>
                         </tbody>
                       </table>
@@ -75,9 +78,8 @@
                   </div>
                 </div>
                 <div
-                  class="px-4 py-3 bg-gray-50 sm:px-6 sm:flex sm:flex-row-reverse"
+                  class="px-4 py-3 mx-10 bg-gray-50 sm:px-6 sm:flex sm:flex-row-reverse"
                 >
-                  
                   <button
                     type="button"
                     @click="modal = false"
@@ -90,8 +92,8 @@
             </div>
           </div>
 
-          <div class="flex items-centerspace-x-2">
-            <label class="w-32 mr-4 text-sm">Referencia :</label>
+          <div class="flex items-centerspace-x-1">
+            <label class="w-32 mr-3 text-sm">Referencia :</label>
 
             <InputBasic
               borderColor="extra"
