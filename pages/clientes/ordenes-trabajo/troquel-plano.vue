@@ -45,11 +45,13 @@
                     <div
                       class="flex items-center justify-center mt-3 space-x-4 sm:mt-0"
                     >
+                       <label>Buscar Cliente :</label>
                       <input
                         class="px-4 py-1 border rounded w-80 focus:outline-none"
                         type="text"
+                        placeholder="buscar por código o nombre  "
                       />
-                      <label>Buscar Cliente</label>
+                     
                     </div>
                     <div class="mx-10">
                       <table class="w-full mt-2 border">
@@ -61,6 +63,7 @@
                           </tr>
                         </thead>
                         <tbody class="border">
+                         
                           <tr>
                             <td class="w-5/12 px-2 border-l">00014</td>
                             <td class="w-5/12 px-2 border-l">Luis</td>
@@ -72,6 +75,7 @@
                               />
                             </td>
                           </tr>
+
                         </tbody>
                       </table>
                     </div>

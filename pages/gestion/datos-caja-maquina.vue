@@ -6,26 +6,26 @@
           <ul class="flex justify-center pt-3 pb-4 mb-0 list-none">
             <li class="flex-auto text-center ">
               <a
-                class="block px-5 py-3 text-xs font-bold leading-normal uppercase rounded"
+                class="block px-5 py-3 text-xl font-bold leading-normal uppercase rounded cursor-pointer"
                 v-on:click="toggleTabs(1)"
                 v-bind:class="{
                   'text-gray-600 bg-white border-b': openTab !== 1,
                   'text-azul bg-white border-l border-t border-r': openTab === 1
                 }"
               >
-                Datos Caja-Máquina
+                Datos básicos
               </a>
             </li>
             <li class="flex-auto text-center ">
               <a
-                class="block px-5 py-3 text-xs font-bold leading-normal uppercase rounded"
+                class="block px-5 py-3 text-xl font-bold leading-normal uppercase rounded cursor-pointer"
                 v-on:click="toggleTabs(2)"
                 v-bind:class="{
                   'text-gray-600 bg-white border-b': openTab !== 2,
                   'text-azul bg-white border-l border-t border-r': openTab === 2
                 }"
               >
-                Datos Caja-Máquina
+                Cito vs Pertinax
               </a>
             </li>
           </ul>
@@ -41,7 +41,7 @@
                       class="items-center w-full text-xl font-semibold border text-azul"
                     >
                       <tr class="w-full py-1">
-                        <th colspan="4" class="w-full">Datos Caja-Máquina</th>
+                        <th colspan="4" class="w-full">Caja-Máquina</th>
                       </tr>
                     </thead>
                     <tbody class="w-full">
@@ -182,7 +182,7 @@
                     >
                       <tr class="w-full py-1">
                         <th colspan="4" class="w-full">
-                          Información Contra-Hendido
+                           Contra-Hendido
                         </th>
                       </tr>
                     </thead>
