@@ -31,59 +31,6 @@
           </ul>
           <div class="relative w-full h-full mb-6 break-words bg-white rounded">
             <div class="py-5">
-<<<<<<< HEAD
-              <div
-                v-bind:class="{ hidden: openTab !== 1, block: openTab === 1 }"
-                class="flex items-start justify-start space-x-2"
-              >
-                <table class="w-full h-auto">
-                  <thead
-                    class="items-center w-full text-xl font-semibold border text-azul"
-                  >
-                    <tr class="w-full py-1">
-                      <th colspan="4" class="w-full">Datos Caja-Máquina</th>
-                    </tr>
-                  </thead>
-                  <tbody class="w-full">
-                    <tr class="border">
-                      <td class="w-6/12 px-4 py-1 text-sm border">
-                        Dimensiones
-                      </td>
-                      <td class="w-2/12 text-center border bg-azul">
-                        <vue-numeric
-                          separator=","
-                          class="w-32 px-2 py-1 text-right text-white bg-azul focus:outline-none"
-                          v-model="datos.cajMaq_Largo"
-                        ></vue-numeric>
-                      </td>
-                      <td class="w-2/12 text-center border bg-azul">
-                        <vue-numeric
-                          separator=","
-                          class="w-32 px-2 py-1 text-right text-white bg-azul focus:outline-none"
-                          v-model="datos.cajMaq_Ancho"
-                        ></vue-numeric>
-                      </td>
-                      <td class="w-2/12 text-center border bg-azul">
-                        <vue-numeric
-                          separator=","
-                          class="w-32 px-2 py-1 text-right text-white bg-azul focus:outline-none"
-                          v-model="datos.cajMaq_Alto"
-                        ></vue-numeric>
-                      </td>
-                    </tr>
-                    <tr class="border">
-                      <td class="w-6/12 px-4 py-1 text-sm border">Estilos</td>
-                      <td colspan="3" class="text-center">
-                        <select
-                          class="w-40 px-2 py-1 text-sm cursor-pointer"
-                          name="select"
-                        >
-                          <option value="baul">Baul</option>
-                          <option value="automatico">Automatico</option>
-                          <option value="cuatroPuntas">Cuatro Puntas</option>
-                          <option value="seisPuntas" selected
-                            >Seis Puntas</option
-=======
               <div class="">
                 <div
                   v-bind:class="{ hidden: openTab !== 1, block: openTab === 1 }"
@@ -130,7 +77,6 @@
                           <select
                             class="w-40 px-2 py-1 text-sm cursor-pointer"
                             name="select"
->>>>>>> d17c9794a3036ebcd7b765e219b85358f7e160a2
                           >
                         </select>
                       </td>
@@ -431,21 +377,14 @@
                       </tr>
                     </tbody>
                   </table>
-<<<<<<< HEAD
-                  <table class="w-8/12 border mt-14">
-                    <thead class="border">
-                      <tr>
-                        <th colspan="4">Comparacion Valor Platina 1mm v/s Contra-Hendido</th>
-=======
-                  <table class="w-full">
+                  <table class="w-8/12 mt-16">
                     <thead
                       class="items-center w-full text-xl font-semibold border text-azul"
                     >
                       <tr class="w-full py-1">
                         <th colspan="4" class="w-full">
-                           Contra-Hendido
+                          Comparacion Valor Platina 1mm v/s Contra-Hendido
                         </th>
->>>>>>> d17c9794a3036ebcd7b765e219b85358f7e160a2
                       </tr>
                     </thead>
                     <tbody>
@@ -470,7 +409,6 @@
                     <div class="w-2/12 py-10 mr-10 text-center border">
                       <p>506,014</p>
                     </div>
-                    
                   </div>
                 </div>
               </div>
@@ -478,6 +416,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
   </div>
 </template>
