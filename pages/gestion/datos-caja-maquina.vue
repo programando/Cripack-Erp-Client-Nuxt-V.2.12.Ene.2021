@@ -31,310 +31,387 @@
           </ul>
           <div class="relative w-full h-full mb-6 break-words bg-white rounded">
             <div class="py-5">
-              <div class="">
-                <div
-                  v-bind:class="{ hidden: openTab !== 1, block: openTab === 1 }"
-                  class="flex items-start justify-start space-x-2"
-                >
-                  <table class="w-full h-auto">
-                    <thead
-                      class="items-center w-full text-xl font-semibold border text-azul"
-                    >
-                      <tr class="w-full py-1">
-                        <th colspan="4" class="w-full">Datos Caja-Máquina</th>
-                      </tr>
-                    </thead>
-                    <tbody class="w-full">
-                      <tr class="border">
-                        <td class="w-6/12 px-4 py-1 text-sm border">
-                          Dimensiones
-                        </td>
-                        <td class="w-2/12 text-center border bg-azul">
-                          <vue-numeric
-                            separator=","
-                            class="w-32 px-2 py-1 text-right text-white bg-azul focus:outline-none"
-                            v-model="datos.cajMaq_Largo"
-                          ></vue-numeric>
-                        </td>
-                        <td class="w-2/12 text-center border bg-azul">
-                          <vue-numeric
-                            separator=","
-                            class="w-32 px-2 py-1 text-right text-white bg-azul focus:outline-none"
-                            v-model="datos.cajMaq_Ancho"
-                          ></vue-numeric>
-                        </td>
-                        <td class="w-2/12 text-center border bg-azul">
-                          <vue-numeric
-                            separator=","
-                            class="w-32 px-2 py-1 text-right text-white bg-azul focus:outline-none"
-                            v-model="datos.cajMaq_Alto"
-                          ></vue-numeric>
-                        </td>
-                      </tr>
-                      <tr class="border">
-                        <td class="w-6/12 px-4 py-1 text-sm border">Estilos</td>
-                        <td colspan="3" class="text-center">
-                          <select
-                            class="w-40 px-2 py-1 text-sm cursor-pointer"
-                            name="select"
+              <div
+                v-bind:class="{ hidden: openTab !== 1, block: openTab === 1 }"
+                class="flex items-start justify-start space-x-2"
+              >
+                <table class="w-full h-auto">
+                  <thead
+                    class="items-center w-full text-xl font-semibold border text-azul"
+                  >
+                    <tr class="w-full py-1">
+                      <th colspan="4" class="w-full">Datos Caja-Máquina</th>
+                    </tr>
+                  </thead>
+                  <tbody class="w-full">
+                    <tr class="border">
+                      <td class="w-6/12 px-4 py-1 text-sm border">
+                        Dimensiones
+                      </td>
+                      <td class="w-2/12 text-center border bg-azul">
+                        <vue-numeric
+                          separator=","
+                          class="w-32 px-2 py-1 text-right text-white bg-azul focus:outline-none"
+                          v-model="datos.cajMaq_Largo"
+                        ></vue-numeric>
+                      </td>
+                      <td class="w-2/12 text-center border bg-azul">
+                        <vue-numeric
+                          separator=","
+                          class="w-32 px-2 py-1 text-right text-white bg-azul focus:outline-none"
+                          v-model="datos.cajMaq_Ancho"
+                        ></vue-numeric>
+                      </td>
+                      <td class="w-2/12 text-center border bg-azul">
+                        <vue-numeric
+                          separator=","
+                          class="w-32 px-2 py-1 text-right text-white bg-azul focus:outline-none"
+                          v-model="datos.cajMaq_Alto"
+                        ></vue-numeric>
+                      </td>
+                    </tr>
+                    <tr class="border">
+                      <td class="w-6/12 px-4 py-1 text-sm border">Estilos</td>
+                      <td colspan="3" class="text-center">
+                        <select
+                          class="w-40 px-2 py-1 text-sm cursor-pointer"
+                          name="select"
+                        >
+                          <option value="baul">Baul</option>
+                          <option value="automatico">Automatico</option>
+                          <option value="cuatroPuntas">Cuatro Puntas</option>
+                          <option value="seisPuntas" selected
+                            >Seis Puntas</option
                           >
-                            <option value="baul">Baul</option>
-                            <option value="automatico">Automatico</option>
-                            <option value="cuatroPuntas">Cuatro Puntas</option>
-                            <option value="seisPuntas" selected
-                              >Seis Puntas</option
-                            >
-                          </select>
-                        </td>
-                      </tr>
-                      <tr class="border">
-                        <td class="w-6/12 px-4 py-1 text-sm border">Cabida</td>
-                        <td colspan="3" class="text-center">
-                          <input
-                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
-                            type="text"
-                            v-model="datos.cajMaq_Cabida"
-                          />
-                        </td>
-                      </tr>
-                      <tr class="border">
-                        <td class="w-6/12 px-4 py-1 text-sm border">Tiraje</td>
-                        <td colspan="3" class="text-center">
-                          <input
-                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
-                            type="text"
-                            v-model="datos.cajMaq_Tiraje"
-                          />
-                        </td>
-                      </tr>
-                      <tr class="border">
-                        <td class="w-6/12 px-4 py-1 text-sm border">
-                          Formato-Máquina
-                        </td>
-                        <td colspan="3" class="text-center">
-                          <select
-                            class="w-40 px-2 py-1 text-sm cursor-pointer"
-                            name="select"
+                        </select>
+                      </td>
+                    </tr>
+                    <tr class="border">
+                      <td class="w-6/12 px-4 py-1 text-sm border">Cabida</td>
+                      <td colspan="3" class="text-center">
+                        <input
+                          class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
+                          type="text"
+                          v-model="datos.cajMaq_Cabida"
+                        />
+                      </td>
+                    </tr>
+                    <tr class="border">
+                      <td class="w-6/12 px-4 py-1 text-sm border">Tiraje</td>
+                      <td colspan="3" class="text-center">
+                        <input
+                          class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
+                          type="text"
+                          v-model="datos.cajMaq_Tiraje"
+                        />
+                      </td>
+                    </tr>
+                    <tr class="border">
+                      <td class="w-6/12 px-4 py-1 text-sm border">
+                        Formato-Máquina
+                      </td>
+                      <td colspan="3" class="text-center">
+                        <select
+                          class="w-40 px-2 py-1 text-sm cursor-pointer"
+                          name="select"
+                        >
+                          <option value="formatoMaquina"
+                            >Formato Máquina</option
                           >
-                            <option value="formatoMaquina"
-                              >Formato Máquina</option
-                            >
-                            <option value="medioPliego" selected
-                              >Medio Pliego</option
-                            >
-                            <option value="pliego">Pliego</option>
-                          </select>
-                        </td>
-                      </tr>
-                      <tr class="border">
-                        <td class="w-6/12 px-4 py-1 text-sm border">
-                          Pedidos al año
-                        </td>
-                        <td colspan="3" class="text-center">
-                          <input
-                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
-                            type="text"
-                            v-model="datos.cajMaq_PedAnio"
-                          />
-                        </td>
-                      </tr>
-                      <tr class="border">
-                        <td class="w-6/12 px-4 py-1 text-sm border">
-                          Valor Hora Máquina($)
-                        </td>
-                        <td colspan="3" class="text-center">
-                          <input
-                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
-                            type="text"
-                            v-model="datos.cajMaq_VrHrMaq"
-                          />
-                        </td>
-                      </tr>
-                      <tr class="border">
-                        <td class="w-6/12 px-4 py-1 text-sm border">
-                          Relación Valor Producido/ Valor Hora Máquina
-                        </td>
-                        <td colspan="3" class="text-center">
-                          <input
-                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
-                            type="text"
-                            v-model="datos.cajMaq_VrPnHrMaq"
-                          />
-                        </td>
-                      </tr>
-                      <tr class="border">
-                        <td class="w-6/12 px-4 py-1 text-sm border">
-                          Velocidad de Trabajo(golpes/hora)
-                        </td>
-                        <td colspan="3" class="text-center">
-                          <input
-                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
-                            type="text"
-                            v-model="datos.cajMaq_Velocidad"
-                          />
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <table class="w-full">
-                    <thead
-                      class="items-center w-full text-xl font-semibold border text-azul"
-                    >
-                      <tr class="w-full py-1">
-                        <th colspan="4" class="w-full">
-                          Información Contra-Hendido
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody class="w-full">
-                      <tr class="border">
-                        <td class="w-6/12 px-4 py-1 text-sm border">
-                          Contra-Hendido a usar
-                        </td>
-                        <td colspan="3" class="text-center border ">
-                          <select
-                            class="w-40 px-2 py-1 text-sm cursor-pointer"
-                            name="select"
+                          <option value="medioPliego" selected
+                            >Medio Pliego</option
                           >
-                            <option value="baul">Basic</option>
-                            <option value="automatico">Dinamic</option>
-                            <option value="cuatroPuntas">Prpo RS</option>
-                            <option value="seisPuntas" selected
-                              >Ultimate</option
-                            >
-                          </select>
-                        </td>
-                      </tr>
-                      <tr class="border">
-                        <td class="w-6/12 px-4 py-1 text-sm border">
-                          Duracion Teórica(filtros)
-                        </td>
-                        <td colspan="3" class="py-1 text-sm text-center">
-                          {{ contraHendido.contraHendTiras_Duracion }}
-                        </td>
-                      </tr>
-                      <tr class="border">
-                        <td class="w-6/12 px-4 py-1 text-sm border">
-                          Vida util considerada(%)
-                        </td>
-                        <td colspan="3" class="py-1 text-sm text-center">
-                          {{ contraHendido.contraHendTiras_VidaUtil }}
-                        </td>
-                      </tr>
-                      <tr class="border">
-                        <td class="w-6/12 px-4 py-1 text-sm border">
-                          Cambios requeridos
-                        </td>
-                        <td colspan="3" class="py-1 text-sm text-center">
-                          Formula
-                        </td>
-                      </tr>
-                      <tr class="border">
-                        <td class="w-6/12 px-4 py-1 text-sm border">
-                          Logintud Grafas(cm)
-                        </td>
-                        <td colspan="3" class="py-1 text-sm text-center">
-                          Formula
-                        </td>
-                      </tr>
-                      <tr class="border">
-                        <td class="w-6/12 px-4 py-1 text-sm border">
-                          Despercico Estimado Contra - Hendido
-                        </td>
-                        <td colspan="3" class="py-1 text-sm text-center">
-                          15%
-                        </td>
-                      </tr>
-                      <tr class="border">
-                        <td class="w-6/12 px-4 py-1 text-sm border">
-                          Loong. Contra-Hendido Estimada(cms)
-                        </td>
-                        <td colspan="3" class="py-1 text-sm text-center">
-                          Formula
-                        </td>
-                      </tr>
-                      <tr class="border">
-                        <td class="w-6/12 px-4 py-1 text-sm border">
-                          Area Caja (cm2)
-                        </td>
-                        <td colspan="3" class="text-center">
-                          <input
-                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
-                            type="text"
-                          />
-                        </td>
-                      </tr>
-                      <tr class="border">
-                        <td class="w-6/12 px-4 py-1 text-sm border">
-                          Duracion Teórica (tiros)
-                        </td>
-                        <td colspan="3" class="text-center">
-                          <input
-                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
-                            type="text"
-                          />
-                        </td>
-                      </tr>
-                      <tr class="border">
-                        <td class="w-6/12 px-4 py-1 text-sm border">
-                          Vida útil considerada (%)
-                        </td>
+                          <option value="pliego">Pliego</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr class="border">
+                      <td class="w-6/12 px-4 py-1 text-sm border">
+                        Pedidos al año
+                      </td>
+                      <td colspan="3" class="text-center">
+                        <input
+                          class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
+                          type="text"
+                          v-model="datos.cajMaq_PedAnio"
+                        />
+                      </td>
+                    </tr>
+                    <tr class="border">
+                      <td class="w-6/12 px-4 py-1 text-sm border">
+                        Valor Hora Máquina($)
+                      </td>
+                      <td colspan="3" class="text-center">
+                        <input
+                          class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
+                          type="text"
+                          v-model="datos.cajMaq_VrHrMaq"
+                        />
+                      </td>
+                    </tr>
+                    <tr class="border">
+                      <td class="w-6/12 px-4 py-1 text-sm border">
+                        Relación Valor Producido/ Valor Hora Máquina
+                      </td>
+                      <td colspan="3" class="text-center">
+                        <input
+                          class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
+                          type="text"
+                          v-model="datos.cajMaq_VrPnHrMaq"
+                        />
+                      </td>
+                    </tr>
+                    <tr class="border">
+                      <td class="w-6/12 px-4 py-1 text-sm border">
+                        Velocidad de Trabajo(golpes/hora)
+                      </td>
+                      <td colspan="3" class="text-center">
+                        <input
+                          class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
+                          type="text"
+                          v-model="datos.cajMaq_Velocidad"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="w-full">
+                  <thead
+                    class="items-center w-full text-xl font-semibold border text-azul"
+                  >
+                    <tr class="w-full py-1">
+                      <th colspan="4" class="w-full">
+                        Información Contra-Hendido
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="w-full">
+                    <tr class="border">
+                      <td class="w-6/12 px-4 py-1 text-sm border">
+                        Contra-Hendido a usar
+                      </td>
+                      <td colspan="3" class="text-center border ">
+                        <select
+                          class="w-40 px-2 py-1 text-sm cursor-pointer"
+                          name="select"
+                        >
+                          <option value="baul">Basic</option>
+                          <option value="automatico">Dinamic</option>
+                          <option value="cuatroPuntas">Prpo RS</option>
+                          <option value="seisPuntas" selected>Ultimate</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr class="border">
+                      <td class="w-6/12 px-4 py-1 text-sm border">
+                        Duracion Teórica(filtros)
+                      </td>
+                      <td colspan="3" class="py-1 text-sm text-center">
+                        {{ contraHendido.contraHendTiras_Duracion }}
+                      </td>
+                    </tr>
+                    <tr class="border">
+                      <td class="w-6/12 px-4 py-1 text-sm border">
+                        Vida util considerada(%)
+                      </td>
+                      <td colspan="3" class="py-1 text-sm text-center">
+                        {{ contraHendido.contraHendTiras_VidaUtil }}
+                      </td>
+                    </tr>
+                    <tr class="border">
+                      <td class="w-6/12 px-4 py-1 text-sm border">
+                        Cambios requeridos
+                      </td>
+                      <td colspan="3" class="py-1 text-sm text-center">
+                        Formula
+                      </td>
+                    </tr>
+                    <tr class="border">
+                      <td class="w-6/12 px-4 py-1 text-sm border">
+                        Logintud Grafas(cm)
+                      </td>
+                      <td colspan="3" class="py-1 text-sm text-center">
+                        Formula
+                      </td>
+                    </tr>
+                    <tr class="border">
+                      <td class="w-6/12 px-4 py-1 text-sm border">
+                        Despercico Estimado Contra - Hendido
+                      </td>
+                      <td colspan="3" class="py-1 text-sm text-center">
+                        15%
+                      </td>
+                    </tr>
+                    <tr class="border">
+                      <td class="w-6/12 px-4 py-1 text-sm border">
+                        Loong. Contra-Hendido Estimada(cms)
+                      </td>
+                      <td colspan="3" class="py-1 text-sm text-center">
+                        Formula
+                      </td>
+                    </tr>
+                    <tr class="border">
+                      <td class="w-6/12 px-4 py-1 text-sm border">
+                        Area Caja (cm2)
+                      </td>
+                      <td colspan="3" class="text-center">
+                        <input
+                          class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
+                          type="text"
+                        />
+                      </td>
+                    </tr>
+                    <tr class="border">
+                      <td class="w-6/12 px-4 py-1 text-sm border">
+                        Duracion Teórica (tiros)
+                      </td>
+                      <td colspan="3" class="text-center">
+                        <input
+                          class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
+                          type="text"
+                        />
+                      </td>
+                    </tr>
+                    <tr class="border">
+                      <td class="w-6/12 px-4 py-1 text-sm border">
+                        Vida útil considerada (%)
+                      </td>
 
-                        <td colspan="3" class="text-center">
-                          <input
-                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
-                            type="text"
-                          />
-                        </td>
+                      <td colspan="3" class="text-center">
+                        <input
+                          class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
+                          type="text"
+                        />
+                      </td>
+                    </tr>
+                    <tr class="border">
+                      <td class="w-6/12 px-4 py-1 text-sm border">
+                        Duracion Estimada (tiros)
+                      </td>
+                      <td colspan="3" class="text-center">
+                        <input
+                          class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
+                          type="text"
+                        />
+                      </td>
+                    </tr>
+                    <tr class="border">
+                      <td class="w-6/12 px-4 py-1 text-sm border">
+                        Pines Pertinax Requeridos por cabida
+                      </td>
+                      <td colspan="3" class="text-center">
+                        <input
+                          class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
+                          type="text"
+                        />
+                      </td>
+                    </tr>
+                    <tr class="border">
+                      <td class="w-6/12 px-4 py-1 text-sm border">
+                        Pines Totales
+                      </td>
+                      <td colspan="3" class="text-center">
+                        <input
+                          class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
+                          type="text"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div
+                v-bind:class="{ hidden: openTab !== 2, block: openTab === 2 }"
+              >
+                <div>
+                  <table class="w-full">
+                    <thead class="w-full">
+                      <tr class="w-full border">
+                        <th class="w-1/12 text-base border">Material</th>
+                        <th class="w-1/12 text-base border">Valor MP($)</th>
+                        <th class="w-1/12 text-base border">Tiempo Arreglo(min)</th>
+                        <th class="w-1/12 text-base border">Cambios/Año</th>
+                        <th class="w-1/12 text-base border">Tiempo Arreglo/Año(min)</th>
+                        <th class="w-1/12 text-base border">Valor MP/Año($)</th>
+                        <th class="w-1/12 text-base border">Tiempo Máquina Inactiva/Año(horas)</th>
+                        <th class="w-1/12 text-base border">Valor Tiempo Máquina Inactiva/Año($)</th>
+                        <th class="w-1/12 text-base border">Valor Total Año($).(MP + Máquina Inactiva)  </th>
+                        <th class="w-1/12 text-base border">Ahorro/Año($)</th>
+                        <th class="w-1/12 text-base border">Costo Improductivo Máquina Inactiva/Año($)</th>
+                        <th class="w-1/12 text-base border">Diferencia Costo Improductivo Máquina Inactiva/Año</th>
                       </tr>
-                      <tr class="border">
-                        <td class="w-6/12 px-4 py-1 text-sm border">
-                          Duracion Estimada (tiros)
-                        </td>
-                        <td colspan="3" class="text-center">
-                          <input
-                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
-                            type="text"
-                          />
-                        </td>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="px-2 py-2 text-base border">Contra-Hendido</td>
+                        <td class="px-4 py-2 text-base text-right border">67,154</td>
+                        <td class="px-4 py-2 text-base text-right border">19</td>
+                        <td class="px-4 py-2 text-base text-right border">25</td>
+                        <td class="px-4 py-2 text-base text-right border">475</td>
+                        <td class="px-4 py-2 text-base text-right border">1,678,856</td>
+                        <td class="px-4 py-2 text-base text-right border">7.92</td>
+                        <td class="px-4 py-2 text-base text-right border">395,833</td>
+                        <td class="px-4 py-2 text-base text-right border">2,074,690</td>
+                        <td rowspan="3" class="px-4 py-2 text-base text-right border">259,514</td>
+                        <td class="px-4 py-2 text-base text-right border">791,667</td>
+                        <td rowspan="3" class="px-4 py-2 text-base text-right border">698,500</td>
                       </tr>
-                      <tr class="border">
-                        <td class="w-6/12 px-4 py-1 text-sm border">
-                          Pines Pertinax Requeridos por cabida
-                        </td>
-                        <td colspan="3" class="text-center">
-                          <input
-                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
-                            type="text"
-                          />
-                        </td>
+                      <tr>
+                        <td class="px-2 py-2 text-base border">Pertinax</td>
+                        <td class="px-4 py-2 text-base text-right border">174,240</td>
+                        <td class="px-4 py-2 text-base text-right border">4</td>
+                        <td class="px-4 py-2 text-base text-right border">13</td>
+                        <td class="px-4 py-2 text-base text-right border">56</td>
+                        <td class="px-4 py-2 text-base text-right border">2,265,120</td>
+                        <td class="px-4 py-2 text-base text-right border">0.93</td>
+                        <td class="px-4 py-2 text-base text-right border">46,583</td>
+                        <td class="px-4 py-2 text-base text-right border">2,311,703</td>
+                        <td class="px-4 py-2 text-base text-right border">93,167</td>
                       </tr>
-                      <tr class="border">
-                        <td class="w-6/12 px-4 py-1 text-sm border">
-                          Pines Totales
-                        </td>
-                        <td colspan="3" class="text-center">
-                          <input
-                            class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
-                            type="text"
-                          />
-                        </td>
+                      <tr>
+                        <td class="px-2 py-2 text-base border">Pines</td>
+                        <td class="px-4 py-2 text-base text-right border">22,500</td>
+                        <td class="px-4 py-2 text-base text-right border"></td>
+                        <td class="px-4 py-2 text-base text-right border">1</td>
+                        <td class="px-4 py-2 text-base text-right border">0</td>
+                        <td class="px-4 py-2 text-base text-right border">22,500</td>
+                        <td class="px-4 py-2 text-base text-right border"></td>
+                        <td class="px-4 py-2 text-base text-right border"></td>
+                        <td class="px-4 py-2 text-base text-right border">22,500</td>
+                        <td class="px-4 py-2 text-base text-right border">0</td>
                       </tr>
                     </tbody>
                   </table>
-                </div>
-                <div
-                  v-bind:class="{ hidden: openTab !== 2, block: openTab === 2 }"
-                >
-                  <p>
-                    Completely synergize resource taxing relationships via
-                    premier niche markets. Professionally cultivate one-to-one
-                    customer service with robust ideas.
-                    <br />
-                    <br />
-                    Dynamically innovate resource-leveling customer service for
-                    state of the art customer service.
-                  </p>
+                  <table class="w-8/12 border mt-14">
+                    <thead class="border">
+                      <tr>
+                        <th colspan="4">Comparacion Valor Platina 1mm v/s Contra-Hendido</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="w-full">
+                        <td class="w-3/12 px-2 py-2 border" >Valor Platina Medio Pliego: </td>
+                        <td class="w-3/12 px-2 py-2 text-center border" >315,000</td>
+                        <td class="w-6/12 px-2 py-2 border" colspan="2">Este Valor Corresponde a 4.7 pedidos de cito ultimate, es decir que es 0.78 meses, se habria pagado la platina de 1mm. La platina tiene una vida ultil de 24 pedidos, lo que significa 4 meses aproximadamente</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2" class="w-3/12 px-2 py-2 border">Inversion requerida al año en platinas: </td>
+                        <td colspan="2" class="w-3/12 px-2 py-2 text-lg font-semibold text-center border">945,000</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <table class="w-8/12 mt-8 border">
+                    <tr>
+                      <td class="w-6/12 px-2 py-2 text-lg border">Golpes desperdiciados al año: </td>
+                      <td class="w-6/12 px-2 py-2 text-lg font-semibold text-center border">34,925</td>
+                    </tr>
+                  </table>
+                  <div class="flex justify-end -mt-40">
+                    <div class="w-2/12 py-10 mr-10 text-center border">
+                      <p>506,014</p>
+                    </div>
+                    
+                  </div>
                 </div>
               </div>
             </div>
