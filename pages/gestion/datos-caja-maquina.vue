@@ -6,31 +6,32 @@
           <ul class="flex justify-center pt-3 pb-4 mb-0 list-none">
             <li class="flex-auto text-center ">
               <a
-                class="block px-5 py-3 text-xs font-bold leading-normal uppercase rounded"
+                class="block px-5 py-3 text-xl font-bold leading-normal uppercase rounded cursor-pointer"
                 v-on:click="toggleTabs(1)"
                 v-bind:class="{
                   'text-gray-600 bg-white border-b': openTab !== 1,
                   'text-azul bg-white border-l border-t border-r': openTab === 1
                 }"
               >
-                Datos Caja-Máquina
+                Datos básicos
               </a>
             </li>
             <li class="flex-auto text-center ">
               <a
-                class="block px-5 py-3 text-xs font-bold leading-normal uppercase rounded"
+                class="block px-5 py-3 text-xl font-bold leading-normal uppercase rounded cursor-pointer"
                 v-on:click="toggleTabs(2)"
                 v-bind:class="{
                   'text-gray-600 bg-white border-b': openTab !== 2,
                   'text-azul bg-white border-l border-t border-r': openTab === 2
                 }"
               >
-                Datos Caja-Máquina
+                Cito vs Pertinax
               </a>
             </li>
           </ul>
           <div class="relative w-full h-full mb-6 break-words bg-white rounded">
             <div class="py-5">
+<<<<<<< HEAD
               <div
                 v-bind:class="{ hidden: openTab !== 1, block: openTab === 1 }"
                 class="flex items-start justify-start space-x-2"
@@ -82,6 +83,54 @@
                           <option value="cuatroPuntas">Cuatro Puntas</option>
                           <option value="seisPuntas" selected
                             >Seis Puntas</option
+=======
+              <div class="">
+                <div
+                  v-bind:class="{ hidden: openTab !== 1, block: openTab === 1 }"
+                  class="flex items-start justify-start space-x-2"
+                >
+                  <table class="w-full h-auto">
+                    <thead
+                      class="items-center w-full text-xl font-semibold border text-azul"
+                    >
+                      <tr class="w-full py-1">
+                        <th colspan="4" class="w-full">Caja-Máquina</th>
+                      </tr>
+                    </thead>
+                    <tbody class="w-full">
+                      <tr class="border">
+                        <td class="w-6/12 px-4 py-1 text-sm border">
+                          Dimensiones
+                        </td>
+                        <td class="w-2/12 text-center border bg-azul">
+                          <vue-numeric
+                            separator=","
+                            class="w-32 px-2 py-1 text-right text-white bg-azul focus:outline-none"
+                            v-model="datos.cajMaq_Largo"
+                          ></vue-numeric>
+                        </td>
+                        <td class="w-2/12 text-center border bg-azul">
+                          <vue-numeric
+                            separator=","
+                            class="w-32 px-2 py-1 text-right text-white bg-azul focus:outline-none"
+                            v-model="datos.cajMaq_Ancho"
+                          ></vue-numeric>
+                        </td>
+                        <td class="w-2/12 text-center border bg-azul">
+                          <vue-numeric
+                            separator=","
+                            class="w-32 px-2 py-1 text-right text-white bg-azul focus:outline-none"
+                            v-model="datos.cajMaq_Alto"
+                          ></vue-numeric>
+                        </td>
+                      </tr>
+                      <tr class="border">
+                        <td class="w-6/12 px-4 py-1 text-sm border">Estilos</td>
+                        <td colspan="3" class="text-center">
+                          <select
+                            class="w-40 px-2 py-1 text-sm cursor-pointer"
+                            name="select"
+>>>>>>> d17c9794a3036ebcd7b765e219b85358f7e160a2
                           >
                         </select>
                       </td>
@@ -382,10 +431,21 @@
                       </tr>
                     </tbody>
                   </table>
+<<<<<<< HEAD
                   <table class="w-8/12 border mt-14">
                     <thead class="border">
                       <tr>
                         <th colspan="4">Comparacion Valor Platina 1mm v/s Contra-Hendido</th>
+=======
+                  <table class="w-full">
+                    <thead
+                      class="items-center w-full text-xl font-semibold border text-azul"
+                    >
+                      <tr class="w-full py-1">
+                        <th colspan="4" class="w-full">
+                           Contra-Hendido
+                        </th>
+>>>>>>> d17c9794a3036ebcd7b765e219b85358f7e160a2
                       </tr>
                     </thead>
                     <tbody>
