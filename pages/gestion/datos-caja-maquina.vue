@@ -74,10 +74,18 @@
                       <tr class="border">
                         <td class="w-6/12 px-4 py-1 text-sm border">Estilos</td>
                         <td colspan="3" class="text-center">
-                          <select
-                            class="w-40 px-2 py-1 text-sm cursor-pointer"
-                            name="select"
+                        <select
+                          class="w-40 px-2 py-1 text-sm cursor-pointer"
+                          name="select"
+                        >
+                          <option value="baul"
+                            >Baul</option
                           >
+                          <option value="automatico" selected
+                            >Automatico</option
+                          >
+                          <option value="cuatroPuntas">Cuatro Puntas</option>
+                          <option value="seisPuntas">Seis Puntas</option>
                         </select>
                       </td>
                     </tr>
@@ -321,59 +329,59 @@
                 <div>
                   <table class="w-full">
                     <thead class="w-full">
-                      <tr class="w-full border">
-                        <th class="w-1/12 text-base border">Material</th>
-                        <th class="w-1/12 text-base border">Valor MP($)</th>
-                        <th class="w-1/12 text-base border">Tiempo Arreglo(min)</th>
-                        <th class="w-1/12 text-base border">Cambios/Año</th>
-                        <th class="w-1/12 text-base border">Tiempo Arreglo/Año(min)</th>
-                        <th class="w-1/12 text-base border">Valor MP/Año($)</th>
-                        <th class="w-1/12 text-base border">Tiempo Máquina Inactiva/Año(horas)</th>
-                        <th class="w-1/12 text-base border">Valor Tiempo Máquina Inactiva/Año($)</th>
-                        <th class="w-1/12 text-base border">Valor Total Año($).(MP + Máquina Inactiva)  </th>
-                        <th class="w-1/12 text-base border">Ahorro/Año($)</th>
-                        <th class="w-1/12 text-base border">Costo Improductivo Máquina Inactiva/Año($)</th>
-                        <th class="w-1/12 text-base border">Diferencia Costo Improductivo Máquina Inactiva/Año</th>
+                      <tr class="w-full border text-azul">
+                        <th class="w-1/12 text-sm border">Material</th>
+                        <th class="w-1/12 text-sm border">Valor MP($)</th>
+                        <th class="w-1/12 text-sm border">Tiempo Arreglo(min)</th>
+                        <th class="w-1/12 text-sm border">Cambios/Año</th>
+                        <th class="w-1/12 text-sm border">Tiempo Arreglo/Año(min)</th>
+                        <th class="w-1/12 text-sm border">Valor MP/Año($)</th>
+                        <th class="w-1/12 text-sm border">Tiempo Máquina Inactiva/Año(horas)</th>
+                        <th class="w-1/12 text-sm border">Valor Tiempo Máquina Inactiva/Año($)</th>
+                        <th class="w-1/12 text-sm border">Valor Total Año($).(MP + Máquina Inactiva)  </th>
+                        <th class="w-1/12 text-sm border">Ahorro/Año($)</th>
+                        <th class="w-1/12 text-sm border">Costo Improductivo Máquina Inactiva/Año($)</th>
+                        <th class="w-1/12 text-sm border">Diferencia Costo Improductivo Máquina Inactiva/Año</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td class="px-2 py-2 text-base border">Contra-Hendido</td>
-                        <td class="px-4 py-2 text-base text-right border">67,154</td>
-                        <td class="px-4 py-2 text-base text-right border">19</td>
-                        <td class="px-4 py-2 text-base text-right border">25</td>
-                        <td class="px-4 py-2 text-base text-right border">475</td>
-                        <td class="px-4 py-2 text-base text-right border">1,678,856</td>
-                        <td class="px-4 py-2 text-base text-right border">7.92</td>
-                        <td class="px-4 py-2 text-base text-right border">395,833</td>
-                        <td class="px-4 py-2 text-base text-right border">2,074,690</td>
-                        <td rowspan="3" class="px-4 py-2 text-base text-right border">259,514</td>
-                        <td class="px-4 py-2 text-base text-right border">791,667</td>
-                        <td rowspan="3" class="px-4 py-2 text-base text-right border">698,500</td>
+                        <td class="px-2 py-2 text-sm border text-azul">Contra-Hendido</td>
+                        <td class="px-4 py-2 text-sm text-right border">67,154</td>
+                        <td class="px-4 py-2 text-sm text-right border">19</td>
+                        <td class="px-4 py-2 text-sm text-right border">25</td>
+                        <td class="px-4 py-2 text-sm text-right border">475</td>
+                        <td class="px-4 py-2 text-sm text-right border">1,678,856</td>
+                        <td class="px-4 py-2 text-sm text-right border">7.92</td>
+                        <td class="px-4 py-2 text-sm text-right border">395,833</td>
+                        <td class="px-4 py-2 text-sm text-right border">2,074,690</td>
+                        <td rowspan="3" class="px-4 py-2 text-sm text-right border">259,514</td>
+                        <td class="px-4 py-2 text-sm text-right border">791,667</td>
+                        <td rowspan="3" class="px-4 py-2 text-sm text-right border">698,500</td>
                       </tr>
                       <tr>
-                        <td class="px-2 py-2 text-base border">Pertinax</td>
-                        <td class="px-4 py-2 text-base text-right border">174,240</td>
-                        <td class="px-4 py-2 text-base text-right border">4</td>
-                        <td class="px-4 py-2 text-base text-right border">13</td>
-                        <td class="px-4 py-2 text-base text-right border">56</td>
-                        <td class="px-4 py-2 text-base text-right border">2,265,120</td>
-                        <td class="px-4 py-2 text-base text-right border">0.93</td>
-                        <td class="px-4 py-2 text-base text-right border">46,583</td>
-                        <td class="px-4 py-2 text-base text-right border">2,311,703</td>
-                        <td class="px-4 py-2 text-base text-right border">93,167</td>
+                        <td class="px-2 py-2 text-sm border text-azul">Pertinax</td>
+                        <td class="px-4 py-2 text-sm text-right border">174,240</td>
+                        <td class="px-4 py-2 text-sm text-right border">4</td>
+                        <td class="px-4 py-2 text-sm text-right border">13</td>
+                        <td class="px-4 py-2 text-sm text-right border">56</td>
+                        <td class="px-4 py-2 text-sm text-right border">2,265,120</td>
+                        <td class="px-4 py-2 text-sm text-right border">0.93</td>
+                        <td class="px-4 py-2 text-sm text-right border">46,583</td>
+                        <td class="px-4 py-2 text-sm text-right border">2,311,703</td>
+                        <td class="px-4 py-2 text-sm text-right border">93,167</td>
                       </tr>
                       <tr>
-                        <td class="px-2 py-2 text-base border">Pines</td>
-                        <td class="px-4 py-2 text-base text-right border">22,500</td>
-                        <td class="px-4 py-2 text-base text-right border"></td>
-                        <td class="px-4 py-2 text-base text-right border">1</td>
-                        <td class="px-4 py-2 text-base text-right border">0</td>
-                        <td class="px-4 py-2 text-base text-right border">22,500</td>
-                        <td class="px-4 py-2 text-base text-right border"></td>
-                        <td class="px-4 py-2 text-base text-right border"></td>
-                        <td class="px-4 py-2 text-base text-right border">22,500</td>
-                        <td class="px-4 py-2 text-base text-right border">0</td>
+                        <td class="px-2 py-2 text-sm border text-azul">Pines</td>
+                        <td class="px-4 py-2 text-sm text-right border">22,500</td>
+                        <td class="px-4 py-2 text-sm text-right border"></td>
+                        <td class="px-4 py-2 text-sm text-right border">1</td>
+                        <td class="px-4 py-2 text-sm text-right border">0</td>
+                        <td class="px-4 py-2 text-sm text-right border">22,500</td>
+                        <td class="px-4 py-2 text-sm text-right border"></td>
+                        <td class="px-4 py-2 text-sm text-right border"></td>
+                        <td class="px-4 py-2 text-sm text-right border">22,500</td>
+                        <td class="px-4 py-2 text-sm text-right border">0</td>
                       </tr>
                     </tbody>
                   </table>
