@@ -6,7 +6,7 @@
           <ul class="flex justify-center pt-3 pb-4 mb-0 list-none">
             <li class="flex-auto text-center ">
               <a
-                class="block px-5 py-3 text-xl font-bold leading-normal uppercase rounded cursor-pointer"
+                class="block px-5 py-3 text-base font-bold leading-normal uppercase rounded cursor-pointer"
                 v-on:click="toggleTabs(1)"
                 v-bind:class="{
                   'text-gray-600 bg-white border-b': openTab !== 1,
@@ -18,7 +18,7 @@
             </li>
             <li class="flex-auto text-center ">
               <a
-                class="block px-5 py-3 text-xl font-bold leading-normal uppercase rounded cursor-pointer"
+                class="block px-5 py-3 text-base font-bold leading-normal uppercase rounded cursor-pointer"
                 v-on:click="toggleTabs(2)"
                 v-bind:class="{
                   'text-gray-600 bg-white border-b': openTab !== 2,
@@ -40,8 +40,8 @@
                     <thead
                       class="items-center w-full text-xl font-semibold border text-azul"
                     >
-                      <tr class="w-full py-1">
-                        <th colspan="4" class="w-full">Caja-Máquina</th>
+                      <tr class="w-full">
+                        <th colspan="4" class="w-full py-1 text-base">Caja-Máquina</th>
                       </tr>
                     </thead>
                     <tbody class="w-full">
@@ -49,24 +49,24 @@
                         <td class="w-6/12 px-4 py-1 text-sm border">
                           Dimensiones
                         </td>
-                        <td class="w-2/12 text-center border bg-azul">
+                        <td class="w-2/12 text-center border">
                           <vue-numeric
                             separator=","
-                            class="w-32 px-2 py-1 text-right text-white bg-azul focus:outline-none"
+                            class="w-full px-2 py-1 text-right focus:outline-none focus:bg-azul focus:text-white"
                             v-model="datos.cajMaq_Largo"
                           ></vue-numeric>
                         </td>
-                        <td class="w-2/12 text-center border bg-azul">
+                        <td class="w-2/12 text-center border">
                           <vue-numeric
                             separator=","
-                            class="w-32 px-2 py-1 text-right text-white bg-azul focus:outline-none"
+                            class="w-full px-2 py-1 text-right focus:outline-none focus:bg-azul focus:text-white"
                             v-model="datos.cajMaq_Ancho"
                           ></vue-numeric>
                         </td>
-                        <td class="w-2/12 text-center border bg-azul">
+                        <td class="w-2/12 text-center border">
                           <vue-numeric
                             separator=","
-                            class="w-32 px-2 py-1 text-right text-white bg-azul focus:outline-none"
+                            class="w-full px-2 py-1 text-right focus:outline-none focus:bg-azul focus:text-white"
                             v-model="datos.cajMaq_Alto"
                           ></vue-numeric>
                         </td>
@@ -75,7 +75,7 @@
                         <td class="w-6/12 px-4 py-1 text-sm border">Estilos</td>
                         <td colspan="3" class="text-center">
                         <select
-                          class="w-40 px-2 py-1 text-sm cursor-pointer"
+                          class="w-48 px-2 py-1 text-sm cursor-pointer focus:bg-azul focus:text-white"
                           name="select"
                         >
                           <option value="baul"
@@ -93,7 +93,7 @@
                       <td class="w-6/12 px-4 py-1 text-sm border">Cabida</td>
                       <td colspan="3" class="text-center">
                         <input
-                          class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
+                          class="w-full px-4 py-1 text-center cursor-pointer focus:outline-none focus:bg-azul focus:text-white"
                           type="text"
                           v-model="datos.cajMaq_Cabida"
                         />
@@ -103,7 +103,7 @@
                       <td class="w-6/12 px-4 py-1 text-sm border">Tiraje</td>
                       <td colspan="3" class="text-center">
                         <input
-                          class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
+                          class="w-full px-4 py-1 text-center cursor-pointer focus:outline-none focus:bg-azul focus:text-white"
                           type="text"
                           v-model="datos.cajMaq_Tiraje"
                         />
@@ -115,7 +115,7 @@
                       </td>
                       <td colspan="3" class="text-center">
                         <select
-                          class="w-40 px-2 py-1 text-sm cursor-pointer"
+                          class="w-48 px-2 py-1 text-sm cursor-pointer focus:bg-azul focus:text-white"
                           name="select"
                         >
                           <option value="formatoMaquina"
@@ -134,7 +134,7 @@
                       </td>
                       <td colspan="3" class="text-center">
                         <input
-                          class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
+                          class="w-full px-4 py-1 text-center cursor-pointer focus:outline-none focus:bg-azul focus:text-white"
                           type="text"
                           v-model="datos.cajMaq_PedAnio"
                         />
@@ -146,7 +146,7 @@
                       </td>
                       <td colspan="3" class="text-center">
                         <input
-                          class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
+                          class="w-full px-4 py-1 text-center cursor-pointer focus:outline-none focus:bg-azul focus:text-white"
                           type="text"
                           v-model="datos.cajMaq_VrHrMaq"
                         />
@@ -158,7 +158,7 @@
                       </td>
                       <td colspan="3" class="text-center">
                         <input
-                          class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
+                          class="w-full px-4 py-1 text-center cursor-pointer focus:outline-none focus:bg-azul focus:text-white"
                           type="text"
                           v-model="datos.cajMaq_VrPnHrMaq"
                         />
@@ -170,7 +170,7 @@
                       </td>
                       <td colspan="3" class="text-center">
                         <input
-                          class="px-4 text-right cursor-pointer w-28 xl:w-32 focus:outline-none"
+                          class="w-full px-4 py-1 text-center cursor-pointer focus:outline-none focus:bg-azul focus:text-white"
                           type="text"
                           v-model="datos.cajMaq_Velocidad"
                         />
@@ -182,8 +182,8 @@
                   <thead
                     class="items-center w-full text-xl font-semibold border text-azul"
                   >
-                    <tr class="w-full py-1">
-                      <th colspan="4" class="w-full">
+                    <tr class="w-full">
+                      <th colspan="4" class="w-full py-1 text-base">
                         Información Contra-Hendido
                       </th>
                     </tr>
@@ -195,7 +195,7 @@
                       </td>
                       <td colspan="3" class="text-center border ">
                         <select
-                          class="w-40 px-2 py-1 text-sm cursor-pointer"
+                          class="w-48 px-2 py-1 text-sm cursor-pointer focus:bg-azul focus:text-white"
                           name="select"
                         >
                           <option value="baul">Basic</option>

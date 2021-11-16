@@ -1,7 +1,7 @@
 <template>
   <div class="pt-24 mx-2 font-Montserrat">
     <div class="flex items-center justify-center mx-auto mt-10">
-      <h2 class="text-2xl font-semibold text-azul">
+      <h2 class="text-lg font-semibold text-azul">
         Evaluación costos alistamiento y encauche v/s proveedor
       </h2>
     </div>

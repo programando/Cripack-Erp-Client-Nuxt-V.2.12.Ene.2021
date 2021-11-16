@@ -17,7 +17,7 @@
         <NavLinks text="Estado Ot's" to="/clientes/ots-estado" />
 
         <div v-if="isDevelopment == 'development'" class="relative text-white">
-          <button @click="viewUtilidades" class="px-2 ">
+          <button @click="viewUtilidades" class="px-2 text-lg">
             Utilidades
           </button>
           <div
@@ -64,7 +64,7 @@
         </div>
 
         <div v-if="esUsuarioCripack" class="relative text-white">
-          <button @click="viewGestion" class="px-2 ">
+          <button @click="viewGestion" class="px-2 text-lg">
             Gestión
           </button>
           <div
@@ -113,7 +113,7 @@
         to="/clientes/ordenes"
       /> -->
 
-        <button @click="logout" class="text-white ">Salir</button>
+        <button @click="logout" class="text-lg text-white">Salir</button>
       </div>
     </div>
     <div class="fixed right-0 z-10 pt-16 bandera">

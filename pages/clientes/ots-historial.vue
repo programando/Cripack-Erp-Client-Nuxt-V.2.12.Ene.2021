@@ -1,7 +1,7 @@
 <template>
   <div class="pt-24 mx-2 font-Montserrat">
     <div class="flex justify-between my-2">
-      <h3 class="mt-1 text-xl">
+      <h3 class="mt-1 text-lg">
         Historial Órdenes de trabajo
       </h3>
       <div class="mt-2">

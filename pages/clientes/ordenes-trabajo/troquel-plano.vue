@@ -2,7 +2,7 @@
   <div class="pt-20">
     <div class="mx-40 mt-2 border shadow-2xl">
       <h2
-        class="flex justify-center w-full py-1 text-2xl text-black bg-gray-100 "
+        class="flex justify-center w-full py-1 text-lg text-black bg-gray-100 "
       >
         Troqueles planos
       </h2>
