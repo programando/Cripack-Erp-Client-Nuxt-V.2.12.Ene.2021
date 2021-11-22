@@ -197,12 +197,13 @@
                           <select
                             class="w-48 px-2 py-1 text-sm cursor-pointer focus:bg-azul focus:text-white"
                             name="select"
+                            v-model="contraHendidoSeleccionado"
                           >
-                            <option value="baul">Basic</option>
-                            <option value="automatico">Dinamic</option>
-                            <option value="cuatroPuntas">Prpo RS</option>
-                            <option value="seisPuntas" selected
-                              >Ultimate</option
+                            <option
+                              v-for="elemento in contraHendidoUsar"
+                              :key="elemento.id"
+                              v-bind:value="elemento"
+                              >{{ elemento.text }}</option
                             >
                           </select>
                         </td>
@@ -260,7 +261,7 @@
                           Area Caja (cm2)
                         </td>
                         <td colspan="3" class="text-center">
-                          {{petrinax.contraHendiPrtnax_AreaCaja}}
+                          {{ petrinax.contraHendiPrtnax_AreaCaja }}
                         </td>
                       </tr>
                       <tr class="border">
@@ -268,7 +269,7 @@
                           Duracion Teórica (tiros)
                         </td>
                         <td colspan="3" class="text-center">
-                          {{petrinax.contraHendiPrtnax_Duracion}}
+                          {{ petrinax.contraHendiPrtnax_Duracion }}
                         </td>
                       </tr>
                       <tr class="border">
@@ -522,6 +523,15 @@ export default {
   data() {
     return {
       openTab: 1,
+      contraHendidoSeleccionado: {},
+      contraHendidoUsar: [
+        { id: 0, text: "Basic" , seleccionado1: 240000, seleccionado2: 20000},
+        { id: 1, text: "Dinamic", seleccionado1: 240000, seleccionado2: 20000},
+        { id: 2, text: "ProRS" ,seleccionado1: 240000, seleccionado2: 20000},
+        { id: 3, text: "Ultimate", seleccionado1: 240000, seleccionado2: 20000}
+      ],
+      seleccionado: '',
+
       cajaMaquina: {
         cajMaq_Largo: 210,
         cajMaq_Ancho: 210,
@@ -574,8 +584,23 @@ export default {
         this.contraHendido.contraHendTiras_LongGrafa *
         (1 + this.contraHendido.contraHendTiras_Dsprdcio);
       console.log(this.contraHendido.contraHendTiras_LongGrafa);
+    },
+
+    calContraHendidoUsar(){
+      // this.contraHendido.contraHendTiras_Duracion = 0,
+      if (this.contraHendidoSeleccionado.id == 0) {
+        this.contraHendido.contraHendTiras_Duracion = this.contraHendidoSeleccionado.seleccionado2
+      } if (this.contraHendidoSeleccionado.id == 1) {
+        this.contraHendido.contraHendTiras_Duracion = this.contraHendidoSeleccionado.seleccionado2
+      } 
+        
+      
+
+  
     }
   },
+
+  
 
   mounted() {
     this.calcularFormulas();
