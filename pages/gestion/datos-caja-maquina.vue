@@ -198,6 +198,7 @@
                             class="w-48 px-2 py-1 text-sm cursor-pointer focus:bg-azul focus:text-white"
                             name="select"
                             v-model="contraHendidoSeleccionado"
+                            @change="calContraHendidoUsar()"
                           >
                             <option
                               v-for="elemento in contraHendidoUsar"
@@ -526,9 +527,9 @@ export default {
       contraHendidoSeleccionado: {},
       contraHendidoUsar: [
         { id: 0, text: "Basic" , seleccionado1: 240000, seleccionado2: 20000},
-        { id: 1, text: "Dinamic", seleccionado1: 240000, seleccionado2: 20000},
-        { id: 2, text: "ProRS" ,seleccionado1: 240000, seleccionado2: 20000},
-        { id: 3, text: "Ultimate", seleccionado1: 240000, seleccionado2: 20000}
+        { id: 1, text: "Dinamic", seleccionado1: 350000, seleccionado2: 80000},
+        { id: 2, text: "ProRS" ,seleccionado1: 447000, seleccionado2: 100000},
+        { id: 3, text: "Ultimate", seleccionado1: 800000, seleccionado2: 400000}
       ],
       seleccionado: '',
 
@@ -544,12 +545,12 @@ export default {
         cajMaq_Velocidad: 5.0
       },
       contraHendido: {
-        contraHendTiras_Duracion: "formula",
+        contraHendTiras_Duracion: '',
         contraHendTiras_VidaUtil: 75,
-        contraHendTiras_Cambios: "formula",
-        contraHendTiras_LongGrafa: "formula",
+        contraHendTiras_Cambios: '',
+        contraHendTiras_LongGrafa: '',
         contraHendTiras_Dsprdcio: 15,
-        contraHendTiras_LongEstimada: "formula"
+        contraHendTiras_LongEstimada: ''
       },
       petrinax: {
         contraHendiPrtnax_AreaCaja: 4.03184,
@@ -583,18 +584,22 @@ export default {
       this.contraHendido.contraHendTiras_LongEstimada =
         this.contraHendido.contraHendTiras_LongGrafa *
         (1 + this.contraHendido.contraHendTiras_Dsprdcio);
-      console.log(this.contraHendido.contraHendTiras_LongGrafa);
+      
     },
 
     calContraHendidoUsar(){
       // this.contraHendido.contraHendTiras_Duracion = 0,
-      if (this.contraHendidoSeleccionado.id == 0) {
+      if (this.contraHendidoSeleccionado.id === 0) {
         this.contraHendido.contraHendTiras_Duracion = this.contraHendidoSeleccionado.seleccionado2
       } if (this.contraHendidoSeleccionado.id == 1) {
         this.contraHendido.contraHendTiras_Duracion = this.contraHendidoSeleccionado.seleccionado2
-      } 
+      } if (this.contraHendidoSeleccionado.id == 2) {
+        this.contraHendido.contraHendTiras_Duracion = this.contraHendidoSeleccionado.seleccionado2
+      } if (this.contraHendidoSeleccionado.id == 3) {
+        this.contraHendido.contraHendTiras_Duracion = this.contraHendidoSeleccionado.seleccionado2
+      }
+       
         
-      
 
   
     }
