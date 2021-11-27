@@ -5,7 +5,7 @@
        
       <div class="w-4/12 px-4 py-2 border border-black">
         
-        <label class="flex justify-center mb-4 text-center">Palabra o frase a transcribir</label>
+        <label class="flex justify-center mb-2 text-center">Palabra o frase a transcribir</label>
          <InputBasic
                 @keydown    = "clearErrors"
                 borderColor = "extra"
@@ -73,7 +73,61 @@
         </div>
       </div>
     </div> 
+    <div class="mt-2 border-2">
+        <div class="text-center"> <h2 class="p-4 border-2"> Texto transcripción</h2></div>
+        <div class="table-container">
+          <div class="ml-3 mr-3 tabla-1">
+            <table class="bg-white border border-separate border-green-900 rounded shadow-md table-auto">
+              <tbody >
+              <tr>
+                <td class="p-2 border border-blue-800" rowspan=2>
+                    Texto
+                
+                </td>
+                 <td class="p-2 border border-blue-800">
+                  
+                  <div class="flex flex-col items-center justify-center img-container">
+                      <div> A </div>
+                      <div class="border-2">
+                        <img src="@/static/images/carreras/guionBajo.png" alt="">
+                      </div>
+                  </div>
+                  
+                 </td> 
+                 <td class="p-2 border border-blue-800">
+                   <div class="flex flex-col items-center justify-center img-container">
+                      <div> A </div>
+                      <div class="border-2">
+                        <img src="@/static/images/carreras/guionBajo.png" alt="">
+                      </div>
+                  </div>
 
+                 </td> 
+                 <td class="p-2 border border-blue-800">
+                  <div class="flex flex-col items-center justify-center img-container">
+                      <div> A </div>
+                      <div >
+                        <img class="float-left mr-2 border-2" src="@/static/images/carreras/guionBajo.png" alt="">
+                        <img class="border-2" src="@/static/images/carreras/guionBajo.png" alt="">
+                      </div>
+                  </div>
+
+                 </td>
+              </tr>
+              <tr>
+                <td class="p-2 border border-blue-800">Item 5</td> <td class="p-2 border border-blue-800">Item 6</td> <td class="p-2 border border-blue-800">Item 7</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          
+          <div class="tabla-2">
+          
+          </div>
+          
+        </div>
+    </div>
  
 
   </div>
