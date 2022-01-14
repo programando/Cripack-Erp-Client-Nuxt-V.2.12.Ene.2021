@@ -79,21 +79,23 @@
           <div class="ml-3 mr-3 tabla-1">
             <table class="bg-white border border-separate border-green-900 rounded shadow-md table-auto">
               <tbody >
-              <tr>
-                <td class="p-2 border border-blue-800" rowspan=2>
-                    Texto
+              
+              <tr v-for="simbolo in simbolos" :key="simbolo.id_registro" >
+                <!-- <td class="p-2 border border-blue-800" rowspan=2> Texto </td> -->
                 
-                </td>
+                       
                  <td class="p-2 border border-blue-800">
-                  
-                  <div class="flex flex-col items-center justify-center img-container">
-                      <div> A </div>
-                      <div class="border-2">
-                        <img src="@/static/images/carreras/guionBajo.png" alt="">
+                      <div class="flex flex-col items-center justify-center img-container">
+                          <div> {{ simbolo.caracter }} </div>
+                          <div class="border-2">
+                            <img :src="simbolo.path_simbolo_1" alt="">
+                            
+                          </div>
                       </div>
-                  </div>
-                  
                  </td> 
+                 
+                 
+                 <!--
                  <td class="p-2 border border-blue-800">
                    <div class="flex flex-col items-center justify-center img-container">
                       <div> A </div>
@@ -101,8 +103,10 @@
                         <img src="@/static/images/carreras/guionBajo.png" alt="">
                       </div>
                   </div>
-
                  </td> 
+                 -->
+                 
+                <!--
                  <td class="p-2 border border-blue-800">
                   <div class="flex flex-col items-center justify-center img-container">
                       <div> A </div>
@@ -111,12 +115,15 @@
                         <img class="border-2" src="@/static/images/carreras/guionBajo.png" alt="">
                       </div>
                   </div>
-
                  </td>
+                 -->
+                 
               </tr>
+           <!--    
               <tr>
                 <td class="p-2 border border-blue-800">Item 5</td> <td class="p-2 border border-blue-800">Item 6</td> <td class="p-2 border border-blue-800">Item 7</td>
               </tr>
+              -->
               </tbody>
             </table>
           </div>
@@ -152,7 +159,8 @@
                 largo    : '',
                 texto    : ''
             },
-            errors :[],
+            errors : [],
+            simbolos : [],
       }),
       methods: {
           sendTextToTranscript() {
@@ -160,10 +168,11 @@
               this.formData.idTercero   = this.$cookies.get("User").idtercero;
               Braile.SendTextToTranscript ( this.formData )
               .then ( res=>{
-                  console.log( res );
+                  this.simbolos = res.data ;
                   this.showBtnAnimation = false;
               })
-          }
+          },
+ 
       }
 
 }
