@@ -97,7 +97,7 @@
                   <div
                     class="flex flex-col items-center justify-center img-container"
                   >
-                    <div class="px-2">{{ simbol.caracter }}</div>
+                    <div class="px-2">{{ simbol.caracter | Capitalize }}</div>
                     <div class="border-2">
                       <img :src="simbol.path_simbolo_1" alt="" />
                     </div>
@@ -113,7 +113,7 @@
                   <div
                     class="flex flex-col items-center justify-center img-container"
                   >
-                    <div class="px-2">{{ simbol2.caracter }}</div>
+                    <div class="px-2">{{ simbol2.caracter | Capitalize }}</div>
                     <div class="border-2">
                       <img :src="simbol2.path_simbolo_1" alt="" />
                     </div>
@@ -121,45 +121,7 @@
                 </td>
               </tr>
 
-              <!-- <td class="p-2 border border-blue-800">
-                  <div
-                    class="flex flex-col items-center justify-center img-container"
-                  >
-                    <div>A</div>
-                    <div class="border-2">
-                      <img
-                        src="@/static/images/carreras/guionBajo.png"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </td> -->
-
-              <!-- <td class="p-2 border border-blue-800">
-                  <div
-                    class="flex flex-col items-center justify-center img-container"
-                  >
-                    <div>A</div>
-                    <div>
-                      <img
-                        class="float-left mr-2 border-2"
-                        src="@/static/images/carreras/guionBajo.png"
-                        alt=""
-                      />
-                      <img
-                        class="border-2"
-                        src="@/static/images/carreras/guionBajo.png"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </td> -->
-
-              <!-- <tr>
-                <td class="p-2 border border-blue-800">Item 5</td>
-                <td class="p-2 border border-blue-800">Item 6</td>
-                <td class="p-2 border border-blue-800">Item 7</td>
-              </tr> -->
+      
             </tbody>
           </table>
         </div>
@@ -189,6 +151,7 @@ export default {
       largo: "",
       texto: ""
     },
+    response : [],
     errors: [],
     simbolos: [],
     simbolos2: []
@@ -199,9 +162,11 @@ export default {
       this.formData.idTercero = this.$cookies.get("User").idtercero;
       Braile.SendTextToTranscript(this.formData).then(res => {
         let [cara1, cara2] = res.data;
+        this.response = res.data;
         this.simbolos = cara1;
         this.simbolos2 = cara2;
-        console.log(cara1, cara2);
+        console.log(cara1);
+        console.log(cara2);
         this.showBtnAnimation = false;
       });
     }
