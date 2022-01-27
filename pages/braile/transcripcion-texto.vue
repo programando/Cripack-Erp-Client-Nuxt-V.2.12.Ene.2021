@@ -84,9 +84,20 @@
             class="bg-white border border-separate border-green-900 rounded shadow-md table-auto"
           >
             <tbody>
-              <tr>
-                <td class="w-24 p-2 border border-blue-800" rowspan="2">
-                  {{ formData.texto }}
+              <tr class="">
+                <td
+                  class="flex flex-col items-center justify-center w-24 p-2 mt-8 space-y-2"
+                  rowspan="2"
+                >
+                  <div>
+                    Cara 1
+                  </div>
+                  <div>
+                    MC: 0
+                  </div>
+                  <div>
+                    MF: 3
+                  </div>
                 </td>
 
                 <td
@@ -104,7 +115,22 @@
                   </div>
                 </td>
               </tr>
-              <tr>
+              <tr v-if="simbolos2">
+                <td class="flex flex-col w-24 p-2" rowspan="2"></td>
+                <td
+                  class="flex flex-col items-center justify-center w-24 p-2 mt-8 space-y-2"
+                  rowspan="2"
+                >
+                  <div>
+                    Cara 2
+                  </div>
+                  <div>
+                    MC: 0
+                  </div>
+                  <div>
+                    MF: 3
+                  </div>
+                </td>
                 <td
                   v-for="simbol2 in simbolos2"
                   :key="simbol2.id_registro"
@@ -116,6 +142,56 @@
                     <div class="px-2">{{ simbol2.caracter }}</div>
                     <div class="border-2">
                       <img :src="simbol2.path_simbolo_1" alt="" />
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr v-if="simbolos3">
+                <td class="flex flex-col w-24 p-2" rowspan="2"></td>
+                <td
+                  class="flex flex-col items-center justify-center w-24 p-2 mt-8 space-y-2"
+                  rowspan="2"
+                >
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </td>
+                <td
+                  v-for="simbol3 in simbolos3"
+                  :key="simbol3.id_registro"
+                  class="p-2 border border-blue-800"
+                >
+                  <div
+                    class="flex flex-col items-center justify-center img-container"
+                  >
+                    <div class="px-2">{{ simbol3.caracter }}</div>
+                    <div class="border-2">
+                      <img :src="simbol3.path_simbolo_1" alt="" />
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr v-if="simbolos4">
+                <td class="flex flex-col w-24 p-2" rowspan="2"></td>
+                <td
+                  class="flex flex-col items-center justify-center w-24 p-2 mt-8 space-y-2"
+                  rowspan="2"
+                >
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </td>
+                <td
+                  v-for="simbol4 in simbolos4"
+                  :key="simbol4.id_registro"
+                  class="p-2 border border-blue-800"
+                >
+                  <div
+                    class="flex flex-col items-center justify-center img-container"
+                  >
+                    <div class="px-2">{{ simbol4.caracter }}</div>
+                    <div class="border-2">
+                      <img :src="simbol4.path_simbolo_1" alt="" />
                     </div>
                   </div>
                 </td>
@@ -191,17 +267,24 @@ export default {
     },
     errors: [],
     simbolos: [],
-    simbolos2: []
+    simbolos2: [],
+    simbolos3: [],
+    simbolos4: []
   }),
   methods: {
     sendTextToTranscript() {
       this.showBtnAnimation = true;
       this.formData.idTercero = this.$cookies.get("User").idtercero;
       Braile.SendTextToTranscript(this.formData).then(res => {
-        let [cara1, cara2] = res.data;
+        console.log(res.data);
+        let [cara1, cara2, cara3, cara4] = res.data;
+
         this.simbolos = cara1;
         this.simbolos2 = cara2;
-        console.log(cara1, cara2);
+        this.simbolos3 = cara3;
+        this.simbolos4 = cara4;
+
+        console.log(cara2);
         this.showBtnAnimation = false;
       });
     }
