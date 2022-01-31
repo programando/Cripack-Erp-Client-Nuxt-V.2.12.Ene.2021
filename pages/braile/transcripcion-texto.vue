@@ -164,7 +164,7 @@
                   <div
                     class="flex flex-col items-center justify-center img-container"
                   >
-                    <div class="px-2">{{ simbol3.caracter }}</div>
+                    <div class="px-2">{{ simbol3.caracter | Capitalize }}</div>
                     <div class="border-2">
                       <img :src="simbol3.path_simbolo_1" alt="" />
                     </div>
@@ -189,7 +189,7 @@
                   <div
                     class="flex flex-col items-center justify-center img-container"
                   >
-                    <div class="px-2">{{ simbol4.caracter }}</div>
+                    <div class="px-2">{{ simbol4.caracter | Capitalize }}</div>
                     <div class="border-2">
                       <img :src="simbol4.path_simbolo_1" alt="" />
                     </div>
