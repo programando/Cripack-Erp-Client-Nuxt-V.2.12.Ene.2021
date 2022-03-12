@@ -84,118 +84,7 @@
             class="bg-white border border-separate border-green-900 rounded shadow-md table-auto"
           >
             <tbody>
-              <tr class="">
-                <td
-                  class="flex flex-col items-center justify-center w-24 p-2 mt-8 space-y-2"
-                  rowspan="2"
-                >
-                  <div>
-                    Cara 1
-                  </div>
-                  <div>
-                    MC: 0
-                  </div>
-                  <div>
-                    MF: 3
-                  </div>
-                </td>
 
-                <td
-                  v-for="simbol in simbolos"
-                  :key="simbol.id_registro"
-                  class="p-2 border border-blue-800"
-                >
-                  <div
-                    class="flex flex-col items-center justify-center img-container"
-                  >
-                    <div class="px-2">{{ simbol.caracter | Capitalize }}</div>
-                    <div class="border-2">
-                      <img :src="simbol.path_simbolo_1" alt="" />
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr v-if="simbolos2">
-                <td class="flex flex-col w-24 p-2" rowspan="2"></td>
-                <td
-                  class="flex flex-col items-center justify-center w-24 p-2 mt-8 space-y-2"
-                  rowspan="2"
-                >
-                  <div>
-                    Cara 2
-                  </div>
-                  <div>
-                    MC: 0
-                  </div>
-                  <div>
-                    MF: 3
-                  </div>
-                </td>
-                <td
-                  v-for="simbol2 in simbolos2"
-                  :key="simbol2.id_registro"
-                  class="p-2 border border-blue-800"
-                >
-                  <div
-                    class="flex flex-col items-center justify-center img-container"
-                  >
-                    <div class="px-2">{{ simbol2.caracter | Capitalize }}</div>
-                    <div class="border-2">
-                      <img :src="simbol2.path_simbolo_1" alt="" />
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr v-if="simbolos3">
-                <td class="flex flex-col w-24 p-2" rowspan="2"></td>
-                <td
-                  class="flex flex-col items-center justify-center w-24 p-2 mt-8 space-y-2"
-                  rowspan="2"
-                >
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                </td>
-                <td
-                  v-for="simbol3 in simbolos3"
-                  :key="simbol3.id_registro"
-                  class="p-2 border border-blue-800"
-                >
-                  <div
-                    class="flex flex-col items-center justify-center img-container"
-                  >
-                    <div class="px-2">{{ simbol3.caracter | Capitalize }}</div>
-                    <div class="border-2">
-                      <img :src="simbol3.path_simbolo_1" alt="" />
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr v-if="simbolos4">
-                <td class="flex flex-col w-24 p-2" rowspan="2"></td>
-                <td
-                  class="flex flex-col items-center justify-center w-24 p-2 mt-8 space-y-2"
-                  rowspan="2"
-                >
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                </td>
-                <td
-                  v-for="simbol4 in simbolos4"
-                  :key="simbol4.id_registro"
-                  class="p-2 border border-blue-800"
-                >
-                  <div
-                    class="flex flex-col items-center justify-center img-container"
-                  >
-                    <div class="px-2">{{ simbol4.caracter | Capitalize }}</div>
-                    <div class="border-2">
-                      <img :src="simbol4.path_simbolo_1" alt="" />
-                    </div>
-                  </div>
-                </td>
-              </tr>
 
       
             </tbody>
@@ -221,33 +110,43 @@ export default {
   data: () => ({
     showBtnAnimation: false,
     formData: {
-      alto: "",
-      ancho: "",
+      alto: "25",
+      ancho: "46",
       idTercero: 0,
-      largo: "",
-      texto: ""
+      largo: "36",
+      texto: "buenas personas"
     },
     response : [],
     errors: [],
-    simbolos: [],
-    simbolos2: [],
-    simbolos3: [],
-    simbolos4: []
+    cara1 : [],
+    cara2 : [],
+    simbolosCara1: [],
+    simbolosCara2: [],
+    
   }),
   methods: {
-    sendTextToTranscript() {
+    async sendTextToTranscript() {
       this.showBtnAnimation = true;
       this.formData.idTercero = this.$cookies.get("User").idtercero;
+      
       Braile.SendTextToTranscript(this.formData).then(res => {
-        console.log(res.data);
-        let [cara1, cara2, cara3, cara4] = res.data;
+        //console.log ( typeof (res.data[1].cara1) );
+       
+        if ( typeof res.data[0].cara1 != 'undefined'){
+           this.cara1 = res.data[0].cara1[0]
+           console.log( this.cara1 );
+          this.simbolosCara1 = res.data[0].simbolos1;
+          console.log( this.simbolosCara1 );
+        }
 
-        this.simbolos = cara1;
-        this.simbolos2 = cara2;
-        this.simbolos3 = cara3;
-        this.simbolos4 = cara4;
+       if ( ! res.data[1].cara2 === undefined ){
+          this.cara2  = res.data[1].cara2[0];
+          this.simbolosCara2 = res.data[1].simbolos2;
+        }  
 
-        console.log(cara2);
+        
+        //console.log(this.simbolosCara2);
+
         this.showBtnAnimation = false;
       });
     }
