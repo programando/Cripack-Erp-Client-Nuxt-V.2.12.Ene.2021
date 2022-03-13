@@ -133,10 +133,11 @@ export default {
         //console.log ( typeof (res.data[1].cara1) );
        
         if ( typeof res.data[0].cara1 != 'undefined'){
-           this.cara1 = res.data[0].cara1[0]
+           this.cara1 = res.data[0].cara1[0] 
+           this.simbolosCara1 = res.data[0].simbolos1;
            console.log( this.cara1 );
-          this.simbolosCara1 = res.data[0].simbolos1;
-          console.log( this.simbolosCara1 );
+           console.log( this.simbolosCara1 );
+          
         }
 
        if ( ! res.data[1].cara2 === undefined ){
