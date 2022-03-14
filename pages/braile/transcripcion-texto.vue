@@ -99,7 +99,6 @@
                     <img class="border border-gray-400" :src="simbolos1.path_simbolo_1" alt="">
                     <img class="border border-gray-400" v-if="simbolos1.path_simbolo_2" :src="simbolos1.path_simbolo_2" alt="">
                   </div>
-                  
                 </td>
               </tr>
             </tbody>
@@ -123,7 +122,6 @@
             </tbody>
           </table>
         </div>
-
         <div class="tabla-2"></div>
       </div>
     </div>
