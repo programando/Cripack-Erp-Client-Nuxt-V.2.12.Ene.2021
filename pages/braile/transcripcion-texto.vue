@@ -86,7 +86,7 @@
           >
             <tbody class="">
               <tr class="">
-                <td class="p-10 border border-black ">
+                <td class="w-32 p-10 border border-black">
                   <div>Cara 1</div>
                   <div class="mt-2">MC: 0</div>
                   <div>MF: 3</div>
@@ -94,25 +94,31 @@
                 
                 <td v-for="simbolos1 in simbolosCara1" :key="simbolos1.id_registro" class="p-4 border border-black">
                   <div class="text-center uppercase">{{simbolos1.caracter}}</div>
-                  <img :src="simbolos1.path_simbolo_1" alt="">
-                  <img v-if="simbolos1.path_simbolo_2" :src="simbolos1.path_simbolo_2" alt="">
+                  <div class="flex space-x-2">
+                    <img class="border border-gray-400" :src="simbolos1.path_simbolo_1" alt="">
+                    <img class="border border-gray-400" v-if="simbolos1.path_simbolo_2" :src="simbolos1.path_simbolo_2" alt="">
+                  </div>
+                  
                 </td>
-
               </tr>
+            </tbody>
+          </table>
+          <table
+            class="bg-white border border-black rounded table-auto"
+          >
+            <tbody class="">
               <tr class="">
-                <td class="p-10 border border-black">
+                <td class="w-32 p-10 border border-black">
                   <div>Cara 2</div>
                   <div class="mt-2">MC: 0</div>
                   <div>MF: 3</div>
                 </td>
                 <td v-for="simbolos2 in simbolosCara2" :key="simbolos2.id_registro" class="p-4 border border-black">
                   <div class="text-center uppercase">{{simbolos2.caracter}}</div>
-                  <img :src="simbolos2.path_simbolo_1" alt="">
-                   <img v-if="simbolos2.path_simbolo_2" :src="simbolos2.path_simbolo_2" alt="">
+                  <img class="border border-gray-400" :src="simbolos2.path_simbolo_1" alt="">
+                   <img class="border border-gray-400" v-if="simbolos2.path_simbolo_2" :src="simbolos2.path_simbolo_2" alt="">
                 </td>
               </tr> 
-
-      
             </tbody>
           </table>
         </div>
