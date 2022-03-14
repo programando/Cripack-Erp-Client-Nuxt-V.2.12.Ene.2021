@@ -16,6 +16,7 @@
           v-model="formData.texto"
           width="w-12/12"
           :errors="errors.texto"
+          isUppercase='uppercase'
         ></InputBasic>
 
         <p class="mt-6 mb-6 text-center">Dimensiones de la caja</p>

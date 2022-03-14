@@ -25,6 +25,9 @@
                     {
                         'px-10': icon
                     },
+                    {
+                        'uppercase': isUppercase
+                    },
                     
                 ]"
                 :type    = "type"
@@ -71,8 +74,8 @@
             colorError: String,
             colorLabel: String,
             width: String,
-            border: String
-
+            border: String,
+            isUppercase:String
         },
 
         computed: {
