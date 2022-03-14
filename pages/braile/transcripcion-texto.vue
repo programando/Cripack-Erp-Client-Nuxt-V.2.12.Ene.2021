@@ -88,7 +88,7 @@
               <tr class="">
                 <td class="p-10 border border-black ">
                   <div>Cara 1</div>
-                  <div>MC: 0</div>
+                  <div class="mt-2">MC: 0</div>
                   <div>MF: 3</div>
                 </td>
                 <td v-for="simbolos1 in simbolosCara1" :key="simbolos1.id_registro" class="p-4 border border-black">
@@ -99,7 +99,7 @@
               <tr class="">
                 <td class="p-10 border border-black">
                   <div>Cara 1</div>
-                  <div>MC: 0</div>
+                  <div class="mt-2">MC: 0</div>
                   <div>MF: 3</div>
                 </td>
                 <td v-for="simbolos2 in simbolosCara2" :key="simbolos2.id_registro" class="p-4 border border-black">
