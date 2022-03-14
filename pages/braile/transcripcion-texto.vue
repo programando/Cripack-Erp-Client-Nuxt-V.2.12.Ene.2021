@@ -74,7 +74,7 @@
       </div>
     </div>
 
-    <div class="mt-2">
+    <div v-if="cara1.cara_1 || cara1.cara_2" class="mt-2">
       <div class="flex justify-center text-center border-2">
         <h2 class="p-4 uppercase">{{cara1.cara_1}}</h2>
         <h2 v-if="cara2" class="p-4 uppercase ">{{cara2.cara_2}}</h2>
@@ -91,20 +91,24 @@
                   <div class="mt-2">MC: 0</div>
                   <div>MF: 3</div>
                 </td>
+                
                 <td v-for="simbolos1 in simbolosCara1" :key="simbolos1.id_registro" class="p-4 border border-black">
                   <div class="text-center uppercase">{{simbolos1.caracter}}</div>
                   <img :src="simbolos1.path_simbolo_1" alt="">
+                  <img v-if="simbolos1.path_simbolo_2" :src="simbolos1.path_simbolo_2" alt="">
                 </td>
+
               </tr>
               <tr class="">
                 <td class="p-10 border border-black">
-                  <div>Cara 1</div>
+                  <div>Cara 2</div>
                   <div class="mt-2">MC: 0</div>
                   <div>MF: 3</div>
                 </td>
                 <td v-for="simbolos2 in simbolosCara2" :key="simbolos2.id_registro" class="p-4 border border-black">
                   <div class="text-center uppercase">{{simbolos2.caracter}}</div>
                   <img :src="simbolos2.path_simbolo_1" alt="">
+                   <img v-if="simbolos2.path_simbolo_2" :src="simbolos2.path_simbolo_2" alt="">
                 </td>
               </tr> 
 
@@ -136,7 +140,7 @@ export default {
       ancho: "46",
       idTercero: 0,
       largo: "36",
-      texto: "buenas personas"
+      texto: "buena5 personas"
     },
     response : [],
     errors: [],
@@ -165,11 +169,10 @@ export default {
        if (res.data[1].cara2){
           this.cara2  = res.data[1].cara2[0];
           this.simbolosCara2 = res.data[1].simbolos2;
-
+           console.log( this.cara2 );
+           console.log( this.simbolosCara2 );
         }  
-
-        
-        console.log(this.simbolosCara2);
+ 
 
         this.showBtnAnimation = false;
       });
