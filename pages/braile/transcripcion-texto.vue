@@ -74,17 +74,39 @@
       </div>
     </div>
 
-    <div class="mt-2 border-2">
-      <div class="text-center">
-        <h2 class="p-4 border-2">Texto transcripción</h2>
+    <div class="mt-2">
+      <div class="flex justify-center text-center border-2">
+        <h2 class="p-4 uppercase">{{cara1.cara_1}}</h2>
+        <h2 v-if="cara2" class="p-4 uppercase ">{{cara2.cara_2}}</h2>
       </div>
-      <div class="table-container">
-        <div class="ml-3 mr-3 tabla-1">
+      <div class="mt-2">
+        <div class="ml-3 mr-3">
           <table
-            class="bg-white border border-separate border-green-900 rounded shadow-md table-auto"
+            class="bg-white border border-black rounded table-auto"
           >
-            <tbody>
-
+            <tbody class="">
+              <tr class="">
+                <td class="p-10 border border-black ">
+                  <div>Cara 1</div>
+                  <div>MC: 0</div>
+                  <div>MF: 3</div>
+                </td>
+                <td v-for="simbolos1 in simbolosCara1" :key="simbolos1.id_registro" class="p-4 border border-black">
+                  <div class="text-center uppercase">{{simbolos1.caracter}}</div>
+                  <img :src="simbolos1.path_simbolo_1" alt="">
+                </td>
+              </tr>
+              <tr class="">
+                <td class="p-10 border border-black">
+                  <div>Cara 1</div>
+                  <div>MC: 0</div>
+                  <div>MF: 3</div>
+                </td>
+                <td v-for="simbolos2 in simbolosCara2" :key="simbolos2.id_registro" class="p-4 border border-black">
+                  <div class="text-center uppercase">{{simbolos2.caracter}}</div>
+                  <img :src="simbolos2.path_simbolo_1" alt="">
+                </td>
+              </tr> 
 
       
             </tbody>
@@ -139,13 +161,14 @@ export default {
           console.log( this.simbolosCara1 );
         }
 
-       if ( ! res.data[1].cara2 === undefined ){
+       if (res.data[1].cara2){
           this.cara2  = res.data[1].cara2[0];
           this.simbolosCara2 = res.data[1].simbolos2;
+
         }  
 
         
-        //console.log(this.simbolosCara2);
+        console.log(this.simbolosCara2);
 
         this.showBtnAnimation = false;
       });
