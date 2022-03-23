@@ -70,11 +70,14 @@
             :showBtnAnimation="showBtnAnimation"
           >
             Iniciar transcripción
+            
           </BtnCallToAction>
         </div>
+        <br>
+        <div class="flex justify-center"><p> Versión 3.4.02.  En fase de revisión </p></div>
       </div>
     </div>
-
+    
     <div v-if="cara1.cara_1 || cara1.cara_2" class="mt-2">
       <div class="flex justify-center text-center border-2">
         <h2 class="p-4 uppercase">{{cara1.cara_1}}</h2>
@@ -141,11 +144,11 @@ export default {
   data: () => ({
     showBtnAnimation: false,
     formData: {
-      alto: "25",
-      ancho: "46",
+      alto: "",
+      ancho: "",
       idTercero: 0,
-      largo: "36",
-      texto: "buena5 personas"
+      largo: "",
+      texto: ""
     },
     response : [],
     errors: [],
