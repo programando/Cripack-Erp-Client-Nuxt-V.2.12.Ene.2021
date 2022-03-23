@@ -16,7 +16,7 @@
 
         <NavLinks text="Estado Ot's" to="/clientes/ots-estado" />
 
-        <div v-if="isDevelopment == 'development'" class="relative text-white">
+        <div  class="relative text-white">
           <button @click="viewUtilidades" class="px-2 text-lg">
             Utilidades
           </button>
