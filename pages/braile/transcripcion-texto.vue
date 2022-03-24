@@ -82,9 +82,8 @@
       </div>
       <div class="mt-2">
         <div class="ml-3 mr-3">
-          <table
-            class="bg-white border border-black rounded table-auto"
-          >
+          
+          <table  class="bg-white border border-black rounded table-auto" >
             <tbody class="">
               <tr class="">
                 <td class="w-32 p-10 border border-black">
@@ -103,6 +102,7 @@
               </tr>
             </tbody>
           </table>
+
           <table
             class="bg-white border border-black rounded table-auto"
           >
@@ -141,11 +141,12 @@ export default {
   data: () => ({
     showBtnAnimation: false,
     formData: {
-      alto: "25",
-      ancho: "46",
+      alto: "45",
+      ancho: "45",
       idTercero: 0,
-      largo: "36",
-      texto: "buena5 personas"
+      largo: "45",
+      texto: "AMOXI mk #500 mg",
+      cara:0
     },
     response : [],
     errors: [],
@@ -156,14 +157,15 @@ export default {
     
   }),
   methods: {
-    async sendTextToTranscript() {
+     sendTextToTranscript() {
       this.showBtnAnimation = true;
       this.formData.idTercero = this.$cookies.get("User").idtercero;
-      
+      this.formData.cara      = 2 ; 
       Braile.SendTextToTranscript(this.formData).then(res => {
-        //console.log ( typeof (res.data[1].cara1) );
+        
+        console.log ( res.data );
        
-        if ( typeof res.data[0].cara1 != 'undefined'){
+       /* if ( typeof res.data[0].cara1 != 'undefined'){
            this.cara1 = res.data[0].cara1[0] 
            this.simbolosCara1 = res.data[0].simbolos1;
            console.log( this.cara1 );
@@ -177,6 +179,7 @@ export default {
            console.log( this.cara2 );
            console.log( this.simbolosCara2 );
         }  
+        */
  
 
         this.showBtnAnimation = false;
