@@ -20,7 +20,7 @@
         ></InputBasic>
 
         <p class="mt-6 mb-6 text-center">Dimensiones de la caja</p>
-        <div class="items-center">
+        <div class="flex justify-center">
           <div class="flex justify-center mt-2">
             <label class="w-20">Largo :</label>
             <InputBasic
@@ -59,7 +59,7 @@
             ></InputBasic>
           </div>
         </div>
-        <div class="flex justify-center mt-10">
+        <div class="flex justify-center mt-10 mb-4">
           <BtnCallToAction
             @click.prevent="sendTextToTranscript"
             colorIcon="white"
