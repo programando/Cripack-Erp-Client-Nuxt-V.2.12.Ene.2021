@@ -70,11 +70,14 @@
             :showBtnAnimation="showBtnAnimation"
           >
             Iniciar transcripción
+            
           </BtnCallToAction>
         </div>
+        <br>
+        <div class="flex justify-center"><p> Versión 3.4.02.  En fase de revisión </p></div>
       </div>
     </div>
-
+    
     <div v-if="cara1.cara_1 || cara1.cara_2" class="mt-2">
       <div class="flex justify-center text-center border-2">
         <h2 class="p-4 uppercase">{{cara1.cara_1}}</h2>
@@ -141,12 +144,14 @@ export default {
   data: () => ({
     showBtnAnimation: false,
     formData: {
+ 
       alto: "45",
       ancho: "45",
       idTercero: 0,
       largo: "45",
       texto: "AMOXI mk #500 mg",
       cara:0
+ 
     },
     response : [],
     errors: [],
