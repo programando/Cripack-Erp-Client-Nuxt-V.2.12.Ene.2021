@@ -75,14 +75,12 @@
         </div>
         <br>
         <div class="flex justify-center"><p> Versión 3.4.02.  En fase de revisión </p></div>
+ 
       </div>
     </div>
     
-    <div v-if="cara1.cara_1 || cara1.cara_2" class="mt-2">
-      <div class="flex justify-center text-center border-2">
-        <h2 class="p-4 uppercase">{{cara1.cara_1}}</h2>
-        <h2 v-if="cara2" class="p-4 uppercase ">{{cara2.cara_2}}</h2>
-      </div>
+    <div  class="mt-2">
+
       <div class="mt-2">
         <div class="ml-3 mr-3">
           
@@ -91,41 +89,54 @@
               <tr class="">
                 <td class="w-32 p-10 border border-black">
                   <div>Cara 1</div>
-                  <div class="mt-2">MC: 0</div>
-                  <div>MF: 3</div>
+                  <div class="mt-2">MC: {{ MC_Tabla1 }}</div>
+                  <div>MF: {{ MF_Tabla1 }}</div>
                 </td>
-                
-                <td v-for="simbolos1 in simbolosCara1" :key="simbolos1.id_registro" class="p-4 border border-black">
-                  <div class="text-center uppercase">{{simbolos1.caracter}}</div>
-                  <div class="flex space-x-2">
-                    <img class="border border-gray-400" :src="simbolos1.path_simbolo_1" alt="">
-                    <img class="border border-gray-400" v-if="simbolos1.path_simbolo_2" :src="simbolos1.path_simbolo_2" alt="">
+         
+                <td v-for="Palabra in PalabrasTabla1" :key="Palabra.id_registro" class="p-4 border border-black">
+                    <div v-for="caracterBraile in Palabra.simbolos" :key="caracterBraile.id_registro">
+                    <div  class="text-center uppercase">
+                        {{caracterBraile.caracter}}
+                    </div>
+                    <div class="flex space-x-2">
+                      <img class="border border-gray-400" :src="caracterBraile.path_simbolo_1" alt="">
+                      <img class="border border-gray-400" v-if="caracterBraile.path_simbolo_2" :src="caracterBraile.path_simbolo_2" alt="">
+                    </div>
                   </div>
                 </td>
               </tr>
             </tbody>
           </table>
 
-          <table
-            class="bg-white border border-black rounded table-auto"
-          >
+          <table  class="bg-white border border-black rounded table-auto" >
             <tbody class="">
               <tr class="">
                 <td class="w-32 p-10 border border-black">
                   <div>Cara 2</div>
-                  <div class="mt-2">MC: 0</div>
-                  <div>MF: 3</div>
+                  <div class="mt-2">MC: {{ MC_Tabla2 }}</div>
+                  <div>MF: {{ MF_Tabla2 }}</div>
                 </td>
-                <td v-for="simbolos2 in simbolosCara2" :key="simbolos2.id_registro" class="p-4 border border-black">
-                  <div class="text-center uppercase">{{simbolos2.caracter}}</div>
-                  <img class="border border-gray-400" :src="simbolos2.path_simbolo_1" alt="">
-                   <img class="border border-gray-400" v-if="simbolos2.path_simbolo_2" :src="simbolos2.path_simbolo_2" alt="">
+         
+                <td v-for="Palabra in PalabrasTabla2" :key="Palabra.id_registro" class="p-4 border border-black">
+                    <div v-for="caracterBraile in Palabra.simbolos" :key="caracterBraile.id_registro">
+                    <div  class="text-center uppercase">
+                        {{caracterBraile.caracter}}
+                    </div>
+                    <div class="flex space-x-2">
+                      <img class="border border-gray-400" :src="caracterBraile.path_simbolo_1" alt="">
+                      <img class="border border-gray-400" v-if="caracterBraile.path_simbolo_2" :src="caracterBraile.path_simbolo_2" alt="">
+                    </div>
+                  </div>
                 </td>
-              </tr> 
+              </tr>
             </tbody>
           </table>
+
+
+
+
         </div>
-        <div class="tabla-2"></div>
+       
       </div>
     </div>
   </div>
@@ -144,52 +155,51 @@ export default {
   data: () => ({
     showBtnAnimation: false,
     formData: {
- 
       alto: "45",
       ancho: "45",
       idTercero: 0,
       largo: "45",
       texto: "AMOXI mk #500 mg",
       cara:0
- 
     },
-    response : [],
+  
     errors: [],
     cara1 : [],
     cara2 : [],
     simbolosCara1: [],
     simbolosCara2: [],
-    
+    PalabrasTabla1: [],
+    PalabrasTabla2: [],
+    MC_Tabla1:'',
+    MC_Tabla2:'',
+    MF_Tabla1:'',
+    MF_Tabla2:'',
   }),
   methods: {
      sendTextToTranscript() {
-      this.showBtnAnimation = true;
-      this.formData.idTercero = this.$cookies.get("User").idtercero;
-      this.formData.cara      = 2 ; 
-      Braile.SendTextToTranscript(this.formData).then(res => {
-        
-        console.log ( res.data );
-       
-       /* if ( typeof res.data[0].cara1 != 'undefined'){
-           this.cara1 = res.data[0].cara1[0] 
-           this.simbolosCara1 = res.data[0].simbolos1;
-           console.log( this.cara1 );
-           console.log( this.simbolosCara1 );
-          
-        }
+        this.showBtnAnimation = true;
+        this.formData.idTercero = this.$cookies.get("User").idtercero;
 
-       if (res.data[1].cara2){
-          this.cara2  = res.data[1].cara2[0];
-          this.simbolosCara2 = res.data[1].simbolos2;
-           console.log( this.cara2 );
-           console.log( this.simbolosCara2 );
-        }  
-        */
- 
+        this.formData.cara      = 1 ; 
+        Braile.SendTextToTranscript(this.formData).then(response => {
+          this.PalabrasTabla1 = response.data;
+          this.MC_Tabla1      = response.data[0].MC ;
+          this.MF_Tabla1      = response.data[0].MF ;
 
-        this.showBtnAnimation = false;
-      });
-    }
+        });
+
+        this.formData.cara      = 2 ; 
+        Braile.SendTextToTranscript(this.formData).then(response => {
+          this.PalabrasTabla2 = response.data;
+          this.MC_Tabla2      = response.data[0].MC ;
+          this.MF_Tabla2      = response.data[0].MF ;
+
+        });
+
+     
+     this.showBtnAnimation = false;
+    },
+    
   }
 };
 </script>
