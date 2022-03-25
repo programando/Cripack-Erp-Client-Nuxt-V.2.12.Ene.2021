@@ -24,7 +24,7 @@
             v-if="menu"
             class="absolute z-20 flex flex-col w-40 pb-2 text-sm border border-white rounded-md top-7 bg-azul"
           >
-           <!--
+           
             <div
               @click="subMenu = !subMenu"
               class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"
@@ -55,7 +55,7 @@
 
             </div>
 
-          -->
+         
 
 
             <div
@@ -64,6 +64,14 @@
             >
               <nuxt-link to="/braile/transcripcion-texto"
                 >Transcriptor Braile</nuxt-link
+              >
+            </div>
+            <div
+              @click="menu = false"
+              class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"
+            >
+              <nuxt-link to="/braile/registro-visitas"
+                >Registro de Visitas</nuxt-link
               >
             </div>
           </div>
