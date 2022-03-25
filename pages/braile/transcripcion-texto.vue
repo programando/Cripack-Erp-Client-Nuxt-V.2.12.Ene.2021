@@ -93,7 +93,7 @@
                   <div>MF: {{ MF_Tabla1 }}</div>
                 </td>
          
-                <td v-for="Palabra in PalabrasTabla1" :key="Palabra.id_registro" class="p-4 border border-black">
+                <td v-for="Palabra in PalabrasTabla1" :key="Palabra.id_registro" class="flex p-4 space-x-3 border border-black">
                     <div v-for="caracterBraile in Palabra.simbolos" :key="caracterBraile.id_registro">
                     <div  class="text-center uppercase">
                         {{caracterBraile.caracter}}
@@ -117,15 +117,15 @@
                   <div>MF: {{ MF_Tabla2 }}</div>
                 </td>
          
-                <td v-for="Palabra in PalabrasTabla2" :key="Palabra.id_registro" class="p-4 border border-black">
+                <td v-for="Palabra in PalabrasTabla2" :key="Palabra.id_registro" class="flex p-4 space-x-4 border border-black">
                     <div v-for="caracterBraile in Palabra.simbolos" :key="caracterBraile.id_registro">
-                    <div  class="text-center uppercase">
-                        {{caracterBraile.caracter}}
-                    </div>
-                    <div class="flex space-x-2">
-                      <img class="border border-gray-400" :src="caracterBraile.path_simbolo_1" alt="">
-                      <img class="border border-gray-400" v-if="caracterBraile.path_simbolo_2" :src="caracterBraile.path_simbolo_2" alt="">
-                    </div>
+                      <div  class="text-center uppercase">
+                          {{caracterBraile.caracter}}
+                      </div>
+                      <div class="flex space-x-2">
+                        <img class="border border-gray-400" :src="caracterBraile.path_simbolo_1" alt="">
+                        <img class="border border-gray-400" v-if="caracterBraile.path_simbolo_2" :src="caracterBraile.path_simbolo_2" alt="">
+                      </div>
                   </div>
                 </td>
               </tr>
