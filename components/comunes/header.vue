@@ -18,7 +18,7 @@
 
         <div  class="relative text-white">
           <button @click="viewUtilidades" class="px-2 text-lg">
-            Utilidades
+            Utilidades clientes
           </button>
           <div
             v-if="menu"
@@ -41,7 +41,8 @@
                   to="/clientes/ordenes-trabajo/troquel-plano"
                   >Plano</nuxt-link
                 >
-                <nuxt-link
+              
+              <!--  <nuxt-link
                   class="px-2 py-1 text-xs text-white"
                   to="/clientes/ordenes-trabajo/troquel-plano"
                   >Curvo</nuxt-link
@@ -51,6 +52,7 @@
                   to="/clientes/ordenes-trabajo/troquel-plano"
                   >Descartone</nuxt-link
                 >
+                -->
               </div>
 
             </div>
@@ -66,66 +68,39 @@
                 >Transcriptor Braile</nuxt-link
               >
             </div>
-            <div
-              @click="menu = false"
-              class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"
-            >
-              <nuxt-link to="/braile/registro-visitas"
-                >Registro de Visitas</nuxt-link
-              >
-            </div>
+ 
           </div>
         </div>
 
         <div v-if="esUsuarioCripack" class="relative text-white">
           <button @click="viewGestion" class="px-2 text-lg">
-            Gestión
+            Gestión comercial
           </button>
           <div
             v-if="gestion"
             class="absolute z-20 flex flex-col w-48 pb-2 text-sm border border-white rounded-md top-7 bg-azul"
           >
-            <div
-              class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"
-              @click="gestion = false"
-            >
-              <nuxt-link to="/clientes/costos"
-                >Costos alistamiento</nuxt-link
-              >
-              
-            </div>
-             
-            <div
-              @click="gestion = false"
-              class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"
-            >
-              <nuxt-link to="/gestion/datos-caja-maquina"
-                >Cito vs Pertinax</nuxt-link
-              >
+        
+             <div class="relative mx-2 mt-2 cursor-pointer hover:opacity-90" @click="gestion = false" >
+              <nuxt-link to="/braile/registro-visitas">Registro visita cliente</nuxt-link>
             </div>
 
-            <div
-              @click="gestion = false"
-              class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"
-            >
-              <nuxt-link to="/gestion/documentos"
-                >Consulta documentos</nuxt-link
-              >
+            <div @click="gestion = false" class="relative mx-2 mt-2 cursor-pointer hover:opacity-90" >
+              <nuxt-link to="/gestion/documentos" >Consulta documentos</nuxt-link >
             </div>
 
 
+            <div class="relative mx-2 mt-2 cursor-pointer hover:opacity-90" @click="gestion = false" >
+              <nuxt-link to="/clientes/costos" >Costos alistamiento</nuxt-link >
+            </div>
+
+            <div  @click="gestion = false"  class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"  >
+              <nuxt-link to="/gestion/datos-caja-maquina">Cito vs Pertinax</nuxt-link>
+            </div>
 
           </div>
         </div>
-
-        <!-- <NavLinks text="Estado OT's" to="/clientes/ots-estado" /> -->
-
         <NavLinks text="Contacto" to="/clientes/contacto" />
-
-        <!--       <NavLinks 
-        text="Comercial"
-        to="/clientes/ordenes"
-      /> -->
 
         <button @click="logout" class="text-lg text-white">Salir</button>
       </div>
@@ -137,9 +112,9 @@
 </template>
 
 <script>
-import LanguajeChange from "@/components/htmlControls/languajeChange";
-import NavLinks from "@/components/comunes/navLinks";
-import User from "@/models/User";
+import LanguajeChange       from "@/components/htmlControls/languajeChange";
+import NavLinks             from "@/components/comunes/navLinks";
+import User                 from "@/models/User";
 export default {
   name: "Header",
   components: { NavLinks, LanguajeChange },

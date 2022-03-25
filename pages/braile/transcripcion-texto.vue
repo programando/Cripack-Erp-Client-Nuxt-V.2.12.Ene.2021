@@ -15,7 +15,7 @@
           type="text"
           v-model="formData.texto"
           width="w-12/12"
-          :errors="errors.texto"
+ 
           isUppercase='uppercase'
         ></InputBasic>
 
@@ -30,7 +30,6 @@
               type="text"
               v-model="formData.largo"
               width="w-2/6"
-              :errors="errors.largo"
             ></InputBasic>
           </div>
           <div class="flex justify-center mt-2">
@@ -43,7 +42,6 @@
               type="text"
               v-model="formData.ancho"
               width="w-2/6"
-              :errors="errors.ancho"
             ></InputBasic>
           </div>
           <div class="flex justify-center mt-2">
@@ -55,7 +53,6 @@
               type="text"
               v-model="formData.alto"
               width="w-2/6"
-              :errors="errors.alto"
             ></InputBasic>
           </div>
         </div>
@@ -74,66 +71,63 @@
           </BtnCallToAction>
         </div>
         <br>
-        <div class="flex justify-center"><p> Versión 3.4.02.  En fase de revisión </p></div>
+        
  
       </div>
     </div>
     
-    <div  class="mt-2">
+    <div  class="mt-2 flex justify-center">
 
       <div class="mt-2">
         <div class="ml-3 mr-3">
           
-          <table  class="bg-white border border-black rounded table-auto" >
+          <table v-if="PalabrasTabla1.length"  class="bg-white border border-gray-300 rounded table-auto mb-1" >
             <tbody class="">
               <tr class="">
-                <td class="w-32 p-10 border border-black">
+                <td class="w-32 p-10 border border-gray-300">
                   <div>Cara 1</div>
                   <div class="mt-2">MC: {{ MC_Tabla1 }}</div>
                   <div>MF: {{ MF_Tabla1 }}</div>
                 </td>
          
-                <td v-for="Palabra in PalabrasTabla1" :key="Palabra.id_registro" class="flex p-4 space-x-3 border border-black">
+                <td v-for="Palabra in PalabrasTabla1" :key="Palabra.id_registro" class="flex p-4 space-x-3 border border-gray-300">
                     <div v-for="caracterBraile in Palabra.simbolos" :key="caracterBraile.id_registro">
                     <div  class="text-center uppercase">
                         {{caracterBraile.caracter}}
                     </div>
                     <div class="flex space-x-2">
-                      <img class="border border-gray-400" :src="caracterBraile.path_simbolo_1" alt="">
-                      <img class="border border-gray-400" v-if="caracterBraile.path_simbolo_2" :src="caracterBraile.path_simbolo_2" alt="">
+                      <img class="border border-gray-300" :src="caracterBraile.path_simbolo_1" alt="">
+                      <img class="border border-gray-300" v-if="caracterBraile.path_simbolo_2" :src="caracterBraile.path_simbolo_2" alt="">
                     </div>
                   </div>
                 </td>
               </tr>
             </tbody>
           </table>
-
-          <table  class="bg-white border border-black rounded table-auto" >
+ 
+          <table v-if="PalabrasTabla2.length" class="bg-white border border-gray-300 rounded table-auto" >
             <tbody class="">
               <tr class="">
-                <td class="w-32 p-10 border border-black">
+                <td class="w-32 p-10 border border-gray-300">
                   <div>Cara 2</div>
                   <div class="mt-2">MC: {{ MC_Tabla2 }}</div>
                   <div>MF: {{ MF_Tabla2 }}</div>
                 </td>
          
-                <td v-for="Palabra in PalabrasTabla2" :key="Palabra.id_registro" class="flex p-4 space-x-4 border border-black">
+                <td v-for="Palabra in PalabrasTabla2" :key="Palabra.id_registro" class="flex p-4 space-x-4 border border-gray-300">
                     <div v-for="caracterBraile in Palabra.simbolos" :key="caracterBraile.id_registro">
                       <div  class="text-center uppercase">
                           {{caracterBraile.caracter}}
                       </div>
                       <div class="flex space-x-2">
-                        <img class="border border-gray-400" :src="caracterBraile.path_simbolo_1" alt="">
-                        <img class="border border-gray-400" v-if="caracterBraile.path_simbolo_2" :src="caracterBraile.path_simbolo_2" alt="">
+                        <img class="border border-gray-300" :src="caracterBraile.path_simbolo_1" alt="">
+                        <img class="border border-gray-300" v-if="caracterBraile.path_simbolo_2" :src="caracterBraile.path_simbolo_2" alt="">
                       </div>
                   </div>
                 </td>
               </tr>
             </tbody>
           </table>
-
-
-
 
         </div>
        
@@ -143,11 +137,11 @@
 </template>
 
 <script>
-import BtnCallToAction from "@/components/htmlControls/buttonCallToActionLoading";
-import InputBasic from "@/components/htmlControls/inputBasic";
-import ClearErrors from "@/mixins/clearErrors";
-import Messages from "@/mixins/sweetalert2";
-import Braile from "@/models/Braile";
+import Braile             from  "@/models/Braile";
+import BtnCallToAction    from  "@/components/htmlControls/buttonCallToActionLoading";
+import ClearErrors        from  "@/mixins/clearErrors";
+import InputBasic         from  "@/components/htmlControls/inputBasic";
+import Messages           from  "@/mixins/sweetalert2";
 export default {
   //
   components: { BtnCallToAction, InputBasic },
@@ -155,19 +149,13 @@ export default {
   data: () => ({
     showBtnAnimation: false,
     formData: {
-      alto: "45",
-      ancho: "45",
+      alto: "",
+      ancho: "",
+      cara:0,
       idTercero: 0,
-      largo: "45",
-      texto: "AMOXI mk #500 mg",
-      cara:0
+      largo: "",
+      texto: "",
     },
-  
-    errors: [],
-    cara1 : [],
-    cara2 : [],
-    simbolosCara1: [],
-    simbolosCara2: [],
     PalabrasTabla1: [],
     PalabrasTabla2: [],
     MC_Tabla1:'',
@@ -182,22 +170,27 @@ export default {
 
         this.formData.cara      = 1 ; 
         Braile.SendTextToTranscript(this.formData).then(response => {
+          if ( response.data.length ==0 ){ return ; }        
           this.PalabrasTabla1 = response.data;
           this.MC_Tabla1      = response.data[0].MC ;
           this.MF_Tabla1      = response.data[0].MF ;
-
+          this.showBtnAnimation = false;
+          
         });
 
+        this.showBtnAnimation = true;
         this.formData.cara      = 2 ; 
         Braile.SendTextToTranscript(this.formData).then(response => {
+          if ( response.data.length ==0 ){ return ; }        
           this.PalabrasTabla2 = response.data;
+
+
           this.MC_Tabla2      = response.data[0].MC ;
           this.MF_Tabla2      = response.data[0].MF ;
-
+          this.showBtnAnimation = false;
+          
         });
 
-     
-     this.showBtnAnimation = false;
     },
     
   }
