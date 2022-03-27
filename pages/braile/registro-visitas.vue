@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-28">
+  <div class="relative pt-28">
     <div class="py-10 border shadow-xl mx-28">
       <h2 class="text-2xl font-semibold text-center">Registro de visitas</h2>
       <div class="mx-10 mt-4">
@@ -108,7 +108,10 @@
         <div>
           <div class="flex items-center justify-between mx-32 mt-20">
             <h2 class="text-xl font-semibold">Historial de Visitas</h2>
-            <button class="flex items-center space-x-2">
+            <button
+              @click="registrarVisita = true"
+              class="flex items-center space-x-2"
+            >
               <img class="h-10 ml-5" src="/images/buscar.png" alt="" />
               <p class="text-sm">Consultar ficha cliente</p>
             </button>
@@ -282,11 +285,152 @@
         </div>
       </div>
     </div>
+
+    <!-- Modal registrar visita -->
+    <div
+      v-if="registrarVisita"
+      class="absolute z-50 px-20 py-10 mt-4 bg-gray-200 top-24 left-48"
+    >
+      <div>
+        <h2 class="text-2xl font-semibold text-center">Registro de visitas</h2>
+        <button @click="registrarVisita = false">
+          <img
+            class="absolute h-8 top-2 right-3"
+            src="/images/close.svg"
+            alt=""
+          />
+        </button>
+
+        <div class="flex justify-center mt-10 space-x-10">
+          <div class="">
+            <p class="ml-10">Codigo</p>
+            <div class="flex space-x-2">
+              <button>
+                <img class="h-6" src="/images/prismaticos.png" alt="" />
+              </button>
+              <input
+                class="w-40 px-4 border rounded-sm focus:outline-none"
+                type="text"
+              />
+            </div>
+          </div>
+          <div class="">
+            <p>Nombre / Razón Social</p>
+            <input
+              class="px-4 bg-white border rounded-sm w-96 focus:outline-none"
+              disabled
+              type="text"
+            />
+          </div>
+          <div class="">
+            <p>Ciudad</p>
+            <input
+              class="px-4 bg-white border rounded-sm w-80 focus:outline-none"
+              disabled
+              type="text"
+            />
+          </div>
+          <div class="">
+            <p>Vendedor</p>
+            <input
+              class="px-4 bg-white border rounded-sm w-80 focus:outline-none"
+              disabled
+              type="text"
+            />
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <div class="">
+            <div class="flex justify-center mt-10 space-x-20">
+              <div class="flex space-x-10">
+                <p class="w-72">Fecha de Visita</p>
+                <input class="w-56" type="date" name="" id="" />
+              </div>
+              <div class="flex space-x-10">
+                <p class="w-72">Persona que Atendió</p>
+                <input
+                  class="w-56 px-4 bg-white border rounded-sm focus:outline-none"
+                  disabled
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="flex justify-center mt-4 space-x-20">
+              <div class="flex space-x-10">
+                <p class="w-64">Tipo de Visita</p>
+                <select class="w-64" name="" id=""></select>
+              </div>
+              <div class="flex space-x-10">
+                <p class="w-64">Motivo de la Visita</p>
+                <select class="w-64" name="" id=""></select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-between mt-10 mx-9">
+          <div class="mt-4">
+            <h3>Resultado de esta Visita</h3>
+            <textarea
+              class="px-4 py-2 border focus:outline-none"
+              name=""
+              id=""
+              cols="60"
+              rows="6"
+            ></textarea>
+          </div>
+          <div class="mt-4">
+            <h3>Resultado de esta Visita anterior</h3>
+            <textarea
+              class="px-4 py-2 border focus:outline-none"
+              name=""
+              id=""
+              cols="60"
+              rows="6"
+            ></textarea>
+          </div>
+        </div>
+        <div class="flex justify-between space-x-20 mx-9">
+          <div class="mt-4">
+            <h3>Siguiente paso, en esta visita</h3>
+            <textarea
+              class="px-4 py-2 border focus:outline-none"
+              name=""
+              id=""
+              cols="60"
+              rows="6"
+            ></textarea>
+          </div>
+          <div class="mt-4">
+            <h3>Siguiente paso(Visita Anterior)</h3>
+            <textarea
+              class="px-4 py-2 border focus:outline-none"
+              name=""
+              id=""
+              cols="60"
+              rows="6"
+            ></textarea>
+          </div>
+        </div>
+        <div class="flex justify-end mx-10 mt-4">
+          <button class="flex items-center space-x-2">
+            <img class="w-6" src="/images/save.svg" alt="" />
+            <p>Grabar</p>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "registroVisitas",
+  data() {
+    return {
+      registrarVisita: false
+    };
+  }
+};
 </script>
 
 <style></style>
