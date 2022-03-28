@@ -343,13 +343,13 @@
           <div class="">
             <div class="flex justify-center mt-10 space-x-20">
               <div class="flex space-x-10">
-                <p class="w-72">Fecha de Visita</p>
-                <input class="w-56" type="date" name="" id="" />
+                <p class="w-64">Fecha de Visita</p>
+                <input class="-ml-4 width" type="date" name="" id="" />
               </div>
               <div class="flex space-x-10">
-                <p class="w-72">Persona que Atendió</p>
+                <p class="w-64">Persona que Atendió</p>
                 <input
-                  class="w-56 px-4 bg-white border rounded-sm focus:outline-none"
+                  class="px-4 bg-white border rounded-sm width focus:outline-none"
                   disabled
                   type="text"
                 />
@@ -358,11 +358,11 @@
             <div class="flex justify-center mt-4 space-x-20">
               <div class="flex space-x-10">
                 <p class="w-64">Tipo de Visita</p>
-                <select class="w-64" name="" id=""></select>
+                <select class="width" name="" id=""></select>
               </div>
               <div class="flex space-x-10">
                 <p class="w-64">Motivo de la Visita</p>
-                <select class="w-64" name="" id=""></select>
+                <select class="width" name="" id=""></select>
               </div>
             </div>
           </div>
@@ -427,10 +427,16 @@ export default {
   name: "registroVisitas",
   data() {
     return {
-      registrarVisita: false
+      registrarVisita: true
     };
   }
 };
 </script>
 
-<style></style>
+<style>
+
+.width {
+  width: 258px;
+}
+
+</style>
