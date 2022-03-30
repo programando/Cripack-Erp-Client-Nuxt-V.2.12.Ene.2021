@@ -183,8 +183,6 @@ export default {
         Braile.SendTextToTranscript(this.formData).then(response => {
           if ( response.data.length ==0 ){ return ; }        
           this.PalabrasTabla2 = response.data;
-
-
           this.MC_Tabla2      = response.data[0].MC ;
           this.MF_Tabla2      = response.data[0].MF ;
           this.showBtnAnimation = false;
