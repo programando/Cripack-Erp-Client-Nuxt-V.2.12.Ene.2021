@@ -170,15 +170,14 @@ export default {
 
         this.formData.cara      = 1 ; 
         Braile.SendTextToTranscript(this.formData).then(response => {
-          if ( response.data.length ==0 ){ return ; }        
-          this.PalabrasTabla1 = response.data;
-          this.MC_Tabla1      = response.data[0].MC ;
-          this.MF_Tabla1      = response.data[0].MF ;
-          this.showBtnAnimation = false;
-          
+          if ( response.data.length ==0 ){ return ; } 
+            this.PalabrasTabla1 = response.data;
+            this.MC_Tabla1      = response.data[0].MC ;
+            this.MF_Tabla1      = response.data[0].MF ;
+            this.showBtnAnimation = false;
         });
 
-        this.showBtnAnimation = true;
+        /*this.showBtnAnimation = true;
         this.formData.cara      = 2 ; 
         Braile.SendTextToTranscript(this.formData).then(response => {
           if ( response.data.length ==0 ){ return ; }        
@@ -188,7 +187,7 @@ export default {
           this.showBtnAnimation = false;
           
         });
-
+        */
     },
     
   }
