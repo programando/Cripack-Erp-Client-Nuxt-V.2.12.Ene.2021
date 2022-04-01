@@ -84,7 +84,7 @@
           <table v-if="PalabrasTabla1.length"  class="bg-white border border-gray-300 rounded table-auto mb-1" >
             <tbody class="">
               <tr class="">
-                <td class="w-32 p-10 border border-gray-300">
+                <td class="w-32 p-10 border border-gray-300 text-sm">
                   <div>Cara 1</div>
                   <div class="mt-2">MC: {{ MC_Tabla1 }}</div>
                   <div>MF: {{ MF_Tabla1 }}</div>
@@ -108,7 +108,7 @@
           <table v-if="PalabrasTabla2.length" class="bg-white border border-gray-300 rounded table-auto" >
             <tbody class="">
               <tr class="">
-                <td class="w-32 p-10 border border-gray-300">
+                <td class="w-32 p-10 border border-gray-300 text-sm">
                   <div>Cara 2</div>
                   <div class="mt-2">MC: {{ MC_Tabla2 }}</div>
                   <div>MF: {{ MF_Tabla2 }}</div>
@@ -149,12 +149,11 @@ export default {
   data: () => ({
     showBtnAnimation: false,
     formData: {
-      alto: "",
-      ancho: "",
-      cara:0,
+      alto: "45",
+      ancho: "30",
       idTercero: 0,
-      largo: "",
-      texto: "",
+      largo: "20",
+      texto: "BUGA PALMIRA",
     },
     PalabrasTabla1: [],
     PalabrasTabla2: [],
@@ -167,28 +166,31 @@ export default {
      sendTextToTranscript() {
         this.showBtnAnimation = true;
         this.formData.idTercero = this.$cookies.get("User").idtercero;
-
-        this.formData.cara      = 1 ; 
-        Braile.SendTextToTranscript(this.formData).then(response => {
-          if ( response.data.length ==0 ){ return ; } 
-            this.PalabrasTabla1 = response.data;
-            this.MC_Tabla1      = response.data[0].MC ;
-            this.MF_Tabla1      = response.data[0].MF ;
-            this.showBtnAnimation = false;
-        });
-
-        /*this.showBtnAnimation = true;
-        this.formData.cara      = 2 ; 
-        Braile.SendTextToTranscript(this.formData).then(response => {
-          if ( response.data.length ==0 ){ return ; }        
-          this.PalabrasTabla2 = response.data;
-          this.MC_Tabla2      = response.data[0].MC ;
-          this.MF_Tabla2      = response.data[0].MF ;
-          this.showBtnAnimation = false;
+        this.PalabrasTabla1 = [];
+        this.PalabrasTabla2 = [];
+        Braile.SendTextToTranscript(this.formData)
+        .then(response => {
+           response.data.map ( item =>{
+                if  ( item.cara == 'cara1' ) {
+                  this.PalabrasTabla1.push( item );
+                  this.MC_Tabla1      = item.MC ;
+                  this.MF_Tabla1      = item.MF ;
+                }
+                if  ( item.cara == 'cara2' ) {
+                  this.PalabrasTabla2.push( item );
+                  this.MC_Tabla2      = item.MC ;
+                  this.MF_Tabla2      = item.MF ; 
+                }
+            });
+            console.log  ( response.data);
+          });
           
-        });
-        */
+
+         this.showBtnAnimation = false;
+
     },
+
+ 
     
   }
 };
