@@ -1,286 +1,288 @@
 <template>
   <div class="relative pt-28">
-    <div class="py-10 border shadow-xl mx-28">
-      <h2 class="text-2xl font-semibold text-center">Registro de visitas</h2>
-      <div class="mx-10 mt-4">
-        <div class="flex justify-center space-x-10">
-          <div class="">
-            <p class="ml-10">Codigo</p>
-            <div class="flex space-x-2">
-              <button>
-                <img class="h-6" src="/images/prismaticos.png" alt="" />
-              </button>
+    <div class="flex justify-center py-10 ">
+      <div class="px-4 py-4 border shadow-xl">
+        <h2 class="text-2xl font-semibold text-center">Registro de visitas</h2>
+        <div class="mx-4 mt-4">
+          <div class="flex justify-center space-x-10">
+            <div class="">
+              <p class="ml-10 text-sm">Codigo</p>
+              <div class="flex space-x-2">
+                <button>
+                  <img class="h-6" src="/images/prismaticos.png" alt="" />
+                </button>
+                <input
+                  class="w-32 px-2 border rounded-sm focus:outline-none"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="">
+              <p class="text-sm">Nombre / Razón Social</p>
               <input
-                class="w-40 px-4 border rounded-sm focus:outline-none"
+                class="w-64 px-4 border rounded-sm focus:outline-none"
+                disabled
+                type="text"
+              />
+            </div>
+            <div class="">
+              <p class="text-sm">Ciudad</p>
+              <input
+                class="px-4 border rounded-sm w-60 focus:outline-none"
+                disabled
+                type="text"
+              />
+            </div>
+            <div class="">
+              <p class="text-sm">Vendedor</p>
+              <input
+                class="px-4 border rounded-sm w-60 focus:outline-none"
+                disabled
                 type="text"
               />
             </div>
           </div>
-          <div class="">
-            <p>Nombre / Razón Social</p>
-            <input
-              class="px-4 border rounded-sm w-96 focus:outline-none"
-              disabled
-              type="text"
-            />
-          </div>
-          <div class="">
-            <p>Ciudad</p>
-            <input
-              class="px-4 border rounded-sm w-80 focus:outline-none"
-              disabled
-              type="text"
-            />
-          </div>
-          <div class="">
-            <p>Vendedor</p>
-            <input
-              class="px-4 border rounded-sm w-80 focus:outline-none"
-              disabled
-              type="text"
-            />
-          </div>
-        </div>
-        <div class="flex justify-center">
-          <div class="">
-            <div class="flex justify-center mt-10 space-x-20">
-              <div class="flex space-x-10">
-                <p class="w-72">Cupo de Credito</p>
-                <input
-                  class="w-56 px-4 border rounded-sm focus:outline-none"
-                  disabled
-                  type="text"
-                />
+          <div class="flex justify-center">
+            <div class="">
+              <div class="flex justify-center mt-10 space-x-20">
+                <div class="flex space-x-4">
+                  <p class="w-64 text-sm">Cupo de Credito</p>
+                  <input
+                    class="w-48 px-4 border rounded-sm focus:outline-none"
+                    disabled
+                    type="text"
+                  />
+                </div>
+                <div class="flex space-x-4">
+                  <p class="w-64 text-sm">Persona encargada de Pagos</p>
+                  <input
+                    class="w-48 px-4 border rounded-sm focus:outline-none"
+                    disabled
+                    type="text"
+                  />
+                </div>
               </div>
-              <div class="flex space-x-10">
-                <p class="w-72">Persona encargada de Pagos</p>
-                <input
-                  class="w-56 px-4 border rounded-sm focus:outline-none"
-                  disabled
-                  type="text"
-                />
+              <div class="flex justify-center mt-4 space-x-20">
+                <div class="flex space-x-4">
+                  <p class="w-64 text-sm">Extra Cupo</p>
+                  <input
+                    class="w-48 px-4 border rounded-sm focus:outline-none"
+                    disabled
+                    type="text"
+                  />
+                </div>
+                <div class="flex space-x-4">
+                  <p class="w-64 text-sm">Nro. Teléfono</p>
+                  <input
+                    class="w-48 px-4 border rounded-sm focus:outline-none"
+                    disabled
+                    type="text"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="flex justify-center mt-4 space-x-20">
-              <div class="flex space-x-10">
-                <p class="w-72">Extra Cupo</p>
-                <input
-                  class="w-56 px-4 border rounded-sm focus:outline-none"
-                  disabled
-                  type="text"
-                />
-              </div>
-              <div class="flex space-x-10">
-                <p class="w-72">Nro. Teléfono</p>
-                <input
-                  class="w-56 px-4 border rounded-sm focus:outline-none"
-                  disabled
-                  type="text"
-                />
+              <div class="flex justify-center mt-4 space-x-20">
+                <div class="flex space-x-4">
+                  <p class="w-64 text-sm">Dia limite para recepcion Facturas</p>
+                  <input
+                    class="w-48 px-4 border rounded-sm focus:outline-none"
+                    disabled
+                    type="text"
+                  />
+                </div>
+                <div class="flex space-x-4">
+                  <p class="w-64 text-sm">Email</p>
+                  <input
+                    class="w-48 px-4 border rounded-sm focus:outline-none"
+                    disabled
+                    type="text"
+                  />
+                </div>
               </div>
             </div>
-            <div class="flex justify-center mt-4 space-x-20">
-              <div class="flex space-x-10">
-                <p class="w-72">Dia limite para recepcion Facturas</p>
-                <input
-                  class="w-56 px-4 border rounded-sm focus:outline-none"
-                  disabled
-                  type="text"
-                />
-              </div>
-              <div class="flex space-x-10">
-                <p class="w-72">Email</p>
-                <input
-                  class="w-56 px-4 border rounded-sm focus:outline-none"
-                  disabled
-                  type="text"
-                />
-              </div>
+            <div class="w-32 px-4 mt-10">
+              <button>
+                <img class="h-8 ml-5" src="/images/buscar.png" alt="" />
+                <p class="text-sm">Consultar ficha cliente</p>
+              </button>
             </div>
           </div>
-          <div class="w-32 px-4 mt-10">
-            <button>
-              <img class="h-10 ml-5" src="/images/buscar.png" alt="" />
-              <p class="text-sm">Consultar ficha cliente</p>
-            </button>
-          </div>
-        </div>
-        <div>
-          <div class="flex items-center justify-between mx-32 mt-20">
-            <h2 class="text-xl font-semibold">Historial de Visitas</h2>
-            <button
-              @click="registrarVisita = true"
-              class="flex items-center space-x-2"
-            >
-              <img class="h-10 ml-5" src="/images/buscar.png" alt="" />
-              <p class="text-sm">Consultar ficha cliente</p>
-            </button>
-          </div>
-          <div class="mx-32 mt-4">
-            <table class="w-full">
-              <thead class="w-full">
-                <tr class="w-full border text-azul">
-                  <th class="w-1/12 text-sm border">Fecha Visita</th>
-                  <th class="w-2/12 text-sm border">Persona Contacto</th>
-                  <th class="w-2/12 text-sm border">
-                    Motivo Visita
-                  </th>
-                  <th class="w-2/12 text-sm border">Resultado</th>
-                  <th class="w-2/12 text-sm border">
-                    Siguiente Paso
-                  </th>
-                  <th class="w-2/12 text-sm border">Proxima Visita</th>
-                  <th class="w-2/12 text-sm border">
-                    Tipo Visita
-                  </th>
-                  <th class="w-1/12 text-sm border">
-                    Detalles
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="px-2 py-2 text-sm border text-azul"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td
-                    class="flex justify-center w-20 text-sm text-right border"
-                  >
-                    <button>
-                      <img class="h-6" src="/images/ver.png" alt="" />
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-2 text-sm border text-azul"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td
-                    class="flex justify-center w-20 text-sm text-right border"
-                  >
-                    <button>
-                      <img class="h-6" src="/images/ver.png" alt="" />
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-2 text-sm border text-azul"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td
-                    class="flex justify-center w-20 text-sm text-right border"
-                  >
-                    <button>
-                      <img class="h-6" src="/images/ver.png" alt="" />
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-2 text-sm border text-azul"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td
-                    class="flex justify-center w-20 text-sm text-right border"
-                  >
-                    <button>
-                      <img class="h-6" src="/images/ver.png" alt="" />
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="flex items-center justify-between mx-32 mt-20">
-            <h2 class="text-xl font-semibold">Historial de Compras</h2>
-          </div>
-          <div class="mx-32 mt-4">
-            <table class="w-full">
-              <thead class="w-full">
-                <tr class="w-full border text-azul">
-                  <th class="w-1/12 text-sm border">#Ot</th>
-                  <th class="w-1/12 text-sm border">Refencia</th>
-                  <th class="w-1/12 text-sm border">
-                    Estilo
-                  </th>
-                  <th class="w-1/12 text-sm border">Tipo Trabajo</th>
-                  <th class="w-1/12 text-sm border">
-                    Solicitada
-                  </th>
-                  <th class="w-1/12 text-sm border">Entregada</th>
-                  <th class="w-1/12 text-sm border">
-                    Ult.compra
-                  </th>
-                  <th class="w-1/12 text-sm border">
-                    Cant.Tq/Mes
-                  </th>
-                  <th class="w-1/12 text-sm border">
-                    Promo.Ult.Año
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="px-2 py-2 text-sm border text-azul"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-2 text-sm border text-azul"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-2 text-sm border text-azul"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                </tr>
-                <tr>
-                  <td class="px-2 py-2 text-sm border text-azul"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                  <td class="px-4 py-2 text-sm text-right border"></td>
-                </tr>
-              </tbody>
-            </table>
+          <div>
+            <div class="flex items-center justify-between mx-32 mt-20">
+              <h2 class="text-xl font-semibold">Historial de Visitas</h2>
+              <button
+                @click="registrarVisita = true"
+                class="flex items-center space-x-2"
+              >
+                <img class="h-8 ml-5" src="/images/buscar.png" alt="" />
+                <p class="text-sm">Consultar ficha cliente</p>
+              </button>
+            </div>
+            <div class="mx-32 mt-4">
+              <table class="w-full">
+                <thead class="w-full">
+                  <tr class="w-full border text-azul">
+                    <th class="w-1/12 text-sm border">Fecha Visita</th>
+                    <th class="w-2/12 text-sm border">Persona Contacto</th>
+                    <th class="w-2/12 text-sm border">
+                      Motivo Visita
+                    </th>
+                    <th class="w-2/12 text-sm border">Resultado</th>
+                    <th class="w-2/12 text-sm border">
+                      Siguiente Paso
+                    </th>
+                    <th class="w-2/12 text-sm border">Proxima Visita</th>
+                    <th class="w-2/12 text-sm border">
+                      Tipo Visita
+                    </th>
+                    <th class="w-1/12 text-sm border">
+                      Detalles
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="px-2 py-2 text-sm border text-azul"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td
+                      class="flex justify-center w-20 text-sm text-right border"
+                    >
+                      <button>
+                        <img class="h-6" src="/images/ver.png" alt="" />
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 py-2 text-sm border text-azul"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td
+                      class="flex justify-center w-20 text-sm text-right border"
+                    >
+                      <button>
+                        <img class="h-6" src="/images/ver.png" alt="" />
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 py-2 text-sm border text-azul"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td
+                      class="flex justify-center w-20 text-sm text-right border"
+                    >
+                      <button>
+                        <img class="h-6" src="/images/ver.png" alt="" />
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 py-2 text-sm border text-azul"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td
+                      class="flex justify-center w-20 text-sm text-right border"
+                    >
+                      <button>
+                        <img class="h-6" src="/images/ver.png" alt="" />
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="flex items-center justify-between mx-32 mt-20">
+              <h2 class="text-xl font-semibold">Historial de Compras</h2>
+            </div>
+            <div class="mx-32 mt-4">
+              <table class="w-full">
+                <thead class="w-full">
+                  <tr class="w-full border text-azul">
+                    <th class="w-1/12 text-sm border">#Ot</th>
+                    <th class="w-1/12 text-sm border">Refencia</th>
+                    <th class="w-1/12 text-sm border">
+                      Estilo
+                    </th>
+                    <th class="w-1/12 text-sm border">Tipo Trabajo</th>
+                    <th class="w-1/12 text-sm border">
+                      Solicitada
+                    </th>
+                    <th class="w-1/12 text-sm border">Entregada</th>
+                    <th class="w-1/12 text-sm border">
+                      Ult.compra
+                    </th>
+                    <th class="w-1/12 text-sm border">
+                      Cant.Tq/Mes
+                    </th>
+                    <th class="w-1/12 text-sm border">
+                      Promo.Ult.Año
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="px-2 py-2 text-sm border text-azul"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 py-2 text-sm border text-azul"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 py-2 text-sm border text-azul"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 py-2 text-sm border text-azul"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                    <td class="px-4 py-2 text-sm text-right border"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -289,133 +291,137 @@
     <!-- Modal registrar visita -->
     <div
       v-if="registrarVisita"
-      class="absolute z-50 px-20 py-10 mt-4 bg-gray-200 top-24 left-48"
+      class="absolute z-20 flex justify-center w-full h-screen px-20 py-10 mt-4 top-10"
     >
-      <div>
-        <h2 class="text-2xl font-semibold text-center">Registro de visitas</h2>
-        <button @click="registrarVisita = false">
-          <img
-            class="absolute h-8 top-2 right-3"
-            src="/images/close.svg"
-            alt=""
-          />
-        </button>
+      <div class="relative px-10 py-8 bg-gray-200">
+        <div>
+          <h2 class="text-2xl font-semibold text-center">
+            Registro de visitas
+          </h2>
+          <button @click="registrarVisita = false">
+            <img
+              class="absolute h-8 top-2 right-3"
+              src="/images/close.svg"
+              alt=""
+            />
+          </button>
 
-        <div class="flex justify-center mt-10 space-x-10">
-          <div class="">
-            <p class="ml-10">Codigo</p>
-            <div class="flex space-x-2">
-              <button>
-                <img class="h-6" src="/images/prismaticos.png" alt="" />
-              </button>
-              <input
-                class="w-40 px-4 border rounded-sm focus:outline-none"
-                type="text"
-              />
-            </div>
-          </div>
-          <div class="">
-            <p>Nombre / Razón Social</p>
-            <input
-              class="px-4 bg-white border rounded-sm w-96 focus:outline-none"
-              disabled
-              type="text"
-            />
-          </div>
-          <div class="">
-            <p>Ciudad</p>
-            <input
-              class="px-4 bg-white border rounded-sm w-80 focus:outline-none"
-              disabled
-              type="text"
-            />
-          </div>
-          <div class="">
-            <p>Vendedor</p>
-            <input
-              class="px-4 bg-white border rounded-sm w-80 focus:outline-none"
-              disabled
-              type="text"
-            />
-          </div>
-        </div>
-        <div class="flex justify-center">
-          <div class="">
-            <div class="flex justify-center mt-10 space-x-20">
-              <div class="flex space-x-10">
-                <p class="w-64">Fecha de Visita</p>
-                <input class="-ml-4 width" type="date" name="" id="" />
-              </div>
-              <div class="flex space-x-10">
-                <p class="w-64">Persona que Atendió</p>
+          <div class="flex justify-center mt-10 space-x-10">
+            <div class="">
+              <p class="ml-10">Codigo</p>
+              <div class="flex space-x-2">
+                <button>
+                  <img class="h-6" src="/images/prismaticos.png" alt="" />
+                </button>
                 <input
-                  class="px-4 bg-white border rounded-sm width focus:outline-none"
-                  disabled
+                  class="w-32 px-4 border rounded-sm focus:outline-none"
                   type="text"
                 />
               </div>
             </div>
-            <div class="flex justify-center mt-4 space-x-20">
-              <div class="flex space-x-10">
-                <p class="w-64">Tipo de Visita</p>
-                <select class="width" name="" id=""></select>
+            <div class="">
+              <p>Nombre / Razón Social</p>
+              <input
+                class="px-4 bg-white border rounded-sm width focus:outline-none"
+                disabled
+                type="text"
+              />
+            </div>
+            <div class="">
+              <p>Ciudad</p>
+              <input
+                class="px-4 bg-white border rounded-sm width focus:outline-none"
+                disabled
+                type="text"
+              />
+            </div>
+            <div class="">
+              <p>Vendedor</p>
+              <input
+                class="px-4 bg-white border rounded-sm width focus:outline-none"
+                disabled
+                type="text"
+              />
+            </div>
+          </div>
+          <div class="flex ml-10">
+            <div class="">
+              <div class="flex mt-10 space-x-10">
+                <div class="flex space-x-4">
+                  <p class="w-36">Fecha de Visita</p>
+                  <input class="-ml-4 width" type="date" name="" id="" />
+                </div>
+                <div class="flex space-x-10">
+                  <p class="width">Persona que Atendió</p>
+                  <input
+                    class="px-4 bg-white border rounded-sm width focus:outline-none"
+                    disabled
+                    type="text"
+                  />
+                </div>
               </div>
-              <div class="flex space-x-10">
-                <p class="w-64">Motivo de la Visita</p>
-                <select class="width" name="" id=""></select>
+              <div class="flex mt-4 space-x-10">
+                <div class="flex space-x-4">
+                  <p class="w-36">Tipo de Visita</p>
+                  <select class="width" name="" id=""></select>
+                </div>
+                <div class="flex space-x-10">
+                  <p class="width">Motivo de la Visita</p>
+                  <select class="width" name="" id=""></select>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="flex justify-between mt-10 mx-9">
-          <div class="mt-4">
-            <h3>Resultado de esta Visita</h3>
-            <textarea
-              class="px-4 py-2 border focus:outline-none"
-              name=""
-              id=""
-              cols="60"
-              rows="6"
-            ></textarea>
+          <div class="flex justify-between mt-10 mx-9">
+            <div class="mt-4">
+              <h3>Resultado de esta Visita</h3>
+              <textarea
+                class="px-4 py-2 border focus:outline-none"
+                name=""
+                id=""
+                cols="40"
+                rows="6"
+              ></textarea>
+            </div>
+            <div class="mt-4">
+              <h3>Resultado de esta Visita anterior</h3>
+              <textarea
+                class="px-4 py-2 border focus:outline-none"
+                name=""
+                id=""
+                cols="40"
+                rows="6"
+              ></textarea>
+            </div>
           </div>
-          <div class="mt-4">
-            <h3>Resultado de esta Visita anterior</h3>
-            <textarea
-              class="px-4 py-2 border focus:outline-none"
-              name=""
-              id=""
-              cols="60"
-              rows="6"
-            ></textarea>
+          <div class="flex justify-between space-x-20 mx-9">
+            <div class="mt-4">
+              <h3>Siguiente paso, en esta visita</h3>
+              <textarea
+                class="px-4 py-2 border focus:outline-none"
+                name=""
+                id=""
+                cols="40"
+                rows="6"
+              ></textarea>
+            </div>
+            <div class="mt-4">
+              <h3>Siguiente paso(Visita Anterior)</h3>
+              <textarea
+                class="px-4 py-2 border focus:outline-none"
+                name=""
+                id=""
+                cols="40"
+                rows="6"
+              ></textarea>
+            </div>
           </div>
-        </div>
-        <div class="flex justify-between space-x-20 mx-9">
-          <div class="mt-4">
-            <h3>Siguiente paso, en esta visita</h3>
-            <textarea
-              class="px-4 py-2 border focus:outline-none"
-              name=""
-              id=""
-              cols="60"
-              rows="6"
-            ></textarea>
+          <div class="flex justify-end mx-10 mt-4">
+            <button class="flex items-center space-x-2">
+              <img class="w-6" src="/images/save.svg" alt="" />
+              <p>Grabar</p>
+            </button>
           </div>
-          <div class="mt-4">
-            <h3>Siguiente paso(Visita Anterior)</h3>
-            <textarea
-              class="px-4 py-2 border focus:outline-none"
-              name=""
-              id=""
-              cols="60"
-              rows="6"
-            ></textarea>
-          </div>
-        </div>
-        <div class="flex justify-end mx-10 mt-4">
-          <button class="flex items-center space-x-2">
-            <img class="w-6" src="/images/save.svg" alt="" />
-            <p>Grabar</p>
-          </button>
         </div>
       </div>
     </div>
@@ -434,9 +440,7 @@ export default {
 </script>
 
 <style>
-
 .width {
   width: 258px;
 }
-
 </style>

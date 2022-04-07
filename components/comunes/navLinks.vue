@@ -1,7 +1,7 @@
 <template>
   <div >
     <nuxt-link :to="to">
-      <h3 class="text-lg text-white">{{text}}</h3>
+      <h3 class="text-sm text-white xl:text-base">{{text}}</h3>
     </nuxt-link>
   </div>
 </template>

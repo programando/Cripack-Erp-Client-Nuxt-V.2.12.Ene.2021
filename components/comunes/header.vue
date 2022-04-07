@@ -4,20 +4,20 @@
       class="fixed z-50 flex items-center justify-between w-full mt-0 bg-azul "
     >
       <div class="flex">
-        <img class="h-20" src="/images/logo.png" alt="" />
+        <img class="h-16" src="/images/logo.png" alt="" />
       </div>
       <div class="flex ml-20 -mt-8 space-x-6 text-white">
         <h3 class="text-sm">{{ companyName }}</h3>
-        <h3 class="text-sm">{{ contactName }}  </h3>
+        
       </div>
 
-      <div class="flex items-center justify-end mr-4 space-x-12">
+      <div class="flex items-center justify-end mr-4 space-x-8">
         <NavLinks text="Historial" to="/clientes/ots-historial" />
 
         <NavLinks text="Estado Ot's" to="/clientes/ots-estado" />
 
         <div  class="relative text-white">
-          <button @click="viewUtilidades" class="px-2 text-lg">
+          <button @click="viewUtilidades" @focus="menu = false" class="px-2 text-sm xl:text-base">
             Utilidades clientes
           </button>
           <div
@@ -73,7 +73,7 @@
         </div>
 
         <div v-if="esUsuarioCripack" class="relative text-white">
-          <button @click="viewGestion" class="px-2 text-lg">
+          <button @click="viewGestion" class="px-2 text-sm xl:text-base">
             Gestión comercial
           </button>
           <div
