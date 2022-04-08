@@ -291,9 +291,9 @@
     <!-- Modal registrar visita -->
     <div
       v-if="registrarVisita"
-      class="absolute z-20 flex justify-center w-full h-screen px-20 py-10 mt-4 top-10"
+      class="absolute z-20 flex justify-center w-full h-screen px-20 py-10 mt-4 transition-opacity bg-gray-500 bg-opacity-75 top-10"
     >
-      <div class="relative px-10 py-8 bg-gray-200">
+      <div class="relative px-10 py-8 bg-white">
         <div>
           <h2 class="text-2xl font-semibold text-center">
             Registro de visitas
