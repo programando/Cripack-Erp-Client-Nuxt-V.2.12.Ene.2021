@@ -3,9 +3,9 @@
     <h2 class="mt-1 mb-4 text-xl font-semibold text-center">
         Transcripción palabras o frases
     </h2>
-    <div class="mx-4 lg:flex lg:space-x-4 lg:justify-center">
+    <div class="py-4 mx-10 border border-black lg:flex lg:space-x-4 lg:justify-center">
       <div class="">
-        <div class="px-4 py-10 mt-10 border border-black w-12/12 lg:w-10/12 lg:mt-14">
+        <div class="px-4 py-10 mt-10 w-12/12 lg:w-10/12 lg:mt-14">
           <label class="flex justify-center mb-10 font-semibold text-center"
             >Palabra o frase a transcribir</label
           >
@@ -227,7 +227,7 @@ export default {
 
 <style>
 .caja-braile {
-  height: 700px;
-  width: 700px;
+  height: 650px;
+  width: 600px;
 }
 </style>

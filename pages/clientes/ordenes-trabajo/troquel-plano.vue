@@ -31,7 +31,7 @@
           </div>
 
           <div v-if="modal">
-            <BuscarCliente />
+            <BuscarCliente @click="handleClick" />
           </div>
           
 
@@ -330,7 +330,11 @@ export default {
         .catch(error => {
           this.errors = error.response.data.errors;
         }); */
+    },
+    handleClick() {
+      this.modal = false
     }
+    
   }
 };
 </script>

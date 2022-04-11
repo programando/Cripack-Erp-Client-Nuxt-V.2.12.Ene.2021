@@ -100,7 +100,7 @@
               </div>
             </div>
             <div class="w-32 px-4 mt-10">
-              <button>
+              <button @click="buscarCliente = true">
                 <img class="h-8 ml-5" src="/images/buscar.png" alt="" />
                 <p class="text-sm">Consultar ficha cliente</p>
               </button>
@@ -291,7 +291,7 @@
     <!-- Modal registrar visita -->
     <div
       v-if="registrarVisita"
-      class="absolute z-20 flex justify-center w-full h-screen px-20 py-10 mt-4 transition-opacity bg-gray-500 bg-opacity-75 top-10"
+      class="absolute z-20 flex justify-center w-full px-20 py-10 mt-4 transition-opacity bg-gray-500 bg-opacity-75 top-10"
     >
       <div class="relative px-10 py-8 bg-white">
         <div>
@@ -316,13 +316,14 @@
                 <input
                   class="w-32 px-4 border rounded-sm focus:outline-none"
                   type="text"
+                  
                 />
               </div>
             </div>
             <div class="">
               <p>Nombre / Razón Social</p>
               <input
-                class="px-4 bg-white border rounded-sm width focus:outline-none"
+                class="px-4 bg-gray-100 border rounded-sm width focus:outline-none"
                 disabled
                 type="text"
               />
@@ -330,7 +331,7 @@
             <div class="">
               <p>Ciudad</p>
               <input
-                class="px-4 bg-white border rounded-sm width focus:outline-none"
+                class="px-4 bg-gray-100 border rounded-sm width focus:outline-none"
                 disabled
                 type="text"
               />
@@ -338,7 +339,7 @@
             <div class="">
               <p>Vendedor</p>
               <input
-                class="px-4 bg-white border rounded-sm width focus:outline-none"
+                class="px-4 bg-gray-100 border rounded-sm width focus:outline-none"
                 disabled
                 type="text"
               />
@@ -349,12 +350,12 @@
               <div class="flex mt-10 space-x-10">
                 <div class="flex space-x-4">
                   <p class="w-36">Fecha de Visita</p>
-                  <input class="-ml-4 width" type="date" name="" id="" />
+                  <input class="-ml-4 bg-gray-100 width" type="date" name="" id="" />
                 </div>
                 <div class="flex space-x-10">
                   <p class="width">Persona que Atendió</p>
                   <input
-                    class="px-4 bg-white border rounded-sm width focus:outline-none"
+                    class="px-4 bg-gray-100 border rounded-sm width focus:outline-none"
                     disabled
                     type="text"
                   />
@@ -363,11 +364,11 @@
               <div class="flex mt-4 space-x-10">
                 <div class="flex space-x-4">
                   <p class="w-36">Tipo de Visita</p>
-                  <select class="width" name="" id=""></select>
+                  <select class="bg-gray-100 width" name="" id=""></select>
                 </div>
                 <div class="flex space-x-10">
                   <p class="width">Motivo de la Visita</p>
-                  <select class="width" name="" id=""></select>
+                  <select class="bg-gray-100 width" name="" id=""></select>
                 </div>
               </div>
             </div>
@@ -425,16 +426,34 @@
         </div>
       </div>
     </div>
+
+    <!-- modal buscarCliente -->
+    <div v-if="buscarCliente">
+      <BuscarCliente @click="handleClick" />
+    </div>
+
+    
   </div>
 </template>
 
 <script>
+import BuscarCliente from '@/components/modals/BuscarCliente.vue'
 export default {
   name: "registroVisitas",
+  components: {
+    BuscarCliente
+  },
   data() {
     return {
-      registrarVisita: true
+      registrarVisita: false,
+      buscarCliente: false
     };
+  },
+
+  methods: {
+    handleClick() {
+      this.buscarCliente = false
+    }
   }
 };
 </script>
