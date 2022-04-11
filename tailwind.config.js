@@ -22,6 +22,7 @@ module.exports = {
       fontSize: {
         'upperxs': '.65rem',
         'lowerxs': '.55rem',
+        'text-sm': '0.75rem'
       },
 
       lineHeight: {

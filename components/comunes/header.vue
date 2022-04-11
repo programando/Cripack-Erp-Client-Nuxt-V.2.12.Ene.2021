@@ -94,10 +94,12 @@
               <nuxt-link to="/clientes/costos" >Costos alistamiento</nuxt-link >
             </div>
 
+            <!--
             <div  @click="gestion = false"  class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"  >
-              <nuxt-link to="/gestion/datos-caja-maquina">Cito vs Pertinax</nuxt-link>
+              <nuxt-link to="/gestion/datos-caja-maquina">Análisis opciones contra hendido</nuxt-link>
             </div>
-
+              -->
+              
           </div>
         </div>
         <NavLinks text="Contacto" to="/clientes/contacto" />

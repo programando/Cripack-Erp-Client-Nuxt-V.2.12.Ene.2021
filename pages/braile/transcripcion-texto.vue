@@ -3,7 +3,7 @@
     <h2 class="mt-1 mb-4 text-xl font-semibold text-center">
         Transcripción palabras o frases
     </h2>
-    <div class="py-4 mx-10 border border-black lg:flex lg:space-x-4 lg:justify-center">
+    <div class="py-4 mx-4 border border-black lg:flex lg:space-x-4 lg:justify-center">
       <div class="">
         <div class="px-4 py-10 mt-10 w-12/12 lg:w-10/12 lg:mt-14">
           <label class="flex justify-center mb-10 font-semibold text-center"
@@ -73,13 +73,13 @@
         </div>
       </div>
       <div class="mt-4">
-        <img class="caja-braile" src="/images/Caja-Braile.png" alt="">
+        <img class="caja-braile" src="/images/Caja-Braile.png" alt="" style="height :50%;">
       </div>
     </div>
 
     <div class="flex justify-center mt-2">
       <div class="mt-2">
-        <div class="ml-3 mr-3">
+        <div class="ml-3 mr-3"  >
           <table
             v-if="PalabrasTabla1.length"
             class="mb-1 bg-white border border-gray-300 rounded table-auto"
@@ -184,11 +184,11 @@ export default {
   data: () => ({
     showBtnAnimation: false,
     formData: {
-      alto: "45",
-      ancho: "30",
+      alto: "",
+      ancho: "",
       idTercero: 0,
-      largo: "20",
-      texto: "BUGA PALMIRA"
+      largo: "",
+      texto: ""
     },
     PalabrasTabla1: [],
     PalabrasTabla2: [],
@@ -216,10 +216,11 @@ export default {
             this.MF_Tabla2 = item.MF;
           }
         });
-        console.log(response.data);
+         
       });
 
       this.showBtnAnimation = false;
+      
     }
   }
 };

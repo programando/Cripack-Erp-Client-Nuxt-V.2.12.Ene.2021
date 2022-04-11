@@ -6,7 +6,7 @@
         <div class="mx-4 mt-4">
           <div class="flex justify-center space-x-10">
             <div class="">
-              <p class="ml-10 text-sm">Codigo</p>
+              <p class="ml-10 text-sm">Código</p>
               <div class="flex space-x-2">
                 <button>
                   <img class="h-6" src="/images/prismaticos.png" alt="" />
@@ -18,7 +18,7 @@
               </div>
             </div>
             <div class="">
-              <p class="text-sm">Nombre / Razón Social</p>
+              <p class="text-sm">Nombre / Razón social</p>
               <input
                 class="w-64 px-4 border rounded-sm focus:outline-none"
                 disabled
@@ -46,7 +46,7 @@
             <div class="">
               <div class="flex justify-center mt-10 space-x-20">
                 <div class="flex space-x-4">
-                  <p class="w-64 text-sm">Cupo de Credito</p>
+                  <p class="w-64 text-sm">Cupo de crédito</p>
                   <input
                     class="w-48 px-4 border rounded-sm focus:outline-none"
                     disabled
@@ -54,25 +54,7 @@
                   />
                 </div>
                 <div class="flex space-x-4">
-                  <p class="w-64 text-sm">Persona encargada de Pagos</p>
-                  <input
-                    class="w-48 px-4 border rounded-sm focus:outline-none"
-                    disabled
-                    type="text"
-                  />
-                </div>
-              </div>
-              <div class="flex justify-center mt-4 space-x-20">
-                <div class="flex space-x-4">
-                  <p class="w-64 text-sm">Extra Cupo</p>
-                  <input
-                    class="w-48 px-4 border rounded-sm focus:outline-none"
-                    disabled
-                    type="text"
-                  />
-                </div>
-                <div class="flex space-x-4">
-                  <p class="w-64 text-sm">Nro. Teléfono</p>
+                  <p class="w-64 text-sm">Persona encargada de pagos</p>
                   <input
                     class="w-48 px-4 border rounded-sm focus:outline-none"
                     disabled
@@ -82,7 +64,25 @@
               </div>
               <div class="flex justify-center mt-4 space-x-20">
                 <div class="flex space-x-4">
-                  <p class="w-64 text-sm">Dia limite para recepcion Facturas</p>
+                  <p class="w-64 text-sm">Extra cupo</p>
+                  <input
+                    class="w-48 px-4 border rounded-sm focus:outline-none"
+                    disabled
+                    type="text"
+                  />
+                </div>
+                <div class="flex space-x-4">
+                  <p class="w-64 text-sm">Nro. teléfono</p>
+                  <input
+                    class="w-48 px-4 border rounded-sm focus:outline-none"
+                    disabled
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="flex justify-center mt-4 space-x-20">
+                <div class="flex space-x-4">
+                  <p class="w-64 text-sm">Día límite recepción facturas</p>
                   <input
                     class="w-48 px-4 border rounded-sm focus:outline-none"
                     disabled
@@ -108,7 +108,7 @@
           </div>
           <div>
             <div class="flex items-center justify-between mx-32 mt-20">
-              <h2 class="text-xl font-semibold">Historial de Visitas</h2>
+              <h2 class="text-xl font-semibold">Historial de visitas</h2>
               <button
                 @click="registrarVisita = true"
                 class="flex items-center space-x-2"
@@ -121,8 +121,8 @@
               <table class="w-full">
                 <thead class="w-full">
                   <tr class="w-full border text-azul">
-                    <th class="w-1/12 text-sm border">Fecha Visita</th>
-                    <th class="w-2/12 text-sm border">Persona Contacto</th>
+                    <th class="w-1/12 text-sm border">Fecha visita</th>
+                    <th class="w-2/12 text-sm border">Persona contacto</th>
                     <th class="w-2/12 text-sm border">
                       Motivo Visita
                     </th>
@@ -130,7 +130,7 @@
                     <th class="w-2/12 text-sm border">
                       Siguiente Paso
                     </th>
-                    <th class="w-2/12 text-sm border">Proxima Visita</th>
+                    <th class="w-2/12 text-sm border">Próxima visita</th>
                     <th class="w-2/12 text-sm border">
                       Tipo Visita
                     </th>
@@ -208,30 +208,30 @@
               </table>
             </div>
             <div class="flex items-center justify-between mx-32 mt-20">
-              <h2 class="text-xl font-semibold">Historial de Compras</h2>
+              <h2 class="text-xl font-semibold">Historial de compras</h2>
             </div>
             <div class="mx-32 mt-4">
               <table class="w-full">
                 <thead class="w-full">
                   <tr class="w-full border text-azul">
                     <th class="w-1/12 text-sm border">#Ot</th>
-                    <th class="w-1/12 text-sm border">Refencia</th>
+                    <th class="w-1/12 text-sm border">Referencia</th>
                     <th class="w-1/12 text-sm border">
                       Estilo
                     </th>
-                    <th class="w-1/12 text-sm border">Tipo Trabajo</th>
+                    <th class="w-1/12 text-sm border">Tipo trabajo</th>
                     <th class="w-1/12 text-sm border">
                       Solicitada
                     </th>
                     <th class="w-1/12 text-sm border">Entregada</th>
                     <th class="w-1/12 text-sm border">
-                      Ult.compra
+                      Últ.compra
                     </th>
                     <th class="w-1/12 text-sm border">
                       Cant.Tq/Mes
                     </th>
                     <th class="w-1/12 text-sm border">
-                      Promo.Ult.Año
+                      Promo.Últ.Año
                     </th>
                   </tr>
                 </thead>
@@ -308,7 +308,7 @@
 
           <div class="flex justify-center mt-10 space-x-10">
             <div class="">
-              <p class="ml-10">Codigo</p>
+              <p class="ml-10">Código</p>
               <div class="flex space-x-2">
                 <button>
                   <img class="h-6" src="/images/prismaticos.png" alt="" />
@@ -353,7 +353,7 @@
                   <input class="-ml-4 bg-gray-100 width" type="date" name="" id="" />
                 </div>
                 <div class="flex space-x-10">
-                  <p class="width">Persona que Atendió</p>
+                  <p class="width">Persona que atendió</p>
                   <input
                     class="px-4 bg-gray-100 border rounded-sm width focus:outline-none"
                     disabled
@@ -363,11 +363,11 @@
               </div>
               <div class="flex mt-4 space-x-10">
                 <div class="flex space-x-4">
-                  <p class="w-36">Tipo de Visita</p>
+                  <p class="w-36">Tipo de visita</p>
                   <select class="bg-gray-100 width" name="" id=""></select>
                 </div>
                 <div class="flex space-x-10">
-                  <p class="width">Motivo de la Visita</p>
+                  <p class="width">Motivo de la visita</p>
                   <select class="bg-gray-100 width" name="" id=""></select>
                 </div>
               </div>
@@ -375,23 +375,24 @@
           </div>
           <div class="flex justify-between mt-10 mx-9">
             <div class="mt-4">
-              <h3>Resultado de esta Visita</h3>
+              <h3>Resultado de esta visita</h3>
               <textarea
                 class="px-4 py-2 border focus:outline-none"
                 name=""
                 id=""
                 cols="40"
-                rows="6"
+                rows="5"
               ></textarea>
             </div>
             <div class="mt-4">
-              <h3>Resultado de esta Visita anterior</h3>
+              <h3>Resultado de esta (visita anterior)</h3>
               <textarea
                 class="px-4 py-2 border focus:outline-none"
                 name=""
                 id=""
                 cols="40"
-                rows="6"
+                rows="5"
+                disabled
               ></textarea>
             </div>
           </div>
@@ -403,24 +404,25 @@
                 name=""
                 id=""
                 cols="40"
-                rows="6"
+                rows="5"
               ></textarea>
             </div>
             <div class="mt-4">
-              <h3>Siguiente paso(Visita Anterior)</h3>
+              <h3>Siguiente paso (visita anterior)</h3>
               <textarea
                 class="px-4 py-2 border focus:outline-none"
                 name=""
                 id=""
                 cols="40"
-                rows="6"
+                rows="5"
+                disabled
               ></textarea>
             </div>
           </div>
           <div class="flex justify-end mx-10 mt-4">
             <button class="flex items-center space-x-2">
               <img class="w-6" src="/images/save.svg" alt="" />
-              <p>Grabar</p>
+              <p>Grabar registro de visita</p>
             </button>
           </div>
         </div>
