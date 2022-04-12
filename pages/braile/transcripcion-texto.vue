@@ -1,85 +1,87 @@
 <template>
   <div class="py-24">
     <h2 class="mt-1 mb-4 text-xl font-semibold text-center">
-        Transcripción palabras o frases
+      Transcripción palabras o frases
     </h2>
-    <div class="py-4 mx-4 border border-black lg:flex lg:space-x-4 lg:justify-center">
-      <div class="">
-        <div class="px-4 py-10 mt-10 w-12/12 lg:w-10/12 lg:mt-14">
-          <label class="flex justify-center mb-10 font-semibold text-center"
-            >Palabra o frase a transcribir</label
-          >
-          <InputBasic
-            @keydown="clearErrors"
-            borderColor="extra"
-            colorError="red"
-            type="text"
-            v-model="formData.texto"
-            width="w-12/12"
-            isUppercase="uppercase"
-          ></InputBasic>
-
-          <p class="mt-6 mb-6 text-center">Dimensiones de la caja</p>
-          <div class="flex justify-center">
-            <div class="flex justify-center mt-2">
-              <label class="w-20">Largo :</label>
-              <InputBasic
-                @keydown="clearErrors"
-                borderColor="extra"
-                colorError="red"
-                type="text"
-                v-model="formData.largo"
-                width="w-2/6"
-              ></InputBasic>
-            </div>
-            <div class="flex justify-center mt-2">
-              <label class="w-20">Ancho :</label>
-
-              <InputBasic
-                @keydown="clearErrors"
-                borderColor="extra"
-                colorError="red"
-                type="text"
-                v-model="formData.ancho"
-                width="w-2/6"
-              ></InputBasic>
-            </div>
-            <div class="flex justify-center mt-2">
-              <label class="w-20">Alto :</label>
-              <InputBasic
-                @keydown="clearErrors"
-                borderColor="extra"
-                colorError="red"
-                type="text"
-                v-model="formData.alto"
-                width="w-2/6"
-              ></InputBasic>
-            </div>
-          </div>
-          <div class="flex justify-center mt-10 mb-4">
-            <BtnCallToAction
-              @click.prevent="sendTextToTranscript"
-              colorIcon="white"
-              ref="ButtonLoading"
-              size="small"
-              variant="success"
-              variant-type="normal"
-              :showBtnAnimation="showBtnAnimation"
+    <div class="py-4 mx-4 lg:flex lg:space-x-4 lg:justify-center">
+      <div class="border border-black lg:flex lg:space-x-4 lg:justify-center px-10 py-10">
+        <div class=" ">
+          <div class="px-4 py-10 mt-10 w-12/12 lg:w-10/12 lg:mt-14">
+            <label class="flex justify-center mb-10 font-semibold text-center"
+              >Palabra o frase a transcribir</label
             >
-              Iniciar transcripción
-            </BtnCallToAction>
+            <InputBasic
+              @keydown="clearErrors"
+              borderColor="extra"
+              colorError="red"
+              type="text"
+              v-model="formData.texto"
+              width="w-12/12"
+              isUppercase="uppercase"
+            ></InputBasic>
+
+            <p class="mt-6 mb-6 text-center">Dimensiones de la caja</p>
+            <div class="flex justify-center">
+              <div class="flex justify-center mt-2">
+                <label class="w-20">Largo :</label>
+                <InputBasic
+                  @keydown="clearErrors"
+                  borderColor="extra"
+                  colorError="red"
+                  type="text"
+                  v-model="formData.largo"
+                  width="w-2/6"
+                ></InputBasic>
+              </div>
+              <div class="flex justify-center mt-2">
+                <label class="w-20">Ancho :</label>
+
+                <InputBasic
+                  @keydown="clearErrors"
+                  borderColor="extra"
+                  colorError="red"
+                  type="text"
+                  v-model="formData.ancho"
+                  width="w-2/6"
+                ></InputBasic>
+              </div>
+              <div class="flex justify-center mt-2">
+                <label class="w-20">Alto :</label>
+                <InputBasic
+                  @keydown="clearErrors"
+                  borderColor="extra"
+                  colorError="red"
+                  type="text"
+                  v-model="formData.alto"
+                  width="w-2/6"
+                ></InputBasic>
+              </div>
+            </div>
+            <div class="flex justify-center mt-10 mb-4">
+              <BtnCallToAction
+                @click.prevent="sendTextToTranscript"
+                colorIcon="white"
+                ref="ButtonLoading"
+                size="small"
+                variant="success"
+                variant-type="normal"
+                :showBtnAnimation="showBtnAnimation"
+              >
+                Iniciar transcripción
+              </BtnCallToAction>
+            </div>
+            <br />
           </div>
-          <br />
         </div>
-      </div>
-      <div class="mt-4">
-        <img class="caja-braile" src="/images/Caja-Braile.png" alt="" style="height :50%;">
+        <div class="mt-4 flex justify-center">
+          <img class="caja-braile" src="/images/Caja-Braile.png" alt="" />
+        </div>
       </div>
     </div>
 
     <div class="flex justify-center mt-2">
       <div class="mt-2">
-        <div class="ml-3 mr-3"  >
+        <div class="ml-3 mr-3">
           <table
             v-if="PalabrasTabla1.length"
             class="mb-1 bg-white border border-gray-300 rounded table-auto"
@@ -216,11 +218,9 @@ export default {
             this.MF_Tabla2 = item.MF;
           }
         });
-         
       });
 
       this.showBtnAnimation = false;
-      
     }
   }
 };
@@ -228,7 +228,7 @@ export default {
 
 <style>
 .caja-braile {
-  height: 650px;
-  width: 600px;
+  height: 450px;
+  width: 450px;
 }
 </style>

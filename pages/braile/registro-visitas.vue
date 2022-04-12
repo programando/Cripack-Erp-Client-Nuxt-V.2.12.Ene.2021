@@ -8,7 +8,7 @@
             <div class="">
               <p class="ml-10 text-sm">Código</p>
               <div class="flex space-x-2">
-                <button>
+                <button @click="buscarCliente = true">
                   <img class="h-6" src="/images/prismaticos.png" alt="" />
                 </button>
                 <input
@@ -100,7 +100,7 @@
               </div>
             </div>
             <div class="w-32 px-4 mt-10">
-              <button @click="buscarCliente = true">
+              <button >
                 <img class="h-8 ml-5" src="/images/buscar.png" alt="" />
                 <p class="text-sm">Consultar ficha cliente</p>
               </button>
