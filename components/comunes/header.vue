@@ -11,7 +11,7 @@
         
       </div>
 
-      <div class="flex items-center justify-end mr-4 space-x-8">
+      <div class="flex items-center justify-end mr-4 space-x-8"  v-on-clickaway="closeMenu">
         <NavLinks text="Historial" to="/clientes/ots-historial" />
 
         <NavLinks text="Estado Ot's" to="/clientes/ots-estado" />
@@ -160,6 +160,12 @@ export default {
     viewGestion(){
       this.gestion = !this.gestion
       this.menu = false
+    },
+
+    closeMenu() {
+      this.menu = false,
+      this.subMenu = false,
+      this.gestion = false
     }
   }
 };

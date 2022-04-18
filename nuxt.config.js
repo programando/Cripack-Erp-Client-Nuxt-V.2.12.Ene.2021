@@ -47,6 +47,7 @@ export default {
      { src: '~/plugins/filters.js' },
      { src: '~/plugins/datepicker', ssr: false },
      { src: '~/plugins/i18n.js' },
+     '~/plugins/clickaway',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
