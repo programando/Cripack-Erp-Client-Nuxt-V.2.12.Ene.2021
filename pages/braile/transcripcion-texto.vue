@@ -4,37 +4,40 @@
       Transcripción palabras o frases
     </h2>
     <div class="py-4 mx-4 lg:flex lg:space-x-4 lg:justify-center">
-      <div class="px-6 border border-black lg:flex lg:space-x-4 lg:justify-center">
+      <div class="px-10 border border-black lg:flex lg:space-x-4 lg:justify-center">
         <div class="">
-          <div class="px-4 py-10 w-12/12 lg:w-10/12 ">
+          <div class="px-10 py-10 w-12/12 lg:w-10/12 ">
             <label class="flex justify-center mb-10 font-semibold text-center"
               >Palabra o frase a transcribir</label
             >
-            <InputBasic
+            <div class="flex justify-center">
+              <InputBasic
               @keydown="clearErrors"
               borderColor="extra"
               colorError="red"
               type="text"
               v-model="formData.texto"
-              width="w-12/12"
+              width="w-96"
               isUppercase="uppercase"
-            ></InputBasic>
+              ></InputBasic>
+            </div>
+            
 
             <p class="mt-6 mb-6 text-center">Dimensiones de la caja</p>
             <div class="flex justify-center">
-              <div class="flex justify-center mt-2">
-                <label class="w-20">Largo :</label>
+              <div class="flex justify-center mt-2 mr-2">
+                <label class="w-16">Largo :</label>
                 <InputBasic
                   @keydown="clearErrors"
                   borderColor="extra"
                   colorError="red"
                   type="text"
                   v-model="formData.largo"
-                  width="w-2/6"
+                  width="w-14"
                 ></InputBasic>
               </div>
-              <div class="flex justify-center mt-2">
-                <label class="w-20">Ancho :</label>
+              <div class="flex justify-center mt-2 mr-2">
+                <label class="w-16">Ancho :</label>
 
                 <InputBasic
                   @keydown="clearErrors"
@@ -42,18 +45,18 @@
                   colorError="red"
                   type="text"
                   v-model="formData.ancho"
-                  width="w-2/6"
+                  width="w-14"
                 ></InputBasic>
               </div>
               <div class="flex justify-center mt-2">
-                <label class="w-20">Alto :</label>
+                <label class="w-16">Alto :</label>
                 <InputBasic
                   @keydown="clearErrors"
                   borderColor="extra"
                   colorError="red"
                   type="text"
                   v-model="formData.alto"
-                  width="w-2/6"
+                  width="w-14"
                 ></InputBasic>
               </div>
             </div>
