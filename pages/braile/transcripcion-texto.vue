@@ -4,9 +4,9 @@
       Transcripción palabras o frases
     </h2>
     <div class="py-4 mx-4 lg:flex lg:space-x-4 lg:justify-center">
-      <div class="border border-black lg:flex lg:space-x-4 lg:justify-center px-10 py-10">
-        <div class=" ">
-          <div class="px-4 py-10 mt-10 w-12/12 lg:w-10/12 lg:mt-14">
+      <div class="px-6 border border-black lg:flex lg:space-x-4 lg:justify-center">
+        <div class="">
+          <div class="px-4 py-10 w-12/12 lg:w-10/12 ">
             <label class="flex justify-center mb-10 font-semibold text-center"
               >Palabra o frase a transcribir</label
             >
@@ -58,7 +58,7 @@
               </div>
             </div>
             <div class="flex justify-center mt-10 mb-4">
-              <BtnCallToAction
+                <BtnCallToAction
                 @click.prevent="sendTextToTranscript"
                 colorIcon="white"
                 ref="ButtonLoading"
@@ -66,20 +66,20 @@
                 variant="success"
                 variant-type="normal"
                 :showBtnAnimation="showBtnAnimation"
-              >
-                Iniciar transcripción
-              </BtnCallToAction>
+                >
+                  Iniciar transcripción
+                </BtnCallToAction>
             </div>
             <br />
           </div>
         </div>
-        <div class="mt-4 flex justify-center">
+        <div class="flex justify-center pb-4 mt-4">
           <img class="caja-braile" src="/images/Caja-Braile.png" alt="" />
         </div>
       </div>
     </div>
 
-    <div class="flex justify-center mt-2">
+    <div id="anclaBraile" class="flex justify-center mt-2">
       <div class="mt-2">
         <div class="ml-3 mr-3">
           <table
@@ -167,7 +167,7 @@
               </tr>
             </tbody>
           </table>
-        </div>
+        </div>        
       </div>
     </div>
   </div>
@@ -228,7 +228,7 @@ export default {
 
 <style>
 .caja-braile {
-  height: 450px;
-  width: 450px;
+  height: 400px;
+  width: 400px;
 }
 </style>
