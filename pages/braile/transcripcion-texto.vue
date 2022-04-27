@@ -60,7 +60,8 @@
                 ></InputBasic>
               </div>
             </div>
-            <div class="flex justify-center mt-10 mb-4">
+
+           <div class="flex justify-center mt-10 mb-4">
                 <BtnCallToAction
                 @click.prevent="sendTextToTranscript"
                 colorIcon="white"
@@ -68,28 +69,33 @@
                 size="small"
                 variant="success"
                 variant-type="normal"
-                :showBtnAnimation="showBtnAnimation"
-                >
+                :showBtnAnimation="showBtnAnimation">
                   Iniciar transcripción
                 </BtnCallToAction>
             </div>
+    
             <br />
+          
           </div>
+
+          <!-- <a href="#braile-result" @click.prevent="sendTextToTranscript()" id='ancla'> Iniciar transcripción </a> -->
+         
         </div>
         <div class="flex justify-center pb-4 mt-4">
           <img class="caja-braile" src="/images/Caja-Braile.png" alt="" />
         </div>
       </div>
     </div>
-
-    <div id="anclaBraile" class="flex justify-center mt-2">
+    
+    <div  class="flex justify-center mt-2">
+     
       <div class="mt-2">
         <div class="ml-3 mr-3">
-          <table
-            v-if="PalabrasTabla1.length"
-            class="mb-1 bg-white border border-gray-300 rounded table-auto"
+           
+          <table v-if="PalabrasTabla1.length" class="mb-1 bg-white border border-gray-300 rounded table-auto" 
           >
             <tbody class="">
+              <a name="braile-result" id="braile-result"></a>
               <tr class="">
                 <td class="w-32 p-10 text-sm border border-gray-300">
                   <div>Cara 1</div>
@@ -128,7 +134,7 @@
             </tbody>
           </table>
 
-          <table
+          <table id="tableBraile"
             v-if="PalabrasTabla2.length"
             class="bg-white border border-gray-300 rounded table-auto"
           >
@@ -222,9 +228,19 @@ export default {
           }
         });
       });
-
+     // this.movePage();
       this.showBtnAnimation = false;
-    }
+    },
+   /* movePage (e){
+        const hrefOb = document.querySelector('#ancla');
+        const href = hrefOb.getAttribute("href");
+        const offsetTop = document.querySelector(href).offsetTop;
+          scroll({
+            top: offsetTop,
+            behavior: "smooth"
+          });
+
+    },*/
   }
 };
 </script>
