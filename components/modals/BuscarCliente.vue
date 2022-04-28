@@ -7,7 +7,7 @@
       ></div>
 
       <div
-        class="relative inline-block w-3/6 overflow-hidden transition-all transform bg-white rounded-lg shadow-xl top-60 alto"
+        class="relative inline-block w-3/6 transition-all transform bg-white rounded-lg shadow-xl top-60"
       >
         <div class="px-4 pt-5 pb-4 bg-white">
           <div class="">
@@ -24,7 +24,7 @@
                 v-model='textoBusqueda'
               />
             </div>
-            <div class="mx-10">
+            <div class="mx-10 overflow-auto alto">
               <table class="w-full mt-2 border">
                 <thead class="border">
                   <tr>
@@ -59,7 +59,7 @@
         >
           <button
             type="button"
-            @click="handleClick"
+            @click="getIdTerceroCliente"
             class="inline-flex justify-center w-full px-4 py-2 mt-3 text-base font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
           >
             Cerrar
@@ -112,8 +112,8 @@ export default {
 
 <style>
 .alto {
-  max-height: 600px;
-  overflow: auto;
+  max-height: 400px;
+  
 }
 
 
