@@ -448,7 +448,7 @@ export default {
   data() {
     return {
       registrarVisita: false,
-      buscarCliente: false
+      buscarCliente: true
     };
   },
 

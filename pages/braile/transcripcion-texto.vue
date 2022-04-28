@@ -62,18 +62,10 @@
             </div>
 
            <div class="flex justify-center mt-10 mb-4">
-                <BtnCallToAction
-                @click.prevent="sendTextToTranscript"
-                colorIcon="white"
-                ref="ButtonLoading"
-                size="small"
-                variant="success"
-                variant-type="normal"
-                :showBtnAnimation="showBtnAnimation">
-                  Iniciar transcripción
-                </BtnCallToAction>
+              <a @click="sendTextToTranscript" class="px-4 py-1 text-white bg-green-500 rounded" href="#tableBraile">Iniciar transcripción</a>
             </div>
-    
+
+            
             <br />
           
           </div>
@@ -134,7 +126,7 @@
             </tbody>
           </table>
 
-          <table id="tableBraile"
+          <table 
             v-if="PalabrasTabla2.length"
             class="bg-white border border-gray-300 rounded table-auto"
           >
@@ -176,6 +168,11 @@
               </tr>
             </tbody>
           </table>
+         
+            <p v-if="!PalabrasTabla1.length" class="opacity-0 oculto">Oculto</p>
+            <h2 class="opacity-0" id="tableBraile">Hola</h2>
+          
+          
         </div>        
       </div>
     </div>
@@ -249,5 +246,9 @@ export default {
 .caja-braile {
   height: 400px;
   width: 400px;
+}
+
+.oculto {
+  height: 550px;
 }
 </style>

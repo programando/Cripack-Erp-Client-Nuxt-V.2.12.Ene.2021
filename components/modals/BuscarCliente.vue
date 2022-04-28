@@ -7,12 +7,12 @@
       ></div>
 
       <div
-        class="relative inline-block w-3/6 overflow-hidden transition-all transform bg-white rounded-lg shadow-xl top-60"
+        class="relative inline-block w-3/6 overflow-hidden transition-all transform bg-white rounded-lg shadow-xl top-60 alto"
       >
         <div class="px-4 pt-5 pb-4 bg-white">
           <div class="">
             <div
-              class="flex items-center justify-center mt-3 space-x-4 sm:mt-0"
+              class="sticky flex items-center justify-center mt-3 space-x-4 sm:mt-0"
             >
               <label>Buscar Cliente :</label>
               <input
@@ -25,15 +25,15 @@
               <table class="w-full mt-2 border">
                 <thead class="border">
                   <tr>
-                    <th class="w-5/12 px-2 border-l">Codigo</th>
-                    <th class="w-5/12 px-2 border-l">Nombre</th>
+                    <th class="px-4 text-left border-l w-28">Codigo</th>
+                    <th class="px-4 text-left border-l ">Nombre</th>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody class="border">
-                  <tr>
-                    <td class="w-5/12 px-2 border-l">00014</td>
-                    <td class="w-5/12 px-2 border-l">Luis</td>
+                  <tr v-for="usuario in prueba" :key="usuario.id">
+                    <td class="px-4 text-sm text-left border-l w-28">{{ usuario.codigo }}</td>
+                    <td class="px-4 text-sm text-left border-l">{{ usuario.nombre }}</td>
                     <td class="flex items-end justify-end mr-1">
                       <img
                         class="w-6 h-6 cursor-pointer"
@@ -66,6 +66,38 @@
 <script>
 export default {
   name: 'BuscarCliente',
+  data() {
+    return {
+      prueba: [
+        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
+        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
+        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
+        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
+        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
+        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
+        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
+        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
+        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
+        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
+        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
+        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
+        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
+        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
+        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
+        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
+        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
+        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
+        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
+        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
+        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
+        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
+        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
+        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
+        
+
+      ]
+    }
+  },
   methods: {
     handleClick() {
       this.$emit("click");
@@ -74,4 +106,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.alto {
+  max-height: 600px;
+  overflow: auto;
+}
+
+
+</style>
