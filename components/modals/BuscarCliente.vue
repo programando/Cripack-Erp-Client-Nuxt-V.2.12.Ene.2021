@@ -14,34 +14,41 @@
             <div
               class="sticky flex items-center justify-center mt-3 space-x-4 sm:mt-0"
             >
-              <label>Buscar Cliente :</label>
+              <label class="text-xs">Buscar Cliente :</label>
               <input
-                class="px-4 py-1 border rounded w-80 focus:outline-none"
+                class="px-4 py-1 text-xs border rounded w-80 focus:outline-none"
                 type="text"
                 placeholder="buscar por código o nombre  "
+                @change="buscarCliente()"
+                @input="buscarCliente()"
+                v-model='textoBusqueda'
               />
             </div>
             <div class="mx-10">
               <table class="w-full mt-2 border">
                 <thead class="border">
                   <tr>
-                    <th class="px-4 text-left border-l w-28">Codigo</th>
-                    <th class="px-4 text-left border-l ">Nombre</th>
+                    <th class="px-2 text-xs text-left border-l w-28">Código</th>
+                    <th class="px-2 text-xs text-left border-l w-28">Nombre</th>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody class="border">
-                  <tr v-for="usuario in prueba" :key="usuario.id">
-                    <td class="px-4 text-sm text-left border-l w-28">{{ usuario.codigo }}</td>
-                    <td class="px-4 text-sm text-left border-l">{{ usuario.nombre }}</td>
-                    <td class="flex items-end justify-end mr-1">
+
+                  <tr v-for="cliente in clientes" :key="cliente.idtercero">
+                    <td class="px-2 text-sm text-left border-l"> {{ cliente.codigo_tercero }}</td>
+                    <td class="w-10/12 px-2 text-xs text-left border-l"> {{ cliente.nomtercero }} </td>
+                    <td class="flex items-end justify-end w-10 mr-1">
+
                       <img
                         class="w-6 h-6 cursor-pointer"
                         src="/images/flecha-derecha.svg"
                         alt=""
+                        @click="getIdTerceroCliente(cliente)"
                       />
                     </td>
                   </tr>
+                  
                 </tbody>
               </table>
             </div>
@@ -55,7 +62,7 @@
             @click="handleClick"
             class="inline-flex justify-center w-full px-4 py-2 mt-3 text-base font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
           >
-            Cancel
+            Cerrar
           </button>
         </div>
       </div>
@@ -64,43 +71,40 @@
 </template>
 
 <script>
+import TercerosClientes from "@/models/Terceros";
 export default {
   name: 'BuscarCliente',
-  data() {
-    return {
-      prueba: [
-        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
-        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
-        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
-        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
-        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
-        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
-        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
-        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
-        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
-        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
-        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
-        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
-        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
-        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
-        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
-        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
-        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
-        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
-        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
-        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
-        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
-        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
-        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
-        {id: 1, codigo: 345678, nombre: "ACEROS BOEHLER DE COLOMBIA"},
-        
+  data: () => ({
+      primerosVeinteClientes : [],
+      clientes: [],
+      textoBusqueda :'',
+  }),
 
-      ]
-    }
+  mounted() {
+    TercerosClientes.primerosVeinteClientes()
+    .then ( response => {
+        this.clientes = response.data;
+        this.primerosVeinteClientes = response.data;
+    })
   },
+
   methods: {
     handleClick() {
       this.$emit("click");
+    },
+    getIdTerceroCliente ( Tercero ) {
+        this.$emit("getIdTerceroCliente", Tercero );
+        this.handleClick();
+        
+    },
+    buscarCliente () {
+        TercerosClientes.busqueda ( this.textoBusqueda )
+        .then ( response => {
+            this.clientes = response.data;
+            if ( this.clientes.length == 0 ) {
+              this.clientes = this.primerosVeinteClientes;
+            }
+        })
     }
   }
 };

@@ -82,7 +82,7 @@
           >
         
              <div class="relative mx-2 mt-2 cursor-pointer hover:opacity-90" @click="gestion = false" >
-              <nuxt-link to="/braile/registro-visitas">Registro visita cliente</nuxt-link>
+              <nuxt-link to="/clientes/registro-visitas">Registro visita cliente</nuxt-link>
             </div>
 
             <div @click="gestion = false" class="relative mx-2 mt-2 cursor-pointer hover:opacity-90" >
