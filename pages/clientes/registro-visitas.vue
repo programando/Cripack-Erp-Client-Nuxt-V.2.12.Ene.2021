@@ -431,7 +431,7 @@
 
     <!-- modal buscarCliente -->
     <div v-if="buscarCliente">
-      <BuscarCliente @click="handleClick" />
+      <BuscarCliente @getIdTerceroCliente = "getIdTerceroCliente" />
     </div>
 
     
@@ -453,8 +453,10 @@ export default {
   },
 
   methods: {
-    handleClick() {
-      this.buscarCliente = false
+    getIdTerceroCliente( Tercero ) {
+       console.log ( Tercero );
+       this.buscarCliente = false  
+        
     }
   }
 };
