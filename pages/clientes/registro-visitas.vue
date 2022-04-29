@@ -340,6 +340,7 @@
       </div>
     </div>
 
+
     <!-- modal buscarCliente -->
     <div v-if="buscarCliente">
       <BuscarCliente @getIdTerceroCliente = "getIdTerceroCliente" />
