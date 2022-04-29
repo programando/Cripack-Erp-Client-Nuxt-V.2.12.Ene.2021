@@ -3,8 +3,22 @@ import Api  from "@/config/Axios";
 
 export default {
   
+
+  async ultimasVisitas( IdTercero ) {
+    return Api.post("clientes/ultimas/visitas", { 'idtercero' :IdTercero } ) ;
+  },
+
+  async buscarPorIdTercero( IdTercero ) {
+    return Api.post("clientes/busqueda/idtercero", { 'idtercero' :IdTercero } ) ;
+  },
+  
+
+  async buscarPorCodigo( codigoBuscar ) {
+    return Api.post("clientes/busqueda/codigo", { 'codigo_tercero' :codigoBuscar } ) ;
+  },
+
   async busqueda( textoBuscar ) {
-    return Api.post("clientes/busqueda", { 'filtroBusqueda' :textoBuscar } ) ;
+    return Api.post("clientes/busqueda/texto", { 'filtroBusqueda' :textoBuscar } ) ;
   },
 
   async primerosVeinteClientes() {

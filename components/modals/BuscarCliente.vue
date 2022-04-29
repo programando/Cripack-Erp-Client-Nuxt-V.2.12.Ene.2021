@@ -44,7 +44,7 @@
                         class="w-6 h-6 cursor-pointer"
                         src="/images/flecha-derecha.svg"
                         alt=""
-                        @click="getIdTerceroCliente(cliente)"
+                        @click="getIdTerceroCliente ( cliente.codigo_tercero )"
                       />
                     </td>
                   </tr>
@@ -59,7 +59,7 @@
         >
           <button
             type="button"
-            @click="getIdTerceroCliente"
+            @click="getIdTerceroCliente( -1 )"
             class="inline-flex justify-center w-full px-4 py-2 mt-3 text-base font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
           >
             Cerrar
@@ -89,14 +89,12 @@ export default {
   },
 
   methods: {
-    handleClick() {
-      this.$emit("click");
+
+
+getIdTerceroCliente ( CodTercero ) {
+        this.$emit("getIdTerceroCliente", CodTercero );
     },
-    getIdTerceroCliente ( Tercero ) {
-        this.$emit("getIdTerceroCliente", Tercero );
-        this.handleClick();
-        
-    },
+
     buscarCliente () {
         TercerosClientes.busqueda ( this.textoBusqueda )
         .then ( response => {

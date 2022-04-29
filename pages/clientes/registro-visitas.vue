@@ -1,8 +1,8 @@
 <template>
-  <div class="relative pt-28">
+  <div class="relative pt-16">
     <div class="flex justify-center py-10 ">
       <div class="px-4 py-4 border shadow-xl">
-        <h2 class="text-2xl font-semibold text-center">Registro de visitas</h2>
+        <h2 class="text-xl font-semibold text-center">Registro de visitas</h2>
         <div class="mx-4 mt-4">
           <div class="flex justify-center space-x-10">
             <div class="">
@@ -12,33 +12,38 @@
                   <img class="h-6" src="/images/prismaticos.png" alt="" />
                 </button>
                 <input
-                  class="w-32 px-2 border rounded-sm focus:outline-none"
+                  class="w-32 px-2 border rounded-sm focus:outline-none text-xs py-1 text-center"
                   type="text"
+                  v-model="codigo_tercero"
+                  @keyup.enter="buscarClientePorCodigo"
                 />
               </div>
             </div>
             <div class="">
               <p class="text-sm">Nombre / Razón social</p>
               <input
-                class="w-64 px-4 border rounded-sm focus:outline-none"
+                class="w-64 px-4 border rounded-sm focus:outline-none text-xs py-1"
                 disabled
                 type="text"
+                v-model="formCliente.nomtercero"
               />
             </div>
             <div class="">
               <p class="text-sm">Ciudad</p>
               <input
-                class="px-4 border rounded-sm w-60 focus:outline-none"
+                class="px-4 border rounded-sm w-60 focus:outline-none text-xs py-1"
                 disabled
                 type="text"
+                v-model="formCliente.nommcipio"
               />
             </div>
             <div class="">
               <p class="text-sm">Vendedor</p>
               <input
-                class="px-4 border rounded-sm w-60 focus:outline-none"
+                class="px-4 border rounded-sm w-60 focus:outline-none text-xs py-1"
                 disabled
                 type="text"
+                v-model="formCliente.nomvendedor"
               />
             </div>
           </div>
@@ -48,17 +53,19 @@
                 <div class="flex space-x-4">
                   <p class="w-64 text-sm">Cupo de crédito</p>
                   <input
-                    class="w-48 px-4 border rounded-sm focus:outline-none"
+                    class="w-48 px-4 border rounded-sm focus:outline-none text-xs py-1 text-right"
                     disabled
                     type="text"
+                    v-model="formCliente.cupo_credito"
                   />
                 </div>
                 <div class="flex space-x-4">
                   <p class="w-64 text-sm">Persona encargada de pagos</p>
                   <input
-                    class="w-48 px-4 border rounded-sm focus:outline-none"
+                    class="w-48 px-4 border rounded-sm focus:outline-none text-xs py-1"
                     disabled
                     type="text"
+                    v-model="formCliente.contacto_pagos"
                   />
                 </div>
               </div>
@@ -66,17 +73,19 @@
                 <div class="flex space-x-4">
                   <p class="w-64 text-sm">Extra cupo</p>
                   <input
-                    class="w-48 px-4 border rounded-sm focus:outline-none"
+                    class="w-48 px-4 border rounded-sm focus:outline-none text-xs py-1 text-right"
                     disabled
                     type="text"
+                    v-model="formCliente.extra_cupo"
                   />
                 </div>
                 <div class="flex space-x-4">
                   <p class="w-64 text-sm">Nro. teléfono</p>
                   <input
-                    class="w-48 px-4 border rounded-sm focus:outline-none"
+                    class="w-48 px-4 border rounded-sm focus:outline-none text-xs py-1"
                     disabled
                     type="text"
+                    v-model="formCliente.contacto_pagos_celular"
                   />
                 </div>
               </div>
@@ -84,131 +93,75 @@
                 <div class="flex space-x-4">
                   <p class="w-64 text-sm">Día límite recepción facturas</p>
                   <input
-                    class="w-48 px-4 border rounded-sm focus:outline-none"
+                    class="w-48 px-4 border rounded-sm focus:outline-none text-xs py-1 text-right"
                     disabled
                     type="text"
+                    v-model="formCliente.dia_limite_recibe_facturas"
                   />
                 </div>
                 <div class="flex space-x-4">
                   <p class="w-64 text-sm">Email</p>
                   <input
-                    class="w-48 px-4 border rounded-sm focus:outline-none"
+                    class="w-48 px-4 border rounded-sm focus:outline-none text-xs py-1"
                     disabled
                     type="text"
+                    v-model="formCliente.contacto_pagos_email"
                   />
                 </div>
               </div>
             </div>
-            <div class="w-32 px-4 mt-10">
-              <button >
-                <img class="h-8 ml-5" src="/images/buscar.png" alt="" />
-                <p class="text-sm">Consultar ficha cliente</p>
-              </button>
-            </div>
+            
+ 
           </div>
           <div>
             <div class="flex items-center justify-between mx-32 mt-20">
-              <h2 class="text-xl font-semibold">Historial de visitas</h2>
+              <h2 class="text-sm font-semibold">Historial de visitas</h2>
               <button
                 @click="registrarVisita = true"
                 class="flex items-center space-x-2"
               >
                 <img class="h-8 ml-5" src="/images/buscar.png" alt="" />
-                <p class="text-sm">Consultar ficha cliente</p>
+                <p class="text-sm">Registrar nueva visita</p>
               </button>
             </div>
             <div class="mx-32 mt-4">
               <table class="w-full">
                 <thead class="w-full">
                   <tr class="w-full border text-azul">
-                    <th class="w-1/12 text-sm border">Fecha visita</th>
-                    <th class="w-2/12 text-sm border">Persona contacto</th>
-                    <th class="w-2/12 text-sm border">
-                      Motivo Visita
-                    </th>
-                    <th class="w-2/12 text-sm border">Resultado</th>
-                    <th class="w-2/12 text-sm border">
-                      Siguiente Paso
-                    </th>
-                    <th class="w-2/12 text-sm border">Próxima visita</th>
-                    <th class="w-2/12 text-sm border">
-                      Tipo Visita
-                    </th>
-                    <th class="w-1/12 text-sm border">
-                      Detalles
-                    </th>
+                    <th class="w-1/12 text-xs border">Fecha </th>
+                    <th class="w-2/12 text-xs border">Persona contacto</th>
+                    <th class="w-2/12 text-xs border"> Motivo Visita </th>
+                    <th class="w-2/12 text-xs border">Resultado</th>
+                    <th class="w-2/12 text-xs border"> Siguiente Paso </th>
+                    <th class="w-2/12 text-xs border">Próxima visita</th>
+                    <th class="w-2/12 text-xs border">Tipo Visita </th>
+                    <th class="w-1/12 text-xs border">  Detalles </th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td class="px-2 py-2 text-sm border text-azul"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td
-                      class="flex justify-center w-20 text-sm text-right border"
-                    >
+                  <tr v-for="visita in historialVisitas" :key="visita.idregistro">
+                    <td class="px-2 py-2 text-xs border text-azul"> {{visita.fecha_visita | FechaLarga }} </td>
+                    <td class="px-4 py-2 text-xs text-left border">{{ visita.contacto}} </td>
+                    <td class="px-4 py-2 text-xs text-left border"> {{ visita.nommtvovisita | Capitalize }} </td>
+                    <td class="px-4 py-2 text-xs text-left border"> {{ visita.resultados | Capitalize}} </td>
+                    <td class="px-4 py-2 text-xs text-left border"> {{visita.siguiente_paso | Capitalize}}</td>
+                    <td class="px-4 py-2 text-xs text-left border"> {{visita.fecha_proxvisita  | FechaLarga}} </td>
+                    <td class="px-4 py-2 text-xs text-left border"> {{ visita.nom_tipo_visita | Capitalize  }} </td>
+                    <td class="flex justify-center w-20 text-xs text-right border" >
                       <button>
                         <img class="h-6" src="/images/ver.png" alt="" />
                       </button>
                     </td>
                   </tr>
-                  <tr>
-                    <td class="px-2 py-2 text-sm border text-azul"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td
-                      class="flex justify-center w-20 text-sm text-right border"
-                    >
-                      <button>
-                        <img class="h-6" src="/images/ver.png" alt="" />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="px-2 py-2 text-sm border text-azul"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td
-                      class="flex justify-center w-20 text-sm text-right border"
-                    >
-                      <button>
-                        <img class="h-6" src="/images/ver.png" alt="" />
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="px-2 py-2 text-sm border text-azul"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td
-                      class="flex justify-center w-20 text-sm text-right border"
-                    >
-                      <button>
-                        <img class="h-6" src="/images/ver.png" alt="" />
-                      </button>
-                    </td>
-                  </tr>
+
+
+
                 </tbody>
+
               </table>
             </div>
             <div class="flex items-center justify-between mx-32 mt-20">
-              <h2 class="text-xl font-semibold">Historial de compras</h2>
+              <h2 class="text-sm font-semibold">Historial de compras</h2>
             </div>
             <div class="mx-32 mt-4">
               <table class="w-full">
@@ -439,27 +392,83 @@
 </template>
 
 <script>
-import BuscarCliente from '@/components/modals/BuscarCliente.vue'
-export default {
-  name: "registroVisitas",
-  components: {
-    BuscarCliente
-  },
-  data() {
-    return {
-      registrarVisita: false,
-      buscarCliente: true
-    };
-  },
+ 
+      import TercerosClientes from '@/models/Terceros';
+      import BuscarCliente from '@/components/modals/BuscarCliente.vue'
+      
+      var Numeral = require("numeral");
 
-  methods: {
-    getIdTerceroCliente( Tercero ) {
-       console.log ( Tercero );
-       this.buscarCliente = false  
-        
-    }
-  }
-};
+      export default {
+        name: "registroVisitas",
+        components: {
+          BuscarCliente
+        },
+        data() {
+          return {
+            registrarVisita: false,
+            buscarCliente: false,
+            codigo_tercero:'',
+            formCliente : {
+                'idtercero': 0,
+                'codigo_tercero' : '',
+                'nomtercero' : '',
+                'nommcipio' : '',
+                'contacto' : '',
+                'nomvendedor' : '',
+                'contacto_pagos' : '',
+                'cupo_credito' : 0,
+                'contacto_pagos_celular' : '',
+                'contacto_pagos_email' : '',
+                'extra_cupo' : 0,
+                'dia_limite_recibe_facturas' : 0,
+            },
+            historialVisitas:[],
+          };
+        },
+
+        methods: {
+          getIdTerceroCliente( CodTercero ) {
+            if ( CodTercero == -1) { this.buscarCliente = false ; return;   }
+                TercerosClientes.buscarPorCodigo (CodTercero )
+                .then( response => {
+                    this.setDataResponse ( response.data[0]);
+                    this.buscarCliente = false 
+                   
+                })
+          },
+          getUltimasVisitasCliente ( Idtercero ) {
+              TercerosClientes.ultimasVisitas (Idtercero )
+              .then ( response => {
+                  this.historialVisitas = response.data ;
+              })
+          },
+
+          buscarClientePorCodigo ( ) {
+            TercerosClientes.buscarPorCodigo ( this.codigo_tercero )
+              .then( response => {
+                  this.setDataResponse ( response.data[0]);
+              })
+          },
+
+          setDataResponse ( data ) {
+                this.codigo_tercero     =  data.codigo_tercero;
+                this.formCliente.idtercero = data.idtercero;
+                this.formCliente.nomtercero = data.nomtercero;
+                this.formCliente.nommcipio = data.nommcipio;
+                this.formCliente.nomvendedor = data.nomvendedor;
+                this.formCliente.codigo_tercero = data.codigo_tercero;
+                this.formCliente.cupo_credito = Numeral(data.cupo_credito).format('0,0');
+                this.formCliente.contacto = data.contacto;
+                this.formCliente.contacto_pagos_celular = data.contacto_pagos_celular;
+                this.formCliente.contacto_pagos_email = data.contacto_pagos_email;
+                this.formCliente.extra_cupo = Numeral(data.extra_cupo).format('0,0');
+                this.formCliente.dia_limite_recibe_facturas = data.dia_limite_recibe_facturas;
+                 this.getUltimasVisitasCliente ( data.idtercero ) ;
+          }
+
+        }
+
+      };
 </script>
 
 <style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="text-sm font-Montserrat">
+  <div class="text-sm font-Raleway">
     <div
       class="fixed z-50 flex items-center justify-between w-full mt-0 bg-azul "
     >
