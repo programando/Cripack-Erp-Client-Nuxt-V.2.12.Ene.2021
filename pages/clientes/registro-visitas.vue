@@ -1,5 +1,5 @@
 <template>
-  <div class="relative pt-16">
+  <div class="relative pt-14">
     <div class="flex justify-center py-10 ">
       <div class="px-4 py-4 border shadow-xl">
         <h2 class="text-xl font-semibold text-center">Registro de visitas</h2>
@@ -126,7 +126,7 @@
             </div>
             <div class="mx-32 mt-4">
               <table class="w-full">
-                <thead class="w-full">
+                <thead class="w-full py-1">
                   <tr class="w-full border text-azul">
                     <th class="w-1/12 text-xs border">Fecha </th>
                     <th class="w-2/12 text-xs border">Persona contacto</th>
@@ -166,73 +166,31 @@
             <div class="mx-32 mt-4">
               <table class="w-full">
                 <thead class="w-full">
-                  <tr class="w-full border text-azul">
-                    <th class="w-1/12 text-sm border">#Ot</th>
-                    <th class="w-1/12 text-sm border">Referencia</th>
-                    <th class="w-1/12 text-sm border">
-                      Estilo
-                    </th>
-                    <th class="w-1/12 text-sm border">Tipo trabajo</th>
-                    <th class="w-1/12 text-sm border">
-                      Solicitada
-                    </th>
-                    <th class="w-1/12 text-sm border">Entregada</th>
-                    <th class="w-1/12 text-sm border">
-                      Últ.compra
-                    </th>
-                    <th class="w-1/12 text-sm border">
-                      Cant.Tq/Mes
-                    </th>
-                    <th class="w-1/12 text-sm border">
-                      Promo.Últ.Año
-                    </th>
+                  <tr class="w-full border text-azul py-1">
+                    <th class="w-1/12 text-xs border">#Ot</th>
+                    <th class="w-1/12 text-xs border">Referencia</th>
+                    <th class="w-1/12 text-xs border">Estilo </th>
+                    <th class="w-1/12 text-xs border">Tipo trabajo</th>
+                    <th class="w-1/12 text-xs border">Solicitada</th>
+                    <th class="w-1/12 text-xs border">Entregada</th>
+                    <th class="w-1/12 text-xs border">Últ.compra</th>
+                    <th class="w-1/12 text-xs border">Cant.Tq/Mes</th>
+                    <th class="w-1/12 text-xs border">Promo.Últ.Año</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td class="px-2 py-2 text-sm border text-azul"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
+                  <tr v-for="compra in ultimasCincoCompras" :key="compra.idregistro_ot">
+                    <td class="px-2 py-2 border text-xs text-azul"> {{ compra.numero_ot                     | NumeroEntero  }}</td>
+                    <td class="px-4 py-2 text-left text-xs border"> {{ compra.referencia                                    }}</td>
+                    <td class="px-4 py-2 text-left text-xs border"> {{ compra.nomestilotrabajo              | Capitalize    }}</td>
+                    <td class="px-4 py-2 text-left text-xs border"> {{ compra.nomtipotrabajo                | Capitalize    }}</td>
+                    <td class="px-4 py-2 text-left text-xs border"> {{ compra.fecha_solicitud               | FechaLarga    }}</td>
+                    <td class="px-4 py-2 text-left text-xs border"> {{ compra.fecha_terminada               | FechaLarga    }}</td>
+                    <td class="px-4 py-2 text-right text-xs border">{{ compra.vr_compra                     | NumeroEntero  }}</td>
+                    <td class="px-4 py-2 text-right text-xs border">{{ compra.promedio_tq_comprados_mes     | NumeroEntero  }}</td>
+                    <td class="px-4 py-2 text-right text-xs border">{{ compra.promedio_compras_ult_anio     | NumeroEntero  }}</td>
                   </tr>
-                  <tr>
-                    <td class="px-2 py-2 text-sm border text-azul"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                  </tr>
-                  <tr>
-                    <td class="px-2 py-2 text-sm border text-azul"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                  </tr>
-                  <tr>
-                    <td class="px-2 py-2 text-sm border text-azul"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                    <td class="px-4 py-2 text-sm text-right border"></td>
-                  </tr>
+
                 </tbody>
               </table>
             </div>
@@ -423,19 +381,28 @@
                 'dia_limite_recibe_facturas' : 0,
             },
             historialVisitas:[],
+            ultimasCincoCompras:[],
           };
         },
 
         methods: {
+
+          getUltimasCincoCompras ( IdTercero) {
+              TercerosClientes.ultimasCincoCompras ( IdTercero ) 
+              .then ( response => {
+                  this.ultimasCincoCompras = response.data;
+              })
+          },
+
           getIdTerceroCliente( CodTercero ) {
             if ( CodTercero == -1) { this.buscarCliente = false ; return;   }
                 TercerosClientes.buscarPorCodigo (CodTercero )
                 .then( response => {
                     this.setDataResponse ( response.data[0]);
                     this.buscarCliente = false 
-                   
                 })
           },
+
           getUltimasVisitasCliente ( Idtercero ) {
               TercerosClientes.ultimasVisitas (Idtercero )
               .then ( response => {
@@ -463,7 +430,8 @@
                 this.formCliente.contacto_pagos_email = data.contacto_pagos_email;
                 this.formCliente.extra_cupo = Numeral(data.extra_cupo).format('0,0');
                 this.formCliente.dia_limite_recibe_facturas = data.dia_limite_recibe_facturas;
-                 this.getUltimasVisitasCliente ( data.idtercero ) ;
+                this.getUltimasVisitasCliente ( data.idtercero ) ;
+                this.getUltimasCincoCompras   ( data.idtercero ) ;
           }
 
         }

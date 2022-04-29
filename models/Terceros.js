@@ -4,6 +4,9 @@ import Api  from "@/config/Axios";
 export default {
   
 
+  async ultimasCincoCompras( IdTercero ) {
+    return Api.post("clientes/ultimas/cinco/compras", { 'idtercero' :IdTercero } ) ;
+  },
   async ultimasVisitas( IdTercero ) {
     return Api.post("clientes/ultimas/visitas", { 'idtercero' :IdTercero } ) ;
   },
