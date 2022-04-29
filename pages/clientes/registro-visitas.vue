@@ -205,7 +205,6 @@
     </div>
     
 
-
     <!-- modal buscarCliente -->
     <div v-if="buscarCliente">
       <BuscarCliente @getIdTerceroCliente = "getIdTerceroCliente" />
@@ -332,7 +331,7 @@
 }
 
 .alto-table {
-  height: 200px;
+  height: 230px;
   overflow: scroll;
 }
 
