@@ -1,6 +1,6 @@
 <template>
-  <div class="relative pt-14">
-    <div class="flex justify-center py-10 ">
+  <div class="relative h-screen pt-14">
+    <div class="flex justify-center py-4 ">
       <div class="px-4 py-4 border shadow-xl ancho-registro">
         <h2 class="text-xl font-semibold text-center">Registro de visitas</h2>
         <div class="mx-4 mt-4">
@@ -125,21 +125,21 @@
               </button>
             </div>
             <div class="mx-4 mt-4 alto-table">
-              <table class="w-full">
-                <thead class="w-full py-1">
-                  <tr class="w-full border text-azul">
-                    <th class="w-1/12 text-xs border">Fecha </th>
-                    <th class="w-1/12 text-xs border">Persona contacto</th>
-                    <th class="w-1/12 text-xs border"> Motivo Visita </th>
-                    <th class="w-3/12 text-xs border">Resultado</th>
-                    <th class="w-3/12 text-xs border"> Siguiente Paso </th>
-                    <th class="w-1/12 text-xs border">Próxima visita</th>
-                    <th class="w-1/12 text-xs border">Tipo Visita </th>
-                    <th class="w-1/12 text-xs border">  Detalles </th>
+              <table class="w-auto border-t">
+                <thead class="w-full border ">
+                  <tr class="w-full bg-white text-azul ">
+                    <th class="w-1/12 text-xs border table-sticky">Fecha </th>
+                    <th class="w-1/12 text-xs border table-sticky">Persona contacto</th>
+                    <th class="w-1/12 text-xs border table-sticky"> Motivo Visita </th>
+                    <th class="w-3/12 text-xs border table-sticky">Resultado</th>
+                    <th class="w-3/12 text-xs border table-sticky"> Siguiente Paso </th>
+                    <th class="w-1/12 text-xs border table-sticky">Próxima visita</th>
+                    <th class="w-1/12 text-xs border table-sticky">Tipo Visita </th>
+                    <th class="w-1/12 text-xs border table-sticky">  Detalles </th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="visita in historialVisitas" :key="visita.idregistro">
+                  <tr class="" v-for="visita in historialVisitas" :key="visita.idregistro">
                     <td class="w-1/12 px-2 py-2 text-xs border text-azul"> {{visita.fecha_visita | FechaLarga }} </td>
                     <td class="w-1/12 px-4 py-2 text-xs text-left border">{{ visita.contacto}} </td>
                     <td class="w-1/12 px-4 py-2 text-xs text-left border"> {{ visita.nommtvovisita | Capitalize }} </td>
@@ -165,7 +165,7 @@
             </div>
             <div class="mx-4 mt-4 alto-table2">
               <table class="w-full">
-                <thead class="w-full">
+                <thead class="w-full table-sticky">
                   <tr class="w-full py-1 border text-azul">
                     <th class="w-1/12 text-xs border">#Ot</th>
                     <th class="w-3/12 text-xs border">Referencia</th>
@@ -332,13 +332,23 @@
 
 .alto-table {
   height: 230px;
-  overflow: scroll;
+  overflow-y: scroll;
+  
 }
 
 .alto-table2 {
   height: 200px;
-  overflow: scroll;
+  overflow-y: scroll;
 }
+
+.table-sticky {
+  position: sticky;
+  top: 0;
+  background: white;
+  
+  
+}
+
 
 @media screen and (min-width: 1300px) {
   .ancho-registro {
