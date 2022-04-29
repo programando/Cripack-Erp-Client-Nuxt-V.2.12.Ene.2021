@@ -114,7 +114,7 @@
  
           </div>
           <div>
-            <div class="flex items-center justify-between mx-4 mt-20">
+            <div class="flex items-center justify-between mx-4 mt-10">
               <h2 class="text-sm font-semibold">Historial de visitas</h2>
               <button
                 @click="registrarVisita = true"
@@ -124,7 +124,7 @@
                 <p class="text-sm">Registrar nueva visita</p>
               </button>
             </div>
-            <div class="mx-4 mt-4">
+            <div class="mx-4 mt-4 alto-table">
               <table class="w-full">
                 <thead class="w-full py-1">
                   <tr class="w-full border text-azul">
@@ -160,10 +160,10 @@
 
               </table>
             </div>
-            <div class="flex items-center justify-between mx-4 mt-20">
+            <div class="flex items-center justify-between mx-4 mt-6">
               <h2 class="text-sm font-semibold">Historial de compras</h2>
             </div>
-            <div class="mx-4 mt-4">
+            <div class="mx-4 mt-4 alto-table2">
               <table class="w-full">
                 <thead class="w-full">
                   <tr class="w-full py-1 border text-azul">
@@ -328,6 +328,16 @@
 
 .ancho-registro {
   width: 1100px;
+}
+
+.alto-table {
+  height: 200px;
+  overflow: scroll;
+}
+
+.alto-table2 {
+  height: 200px;
+  overflow: scroll;
 }
 
 @media screen and (min-width: 1300px) {
