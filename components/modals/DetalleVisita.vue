@@ -5,7 +5,7 @@
       <div class="relative px-10 py-8 bg-white ">
         <div>
           <h2 class="text-2xl font-semibold text-center">
-            Detalle de Visita
+            Detalle de visita
           </h2>
           <div class="flex justify-around mt-10 space-x-10">
             <div class="flex space-x-4">
@@ -14,6 +14,7 @@
                 class="px-4 bg-gray-100 border rounded-sm width focus:outline-none"
                 disabled
                 type="text"
+                :value="datosVisita.fecha_visita | FechaLarga"
               />
             </div>
             <div class="flex space-x-4">
@@ -22,17 +23,20 @@
                 class="px-4 bg-gray-100 border rounded-sm width focus:outline-none"
                 disabled
                 type="text"
+                :value="datosVisita.nom_tipo_visita"
               />
             </div>
           </div>
           <div class="flex justify-around mt-10 space-x-10">
             <div class="flex space-x-4">
-              <p class="w-40">Persona Contacto</p>
+              <p class="w-40">Persona de contacto</p>
               <input
                 class="px-4 bg-gray-100 border rounded-sm width focus:outline-none"
                 disabled
                 type="text"
+                :value="datosVisita.contacto"
               />
+              
             </div>
             <div class="flex space-x-4">
               <p class="w-40">Próxima Visita</p>
@@ -40,6 +44,7 @@
                 class="px-4 bg-gray-100 border rounded-sm width focus:outline-none"
                 disabled
                 type="text"
+                :value="datosVisita.fecha_proxvisita | FechaLarga"
               />
             </div>
           </div>
@@ -50,6 +55,7 @@
                 class="px-4 bg-gray-100 border rounded-sm width focus:outline-none"
                 disabled
                 type="text"
+                :value="datosVisita.nommtvovisita"
               />
             </div>
             
@@ -57,30 +63,33 @@
           
           <div class="flex justify-between mt-10 mx-9">
             <div class="mt-4">
-              <h3>Resultado de esta visita(visita anterior)</h3>
+              <h3>Resultado de esta visita</h3>
               <textarea
                 class="px-4 py-2 border focus:outline-none"
                 name=""
                 id=""
                 cols="40"
-                rows="5"
+                rows="4"
+                disabled
+                :value="datosVisita.resultados"
               ></textarea>
             </div>
             <div class="mt-4">
-              <h3>Siguiente paso (visita anterior)</h3>
+              <h3>Siguiente paso  </h3>
               <textarea
                 class="px-4 py-2 border focus:outline-none"
                 name=""
                 id=""
                 cols="40"
-                rows="5"
+                rows="4"
                 disabled
+                :value="datosVisita.siguiente_paso"
               ></textarea>
             </div>
           </div>
           
           <div class="flex justify-end mx-10 mt-4">
-            <button @click="detalleVisitaClose" class="px-4 py-2 border rounded">
+            <button @click="detalleVisitaClose" class="px-4 py-1 border rounded">
               Cerrar
             </button>
           </div>
@@ -90,8 +99,19 @@
 </template>
 
 <script>
+
+
 export default {
   name: 'DetalleVisita',
+   props: {
+    datosVisita: {
+        type: Object, default: () => ({}),
+    }
+  },
+
+  mounted() {
+    console.log ( this.datosVisita ) ;
+  },
   methods: {
     detalleVisitaClose() {
       this.$emit('closeDetalleVisita')

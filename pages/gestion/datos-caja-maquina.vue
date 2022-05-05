@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-24 mx-2 font-Raleway">
+  <div class="pt-24 mx-2">
     <div class="mx-10 mt-10">
       <div class="flex flex-wrap">
         <div class="w-full">

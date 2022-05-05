@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-24 mx-2 font-Raleway">
+  <div class="pt-24 mx-2">
     <div class="flex justify-between my-2">
       <h3 class="mt-1 text-lg">
         Estado Órdenes de Trabajo

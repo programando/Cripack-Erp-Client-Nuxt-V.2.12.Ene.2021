@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-24 mx-2 font-Ralewayt">
+  <div class="pt-24 mx-2t">
     <div class="flex items-center justify-center mx-auto mt-10">
       <h2 class="text-lg font-semibold text-azul">
         Evaluación costos alistamiento y encauche v/s proveedor

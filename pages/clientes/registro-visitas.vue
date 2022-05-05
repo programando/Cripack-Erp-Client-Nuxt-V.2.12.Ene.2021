@@ -49,7 +49,7 @@
           </div>
           <div class="flex justify-center">
             <div class="">
-              <div class="flex justify-center mt-10 space-x-20">
+              <div class="flex justify-center mt-4 space-x-20">
                 <div class="flex space-x-4">
                   <p class="w-64 text-sm">Cupo de crédito</p>
                   <input
@@ -134,7 +134,7 @@
                     <th class="w-3/12 text-xs border table-sticky">Resultado</th>
                     <th class="w-3/12 text-xs border table-sticky"> Siguiente Paso </th>
                     <th class="w-1/12 text-xs border table-sticky">Próxima visita</th>
-                    <th class="w-1/12 text-xs border table-sticky">Tipo Visita </th>
+                    
                     <th class="w-1/12 text-xs border table-sticky">  Detalles </th>
                   </tr>
                 </thead>
@@ -146,9 +146,9 @@
                     <td class="w-3/12 px-4 py-2 text-xs text-left border"> {{ visita.resultados | Capitalize}} </td>
                     <td class="w-3/12 px-4 py-2 text-xs text-left border"> {{visita.siguiente_paso | Capitalize}}</td>
                     <td class="w-1/12 px-4 py-2 text-xs text-left border"> {{visita.fecha_proxvisita  | FechaLarga}} </td>
-                    <td class="w-1/12 px-4 py-2 text-xs text-left border"> {{ visita.nom_tipo_visita | Capitalize  }} </td>
+                    
                     <td class="w-1/12 h-full text-xs text-center border " >
-                      <button @click="detalleVisita = true" class="h-full">
+                      <button @click="sendRegistroVisita(visita)" class="h-full">
                         <img class="h-4" src="/images/ver.png" alt="" />
                       </button>
                     </td>
@@ -201,7 +201,7 @@
 
     <!-- Modal registrar visita -->
     <div v-if="registrarVisita">
-      <RegistrarVisita @closeRegistrarVisita = 'closeRegistrarVisita' />
+      <RegistrarVisita @closeRegistrarVisita = 'closeRegistrarVisita'  :datosCliente="formCliente"/>
     </div>
     
 
@@ -212,7 +212,7 @@
 
     <!-- modal detalleVisita -->
     <div v-if="detalleVisita">
-      <DetalleVisita @closeDetalleVisita = 'closeDetalleVisita' />
+      <DetalleVisita @closeDetalleVisita = 'closeDetalleVisita' :datosVisita="registroVisita"/>
     </div>
     
   </div>
@@ -224,7 +224,6 @@
       import BuscarCliente from '@/components/modals/BuscarCliente.vue'
       import RegistrarVisita from '@/components/modals/RegistrarVisita.vue'
       import DetalleVisita from '@/components/modals/DetalleVisita.vue'
-      
       var Numeral = require("numeral");
 
       export default {
@@ -240,6 +239,7 @@
             buscarCliente: false,
             detalleVisita : false,
             codigo_tercero:'',
+            registroVisita:{},
             formCliente : {
                 'idtercero': 0,
                 'codigo_tercero' : '',
@@ -260,7 +260,11 @@
         },
 
         methods: {
+          sendRegistroVisita ( registroVisita ){
+              this.detalleVisita = true;
+              this.registroVisita = registroVisita;
 
+          },
           getUltimasCincoCompras ( IdTercero) {
               TercerosClientes.ultimasCincoCompras ( IdTercero ) 
               .then ( response => {
