@@ -50,7 +50,7 @@
               />
             </div>
           </div>
-          <div class="flex ml-10">
+          <div class="flex ml-3">
             <div class="">
               <div class="flex mt-4 space-x-10">
                 <div class="flex space-x-4">
@@ -127,7 +127,7 @@
 
           <div class="flex justify-end mx-10 mt-4">
            
-           <button @click="registarVisitaClose()" class="px-4 py-1 border rounded mr-4">
+           <button @click="registarVisitaClose()" class="px-4 py-1 mr-4 border rounded">
               Cerrar
             </button>         
  

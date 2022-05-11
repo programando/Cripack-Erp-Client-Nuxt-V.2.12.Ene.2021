@@ -47,10 +47,10 @@
               />
             </div>
           </div>
-          <div class="flex justify-center">
+          <div class="flex justify-around">
             <div class="">
-              <div class="flex justify-center mt-4 space-x-20">
-                <div class="flex space-x-4">
+              <div class="flex justify-center mt-4 space-x-28">
+                <div class="flex mr-2">
                   <p class="w-64 text-sm">Cupo de crédito</p>
                   <input
                     class="w-48 px-4 py-1 text-xs text-right border rounded-sm focus:outline-none"
@@ -59,7 +59,7 @@
                     v-model="formCliente.cupo_credito"
                   />
                 </div>
-                <div class="flex space-x-4">
+                <div class="flex">
                   <p class="w-56 text-sm">Persona encargada de pagos</p>
                   <input
                     class="w-56 px-4 py-1 text-xs border rounded-sm focus:outline-none"
@@ -69,8 +69,8 @@
                   />
                 </div>
               </div>
-              <div class="flex justify-center mt-4 space-x-20">
-                <div class="flex space-x-4">
+              <div class="flex justify-center mt-4 space-x-28 ">
+                <div class="flex mr-2">
                   <p class="w-64 text-sm">Extra cupo</p>
                   <input
                     class="w-48 px-4 py-1 text-xs text-right border rounded-sm focus:outline-none"
@@ -79,7 +79,7 @@
                     v-model="formCliente.extra_cupo"
                   />
                 </div>
-                <div class="flex space-x-4">
+                <div class="flex mr-2">
                   <p class="w-56 text-sm">Nro. teléfono</p>
                   <input
                     class="w-56 px-4 py-1 text-xs border rounded-sm focus:outline-none"
@@ -89,8 +89,8 @@
                   />
                 </div>
               </div>
-              <div class="flex justify-center mt-4 space-x-20">
-                <div class="flex space-x-4">
+              <div class="flex justify-center mt-4 space-x-28">
+                <div class="flex mr-2">
                   <p class="w-64 text-sm">Día límite recepción facturas</p>
                   <input
                     class="w-48 px-4 py-1 text-xs text-right border rounded-sm focus:outline-none"
@@ -99,7 +99,7 @@
                     v-model="formCliente.dia_limite_recibe_facturas"
                   />
                 </div>
-                <div class="flex space-x-4">
+                <div class="flex">
                   <p class="w-56 text-sm">Email</p>
                   <input
                     class="w-56 px-4 py-1 text-xs border rounded-sm focus:outline-none"
@@ -120,12 +120,12 @@
                 @click="registrarVisita = true"
                 class="flex items-center space-x-2"
               >
-                <img class="h-8 ml-5" src="/images/buscar.png" alt="" />
+                <img class="h-8 ml-5" src="/images/registros.png" alt="" />
                 <p class="text-sm">Registrar nueva visita</p>
               </button>
             </div>
             <div class="mx-4 mt-4 alto-table">
-              <table class="w-auto border-t">
+              <table class="w-full border-t">
                 <thead class="w-full border ">
                   <tr class="w-full bg-white text-azul ">
                     <th class="w-1/12 text-xs border table-sticky">Fecha </th>
@@ -149,7 +149,7 @@
                     
                     <td class="w-1/12 h-full text-xs text-center border " >
                       <button @click="sendRegistroVisita(visita)" class="h-full">
-                        <img class="h-4" src="/images/ver.png" alt="" />
+                        <img class="h-8" src="/images/buscar.png" alt="" />
                       </button>
                     </td>
                   </tr>
