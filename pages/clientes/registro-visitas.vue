@@ -141,7 +141,7 @@
                 <tbody>
                   <tr class="" v-for="visita in historialVisitas" :key="visita.idregistro">
                     <td class="w-1/12 px-2 py-2 text-xs border text-azul"> {{visita.fecha_visita | FechaLarga }} </td>
-                    <td class="w-1/12 px-4 py-2 text-xs text-left border">{{ visita.contacto}} </td>
+                    <td class="w-1/12 px-4 py-2 text-xs text-left border">{{ visita.contacto | Capitalize}} </td>
                     <td class="w-1/12 px-4 py-2 text-xs text-left border"> {{ visita.nommtvovisita | Capitalize }} </td>
                     <td class="w-3/12 px-4 py-2 text-xs text-left border"> {{ visita.resultados | Capitalize}} </td>
                     <td class="w-3/12 px-4 py-2 text-xs text-left border"> {{visita.siguiente_paso | Capitalize}}</td>
@@ -201,7 +201,7 @@
 
     <!-- Modal registrar visita -->
     <div v-if="registrarVisita">
-      <RegistrarVisita @closeRegistrarVisita = 'closeRegistrarVisita'  :datosCliente="formCliente"/>
+      <RegistrarVisita @closeRegistrarVisita = 'closeRegistrarVisita'  :datosCliente="formCliente" :datosVisita="historialVisitas"/>
     </div>
     
 

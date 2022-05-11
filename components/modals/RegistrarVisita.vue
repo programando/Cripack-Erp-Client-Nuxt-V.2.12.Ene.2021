@@ -15,13 +15,15 @@
             />
           </button>
 
-          <div class="flex justify-center mt-4 space-x-10">
+          <div class="flex justify-center mt-2 space-x-10 text-xs">
             <div class="">
               <p class="ml-10">Código</p>
               <div class="flex space-x-2">
                 <input
                   class="w-32 px-4 border rounded-sm focus:outline-none"
                   type="text"
+                  disabled
+                   :value="datosCliente.codigo_tercero"
                 />
               </div>
             </div>
@@ -31,6 +33,7 @@
                 class="px-4 bg-gray-100 border rounded-sm width focus:outline-none"
                 disabled
                 type="text"
+                :value="datosCliente.nomtercero"
               />
             </div>
             <div class="">
@@ -39,6 +42,7 @@
                 class="px-4 bg-gray-100 border rounded-sm width focus:outline-none"
                 disabled
                 type="text"
+                :value="datosCliente.nommcipio"
               />
             </div>
             <div class="">
@@ -47,10 +51,11 @@
                 class="px-4 bg-gray-100 border rounded-sm width focus:outline-none"
                 disabled
                 type="text"
+                :value="datosCliente.nomvendedor"
               />
             </div>
           </div>
-          <div class="flex ml-10">
+          <div class="flex ml-10  text-xs">
             <div class="">
               <div class="flex mt-4 space-x-10">
                 <div class="flex space-x-4">
@@ -61,24 +66,35 @@
                   <p class="width">Persona que atendió</p>
                   <input
                     class="px-4 bg-gray-100 border rounded-sm width focus:outline-none"
-                    disabled
                     type="text"
+                    v-model="formData.contacto"
                   />
                 </div>
               </div>
               <div class="flex mt-4 space-x-10">
                 <div class="flex space-x-4">
                   <p class="w-36">Tipo de visita</p>
-                  <select class="bg-gray-100 width" name="" id=""></select>
+                  <select class="bg-gray-100 width py-1" v-model='formData.tipo_vista'>
+                    <option class="text-xs" disabled value="0">Seleccione una opción</option>
+                    <option class="text-xs" value='2'>Contacto telefónico</option>
+                    <option class="text-xs" value='1'>Visita en sitio</option>
+                  </select>
                 </div>
                 <div class="flex space-x-10">
                   <p class="width">Motivo de la visita</p>
-                  <select class="bg-gray-100 width" name="" id=""></select>
+                  <select class="bg-gray-100 width py-1" v-model="formData.idmtvovisita" >
+                        <option class="text-xs" disabled value="0">Seleccione una opción</option>
+                        <option class="text-xs"
+                                v-for="motivo in motivosVisita" :value="motivo.idmtvovisita" :key="motivo.idmtvovisita">
+                                {{motivo.nommtvovisita}}
+                        </option>
+                  </select>
+
                 </div>
               </div>
             </div>
           </div>
-          <div class="flex justify-between mt-4 mx-9">
+          <div class="flex justify-between mt-4 mx-9  text-xs">
             <div class="mt-4">
               <h3>Resultado de esta visita</h3>
               <textarea
@@ -89,8 +105,8 @@
                 rows="3"
               ></textarea>
             </div>
-            <div class="mt-4">
-              <h3>Resultado de esta (visita anterior)</h3>
+            <div class="mt-4  text-xs">
+              <h3>Visita anterior ( resultado )</h3>
               <textarea
                 class="px-4 py-2 border focus:outline-none"
                 name=""
@@ -98,10 +114,11 @@
                 cols="40"
                 rows="3"
                 disabled
+                :value="this.datosVisita[0].resultados"
               ></textarea>
             </div>
           </div>
-          <div class="flex justify-between space-x-20 mx-9">
+          <div class="flex justify-between space-x-20 mx-9  text-xs">
             <div class="mt-4">
               <h3>Siguiente paso, en esta visita</h3>
               <textarea
@@ -110,10 +127,11 @@
                 id=""
                 cols="40"
                 rows="3"
+                
               ></textarea>
             </div>
-            <div class="mt-4">
-              <h3>Siguiente paso (visita anterior)</h3>
+            <div class="mt-4  text-xs">
+              <h3>Visita anterior ( siguiente paso )</h3>
               <textarea
                 class="px-4 py-2 border focus:outline-none"
                 name=""
@@ -121,11 +139,13 @@
                 cols="40"
                 rows="3"
                 disabled
+                :value="this.datosVisita[0].siguiente_paso"
+                
               ></textarea>
             </div>
           </div>
 
-          <div class="flex justify-end mx-10 mt-4">
+          <div class="flex justify-end mx-10 mt-4 text-sm">
            
            <button @click="registarVisitaClose()" class="px-4 py-1 border rounded mr-4">
               Cerrar
@@ -143,13 +163,30 @@
 </template>
 
 <script>
+    import MotivosVisitas from "@/models/MotivosVisitas";
     export default {
       name: 'RegistarVisita',
          props: {
-          datosCliente: {
-              type: Object, default: () => ({}),
-          }
+          datosCliente: { type: Object, default: () => ({}),},
+          datosVisita: Array
         },
+        data:()=> ({
+            formData: {
+                tipo_vista:0,
+                idmtvovisita:0
+            },
+            motivosVisita:[],
+            ultimaVisitaResultado:'',
+            ultimaVisitaSiguientePaso:''
+        }),
+        mounted() {
+              MotivosVisitas.getListadoActivos()
+              .then ( response=>{
+                this.motivosVisita = response.data;
+              })
+
+        },
+
       methods: {
         registarVisitaClose() {
           this.$emit('closeRegistrarVisita')
