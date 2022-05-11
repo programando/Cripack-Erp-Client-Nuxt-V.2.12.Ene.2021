@@ -73,6 +73,7 @@ export default {
     '@nuxtjs/axios',
     ['cookie-universal-nuxt', { alias: 'cookies' }],
     'nuxt-vue-select',                                    /// https://www.npmjs.com/package/nuxt-vue-select,   https://vue-select.org/
+    'vue-sweetalert2/nuxt'
   ],
   
 
