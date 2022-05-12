@@ -99,7 +99,8 @@
     <div class="absolute contenedor-principal">
       <WsContact />
     </div>
-    <button class="px-2 py-1 text-white border rounded-lg bg-azul" @click="showAlert">Mostrar Alerta</button>
+    
+ 
   </div>
 </template>
 
@@ -142,10 +143,7 @@ export default {
                 this.errors = error.response.data.errors;
             })
         },
-        showAlert() {
-      // Use sweetalert2
-        this.$swal('Hello Vue world!!!');
-        },
+ 
   }
 };
 </script>

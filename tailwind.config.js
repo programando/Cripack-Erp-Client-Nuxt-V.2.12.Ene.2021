@@ -40,6 +40,7 @@ module.exports = {
         gris              : '#EAEAEA',
         rojo              : '#FF0000',
         verde             : '#1EFF37',
+        verdeOscuro      : '#008f39',
       },
       
      

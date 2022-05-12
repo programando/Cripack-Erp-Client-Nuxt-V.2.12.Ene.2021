@@ -109,9 +109,7 @@ export default {
     }
   },
 
-  mounted() {
-    console.log ( this.datosVisita ) ;
-  },
+
   methods: {
     detalleVisitaClose() {
       this.$emit('closeDetalleVisita')

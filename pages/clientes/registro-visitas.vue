@@ -115,14 +115,13 @@
           </div>
           <div>
             <div class="flex items-center justify-between mx-4 mt-10">
-              <h2 class="text-sm font-semibold">Historial de visitas</h2>
-              <button
-                @click="registrarVisita = true"
-                class="flex items-center space-x-2"
-              >
+              <h2  class="text-sm font-semibold">Historial de visitas</h2>
+
+              <button @click="registrarNuevaVisita" class="flex items-center space-x-2" >
                 <img class="h-8 ml-5" src="/images/registros.png" alt="" />
                 <p class="text-sm">Registrar nueva visita</p>
               </button>
+
             </div>
             <div class="mx-4 mt-4 alto-table">
               <table class="w-full border-t">
@@ -143,8 +142,8 @@
                     <td class="w-1/12 px-2 py-2 text-xs border text-azul"> {{visita.fecha_visita | FechaLarga }} </td>
                     <td class="w-1/12 px-4 py-2 text-xs text-left border">{{ visita.contacto | Capitalize}} </td>
                     <td class="w-1/12 px-4 py-2 text-xs text-left border"> {{ visita.nommtvovisita | Capitalize }} </td>
-                    <td class="w-3/12 px-4 py-2 text-xs text-left border"> {{ visita.resultados | Capitalize}} </td>
-                    <td class="w-3/12 px-4 py-2 text-xs text-left border"> {{visita.siguiente_paso | Capitalize}}</td>
+                    <td class="w-3/12 px-4 py-2 text-xs text-left border"> {{ visita.short_resultado | Capitalize}} </td>
+                    <td class="w-3/12 px-4 py-2 text-xs text-left border"> {{visita.short_siguiente_paso | Capitalize}}</td>
                     <td class="w-1/12 px-4 py-2 text-xs text-left border"> {{visita.fecha_proxvisita  | FechaLarga}} </td>
                     
                     <td class="w-1/12 h-full text-xs text-center border " >
@@ -153,9 +152,6 @@
                       </button>
                     </td>
                   </tr>
-
-
-
                 </tbody>
 
               </table>
@@ -201,7 +197,7 @@
 
     <!-- Modal registrar visita -->
     <div v-if="registrarVisita">
-      <RegistrarVisita @closeRegistrarVisita = 'closeRegistrarVisita'  :datosCliente="formCliente" :datosVisita="historialVisitas"/>
+      <RegistrarVisita @closeRegistrarVisita = 'closeRegistrarVisita' @visitaGrabada = 'visitaGrabada' :datosCliente="formCliente" :datosVisita="historialVisitas"/>
     </div>
     
 
@@ -260,6 +256,21 @@
         },
 
         methods: {
+            visitaGrabada() {
+              this.formCliente         = {};
+              this.registroVisita      = [];
+              this.historialVisitas    = [];
+              this.ultimasCincoCompras = [];
+              this.registrarVisita     = false;
+              this.codigo_tercero      = '';
+            },
+          registrarNuevaVisita() {
+              if ( this.formCliente.idtercero === 0 ) {
+                  this.$swal('Consulte uno de los clientes para continuar!');
+                  return;
+              }
+              this.registrarVisita = true;
+          } ,
           sendRegistroVisita ( registroVisita ){
               this.detalleVisita = true;
               this.registroVisita = registroVisita;
