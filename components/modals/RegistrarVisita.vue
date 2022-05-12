@@ -20,7 +20,7 @@
               <p class="ml-10">Código</p>
               <div class="flex space-x-2">
                 <input
-                  class="w-32 px-4 border rounded-sm focus:outline-none"
+                  class="w-32 px-4 border rounded-sm focus:outline-none  bg-gray"
                   type="text"
                   disabled
                    :value="datosCliente.codigo_tercero"
@@ -55,15 +55,17 @@
               />
             </div>
           </div>
-          <div class="flex ml-10  text-xs">
+ 
+          <div class="flex ml-3 text-xs">
+ 
             <div class="">
               <div class="flex mt-4 space-x-10">
                 <div class="flex space-x-4">
-                  <p class="w-36">Fecha de Visita</p>
-                  <input class="-ml-4 bg-gray-100 width" type="date" name="" id="" />
+                  <p class="w-36 py-1">Fecha próxima visita</p>
+                  <input class="-ml-4 bg-gray-100 width px-2" type="date" v-model="formData.fecha_proxvisita" />
                 </div>
                 <div class="flex space-x-10">
-                  <p class="width">Persona que atendió</p>
+                  <p class="width py-1">Persona que atendió</p>
                   <input
                     class="px-4 bg-gray-100 border rounded-sm width focus:outline-none"
                     type="text"
@@ -74,7 +76,7 @@
               <div class="flex mt-4 space-x-10">
                 <div class="flex space-x-4">
                   <p class="w-36">Tipo de visita</p>
-                  <select class="bg-gray-100 width py-1" v-model='formData.tipo_vista'>
+                  <select class="bg-gray-100 width py-1" v-model='formData.tipo_visita'>
                     <option class="text-xs" disabled value="0">Seleccione una opción</option>
                     <option class="text-xs" value='2'>Contacto telefónico</option>
                     <option class="text-xs" value='1'>Visita en sitio</option>
@@ -103,6 +105,7 @@
                 id=""
                 cols="40"
                 rows="3"
+                v-model="formData.resultados"
               ></textarea>
             </div>
             <div class="mt-4  text-xs">
@@ -127,7 +130,7 @@
                 id=""
                 cols="40"
                 rows="3"
-                
+                v-model="formData.siguiente_paso"
               ></textarea>
             </div>
             <div class="mt-4  text-xs">
@@ -145,13 +148,14 @@
             </div>
           </div>
 
-          <div class="flex justify-end mx-10 mt-4 text-sm">
+          <div class="flex justify-end mx-10 mt-8 mb-4 text-sm">
            
-           <button @click="registarVisitaClose()" class="px-4 py-1 border rounded mr-4">
+           <button @click="registarVisitaClose()" class="px-4 py-1 mr-4 border rounded hover:bg-rojo hover:text-white ">
               Cerrar
             </button>         
  
-            <button class="flex items-center space-x-2">
+            <button class="flex items-center  border rounded space-x-2 hover:bg-verdeOscuro hover:text-white px-2"
+                @click="grabarNuevaVisita()">
               <img class="w-6" src="/images/save.svg" alt="" />
               <p>Grabar registro de visita</p>
             </button>
@@ -164,33 +168,82 @@
 
 <script>
     import MotivosVisitas from "@/models/MotivosVisitas";
+    import Messages           from "@/mixins/sweetalert2";
     export default {
       name: 'RegistarVisita',
          props: {
           datosCliente: { type: Object, default: () => ({}),},
           datosVisita: Array
         },
+          mixins: [Messages],
         data:()=> ({
             formData: {
-                tipo_vista:0,
-                idmtvovisita:0
+                tipo_visita     : 0,
+                idmtvovisita    : 0,
+                fecha_proxvisita: '',
+                idtercero       : 0,
+                resultados      : '',
+                siguiente_paso  : '',
+                contacto        : '',
             },
             motivosVisita:[],
             ultimaVisitaResultado:'',
             ultimaVisitaSiguientePaso:''
         }),
         mounted() {
-              MotivosVisitas.getListadoActivos()
-              .then ( response=>{
-                this.motivosVisita = response.data;
-              })
+            MotivosVisitas.getListadoActivos()
+            .then ( response=>{
+              this.motivosVisita = response.data;
+            })
 
         },
 
       methods: {
+        grabarNuevaVisita() {
+           let datosOk = this.validarDatosVisita ();
+           if ( datosOk !='Ok' ) { return ; }
+           this.formData.idtercero = this.datosCliente.idtercero;
+           MotivosVisitas.grbarNuevoRegistro ( this.formData)
+           .then ( () => {
+              this.Message("Registro grabado" , 'Registro grabado con éxito!', 'success', 'Cerrar' );
+              this.$router.push("/clientes/registro-visitas");
+              this.$emit('visitaGrabada')
+           })
+           
+        },
+
+        validarDatosVisita() {
+            if (this.formData.fecha_proxvisita == ''){ 
+                this.Message("Error en los datos" , 'Registre fecha de la próxima visita', 'error', 'Cerrar' );
+                return 'error';
+             };
+            if (this.formData.contacto == ''){ 
+                this.Message("Error en los datos" , 'No ha indicado el nombde de la persona que atendió la visita o llamada', 'error', 'Cerrar' );
+                return 'error';
+             };
+            if ( this.formData.tipo_visita == 0 ){ 
+                this.Message("Error en los datos" , 'Registre el tipo de visita', 'error', 'Cerrar' );
+                return 'error';
+              }  
+            if (this.formData.idmtvovisita == 0 ){ 
+                this.Message("Error en los datos" , 'Registre el motivo de la visita', 'error', 'Cerrar' );
+                return 'error';
+             };
+               if (this.formData.resultados == ''){ 
+                this.Message("Error en los datos" , 'Registre el resultado de esta visita', 'error', 'Cerrar' );
+                return 'error';
+             };
+               if (this.formData.siguiente_paso == ''){ 
+                this.Message("Error en los datos" , 'Especifique cuál es el siguiente paso', 'error', 'Cerrar' );
+                return 'error';
+             };                       
+            return 'Ok';
+        },
+
         registarVisitaClose() {
           this.$emit('closeRegistrarVisita')
-        }
+        },
+        
       },
     }
 </script>
