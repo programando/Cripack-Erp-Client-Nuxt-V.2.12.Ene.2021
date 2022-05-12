@@ -20,7 +20,7 @@
               <p class="ml-10">Código</p>
               <div class="flex space-x-2">
                 <input
-                  class="w-32 px-4 border rounded-sm focus:outline-none  bg-gray"
+                  class="w-32 px-4 border rounded-sm focus:outline-none bg-gray"
                   type="text"
                   disabled
                    :value="datosCliente.codigo_tercero"
@@ -61,11 +61,11 @@
             <div class="">
               <div class="flex mt-4 space-x-10">
                 <div class="flex space-x-4">
-                  <p class="w-36 py-1">Fecha próxima visita</p>
-                  <input class="-ml-4 bg-gray-100 width px-2" type="date" v-model="formData.fecha_proxvisita" />
+                  <p class="py-1 w-36">Fecha próxima visita</p>
+                  <input class="px-2 -ml-4 bg-gray-100 width" type="date" v-model="formData.fecha_proxvisita" />
                 </div>
                 <div class="flex space-x-10">
-                  <p class="width py-1">Persona que atendió</p>
+                  <p class="py-1 width">Persona que atendió</p>
                   <input
                     class="px-4 bg-gray-100 border rounded-sm width focus:outline-none"
                     type="text"
@@ -76,7 +76,7 @@
               <div class="flex mt-4 space-x-10">
                 <div class="flex space-x-4">
                   <p class="w-36">Tipo de visita</p>
-                  <select class="bg-gray-100 width py-1" v-model='formData.tipo_visita'>
+                  <select class="py-1 bg-gray-100 width" v-model='formData.tipo_visita'>
                     <option class="text-xs" disabled value="0">Seleccione una opción</option>
                     <option class="text-xs" value='2'>Contacto telefónico</option>
                     <option class="text-xs" value='1'>Visita en sitio</option>
@@ -84,7 +84,7 @@
                 </div>
                 <div class="flex space-x-10">
                   <p class="width">Motivo de la visita</p>
-                  <select class="bg-gray-100 width py-1" v-model="formData.idmtvovisita" >
+                  <select class="py-1 bg-gray-100 width" v-model="formData.idmtvovisita" >
                         <option class="text-xs" disabled value="0">Seleccione una opción</option>
                         <option class="text-xs"
                                 v-for="motivo in motivosVisita" :value="motivo.idmtvovisita" :key="motivo.idmtvovisita">
@@ -96,7 +96,7 @@
               </div>
             </div>
           </div>
-          <div class="flex justify-between mt-4 mx-9  text-xs">
+          <div class="flex justify-between mt-4 text-xs mx-9">
             <div class="mt-4">
               <h3>Resultado de esta visita</h3>
               <textarea
@@ -108,7 +108,7 @@
                 v-model="formData.resultados"
               ></textarea>
             </div>
-            <div class="mt-4  text-xs">
+            <div class="mt-4 text-xs">
               <h3>Visita anterior ( resultado )</h3>
               <textarea
                 class="px-4 py-2 border focus:outline-none"
@@ -121,7 +121,7 @@
               ></textarea>
             </div>
           </div>
-          <div class="flex justify-between space-x-20 mx-9  text-xs">
+          <div class="flex justify-between space-x-20 text-xs mx-9">
             <div class="mt-4">
               <h3>Siguiente paso, en esta visita</h3>
               <textarea
@@ -133,7 +133,7 @@
                 v-model="formData.siguiente_paso"
               ></textarea>
             </div>
-            <div class="mt-4  text-xs">
+            <div class="mt-4 text-xs">
               <h3>Visita anterior ( siguiente paso )</h3>
               <textarea
                 class="px-4 py-2 border focus:outline-none"
@@ -154,7 +154,7 @@
               Cerrar
             </button>         
  
-            <button class="flex items-center  border rounded space-x-2 hover:bg-verdeOscuro hover:text-white px-2"
+            <button class="flex items-center px-4 py-2 space-x-2 border rounded hover:bg-verdeOscuro hover:text-white"
                 @click="grabarNuevaVisita()">
               <img class="w-6" src="/images/save.svg" alt="" />
               <p>Grabar registro de visita</p>
