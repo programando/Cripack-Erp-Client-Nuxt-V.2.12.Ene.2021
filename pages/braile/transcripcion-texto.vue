@@ -74,108 +74,118 @@
          
         </div>
         <div class="flex justify-center pb-4 mt-4">
-          <img class="caja-braile" src="/images/Caja-Braile.png" alt="" />
+          <img class="caja-braile" src="/images/caja-Braile-2.png" alt="" />
         </div>
       </div>
     </div>
     
-    <div  class="flex justify-center mt-2">
-     
-      <div class="mt-2">
-        <div class="ml-3 mr-3">
-           
-          <table v-if="PalabrasTabla1.length" class="mb-1 bg-white border border-gray-300 rounded table-auto" 
-          >
-            <tbody class="">
-              <a name="braile-result" id="braile-result"></a>
-              <tr class="">
-                <td class="w-32 p-10 text-sm border border-gray-300">
-                  <div>Cara 1</div>
-                  <div class="mt-2">MC: {{ MC_Tabla1 }}</div>
-                  <div>MF: {{ MF_Tabla1 }}</div>
-                </td>
-
-                <td
-                  v-for="Palabra in PalabrasTabla1"
-                  :key="Palabra.id_registro"
-                  class="flex p-4 space-x-3 border border-gray-300"
-                >
-                  <div
-                    v-for="caracterBraile in Palabra.simbolos"
-                    :key="caracterBraile.id_registro"
-                  >
-                    <div class="text-center uppercase">
-                      {{ caracterBraile.caracter }}
-                    </div>
-                    <div class="flex space-x-2">
-                      <img
-                        class="border border-gray-300"
-                        :src="caracterBraile.path_simbolo_1"
-                        alt=""
-                      />
-                      <img
-                        class="border border-gray-300"
-                        v-if="caracterBraile.path_simbolo_2"
-                        :src="caracterBraile.path_simbolo_2"
-                        alt=""
-                      />
-                    </div>
+    <div v-if="modalBraile" class="absolute z-20 flex items-center justify-center w-full min-h-screen px-20 mt-4 transition-opacity bg-gray-500 bg-opacity-75 top-10 ">
+      <div  class="relative flex justify-center mt-2 ancho-modal">
+        <div class="absolute top-10 right-12">
+          <button @click="modalBraile = false">
+            <img src="/images/close.svg" alt="">
+          </button>
+        </div>
+        <div class="mt-2">
+          <div class="p-6 ml-3 mr-3">
+              <div class="flex justify-center w-full py-8 text-sm bg-white border border-gray-300 px-14">
+                  <div class="w-32 px-4 py-2 pt-6 border">Cara 1</div>
+                  <div>
+                    <div class="px-3 py-1 border w-96">Cantidad máxima de caracteres {{ MC_Tabla1 }}</div>
+                    <div class="px-3 py-1 border w-96">Cantidad máxima de filas {{ MF_Tabla1 }}</div>
                   </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <table 
-            v-if="PalabrasTabla2.length"
-            class="bg-white border border-gray-300 rounded table-auto"
-          >
-            <tbody class="">
-              <tr class="">
-                <td class="w-32 p-10 text-sm border border-gray-300">
-                  <div>Cara 2</div>
-                  <div class="mt-2">MC: {{ MC_Tabla2 }}</div>
-                  <div>MF: {{ MF_Tabla2 }}</div>
-                </td>
-
-                <td
-                  v-for="Palabra in PalabrasTabla2"
-                  :key="Palabra.id_registro"
-                  class="flex p-4 space-x-4 border border-gray-300"
-                >
-                  <div
-                    v-for="caracterBraile in Palabra.simbolos"
-                    :key="caracterBraile.id_registro"
-                  >
-                    <div class="text-center uppercase">
-                      {{ caracterBraile.caracter }}
-                    </div>
-                    <div class="flex space-x-2">
-                      <img
-                        class="border border-gray-300"
-                        :src="caracterBraile.path_simbolo_1"
-                        alt=""
-                      />
-                      <img
-                        class="border border-gray-300"
-                        v-if="caracterBraile.path_simbolo_2"
-                        :src="caracterBraile.path_simbolo_2"
-                        alt=""
-                      />
-                    </div>
+                  <div>
+                    <div class="w-20 px-3 py-1 border">0</div>
+                    <div class="w-20 px-3 py-1 border">3</div>
                   </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-         
-            <p v-if="!PalabrasTabla1.length" class="opacity-0 oculto">Oculto</p>
-            <h2 class="opacity-0" id="tableBraile">Hola</h2>
-          
-          
-        </div>        
-      </div>
+              </div>
+            <table v-if="PalabrasTabla1.length" class="w-full px-4 mb-1 bg-white border border-gray-300 rounded table-auto" 
+            >
+              <tbody class="w-full">
+                <a name="braile-result" id="braile-result"></a>
+                <tr class="w-full">
+                  <td
+                    v-for="Palabra in PalabrasTabla1"
+                    :key="Palabra.id_registro"
+                    class="flex p-4 space-x-3 border border-gray-300"
+                  >
+                    <div
+                      v-for="caracterBraile in Palabra.simbolos"
+                      :key="caracterBraile.id_registro"
+                    >
+                      <div class="text-center uppercase">
+                        {{ caracterBraile.caracter }}
+                      </div>
+                      <div class="flex space-x-2">
+                        <img
+                          class="border border-gray-300"
+                          :src="caracterBraile.path_simbolo_1"
+                          alt=""
+                        />
+                        <img
+                          class="border border-gray-300"
+                          v-if="caracterBraile.path_simbolo_2"
+                          :src="caracterBraile.path_simbolo_2"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div v-if="PalabrasTabla2.length" class="flex justify-center w-full p-4 text-sm bg-white border border-gray-300">
+              <div class="w-32 px-4 py-2 pt-6 border">Cara 1</div>
+              <div>
+                <div class="px-3 py-1 border w-96">Cantidad máxima de caracteres {{ MC_Tabla2 }}</div>
+                <div class="px-3 py-1 border w-96">Cantidad máxima de filas {{ MF_Tabla2 }}</div>
+              </div>
+              <div>
+                <div class="w-20 px-3 py-1 border">0</div>
+                <div class="w-20 px-3 py-1 border">3</div>
+              </div>
+              </div>
+            <table 
+              v-if="PalabrasTabla2.length"
+              class="w-full px-4 bg-white border border-gray-300 rounded table-auto"
+            >
+              <tbody class="w-full">
+                <tr class="w-full">
+                  <td
+                    v-for="Palabra in PalabrasTabla2"
+                    :key="Palabra.id_registro"
+                    class="flex p-4 space-x-4 border border-gray-300"
+                  >
+                    <div
+                      v-for="caracterBraile in Palabra.simbolos"
+                      :key="caracterBraile.id_registro"
+                    >
+                      <div class="text-center uppercase">
+                        {{ caracterBraile.caracter }}
+                      </div>
+                      <div class="flex space-x-2">
+                        <img
+                          class="border border-gray-300"
+                          :src="caracterBraile.path_simbolo_1"
+                          alt=""
+                        />
+                        <img
+                          class="border border-gray-300"
+                          v-if="caracterBraile.path_simbolo_2"
+                          :src="caracterBraile.path_simbolo_2"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>          
+          </div>        
+        </div>
     </div>
+    </div>
+    
   </div>
 </template>
 
@@ -198,6 +208,7 @@ export default {
       largo: "",
       texto: ""
     },
+    modalBraile: false,
     PalabrasTabla1: [],
     PalabrasTabla2: [],
     MC_Tabla1: "",
@@ -223,10 +234,13 @@ export default {
             this.MC_Tabla2 = item.MC;
             this.MF_Tabla2 = item.MF;
           }
+          this.modalBraile = true
+
         });
       });
      // this.movePage();
       this.showBtnAnimation = false;
+      
     },
    /* movePage (e){
         const hrefOb = document.querySelector('#ancla');
@@ -242,7 +256,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .caja-braile {
   height: 400px;
   width: 400px;
@@ -250,5 +264,11 @@ export default {
 
 .oculto {
   height: 550px;
+}
+
+.ancho-modal {
+  min-width: 600px;
+  
+  
 }
 </style>
