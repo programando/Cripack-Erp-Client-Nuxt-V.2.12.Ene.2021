@@ -1,6 +1,5 @@
 import Api  from "@/config/Axios";
  
-
 export default {
   
 
@@ -16,16 +15,16 @@ export default {
   },
   
 
-  async buscarPorCodigo( codigoBuscar ) {
-    return Api.post("clientes/busqueda/codigo", { 'codigo_tercero' :codigoBuscar } ) ;
+  async buscarPorCodigo( codigoBuscar, idTerceroVendedor ) {
+    return Api.post("clientes/busqueda/codigo", { 'codigo_tercero' :codigoBuscar, 'idtercero_vendedor': idTerceroVendedor} ) ;
   },
 
-  async busqueda( textoBuscar ) {
-    return Api.post("clientes/busqueda/texto", { 'filtroBusqueda' :textoBuscar } ) ;
+  async busqueda( textoBuscar, idTerceroVendedor ) {
+    return Api.post("clientes/busqueda/texto", { 'filtroBusqueda' :textoBuscar, 'idtercero_vendedor': idTerceroVendedor } ) ;
   },
 
-  async primerosVeinteClientes() {
-    return Api.get("clientes/primeros/registros"  ) ;
+  async primerosVeinteClientesPorVendedor( idTerceroVendedor) {
+    return Api.post("clientes/primeros/registros", {'idtercero_vendedor': idTerceroVendedor}  ) ;
   },
 
   async historialVentas(formData) {

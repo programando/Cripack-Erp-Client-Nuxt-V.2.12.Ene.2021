@@ -4,7 +4,7 @@
       class="fixed z-50 flex items-center justify-between w-full mt-0 bg-azul "
     >
       <div class="flex">
-        <img class="h-16" src="/images/logo.png" alt="" />
+        <img class="h-16 ml-4" src="/images/logo.png" alt="" />
       </div>
       <div class="flex ml-20 -mt-8 space-x-6 text-white">
         <h3 class="text-sm">{{ companyName }}</h3>
@@ -17,7 +17,7 @@
         <NavLinks text="Estado Ot's" to="/clientes/ots-estado" />
 
         <div  class="relative text-white">
-          <button @click="viewUtilidades" @focus="menu = false" class="px-2 text-sm xl:text-base">
+          <button @click="viewUtilidades" @focus="menu = false" class="px-2 text-sm ">
             Utilidades clientes
           </button>
           <div
@@ -37,18 +37,18 @@
                 class="absolute z-20 flex flex-col w-40 pb-2 -ml-3 text-sm border border-white rounded-md left-40 bg-azul"
               >
                 <nuxt-link
-                  class="px-2 py-1 text-xs text-white"
+                  class="px-2 py-1 text-sm text-white"
                   to="/clientes/ordenes-trabajo/troquel-plano"
                   >Plano</nuxt-link
                 >
               
               <!--  <nuxt-link
-                  class="px-2 py-1 text-xs text-white"
+                  class="px-2 py-1 text-sm text-white"
                   to="/clientes/ordenes-trabajo/troquel-plano"
                   >Curvo</nuxt-link
                 >
                 <nuxt-link
-                  class="px-2 py-1 text-xs text-white"
+                  class="px-2 py-1 text-sm text-white"
                   to="/clientes/ordenes-trabajo/troquel-plano"
                   >Descartone</nuxt-link
                 >
@@ -73,7 +73,7 @@
         </div>
 
         <div v-if="esUsuarioCripack" class="relative text-white">
-          <button @click="viewGestion" class="px-2 text-sm xl:text-base">
+          <button @click="viewGestion" class="px-2 text-sm ">
             Gestión comercial
           </button>
           <div
@@ -104,7 +104,7 @@
         </div>
         <NavLinks text="Contacto" to="/clientes/contacto" />
 
-        <button @click="logout" class="text-lg text-white">Salir</button>
+        <button @click="logout" class="text-sm text-white">Salir</button>
       </div>
     </div>
     <div class="fixed right-0 z-10 pt-16 bandera">

@@ -81,7 +81,8 @@ export default {
   }),
 
   mounted() {
-    TercerosClientes.primerosVeinteClientes()
+     
+    TercerosClientes.primerosVeinteClientesPorVendedor( this.$cookies.get("User").idtecero_vendedor)
     .then ( response => {
         this.clientes = response.data;
         this.primerosVeinteClientes = response.data;
@@ -96,7 +97,7 @@ getIdTerceroCliente ( CodTercero ) {
     },
 
     buscarCliente () {
-        TercerosClientes.busqueda ( this.textoBusqueda )
+        TercerosClientes.busqueda ( this.textoBusqueda, this.$cookies.get("User").idtecero_vendedor )
         .then ( response => {
             this.clientes = response.data;
             if ( this.clientes.length == 0 ) {

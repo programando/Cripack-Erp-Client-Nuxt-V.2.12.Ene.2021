@@ -62,7 +62,7 @@
             </div>
 
            <div class="flex justify-center mt-10 mb-4">
-              <a @click="sendTextToTranscript" class="px-4 py-1 text-white bg-green-500 rounded" href="#tableBraile">Iniciar transcripción</a>
+              <a @click="sendTextToTranscript" class="px-4 py-1 text-white bg-green-500 rounded cursor-pointer"   >Iniciar transcripción</a>
             </div>
 
             
@@ -70,7 +70,7 @@
           
           </div>
 
-          <!-- <a href="#braile-result" @click.prevent="sendTextToTranscript()" id='ancla'> Iniciar transcripción </a> -->
+      
          
         </div>
         <div class="flex justify-center pb-4 mt-4">
@@ -81,74 +81,78 @@
     
     <div v-if="modalBraile" class="absolute z-20 flex items-center justify-center w-full min-h-screen px-20 mt-4 transition-opacity bg-gray-500 bg-opacity-75 top-10 ">
       <div  class="relative flex justify-center mt-2 ancho-modal">
+        
         <div class="absolute top-10 right-12">
           <button @click="modalBraile = false">
             <img src="/images/close.svg" alt="">
           </button>
         </div>
-        <div class="mt-2">
+        <div class="mt-2  ">
+          
           <div class="p-6 ml-3 mr-3">
-              <div class="flex justify-center w-full py-8 text-sm bg-white border border-gray-300 px-14">
-                  <div class="w-32 px-4 py-2 pt-6 border">Cara 1</div>
+                
+              <div class="flex justify-center w-full py-8 text-xs bg-white border border-gray-300 px-14">
+                  <h2 class="text-lg text-center"> {{formData.texto }} </h2>
+                  <div class="w-32 px-4 py-2 pt-6 border text-bold text-sm">Cara 1</div>
                   <div>
-                    <div class="px-3 py-1 border w-96">Cantidad máxima de caracteres {{ MC_Tabla1 }}</div>
-                    <div class="px-3 py-1 border w-96">Cantidad máxima de filas {{ MF_Tabla1 }}</div>
+                    <div class="px-3 py-1 border w-96">Cantidad máxima de caracteres </div>
+                    <div class="px-3 py-1 border w-96">Cantidad máxima de filas </div>
                   </div>
                   <div>
-                    <div class="w-20 px-3 py-1 border">0</div>
-                    <div class="w-20 px-3 py-1 border">3</div>
+                    <div class="w-20 px-3 py-1 border">{{ MC_Tabla1 }}</div>
+                    <div class="w-20 px-3 py-1 border">{{ MF_Tabla1 }}</div>
                   </div>
               </div>
-            <table v-if="PalabrasTabla1.length" class="w-full px-4 mb-1 bg-white border border-gray-300 rounded table-auto" 
-            >
-              <tbody class="w-full">
-                <a name="braile-result" id="braile-result"></a>
-                <tr class="w-full">
-                  <td
-                    v-for="Palabra in PalabrasTabla1"
-                    :key="Palabra.id_registro"
-                    class="flex p-4 space-x-3 border border-gray-300"
-                  >
-                    <div
-                      v-for="caracterBraile in Palabra.simbolos"
-                      :key="caracterBraile.id_registro"
-                    >
-                      <div class="text-center uppercase">
-                        {{ caracterBraile.caracter }}
-                      </div>
-                      <div class="flex space-x-2">
-                        <img
-                          class="border border-gray-300"
-                          :src="caracterBraile.path_simbolo_1"
-                          alt=""
-                        />
-                        <img
-                          class="border border-gray-300"
-                          v-if="caracterBraile.path_simbolo_2"
-                          :src="caracterBraile.path_simbolo_2"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <div v-if="PalabrasTabla2.length" class="flex justify-center w-full p-4 text-sm bg-white border border-gray-300">
-              <div class="w-32 px-4 py-2 pt-6 border">Cara 1</div>
+
+                
+                  <table v-if="PalabrasTabla1.length" class="w-full px-4 mb-1 bg-white border border-gray-300 rounded text-xs" >
+                    <tbody class="w-full">
+                      <a name="braile-result" id="braile-result"></a>
+                      <tr class="w-full">
+                        <td
+                          v-for="Palabra in PalabrasTabla1"
+                          :key="Palabra.id_registro"
+                          class="flex p-4 space-x-3 border border-gray-300"
+                        >
+                          <div
+                            v-for="caracterBraile in Palabra.simbolos"
+                            :key="caracterBraile.id_registro"
+                          >
+                            <div class="text-center uppercase">
+                              {{ caracterBraile.caracter }}
+                            </div>
+                            <div class="flex space-x-2">
+                              <img
+                                class="border border-gray-300"
+                                :src="caracterBraile.path_simbolo_1"
+                                alt=""
+                              />
+                              <img
+                                class="border border-gray-300"
+                                v-if="caracterBraile.path_simbolo_2"
+                                :src="caracterBraile.path_simbolo_2"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            
+
+            <div v-if="PalabrasTabla2.length" class="flex justify-center w-full p-4 text-xs bg-white border border-gray-300">
+              <div class="w-32 px-4 py-2 pt-6 border text-bold text-sm">Cara 2</div>
               <div>
-                <div class="px-3 py-1 border w-96">Cantidad máxima de caracteres {{ MC_Tabla2 }}</div>
-                <div class="px-3 py-1 border w-96">Cantidad máxima de filas {{ MF_Tabla2 }}</div>
+                <div class="px-3 py-1 border w-96">Cantidad máxima de caracteres </div>
+                <div class="px-3 py-1 border w-96">Cantidad máxima de filas </div>
               </div>
               <div>
-                <div class="w-20 px-3 py-1 border">0</div>
-                <div class="w-20 px-3 py-1 border">3</div>
+                <div class="w-20 px-3 py-1 border">{{ MC_Tabla2 }}</div>
+                <div class="w-20 px-3 py-1 border">{{ MF_Tabla2 }}</div>
               </div>
               </div>
-            <table 
-              v-if="PalabrasTabla2.length"
-              class="w-full px-4 bg-white border border-gray-300 rounded table-auto"
-            >
+            <table v-if="PalabrasTabla2.length" class="w-full px-4 bg-white border border-gray-300 rounded text-xs" >
               <tbody class="w-full">
                 <tr class="w-full">
                   <td
@@ -183,6 +187,8 @@
             </table>          
           </div>        
         </div>
+
+
     </div>
     </div>
     
@@ -202,11 +208,11 @@ export default {
   data: () => ({
     showBtnAnimation: false,
     formData: {
-      alto: "",
-      ancho: "",
+      alto     : "",
+      ancho    : "",
       idTercero: 0,
-      largo: "",
-      texto: ""
+      largo    : "",
+      texto    : ""
     },
     modalBraile: false,
     PalabrasTabla1: [],
@@ -223,6 +229,7 @@ export default {
       this.PalabrasTabla1 = [];
       this.PalabrasTabla2 = [];
       Braile.SendTextToTranscript(this.formData).then(response => {
+  
         response.data.map(item => {
           if (item.cara == "cara1") {
             this.PalabrasTabla1.push(item);
@@ -267,8 +274,8 @@ export default {
 }
 
 .ancho-modal {
-  min-width: 600px;
-  
+  min-width: 700px;
+
   
 }
 </style>

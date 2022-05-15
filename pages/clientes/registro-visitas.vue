@@ -220,6 +220,7 @@
       import BuscarCliente from '@/components/modals/BuscarCliente.vue'
       import RegistrarVisita from '@/components/modals/RegistrarVisita.vue'
       import DetalleVisita from '@/components/modals/DetalleVisita.vue'
+      import Messages           from "@/mixins/sweetalert2";
       var Numeral = require("numeral");
 
       export default {
@@ -229,6 +230,7 @@
           RegistrarVisita,
           DetalleVisita
         },
+        mixins: [ Messages],
         data() {
           return {
             registrarVisita: false,
@@ -252,7 +254,11 @@
             },
             historialVisitas:[],
             ultimasCincoCompras:[],
+            idTerceroVendedor:0,
           };
+        },
+        mounted() {
+            this.idTerceroVendedor = this.$cookies.get("User").idtecero_vendedor;
         },
 
         methods: {
@@ -300,9 +306,13 @@
           },
 
           buscarClientePorCodigo ( ) {
-            TercerosClientes.buscarPorCodigo ( this.codigo_tercero )
+            TercerosClientes.buscarPorCodigo ( this.codigo_tercero, this.idTerceroVendedor )
               .then( response => {
-                  this.setDataResponse ( response.data[0]);
+                  if (response.data=='NoOk' ){
+                        this.Message("Cliente no encontrado" ,"Cliente no registrado en el sistema o no figura bajo su registro.",'error', "Cerrar" );
+                  }else {
+                    this.setDataResponse ( response.data[0]);
+                  }
               })
           },
 
@@ -315,17 +325,17 @@
           },
 
           setDataResponse ( data ) {
-                this.codigo_tercero     =  data.codigo_tercero;
-                this.formCliente.idtercero = data.idtercero;
-                this.formCliente.nomtercero = data.nomtercero;
-                this.formCliente.nommcipio = data.nommcipio;
-                this.formCliente.nomvendedor = data.nomvendedor;
-                this.formCliente.codigo_tercero = data.codigo_tercero;
-                this.formCliente.cupo_credito = Numeral(data.cupo_credito).format('0,0');
-                this.formCliente.contacto = data.contacto;
-                this.formCliente.contacto_pagos_celular = data.contacto_pagos_celular;
-                this.formCliente.contacto_pagos_email = data.contacto_pagos_email;
-                this.formCliente.extra_cupo = Numeral(data.extra_cupo).format('0,0');
+                this.codigo_tercero                         = data.codigo_tercero;
+                this.formCliente.idtercero                  = data.idtercero;
+                this.formCliente.nomtercero                 = data.nomtercero;
+                this.formCliente.nommcipio                  = data.nommcipio;
+                this.formCliente.nomvendedor                = data.nomvendedor;
+                this.formCliente.codigo_tercero             = data.codigo_tercero;
+                this.formCliente.cupo_credito               = Numeral(data.cupo_credito).format('0,0');
+                this.formCliente.contacto                   = data.contacto;
+                this.formCliente.contacto_pagos_celular     = data.contacto_pagos_celular;
+                this.formCliente.contacto_pagos_email       = data.contacto_pagos_email;
+                this.formCliente.extra_cupo                 = Numeral(data.extra_cupo).format('0,0');
                 this.formCliente.dia_limite_recibe_facturas = data.dia_limite_recibe_facturas;
                 this.getUltimasVisitasCliente ( data.idtercero ) ;
                 this.getUltimasCincoCompras   ( data.idtercero ) ;
