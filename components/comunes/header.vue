@@ -7,7 +7,7 @@
         <img class="h-16 ml-4" src="/images/logo.png" alt="" />
       </div>
       <div class="flex ml-20 -mt-8 space-x-6 text-white">
-        <h3 class="text-sm">{{ companyName }}</h3>
+         
       </div>
       <div class="flex items-center justify-end mr-4 space-x-8"  v-on-clickaway="closeMenu">
         <NavLinks text="Historial" to="/clientes/ots-historial" />
@@ -109,16 +109,16 @@
             class="absolute right-0 z-20 flex flex-col w-48 pb-2 text-sm border border-white rounded-md top-10 bg-azul"
           >
         
-             <div class="relative mx-2 mt-2 cursor-pointer hover:opacity-90">
-              <p >Jhon Montaño</p>
+             <div class="relative mx-2 mt-2 cursor-pointer hover:opacity-90 py-2">
+              <p >{{ companyName }}</p>
             </div>
 
-            <div @click="gestion = false" class="relative mx-2 mt-2 cursor-pointer hover:opacity-90" >
+            <div @click="gestion = false" class="relative mx-2 mt-2 cursor-pointer hover:opacity-90 py-2" >
               <p>Cambiar imagen</p >
             </div>
 
 
-            <div class="relative mx-2 mt-2 cursor-pointer hover:opacity-90">
+            <div class="relative mx-2 mt-2 cursor-pointer hover:opacity-90 py-2">
               <button @click="logout">Cerrar Sistema</button>
             </div>
 

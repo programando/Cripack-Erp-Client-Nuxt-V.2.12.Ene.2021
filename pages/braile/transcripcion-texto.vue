@@ -91,7 +91,7 @@
           
           <div class="p-6 ml-3 mr-3 bg-white">
               <div class="flex items-center justify-center">
-                <h2 class="text-lg text-center"> {{formData.texto }} </h2>
+                <h2 class="text-lg text-center uppercase"> {{formData.texto }} </h2>
               </div>
               <div class="flex justify-center w-full py-8 text-xs bg-white border border-gray-300 px-14">
                   
