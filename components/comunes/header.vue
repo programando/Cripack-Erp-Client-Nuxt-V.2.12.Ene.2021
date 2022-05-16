@@ -8,14 +8,10 @@
       </div>
       <div class="flex ml-20 -mt-8 space-x-6 text-white">
         <h3 class="text-sm">{{ companyName }}</h3>
-        
       </div>
-
       <div class="flex items-center justify-end mr-4 space-x-8"  v-on-clickaway="closeMenu">
         <NavLinks text="Historial" to="/clientes/ots-historial" />
-
         <NavLinks text="Estado Ot's" to="/clientes/ots-estado" />
-
         <div  class="relative text-white">
           <button @click="viewUtilidades" @focus="menu = false" class="px-2 text-sm ">
             Utilidades clientes
@@ -104,7 +100,36 @@
         </div>
         <NavLinks text="Contacto" to="/clientes/contacto" />
 
-        <button @click="logout" class="text-sm text-white">Salir</button>
+        <div class="relative text-white">
+          <button @click="viewUser" class="px-2 text-sm ">
+            <img class="w-24 h-10" src="/images/logoCripack.png" alt="logo">
+          </button>
+          <div
+            v-if="userOptions"
+            class="absolute right-0 z-20 flex flex-col w-48 pb-2 text-sm border border-white rounded-md top-10 bg-azul"
+          >
+        
+             <div class="relative mx-2 mt-2 cursor-pointer hover:opacity-90">
+              <p >Jhon Montaño</p>
+            </div>
+
+            <div @click="gestion = false" class="relative mx-2 mt-2 cursor-pointer hover:opacity-90" >
+              <p>Cambiar imagen</p >
+            </div>
+
+
+            <div class="relative mx-2 mt-2 cursor-pointer hover:opacity-90">
+              <button @click="logout">Cerrar Sistema</button>
+            </div>
+
+            <!--
+            <div  @click="gestion = false"  class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"  >
+              <nuxt-link to="/gestion/datos-caja-maquina">Análisis opciones contra hendido</nuxt-link>
+            </div>
+              -->
+              
+          </div>
+        </div>
       </div>
     </div>
     <div class="fixed right-0 z-10 pt-16 bandera">
@@ -127,7 +152,10 @@ export default {
       menu         : false,
       isDevelopment: process.env.NODE_ENV,
       subMenu      : false,
-      gestion      : false 
+      gestion      : false,
+      userOptions: false,
+
+      
  
     };
   },
@@ -156,15 +184,24 @@ export default {
     viewUtilidades(){
       this.menu = !this.menu
       this.gestion = false
+      this.userOptions = false
     },
     viewGestion(){
       this.gestion = !this.gestion
       this.menu = false
+      this.userOptions = false
     },
 
     closeMenu() {
       this.menu = false,
       this.subMenu = false,
+      this.gestion = false,
+      this.userOptions = false
+    },
+
+    viewUser() {
+      this.userOptions = !this.userOptions
+      this.menu = false,
       this.gestion = false
     }
   }

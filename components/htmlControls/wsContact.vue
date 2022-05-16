@@ -1,15 +1,15 @@
 <template>
-  <div class="absolute cursor-pointer contenedor-principal ">
+  <div class="absolute z-50 cursor-pointer contenedor-principal ">
     <a
       class="flex items-center contenedor"
       href="https://api.whatsapp.com/send?phone=573152701964"
     >
-      <img class="z-20 h-14 imagen" src="/images/whatsapp2.svg" alt="" />
+      <img class="z-40 h-14 imagen" src="/images/whatsapp2.svg" alt="" />
       <div
         class="z-10 py-1 text-sm text-white bg-green-600 rounded-full cursor-pointer px-14 boton "
       >
         <p>Contáctenos</p>
-        <p class="text-center">por Whatsapp</p>
+        <p class="text-center">Whatsapp</p>
       </div>
     </a>
   </div>
@@ -23,30 +23,40 @@ export default {
 
 <style>
 .contenedor {
-  height: 50px;
-  width: 265px;
-  transition: width 0.8s;
+  height: 55px;
+  width: 150px;
+  transition: 1s;
+  overflow: hidden;
 }
 
 .boton {
   display: none;
+  transition: 1s;
 }
 
 .imagen {
-  margin-right: -50px;
-  margin-left: 200px;
-  transition: width 0.8s;
+ 
+  margin-left: 80px;
+  transition: width 1s;
+  
 }
 
 .contenedor:hover > .imagen {
+  
+  margin-right: -40px;
   margin-left: 0;
+  transition: 1s;
 }
 
 .contenedor:hover > .boton {
   display: block;
+  transition: 1s;
+  
 }
 
 .contenedor:hover {
-  width: 350px;
+  width: 220px;
+  overflow: hidden;
+  transition: 1s;
 }
 </style>
