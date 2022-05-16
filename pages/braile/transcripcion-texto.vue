@@ -74,7 +74,7 @@
          
         </div>
         <div class="flex justify-center pb-4 mt-4">
-          <img class="caja-braile" src="/images/caja-Braile-2.png" alt="" />
+          <img class="caja-braile" src="/images/caja-braile-2.png" alt="" />
         </div>
       </div>
     </div>
