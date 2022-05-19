@@ -4,105 +4,111 @@
       <div class="px-4 py-4 border shadow-xl ancho-registro">
         <h2 class="text-xl font-semibold text-center">Registro de visitas</h2>
         <div class="mx-4 mt-4">
-          <div class="flex justify-center space-x-10">
-            <div class="">
-              <p class="ml-10 text-sm">Código</p>
-              <div class="flex space-x-2">
-                <button @click="buscarCliente = true">
-                  <img class="h-6" src="/images/prismaticos.png" alt="" />
-                </button>
-                <input
-                  class="w-32 px-2 py-1 text-xs text-center border rounded-sm focus:outline-none"
-                  type="text"
-                  v-model="codigo_tercero"
-                  @keyup.enter="buscarClientePorCodigo"
-                />
+          <div class="lg:flex lg:justify-center lg:space-x-10">
+            <div class="flex justify-center space-x-10">
+              <div class="w-60 lg:w-auto ">
+                <p class="ml-10 text-sm">Código</p>
+                <div class="flex space-x-2">
+                  <button @click="buscarCliente = true">
+                    <img class="h-6" src="/images/prismaticos.png" alt="" />
+                  </button>
+                  <input
+                    class="w-32 px-2 py-1 text-xs text-center border rounded-sm focus:outline-none"
+                    type="text"
+                    v-model="codigo_tercero"
+                    @keyup.enter="buscarClientePorCodigo"
+                  />
+                </div>
               </div>
-            </div>
             <div class="">
               <p class="text-sm">Nombre / Razón social</p>
               <input
-                class="w-64 px-4 py-1 text-xs border rounded-sm focus:outline-none"
+                class="lg:w-64 w-60 px-4 py-1 text-xs border rounded-sm focus:outline-none"
                 disabled
                 type="text"
                 v-model="formCliente.nomtercero"
               />
+              </div>
             </div>
-            <div class="">
-              <p class="text-sm">Ciudad</p>
-              <input
-                class="px-4 py-1 text-xs border rounded-sm w-60 focus:outline-none"
-                disabled
-                type="text"
-                v-model="formCliente.nommcipio"
-              />
+            
+            <div class="flex justify-center space-x-10 mt-4 lg:mt-0">
+              <div class="">
+                <p class="text-sm">Ciudad</p>
+                <input
+                  class="px-4 py-1 text-xs border rounded-sm w-60 focus:outline-none"
+                  disabled
+                  type="text"
+                  v-model="formCliente.nommcipio"
+                />
+             </div>
+              <div class="">
+                <p class="text-sm">Vendedor</p>
+                <input
+                  class="px-4 py-1 text-xs border rounded-sm w-60 focus:outline-none"
+                  disabled
+                  type="text"
+                  v-model="formCliente.nomvendedor"
+                />
+              </div>
             </div>
-            <div class="">
-              <p class="text-sm">Vendedor</p>
-              <input
-                class="px-4 py-1 text-xs border rounded-sm w-60 focus:outline-none"
-                disabled
-                type="text"
-                v-model="formCliente.nomvendedor"
-              />
-            </div>
+
           </div>
           <div class="flex justify-around">
             <div class="">
-              <div class="flex justify-center mt-4 space-x-28">
-                <div class="flex mr-2">
-                  <p class="w-64 text-sm">Cupo de crédito</p>
+              <div class="flex justify-center mt-4 lg:space-x-28 space-x-10">
+                <div class="lg:flex lg:mr-2">
+                  <p class="w-60 lg:w-64 text-sm">Cupo de crédito</p>
                   <input
-                    class="w-48 px-4 py-1 text-xs text-right border rounded-sm focus:outline-none"
+                    class="lg:w-48 w-60 px-4 py-1 text-xs text-right border rounded-sm focus:outline-none"
                     disabled
                     type="text"
                     v-model="formCliente.cupo_credito"
                   />
                 </div>
-                <div class="flex">
+                <div class="lg:flex">
                   <p class="w-56 text-sm">Persona encargada de pagos</p>
                   <input
-                    class="w-56 px-4 py-1 text-xs border rounded-sm focus:outline-none"
+                    class="lg:w-56 w-60 px-4 py-1 text-xs border rounded-sm focus:outline-none"
                     disabled
                     type="text"
                     v-model="formCliente.contacto_pagos"
                   />
                 </div>
               </div>
-              <div class="flex justify-center mt-4 space-x-28 ">
-                <div class="flex mr-2">
-                  <p class="w-64 text-sm">Extra cupo</p>
+              <div class="flex justify-center mt-4 lg:space-x-28 space-x-10 ">
+                <div class="lg:flex lg:mr-2">
+                  <p class="w-60 lg:w-64 text-sm">Extra cupo</p>
                   <input
-                    class="w-48 px-4 py-1 text-xs text-right border rounded-sm focus:outline-none"
+                    class="lg:w-48 w-60  px-4 py-1 text-xs text-right border rounded-sm focus:outline-none"
                     disabled
                     type="text"
                     v-model="formCliente.extra_cupo"
                   />
                 </div>
-                <div class="flex mr-2">
+                <div class="lg:flex lg:mr-2">
                   <p class="w-56 text-sm">Nro. teléfono</p>
                   <input
-                    class="w-56 px-4 py-1 text-xs border rounded-sm focus:outline-none"
+                    class="lg:w-56 w-60 px-4 py-1 text-xs border rounded-sm focus:outline-none"
                     disabled
                     type="text"
                     v-model="formCliente.contacto_pagos_celular"
                   />
                 </div>
               </div>
-              <div class="flex justify-center mt-4 space-x-28">
-                <div class="flex mr-2">
-                  <p class="w-64 text-sm">Día límite recepción facturas</p>
+              <div class="flex justify-center mt-4 lg:space-x-28 space-x-10">
+                <div class="lg:flex lg:mr-2">
+                  <p class="lg:w-64 w-60  text-sm">Día límite recepción facturas</p>
                   <input
-                    class="w-48 px-4 py-1 text-xs text-right border rounded-sm focus:outline-none"
+                    class="lg:w-48 w-60 px-4 py-1 text-xs text-right border rounded-sm focus:outline-none"
                     disabled
                     type="text"
                     v-model="formCliente.dia_limite_recibe_facturas"
                   />
                 </div>
-                <div class="flex">
+                <div class="lg:flex">
                   <p class="w-56 text-sm">Email</p>
                   <input
-                    class="w-56 px-4 py-1 text-xs border rounded-sm focus:outline-none"
+                    class="lg:w-56 w-60 px-4 py-1 text-xs border rounded-sm focus:outline-none"
                     disabled
                     type="text"
                     v-model="formCliente.contacto_pagos_email"

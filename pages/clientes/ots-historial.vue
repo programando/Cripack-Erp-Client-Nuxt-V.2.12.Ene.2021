@@ -1,7 +1,10 @@
 <template>
   <div class="pt-24 mx-2">
+    <h3 class="mt-1 text-xl text-center lg:hidden">
+        Historial Órdenes de trabajo
+    </h3>
     <div class="flex justify-between my-2">
-      <h3 class="mt-1 text-lg">
+      <h3 class="mt-1 text-base xl:text-lg hidden lg:block">
         Historial Órdenes de trabajo
       </h3>
       <div class="mt-2">
@@ -27,13 +30,13 @@
         
         </div>
       </div>
-      <div class="flex items-center">
-        <div class="z-10 -mr-8">
+      <div class="flex items-center mt-2">
+        <div class="z-10 -mr-6">
           <font-awesome-icon class="" :icon="['fas', 'search']" />
         </div>
 
         <input
-          class="px-10 py-2 text-xs border rounded-md focus:outline-none text-azul"
+          class="pl-8 py-2 text-xs border rounded-md focus:outline-none text-azul"
           type="text"
           v-model="busqueda"
           placeholder="Buscar por referencia"
@@ -71,8 +74,8 @@
               class="flex w-full bg-white border-b border-gray-200 hover:bg-gray-100 tr" >
               
               <td class="flex items-center justify-start w-1/12 px-2 py-2 space-x-2 text-left">
-                 <div  v-if="venta.terminada" class="flex items-center justify-center h-3 px-2 py-2 leading-3 text-white bg-green-600 border-green-600 rounded-lg text-lowerxs ">Terminada</div>
-                 <div v-else class="flex items-center justify-center h-3 px-2 py-2 leading-3 bg-yellow-300 border-yellow-300 rounded-lg text-lowerxs">En proceso</div>
+                 <div  v-if="venta.terminada" class="flex items-center justify-center h-3 px-2 py-4 lg:py-2  text-white bg-green-600 border-green-600 rounded-lg text-lowerxs ">Terminada</div>
+                 <div v-else class="flex items-center justify-center h-3 px-2 py-4 lg:py-2 leading-3 bg-yellow-300 border-yellow-300 rounded-lg text-lowerxs">En proceso</div>
               </td>
 
                 <td class="w-1/12 leading-3 ali-center text-upperxs ">        {{ venta.numero_ot | NoShowZero}}                     </td>

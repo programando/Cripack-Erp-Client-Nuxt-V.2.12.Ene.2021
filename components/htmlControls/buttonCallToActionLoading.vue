@@ -1,6 +1,6 @@
   <template>
   <component
-    class="flex items-center "
+    class="flex items-center text-sm lg:text-base"
     v-on="$listeners"
     :class="[btnClass, colorVariants]"
     :disabled="showBtnAnimation"

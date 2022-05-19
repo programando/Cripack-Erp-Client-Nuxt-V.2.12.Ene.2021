@@ -82,18 +82,18 @@
     <div v-if="modalBraile" class="absolute z-20 flex items-center justify-center w-full min-h-screen px-20 mt-4 transition-opacity bg-gray-500 bg-opacity-75 top-10 ">
       <div  class="relative flex justify-center mt-2 ancho-modal">
         
-        <div class="absolute top-4 right-8">
+        <div class="absolute top-4 right-4">
           <button @click="modalBraile = false">
             <img src="/images/close.svg" alt="">
           </button>
         </div>
-        <div class="mt-2 ">
+        <div class="mt-2 ancho-modal">
           
           <div class="p-6 ml-3 mr-3 bg-white">
               <div class="flex items-center justify-center">
                 <h2 class="text-lg text-center uppercase"> {{formData.texto }} </h2>
               </div>
-              <div class="flex justify-center w-full py-8 text-xs bg-white border border-gray-300 px-14">
+              <div class="flex justify-center w-full py-8 text-xs bg-white border border-gray-300">
                   
                   <div class="w-32 px-4 py-4 text-sm border text-bold">Cara 1</div>
                   <div>
@@ -276,8 +276,21 @@ export default {
 }
 
 .ancho-modal {
-  min-width: 700px;
+  width: 650px;
 
   
 }
+
+@media screen and (min-width: 1020px) {
+  .ancho-modal {
+    width: 800px;
+  }
+}
+
+@media screen and (min-width: 1420px) {
+  .ancho-modal {
+    width: 1000px;
+  }
+}
+
 </style>
