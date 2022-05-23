@@ -7,7 +7,7 @@
       ></div>
 
       <div
-        class="relative inline-block w-3/6 transition-all transform bg-white rounded-lg shadow-xl top-60"
+        class="relative inline-block w-11/12 md:w-9/12 lg:w-6/12 transition-all transform bg-white rounded-lg shadow-xl top-60"
       >
         <div class="px-4 pt-5 pb-4 bg-white">
           <div class="">
