@@ -6,7 +6,7 @@
     <div class="py-4 mx-4 lg:flex lg:space-x-4 lg:justify-center">
       <div class="px-10 border border-black lg:flex lg:space-x-4 lg:justify-center">
         <div class="">
-          <div class="px-10 py-4 w-12/12 lg:w-10/12 ">
+          <div class="px-10 py-4 w-12/12 lg:w-12/12 ">
             <label class="flex justify-center mb-10 font-semibold text-center"
               >Palabra o frase a transcribir</label
             >
@@ -31,9 +31,9 @@
                   @keydown="clearErrors"
                   borderColor="extra"
                   colorError="red"
-                  type="text"
+                  type="number"
                   v-model="formData.largo"
-                  width="w-14"
+                  width="w-20"
                 ></InputBasic>
               </div>
               <div class="flex justify-center mt-2 mr-2">
@@ -43,9 +43,9 @@
                   @keydown="clearErrors"
                   borderColor="extra"
                   colorError="red"
-                  type="text"
+                  type="number"
                   v-model="formData.ancho"
-                  width="w-14"
+                  width="w-20"
                 ></InputBasic>
               </div>
               <div class="flex justify-center mt-2">
@@ -54,26 +54,19 @@
                   @keydown="clearErrors"
                   borderColor="extra"
                   colorError="red"
-                  type="text"
+                  type="number"
                   v-model="formData.alto"
-                  width="w-14"
+                  width="w-20"
                 ></InputBasic>
               </div>
-            </div>
-
-           <div class="flex justify-center mt-10 mb-4">
-              <a @click="sendTextToTranscript" class="px-4 py-1 text-white bg-green-500 rounded cursor-pointer"   >Iniciar transcripción</a>
-            </div>
-
-            
-            <br />
-          
+            </div>  
           </div>
-
-      
-         
+          <div class="flex justify-center  mt-6 mb-4 space-x-4">
+            <a @click="sendTextToTranscript" class="px-2 text-sm  py-1 text-azul border border-azul hover:text-white hover:bg-azul rounded cursor-pointer">Braile impreso en largo</a>
+            <a @click="sendTextToTranscript" class="px-2 text-sm  py-1 text-azul border border-azul hover:text-white hover:bg-azul rounded cursor-pointer">Braile impreso en Ancho</a>
+          </div>
         </div>
-        <div class="flex justify-center pb-4 mt-4">
+        <div class="flex justify-center pb-4 mt-10 lg:mt-4">
           <img class="caja-braile" src="/images/caja-braile-2.png" alt="" />
         </div>
       </div>
@@ -81,32 +74,35 @@
     
     <div v-if="modalBraile" class="absolute z-20 flex items-center justify-center w-full min-h-screen px-20 mt-4 transition-opacity bg-gray-500 bg-opacity-75 top-10 ">
       <div  class="relative flex justify-center mt-2 ancho-modal">
-        
         <div class="absolute top-4 right-4">
           <button @click="modalBraile = false">
             <img src="/images/close.svg" alt="">
           </button>
         </div>
         <div class="mt-2 ancho-modal">
-          
           <div class="p-6 ml-3 mr-3 bg-white">
-              <div class="flex items-center justify-center">
+              <div class="flex justify-center space-x-10">
+                <p class="px-2 py-1 text-azul">Largo: <span class="border text-azul py-1 px-4 rounded-lg">{{ formData.largo }}</span></p>
+                <p class="px-2 py-1 text-azul">Ancho: <span class="border text-azul py-1 px-4 rounded-lg">{{ formData.ancho }}</span></p>
+                <p class="px-2 py-1 text-azul">Alto: <span class="border text-azul py-1 px-4 rounded-lg">{{ formData.alto }}</span></p>
+              </div>
+              <div class="flex items-center justify-center mt-4">
                 <h2 class="text-lg text-center uppercase"> {{formData.texto }} </h2>
               </div>
               <div class="flex justify-center w-full py-8 text-xs bg-white border border-gray-300">
                   
-                  <div class="w-32 px-4 py-4 text-sm border text-bold">Cara 1</div>
+                  <div class="w-32 px-4 py-7 text-sm border text-bold">Cara 1</div>
                   <div>
                     <div class="px-3 py-1 border w-96">Cantidad máxima de caracteres </div>
                     <div class="px-3 py-1 border w-96">Cantidad máxima de filas </div>
+                    <div class="px-3 py-1 border w-96">Cantidad total caracteres de texto </div>
                   </div>
                   <div>
                     <div class="w-20 px-3 py-1 border">{{ MC_Tabla1 }}</div>
                     <div class="w-20 px-3 py-1 border">{{ MF_Tabla1 }}</div>
+                    <div class="w-20 px-3 py-1 border">4</div>
                   </div>
               </div>
-
-                
                   <table v-if="PalabrasTabla1.length" class="w-full px-4 mb-1 text-xs bg-white border border-gray-300 rounded" >
                     <tbody class="w-full">
                       <a name="braile-result" id="braile-result"></a>
@@ -114,7 +110,7 @@
                         <td
                           v-for="Palabra in PalabrasTabla1"
                           :key="Palabra.id_registro"
-                          class="flex p-4 space-x-3 border border-gray-300"
+                          class="flex p-4 space-x-2 flex-wrap border border-gray-300"
                         >
                           <div
                             v-for="caracterBraile in Palabra.simbolos"
@@ -125,12 +121,12 @@
                             </div>
                             <div class="flex space-x-2">
                               <img
-                                class="border border-gray-300"
+                                class="border border-gray-300 w-12 lg:w-16"
                                 :src="caracterBraile.path_simbolo_1"
                                 alt=""
                               />
                               <img
-                                class="border border-gray-300"
+                                class="border border-gray-300 w-12 lg:w-16"
                                 v-if="caracterBraile.path_simbolo_2"
                                 :src="caracterBraile.path_simbolo_2"
                                 alt=""
@@ -141,8 +137,6 @@
                       </tr>
                     </tbody>
                   </table>
-            
-
             <div v-if="PalabrasTabla2.length" class="flex justify-center w-full p-4 text-xs bg-white border border-gray-300">
               <div class="w-32 px-4 py-4 text-sm border text-bold">Cara 2</div>
               <div>
@@ -169,14 +163,14 @@
                       <div class="text-center uppercase">
                         {{ caracterBraile.caracter }}
                       </div>
-                      <div class="flex space-x-2">
+                      <div class="flex flex-wrap space-x-2">
                         <img
-                          class="border border-gray-300"
+                          class="border border-gray-300 w-12 lg:w-16"
                           :src="caracterBraile.path_simbolo_1"
                           alt=""
                         />
                         <img
-                          class="border border-gray-300"
+                          class="border border-gray-300 w-12 lg:w-16"
                           v-if="caracterBraile.path_simbolo_2"
                           :src="caracterBraile.path_simbolo_2"
                           alt=""
@@ -189,11 +183,8 @@
             </table>          
           </div>        
         </div>
-
-
     </div>
     </div>
-    
   </div>
 </template>
 
@@ -283,13 +274,13 @@ export default {
 
 @media screen and (min-width: 1020px) {
   .ancho-modal {
-    width: 800px;
+    width: auto;
   }
 }
 
 @media screen and (min-width: 1420px) {
   .ancho-modal {
-    width: 1000px;
+    width: auto;
   }
 }
 
