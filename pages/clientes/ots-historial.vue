@@ -49,7 +49,7 @@
       <div class="bg-white rounded shadow-md ">
         <table class="w-full">
           <thead class="flex w-full margen">
-            <tr class="flex w-full text-xs text-gray-600 bg-gray-200">
+            <tr class="flex w-full text-xs text-gray-700 bg-gray-200">
               <th class="w-1/12 ali-center">Estado</th>
               <th class="w-1/12 ali-center">#OT</th>
               <th class="w-1/12 ali-center">Solicitud</th>
@@ -65,7 +65,7 @@
             </tr>
           </thead>
           <tbody
-            class="flex flex-col w-full overflow-y-scroll text-xs text-gray-600 bg-white"
+            class="flex flex-col w-full overflow-y-scroll text-xs text-gray-700 bg-white"
             style="height: 64vh;"
           >
             <tr 

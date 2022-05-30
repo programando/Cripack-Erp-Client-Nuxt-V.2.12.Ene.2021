@@ -22,7 +22,7 @@
       <div class="bg-white rounded shadow-md ">
         <table class="w-full">
           <thead class="flex w-full margen">
-            <tr class="flex w-full text-sm text-gray-600 bg-gray-200">
+            <tr class="flex w-full text-sm text-gray-700 bg-gray-200">
               <th class="w-1/12 px-2 ali-left">#OT</th>
               <th class="w-3/12 px-2 ali-left">Referencia</th>
               <th class="w-2/12 px-2 ali-left">Estilo</th>
@@ -32,7 +32,7 @@
             </tr>
           </thead>
           <tbody
-            class="flex flex-col w-full overflow-y-scroll text-xs text-gray-600 bg-white"
+            class="flex flex-col w-full overflow-y-scroll text-xs text-gray-700 bg-white"
             style="height: 64vh;"
           >
             <tr v-for="OTs in  otsEnProduccion"   :key="OTs.numero_ot"

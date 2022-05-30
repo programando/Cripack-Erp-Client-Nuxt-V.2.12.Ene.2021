@@ -9,7 +9,7 @@
                 class="block px-5 py-3 text-base font-bold leading-normal uppercase rounded cursor-pointer"
                 v-on:click="toggleTabs(1)"
                 v-bind:class="{
-                  'text-gray-600 bg-white border-b': openTab !== 1,
+                  'text-gray-700 bg-white border-b': openTab !== 1,
                   'text-azul bg-white border-l border-t border-r': openTab === 1
                 }"
               >
@@ -21,7 +21,7 @@
                 class="block px-5 py-3 text-base font-bold leading-normal uppercase rounded cursor-pointer"
                 v-on:click="toggleTabs(2)"
                 v-bind:class="{
-                  'text-gray-600 bg-white border-b': openTab !== 2,
+                  'text-gray-700 bg-white border-b': openTab !== 2,
                   'text-azul bg-white border-l border-t border-r': openTab === 2
                 }"
               >

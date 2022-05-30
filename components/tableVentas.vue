@@ -8,7 +8,7 @@
       <div class="bg-white rounded shadow-md ">
         <table class="w-full ">
           <thead class="w-full">
-            <tr class="text-sm text-gray-600 bg-gray-200 ">
+            <tr class="text-sm text-gray-700 bg-gray-200 ">
               <th class="px-2 py-2 text-left ">Fecha Terminada</th>
               <th class="px-2 py-2 text-left ">#OT</th>
               <th class="px-2 py-2 text-left ">Referencia</th>
@@ -16,7 +16,7 @@
               <th class="px-2 py-2 text-left ">Vr Venta</th>
             </tr>
           </thead>
-          <tbody class="text-gray-600">
+          <tbody class="text-gray-700">
             <tr
               v-for="(venta, index) in ventas"
               :key="index"
