@@ -26,7 +26,7 @@
               <th class="w-1/12 px-2 ali-left">#OT</th>
               <th class="w-3/12 px-2 ali-left">Referencia</th>
               <th class="w-2/12 px-2 ali-left">Estilo</th>
-              <th class="w-1/12 px-2 ali-left">Tipo</th>
+              <th class="w-1/12 px-2 ali-left">Trabajo</th>
               <th class="w-3/12 px-2 ali-left"></th>
               <th class="w-2/12 px-2 ali-left">Fecha Confirmada</th>
             </tr>
@@ -100,33 +100,34 @@
       name:'ClientesOtsEstado',
       components: { BtnCallToAction, WsContact, Spinner},
       data: () => ({
-            showBtnAnimation : false,
-            otsEnProduccion: [],
-            busqueda:'',
-            formData: {
-                idTercero:0, 
-                userCripack:false
+            showBtnAnimation: false,
+            otsEnProduccion : [],
+            busqueda        : '',
+            spiner          : false,
+            formData        : {
+                idTercero  : 0,
+                userCripack: false,
+                vendedor   : false
             },
-            spiner: false
+            
       }),
-      
-      
-
+  
       mounted() {
           this.OTsEstadoProduccion();
       },
 
       methods: {
           OTsEstadoProduccion () {
-             this.showBtnAnimation =  true;
-             this.spiner = true;
+             this.showBtnAnimation     = true;
+             this.spiner               = true;
              this.formData.idTercero   = this.$cookies.get("User").idtercero;
-             this.formData.userCripack = this.$cookies.get("User").uso_web_empresa;   
+             this.formData.userCripack = this.$cookies.get("User").uso_web_empresa;
+             this.formData.vendedor    = this.$cookies.get("User").vendedor;
              Terceros.OTsEstadoProduccion (  this.formData)
             .then( response => {
-                this.otsEnProduccion = response.data;
-                this.showBtnAnimation =  false;
-                this.spiner = false
+                this.otsEnProduccion  = response.data;
+                this.showBtnAnimation = false;
+                this.spiner           = false
             }) 
             
           },

@@ -7,7 +7,7 @@ export default {
     },
   
       async login ( formData ) {       
-        return  Api.post('usuarios/login', formData);
+        return  await Api.post('usuarios/login', formData);
       },
 
       async logout( formData) {

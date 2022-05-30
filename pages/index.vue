@@ -110,13 +110,13 @@ export default {
   },
   data() {
     return {
-      errors: [],
-      idioma: false,
-      modal: true,
+      errors          : [],
+      idioma          : false,
+      modal           : true,
       showBtnAnimation: false,
-      formLogin: {
-        email: process.env.EMAIL_TEMP,
-        password: process.env.EMAIL_PASS_TEMP
+      formLogin       : {
+        email   : process.env.EMAIL_TEMP,
+        password: process.env.EMAIL_PASS_TEMP,
       }
     };
   },
@@ -139,6 +139,7 @@ export default {
           this.$store.dispatch("User/SetUser", response.data[0]);
           this.$router.push("/clientes/ots-historial");
           this.$cookies.set("logueado", "true");
+          console.log ( response.data[0]);
         })
         .catch(error => {
           if (error.response.status == 422) {

@@ -23,7 +23,7 @@
             </div>
             
 
-            <p class="mt-6 mb-6 text-center">Dimensiones de la caja</p>
+            <p class="mt-6 mb-6 text-center">Dimensiones de la caja ( milímetros )</p>
             <div class="flex justify-center">
               <div class="flex justify-center mt-2 mr-2">
                 <label class="w-16">Largo :</label>
@@ -61,9 +61,11 @@
               </div>
             </div>  
           </div>
-          <div class="flex justify-center  mt-6 mb-4 space-x-4">
-            <a @click="sendTextToTranscript" class="px-2 text-sm  py-1 text-azul border border-azul hover:text-white hover:bg-azul rounded cursor-pointer">Braile impreso en largo</a>
-            <a @click="sendTextToTranscript" class="px-2 text-sm  py-1 text-azul border border-azul hover:text-white hover:bg-azul rounded cursor-pointer">Braile impreso en Ancho</a>
+          <div class="flex justify-center  mt-20 mb-2 space-x-4">
+            <a @click="sendTextToTranscript (largo)" class="px-2 text-sm  py-1 text-azul border border-azul hover:text-white hover:bg-azul rounded cursor-pointer">Braille impreso en largo</a>
+            <!-- 
+            <a @click="sendTextToTranscript (ancho)" class="px-2 text-sm  py-1 text-azul border border-azul hover:text-white hover:bg-azul rounded cursor-pointer">Braille impreso en ancho</a>
+            -->
           </div>
         </div>
         <div class="flex justify-center pb-4 mt-10 lg:mt-4">
@@ -81,26 +83,30 @@
         </div>
         <div class="mt-2 ancho-modal">
           <div class="p-6 ml-3 mr-3 bg-white">
-              <div class="flex justify-center space-x-10">
-                <p class="px-2 py-1 text-azul">Largo: <span class="border text-azul py-1 px-4 rounded-lg">{{ formData.largo }}</span></p>
-                <p class="px-2 py-1 text-azul">Ancho: <span class="border text-azul py-1 px-4 rounded-lg">{{ formData.ancho }}</span></p>
-                <p class="px-2 py-1 text-azul">Alto: <span class="border text-azul py-1 px-4 rounded-lg">{{ formData.alto }}</span></p>
-              </div>
               <div class="flex items-center justify-center mt-4">
                 <h2 class="text-lg text-center uppercase"> {{formData.texto }} </h2>
               </div>
+
+              <div class="flex justify-center space-x-10 text-sm">
+                <p class="px-2 py-1 text-azul">Largo: <span class=" text-azul py-1 px-4 ">{{ formData.largo }}</span></p>
+                <p class="px-2 py-1 text-azul">Ancho: <span class=" text-azul py-1 px-4  ">{{ formData.ancho }}</span></p>
+                <p class="px-2 py-1 text-azul">Alto: <span class=" text-azul py-1 px-4  ">{{ formData.alto }}</span></p>
+              </div>
+
+
+
               <div class="flex justify-center w-full py-8 text-xs bg-white border border-gray-300">
                   
                   <div class="w-32 px-4 py-7 text-sm border text-bold">Cara 1</div>
                   <div>
                     <div class="px-3 py-1 border w-96">Cantidad máxima de caracteres </div>
                     <div class="px-3 py-1 border w-96">Cantidad máxima de filas </div>
-                    <div class="px-3 py-1 border w-96">Cantidad total caracteres de texto </div>
+                    <div class="px-3 py-1 border w-96">Cantidad total caracteres del texto </div>
                   </div>
                   <div>
-                    <div class="w-20 px-3 py-1 border">{{ MC_Tabla1 }}</div>
-                    <div class="w-20 px-3 py-1 border">{{ MF_Tabla1 }}</div>
-                    <div class="w-20 px-3 py-1 border">4</div>
+                    <div class="w-20 px-3 py-1 border text-center">{{ MC_Tabla1 }}</div>
+                    <div class="w-20 px-3 py-1 border text-center">{{ MF_Tabla1 }}</div>
+                    <div class="w-20 px-3 py-1 border text-center">{{ LongTexto }}</div>
                   </div>
               </div>
                   <table v-if="PalabrasTabla1.length" class="w-full px-4 mb-1 text-xs bg-white border border-gray-300 rounded" >
@@ -201,26 +207,29 @@ export default {
   data: () => ({
     showBtnAnimation: false,
     formData: {
-      alto     : "",
-      ancho    : "",
-      idTercero: 0,
-      largo    : "",
-      texto    : ""
+      alto      : "",
+      ancho     : "",
+      idTercero : 0,
+      largo     : "",
+      texto     : "",
+      imprimirEn: '',
     },
-    modalBraile: false,
+    modalBraile   : false,
     PalabrasTabla1: [],
     PalabrasTabla2: [],
-    MC_Tabla1: "",
-    MC_Tabla2: "",
-    MF_Tabla1: "",
-    MF_Tabla2: ""
+    MC_Tabla1     : "",
+    MC_Tabla2     : "",
+    MF_Tabla1     : "",
+    MF_Tabla2     : "",
+    LongTexto     : 0,
   }),
   methods: {
-    sendTextToTranscript() {
-      this.showBtnAnimation = true;
-      this.formData.idTercero = this.$cookies.get("User").idtercero;
-      this.PalabrasTabla1 = [];
-      this.PalabrasTabla2 = [];
+    sendTextToTranscript( tipoImpresion ) {
+      this.showBtnAnimation    = true;
+      this.formData.idTercero  = this.$cookies.get("User").idtercero;
+      this.formData.imprimirEn = tipoImpresion;                        // largo o ancho  
+      this.PalabrasTabla1      = [];
+      this.PalabrasTabla2      = [];
       Braile.SendTextToTranscript(this.formData).then(response => {
   
         response.data.map(item => {
@@ -228,30 +237,23 @@ export default {
             this.PalabrasTabla1.push(item);
             this.MC_Tabla1 = item.MC;
             this.MF_Tabla1 = item.MF;
+            this.LongTexto = item.long_texto;
           }
           if (item.cara == "cara2") {
             this.PalabrasTabla2.push(item);
             this.MC_Tabla2 = item.MC;
             this.MF_Tabla2 = item.MF;
+            this.LongTexto = item.long_texto;
           }
           this.modalBraile = true
 
         });
       });
-     // this.movePage();
+    
       this.showBtnAnimation = false;
       
     },
-   /* movePage (e){
-        const hrefOb = document.querySelector('#ancla');
-        const href = hrefOb.getAttribute("href");
-        const offsetTop = document.querySelector(href).offsetTop;
-          scroll({
-            top: offsetTop,
-            behavior: "smooth"
-          });
-
-    },*/
+ 
   }
 };
 </script>

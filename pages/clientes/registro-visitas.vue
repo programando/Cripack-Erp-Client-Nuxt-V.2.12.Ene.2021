@@ -277,7 +277,7 @@
               this.codigo_tercero      = '';
             },
           registrarNuevaVisita() {
-              if ( this.formCliente.idtercero === 0 ) {
+              if ( this.formCliente.idtercero === 0   ) {
                   this.$swal('Consulte uno de los clientes para continuar!');
                   return;
               }

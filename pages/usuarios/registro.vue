@@ -165,8 +165,7 @@ export default {
               .then ( ()=> {
                     this.$router.push('/');
                     this.Message(this.$t('RegisterForm.FinishOkTitle') ,this.$t('RegisterForm.FinishOkBody') ,'success', this.$t('App.CloseWindow') );
-                    this.showBtnAnimation = false;
-                    
+                    this.showBtnAnimation = false;  
               })
               .catch ( error => {
                   this.errors = error.response.data.errors;

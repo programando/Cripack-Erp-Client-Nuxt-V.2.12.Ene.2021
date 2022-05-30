@@ -28,12 +28,11 @@ export default {
   },
 
   async historialVentas(formData) {
-    //console.log(formData);
-    return Api.get("clientes/ots/historial", { params:   formData   } ) ;
+    return     Api.post("clientes/ots/historial", formData ) ;
   },
 
   async OTsEstadoProduccion(formData) {
-    return Api.get("clientes/ots/estado", { params:   formData   }     ) ;
+    return await Api.post("clientes/ots/estado",   formData       ) ;
   },
 
 }

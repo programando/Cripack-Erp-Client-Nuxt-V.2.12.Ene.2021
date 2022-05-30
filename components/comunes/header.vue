@@ -107,7 +107,7 @@
           >
         
              <div class="relative mx-2 mt-2 cursor-pointer hover:opacity-90 py-2">
-              <p >{{ companyName }}</p>
+              <p >{{ contactName }}</p>
             </div>
 
             <div @click="gestion = false" class="relative mx-2 mt-2 cursor-pointer hover:opacity-90 py-2" >

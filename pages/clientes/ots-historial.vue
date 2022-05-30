@@ -126,10 +126,12 @@
           Ventas          : [],
           showBtnAnimation: false,
           formParams: {
-              idTercero:0,
-              fechaIni: '',
-              fechaFin:'',
-              userCripack: false
+              idTercero      : 0,
+              fechaIni       : '',
+              fechaFin       : '',
+              userCripack    : false,
+              vendedor       : false,
+              uso_web_empresa: false
           },
           spiner: true
         };
@@ -138,30 +140,32 @@
         this.fechaIni = Moment().subtract(30,'d').format('YYYY-MM-DD');
         this.fechaFin = Moment().format('YYYY-MM-DD');
         this.getOts();
-        this.showBtnAnimation    = false;
+        this.showBtnAnimation = false;
       },
 
     methods: {
             getOts() {
+              this.Ventas = [];
               this.getParams();
               Terceros.historialVentas(this.formParams)
               .then(response => {
-                  this.Ventas = response.data.data;
+                  
+                  this.Ventas           = response.data;
                   this.showBtnAnimation = false;
-                  this.spiner = false
+                  this.spiner           = false
                 }
               ); 
               
             },
             getParams() {
-                  this.formParams.fechaFin    = this.fechaFin +' 23:59:59';
-                  this.formParams.fechaIni    = this.fechaIni +' 00:01:01';
-                  this.formParams.idTercero   = this.$cookies.get("User").idtercero;
-                  this.formParams.userCripack = this.$cookies.get("User").uso_web_empresa;
-                  this.showBtnAnimation     = true;
-                  this.spiner = true
-                  
-                  
+                  this.formParams.fechaFin        = this.fechaFin +' 23:59:59';
+                  this.formParams.fechaIni        = this.fechaIni +' 00:01:01';
+                  this.formParams.idTercero       = this.$cookies.get("User").idtercero;
+                  this.formParams.userCripack     = this.$cookies.get("User").uso_web_empresa;
+                  this.formParams.vendedor        = this.$cookies.get("User").vendedor;
+                  this.formParams.uso_web_empresa = this.$cookies.get("User").uso_web_empresa; // userCripack
+                  this.showBtnAnimation           = true;
+                  this.spiner                     = true     
             },
            
     },
