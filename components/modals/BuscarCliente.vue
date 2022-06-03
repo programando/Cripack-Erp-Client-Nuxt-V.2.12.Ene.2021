@@ -1,13 +1,12 @@
 <template>
-  <div class="fixed inset-0 z-10 ">
+  <div class="absolute inset-0 z-10 items-center justify-center ">
     <div class="px-4 pt-4 pb-20 text-center sm:block sm:p-0">
       <div
-        class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75"
+        class="absolute items-center justify-center inset-0 transition-opacity bg-gray-500 bg-opacity-75"
         aria-hidden="true"
-      ></div>
-
-      <div
-        class="relative inline-block w-11/12 md:w-9/12 lg:w-6/12 transition-all transform bg-white rounded-lg shadow-xl top-60"
+      >
+        <div
+        class="relative inline-block w-11/12 md:w-9/12 lg:w-6/12 transition-all transform bg-white rounded-lg shadow-xl top-32"
       >
         <div class="px-4 pt-5 pb-4 bg-white">
           <div class="">
@@ -66,6 +65,10 @@
           </button>
         </div>
       </div>
+      
+      </div>
+
+      
     </div>
   </div>
 </template>
