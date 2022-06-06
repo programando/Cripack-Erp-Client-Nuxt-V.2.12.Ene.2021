@@ -62,10 +62,8 @@
             </div>  
           </div>
           <div class="flex justify-center  mt-20 mb-2 space-x-4">
-            <a @click="sendTextToTranscript (largo)" class="px-2 text-sm  py-1 text-azul border border-azul hover:text-white hover:bg-azul rounded cursor-pointer">Braille impreso en largo</a>
-            <!-- 
-            <a @click="sendTextToTranscript (ancho)" class="px-2 text-sm  py-1 text-azul border border-azul hover:text-white hover:bg-azul rounded cursor-pointer">Braille impreso en ancho</a>
-            -->
+            <a @click="sendTextToTranscript ('largo')" class="px-2 text-sm  py-1 text-azul border border-azul hover:text-white hover:bg-azul rounded cursor-pointer">Braille impreso en largo</a>
+            <a @click="sendTextToTranscript ('ancho')" class="px-2 text-sm  py-1 text-azul border border-azul hover:text-white hover:bg-azul rounded cursor-pointer">Braille impreso en ancho</a>            
           </div>
         </div>
         <div class="flex justify-center pb-4 mt-10 lg:mt-4">
@@ -91,6 +89,8 @@
                 <p class="px-2 py-1 text-azul">Largo: <span class=" text-azul py-1 px-4 ">{{ formData.largo }}</span></p>
                 <p class="px-2 py-1 text-azul">Ancho: <span class=" text-azul py-1 px-4  ">{{ formData.ancho }}</span></p>
                 <p class="px-2 py-1 text-azul">Alto: <span class=" text-azul py-1 px-4  ">{{ formData.alto }}</span></p>
+                <p class="px-2 py-1 text-azul">Texto impreso en: <span class=" text-azul py-1 px-4  "><strong>{{ formData.imprimirEn | Capitalize}} </strong></span></p>
+                
               </div>
 
 
@@ -101,7 +101,7 @@
                   <div>
                     <div class="px-3 py-1 border w-96">Cantidad máxima de caracteres </div>
                     <div class="px-3 py-1 border w-96">Cantidad máxima de filas </div>
-                    <div class="px-3 py-1 border w-96">Cantidad total caracteres del texto </div>
+                    <div class="px-3 py-1 border w-96">Cantidad total símbolos del texto </div>
                   </div>
                   <div>
                     <div class="w-20 px-3 py-1 border text-center">{{ MC_Tabla1 }}</div>
@@ -231,7 +231,7 @@ export default {
       this.PalabrasTabla1      = [];
       this.PalabrasTabla2      = [];
       Braile.SendTextToTranscript(this.formData).then(response => {
-  
+        
         response.data.map(item => {
           if (item.cara == "cara1") {
             this.PalabrasTabla1.push(item);
