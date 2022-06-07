@@ -258,7 +258,7 @@
                 'extra_cupo' : 0,
                 'dia_limite_recibe_facturas' : 0,
             },
-            historialVisitas:[],
+            historialVisitas:[{'siguiente_paso' : '', 'resultados' :'' }],
             ultimasCincoCompras:[],
             idTerceroVendedor:0,
           };
@@ -283,6 +283,7 @@
               }
               this.registrarVisita = true;
           } ,
+
           sendRegistroVisita ( registroVisita ){
               this.detalleVisita = true;
               this.registroVisita = registroVisita;
@@ -296,9 +297,11 @@
           },
 
           getIdTerceroCliente( CodTercero ) {
+            
             if ( CodTercero == -1) { this.buscarCliente = false ; return;   }
-                TercerosClientes.buscarPorCodigo (CodTercero )
+                TercerosClientes.buscarPorCodigo (CodTercero,  this.idTerceroVendedor  )
                 .then( response => {
+
                     this.setDataResponse ( response.data[0]);
                     this.buscarCliente = false 
                 })
@@ -307,7 +310,9 @@
           getUltimasVisitasCliente ( Idtercero ) {
               TercerosClientes.ultimasVisitas (Idtercero )
               .then ( response => {
-                  this.historialVisitas = response.data ;
+                 if ( response.data.length > 0 ){
+                    this.historialVisitas = response.data ;
+                 }
               })
           },
 

@@ -173,8 +173,13 @@
       name: 'RegistarVisita',
          props: {
           datosCliente: { type: Object, default: () => ({}),},
-          datosVisita: Array
-        },
+           datosVisita: {
+              type: Array,
+                 default: () => [
+                    {'siguiente_paso' : '', 'resultados' :'' }
+                ],
+               },
+      },
           mixins: [Messages],
         data:()=> ({
             formData: {
