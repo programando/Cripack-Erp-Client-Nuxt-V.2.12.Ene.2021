@@ -123,10 +123,18 @@
             <div class="flex items-center justify-between mx-4 mt-10">
               <h2  class="text-sm font-semibold">Historial de visitas</h2>
 
-              <button @click="registrarNuevaVisita" class="flex items-center space-x-2" >
-                <img class="h-8 ml-5" src="/images/registros.png" alt="" />
-                <p class="text-sm">Registrar nueva visita</p>
-              </button>
+              <div class="flex">
+                <button @click="carteraCliente = true" class="flex items-center space-x-2" >
+                  <img class="h-8 ml-5" src="/images/pesos.png" alt="" />
+                  <p class="text-sm">Cartera del Cliente</p>
+                </button>
+                <button @click="registrarNuevaVisita" class="flex items-center space-x-2" >
+                  <img class="h-8 ml-5" src="/images/registros.png" alt="" />
+                  <p class="text-sm">Registrar nueva visita</p>
+                </button>
+              </div>
+
+              
 
             </div>
             <div class="mx-4 mt-4 alto-table">
@@ -206,6 +214,10 @@
       <RegistrarVisita @closeRegistrarVisita = 'closeRegistrarVisita' @visitaGrabada = 'visitaGrabada' :datosCliente="formCliente" :datosVisita="historialVisitas"/>
     </div>
     
+    <!-- modal cartera cliente -->
+    <div v-if="carteraCliente">
+      <CarteraCliente @closeCarteraCliente = 'closeCarteraCliente'  />
+    </div>
 
     <!-- modal buscarCliente -->
     <div v-if="buscarCliente">
@@ -225,6 +237,7 @@
       import TercerosClientes from '@/models/Terceros';
       import BuscarCliente from '@/components/modals/BuscarCliente.vue'
       import RegistrarVisita from '@/components/modals/RegistrarVisita.vue'
+      import CarteraCliente from '@/components/modals/CarteraCliente.vue'
       import DetalleVisita from '@/components/modals/DetalleVisita.vue'
       import Messages           from "@/mixins/sweetalert2";
       var Numeral = require("numeral");
@@ -234,7 +247,8 @@
         components: {
           BuscarCliente,
           RegistrarVisita,
-          DetalleVisita
+          DetalleVisita,
+          CarteraCliente
         },
         mixins: [ Messages],
         data() {
@@ -242,6 +256,7 @@
             registrarVisita: false,
             buscarCliente: false,
             detalleVisita : false,
+            carteraCliente: true,
             codigo_tercero:'',
             registroVisita:{},
             formCliente : {
@@ -283,6 +298,8 @@
               }
               this.registrarVisita = true;
           } ,
+
+
 
           sendRegistroVisita ( registroVisita ){
               this.detalleVisita = true;
@@ -333,6 +350,10 @@
 
           closeDetalleVisita() {
             this.detalleVisita = false
+          },
+
+          closeCarteraCliente() {
+            this.carteraCliente = false
           },
 
           setDataResponse ( data ) {
