@@ -115,6 +115,26 @@
                   />
                 </div>
               </div>
+              <div class="mt-4 text-sm flex items-center space-x-10 flex-wrap mx-20 lg:mx-0">
+                <p class="py-1">Documentos exigidos para el pago de productos: </p>
+                <div class="py-1">
+                  <input type="checkbox" name="" id="ordenCompra">
+                  <label for="ordenCompra">Ord. Compra</label>
+                </div>
+                <div class="py-1">
+                  <input type="checkbox" name="" id="remision">
+                  <label for="remision">Remisión</label>
+                </div>
+                <div class="py-1">
+                  <input type="checkbox" name="" id="factura">
+                  <label for="factura">Factura</label>
+                </div>
+                <div class="py-1">
+                  <input type="checkbox" name="" id="certificadoCalidad">
+                  <label for="certificadoCalidad">Certificado de Calidad</label>
+                </div>
+                
+              </div>
             </div>
             
  
@@ -256,7 +276,7 @@
             registrarVisita: false,
             buscarCliente: false,
             detalleVisita : false,
-            carteraCliente: true,
+            carteraCliente: false,
             codigo_tercero:'',
             registroVisita:{},
             formCliente : {
