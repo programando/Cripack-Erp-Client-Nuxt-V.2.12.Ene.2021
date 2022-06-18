@@ -117,20 +117,20 @@
               </div>
               <div class="mt-4 text-sm flex items-center space-x-10 flex-wrap mx-20 lg:mx-0">
                 <p class="py-1">Documentos exigidos para el recibo de productos : </p>
-                <div class="py-1">
-                  <input type="checkbox" name="" id="ordenCompra" disabled v-model="formCliente.rbo_prdcto_exg_oc">
+                <div class="py-1 flex items-center space-x-2">
+                  <input class="h-5 w-5 rounded-full" disabled type="checkbox" name="" id="ordenCompra"  v-model="formCliente.rbo_prdcto_exg_oc">
                   <label for="ordenCompra">Ord. Compra</label>
                 </div>
-                <div class="py-1">
-                  <input type="checkbox" name="" id="remision" disabled v-model="formCliente.rbo_prdcto_exg_rem" >
+                <div class="py-1 flex items-center space-x-2">
+                  <input class="h-5 w-5 rounded-full" disabled type="checkbox" name="" id="remision"  v-model="formCliente.rbo_prdcto_exg_rem" >
                   <label for="remision">Remisión</label>
                 </div>
-                <div class="py-1">
-                  <input type="checkbox" name="" id="factura" disabled v-model="formCliente.rbo_prdcto_exg_cert_cldad"  >
+                <div class="py-1 flex items-center space-x-2">
+                  <input class="h-5 w-5 rounded-full" disabled type="checkbox" name="" id="factura"  v-model="formCliente.rbo_prdcto_exg_cert_cldad"  >
                   <label for="factura">Factura</label>
                 </div>
-                <div class="py-1">
-                  <input type="checkbox" name="" id="certificadoCalidad" disabled v-model="formCliente.rbo_prdcto_exg_fac" >
+                <div class="py-1 flex items-center space-x-2">
+                  <input class="h-5 w-5 rounded-full" disabled type="checkbox" name="" id="certificadoCalidad"  v-model="formCliente.rbo_prdcto_exg_fac" >
                   <label for="certificadoCalidad">Certificado de Calidad</label>
                 </div>
                 
