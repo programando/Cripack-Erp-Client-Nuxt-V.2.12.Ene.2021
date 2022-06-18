@@ -231,8 +231,11 @@ export default {
       this.PalabrasTabla1      = [];
       this.PalabrasTabla2      = [];
       Braile.SendTextToTranscript(this.formData).then(response => {
-        
-        response.data.map(item => {
+        if ( response.data.result != 'Ok' ){
+            this.Message('Error!', 'Las medidas especificadas no permiten la impresión braille.', 'error','Cerrar');
+          return ;
+        }
+        response.data.data.map(item => {
           if (item.cara == "cara1") {
             this.PalabrasTabla1.push(item);
             this.MC_Tabla1 = item.MC;

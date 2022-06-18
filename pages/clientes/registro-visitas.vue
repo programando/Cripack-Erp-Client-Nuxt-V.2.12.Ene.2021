@@ -116,21 +116,21 @@
                 </div>
               </div>
               <div class="mt-4 text-sm flex items-center space-x-10 flex-wrap mx-20 lg:mx-0">
-                <p class="py-1">Documentos exigidos para el pago de productos: </p>
+                <p class="py-1">Documentos exigidos para el recibo de productos : </p>
                 <div class="py-1">
-                  <input type="checkbox" name="" id="ordenCompra">
+                  <input type="checkbox" name="" id="ordenCompra" disabled v-model="formCliente.rbo_prdcto_exg_oc">
                   <label for="ordenCompra">Ord. Compra</label>
                 </div>
                 <div class="py-1">
-                  <input type="checkbox" name="" id="remision">
+                  <input type="checkbox" name="" id="remision" disabled v-model="formCliente.rbo_prdcto_exg_rem" >
                   <label for="remision">Remisión</label>
                 </div>
                 <div class="py-1">
-                  <input type="checkbox" name="" id="factura">
+                  <input type="checkbox" name="" id="factura" disabled v-model="formCliente.rbo_prdcto_exg_cert_cldad"  >
                   <label for="factura">Factura</label>
                 </div>
                 <div class="py-1">
-                  <input type="checkbox" name="" id="certificadoCalidad">
+                  <input type="checkbox" name="" id="certificadoCalidad" disabled v-model="formCliente.rbo_prdcto_exg_fac" >
                   <label for="certificadoCalidad">Certificado de Calidad</label>
                 </div>
                 
@@ -280,18 +280,22 @@
             codigo_tercero:'',
             registroVisita:{},
             formCliente : {
-                'idtercero': 0,
-                'codigo_tercero' : '',
-                'nomtercero' : '',
-                'nommcipio' : '',
-                'contacto' : '',
-                'nomvendedor' : '',
-                'contacto_pagos' : '',
-                'cupo_credito' : 0,
-                'contacto_pagos_celular' : '',
-                'contacto_pagos_email' : '',
-                'extra_cupo' : 0,
-                'dia_limite_recibe_facturas' : 0,
+                'idtercero'                 : 0,
+                'codigo_tercero'            : '',
+                'nomtercero'                : '',
+                'nommcipio'                 : '',
+                'contacto'                  : '',
+                'nomvendedor'               : '',
+                'contacto_pagos'            : '',
+                'cupo_credito'              : 0,
+                'contacto_pagos_celular'    : '',
+                'contacto_pagos_email'      : '',
+                'extra_cupo'                : 0,
+                'dia_limite_recibe_facturas': 0,
+                'rbo_prdcto_exg_oc'         : false,
+                'rbo_prdcto_exg_fac'        : false,
+                'rbo_prdcto_exg_rem'        : false,
+                'rbo_prdcto_exg_cert_cldad' : false
             },
             historialVisitas:[{'siguiente_paso' : '', 'resultados' :'' }],
             ultimasCincoCompras:[],
@@ -300,6 +304,7 @@
         },
         mounted() {
             this.idTerceroVendedor = this.$cookies.get("User").idtecero_vendedor;
+   
         },
 
         methods: {
@@ -389,6 +394,11 @@
                 this.formCliente.contacto_pagos_email       = data.contacto_pagos_email;
                 this.formCliente.extra_cupo                 = Numeral(data.extra_cupo).format('0,0');
                 this.formCliente.dia_limite_recibe_facturas = data.dia_limite_recibe_facturas;
+                this.formCliente.rbo_prdcto_exg_oc          = data.rbo_prdcto_exg_oc;
+                this.formCliente.rbo_prdcto_exg_fac         = data.rbo_prdcto_exg_fac;
+                this.formCliente.rbo_prdcto_exg_rem         = data.rbo_prdcto_exg_rem;
+                this.formCliente.rbo_prdcto_exg_cert_cldad  = data.rbo_prdcto_exg_cert_cldad;
+ 
                 this.getUltimasVisitasCliente ( data.idtercero ) ;
                 this.getUltimasCincoCompras   ( data.idtercero ) ;
           }

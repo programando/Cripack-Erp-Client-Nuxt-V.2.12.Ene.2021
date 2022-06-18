@@ -29,11 +29,11 @@ module.exports = {
         'leading-2': '.80rem',
         'leading-1': '.60rem',
        },
-      
+      //azul              : '#20286d'
       colors: {
         amarillo          : '#FFFD7C',
-        azul              : '#20286d',
-        azulBackGroundForm: '#16182f',
+        azul              : '#002C76',
+        azulBackGroundForm: '#16182f', 
         azulClaro         : '#286090',
         celeste           : '#2E9AFE',
         celesteClaro      : '#00b4e9',
