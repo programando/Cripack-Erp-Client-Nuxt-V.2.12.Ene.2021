@@ -6,6 +6,7 @@ export default {
   async ultimasCincoCompras( IdTercero ) {
     return Api.post("clientes/ultimas/cinco/compras", { 'idtercero' :IdTercero } ) ;
   },
+
   async ultimasVisitas( IdTercero ) {
     return Api.post("clientes/ultimas/visitas", { 'idtercero' :IdTercero } ) ;
   },
@@ -35,4 +36,5 @@ export default {
     return await Api.post("clientes/ots/estado",   formData       ) ;
   },
 
+  // Esta es una prueba.
 }
