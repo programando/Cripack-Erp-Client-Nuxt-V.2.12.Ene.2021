@@ -115,21 +115,21 @@
                   />
                 </div>
               </div>
-              <div class="mt-4 text-sm flex items-center space-x-10 flex-wrap mx-20 lg:mx-0">
+              <div class="mt-4 text-sm flex items-center space-x-10 flex-wrap mx-20 lg:mx-0 formulario">
                 <p class="py-1">Documentos exigidos para el recibo de productos : </p>
-                <div class="py-1 flex items-center space-x-2">
+                <div class="py-1 flex items-center space-x-2 checkbox">
                   <input class="h-5 w-5 rounded-full" disabled type="checkbox" name="" id="ordenCompra"  v-model="formCliente.rbo_prdcto_exg_oc">
                   <label for="ordenCompra">Ord. Compra</label>
                 </div>
-                <div class="py-1 flex items-center space-x-2">
+                <div class="py-1 flex items-center space-x-2 checkbox">
                   <input class="h-5 w-5 rounded-full" disabled type="checkbox" name="" id="remision"  v-model="formCliente.rbo_prdcto_exg_rem" >
                   <label for="remision">Remisión</label>
                 </div>
-                <div class="py-1 flex items-center space-x-2">
+                <div class="py-1 flex items-center space-x-2 checkbox">
                   <input class="h-5 w-5 rounded-full" disabled type="checkbox" name="" id="factura"  v-model="formCliente.rbo_prdcto_exg_cert_cldad"  >
                   <label for="factura">Factura</label>
                 </div>
-                <div class="py-1 flex items-center space-x-2">
+                <div class="py-1 flex items-center space-x-2 checkbox">
                   <input class="h-5 w-5 rounded-full" disabled type="checkbox" name="" id="certificadoCalidad"  v-model="formCliente.rbo_prdcto_exg_fac" >
                   <label for="certificadoCalidad">Certificado de Calidad</label>
                 </div>
@@ -448,5 +448,71 @@
     width: 1700px;
   }
 }
+
+
+
+
+/* checkbox */
+.formulario h2 {
+    font-size: 16px;
+    color: #001F3F;
+    margin-bottom: 20px;
+    margin-left: 20px; 
+}
+
+.formulario > div {
+    padding: 20px 0;
+    
+}
+  
+  .formulario .checkbox label {
+    display: inline-block;
+    cursor: pointer;
+    color: #002C76;
+    position: relative;
+    padding: 5px 15px 5px 51px;
+    font-size: 1em;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; 
+  }
+
+  
+  .formulario .checkbox label:hover {
+      background: rgba(255, 65, 54, 0.1); 
+  }
+
+  
+  .formulario .checkbox label:before {
+      content: "";
+      display: inline-block;
+      width: 17px;
+      height: 17px;
+      position: absolute;
+      left: 15px;
+      border-radius: 50%;
+      background: none;
+      border: 3px solid #002C76;
+  }
+
+
+  .formulario .checkbox label:before {
+    border-radius: 3px;
+  }
+
+  .formulario .checkbox input[type="checkbox"] {
+    display: none;   
+  }
+
+  .formulario .checkbox input[type="checkbox"]:checked + label:before {
+    display: none;
+  }
+
+  .formulario .checkbox input[type="checkbox"]:checked + label {
+    background: #002C76;
+    color: #fff;
+    padding: 5px 15px; 
+  }
 
 </style>

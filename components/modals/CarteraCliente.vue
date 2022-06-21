@@ -7,6 +7,7 @@
           <h2 class="text-2xl font-semibold text-center">
             Cartera Clientes
           </h2>
+          <p class="text-center">Últim. actualizacion: {{ fecha }}</p>
           <button @click="carteraClienteClose">
             <img
               class="absolute h-8 top-2 right-3"
@@ -18,22 +19,22 @@
             <table class="w-full border-t">
                 <thead class="w-full border ">
                   <tr class="w-full bg-white text-azul ">
-                    <th class="w-28 md:w-32 text-xs lg:text-base border px-2 py-1">Fecha </th>
-                    <th class="w-16 md:w-20 text-xs lg:text-base border px-2 py-1">Tipo</th>
-                    <th class="w-20 md:w-24 text-xs lg:text-base border px-2 py-1">Documento </th>
-                    <th class="w-16 md:w-20 text-xs lg:text-base border px-2 py-1">Plazo</th>
-                    <th class="w-16 md:w-20 text-xs lg:text-base border px-2 py-1">Días</th>
-                    <th class="w-24 md:w-28 text-xs lg:text-base border px-2 py-1">Vr.Cartera</th>
+                    <th class="w-28 md:w-32 text-xs  border px-2 py-1">Fecha </th>
+                    <th class="w-16 md:w-20 text-xs  border px-2 py-1">Tipo</th>
+                    <th class="w-20 md:w-24 text-xs  border px-2 py-1">Documento </th>
+                    <th class="w-16 md:w-20 text-xs  border px-2 py-1">Plazo</th>
+                    <th class="w-16 md:w-20 text-xs  border px-2 py-1">Días</th>
+                    <th class="w-24 md:w-28 text-xs  border px-2 py-1">Vr.Cartera</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="">
-                    <td class="w-28 px-4 py-1 text-xs lg:text-base border text-azul">24/08/2021</td>
-                    <td class="w-16 px-4 py-1 text-xs lg:text-base text-left border">FE</td>
-                    <td class="w-20 px-4 py-1 text-xs lg:text-base text-left border">004535</td>
-                    <td class="w-16 px-4 py-1 text-xs lg:text-base text-left border">01</td>
-                    <td class="w-16 px-4 py-1 text-xs lg:text-base text-left border">292</td>
-                    <td class="w-24 px-4 py-1 text-xs lg:text-base text-left border">450,177</td>
+                  <tr v-for="factura in facturas" :key="factura.idregistro"  class="">
+                    <td class="w-28 px-4 py-1 text-xs border text-azul">{{ factura.fcha_doc}}</td>
+                    <td class="w-16 px-4 py-1 text-xs text-left border">{{ factura.tp_doc }}</td>
+                    <td class="w-20 px-4 py-1 text-xs text-left border">{{ factura.nro_doc   }}</td>
+                    <td class="w-16 px-4 py-1 text-xs text-left border">{{ factura.plazo   }}</td>
+                    <td class="w-16 px-4 py-1 text-xs text-left border">{{ factura.dias_vencida   }}</td>
+                    <td class="w-24 px-4 py-1 text-xs text-left border">{{ factura.valor_cartera  }}</td>
                   </tr>
                 </tbody>
               </table>
@@ -59,12 +60,17 @@
 export default {
 
   name: 'CarteraCliente',
-
+  data() {
+    return {
+      facturas: [],
+      fecha: ''
+    }
+  },
 
   mounted() {
     Terceros.carteraPorCliente('811003895')
     .then( response => {
-        console.log ( response.data);
+        this.facturas = response.data
     })
   },
 
@@ -73,6 +79,14 @@ export default {
           this.$emit('closeCarteraCliente')
         },
   },
+
+  computed: {
+    actFecha(){
+      this.fecha = this.facturas[0].update_at
+    }
+  },
+
+  
 }
 </script>
 <style>
