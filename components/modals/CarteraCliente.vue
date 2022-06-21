@@ -40,7 +40,7 @@
               <div class="">
                 <div class="flex justify-end space-x-20 border py-1 pr-4">
                   <p class="text-azul font-semibold">Cartera</p>
-                  <p class="text-azul font-semibold">Vendido</p>
+                  <p class="text-azul font-semibold">Vencido</p>
                 </div>
                 <div class="flex justify-end space-x-12 border py-1 pr-4">
                   <p>Totales</p>
@@ -54,8 +54,19 @@
     </div>
 </template>
 <script>
+  import  Terceros from "@/models/Terceros";
+
 export default {
+
   name: 'CarteraCliente',
+
+
+  mounted() {
+    Terceros.carteraPorCliente('811003895')
+    .then( response => {
+        console.log ( response.data);
+    })
+  },
 
   methods: {
     carteraClienteClose() {

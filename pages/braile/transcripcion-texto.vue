@@ -12,13 +12,13 @@
             >
             <div class="flex justify-center">
               <InputBasic
-              @keydown="clearErrors"
-              borderColor="extra"
-              colorError="red"
-              type="text"
-              v-model="formData.texto"
-              width="w-96"
-              isUppercase="uppercase"
+              @keydown    = "clearErrors"
+              borderColor = "extra"
+              colorError  = "red"
+              type        = "text"
+              v-model     = "formData.texto"
+              width       = "w-96"
+              isUppercase = "uppercase"
               ></InputBasic>
             </div>
             
@@ -28,12 +28,12 @@
               <div class="flex justify-center mt-2 mr-2">
                 <label class="w-16">Largo :</label>
                 <InputBasic
-                  @keydown="clearErrors"
-                  borderColor="extra"
-                  colorError="red"
-                  type="number"
-                  v-model="formData.largo"
-                  width="w-20"
+                  @keydown    = "clearErrors"
+                  borderColor = "extra"
+                  colorError  = "red"
+                  type        = "number"
+                  v-model     = "formData.largo"
+                  width       = "w-20"
                 ></InputBasic>
               </div>
               <div class="flex justify-center mt-2 mr-2">
