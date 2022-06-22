@@ -133,16 +133,12 @@
                   <input class="h-5 w-5 rounded-full" disabled type="checkbox" name="" id="certificadoCalidad"  v-model="formCliente.rbo_prdcto_exg_fac" >
                   <label for="certificadoCalidad">Certificado de Calidad</label>
                 </div>
-                
               </div>
             </div>
-            
- 
           </div>
           <div>
             <div class="flex items-center justify-between mx-4 mt-10">
               <h2  class="text-sm font-semibold">Historial de visitas</h2>
-
               <div class="flex">
                 <button @click="carteraCliente = true" class="flex items-center space-x-2" >
                   <img class="h-8 ml-5" src="/images/pesos.png" alt="" />
@@ -153,9 +149,6 @@
                   <p class="text-sm">Registrar nueva visita</p>
                 </button>
               </div>
-
-              
-
             </div>
             <div class="mx-4 mt-4 alto-table">
               <table class="w-full border-t">
