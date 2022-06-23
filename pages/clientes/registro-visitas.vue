@@ -140,10 +140,12 @@
             <div class="flex items-center justify-between mx-4 mt-10">
               <h2  class="text-sm font-semibold">Historial de visitas</h2>
               <div class="flex">
-                <button @click="carteraCliente = true" class="flex items-center space-x-2" >
+                
+                <button @click="showCarteraCliente" class="flex items-center space-x-2" >
                   <img class="h-8 ml-5" src="/images/pesos.png" alt="" />
                   <p class="text-sm">Cartera del Cliente</p>
                 </button>
+
                 <button @click="registrarNuevaVisita" class="flex items-center space-x-2" >
                   <img class="h-8 ml-5" src="/images/registros.png" alt="" />
                   <p class="text-sm">Registrar nueva visita</p>
@@ -301,6 +303,13 @@
         },
 
         methods: {
+            showCarteraCliente() {
+              if ( this.clienteIsSelected() == false ) {
+                  return ;
+              }
+              this.carteraCliente = true
+            },
+
             visitaGrabada() {
               this.formCliente         = {};
               this.registroVisita      = [];
@@ -310,14 +319,19 @@
               this.codigo_tercero      = '';
             },
           registrarNuevaVisita() {
-              if ( this.formCliente.idtercero === 0   ) {
-                  this.$swal('Consulte uno de los clientes para continuar!');
-                  return;
+              if ( this.clienteIsSelected() == false ) {
+                  return ;
               }
               this.registrarVisita = true;
           } ,
 
-
+          clienteIsSelected() { 
+            if ( this.formCliente.idtercero === 0   ) {
+                  this.$swal('Consulte uno de los clientes para continuar!');
+                  return false;
+              }
+             return true;
+            },
 
           sendRegistroVisita ( registroVisita ){
               this.detalleVisita = true;
