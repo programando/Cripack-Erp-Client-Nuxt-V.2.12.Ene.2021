@@ -4,7 +4,7 @@
       class="fixed z-50 flex items-center justify-between w-full mt-0 bg-azul "
     >
       <div class="flex">
-        <img class="lg:h-16 h-10 lg:ml-4 min-w-24" src="/images/logoCripack.png" alt="" />
+        <img class="lg:h-16 h-10 lg:ml-4 min-w-24" src="/images/LogoCripaack.png" alt="" />
       </div>
       <div class="flex items-center justify-end mr-4 space-x-8"  v-on-clickaway="closeMenu">
         <NavLinks text="Historial" to="/clientes/ots-historial" />
