@@ -76,13 +76,13 @@
 export default {
   name: "CalendarioCustom",
   props: {
-    fecha: String,
-    laborAm: String,
-    laborPm: String,
+    fecha    : String,
+    laborAm  : String,
+    laborPm  : String,
     detalleAm: String,
     detallePm: String,
-    estadoAm: String,
-    estadoPm: String
+    estadoAm : String,
+    estadoPm : String
   },
 
   data() {

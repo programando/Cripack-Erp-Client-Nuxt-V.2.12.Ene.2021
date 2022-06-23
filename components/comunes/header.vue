@@ -52,6 +52,8 @@
 
          
 
+   
+
 
             <div
               @click="menu = false"
@@ -61,6 +63,7 @@
                 >Transcriptor Braile</nuxt-link
               >
             </div>
+
             <div
               @click="menu = false"
               class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"
