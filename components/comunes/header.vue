@@ -110,7 +110,7 @@
 
         <div class="relative text-white">
           <button @click="viewUser" class="px-2 text-sm ">
-            <img class="w-24 h-10" src="/images/logoCripack.png" alt="logo">
+            <img class="w-24 h-10" src="/images/LogoCripaack.png" alt="logo">
           </button>
           <div
             v-if="userOptions"
