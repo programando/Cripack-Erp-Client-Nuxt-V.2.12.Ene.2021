@@ -59,8 +59,13 @@ export default {
       TercerosClientes.agendaAsistenciaMaquinasMesAnio ( 6, 2022)
         .then( response=> {
               this.dias = response.data
+              
         }
      )
+
+    const fecha = new Date()
+    this.anio = fecha.getFullYear()
+    this.mes = fecha.getMonth() + 1
   }
 }
 </script>
