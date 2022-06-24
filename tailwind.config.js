@@ -33,7 +33,7 @@ module.exports = {
       colors: {
         amarillo          : '#FFFD7C',
         azul              : '#002C76',
-        azulBackGroundForm: '#16182f', 
+        azulBackGroundForm: '#16182f',
         azulClaro         : '#286090',
         celeste           : '#2E9AFE',
         celesteClaro      : '#00b4e9',
@@ -41,8 +41,8 @@ module.exports = {
         rojo              : '#FF0000',
         verde             : '#1EFF37',
         verdeOscuro       : '#008f39',
-        calendarioAmarillo     : '#E4FF23',
-        calendarioVerde        : '#0FC46A'
+        calendarioAmarillo: '#FCFCE5',
+        calendarioVerde   : '#8DFB41'
       },
       
      
