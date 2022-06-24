@@ -25,7 +25,7 @@
       </div>
       
     </div>
-    <div class="flex mx-4 flex-wrap">
+    <div class="container flex mx-auto flex-wrap">
       <ProgramacionAsistenciaMaquinas
         v-for="dia in dias"
         :key="dia.dia"

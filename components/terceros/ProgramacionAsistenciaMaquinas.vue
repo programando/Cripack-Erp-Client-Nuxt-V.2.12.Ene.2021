@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="border mr-2">
-      <h2 class="bg-azul text-white w-40 text-center py-1">{{ data.cfecha }}</h2>
+      <h2 class="bg-azul text-white w-40 text-center py-1 text-sm">{{ data.cfecha }}</h2>
       <!-- estado am -->
       <button v-if="data.estado_am == 'DISPONIBLE' " @click="modalAm = true" class="w-40 block h-16 border border-b border-t" :class="[setColorAm]" >
         <div class="text-xs" >{{data.texto_am}}</div>
