@@ -27,7 +27,7 @@ export default {
   mounted() {
       TercerosClientes.agendaAsistenciaMaquinasMesAnio ( 6, 2022)
         .then( response=> {
-              console.log(response.data)
+              console.log(response.data);
         }
      )
   }
