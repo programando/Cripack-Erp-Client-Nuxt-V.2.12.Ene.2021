@@ -74,7 +74,7 @@
 
 <script>
 export default {
-  name: "CalendarioCustom",
+  name: "ProgramacionAsistenciaMaquinas",
   props: {
     fecha    : String,
     laborAm  : String,

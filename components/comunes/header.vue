@@ -68,8 +68,8 @@
               @click="menu = false"
               class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"
             >
-              <nuxt-link to="/clientes/calendario"
-                >Calendario</nuxt-link
+              <nuxt-link to="/clientes/agendamiento-asistencia"
+                >Agendamiento asistencia</nuxt-link
               >
             </div>
  

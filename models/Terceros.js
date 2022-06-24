@@ -3,6 +3,12 @@ import Api  from "@/config/Axios";
 export default {
   
 
+  async agendaAsistenciaMaquinasMesAnio( idmes,anio ) {
+    return await Api.post("/agendamiento/asistencia", { 'idmes' :idmes, 'anio' :anio } ) ;
+  },
+
+
+
   async carteraPorCliente( NitCliente ) {
     return await Api.post("/SqlServer/cartera", { 'Nit_Tercero' :NitCliente } ) ;
   },
