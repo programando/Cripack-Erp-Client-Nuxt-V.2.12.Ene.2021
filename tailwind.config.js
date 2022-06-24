@@ -40,7 +40,9 @@ module.exports = {
         gris              : '#EAEAEA',
         rojo              : '#FF0000',
         verde             : '#1EFF37',
-        verdeOscuro      : '#008f39',
+        verdeOscuro       : '#008f39',
+        calendarioAmarillo     : '#E4FF23',
+        calendarioVerde        : '#0FC46A'
       },
       
      

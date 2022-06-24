@@ -49,7 +49,7 @@ export default {
 
   data() {
     return {
-      mes: "",
+      mes: 1,
       dias: [],
       anio: 0
     }

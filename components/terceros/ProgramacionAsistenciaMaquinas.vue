@@ -1,21 +1,21 @@
 <template>
   <div>
-    <div class="border">
-      <h2 class="bg-azul text-white w-44 text-center py-1">{{ data.fecha }}</h2>
+    <div class="border mr-2">
+      <h2 class="bg-azul text-white w-40 text-center py-1">{{ data.cfecha }}</h2>
       <!-- estado am -->
-      <button v-if="data.estado_am == 'DISPONIBLE' " @click="modalAm = true" class="w-44 block h-16 border border-b border-t" :class="[setColorAm]" >
-        <div class="text-xs" >{{data.actvdad_am}}</div>
+      <button v-if="data.estado_am == 'DISPONIBLE' " @click="modalAm = true" class="w-40 block h-16 border border-b border-t" :class="[setColorAm]" >
+        <div class="text-xs" >{{data.texto_am}}</div>
       </button>
-      <button v-else class="w-44 block h-16 border border-b border-t" :class="[setColorAm]" >
-        <div class="text-xs" >{{data.actvdad_am}}</div>
+      <button v-else class="w-40 block h-16 border border-b border-t" :class="[setColorAm]" >
+        <div class="text-xs" >{{data.texto_am}}</div>
       </button>
 
       <!-- estadopm -->
-      <button v-if="data.estado_pm == 'DISPONIBLE' " @click="modalPm = true" class="w-44 block h-16 border border-b border-t" :class="[setColorAm]" >
-        <div class="text-xs" >{{data.actvdad_pm}}</div>
+      <button v-if="data.estado_pm == 'DISPONIBLE' " @click="modalPm = true" class="w-40 block h-16 border border-b border-t" :class="[setColorAm]" >
+        <div class="text-xs" >{{data.texto_pm}}</div>
       </button>
-      <button v-else class="w-44 block h-16 border" :class="[setColorPm]">
-        <div class="text-xs" >{{data.actvdad_pm}}</div>
+      <button v-else class="w-40 block h-16 border" :class="[setColorPm]">
+        <div class="text-xs" >{{data.texto_pm}}</div>
       </button>
     </div>
 
@@ -99,10 +99,10 @@ export default {
     setColorAm() {
       switch (this.data.estado_am) {
         case "NO DISPONIBLE":
-          return "bg-yellow-200"
+          return "bg-calendarioAmarillo"
           break;
         case "RESERVADA":
-          return "bg-green-200"
+          return "bg-calendarioVerde"
         
         
       }
@@ -110,10 +110,10 @@ export default {
     setColorPm() {
       switch (this.data.estado_pm) {
         case "NO DISPONIBLE":
-          return "bg-yellow-200"
+          return "bg-calendarioAmarillo"
           break;
         case "RESERVADA":
-          return "bg-green-200"
+          return "bg-calendarioVerde"
         
         
       }
