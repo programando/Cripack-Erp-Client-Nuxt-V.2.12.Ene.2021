@@ -1,12 +1,21 @@
 <template>
   <div>
     <div class="border">
-      <h2 class="bg-azul text-white w-44 text-center py-1">{{ fecha }}</h2>
-      <button @click="modalAm = true" class="w-44 block h-16 border border-b border-t">
-        <div>{{laborAm}}</div>
+      <h2 class="bg-azul text-white w-44 text-center py-1">{{ data.fecha }}</h2>
+      <!-- estado am -->
+      <button v-if="data.estado_am == 'DISPONIBLE' " @click="modalAm = true" class="w-44 block h-16 border border-b border-t" :class="[setColorAm]" >
+        <div class="text-xs" >{{data.actvdad_am}}</div>
       </button>
-      <button @click="modalPm = true" class="w-44 block h-16 border">
-        <div>{{laborPm}}</div>
+      <button v-else class="w-44 block h-16 border border-b border-t" :class="[setColorAm]" >
+        <div class="text-xs" >{{data.actvdad_am}}</div>
+      </button>
+
+      <!-- estadopm -->
+      <button v-if="data.estado_pm == 'DISPONIBLE' " @click="modalPm = true" class="w-44 block h-16 border border-b border-t" :class="[setColorAm]" >
+        <div class="text-xs" >{{data.actvdad_pm}}</div>
+      </button>
+      <button v-else class="w-44 block h-16 border" :class="[setColorPm]">
+        <div class="text-xs" >{{data.actvdad_pm}}</div>
       </button>
     </div>
 
@@ -76,19 +85,38 @@
 export default {
   name: "ProgramacionAsistenciaMaquinas",
   props: {
-    fecha    : String,
-    laborAm  : String,
-    laborPm  : String,
-    detalleAm: String,
-    detallePm: String,
-    estadoAm : String,
-    estadoPm : String
+    data: Object
   },
 
   data() {
     return {
       modalAm: false,
       modalPm: false
+    }
+  },
+
+  computed: {
+    setColorAm() {
+      switch (this.data.estado_am) {
+        case "NO DISPONIBLE":
+          return "bg-yellow-200"
+          break;
+        case "RESERVADA":
+          return "bg-green-200"
+        
+        
+      }
+    },
+    setColorPm() {
+      switch (this.data.estado_pm) {
+        case "NO DISPONIBLE":
+          return "bg-yellow-200"
+          break;
+        case "RESERVADA":
+          return "bg-green-200"
+        
+        
+      }
     }
   },
 };
