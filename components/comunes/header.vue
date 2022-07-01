@@ -35,7 +35,7 @@
                   >Plano</nuxt-link
                 >
               
-              <!--  <nuxt-link
+               <!-- <nuxt-link
                   class="px-2 py-1 text-sm text-white"
                   to="/clientes/ordenes-trabajo/troquel-plano"
                   >Curvo</nuxt-link
@@ -64,7 +64,7 @@
               >
             </div>
 
-<!--
+
             <div
               @click="menu = false"
               class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"
@@ -73,7 +73,7 @@
                 >Agendamiento asistencia</nuxt-link
               >
             </div>
- -->
+
           </div>
         </div>
 
