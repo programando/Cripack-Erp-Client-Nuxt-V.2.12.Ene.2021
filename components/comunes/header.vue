@@ -64,7 +64,7 @@
               >
             </div>
 
-<!--
+ 
             <div
               @click="menu = false"
               class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"
@@ -73,7 +73,7 @@
                 >Agendamiento asistencia</nuxt-link
               >
             </div>
- -->
+ 
           </div>
         </div>
 

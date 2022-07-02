@@ -304,9 +304,9 @@
 
         methods: {
             showCarteraCliente() {
-              if ( this.clienteIsSelected() == false ) {
-                  return ;
-              }
+              //if ( this.clienteIsSelected() == false ) {
+                  //return ;
+              //}
               this.carteraCliente = true
             },
 

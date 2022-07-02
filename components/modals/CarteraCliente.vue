@@ -72,8 +72,9 @@ export default {
       vencido: 0
     }
   },
-
+//this.$cookies.get("User").identificacion
   mounted() {
+    //console.log ( this.$cookies.get("User").identificacion)
     Terceros.carteraPorCliente(this.$cookies.get("User").identificacion)
     .then( response => {
         this.facturas = response.data
