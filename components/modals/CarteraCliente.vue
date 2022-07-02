@@ -15,8 +15,8 @@
               alt=""
             />
           </button>
-          <div class="w-full alto-table2">
-            <table class="w-full border-t">
+          <div class="w-full">
+            <table class="w-full border-t alto-table2">
                 <thead class="w-full border table-sticky">
                   <tr class="w-full bg-white text-azul ">
                     <th class="w-16 md:w-20 text-xs  border px-2 py-1">Tipo</th>
@@ -43,14 +43,14 @@
                 </tbody>
               </table>
               <div class="">
-                <div class="flex justify-end space-x-20 border py-1 pr-4">
-                  <p class="text-azul font-semibold">Cartera</p>
+                <div class="flex justify-end space-x-16 border py-1 pr-4">
                   <p class="text-azul font-semibold">Vencido</p>
+                  <p class="text-azul font-semibold">Cartera</p>
                 </div>
-                <div class="flex justify-end space-x-12 border py-1 pr-4">
+                <div class="flex justify-end space-x-20 border py-1 pr-4">
                   <p>Totales</p>
-                  <p class="text-azul font-semibold">{{ cartera | NumeroEntero}}</p>
                   <p class="text-azul font-semibold">{{ vencido | NumeroEntero}}</p>
+                  <p class="text-azul font-semibold">{{ cartera | NumeroEntero}}</p>
                 </div>
               </div>
           </div>
@@ -78,9 +78,10 @@ export default {
     Terceros.carteraPorCliente(this.$cookies.get("User").identificacion)
     .then( response => {
         this.facturas = response.data
-        this.fecha    = response.data[0].update_at
+        // this.fecha    = response.data[0].update_at
         this.setCartera()
-        this.setVencido()  
+        this.setVencido()
+        console.log(response.data)
     })
 
     
@@ -119,7 +120,7 @@ export default {
 <style scoped>
   
 .alto-table2 {
-  height: 500px;
+  max-height: 500px;
   overflow-y: scroll;
 }
 

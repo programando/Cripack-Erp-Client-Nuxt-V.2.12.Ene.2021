@@ -56,16 +56,18 @@ export default {
   },
 
   mounted() {
-      TercerosClientes.agendaAsistenciaMaquinasMesAnio ( 6, 2022)
+      const fecha = new Date()
+      this.anio = fecha.getFullYear()
+      this.mes = fecha.getMonth() + 1
+
+      TercerosClientes.agendaAsistenciaMaquinasMesAnio ( this.mes, this.anio)
         .then( response=> {
               this.dias = response.data
               
         }
      )
 
-    const fecha = new Date()
-    this.anio = fecha.getFullYear()
-    this.mes = fecha.getMonth() + 1
+    
   }
 }
 </script>
