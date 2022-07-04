@@ -59,7 +59,7 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxtjs/fontawesome',
-    //'vue-sweetalert2/nuxt',
+    
   ],
 
   fontawesome: {
