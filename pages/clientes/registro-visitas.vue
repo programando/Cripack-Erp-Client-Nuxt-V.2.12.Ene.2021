@@ -415,7 +415,7 @@
       };
 </script>
 
-<style scope>
+<style scoped>
 .width {
   width: 258px;
 }
