@@ -75,7 +75,7 @@ export default {
 //this.$cookies.get("User").identificacion
   mounted() {
     //console.log ( this.$cookies.get("User").identificacion)
-    Terceros.carteraPorCliente(this.$cookies.get("User").identificacion)
+    Terceros.carteraPorCliente('817006230')
     .then( response => {
         this.facturas = response.data
         // this.fecha    = response.data[0].update_at
