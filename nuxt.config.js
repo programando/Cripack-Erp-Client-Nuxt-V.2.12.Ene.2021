@@ -44,10 +44,11 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-     { src: '~/plugins/filters.js' },
-     { src: '~/plugins/moment.js' },
-     { src: '~/plugins/datepicker', ssr: false },
-     { src: '~/plugins/i18n.js' },
+    { src : '~/plugins/vue-apexchart.js', ssr : false },
+    { src: '~/plugins/filters.js' },
+    { src: '~/plugins/moment.js' },
+    { src: '~/plugins/datepicker', ssr: false },
+    { src: '~/plugins/i18n.js' },
      '~/plugins/clickaway',
   ],
 
@@ -85,5 +86,9 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    vendor : [
+      'vue-apexchart'
+   ]
+
   }
 }

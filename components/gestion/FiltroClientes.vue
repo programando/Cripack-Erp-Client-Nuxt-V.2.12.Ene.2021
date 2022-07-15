@@ -1,10 +1,10 @@
 <template>
   <div class="">
     <label class="mr-4" for="">Buscar Cliente</label>
-    <input type="text" v-model="nuevoCliente"  class="border focus:outline-none px-4 rounded-lg" placeholder="codigo, nombre o alias">
+    <input type="text"  v-model="nuevoCliente" @input="filterResults(nuevoCliente)"   class="border focus:outline-none px-4 rounded-lg" placeholder="codigo, nombre o alias">
     <div class="mt-10">
       <ul>
-        <li v-for="cliente in filterResults" :key="cliente.id">
+        <li v-for="cliente in filtrado" :key="cliente.id">
           Codigo: {{ cliente.codigo }} - Nombre: {{ cliente.name }}
         </li>
       </ul>
@@ -29,11 +29,9 @@ export default {
     }
   },
 
-  computed: {
+  methods: {
         filterResults ( ) {
-          const search = this.clientes.filter(e => e.name.toLowerCase().startsWith(this.nuevoCliente.toLowerCase()));
-          return search
-          
+           this.filtrado = this.clientes.filter(e => e.name.toLowerCase().startsWith(this.nuevoCliente.toLowerCase()));
         }
 
   

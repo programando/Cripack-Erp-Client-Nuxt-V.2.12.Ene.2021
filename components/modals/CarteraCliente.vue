@@ -2,7 +2,7 @@
   <div
       class="absolute z-20 flex items-center justify-center w-full h-screen  py-10 mt-4 transition-opacity bg-gray-500 bg-opacity-75 top-10"
     >
-      <div class="relative px-10 py-2 bg-white border  h-10/12 ">
+      <div class="relative px-10 py-2 bg-white border  alto-table1 ">
         <div class="w-full">
           <h2 class="text-2xl font-semibold text-center">
             Informe de cartera
@@ -15,7 +15,7 @@
               alt=""
             />
           </button>
-          <div class="w-full">
+          <div class="w-full alto-table2">
             <table class="w-full border-t alto-table2">
                 <thead class="w-full border table-sticky">
                   <tr class="w-full bg-white text-azul ">
@@ -42,18 +42,18 @@
                   </tr>
                 </tbody>
               </table>
-              <div class="">
-                <div class="flex justify-end space-x-16 border py-1 pr-4">
-                  <p class="text-azul font-semibold">Vencido</p>
-                  <p class="text-azul font-semibold">Cartera</p>
-                </div>
-                <div class="flex justify-end space-x-20 border py-1 pr-4">
-                  <p>Totales</p>
-                  <p class="text-azul font-semibold">{{ vencido | NumeroEntero}}</p>
-                  <p class="text-azul font-semibold">{{ cartera | NumeroEntero}}</p>
-                </div>
-              </div>
           </div>
+          <div class="">
+              <div class="flex justify-end space-x-16 border py-1 pr-4">
+                <p class="text-azul font-semibold">Vencido</p>
+                <p class="text-azul font-semibold">Cartera</p>
+              </div>
+              <div class="flex justify-end space-x-20 border py-1 pr-4">
+                <p>Totales</p>
+                <p class="text-azul font-semibold">{{ vencido | NumeroEntero}}</p>
+                <p class="text-azul font-semibold">{{ cartera | NumeroEntero}}</p>
+              </div>
+            </div>
         </div>
       </div>
     </div>
@@ -118,7 +118,10 @@ export default {
 }
 </script>
 <style scoped>
-  
+.alto-table1 {
+  max-height: 700px;
+}
+
 .alto-table2 {
   max-height: 500px;
   overflow-y: scroll;
@@ -129,6 +132,11 @@ export default {
   top: 0;
   background: white;
   
-  
+}
+
+.table-sticky2 {
+  position: sticky;
+  top: 0;
+  background: white;
 }
 </style>
