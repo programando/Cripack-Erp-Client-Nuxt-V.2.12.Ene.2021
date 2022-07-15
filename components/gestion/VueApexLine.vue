@@ -1,7 +1,7 @@
 <template>
-  <div class="w-2/6">
+  <div class="w-3/12">
     <client-only>
-      <VueApexCharts type="line" height="350" :options="chartOptions" :series="series"></VueApexCharts>
+      <VueApexCharts type="line" height="250" :options="chartOptions" :series="series"></VueApexCharts>
     </client-only>
     
   </div>

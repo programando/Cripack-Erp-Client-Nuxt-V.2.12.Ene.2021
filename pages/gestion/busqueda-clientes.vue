@@ -3,7 +3,8 @@
     <div class="pt-20 flex justify-center">
       <FiltroClientes />
     </div>
-    <div class="flex justify-center">
+    <div class="flex justify-center mt-10">
+      <VueApexLine />
       <VueApexLine />
       <VueApexBar />
     </div>

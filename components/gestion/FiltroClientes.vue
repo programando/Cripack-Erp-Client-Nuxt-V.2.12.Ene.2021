@@ -1,8 +1,8 @@
 <template>
-  <div class="">
+  <div class="relative">
     <label class="mr-4" for="">Buscar Cliente</label>
     <input type="text"  v-model="nuevoCliente" @input="filterResults(nuevoCliente)"   class="border focus:outline-none px-4 rounded-lg" placeholder="codigo, nombre o alias">
-    <div class="mt-10">
+    <div class="mt-10 absolute top-4 bg-white z-50">
       <ul>
         <li v-for="cliente in filtrado" :key="cliente.id">
           Codigo: {{ cliente.codigo }} - Nombre: {{ cliente.name }}
@@ -33,10 +33,8 @@ export default {
         filterResults ( ) {
            this.filtrado = this.clientes.filter(e => e.name.toLowerCase().startsWith(this.nuevoCliente.toLowerCase()));
         }
+  },
 
-  
-
-  }
 }
 </script>
 
