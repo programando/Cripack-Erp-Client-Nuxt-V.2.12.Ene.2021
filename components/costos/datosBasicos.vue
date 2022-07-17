@@ -5,13 +5,13 @@
         <tr
           class="relative text-left uppercase border-t border-l text-azul"
         >
-          <th class="relative px-2 py-3 mt-10 text-lg border-r w-60 top-10">Datos Básicos</th>
-          <th class="px-2 py-3 text-center border-r w-60">Salario Promedio Operario</th>
-          <th class="px-2 py-3 text-center border-r w-60">Valor Hora</th>
-          <th class="px-2 py-3 text-center border-r w-60">Golpes Promedio Hora</th>
-          <th class="px-2 py-3 text-center border-r w-60">Valor Promedio Golpe</th>
+          <th class="relative px-2 py-3 mt-10 text-lg border-r w-60 top-10">Datos básicos</th>
+          <th class="px-2 py-3 text-center border-r w-60">Salario promedio operario</th>
+          <th class="px-2 py-3 text-center border-r w-60">Valor hora</th>
+          <th class="px-2 py-3 text-center border-r w-60">Golpes promedio hora</th>
+          <th class="px-2 py-3 text-center border-r w-60">Valor promedio golpe</th>
           <th class="px-2 py-3 text-center border-r w-60 ">Valor encauche($/cm)</th>
-          <th class="px-2 py-3 text-center border-r w-60">Valor Contra-hendido($/cm)</th>
+          <th class="px-2 py-3 text-center border-r w-60">Valor contra-hendido($/cm)</th>
         </tr>
       </thead>
       <tbody class="bg-white">
@@ -235,6 +235,10 @@ export default {
   methods: {
  
       operaciones () {
+ 
+          this.encauche.tiempoPromedioLabor    = this.encauche.tiempoPromedioLabor.replace(/,/g, '.')
+          this.puestaPunto.tiempoPromedioLabor = this.puestaPunto.tiempoPromedioLabor.replace(/,/g, '.')
+
           this.datosBasicos.valorHora          = parseFloat( this.datosBasicos.salarioPromedio   ) / 240 * 1.53;
           this.encauche.valorLabor             = parseFloat( this.datosBasicos.valorHora          ) * parseFloat(this.encauche.tiempoPromedioLabor);
           this.encauche.golpesSinRealizar      = parseFloat( this.encauche.tiempoPromedioLabor    ) * parseFloat(this.datosBasicos.golpesPromedioHora);

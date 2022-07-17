@@ -5,9 +5,9 @@
       <div class="relative px-10 py-2 bg-white border  alto-table1 ">
         <div class="w-full">
           <h2 class="text-2xl font-semibold text-center">
-            Informe de cartera
+            Facturas en cartera
           </h2>
-          <p class="text-center text-xs mt-2">Últim. actualizacion: {{ fecha }}</p>
+          <p class="text-center text-xs mt-2 text-semibold">Últim. actualizacion: {{ fecha }}</p>
           <button @click="carteraClienteClose">
             <img
               class="absolute h-8 top-2 right-3"
@@ -60,34 +60,44 @@
 </template>
 <script>
   import  Terceros from "@/models/Terceros";
+  import Messages           from "@/mixins/sweetalert2";
 
 export default {
-
   name: 'CarteraCliente',
+  props: {  
+        identificacion: 
+            { 
+                type: String, 
+ 
+            },
+      },
+  mixins: [ Messages],
   data() {
     return {
       facturas: [],
       fecha: '',
       cartera: 0,
-      vencido: 0
+      vencido: 0,
+     
     }
   },
-//this.$cookies.get("User").identificacion
+ 
   mounted() {
-    //console.log ( this.$cookies.get("User").identificacion)
-    Terceros.carteraPorCliente('817006230')
-    .then( response => {
-        this.facturas = response.data
-        // this.fecha    = response.data[0].update_at
-        this.setCartera()
-        this.setVencido()
-        console.log(response.data)
+    Terceros.carteraPorCliente(  this.identificacion)  
+    .then( (response) => {
+        if ( response.data.length === 0 ) {
+         this.Message("Sin facturas" ,"Cliente no tiene facturas en cartera.",'success', "Cerrar" );
+          this.$emit('closeCarteraCliente')
+        }
+        else {
+            this.facturas = response.data
+            this.fecha    = response.data[0].update_at
+            this.setCartera()
+            this.setVencido()
+        }
     })
-
-    
-    
   },
-
+  
   methods: {
     carteraClienteClose() {
           this.$emit('closeCarteraCliente')

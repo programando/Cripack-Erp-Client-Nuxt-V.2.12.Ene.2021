@@ -3,11 +3,11 @@ import Csrf from "@/config/Csrf";
 
 export default {
     async getCokie() {
-      await Csrf.getCookie();
+        Csrf.getCookie();
     },
   
       async login ( formData ) {       
-        return  await Api.post('usuarios/login', formData);
+        return    Api.post('usuarios/login', formData);
       },
 
       async logout( formData) {

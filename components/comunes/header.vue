@@ -63,15 +63,21 @@
                 >Transcriptor Braile</nuxt-link
               >
             </div>
- 
-            <div
-              @click="menu = false"
-              class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"
-            >
-              <nuxt-link to="/clientes/agendamiento-asistencia"
-                >Agendamiento asistencia</nuxt-link
-              >
+
+             <div class="relative mx-2 mt-2 cursor-pointer hover:opacity-90" @click="gestion = false" >
+              <nuxt-link to="/clientes/costos" >Costos alistamiento</nuxt-link >
             </div>
+
+ 
+            <div v-if="isDevelopment"
+              @click="menu = false"
+              class="relative mx-2 mt-2 cursor-pointer hover:opacity-90" >
+              <nuxt-link to="/clientes/agendamiento-asistencia">
+                Agendamiento asistencia
+              </nuxt-link>
+            </div>
+
+
  
           </div>
         </div>
@@ -94,11 +100,9 @@
             </div>
 
 
-            <div class="relative mx-2 mt-2 cursor-pointer hover:opacity-90" @click="gestion = false" >
-              <nuxt-link to="/clientes/costos" >Costos alistamiento</nuxt-link >
-            </div>
 
-            <div class="relative mx-2 mt-2 cursor-pointer hover:opacity-90" @click="gestion = false" >
+
+            <div v-if="isDevelopment" class="relative mx-2 mt-2 cursor-pointer hover:opacity-90" @click="gestion = false" >
               <nuxt-link to="/gestion/busqueda-clientes" >Busqueda Cliente</nuxt-link >
             </div>
 
@@ -165,7 +169,7 @@ export default {
       isDevelopment: process.env.NODE_ENV,
       subMenu      : false,
       gestion      : false,
-      userOptions: false,
+      userOptions  : false,
 
       
  

@@ -4,13 +4,13 @@ export default {
   
 
   async agendaAsistenciaMaquinasMesAnio( idmes,anio ) {
-    return await Api.post("/agendamiento/asistencia", { 'idmes' :idmes, 'anio' :anio } ) ;
+    return  Api.post("/agendamiento/asistencia", { 'idmes' :idmes, 'anio' :anio } ) ;
   },
 
 
 
-  async carteraPorCliente( NitCliente ) {
-    return await Api.post("/SqlServer/cartera", { 'Nit_Tercero' :NitCliente } ) ;
+    carteraPorCliente( NitCliente ) {
+    return   Api.post("/SqlServer/cartera", { 'Nit_Tercero' :NitCliente } ) ;
   },
 
 
@@ -45,7 +45,7 @@ export default {
   },
 
   async OTsEstadoProduccion(formData) {
-    return await Api.post("clientes/ots/estado",   formData       ) ;
+    return  Api.post("clientes/ots/estado",   formData       ) ;
   },
 
   // Esta es una prueba.
