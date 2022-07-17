@@ -166,7 +166,7 @@ export default {
     return {
       idioma       : false,
       menu         : false,
-      isDevelopment: process.env.NODE_ENV,
+      isDevelopment: process.env.DEVELOPMENT_ENVIRONMENT,
       subMenu      : false,
       gestion      : false,
       userOptions  : false,
