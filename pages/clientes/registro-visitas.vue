@@ -4,7 +4,7 @@
       <div class="px-4 py-4 border shadow-xl ancho-registro">
         <h2 class="text-xl font-semibold text-center">Registro de visitas</h2>
         <div class="mx-4 mt-4">
-          <div class="lg:flex lg:justify-center lg:space-x-10">
+          <div class="lg:flex lg:justify-center lg:space-x-8">
             <div class="flex justify-center space-x-10">
               <div class="w-60 lg:w-auto ">
                 <p class="ml-10 text-sm">Código</p>
@@ -53,7 +53,7 @@
             </div>
 
           </div>
-          <div class="flex justify-around">
+          <div class="flex justify-around ancho-maximo">
             <div class="">
               <div class="flex justify-center mt-4 lg:space-x-28 space-x-10">
                 <div class="lg:flex lg:mr-2">
@@ -115,21 +115,21 @@
                   />
                 </div>
               </div>
-              <div class="mt-4 text-sm flex items-center space-x-10 flex-wrap mx-20 lg:mx-0 formulario">
+              <div class="mt-4 text-sm flex items-center justify-center space-x-4 flex-wrap mx-20 lg:mx-0 formulario">
                 <p class="py-1">Documentos exigidos para el recibo de productos : </p>
-                <div class="py-1 flex items-center space-x-2 checkbox">
+                <div class="py-1 flex items-center  checkbox">
                   <input class="h-5 w-5 rounded-full" disabled type="checkbox" name="" id="ordenCompra"  v-model="formCliente.rbo_prdcto_exg_oc">
                   <label for="ordenCompra">Orden Compra</label>
                 </div>
-                <div class="py-1 flex items-center space-x-2 checkbox">
+                <div class="py-1 flex items-center  checkbox">
                   <input class="h-5 w-5 rounded-full" disabled type="checkbox" name="" id="remision"  v-model="formCliente.rbo_prdcto_exg_rem" >
                   <label for="remision">Remisión</label>
                 </div>
-                <div class="py-1 flex items-center space-x-2 checkbox">
+                <div class="py-1 flex items-center  checkbox">
                   <input class="h-5 w-5 rounded-full" disabled type="checkbox" name="" id="factura"  v-model="formCliente.rbo_prdcto_exg_cert_cldad"  >
                   <label for="factura">Factura</label>
                 </div>
-                <div class="py-1 flex items-center space-x-2 checkbox">
+                <div class="py-1 flex items-center  checkbox">
                   <input class="h-5 w-5 rounded-full" disabled type="checkbox" name="" id="certificadoCalidad"  v-model="formCliente.rbo_prdcto_exg_fac" >
                   <label for="certificadoCalidad">Certificado de calidad</label>
                 </div>
@@ -137,12 +137,12 @@
             </div>
           </div>
           <div>
-
-            <div class="flex items-center justify-between mx-4 mt-10">
-              <h2  class="text-sm font-semibold">Historial de visitas</h2>
-             
-              <div class="flex">
-                
+            
+            <div class="flex justify-between lg:justify-around lg:mx-20">
+              <div class="flex items-center mx-4 mt-10">
+                <h2 v-if="historialVisitas < 0"  class="text-sm font-semibold">Historial de visitas</h2>
+              </div>
+              <div class="flex justify-end">
                 <button @click="showCarteraCliente" class="flex items-center space-x-2" >
                   <img class="h-8 ml-5" src="/images/pesos.png" alt="" />
                   <p class="text-sm">Cartera del Cliente</p>
@@ -153,10 +153,10 @@
                   <p class="text-sm">Registrar nueva visita</p>
                 </button>
               </div>
-              
             </div>
+            
 
-            <div class="mx-4 mt-4 alto-table">
+            <div v-if="historialVisitas < 0" class="mx-4 mt-4 alto-table">
               <table class="w-full border-t">
                 <thead class="w-full border ">
                   <tr class="w-full bg-white text-azul ">
@@ -450,8 +450,8 @@
   top: 0;
   background: white;
   
-  
 }
+
 
 
 @media screen and (min-width: 1300px) {
@@ -474,7 +474,8 @@
     font-size: 16px;
     color: #001F3F;
     margin-bottom: 20px;
-    margin-left: 20px; 
+    margin-left: 20px;
+    
 }
 
 .formulario > div {
@@ -487,7 +488,7 @@
     cursor: pointer;
     color: #002C76;
     position: relative;
-    padding: 5px 15px 5px 51px;
+    padding: 5px 15px 5px 40px;
     font-size: 1em;
     border-radius: 5px;
     -webkit-transition: all 0.3s ease;
