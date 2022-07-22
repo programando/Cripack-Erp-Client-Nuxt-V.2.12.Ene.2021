@@ -102,7 +102,7 @@
 
 
 
-            <div v-if="isDevelopment" class="relative mx-2 mt-2 cursor-pointer hover:opacity-90" @click="gestion = false" >
+            <div class="relative mx-2 mt-2 cursor-pointer hover:opacity-90" @click="gestion = false" >
               <nuxt-link to="/gestion/busqueda-clientes" >Busqueda Cliente</nuxt-link >
             </div>
 
