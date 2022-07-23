@@ -30,16 +30,16 @@ export default {
     setBgColor() {
       switch (this.bg) {
         case "rojo":
-          return "bg-red-400";
+          return "bg-gradient-to-r from-red-500 to-red-200 border border-red-500";
           break;
         case "naranja":
-          return "bg-yellow-500"
+          return "bg-gradient-to-r from-yellow-500 to-yellow-200 border border-yellow-500"
           break
         case "verde":
-          return "bg-green-400"
+          return "bg-gradient-to-r from-green-600 to-green-200 border border-green-600"
           break
         case "azul":
-          return "bg-blue-400"
+          return "bg-gradient-to-r from-blue-500 to-blue-200 border border-blue-500"
           break
         default:
           break;
