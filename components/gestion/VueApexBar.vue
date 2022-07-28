@@ -1,5 +1,5 @@
 <template>
-  <div class="w-3/12">
+  <div class="ancho">
     <client-only>
        <VueApexCharts type="bar" height="250" :options="chartOptions" :series="series"></VueApexCharts>
     </client-only>
@@ -52,4 +52,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.ancho {
+  min-width: 250px;
+}
+
+</style>
