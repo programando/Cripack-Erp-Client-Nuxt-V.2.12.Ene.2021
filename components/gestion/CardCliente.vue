@@ -1,5 +1,5 @@
 <template>
-  <div :class="setBgColor" class="flex items-center p-2 text-white rounded-md">
+  <div :class="setBgColor" class="flex items-center p-2 text-white rounded-md mt-4">
     <div class="w-48">
       <h2>{{ title }}</h2>
       <p class="text-xs">{{ subTitle }}</p>

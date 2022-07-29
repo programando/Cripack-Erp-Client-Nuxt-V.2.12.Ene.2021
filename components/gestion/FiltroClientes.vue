@@ -1,10 +1,10 @@
 <template>
-  <div class="relative">
+  <div class="relative px-10">
     <label class="mr-4" for="">Buscar Cliente</label>
-    <input type="text"  v-model="nuevoCliente" @input="filterResults(nuevoCliente)"   class="border focus:outline-none px-4 rounded-lg" placeholder="codigo, nombre o alias">
-    <div class="mt-10 absolute top-4 bg-white z-50">
+    <input type="text"  v-model="nuevoCliente" class="border focus:outline-none px-4 rounded-lg" placeholder="codigo, nombre o alias">
+    <div class="mt-10 absolute top-4 bg-gray-100 border z-50  rounded">
       <ul>
-        <li v-for="cliente in filtrado" :key="cliente.id">
+        <li class="px-10 py-2" v-for="cliente in filterResults" :key="cliente.id">
           Codigo: {{ cliente.codigo }} - Nombre: {{ cliente.name }}
         </li>
       </ul>
@@ -25,14 +25,18 @@ export default {
       ] ,
 
       nuevoCliente: '',
-      filtrado: [],
     }
   },
 
-  methods: {
-        filterResults ( ) {
-           this.filtrado = this.clientes.filter(e => e.name.toLowerCase().startsWith(this.nuevoCliente.toLowerCase()));
-        }
+  computed: {
+        filterResults () {
+            if (this.nuevoCliente != '') {
+              return this.clientes.filter(e => e.name.toLowerCase().startsWith(this.nuevoCliente.toLowerCase()));
+            } else {
+              return []
+            }            
+
+        } 
   },
 
 }

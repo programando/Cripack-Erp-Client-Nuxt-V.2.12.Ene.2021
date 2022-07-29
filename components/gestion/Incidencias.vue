@@ -1,5 +1,5 @@
 <template>
-  <div class="my-10 mx-28 border p-4 rounded-md alto">
+  <div class="my-10 lg:mx-10 xl:mx-20 border p-4 rounded-md alto">
     <h2 class="text-xl font-semibold">Incidencias</h2>
     <div class="mt-10">
       <div v-for="incidencia in incidencias" :key="incidencia.id" class="w-1/2">

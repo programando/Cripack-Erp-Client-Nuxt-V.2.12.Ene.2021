@@ -1,14 +1,14 @@
 <template>
-  <div>
+  <div class="mx-10">
     <div class="pt-20 flex justify-center">
       <FiltroClientes />
     </div>
-    <div class="flex justify-center mt-10">
+    <div class="flex flex-wrap justify-between mt-10 lg:mx-10 xl:mx-20">
       <VueApexLine />
       <VueApexLine />
       <VueApexBar />
     </div>
-    <div class="flex justify-center mt-10 space-x-4">
+    <div class="flex flex-wrap justify-between mt-10 mx-4 lg:mx-14 xl:mx-20">
       <CardCliente 
         title="Cotizaciones"
         subTitle="New Customer"
