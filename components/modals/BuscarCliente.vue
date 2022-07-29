@@ -43,7 +43,7 @@
                         class="w-6 h-6 cursor-pointer"
                         src="/images/flecha-derecha.svg"
                         alt=""
-                        @click="getIdTerceroCliente ( cliente.codigo_tercero )"
+                        @click="getIdTerceroCliente ( cliente.codigo_tercero, cliente.idtercero )"
                       />
                     </td>
                   </tr>
@@ -95,8 +95,8 @@ export default {
   methods: {
 
 
-getIdTerceroCliente ( CodTercero ) {
-        this.$emit("getIdTerceroCliente", CodTercero );
+    getIdTerceroCliente ( CodTercero, IdTercero ) {
+        this.$emit("getIdTerceroCliente", CodTercero ,IdTercero );
     },
 
     buscarCliente () {

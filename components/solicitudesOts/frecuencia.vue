@@ -1,6 +1,7 @@
 <template>
   <div :class="width">
       <VueSelect :data="Frecuencias" v-model="itemSelected" v-on:valueSelect="onValueSelect"> </VueSelect>
+
       <div v-if="errors.length" class="mt-2 ml-1 text-xs text-left w-96" :class="[setColorError]">
           <font-awesome-icon :icon="['fas', 'exclamation-triangle']"/> {{ errors[0] }}
       </div>   
@@ -13,8 +14,9 @@
   export default {
     name:'SolitiducOtFrecuencia'  ,
     props: {
-      width: String,
-      errors: {
+      width     : String,
+      colorError: String,
+      errors    : {
                 type: Array,
                 default: () => []
             },
@@ -25,7 +27,7 @@
           dataInicial :[],
           Frecuencias: [],
           itemSelected: 'Seleccione una opción...',
-          idItemSelected:0,
+          idItemSelected:-1,
       }
     },
 
@@ -35,6 +37,7 @@
       this.idItemSelected = this.dataInicial.filter(function (item) {
           return item.nom_frecuencia === value;
       });
+      this.errors.splice(0);
      this.$emit('input', this.idItemSelected[0]['id_frecuencia']);
     },
     getAloneArray ( Data) {

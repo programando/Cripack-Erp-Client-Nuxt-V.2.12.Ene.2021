@@ -359,7 +359,6 @@
             if ( CodTercero == -1) { this.buscarCliente = false ; return;   }
                 TercerosClientes.buscarPorCodigo (CodTercero,  this.idTerceroVendedor  )
                 .then( response => {
-
                     this.setDataResponse ( response.data[0]);
                     this.buscarCliente = false 
                 })

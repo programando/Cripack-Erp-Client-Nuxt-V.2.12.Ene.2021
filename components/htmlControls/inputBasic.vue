@@ -13,28 +13,20 @@
             </div>
             
             <input 
-             class="w-full px-4 py-1 text-xs text-blue-600 bg-white border border-gray-300 rounded outline-none placeholder-azul focus:bg-gray-100"
-                
+             class="w-full px-4 py-1 text-xs text-blue-600 bg-white border border-gray-300 rounded outline-none placeholder-azul focus:bg-gray-100"    
                 :id="id"
                 ref="input"
                 v-bind="$attrs"       
                 :class="[
-                    {
-                        'border-red-400': errors.length 
-                    },
-                    {
-                        'px-10': icon
-                    },
-                    {
-                        'uppercase': isUppercase
-                    },
-                    
+                    { 'border-red-400': errors.length     },
+                    {   'px-10': icon },
+                    {   'uppercase': isUppercase },
                 ]"
                 :type    = "type"
                 :value   = "value"
                 @input   = "$emit('input', $event.target.value)"
                 @keydown = "$emit('keydown', $event)"
-                @blur    = "$emit('blur', $event)"
+                @blur    = "clearError()"
                 @keyup   = "$emit('keyup', $event)"
                 :placeholder="text"
             />
@@ -48,6 +40,7 @@
 </template>
 
 <script>
+//@blur    = "$emit('blur', $event)"
     export default {
         name: 'InputTextBasic',
         inheritAttrs: false,
@@ -78,6 +71,12 @@
             isUppercase:String
         },
 
+        methods : {
+            clearError(e){
+                this.errors.splice(0);
+                this.$emit('blur', e);
+            },
+        },
         computed: {
             setColorError() {
                 switch (this.colorError) {

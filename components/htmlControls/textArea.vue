@@ -11,9 +11,11 @@
     @blur    = "$emit('blur', $event)"
     @keyup   = "$emit('keyup', $event)"    
   ></textarea>
+   <!--
     <div v-if="errors" class="mt-2 ml-1 text-xs text-left text-red-500" :class="[setColorError]">
         <font-awesome-icon :icon="['fas', 'exclamation-triangle']"/> ha ocurrido un error
     </div>    
+    -->
   </div>
   
 </template>

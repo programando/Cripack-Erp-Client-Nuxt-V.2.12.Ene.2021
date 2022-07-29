@@ -12,26 +12,28 @@
             <label class="w-32 mr-4 text-sm">Cliente :</label>
             <div class="ml-5">
               <button
-                class="px-3 py-1 text-white bg-green-600 bg-opacity-75 rounded-lg focus:outline-none "
+                class="px-3 py-1 text-white bg-green-600 bg-opacity-75 rounded-lg focus:outline-none text-xs"
                 @click.prevent="modal = !modal"
               >
                 Buscar
               </button>
             </div>
             <input
-              class="mx-4 border rounded w-28 focus:outline-none"
+              class="mx-4 border rounded w-28 focus:outline-none text-xs text-center"
               type="text"
+              v-model="formData.codigo_tercero"
             />
             <input
-              class="w-full px-4 border rounded"
+              class="w-full px-4 border rounded text-xs "
               placeholder="Nombre del cliente"
               disabled
               type="text"
+              v-model="formData.nomtercero"
             />
           </div>
 
           <div v-if="modal">
-            <BuscarCliente @click="handleClick" />
+            <BuscarCliente @getIdTerceroCliente = "getIdTerceroCliente" /> 
           </div>
           
 
@@ -90,6 +92,7 @@
                   width="w-40"
                   v-model="formData.id_frecuencia"
                   colorError="red"
+                  :errors="errors.id_frecuencia" 
                 ></OtsFrecuencia>
               </div>
               <div class="flex justify-end">
@@ -102,7 +105,7 @@
                     type="text"
                     v-model="formData.cabida"
                     width="w-40"
-                    :errors="errors.cabida"
+                    :errors="errors.cabida"  
                   ></InputBasic>
                 </div>
               </div>
@@ -178,7 +181,7 @@
             <label class="w-32 text-sm ">Archivos:</label>
             <div class="w-full h-40">
               <dropzone
-                @vdropzone-sending-multiple="addDataToSending"
+                 
                 @vdropzone-complete="afterUploadComplete"
                 id="uploadFiles"
                 ref="uploadFiles"
@@ -186,10 +189,12 @@
                 :options="dropzoneOptions"
               >
               </dropzone>
+              <!--
               <div class="mt-2 ml-1 text-xs text-left text-red-500">
                 <font-awesome-icon :icon="['fas', 'exclamation-triangle']" />ha
                 ocurrido un error
               </div>
+-->
             </div>
           </div>
           <div>
@@ -223,24 +228,26 @@
 <script>
 import Dropzone from "nuxt-dropzone";
 import "nuxt-dropzone/dropzone.css";
-import OrdenesTrabajo from "@/models/OrdenesTrabajo";
-
-import BtnCallToAction from "@/components/htmlControls/buttonCallToActionLoading";
-import Checkbox from "@/components/htmlControls/checkbox";
-import InputBasic from "@/components/htmlControls/inputBasic";
-import OtsAyudaPega from "@/components/solicitudesOts/ayudaPega.vue";
-import OtsCabida from "@/components/solicitudesOts/cabidad.vue";
-import OtsCalibre from "@/components/solicitudesOts/calibre.vue";
-import OtsFrecuencia from "@/components/solicitudesOts/frecuencia.vue";
-import OtsMaquina from "@/components/solicitudesOts/maquina.vue";
-import OtsPunzones from "@/components/solicitudesOts/punzones.vue";
-import OtsSustratos from "@/components/solicitudesOts/sustrato.vue";
-import OtsTiposArreglos from "@/components/solicitudesOts/tipoArreglo.vue";
-import OtsTiraje from "@/components/solicitudesOts/tiraje.vue";
-import RadioButton from "~/components/htmlControls/radioButton.vue";
-import TextArea from "@/components/htmlControls/textArea.vue";
 import vSelect from "vue-select";
-import BuscarCliente from '@/components/modals/BuscarCliente.vue'
+import OrdenesTrabajo       from "@/models/OrdenesTrabajo";
+import TercerosClientes     from '@/models/Terceros';
+
+import BtnCallToAction      from "@/components/htmlControls/buttonCallToActionLoading";
+import BuscarCliente        from '@/components/modals/BuscarCliente.vue'
+import Checkbox             from "@/components/htmlControls/checkbox";
+import InputBasic           from "@/components/htmlControls/inputBasic";
+import OtsAyudaPega         from "@/components/solicitudesOts/ayudaPega.vue";
+import OtsCabida            from "@/components/solicitudesOts/cabidad.vue";
+import OtsCalibre           from "@/components/solicitudesOts/calibre.vue";
+import OtsFrecuencia        from "@/components/solicitudesOts/frecuencia.vue";
+import OtsMaquina           from "@/components/solicitudesOts/maquina.vue";
+import OtsPunzones          from "@/components/solicitudesOts/punzones.vue";
+import OtsSustratos         from "@/components/solicitudesOts/sustrato.vue";
+import OtsTiposArreglos     from "@/components/solicitudesOts/tipoArreglo.vue";
+import OtsTiraje            from "@/components/solicitudesOts/tiraje.vue";
+import RadioButton          from "~/components/htmlControls/radioButton.vue";
+import TextArea             from "@/components/htmlControls/textArea.vue";
+
 
 export default {
   name: "FormTroquelPlano",
@@ -267,28 +274,32 @@ export default {
     showBtnAnimation: false,
     modal: false,
     formData: {
-      cabida: "",
-      cortehendido_1: false,
-      cortehendido_2: false,
-      cortehendido_3: false,
-      encauche: "",
-      filesAdded: [],
-      id_ayudapega: 0,
-      id_calibre: 0,
-      id_frecuencia: 0,
-      id_maquina: 0,
-      id_punzon: 0,
-      id_sustrato: 0,
-      id_tiraje: 0,
-      id_tp_arreglo: 0,
+      cabida           : '',
+      codigo_tercero   : '',
+      cortehendido_1   : false,
+      cortehendido_2   : false,
+      cortehendido_3   : false,
+      encauche         : "",
+ 
+      id_ayudapega     : -1,
+      id_calibre       : -1,
+      id_frecuencia    : -1,
+      id_maquina       : -1,
+      id_punzon        : -1,
+      id_sustrato      : -1,
+      id_tiraje        : -1,
+      id_tp_arreglo    : -1,
       idtecero_vendedor: 0,
-      idtercero: 0, // Identificador de cliente
-      observaciones: "",
-      perforadra_1: false,
-      perforadra_2: false,
-      perforadra_3: false,
-      referencia: ""
-    },
+      idtercero        : 0,       // Identificador de cliente
+      idtercero_realiza:0,
+      nomtercero       : "",
+      observaciones    : "",
+      perforadra_1     : false,
+      perforadra_2     : false,
+      perforadra_3     : false,
+      referencia       : "",
+      
+          },
     dropzoneOptions: {
       acceptedFiles: "image/jpeg,jpg,png,application/pdf",
       addRemoveLinks: true,
@@ -298,13 +309,28 @@ export default {
       duplicateCheck: true,
       parallelUploads: 4,
       uploadMultiple: true,
-      url: process.env.URL_API + "ordenes-trabajo/solicitud/plano"
+      url: process.env.URL_API + "ordenes-trabajo/solicitud/plano",
+      maxFiles:5
     },
     errors: [],
     sendSuccess: false //
   }),
 
   methods: {
+    getIdTerceroCliente( CodTercero, IdTercero ) {
+
+          if ( CodTercero == -1) { this.modal = false ; return;   }
+              TercerosClientes.buscarPorIdTercero (IdTercero  )
+              .then( response => {
+                  this.formData.idtercero         = response.data[0]['idtercero'];
+                  this.formData.idtecero_vendedor = response.data[0]['idvendedor'];
+                  this.formData.nomtercero        = response.data[0]['nomtercero'];
+                  this.formData.codigo_tercero    = response.data[0]['codigo_tercero'];
+                  this.formData.idtercero_realiza = this.$cookies.get("User").idtecero_vendedor;     
+                  this.modal                      = false
+              })
+         this.modal = false      
+    },
     afterUploadComplete: async function(response) {
       if (response.status == "success") {
         this.sendSuccess = true;
@@ -314,80 +340,76 @@ export default {
         this.errors = this.errors.errors;
       }
     },
-    addDataToSending(files, xhr, formData) {
-      formData.append("observaciones", this.formData.observaciones);
-      formData.append("referencia", this.formData.referencia);
-    },
+ 
     grabarOdenTrabajo() {
       this.$refs.uploadFiles.processQueue();
-
-      /*       this.formData.idtercero = this.$cookies.get("User").idtercero;
-      this.formData.idtecero_vendedor = this.$cookies.get("User").idtecero_vendedor;
       OrdenesTrabajo.SolicitudTroquelPlano(this.formData)
         .then(response => {
           console.log(response.data);
         })
         .catch(error => {
           this.errors = error.response.data.errors;
-        }); */
-    },
-    handleClick() {
-      this.modal = false
-    }
+        }); 
+      },
+      clearCabidaError() {
+        this.errors.cabida.splice(0);
+      }
+ 
     
   }
 };
 </script>
+
 <style scope>
-.margen-top {
-  margin-top: 7px;
-}
+      .margen-top {
+        margin-top: 7px;
+      }
 
-#customdropzone {
-  background-color: orange;
-  font-family: "Arial", sans-serif;
-  letter-spacing: 0.2px;
-  color: #777;
-  transition: background-color 0.2s linear;
-  height: 100px;
-  padding: 40px;
-}
-.dropzone {
-  height: 40px !important;
-  padding: 10px 10px 10px 10px !important;
-}
-.dropzone .dz-preview {
-  height: 25px !important;
-  width: 140px !important;
-}
-#customdropzone .dz-preview {
-  width: 160px;
-  display: inline-block;
-}
-#customdropzone .dz-preview .dz-image {
-  width: 20px;
-  height: 20px;
-  margin-left: 40px;
-  margin-bottom: 10px;
-}
-#customdropzone .dz-preview .dz-image > div {
-  width: inherit;
-  height: inherit;
-  border-radius: 50%;
-  background-size: contain;
-}
-#customdropzone .dz-preview .dz-image > img {
-  width: 100%;
-}
+      #customdropzone {
+        background-color: orange;
+        font-family: "Arial", sans-serif;
+        letter-spacing: 0.2px;
+        color: #777;
+        transition: background-color 0.2s linear;
+        height: 100px;
+        padding: 40px;
+      }
+      .dropzone {
+        height: 40px !important;
+        padding: 10px 10px 10px 10px !important;
+      }
+      .dropzone .dz-preview {
+        height: 25px !important;
+        width: 140px !important;
+      }
+      #customdropzone .dz-preview {
+        width: 160px;
+        display: inline-block;
+      }
+      #customdropzone .dz-preview .dz-image {
+        width: 20px;
+        height: 20px;
+        margin-left: 40px;
+        margin-bottom: 10px;
+      }
+      #customdropzone .dz-preview .dz-image > div {
+        width: inherit;
+        height: inherit;
+        border-radius: 50%;
+        background-size: contain;
+      }
+      #customdropzone .dz-preview .dz-image > img {
+        width: 100%;
+      }
 
-#customdropzone .dz-preview .dz-details {
-  color: white;
-  transition: opacity 0.2s linear;
-  text-align: center;
-}
-#customdropzone .dz-success-mark,
-.dz-error-mark,
-.dz-remove {
-  display: none;
-}
+      #customdropzone .dz-preview .dz-details {
+        color: white;
+        transition: opacity 0.2s linear;
+        text-align: center;
+      }
+      #customdropzone .dz-success-mark,
+      .dz-error-mark,
+      .dz-remove {
+        display: none;
+      }
 </style>
