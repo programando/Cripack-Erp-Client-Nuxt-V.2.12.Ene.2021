@@ -8,6 +8,8 @@
 </template>
 
 <script>
+
+//https://stackoverflow.com/questions/60185404/vue-laravel-apexchart-piechart
 export default {
   name: "VueApexBar",
 

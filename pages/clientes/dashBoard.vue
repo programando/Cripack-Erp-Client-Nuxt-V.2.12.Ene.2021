@@ -4,8 +4,8 @@
       <FiltroClientes @getIdTerceroCliente = "getIdTerceroCliente" />
     </div>
     <div class="flex flex-wrap justify-between mt-10 lg:mx-10 xl:mx-20">
-      <VueApexLine />
-      <VueApexLine />
+      <VueApexLine :IdTercero="IdTercero"/>
+      
       <VueApexBar />
     </div>
     <div class="flex flex-wrap justify-between mt-10 mx-4 lg:mx-14 xl:mx-20">
@@ -59,13 +59,14 @@ export default {
   components: {
     FiltroClientes, VueApexLine, VueApexBar, CardCliente, Incidencias
   },
-  data: () => {
-
-  },
+      data: () => ({
+            IdTercero:0
+            
+      }),
 
   methods: {
       getIdTerceroCliente( IdTercero) {
-          alert( IdTercero )
+          this.IdTercero = IdTercero;
       }
 
   },

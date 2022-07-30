@@ -30,10 +30,10 @@
 
 <script>
 import TercerosClientes from "@/models/Terceros";
-import select from '../htmlControls/select.vue';
+ 
 
 export default {
-  components: { select },
+  
 
   name: 'FiltroClientes',
   data() {

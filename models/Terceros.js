@@ -40,6 +40,9 @@ export default {
     return Api.post("clientes/busqueda", { 'filtroBusqueda' :textoBuscar} ) ;
   },
 
+  async ventasUltimos3Anios ( IdTercero ) {
+    return Api.post("clientes/ventas/ultimos/3/anios", { 'IdTercero' :IdTercero} ) ;
+  },
 
   async primerosVeinteClientesPorVendedor( idTerceroVendedor) {
     return Api.post("clientes/primeros/registros", {'idtercero_vendedor': idTerceroVendedor}  ) ;

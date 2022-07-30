@@ -8,17 +8,15 @@
 </template>
 
 <script>
+//https://stackoverflow.com/questions/60185404/vue-laravel-apexchart-piechart
+import TercerosClientes from "@/models/Terceros";
 export default {
-  name: "VueApex",
-  
+  name: "ventasUltimos3Anios",
+  props: ['IdTercero'],
+ 
   data() {
     return {
-      series: [
-        {
-          name: "Desktops",
-          data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
-        }
-      ],
+      series: [],
       chartOptions: {
         chart: {
           height: 350,
@@ -34,7 +32,7 @@ export default {
           curve: "straight"
         },
         title: {
-          text: "Product Trends by Month",
+          text: "Ventas últimos 3 años",
           align: "left"
         },
         grid: {
@@ -48,22 +46,35 @@ export default {
             "Jan",
             "Feb",
             "Mar",
-            "Apr",
+            "Abr",
             "May",
             "Jun",
             "Jul",
             "Aug",
-            "Sep"
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dic"
           ]
         }
       }
     };
-  }
+  },
+
+watch:{
+    IdTercero() {
+          TercerosClientes.ventasUltimos3Anios(this.IdTercero)
+          .then( response => {
+              this.series = response.data;
+          })      
+    }
+}
+
 };
 </script>
 
 <style scoped>
 .ancho {
-  min-width: 250px;
+  min-width: 450px;
 }
 </style>

@@ -63,11 +63,9 @@ export default {
 </script>
 
 <style>
-    input:checked + div {
-      
-    }
+ /*
     input:checked + div svg {
       @apply block;
     }
-
+*/
 </style>
