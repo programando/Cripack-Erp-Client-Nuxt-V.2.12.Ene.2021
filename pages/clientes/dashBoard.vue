@@ -1,7 +1,7 @@
 <template>
   <div class="mx-10">
     <div class="pt-20 flex justify-center">
-      <FiltroClientes />
+      <FiltroClientes @getIdTerceroCliente = "getIdTerceroCliente" />
     </div>
     <div class="flex flex-wrap justify-between mt-10 lg:mx-10 xl:mx-20">
       <VueApexLine />
@@ -49,16 +49,28 @@
 </template>
 
 <script>
-import FiltroClientes from '@/components/gestion/FiltroClientes.vue'
-import VueApexLine from '@/components/gestion/VueApexLine'
-import VueApexBar from '@/components/gestion/VueApexBar.vue'
-import CardCliente from '@/components/gestion/CardCliente.vue'
-import Incidencias from '@/components/gestion/Incidencias.vue'
+import CardCliente      from '@/components/gestion/CardCliente.vue'
+import FiltroClientes   from '@/components/gestion/FiltroClientes.vue'
+import Incidencias      from '@/components/gestion/Incidencias.vue'
+import VueApexBar       from '@/components/gestion/VueApexBar.vue'
+import VueApexLine      from '@/components/gestion/VueApexLine.vue'
 export default {
   name: 'busquedaClientes',
   components: {
     FiltroClientes, VueApexLine, VueApexBar, CardCliente, Incidencias
-  }
+  },
+  data: () => {
+
+  },
+
+  methods: {
+      getIdTerceroCliente( IdTercero) {
+          alert( IdTercero )
+      }
+
+  },
+
+
 }
 </script>
 

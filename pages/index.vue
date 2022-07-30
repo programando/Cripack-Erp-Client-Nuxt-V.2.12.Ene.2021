@@ -80,9 +80,9 @@
           </nuxt-link>
         </div>
       </div>
-      <div class="flex items-end justify-end h-96 mr">
-        <LanguajeChange tipoTransicion="derecha"> </LanguajeChange>
-      </div>
+
+  
+
       <div class="absolute contenedor-principal">
         <WsContact />
       </div>
@@ -93,7 +93,7 @@
 <script>
 import BtnCallToAction    from "@/components/htmlControls/buttonCallToActionLoading";
 import InputBasic         from "@/components/htmlControls/inputBasic";
-import LanguajeChange     from "@/components/htmlControls/languajeChange";
+ 
 import User               from "@/models/User";
 import WsContact          from "@/components/htmlControls/wsContact.vue"
 
@@ -105,7 +105,7 @@ export default {
  
     InputBasic,
     BtnCallToAction,
-    LanguajeChange,
+ 
     WsContact
   },
   data() {

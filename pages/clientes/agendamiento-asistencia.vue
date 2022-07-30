@@ -4,6 +4,7 @@
     <div class="flex justify-center my-4 space-x-20">
       <div>
         <label for="mes">Mes</label>
+        
         <select v-model="mes" class="w-40 z-50 px-4 py-1 text-xs text-blue-600 bg-white border border-gray-300 rounded outline-none placeholder-azul focus:bg-gray-100" name="" id="mes">
          <option :value="1">Enero</option>
          <option :value="2">Febrero</option>
@@ -18,6 +19,7 @@
          <option :value="11">Novimebre</option>
          <option :value="12">Diciembre</option>
         </select>
+
       </div>
       <div>
         <label for="anio">Año</label>

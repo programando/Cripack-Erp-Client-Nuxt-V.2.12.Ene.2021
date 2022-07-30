@@ -100,7 +100,7 @@ export default {
     },
 
     buscarCliente () {
-        TercerosClientes.busqueda ( this.textoBusqueda, this.$cookies.get("User").idtecero_vendedor )
+        TercerosClientes.busquedaPorVendedor ( this.textoBusqueda, this.$cookies.get("User").idtecero_vendedor )
         .then ( response => {
             this.clientes = response.data;
             if ( this.clientes.length == 0 ) {

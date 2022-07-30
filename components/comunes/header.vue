@@ -4,8 +4,14 @@
       class="fixed z-50 flex items-center justify-between w-full mt-0 bg-azul "
     >
       <div class="flex">
+         <nuxt-link
+                  class="px-2 py-1 text-sm text-white"
+                  to="/"
+                  >
         <img class="lg:h-16 h-10 lg:ml-4 min-w-24" src="/images/LogoCripaack.png" alt="" />
+        </nuxt-link>
       </div>
+
       <div class="flex items-center justify-end mr-4 space-x-8"  v-on-clickaway="closeMenu">
         <NavLinks text="Historial" to="/clientes/ots-historial" />
         <NavLinks text="Estado Ot's" to="/clientes/ots-estado" />
@@ -91,6 +97,10 @@
             class="absolute z-20 flex flex-col w-48 pb-2 text-sm border border-white rounded-md top-7 bg-azul"
           >
         
+            <div v-if="isDevelopment" class="relative mx-2 mt-2 cursor-pointer hover:opacity-90" @click="gestion = false" >
+              <nuxt-link to="/clientes/dashBoard" >Dashboard - clientes</nuxt-link >
+            </div>
+
              <div class="relative mx-2 mt-2 cursor-pointer hover:opacity-90" @click="gestion = false" >
               <nuxt-link to="/clientes/registro-visitas">Registro visita cliente</nuxt-link>
             </div>
@@ -102,9 +112,7 @@
 
 
 
-            <div class="relative mx-2 mt-2 cursor-pointer hover:opacity-90" @click="gestion = false" >
-              <nuxt-link to="/gestion/busqueda-clientes" >Busqueda Cliente</nuxt-link >
-            </div>
+
 
             <!--
             <div  @click="gestion = false"  class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"  >
@@ -148,19 +156,19 @@
         </div>
       </div>
     </div>
-    <div class="fixed right-0 z-10 pt-16 bandera">
-      <LanguajeChange tipoTransicion="arriba"> </LanguajeChange>
-    </div>
+
+ 
+
   </div>
 </template>
 
 <script>
-import LanguajeChange       from "@/components/htmlControls/languajeChange";
+ 
 import NavLinks             from "@/components/comunes/navLinks";
 import User                 from "@/models/User";
 export default {
   name: "Header",
-  components: { NavLinks, LanguajeChange },
+  components: { NavLinks },
 
   data() {
     return {
@@ -171,8 +179,6 @@ export default {
       gestion      : false,
       userOptions  : false,
 
-      
- 
     };
   },
  

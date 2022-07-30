@@ -32,9 +32,14 @@ export default {
     return Api.post("clientes/busqueda/codigo", { 'codigo_tercero' :codigoBuscar, 'idtercero_vendedor': idTerceroVendedor} ) ;
   },
 
-  async busqueda( textoBuscar, idTerceroVendedor ) {
-    return Api.post("clientes/busqueda/texto", { 'filtroBusqueda' :textoBuscar, 'idtercero_vendedor': idTerceroVendedor } ) ;
+  async busquedaPorVendedor( textoBuscar, idTerceroVendedor ) {
+    return Api.post("clientes/busqueda/por/vendedor", { 'filtroBusqueda' :textoBuscar, 'idtercero_vendedor': idTerceroVendedor } ) ;
   },
+
+  async busquedaPorNitCodNombreSucursal (textoBuscar ) {
+    return Api.post("clientes/busqueda", { 'filtroBusqueda' :textoBuscar} ) ;
+  },
+
 
   async primerosVeinteClientesPorVendedor( idTerceroVendedor) {
     return Api.post("clientes/primeros/registros", {'idtercero_vendedor': idTerceroVendedor}  ) ;
