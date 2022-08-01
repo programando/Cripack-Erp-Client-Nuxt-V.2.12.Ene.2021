@@ -3,18 +3,18 @@
   <div class="relative px-10">
     <label class="mr-4" for="">Buscar Cliente</label>
     <input type="text"  v-model="nuevoCliente" class="border focus:outline-none px-4 rounded-lg  text-sm" placeholder="codigo, nombre o alias" @keyup="buscarCliente">
-    <div class="mt-10 absolute top-4 bg-gray-100 border z-50  rounded">
+    <div class="mt-10 -ml-20 absolute top-0 bg-gray-100 border z-50  rounded">
     
-    <select class="text-xs p-2" v-if="clientes.length > 0" v-model="idTercero" @change="getIdTerceroCliente()">
+    <!-- <select class="text-xs p-2" v-if="clientes.length > 0" v-model="idTercero" @change="getIdTerceroCliente()">
         <option class="text-xs p-4" v-for="cliente in clientes" :key="cliente.idtercero"
               :value="cliente.idtercero"  >
              {{ cliente.codigo_tercero }} -   {{ cliente.nomtercero }} | {{ cliente.alias }}
         </option>
  
-     </select>
+     </select> -->
 
-<!--
-     <ul class="text-sm">
+
+     <ul v-if="clientes.length > 0" class="text-sm h-96 overflow-y-auto ancho">
         <li class="px-10 py-2 text-sm cursor-pointer" v-for="cliente in clientes" :key="cliente.idtercero"
             @click="getIdTerceroCliente(cliente.idtercero )" >
             {{ cliente.codigo_tercero }} -   {{ cliente.nomtercero }} | {{ cliente.alias }}
@@ -22,7 +22,7 @@
 
       </ul>
 
-      -->
+     
     </div>
   </div>
 
@@ -75,6 +75,12 @@ methods : {
 }
 </script>
 
-<style>
+<style scoped>
+  .ancho {
+    width: 500px;
+
+  }
+
+
 
 </style>
