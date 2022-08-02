@@ -14,8 +14,8 @@
      </select> -->
 
 
-     <ul v-if="clientes.length > 0" class="text-sm h-96 overflow-y-auto ancho">
-        <li class="px-10 py-2 text-sm cursor-pointer" v-for="cliente in clientes" :key="cliente.idtercero"
+     <ul v-if="clientes.length > 0" class="text-xs h-96 overflow-y-auto ancho">
+        <li class="px-10 py-2 cursor-pointer" v-for="cliente in clientes" :key="cliente.idtercero"
             @click="getIdTerceroCliente(cliente.idtercero )" >
             {{ cliente.codigo_tercero }} -   {{ cliente.nomtercero }} | {{ cliente.alias }}
         </li>
@@ -38,9 +38,9 @@ export default {
   name: 'FiltroClientes',
   data() {
     return {
-      clientes: [   ] ,
+      clientes    : [],
       nuevoCliente: '',
-      idTercero:0
+      idTercero   : 0
     }
   },
 
@@ -53,8 +53,9 @@ methods : {
     })
   },
 
-  getIdTerceroCliente( ) {
-       this.$emit('getIdTerceroCliente',this.idTercero );
+  getIdTerceroCliente( IdTercero ) {
+       this.$emit('getIdTerceroCliente',IdTercero);
+       this.clientes = [];
   }
 
 },
@@ -77,7 +78,7 @@ methods : {
 
 <style scoped>
   .ancho {
-    width: 500px;
+    width: 600px;
 
   }
 

@@ -3,6 +3,16 @@ import Api  from "@/config/Axios";
 export default {
   
 
+  async productosUltimos3Anios ( IdTercero ) {
+    return Api.post("clientes/productos/ultimos/3/anios", { 'IdTercero' :IdTercero} ) ;
+  },
+
+
+  async ventasUltimos3Anios ( IdTercero ) {
+    return Api.post("clientes/ventas/ultimos/3/anios", { 'IdTercero' :IdTercero} ) ;
+  },
+
+
   async agendaAsistenciaMaquinasMesAnio( idmes,anio ) {
     return  Api.post("/agendamiento/asistencia", { 'idmes' :idmes, 'anio' :anio } ) ;
   },
@@ -40,9 +50,6 @@ export default {
     return Api.post("clientes/busqueda", { 'filtroBusqueda' :textoBuscar} ) ;
   },
 
-  async ventasUltimos3Anios ( IdTercero ) {
-    return Api.post("clientes/ventas/ultimos/3/anios", { 'IdTercero' :IdTercero} ) ;
-  },
 
   async primerosVeinteClientesPorVendedor( idTerceroVendedor) {
     return Api.post("clientes/primeros/registros", {'idtercero_vendedor': idTerceroVendedor}  ) ;

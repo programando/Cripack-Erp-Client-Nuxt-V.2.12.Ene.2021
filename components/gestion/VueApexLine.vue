@@ -65,6 +65,7 @@ watch:{
     IdTercero() {
           TercerosClientes.ventasUltimos3Anios(this.IdTercero)
           .then( response => {
+ 
               this.series = response.data;
           })      
     }

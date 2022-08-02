@@ -6,7 +6,7 @@
     <div class="flex flex-wrap justify-between mt-10 lg:mx-10 xl:mx-20">
       <VueApexLine :IdTercero="IdTercero"/>
       
-      <VueApexBar />
+      <VueApexBar  :IdTercero="IdTercero"/>
     </div>
     <div class="flex flex-wrap justify-between mt-10 mx-4 lg:mx-14 xl:mx-20">
       <CardCliente 
