@@ -1,6 +1,8 @@
 <template>
   <div class="ancho">
     <client-only>
+      <h2 class="ml-4">Ventas de los ultimos 3 años</h2>
+      
       <VueApexCharts type="line" height="250" :options="chartOptions" :series="series"></VueApexCharts>
     </client-only>
     
@@ -30,10 +32,6 @@ export default {
         },
         stroke: {
           curve: "straight"
-        },
-        title: {
-          text: "Ventas últimos 3 años",
-          align: "left"
         },
         grid: {
           row: {

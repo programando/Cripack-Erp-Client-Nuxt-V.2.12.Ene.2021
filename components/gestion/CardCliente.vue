@@ -1,5 +1,5 @@
 <template>
-  <div :class="setBgColor" class="flex items-center p-2 text-white rounded-md mt-4">
+  <div :class="setBgColor" class="flex items-center p-2 text-white rounded-md mt-4 mr-4">
     <div class="w-48">
       <h2>{{ title }}</h2>
       <p class="text-xs">{{ subTitle }}</p>
@@ -40,6 +40,9 @@ export default {
           break
         case "azul":
           return "bg-gradient-to-r from-blue-500 to-blue-200 border border-blue-500"
+          break
+        case "celeste":
+          return "bg-gradient-to-r from-celesteClaro to-blue-200 border border-celesteClaro"
           break
         default:
           break;

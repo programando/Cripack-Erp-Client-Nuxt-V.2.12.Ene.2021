@@ -8,7 +8,15 @@
       
       <VueApexBar  :IdTercero="IdTercero"/>
     </div>
-    <div class="flex flex-wrap justify-between mt-10 mx-4 lg:mx-14 xl:mx-20">
+    <div class="flex flex-wrap 2xl:justify-between mt-10 mx-4 lg:mx-14 xl:mx-20">
+      <CardCliente 
+        title="Visitas"
+        subTitle="New Customer"
+        :count="852"
+        status="Aprobadas"
+        img="/images/visitante.png"
+        bg="celeste"
+      />
       <CardCliente 
         title="Cotizaciones"
         subTitle="New Customer"
