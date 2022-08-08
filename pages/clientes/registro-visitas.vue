@@ -156,7 +156,7 @@
             </div>
             
 
-            <div v-if="historialVisitas < 0" class="mx-4 mt-4 alto-table">
+            <div v-if="historialVisitas.length> 0" class="mx-4 mt-4 alto-table">
               <table class="w-full border-t">
                 <thead class="w-full border ">
                   <tr class="w-full bg-white text-azul ">
@@ -190,7 +190,7 @@
               </table>
             </div>
 
-            <template v-if="ultimasCincoCompras.lenght">
+            <template v-if="ultimasCincoCompras.length>0">
                 <div  class="flex items-center justify-between mx-4 mt-6">
                   <h2 class="text-sm font-semibold">Historial de compras</h2>
                 </div>
