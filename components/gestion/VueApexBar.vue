@@ -1,7 +1,7 @@
 <template>
   <div class="ancho">
     <client-only>
-       <VueApexCharts type="bar" height="250" :options="chartOptions" :series="series"></VueApexCharts>
+       <VueApexCharts type="bar" height="300" :options="chartOptions" :series="series"></VueApexCharts>
     </client-only>
    
   </div>
@@ -16,12 +16,14 @@ export default {
   props: ['IdTercero'],
   data() {
     return {
-      series: [         
-        ],
+  series: [],
+
       chartOptions: {
             chart: {
               type: "bar",
-              height: 350
+              height: 300,
+              stacked:true,
+ 
             },
             plotOptions: {
               bar: {
@@ -29,6 +31,11 @@ export default {
                 horizontal: true
               }
             },
+            stroke: {
+              width: 1,
+              colors: ['#fff']
+            },
+
             title: {
               text: "Productos últimos 3 años (miles de pesos)",
               align: "left"
@@ -40,10 +47,22 @@ export default {
               categories: [],
               labels: {
                 formatter: function (val) {
-                  return Numeral(val/1000).format("0,0");
-                },
-              },
+                  return val/1000 + "K"
+                }
+              }
             },
+           fill: {
+              opacity: 1
+            },
+          
+        yaxis: {
+
+              labels: {
+                formatter: function (val) {
+                  return Numeral(val).format("0,0");
+                },
+              }, 
+            },        
             
       }
     };
@@ -55,9 +74,11 @@ export default {
       IdTercero() {
             TercerosClientes.productosUltimos3Anios(this.IdTercero)
             .then( response => {
-                this.series               = response.data;
-                const categories = response.data[0].categories
+               console.log (response )
+                this.series               = response.data[0];
+                const categories = response.data.categories
                 this.updateAxis(categories);
+                
             })      
       }
   },

@@ -1,5 +1,5 @@
 <template>
-  <div class="relative px-10">
+  <div class="relative px-10 mt-4">
     <label class="mr-4" for="">Buscar Cliente</label>
     <input
       type="text"
@@ -8,7 +8,7 @@
       placeholder="codigo, nombre o alias"
       @keyup="buscarCliente"
     />
-    <h2 v-if="nomSelected" class="text-center">{{ nomSelected }}</h2>
+    <h2 v-if="nomSelected" class="text-center mt-6 text-sm font-semibold">{{ nomSelected }}</h2>
     <div class="mt-10 -ml-20 absolute top-0 bg-gray-100 border z-50 rounded">
       <!-- <select class="text-xs p-2" v-if="clientes.length > 0" v-model="idTercero" @change="getIdTerceroCliente()">
         <option class="text-xs p-4" v-for="cliente in clientes" :key="cliente.idtercero"
