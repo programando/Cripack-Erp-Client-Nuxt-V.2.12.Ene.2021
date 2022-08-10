@@ -1,6 +1,6 @@
 <template>
   <div
-      class="absolute z-20 flex items-center justify-center w-full h-screen px-20 py-10 mt-4 transition-opacity bg-gray-500 bg-opacity-75 top-10"
+      class="absolute z-20 centrar px-20 py-10 mt-4 transition-opacity bg-gray-500 bg-opacity-75"
     >
       <div class="relative px-10 py-8 bg-white ">
         <div>
@@ -118,6 +118,13 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.centrar {
+  position: absolute;
+  width: 1200px;
+  left: 50%;
+  margin-left: -600px;
+  top: 10;
+}
 
 </style>

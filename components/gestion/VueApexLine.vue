@@ -1,7 +1,7 @@
 <template>
   <div class="ancho">
     <client-only>
-      <h2 class="ml-4 font-bold">Ventas últimos 3 años <span class="font-semibold text-xs">( Miles de pesos )</span></h2>
+      <h2 class="ml-4 font-semibold text-sm">Ventas últimos 3 años <span class="font-semibold text-xs">( Miles de pesos )</span></h2>
       <div class="flex justify-end">
         <button @click="setType(1)">
           <img class="h-6 mr-4" src="/images/grafico-barras.png" alt="" />
