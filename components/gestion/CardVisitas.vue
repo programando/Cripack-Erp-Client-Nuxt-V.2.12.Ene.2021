@@ -21,7 +21,7 @@
     <!-- modal  -->
     <div
       v-if="modal"
-      class="z-20 flex items-center justify-center  transition-opacity p-20 bg-gray-500 bg-opacity-75 centrar"
+      class="absolute left-0 z-20 flex items-center justify-center w-full h-screen  py-10 mt-4 transition-opacity bg-gray-500 bg-opacity-75 top-10"
     >
       <div class="relative mx-4 mt-4 table bg-white p-10">
         <button @click="modal = false">
@@ -59,10 +59,10 @@
             </tr>
           </tbody>
         </table>
-            </div>
+      </div>
     </div>
 
-    <div v-if="detalleVisita">
+    <div v-if="detalleVisita" class=" ">
       <DetalleVisita @closeDetalleVisita = 'closeDetalleVisita' :datosVisita="registroVisita"/>
     </div>
   </div>
@@ -109,14 +109,7 @@ export default {
 
 <style scoped>
 .table {
-  width: 1200px;
+  min-width: 850px;
 }
 
-.centrar {
-  position: absolute;
-  width: 1200px;
-  left: 50%;
-  margin-left: -600px;
-  top: 50%;
-}
 </style>

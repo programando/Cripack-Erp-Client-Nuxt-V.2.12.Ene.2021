@@ -1,6 +1,6 @@
 <template>
   <div
-      class="absolute z-20 centrar px-20 py-10 mt-4 transition-opacity bg-gray-500 bg-opacity-75"
+      class="absolute left-0 z-20 flex items-center justify-center w-full h-screen  py-10 mt-4 transition-opacity bg-gray-500 bg-opacity-75 top-10"
     >
       <div class="relative px-10 py-8 bg-white ">
         <div>

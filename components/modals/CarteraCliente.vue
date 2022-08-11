@@ -1,6 +1,6 @@
 <template>
   <div
-      class="absolute z-20 flex items-center justify-center w-full h-screen  py-10 mt-4 transition-opacity bg-gray-500 bg-opacity-75 top-10"
+      class="absolute z-20 left-0 flex items-center justify-center w-full h-screen  py-10 mt-4 transition-opacity bg-gray-500 bg-opacity-75 top-10"
     >
       <div class="relative px-10 py-2 bg-white border  alto-table1 ">
         <div class="w-full">
@@ -44,14 +44,16 @@
               </table>
           </div>
           <div class="">
-              <div class="flex justify-end space-x-16 border py-1 pr-4">
-                <p class="text-azul font-semibold">Vencido</p>
-                <p class="text-azul font-semibold">Cartera</p>
+              <div class="flex justify-end space-x-4 border py-1 pr-4">
+                <p v-if="vencido == 0" class="text-azul font-semibold w-28 text-right">Vencido</p>
+                <p v-if="vencido != 0" class="text-rojo font-semibold w-28 text-right">Vencido</p>
+                <p class="text-azul font-semibold w-28 text-right">Cartera</p>
               </div>
-              <div class="flex justify-end space-x-20 border py-1 pr-4">
+              <div class="flex justify-end space-x-4 border py-1 pr-4">
                 <p>Totales</p>
-                <p class="text-azul font-semibold">{{ vencido | NumeroEntero}}</p>
-                <p class="text-azul font-semibold">{{ cartera | NumeroEntero}}</p>
+                <p v-if="vencido == 0" class="text-azul font-semibold w-28 text-right">{{ vencido | NumeroEntero}}</p>
+                <p v-if="vencido != 0" class="text-rojo font-semibold w-28 text-right">{{ vencido | NumeroEntero}}</p>
+                <p class="text-azul font-semibold w-28 text-right">{{ cartera | NumeroEntero}}</p>
               </div>
             </div>
         </div>

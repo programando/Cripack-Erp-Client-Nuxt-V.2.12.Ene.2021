@@ -30,7 +30,7 @@
 import CarteraCliente     from '@/components/modals/CarteraCliente.vue'
 
 export default {
-  name: "CardVisitas",
+  name: "CardCartera",
   components:{CarteraCliente},
   props: {
     title: String,
@@ -44,6 +44,7 @@ export default {
   data() {
     return {
       carteraCliente: false,
+      nitCliente: '800158850'
     }
   },
 
