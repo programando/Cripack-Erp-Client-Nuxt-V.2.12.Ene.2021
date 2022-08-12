@@ -6,7 +6,7 @@
     >
       <div class="w-48">
         <h2>Visitas</h2>
-        <p class="text-xs">New Customer</p>
+         
         <div class="flex items-center mt-4 space-x-4">
           <p class="">853</p>
           <p class="text-xs">aprobadas</p>

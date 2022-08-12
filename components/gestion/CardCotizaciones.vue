@@ -6,7 +6,6 @@
     >
       <div class="w-48">
         <h2>Cotizaciones</h2>
-        <p class="text-xs">New Customer</p>
         <div class="flex items-center mt-4 space-x-4">
           <p class="">852</p>
           <p class="text-xs">aprobadas</p>

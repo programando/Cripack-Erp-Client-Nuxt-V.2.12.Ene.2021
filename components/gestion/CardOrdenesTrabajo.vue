@@ -6,7 +6,6 @@
     >
       <div class="w-48">
         <h2>Órdenes de trabajo</h2>
-        <p class="text-xs">Income</p>
         <div class="flex items-center mt-4 space-x-4">
           <p class="">5.852</p>
           <p class="text-xs">En proceso</p>
