@@ -49,6 +49,9 @@ export default {
   async busquedaPorNitCodNombreSucursal (textoBuscar ) {
     return Api.post("clientes/busqueda", { 'filtroBusqueda' :textoBuscar} ) ;
   },
+  async clientesResumenDashBoard ( identificacion ) {
+    return Api.post("clientes/resumen/dashBoard", { 'identificacion' :identificacion} ) ;
+  },
 
 
   async primerosVeinteClientesPorVendedor( idTerceroVendedor) {

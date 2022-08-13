@@ -74,7 +74,6 @@ export default {
       IdTercero() {
             TercerosClientes.productosUltimos3Anios(this.IdTercero)
             .then( response => {
-               console.log (response )
                 this.series               = response.data[0];
                 const categories = response.data.categories
                 this.updateAxis(categories);
@@ -98,8 +97,7 @@ export default {
 </script>
 
 <style scoped>
-.ancho {
-  min-width: 450px;
-}
-
+    .ancho {
+      min-width: 450px;
+    }
 </style>

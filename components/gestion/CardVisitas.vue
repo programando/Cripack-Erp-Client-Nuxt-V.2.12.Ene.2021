@@ -5,11 +5,11 @@
       @click="modal = true"
     >
       <div class="w-48">
-        <h2>Visitas</h2>
-         
+        <h2>{{ cantVisitas}} &nbsp; Visitas</h2>
+        <p class="text-xs"> </p>
         <div class="flex items-center mt-4 space-x-4">
-          <p class="">853</p>
-          <p class="text-xs">aprobadas</p>
+          <p class="text-xs"> Contactos recientes</p>
+          <p class="text-xs"></p>
         </div>
       </div>
       <div>
@@ -44,17 +44,17 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="" >
-              <td class="w-1/12 px-2 py-2 text-xs border text-azul">{{datos.fechaIni}}</td>
-              <td class="w-1/12 px-4 py-2 text-xs text-left border">{{datos.persona}}</td>
-              <td class="w-1/12 px-4 py-2 text-xs text-left border">{{datos.motivoVisita}}</td>
-              <td class="w-3/12 px-4 py-2 text-xs text-left border">{{datos.resultado}}</td>
-              <td class="w-3/12 px-4 py-2 text-xs text-left border">{{datos.siguientePaso}}</td>
-              <td class="w-1/12 px-4 py-2 text-xs text-left border">{{datos.proximaVisita}}</td>
+            <tr class="" v-for="visita in visitas" :key="visita.idregistro">
+              <td class="w-1/12 px-2 py-2 text-xs border text-azul">{{visita.fecha_visita | FechaCorta}}</td>
+              <td class="w-1/12 px-4 py-2 text-xs text-left border">{{visita.contacto}}</td>
+              <td class="w-1/12 px-4 py-2 text-xs text-left border">{{visita.nommtvovisita}}</td>
+              <td class="w-3/12 px-4 py-2 text-xs text-left border">{{visita.short_resultado}}</td>
+              <td class="w-3/12 px-4 py-2 text-xs text-left border">{{visita.short_siguiente_paso}}</td>
+              <td class="w-1/12 px-4 py-2 text-xs text-left border">{{visita.fecha_proxvisita | FechaCorta }}</td>
               <td class="w-1/12 h-full text-xs text-center border " >
-                <button @click="detalleVisita = true" class="h-full">
-                  <img class="h-8" src="/images/buscar.png" alt="" />
-                </button>
+                   <button @click="showDataDetails(visita)" class="h-full">
+                        <img class="h-8" src="/images/buscar.png" alt="" />
+                   </button>
               </td>
             </tr>
           </tbody>
@@ -62,54 +62,66 @@
       </div>
     </div>
 
-    <div v-if="detalleVisita" class=" ">
+   <div v-if="showDetalleVisita"  >
       <DetalleVisita @closeDetalleVisita = 'closeDetalleVisita' :datosVisita="registroVisita"/>
     </div>
+
   </div>
 </template>
 
 <script>
 import DetalleVisita      from '@/components/modals/DetalleVisita.vue'
+import TercerosClientes from "@/models/Terceros";
 export default {
   name: "CardVisitas",
   components:{DetalleVisita},
   props: {
-    title: String,
-    subTitle: String,
-    count: Number,
-    status: String,
-    img: String,
-    bg: String
+    title    : String,
+    subTitle : String,
+    count    : Number,
+    status   : String,
+    img      : String,
+    bg       : String,
+    IdTercero: Number,
   },
 
   data() {
     return {
       modal: false,
-      detalleVisita: false,
-      datos: {
-        fechaIni: "18-jul-2022",
-        persona: "JHON LARRY",
-        motivoVisita: "Mantenimiento",
-        resultado: "Se le informa al seNor jhon...",
-        siguientePaso: "Estamos a la espera de OC",
-        proximaVisita: "19-jul-2022"
-
-      }
+      showDetalleVisita: false,
+      visitas: [],
+      registroVisita:{},
+      cantVisitas :0
+    }
+  },
+  watch: {
+    IdTercero() {
+        TercerosClientes.ultimasVisitas( this.IdTercero)
+        .then( response => {
+          this.visitas =  response.data;
+          this.cantVisitas = this.visitas.length
+        })
     }
   },
 
   methods: {
     closeDetalleVisita() {
-      this.detalleVisita = false
+      this.showDetalleVisita = false
     },
-  },
+ 
 
-};
+    showDataDetails ( registroVisita ){
+        this.showDetalleVisita = true;
+        this.registroVisita    = registroVisita;
+
+    },
+ },
+
+}
 </script>
 
 <style scoped>
-.table {
-  min-width: 850px;
-}
+      .table { min-width: 850px;
+      }
 
 </style>

@@ -5,11 +5,10 @@
       @click="modal = carteraCliente = true"
     >
       <div class="w-48">
-        <h2>Cartera</h2>
-         
+        <h2>Cartera total</h2>
         <div class="flex items-center mt-4 space-x-4">
-          <p class="">5.242</p>
-          <p class="text-xs">Por pagar</p>
+          <p class="text-xs">$ &nbsp; {{TotalCartera | NumeroEntero}}</p>
+          
         </div>
       </div>
       <div>
@@ -20,7 +19,7 @@
 
     <!-- modal  -->
     <div v-if="carteraCliente">
-      <CarteraCliente @closeCarteraCliente = 'closeCarteraCliente' :identificacion="nitCliente"  />
+      <CarteraCliente @closeCarteraCliente = 'closeCarteraCliente' :identificacion="identificacion"  />
     </div>
 
   </div>
@@ -33,20 +32,23 @@ export default {
   name: "CardCartera",
   components:{CarteraCliente},
   props: {
-    title: String,
-    subTitle: String,
-    count: Number,
-    status: String,
-    img: String,
-    bg: String
+    bg            : String,
+    count         : Number,
+    identificacion: String,
+    img           : String,
+    status        : String,
+    subTitle      : String,
+    title         : String,
+    TotalCartera: Number
+
   },
 
   data() {
     return {
       carteraCliente: false,
-      nitCliente: '800158850'
     }
   },
+
 
   methods: {
     closeCarteraCliente() {

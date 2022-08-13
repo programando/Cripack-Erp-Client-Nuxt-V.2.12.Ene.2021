@@ -7,7 +7,7 @@
       <div class="w-48">
         <h2>Órdenes de trabajo</h2>
         <div class="flex items-center mt-4 space-x-4">
-          <p class="">5.852</p>
+          <p class="">{{ OtsPendientes}}</p>
           <p class="text-xs">En proceso</p>
         </div>
       </div>
@@ -26,12 +26,13 @@ export default {
   name: "CardOrdenesTrabajo",
   components:{},
   props: {
-    title: String,
-    subTitle: String,
-    count: Number,
-    status: String,
-    img: String,
-    bg: String
+    title        : String,
+    subTitle     : String,
+    count        : Number,
+    status       : String,
+    img          : String,
+    bg           : String,
+    OtsPendientes: Number,
   },
 
   data() {

@@ -8,16 +8,18 @@
       
       <VueApexBar  :IdTercero="IdTercero"/>
     </div>
-    <div class="flex flex-wrap mt-10 justify-evenly xl:justify-between mx-10">
-      <CardVisitas />
+    <div class="flex flex-wrap mt-6 justify-evenly xl:justify-between mx-10">
+      <CardVisitas  :IdTercero="IdTercero"/>
       <CardCotizaciones />
-      <CardOrdenesTrabajo />
+      <CardOrdenesTrabajo :OtsPendientes="OtsPendientes"/>
       <CardPqr />
-      <CardCartera />
+      <CardCartera :identificacion="identificacion" :TotalCartera="TotalCartera"/>
     </div>
-    <div>
+
+ <!--   <div>
       <Incidencias />
     </div>
+-->
   </div>
 </template>
 
@@ -37,13 +39,19 @@ export default {
     FiltroClientes, VueApexLine, VueApexBar, CardVisitas,CardCotizaciones,CardOrdenesTrabajo,CardPqr, CardCartera ,Incidencias
   },
       data: () => ({
-            IdTercero:0
-            
+            IdTercero       : 0,
+            identificacion  : '',
+            facturasPorPagar: 0,
+            OtsPendientes   : 0,
+            TotalCartera :0,
       }),
 
   methods: {
-      getIdTerceroCliente( IdTercero) {
-          this.IdTercero = IdTercero;
+      getIdTerceroCliente( IdTercero, nomtercero, identificacion, OtsPendientes, TotalCartera) {
+          this.IdTercero        = IdTercero;
+          this.identificacion   = identificacion;
+          this.TotalCartera = TotalCartera;
+          this.OtsPendientes    = OtsPendientes;
       }
 
   },
