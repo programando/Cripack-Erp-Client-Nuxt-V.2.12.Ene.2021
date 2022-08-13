@@ -17,15 +17,19 @@
       </div>
     </div>
 
-    
+    <!-- modal -->
+    <div v-if="modal"  >
+      <Pqrs @closePqrs = 'closePqrs' :datosVisita="registroVisita"/>
+    </div>
+
   </div>
 </template>
 
 <script>
-
+import Pqrs      from '@/components/modals/Pqrs.vue'
 export default {
   name: "CardPqr",
-  components:{},
+  components:{Pqrs},
   props: {
     title: String,
     subTitle: String,
@@ -38,12 +42,17 @@ export default {
   data() {
     return {
       modal: false,
-      detalleVisita: false,
-      
+
     }
   },
 
-  
+  methods: {
+    closePqrs() {
+      this.modal = false
+    },
+  }
+
+
 };
 </script>
 

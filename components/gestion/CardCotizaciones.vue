@@ -16,33 +16,35 @@
       </div>
     </div>
 
-    
+    <!-- modal -->
+    <div v-if="modal"  >
+      <Cotizaciones @closeCotizaciones = 'closeCotizaciones' :datosVisita="registroVisita"/>
+    </div>
   </div>
 </template>
 
 <script>
-
+import Cotizaciones      from '@/components/modals/Cotizaciones.vue'
 export default {
   name: "CardCotizaciones",
-  components:{},
-  props: {
-    title: String,
-    subTitle: String,
-    count: Number,
-    status: String,
-    img: String,
-    bg: String
+  components:{
+    Cotizaciones
   },
 
   data() {
     return {
       modal: false,
-      detalleVisita: false,
-      
+
+
     }
   },
 
-  
+  methods: {
+    closeCotizaciones() {
+      this.modal = false
+    },
+  }
+
 };
 </script>
 

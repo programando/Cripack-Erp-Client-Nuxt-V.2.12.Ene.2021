@@ -31,7 +31,9 @@
               alt=""
             />
           </button>
+        <h2 class="text-center text-azul mb-2 text-lg font-semibold">Visitas</h2>
         <table class="w-full border-t">
+
           <thead class="w-full border ">
             <tr class="w-full bg-white text-azul ">
               <th class="w-1/12 text-xs border table-sticky">Fecha </th>
@@ -39,7 +41,7 @@
               <th class="w-1/12 text-xs border table-sticky"> Motivo visita </th>
               <th class="w-3/12 text-xs border table-sticky">Resultado</th>
               <th class="w-3/12 text-xs border table-sticky"> Siguiente paso </th>
-              <th class="w-1/12 text-xs border table-sticky">Próxima visita</th> 
+              <th class="w-1/12 text-xs border table-sticky">Próxima visita</th>
               <th class="w-1/12 text-xs border table-sticky">  Detalles </th>
             </tr>
           </thead>
@@ -108,7 +110,7 @@ export default {
     closeDetalleVisita() {
       this.showDetalleVisita = false
     },
- 
+
 
     showDataDetails ( registroVisita ){
         this.showDetalleVisita = true;

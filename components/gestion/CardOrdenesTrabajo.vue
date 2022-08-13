@@ -16,15 +16,20 @@
       </div>
     </div>
 
-    
+    <!-- modal -->
+    <div v-if="modal"  >
+      <OrdenesTrabajo @closeOrdenesTrabajo = 'closeOrdenesTrabajo' :datosVisita="registroVisita"/>
+    </div>
+
+
   </div>
 </template>
 
 <script>
-
+import OrdenesTrabajo      from '@/components/modals/OrdenesTrabajo.vue'
 export default {
   name: "CardOrdenesTrabajo",
-  components:{},
+  components:{OrdenesTrabajo},
   props: {
     title        : String,
     subTitle     : String,
@@ -38,12 +43,17 @@ export default {
   data() {
     return {
       modal: false,
-      detalleVisita: false,
-      
+
     }
   },
 
-  
+  methods: {
+    closeOrdenesTrabajo() {
+      this.modal = false
+    },
+  }
+
+
 };
 </script>
 
