@@ -58,12 +58,14 @@ export default {
     },
 
     getIdTerceroCliente(IdTercero, nomtercero, identificacion) {
-      let OtsPendientes , TotalCartera ;
+      let OtsPendientes , TotalCartera, CantCotizaciones;
       TercerosClientes.clientesResumenDashBoard ( identificacion)
       .then( response => {
           OtsPendientes  = response.data[0].OtsPendientes;
           TotalCartera  =  response.data[0].TotalCartera;
-          this.$emit("getIdTerceroCliente", IdTercero, nomtercero, identificacion, OtsPendientes, TotalCartera);
+          CantCotizaciones  =  response.data[0].CantCotizaciones;
+          
+          this.$emit("getIdTerceroCliente", IdTercero, nomtercero, identificacion, OtsPendientes, TotalCartera, CantCotizaciones);
           this.clientes    = [];
           this.nomSelected = nomtercero;
       })

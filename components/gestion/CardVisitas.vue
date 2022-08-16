@@ -24,6 +24,7 @@
       class="absolute left-0 z-20 flex items-center justify-center w-full h-screen  py-10 mt-4 transition-opacity bg-gray-500 bg-opacity-75 top-10"
     >
       <div class="relative mx-4 mt-4 table bg-white p-10">
+        <h2 class="text-center text-azul mb-2 text-lg font-semibold">Visitas</h2>
         <button @click="modal = false">
             <img
               class="absolute h-8 top-2 right-3"
@@ -31,7 +32,7 @@
               alt=""
             />
           </button>
-        <h2 class="text-center text-azul mb-2 text-lg font-semibold">Visitas</h2>
+        
         <table class="w-full border-t">
 
           <thead class="w-full border ">

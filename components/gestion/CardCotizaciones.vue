@@ -5,10 +5,9 @@
       @click="modal = true"
     >
       <div class="w-48">
-        <h2>Cotizaciones</h2>
+        <h2>{{CantCotizaciones}} &nbsp; Cotizaciones</h2>
         <div class="flex items-center mt-4 space-x-4">
-          <p class="">852</p>
-          <p class="text-xs">aprobadas</p>
+          <p class="text-xs">Últimos 6 meses</p>
         </div>
       </div>
       <div>
@@ -18,7 +17,7 @@
 
     <!-- modal -->
     <div v-if="modal"  >
-      <Cotizaciones @closeCotizaciones = 'closeCotizaciones' :datosVisita="registroVisita"/>
+      <Cotizaciones @closeCotizaciones = 'closeCotizaciones' :Identificacion="Identificacion"/>
     </div>
   </div>
 </template>
@@ -30,12 +29,11 @@ export default {
   components:{
     Cotizaciones
   },
+  props: ['CantCotizaciones','Identificacion'],
 
   data() {
     return {
       modal: false,
-
-
     }
   },
 

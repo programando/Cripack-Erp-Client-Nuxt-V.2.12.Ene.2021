@@ -18,7 +18,7 @@
 
     <!-- modal -->
     <div v-if="modal"  >
-      <OrdenesTrabajo @closeOrdenesTrabajo = 'closeOrdenesTrabajo' :datosVisita="registroVisita"/>
+      <OrdenesTrabajo @closeOrdenesTrabajo = 'closeOrdenesTrabajo' :Identificacion="Identificacion"/>
     </div>
 
 
@@ -38,6 +38,7 @@ export default {
     img          : String,
     bg           : String,
     OtsPendientes: Number,
+    Identificacion: String
   },
 
   data() {

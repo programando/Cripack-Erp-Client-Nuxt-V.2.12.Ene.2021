@@ -53,9 +53,17 @@ export default {
     return Api.post("clientes/resumen/dashBoard", { 'identificacion' :identificacion} ) ;
   },
 
+  async clientesResumencotizDashBoard ( identificacion ) {
+    return Api.post("clientes/resumen/dashBoard", { 'identificacion' :identificacion} ) ;
+  },
 
-  async primerosVeinteClientesPorVendedor( idTerceroVendedor) {
-    return Api.post("clientes/primeros/registros", {'idtercero_vendedor': idTerceroVendedor}  ) ;
+  async clientesDashBoardOrdenesTrabajo ( identificacion ) {
+    return Api.post("clientes/ordenes/trabajo", { 'identificacion' :identificacion} ) ;
+  },
+
+
+  async cotizacionesUltimos6Meses( identificacion) {
+    return Api.post("clientes/cotizaciones", { 'identificacion' :identificacion} ) ;
   },
 
   async historialVentas(formData) {

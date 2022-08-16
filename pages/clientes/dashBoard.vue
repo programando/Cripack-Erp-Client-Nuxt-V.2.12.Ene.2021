@@ -10,10 +10,10 @@
     </div>
     <div class="flex flex-wrap mt-6 justify-evenly xl:justify-between mx-10">
       <CardVisitas  :IdTercero="IdTercero"/>
-      <CardCotizaciones />
-      <CardOrdenesTrabajo :OtsPendientes="OtsPendientes"/>
+      <CardCotizaciones   :Identificacion="identificacion" :CantCotizaciones="CantCotizaciones"/>
+      <CardOrdenesTrabajo :Identificacion="identificacion" :OtsPendientes="OtsPendientes"/>
       <CardPqr />
-      <CardCartera :identificacion="identificacion" :TotalCartera="TotalCartera"/>
+      <CardCartera        :identificacion="identificacion" :TotalCartera="TotalCartera"/>
     </div>
 
  <!--   <div>
@@ -43,15 +43,17 @@ export default {
             identificacion  : '',
             facturasPorPagar: 0,
             OtsPendientes   : 0,
-            TotalCartera :0,
+            TotalCartera    : 0,
+            CantCotizaciones: 0,
       }),
 
   methods: {
-      getIdTerceroCliente( IdTercero, nomtercero, identificacion, OtsPendientes, TotalCartera) {
+      getIdTerceroCliente( IdTercero, nomtercero, identificacion, OtsPendientes, TotalCartera, CantCotizaciones) {
           this.IdTercero        = IdTercero;
           this.identificacion   = identificacion;
-          this.TotalCartera = TotalCartera;
-          this.OtsPendientes    = OtsPendientes;
+          this.TotalCartera     = parseInt(TotalCartera);
+          this.OtsPendientes    = parseInt(OtsPendientes);
+          this.CantCotizaciones = parseInt(CantCotizaciones);
       }
 
   },
