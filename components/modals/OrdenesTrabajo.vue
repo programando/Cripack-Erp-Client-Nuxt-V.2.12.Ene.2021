@@ -11,9 +11,8 @@
               alt=""
             />
           </button>
-        
-        <table class="w-full border-t">
 
+        <table class="w-full border-t alto-definido">
           <thead class="w-full border ">
             <tr class="w-full bg-white text-azul ">
               <th class="w-2/12 text-xs border table-sticky">Fecha </th>
@@ -49,7 +48,7 @@ export default {
    props: {
           Identificacion : String
   },
- 
+
   data: () => ({
       OrdenesTrabajo:[]
   }),
@@ -78,6 +77,11 @@ export default {
 
     .ancho {
       min-width: 900px;
+    }
+
+    .alto-definido {
+      max-height: 80vh;
+      overflow-y: scroll;
     }
 
 </style>

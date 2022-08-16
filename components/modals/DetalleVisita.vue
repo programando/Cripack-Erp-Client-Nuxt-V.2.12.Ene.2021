@@ -7,11 +7,11 @@
           <h2 class="text-2xl font-semibold text-center">
             Detalle de visita
           </h2>
-          <div class="flex justify-around mt-10 space-x-10">
+          <div class="flex justify-between text-xs mt-10 space-x-10">
             <div class="flex space-x-4">
               <p class="w-40">Fecha</p>
               <input
-                class="px-4 bg-gray-100 border rounded-sm width focus:outline-none"
+                class="px-4 bg-gray-100 text-xs border rounded-sm width focus:outline-none"
                 disabled
                 type="text"
                 :value="datosVisita.fecha_visita | FechaLarga"
@@ -20,48 +20,48 @@
             <div class="flex space-x-4">
               <p class="w-40">Tipo de Visita</p>
               <input
-                class="px-4 bg-gray-100 border rounded-sm width focus:outline-none"
+                class="px-4 bg-gray-100 text-xs border rounded-sm width focus:outline-none"
                 disabled
                 type="text"
                 :value="datosVisita.nom_tipo_visita"
               />
             </div>
           </div>
-          <div class="flex justify-around mt-10 space-x-10">
+          <div class="flex justify-between text-xs mt-10 space-x-10">
             <div class="flex space-x-4">
               <p class="w-40">Persona de contacto</p>
               <input
-                class="px-4 bg-gray-100 border rounded-sm width focus:outline-none"
+                class="px-4 bg-gray-100 text-xs border rounded-sm width focus:outline-none"
                 disabled
                 type="text"
                 :value="datosVisita.contacto"
               />
-              
+
             </div>
-            <div class="flex space-x-4">
+            <div class="flex space-x-4 text-xs">
               <p class="w-40">Próxima Visita</p>
               <input
-                class="px-4 bg-gray-100 border rounded-sm width focus:outline-none"
+                class="px-4 bg-gray-100 text-xs border rounded-sm width focus:outline-none"
                 disabled
                 type="text"
                 :value="datosVisita.fecha_proxvisita | FechaLarga"
               />
             </div>
           </div>
-          <div class="flex mt-10 space-x-10">
+          <div class="flex mt-10 space-x-10 text-xs">
             <div class="flex space-x-4">
               <p class="w-40">Motivo Visita</p>
               <input
-                class="px-4 bg-gray-100 border rounded-sm width focus:outline-none"
+                class="px-4 bg-gray-100 text-xs border rounded-sm width focus:outline-none"
                 disabled
                 type="text"
                 :value="datosVisita.nommtvovisita"
               />
             </div>
-            
+
           </div>
-          
-          <div class="flex justify-between mt-10 mx-9">
+
+          <div class="flex justify-between mt-10 text-xs">
             <div class="mt-4">
               <h3>Resultado de esta visita</h3>
               <textarea
@@ -87,7 +87,7 @@
               ></textarea>
             </div>
           </div>
-          
+
           <div class="flex justify-end mx-10 mt-4">
             <button @click="detalleVisitaClose" class="px-4 py-1 border rounded">
               Cerrar
@@ -121,7 +121,7 @@ export default {
 <style scoped>
 .centrar {
   position: absolute;
-  width: 1200px;
+  width: 800px;
   left: 50%;
   margin-left: -600px;
   top: 10;

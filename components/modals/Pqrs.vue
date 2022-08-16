@@ -11,7 +11,7 @@
             />
           </button>
         <h2 class="text-center text-azul mb-2 text-lg font-semibold">Pqr's</h2>
-        <table class="w-full border-t">
+        <table class="w-full border-t alto-definido">
           <thead class="w-full border ">
             <tr class="w-full bg-white text-azul ">
               <th class="w-1/12 text-xs border table-sticky">Fecha </th>
@@ -76,5 +76,10 @@ export default {
 .ancho {
   min-width: 900px;
 }
+
+.alto-definido {
+      max-height: 80vh;
+      overflow-y: scroll;
+    }
 
 </style>
