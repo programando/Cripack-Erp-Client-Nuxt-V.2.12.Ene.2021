@@ -60,6 +60,9 @@ export default {
   async clientesDashBoardOrdenesTrabajo ( identificacion ) {
     return Api.post("clientes/ordenes/trabajo", { 'identificacion' :identificacion} ) ;
   },
+  async clientesDashBoardPqrs ( identificacion ) {
+    return Api.post("clientes/pqrs", { 'identificacion' :identificacion} ) ;
+  },
 
 
   async cotizacionesUltimos6Meses( identificacion) {

@@ -5,9 +5,9 @@
       @click="modal = true"
     >
       <div class="w-48">
-        <h2>Órdenes de trabajo</h2>
+        <h2>{{ OtsPendientes}} &nbsp; Órdenes de trabajo</h2>
         <div class="flex items-center mt-4 space-x-4">
-          <p class="">{{ OtsPendientes}}</p>
+ 
           <p class="text-xs">En proceso</p>
         </div>
       </div>

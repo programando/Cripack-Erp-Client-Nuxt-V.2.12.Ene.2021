@@ -5,11 +5,11 @@
       @click="modal = true"
     >
       <div class="w-48">
-        <h2>Pqr's</h2>
+        <h2>{{ CantPqrs }} &nbsp;Pqr's</h2>
 
         <div class="flex items-center mt-4 space-x-4">
-          <p class="">42</p>
-          <p class="text-xs">Radicadas</p>
+  
+          <p class="text-xs">Radicadas últimos 6 meses</p>
         </div>
       </div>
       <div>
@@ -19,7 +19,7 @@
 
     <!-- modal -->
     <div v-if="modal"  >
-      <Pqrs @closePqrs = 'closePqrs' :datosVisita="registroVisita"/>
+      <Pqrs @closePqrs = 'closePqrs' :Identificacion="Identificacion"/>
     </div>
 
   </div>
@@ -31,12 +31,14 @@ export default {
   name: "CardPqr",
   components:{Pqrs},
   props: {
-    title: String,
-    subTitle: String,
-    count: Number,
-    status: String,
-    img: String,
-    bg: String
+    CantPqrs      : Number,
+    Identificacion: String,
+    bg            : String,
+    count         : Number,
+    img           : String,
+    status        : String,
+    subTitle      : String,
+    title         : String,
   },
 
   data() {

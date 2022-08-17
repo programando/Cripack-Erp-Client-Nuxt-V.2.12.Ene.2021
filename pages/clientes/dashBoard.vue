@@ -12,7 +12,7 @@
       <CardVisitas  :IdTercero="IdTercero"/>
       <CardCotizaciones   :Identificacion="identificacion" :CantCotizaciones="CantCotizaciones"/>
       <CardOrdenesTrabajo :Identificacion="identificacion" :OtsPendientes="OtsPendientes"/>
-      <CardPqr />
+      <CardPqr            :Identificacion="identificacion" :CantPqrs="CantPqrs"/>
       <CardCartera        :identificacion="identificacion" :TotalCartera="TotalCartera"/>
     </div>
 
@@ -39,21 +39,24 @@ export default {
     FiltroClientes, VueApexLine, VueApexBar, CardVisitas,CardCotizaciones,CardOrdenesTrabajo,CardPqr, CardCartera ,Incidencias
   },
       data: () => ({
+            CantCotizaciones: 0,
+            CantPqrs        : 0,
             IdTercero       : 0,
-            identificacion  : '',
-            facturasPorPagar: 0,
             OtsPendientes   : 0,
             TotalCartera    : 0,
-            CantCotizaciones: 0,
+            facturasPorPagar: 0,
+            identificacion  : '',
       }),
 
   methods: {
-      getIdTerceroCliente( IdTercero, nomtercero, identificacion, OtsPendientes, TotalCartera, CantCotizaciones) {
+      getIdTerceroCliente( IdTercero, nomtercero, identificacion, OtsPendientes, TotalCartera, CantCotizaciones, CantPqrs) {
           this.IdTercero        = IdTercero;
           this.identificacion   = identificacion;
           this.TotalCartera     = parseInt(TotalCartera);
           this.OtsPendientes    = parseInt(OtsPendientes);
           this.CantCotizaciones = parseInt(CantCotizaciones);
+          this.CantPqrs         = parseInt(CantPqrs);
+          
       }
 
   },

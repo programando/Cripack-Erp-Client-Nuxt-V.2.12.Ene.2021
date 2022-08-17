@@ -20,23 +20,23 @@
               <th class="w-1/12 text-xs border table-sticky">Estilo</th>
               <th class="w-2/12 text-xs border table-sticky">Problema</th>
               <th class="w-2/12 text-xs border table-sticky">Causa</th>
-              <th class="w-2/12 text-xs border table-sticky">Plan de Acción</th>
+              <th class="w-2/12 text-xs border table-sticky">Plan de acción</th>
             </tr>
           </thead>
           <tbody>
-            <tr class="">
-              <td class="w-1/12 px-2 py-2 text-xs border text-azul"></td>
-              <td class="w-1/12 px-4 py-2 text-xs text-left border"></td>
-              <td class="w-3/12 px-4 py-2 text-xs text-left border"></td>
-              <td class="w-1/12 px-4 py-2 text-xs text-left border"></td>
-              <td class="w-2/12 text-xs text-left border">
-                <textarea class="border focus:outline-none px-2" cols="14" rows="3"></textarea>
+            <tr class="" v-for="Pqr in Pqrs" :key="Pqr.id_pqr">
+              <td class="w-1/12 px-2 py-2 text-xs border text-azul">{{Pqr.fecha | FechaCorta }}</td>
+              <td class="w-1/12 px-4 py-2 text-lowerxs text-left border">{{Pqr.numero_ot }}</td>
+              <td class="w-3/12 px-4 py-2 text-lowerxs text-left border">{{Pqr.referencia }}</td>
+              <td class="w-1/12 px-4 py-2 text-lowerxs text-left border">{{Pqr.nomestilotrabajo }}</td>
+              <td class="w-2/12 text-lowerxs text-left border">
+                <textarea class="border focus:outline-none px-2" cols="14" rows="3"> {{Pqr.problema }}</textarea>
               </td>
-              <td class="w-2/12 text-xs text-left border">
-                <textarea class="border focus:outline-none px-2" cols="14" rows="3"></textarea>
+              <td class="w-2/12 text-lowerxs text-left border">
+                <textarea class="border focus:outline-none px-2" cols="14" rows="3">{{Pqr.origen }}</textarea>
               </td>
-              <td class="w-2/12 text-xs text-left border">
-                <textarea class="border focus:outline-none px-2" cols="14" rows="3"></textarea>
+              <td class="w-2/12 text-lowerxs text-left border">
+                <textarea class="border focus:outline-none px-2" cols="14" rows="3">{{Pqr.solucion }}</textarea>
               </td>
             </tr>
           </tbody>
@@ -47,14 +47,23 @@
 
 <script>
 
+import Terceros from "@/models/Terceros";
 
 export default {
   name: 'pqrs',
    props: {
-
-
+      Identificacion : String
   },
+  data: () => ({
+      Pqrs: [],
+  }),
 
+  mounted() {
+    Terceros.clientesDashBoardPqrs ( this.Identificacion)
+    .then( response => {
+        this.Pqrs = response.data;
+    })
+  },
 
   methods: {
     pqrsClose() {
@@ -62,24 +71,25 @@ export default {
     }
   },
 }
+
 </script>
 
 <style scoped>
-.centrar {
-  position: absolute;
-  width: 1200px;
-  left: 50%;
-  margin-left: -600px;
-  top: 10;
-}
-
-.ancho {
-  min-width: 900px;
-}
-
-.alto-definido {
-      max-height: 80vh;
-      overflow-y: scroll;
+    .centrar {
+      position: absolute;
+      width: 1200px;
+      left: 50%;
+      margin-left: -600px;
+      top: 10;
     }
+
+    .ancho {
+      min-width: 900px;
+    }
+
+    .alto-definido {
+          max-height: 80vh;
+          overflow-y: scroll;
+        }
 
 </style>
