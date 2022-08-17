@@ -20,9 +20,10 @@ module.exports = {
       },
 
       fontSize: {
-        'upperxs': '.65rem',
-        'lowerxs': '.55rem',
-        'text-sm': '0.75rem'
+        'lowerxxs': '.45rem',
+        'lowerxs' : '.55rem',
+        'text-sm' : '0.75rem',
+        'upperxs' : '.65rem',
       },
 
       lineHeight: {

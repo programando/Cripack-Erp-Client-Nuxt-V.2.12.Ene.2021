@@ -200,10 +200,7 @@
           <div>
             <div class="flex items-center mt-6 space-x-2">
               <label class="w-32 text-sm ">Observaciones :</label>
-              <TextArea
-                v-model="formData.observaciones"
-                colorError="red"
-              ></TextArea>
+              <textarea class="border focus:outline-none px-2" cols="20" rows="3" v-model="formData.observaciones"></textarea>
             </div>
           </div>
           <div class="flex justify-center w-full my-4">
@@ -246,7 +243,7 @@ import OtsSustratos         from "@/components/solicitudesOts/sustrato.vue";
 import OtsTiposArreglos     from "@/components/solicitudesOts/tipoArreglo.vue";
 import OtsTiraje            from "@/components/solicitudesOts/tiraje.vue";
 import RadioButton          from "~/components/htmlControls/radioButton.vue";
-import TextArea             from "@/components/htmlControls/textArea.vue";
+ 
 
 
 export default {
@@ -267,7 +264,7 @@ export default {
     OtsMaquina,
     OtsAyudaPega,
     OtsPunzones,
-    TextArea,
+ 
     BuscarCliente
   },
   data: () => ({

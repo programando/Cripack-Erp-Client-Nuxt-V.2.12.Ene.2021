@@ -48,8 +48,8 @@
             <tbody class="alto-table-2">
               <tr class="" v-for="visita in visitas" :key="visita.idregistro">
                 <td class="w-1/12 px-2 py-2 text-xs border text-azul">{{visita.fecha_visita | FechaCorta}}</td>
-                <td class="w-1/12 px-4 py-2 text-xs text-left border">{{visita.contacto}}</td>
-                <td class="w-1/12 px-4 py-2 text-xs text-left border">{{visita.nommtvovisita}}</td>
+                <td class="w-1/12 px-4 py-2 text-lowerxs text-left border">{{visita.contacto}}</td>
+                <td class="w-1/12 px-4 py-2 text-lowerxs text-left border">{{visita.nommtvovisita}}</td>
                 <td class="w-3/12 px-4 py-2 text-xs text-left border">{{visita.short_resultado}}</td>
                 <td class="w-3/12 px-4 py-2 text-xs text-left border">{{visita.short_siguiente_paso}}</td>
                 <td class="w-1/12 px-4 py-2 text-xs text-left border">{{visita.fecha_proxvisita | FechaCorta }}</td>

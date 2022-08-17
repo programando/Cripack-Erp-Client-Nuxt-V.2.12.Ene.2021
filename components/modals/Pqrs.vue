@@ -26,21 +26,16 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="">
-                <td class="w-1/12 px-2 py-2 text-xs border text-azul"></td>
-                <td class="w-1/12 px-4 py-2 text-xs text-left border"></td>
-                <td class="w-3/12 px-4 py-2 text-xs text-left border"></td>
-                <td class="w-1/12 px-4 py-2 text-xs text-left border"></td>
-                <td class="w-2/12 text-xs text-left border">
-                  <textarea class="border focus:outline-none px-2" cols="14" rows="3"></textarea>
-                </td>
-                <td class="w-2/12 text-xs text-left border">
-                  <textarea class="border focus:outline-none px-2" cols="14" rows="3"></textarea>
-                </td>
-                <td class="w-2/12 text-xs text-left border">
-                  <textarea class="border focus:outline-none px-2" cols="14" rows="3"></textarea>
-                </td>
-              </tr>
+            <tr class="" v-for="Pqr in Pqrs" :key="Pqr.id_pqr">
+                <td class="w-1/12 px-2 py-2 text-xs border text-azul">{{Pqr.fecha | FechaCorta }}</td>
+                <td class="w-1/12 px-4 py-2 text-xs text-left border">{{Pqr.numero_ot }}</td>
+                <td class="w-3/12 px-4 py-2 text-xs text-left border">{{Pqr.referencia }}</td>
+                <td class="w-1/12 px-4 py-2 text-xs text-left border">{{Pqr.nomestilotrabajo }}</td>
+                <td class="w-2/12 text-lowerxs text-left border">  <PqrsTextArea :value="Pqr.problema"> </PqrsTextArea> </td>
+                <td class="w-2/12 text-lowerxs text-left border"> <PqrsTextArea :value="Pqr.origen">   </PqrsTextArea>  </td>
+                <td class="w-2/12 text-lowerxs text-left border"> <PqrsTextArea :value="Pqr.solucion"></PqrsTextArea>   </td>
+            </tr>
+              
             </tbody>
           </table>
         </div>
@@ -51,11 +46,12 @@
 </template>
 
 <script>
-
+  import PqrsTextArea from "@/components/htmlControls/PqrsTextArea.vue"
 import Terceros from "@/models/Terceros";
 
 export default {
   name: 'pqrs',
+  components: {PqrsTextArea},
    props: {
       Identificacion : String
   },
