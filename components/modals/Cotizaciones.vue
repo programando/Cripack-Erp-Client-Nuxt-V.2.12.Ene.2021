@@ -11,28 +11,31 @@
               alt=""
             />
           </button>
-       
-        <table class="w-full border-t">
 
-          <thead class="w-full border ">
-            <tr class="w-full bg-white text-azul ">
-              <th class="w-2/12 text-xs border table-sticky">Fecha </th>
-              <th class="w-2/12 text-xs border table-sticky">Nro.Ctz</th>
-              <th class="w-2/12 text-xs border table-sticky">Nro.OT</th>
-              <th class="w-4/12 text-xs border table-sticky">Referencia</th>
-              <th class="w-2/12 text-xs border table-sticky">Vr.Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="Cotizacion in Cotizaciones" :key="Cotizacion.idregistro_ctz_dt" class="">
-              <td class="w-2/12 px-2 py-2 text-xs border text-azul"> {{ Cotizacion.fecha | FechaCorta}}</td>
-              <td class="w-2/12 px-4 py-2 text-xs text-left border">{{ Cotizacion.num_ctz_ref}}</td>
-              <td class="w-2/12 px-4 py-2 text-xs text-left border">{{Cotizacion.numero_ot | NoShowZero}}</td>
-              <td class="w-4/12 px-4 py-2 text-xs text-left border">{{Cotizacion.referencia}}</td>
-              <td class="w-2/12 px-4 py-2 text-xs text-left border text-right ">{{Cotizacion.vr_precio_vta_dado | NumeroEntero}}</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="alto-table2">
+          <table class="w-full border-t">
+            <thead class="w-full border table-sticky">
+              <tr class="w-full bg-white text-azul ">
+                <th class="w-2/12 text-xs border table-sticky">Fecha </th>
+                <th class="w-2/12 text-xs border table-sticky">Nro.Ctz</th>
+                <th class="w-2/12 text-xs border table-sticky">Nro.OT</th>
+                <th class="w-4/12 text-xs border table-sticky">Referencia</th>
+                <th class="w-2/12 text-xs border table-sticky">Vr.Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="Cotizacion in Cotizaciones" :key="Cotizacion.idregistro_ctz_dt" class="">
+                <td class="w-2/12 px-2 py-2 text-xs border text-azul"> {{ Cotizacion.fecha | FechaCorta}}</td>
+                <td class="w-2/12 px-4 py-2 text-xs text-left border">{{ Cotizacion.num_ctz_ref}}</td>
+                <td class="w-2/12 px-4 py-2 text-xs text-left border">{{Cotizacion.numero_ot | NoShowZero}}</td>
+                <td class="w-4/12 px-4 py-2 text-xs text-left border">{{Cotizacion.referencia}}</td>
+                <td class="w-2/12 px-4 py-2 text-xs border text-right ">{{Cotizacion.vr_precio_vta_dado | NumeroEntero}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+
       </div>
     </div>
 </template>
@@ -56,7 +59,7 @@ export default {
     mounted() {
        TercerosClientes.cotizacionesUltimos6Meses ( this.Identificacion)
         .then ( response => {
-          this.Cotizaciones = response.data;    
+          this.Cotizaciones = response.data;
         });
     },
 
@@ -74,6 +77,20 @@ export default {
     }
 
     .ancho {
-      min-width: 900px;
+      min-width: 850px;
+    }
+
+
+
+    .alto-table2 {
+      max-height: 400px;
+      overflow-y: scroll;
+    }
+
+    .table-sticky {
+    position: sticky;
+    top: 0;
+    background: white;
+
     }
 </style>

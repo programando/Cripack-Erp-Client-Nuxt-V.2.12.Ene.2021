@@ -1,5 +1,5 @@
 <template>
-  <div class="relative px-10 mt-4">
+  <div class="px-10 mb-10 fixed z-50">
     <label class="mr-4" for="">Buscar Cliente</label>
     <input
       type="text"
@@ -15,7 +15,7 @@
               :value="cliente.idtercero"  >
              {{ cliente.codigo_tercero }} -   {{ cliente.nomtercero }} | {{ cliente.alias }}
         </option>
- 
+
      </select> -->
 
       <ul v-if="clientes.length > 0" class="text-xs h-96 overflow-y-auto ancho">
@@ -44,7 +44,7 @@ export default {
       nuevoCliente: "",
       idTercero: 0,
       nomSelected: "",
-       
+
     };
   },
 
@@ -61,16 +61,15 @@ export default {
       let OtsPendientes , TotalCartera, CantCotizaciones, CantPqrs;
       TercerosClientes.clientesResumenDashBoard ( identificacion)
       .then( response => {
-          OtsPendientes    = response.data[0].OtsPendientes;
-          TotalCartera     = response.data[0].TotalCartera;
-          CantCotizaciones = response.data[0].CantCotizaciones;
-          CantPqrs         = response.data[0].CantPqrs;
+ 
           
           this.$emit("getIdTerceroCliente", IdTercero, nomtercero, identificacion, OtsPendientes, TotalCartera, CantCotizaciones, CantPqrs);
-          this.clientes    = [];
-          this.nomSelected = nomtercero;
+ 
+ 
+
+ 
       })
-     
+
 
     },
   },
@@ -81,9 +80,9 @@ export default {
               return this.clientes.filter(e => e.name.toLowerCase().startsWith(this.nuevoCliente.toLowerCase()));
             } else {
               return []
-            }            
+            }
 
-        } 
+        }
   },
   */
 };
