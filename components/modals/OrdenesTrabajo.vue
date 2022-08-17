@@ -11,31 +11,33 @@
               alt=""
             />
           </button>
+        <div class="alto-table2">
+          <table class="w-full border-t">
+            <thead class="w-full border table-sticky">
+              <tr class="w-full bg-white text-azul ">
+                <th class="w-2/12 text-xs border table-sticky">Fecha </th>
+                <th class="w-2/12 text-xs border table-sticky">Nro.OT</th>
+                <th class="w-4/12 text-xs border table-sticky">Referencia</th>
+                <th class="w-1/12 text-xs border table-sticky">Estilo</th>
+                <th class="w-1/12 text-xs border table-sticky">Cab.</th>
+                <th class="w-1/12 text-xs border table-sticky">Cant.</th>
+                <th class="w-2/12 text-xs border table-sticky">Entrega</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="Ot in OrdenesTrabajo" :key="Ot.idregistro_ot" class="">
+                <td class="w-2/12 px-2 py-2 text-xs border text-azul">{{ Ot.fecha_registro | FechaCorta }}</td>
+                <td class="w-2/12 px-4 py-2 text-xs text-left border">{{ Ot.numero_ot | NumeroEntero }}</td>
+                <td class="w-4/12 px-4 py-2 text-upperxs text-left border  ">{{ Ot.referencia }}</td>
+                <td class="w-1/12 px-4 py-2 text-upperxs text-left border  ">{{ Ot.nomestilotrabajo }}</td>
+                <td class="w-1/12 px-4 py-2 text-xs text-left border">{{ Ot.cabida }}</td>
+                <td class="w-1/12 px-4 py-2 text-xs text-left border">{{ Ot.cantidad }}</td>
+                <td class="w-2/12 px-4 py-2 text-xs text-left border">{{ Ot.fecha_entrega_producc | FechaCorta }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-        <table class="w-full border-t alto-definido">
-          <thead class="w-full border ">
-            <tr class="w-full bg-white text-azul ">
-              <th class="w-2/12 text-xs border table-sticky">Fecha </th>
-              <th class="w-2/12 text-xs border table-sticky">Nro.OT</th>
-              <th class="w-4/12 text-xs border table-sticky">Referencia</th>
-              <th class="w-1/12 text-xs border table-sticky">Estilo</th>
-              <th class="w-1/12 text-xs border table-sticky">Cab.</th>
-              <th class="w-1/12 text-xs border table-sticky">Cant.</th>
-              <th class="w-2/12 text-xs border table-sticky">Entrega</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="Ot in OrdenesTrabajo" :key="Ot.idregistro_ot" class="">
-              <td class="w-2/12 px-2 py-2 text-xs border text-azul">{{ Ot.fecha_registro | FechaCorta }}</td>
-              <td class="w-2/12 px-4 py-2 text-xs text-left border">{{ Ot.numero_ot | NumeroEntero }}</td>
-              <td class="w-4/12 px-4 py-2 text-upperxs text-left border  ">{{ Ot.referencia }}</td>
-              <td class="w-1/12 px-4 py-2 text-upperxs text-left border  ">{{ Ot.nomestilotrabajo }}</td>
-              <td class="w-1/12 px-4 py-2 text-xs text-left border">{{ Ot.cabida }}</td>
-              <td class="w-1/12 px-4 py-2 text-xs text-left border">{{ Ot.cantidad }}</td>
-              <td class="w-2/12 px-4 py-2 text-xs text-left border">{{ Ot.fecha_entrega_producc | FechaCorta }}</td>
-            </tr>
-          </tbody>
-        </table>
       </div>
     </div>
 </template>
@@ -76,12 +78,19 @@ export default {
     }
 
     .ancho {
-      min-width: 900px;
+      min-width: 850px;
     }
 
-    .alto-definido {
-      max-height: 80vh;
+    .alto-table2 {
+      max-height: 400px;
       overflow-y: scroll;
+    }
+
+    .table-sticky {
+    position: sticky;
+    top: 0;
+    background: white;
+
     }
 
 </style>
