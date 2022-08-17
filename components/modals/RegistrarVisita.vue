@@ -183,13 +183,14 @@
           mixins: [Messages],
         data:()=> ({
             formData: {
-                tipo_visita     : 0,
-                idmtvovisita    : 0,
-                fecha_proxvisita: '',
-                idtercero       : 0,
-                resultados      : '',
-                siguiente_paso  : '',
-                contacto        : '',
+                contacto         : '',
+                fecha_proxvisita : '',
+                idmtvovisita     : 0,
+                idtercero        : 0,
+                idtercero_usuario: 0,
+                resultados       : '',
+                siguiente_paso   : '',
+                tipo_visita      : 0,
             },
             motivosVisita:[],
             ultimaVisitaResultado:'',
@@ -200,7 +201,6 @@
             .then ( response=>{
               this.motivosVisita = response.data;
             })
-
         },
 
       methods: {
@@ -208,11 +208,13 @@
            let datosOk = this.validarDatosVisita ();
            if ( datosOk !='Ok' ) { return ; }
            this.formData.idtercero = this.datosCliente.idtercero;
+           this.formData.idtercero_usuario  =  this.$cookies.get("User").idtecero_vendedor;
            MotivosVisitas.grbarNuevoRegistro ( this.formData)
            .then ( () => {
               this.Message("Registro grabado" , 'Registro grabado con éxito!', 'success', 'Cerrar' );
               this.$router.push("/clientes/registro-visitas");
               this.$emit('visitaGrabada')
+              console.log(this.formData)
            })
            
         },
