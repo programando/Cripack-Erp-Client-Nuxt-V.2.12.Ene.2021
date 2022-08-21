@@ -23,7 +23,7 @@
             v-if="menu"
             class="absolute z-20 flex flex-col w-40 pb-2 text-sm border border-white rounded-md top-7 bg-azul"
           >
-           
+
             <div
               @click="subMenu = !subMenu"
               class="relative mx-2 mt-2 cursor-pointer hover:opacity-90"
@@ -40,7 +40,7 @@
                   to="/clientes/ordenes-trabajo/troquel-plano"
                   >Plano</nuxt-link
                 >
-              
+
                <!-- <nuxt-link
                   class="px-2 py-1 text-sm text-white"
                   to="/clientes/ordenes-trabajo/troquel-plano"
@@ -56,9 +56,9 @@
 
             </div>
 
-         
 
-   
+
+
 
 
             <div
@@ -74,7 +74,7 @@
               <nuxt-link to="/clientes/costos" >Costos alistamiento</nuxt-link >
             </div>
 
- 
+
             <div v-if="isDevelopment"
               @click="menu = false"
               class="relative mx-2 mt-2 cursor-pointer hover:opacity-90" >
@@ -84,7 +84,7 @@
             </div>
 
 
- 
+
           </div>
         </div>
 
@@ -96,7 +96,7 @@
             v-if="gestion"
             class="absolute z-20 flex flex-col w-48 pb-2 text-sm border border-white rounded-md top-7 bg-azul"
           >
-        
+
             <div v-if="isDevelopment" class="relative mx-2 mt-2 cursor-pointer hover:opacity-90" @click="gestion = false" >
               <nuxt-link to="/clientes/dashBoard" >Dashboard - clientes</nuxt-link >
             </div>
@@ -119,7 +119,7 @@
               <nuxt-link to="/gestion/datos-caja-maquina">Análisis opciones contra hendido</nuxt-link>
             </div>
               -->
-              
+
           </div>
         </div>
         <NavLinks text="Contacto" to="/clientes/contacto" />
@@ -132,7 +132,7 @@
             v-if="userOptions"
             class="absolute right-0 z-20 flex flex-col w-48 pb-2 text-sm border border-white rounded-md top-10 bg-azul"
           >
-        
+
              <div class="relative mx-2 mt-2 cursor-pointer hover:opacity-90 py-2">
               <p >{{ contactName }}</p>
             </div>
@@ -151,19 +151,19 @@
               <nuxt-link to="/gestion/datos-caja-maquina">Análisis opciones contra hendido</nuxt-link>
             </div>
               -->
-              
+
           </div>
         </div>
       </div>
     </div>
 
- 
+
 
   </div>
 </template>
 
 <script>
- 
+
 import NavLinks             from "@/components/comunes/navLinks";
 import User                 from "@/models/User";
 export default {
@@ -181,7 +181,7 @@ export default {
 
     };
   },
- 
+
   computed: {
     companyName() {
       return this.$cookies.get("User").nomtercero;
@@ -190,7 +190,7 @@ export default {
       return this.$cookies.get("User").nombre_usuario;
     },
     esUsuarioCripack() {
-        return this.$cookies.get("User").uso_web_empresa;   
+        return this.$cookies.get("User").uso_web_empresa;
     },
   },
   methods: {
