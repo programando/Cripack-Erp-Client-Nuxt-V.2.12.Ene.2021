@@ -77,5 +77,8 @@ export default {
     return  Api.post("clientes/ots/estado",   formData       ) ;
   },
 
-  // Esta es una prueba.
+  async primerosVeinteClientesPorVendedor( idTerceroVendedor) {
+    return Api.post("clientes/primeros/registros", {'idtercero_vendedor': idTerceroVendedor}  ) ;
+  }
+  
 }
