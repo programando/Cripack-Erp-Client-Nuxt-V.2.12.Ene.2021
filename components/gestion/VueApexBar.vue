@@ -3,7 +3,7 @@
     <client-only>
        <VueApexCharts type="bar" height="340" :options="chartOptions" :series="series"></VueApexCharts>
     </client-only>
-   
+
   </div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
               type: "bar",
               height: 300,
               stacked:true,
- 
+
             },
             plotOptions: {
               bar: {
@@ -39,7 +39,7 @@ export default {
             title: {
               text: "Productos últimos 3 años (miles de pesos)",
               align: "left"
-            },            
+            },
             dataLabels: {
               enabled: false
             },
@@ -54,20 +54,20 @@ export default {
            fill: {
               opacity: 1
             },
-          
+
         yaxis: {
 
               labels: {
                 formatter: function (val) {
                   return Numeral(val).format("0,0");
                 },
-              }, 
-            },        
-            
+              },
+            },
+
       }
     };
   },
- 
+
 
 
   watch:{
@@ -77,11 +77,11 @@ export default {
                 this.series               = response.data[0];
                 const categories = response.data.categories
                 this.updateAxis(categories);
-                
-            })      
+
+            })
       }
   },
-  
+
   methods :{
        updateAxis(data) {
       this.chartOptions = {
@@ -98,6 +98,6 @@ export default {
 
 <style scoped>
     .ancho {
-      min-width: 450px;
+      min-width: 400px;
     }
 </style>

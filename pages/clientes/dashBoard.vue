@@ -4,9 +4,10 @@
       <FiltroClientes @getIdTerceroCliente = "getIdTerceroCliente" />
     </div>
     <div class="flex flex-wrap justify-between mt-20 lg:mx-10 xl:mx-20">
+      <TableProductos />
       <VueApexLine :IdTercero="IdTercero"/>
-
       <VueApexBar  :IdTercero="IdTercero"/>
+
     </div>
     <div class="flex flex-wrap mt-6 justify-evenly xl:justify-between mx-10">
       <CardVisitas  :IdTercero="IdTercero"/>
@@ -24,6 +25,7 @@
 </template>
 
 <script>
+import TableProductos      from '@/components/gestion/TableProductos.vue'
 import CardVisitas      from '@/components/gestion/CardVisitas.vue'
 import CardCotizaciones      from '@/components/gestion/CardCotizaciones.vue'
 import CardOrdenesTrabajo      from '@/components/gestion/CardOrdenesTrabajo.vue'
@@ -36,7 +38,7 @@ import VueApexLine      from '@/components/gestion/VueApexLine.vue'
 export default {
   name: 'busquedaClientes',
   components: {
-    FiltroClientes, VueApexLine, VueApexBar, CardVisitas,CardCotizaciones,CardOrdenesTrabajo,CardPqr, CardCartera ,Incidencias
+    FiltroClientes, VueApexLine, VueApexBar, CardVisitas,CardCotizaciones,CardOrdenesTrabajo,CardPqr, CardCartera ,Incidencias, TableProductos
   },
       data: () => ({
             CantCotizaciones: 0,
@@ -56,7 +58,7 @@ export default {
           this.OtsPendientes    = parseInt(OtsPendientes);
           this.CantCotizaciones = parseInt(CantCotizaciones);
           this.CantPqrs         = parseInt(CantPqrs);
-          
+
       }
 
   },

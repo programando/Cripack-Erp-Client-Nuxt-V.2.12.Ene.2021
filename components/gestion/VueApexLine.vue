@@ -79,7 +79,7 @@ export default {
             "Nov",
             "Dic"
           ],
-          
+
         labels: {
             formatter: function (value) {
               return value;
@@ -113,6 +113,6 @@ export default {
 
 <style scoped>
 .ancho {
-  min-width: 450px;
+  min-width: 400px;
 }
 </style>
