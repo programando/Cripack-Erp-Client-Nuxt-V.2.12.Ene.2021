@@ -65,6 +65,7 @@ export default {
           TotalCartera     = response.data[0].TotalCartera;
           CantCotizaciones = response.data[0].CantCotizaciones;
           CantPqrs         = response.data[0].CantPqrs;
+          
           this.$emit("getIdTerceroCliente", IdTercero, nomtercero, identificacion, OtsPendientes, TotalCartera, CantCotizaciones, CantPqrs);
           this.clientes    = [];
           this.nomSelected = nomtercero;

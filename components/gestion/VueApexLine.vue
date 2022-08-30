@@ -90,10 +90,21 @@ export default {
       }
     };
   },
+  created() {
+    this.$nuxt.$on('ventasPorGruposDeProductoValores', (gruposProductosSeleccionados) => {
+        console.log(this.IdTercero)
+        this.graficoProductosSeleccionados ( gruposProductosSeleccionados)
+    })
+  },
+
+  beforeDestroy(){
+      this.$nuxt.$off('ventasPorGruposDeProductoValores')
+    }, 
 
   watch: {
     IdTercero() {
-      TercerosClientes.ventasUltimos3Anios(this.IdTercero).then(response => {
+      TercerosClientes.ventasUltimos3Anios(this.IdTercero)
+        .then(response => {
         this.series = response.data;
       });
     }
@@ -106,7 +117,15 @@ export default {
       } else {
         return (this.type = "line");
       }
-    }
+    },
+
+    graficoProductosSeleccionados ( gruposProductosSeleccionados){
+      TercerosClientes.ventasPorGruposDeProducto ( gruposProductosSeleccionados)
+      .then( response => {
+        console.log ( response.data )
+      })
+    },
+
   }
 };
 </script>

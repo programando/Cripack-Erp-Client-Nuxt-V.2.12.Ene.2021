@@ -3,6 +3,9 @@ import Api  from "@/config/Axios";
 export default {
   
 
+  async ventasPorGruposDeProducto ( gruposEstilos ) {
+    return Api.post("clientes/ventas/grupos/productos", { 'gruposEstilos' :gruposEstilos} ) ;
+  },
   async productosUltimos3Anios ( IdTercero ) {
     return Api.post("clientes/productos/ultimos/3/anios", { 'IdTercero' :IdTercero} ) ;
   },
@@ -10,6 +13,9 @@ export default {
 
   async ventasUltimos3Anios ( IdTercero ) {
     return Api.post("clientes/ventas/ultimos/3/anios", { 'IdTercero' :IdTercero} ) ;
+  },
+  async productosVendidosUltimos3Anios ( Identificacion ) {
+    return Api.post("clientes/productos/vedidos/ultimos/3/anios", { 'identificacion' :Identificacion} ) ;
   },
 
 
