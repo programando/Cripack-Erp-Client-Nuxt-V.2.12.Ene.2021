@@ -1,6 +1,7 @@
 <template>
-  <div class="ancho">
+  <div class="ancho font-Montserrat">
     <client-only>
+      <h2 class="ml-4 font-semibold text-sm">Productos últimos 3 años (miles de pesos)</h2>
        <VueApexCharts type="bar" height="340" :options="chartOptions" :series="series"></VueApexCharts>
     </client-only>
 
@@ -34,11 +35,6 @@ export default {
             stroke: {
               width: 1,
               colors: ['#fff']
-            },
-
-            title: {
-              text: "Productos últimos 3 años (miles de pesos)",
-              align: "left"
             },
             dataLabels: {
               enabled: false

@@ -99,7 +99,7 @@ export default {
 
   beforeDestroy(){
       this.$nuxt.$off('ventasPorGruposDeProductoValores')
-    }, 
+    },
 
   watch: {
     IdTercero() {

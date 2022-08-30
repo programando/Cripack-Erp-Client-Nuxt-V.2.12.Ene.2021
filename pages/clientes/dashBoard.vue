@@ -3,10 +3,10 @@
     <div class="pt-20 flex justify-center">
       <FiltroClientes @getIdTerceroCliente = "getIdTerceroCliente" />
     </div>
-    <div class="flex flex-wrap justify-between mt-20 lg:mx-10 xl:mx-20">
+    <div class="flex flex-wrap justify-between mt-24 lg:mx-8 xl:mx-20">
       <TableProductos :Identificacion="identificacion"/>
       <VueApexLine    :IdTercero="IdTercero"/>
-      <VueApexBar     :IdTercero="IdTercero"/> 
+      <VueApexBar     :IdTercero="IdTercero"/>
 
     </div>
     <div class="flex flex-wrap mt-6 justify-evenly xl:justify-between mx-10">
