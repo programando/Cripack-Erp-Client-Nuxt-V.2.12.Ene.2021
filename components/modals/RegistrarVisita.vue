@@ -214,7 +214,6 @@
               this.Message("Registro grabado" , 'Registro grabado con éxito!', 'success', 'Cerrar' );
               this.$router.push("/clientes/registro-visitas");
               this.$emit('visitaGrabada')
-              console.log(this.formData)
            })
            
         },

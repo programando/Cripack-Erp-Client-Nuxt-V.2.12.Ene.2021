@@ -11,13 +11,7 @@ export default {
   }),
 
   mounted() {
-/*     DashBoard.compare()
-    .then( response =>{
-        this.ventas=  response.data;
-        this.esteAnio = this.ventas[0].anio
-        //console.log('mounted' + this.esteAnio );
-    });
-    */
+
      
 
     this.renderChart(

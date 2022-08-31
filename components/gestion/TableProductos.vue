@@ -68,7 +68,6 @@ export default {
         Terceros.productosVendidosUltimos3Anios ( this.Identificacion)
         .then( response => {
             this.productos = response.data;
-            console.log(this.productos)
         })
 
       }
@@ -90,15 +89,7 @@ export default {
             gruposProductosSeleccionados.push( el.id_grup_estlo)
           }
         })
-
-       /* for (let gruposProductos of this.productos) {
-              if ( gruposProductos.checked ){
-                gruposProductosSeleccionados.push( gruposProductos.id_grup_estlo)
-              }
-        }
-          */
         $nuxt.$emit('ventasPorGruposDeProductoValores',gruposProductosSeleccionados)
-
       }
 
   },

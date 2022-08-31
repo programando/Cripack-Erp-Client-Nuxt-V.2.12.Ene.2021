@@ -90,9 +90,9 @@ export default {
       }
     };
   },
+
   created() {
     this.$nuxt.$on('ventasPorGruposDeProductoValores', (gruposProductosSeleccionados) => {
-        console.log(this.IdTercero)
         this.graficoProductosSeleccionados ( gruposProductosSeleccionados)
     })
   },
@@ -120,9 +120,9 @@ export default {
     },
 
     graficoProductosSeleccionados ( gruposProductosSeleccionados){
-      TercerosClientes.ventasPorGruposDeProducto ( gruposProductosSeleccionados)
+      TercerosClientes.ventasValoresUltimos3AniosGruposSeleccionados (this.IdTercero, gruposProductosSeleccionados)
       .then( response => {
-        console.log ( response.data )
+        this.series = response.data;
       })
     },
 

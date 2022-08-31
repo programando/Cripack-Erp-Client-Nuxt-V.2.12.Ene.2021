@@ -5,17 +5,6 @@ export default function ({app, redirect }) {
          return redirect('/');
    }
    
-   //console.log( localStorage.getItem('Logueado') )
-/*    if (store.state.auth.loggedIn) {
-      
-   } 
-   
-   export default function ({ app, res, query }) {
-  if (query.lang) {
-    app.$cookiz.set('lang', query.lang)
-  }
-}
-   
-   */
+
 
 }

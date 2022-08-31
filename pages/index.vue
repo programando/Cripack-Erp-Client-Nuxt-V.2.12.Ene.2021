@@ -139,7 +139,6 @@ export default {
           this.$store.dispatch("User/SetUser", response.data[0]);
           this.$router.push("/clientes/ots-historial");
           this.$cookies.set("logueado", "true");
-          console.log ( response.data[0]);
         })
         .catch(error => {
           if (error.response.status == 422) {

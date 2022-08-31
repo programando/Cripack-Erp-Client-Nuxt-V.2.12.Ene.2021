@@ -238,9 +238,6 @@ export default {
         actividadPm: this.actividadPm
       }
 
-
-
-      console.log(this.datos)
     }
   },
 

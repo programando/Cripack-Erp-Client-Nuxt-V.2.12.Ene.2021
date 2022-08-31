@@ -342,7 +342,6 @@ export default {
       this.$refs.uploadFiles.processQueue();
       OrdenesTrabajo.SolicitudTroquelPlano(this.formData)
         .then(response => {
-          console.log(response.data);
         })
         .catch(error => {
           this.errors = error.response.data.errors;
