@@ -50,15 +50,6 @@ export default {
     return Api.post("clientes/busqueda/idtercero", { 'idtercero' :IdTercero } ) ;
   },
   
-
-  async buscarPorCodigo( codigoBuscar, idTerceroVendedor ) {
-    return Api.post("clientes/busqueda/codigo", { 'codigo_tercero' :codigoBuscar, 'idtercero_vendedor': idTerceroVendedor} ) ;
-  },
-
-  async busquedaPorVendedor( textoBuscar, idTerceroVendedor ) {
-    return Api.post("clientes/busqueda/por/vendedor", { 'filtroBusqueda' :textoBuscar, 'idtercero_vendedor': idTerceroVendedor } ) ;
-  },
-
   async busquedaPorNitCodNombreSucursal (textoBuscar ) {
     return Api.post("clientes/busqueda", { 'filtroBusqueda' :textoBuscar} ) ;
   },
@@ -90,8 +81,18 @@ export default {
     return  Api.post("clientes/ots/estado",   formData       ) ;
   },
 
+
   async primerosVeinteClientesPorVendedor( idTerceroVendedor) {
     return Api.post("clientes/primeros/registros", {'idtercero_vendedor': idTerceroVendedor}  ) ;
-  }
+  },
+  
+  async buscarPorCodigo( codigoBuscar, idTerceroVendedor ) {
+    return Api.post("clientes/busqueda/codigo", { 'codigo_tercero' :codigoBuscar, 'idtercero_vendedor': idTerceroVendedor} ) ;
+  },
+
+  async busquedaPorVendedor( textoBuscar, idTerceroVendedor ) {
+    return Api.post("clientes/busqueda/por/vendedor", { 'filtroBusqueda' :textoBuscar, 'idtercero_vendedor': idTerceroVendedor } ) ;
+  },
+
   
 }
