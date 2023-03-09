@@ -49,12 +49,22 @@
                 <p v-if="vencido != 0" class="text-rojo font-semibold w-28 text-right">Vencido</p>
                 <p class="text-azul font-semibold w-28 text-right">Cartera</p>
               </div>
-              <div class="flex justify-end space-x-4 border py-1 pr-4">
-                <p>Totales</p>
-                <p v-if="vencido == 0" class="text-azul font-semibold w-28 text-right">{{ vencido | NumeroEntero}}</p>
-                <p v-if="vencido != 0" class="text-rojo font-semibold w-28 text-right">{{ vencido | NumeroEntero}}</p>
-                <p class="text-azul font-semibold w-28 text-right">{{ cartera | NumeroEntero}}</p>
-              </div>
+
+              <div class="flex justify-between space-x-4">
+               
+               <!-- <div class="ml-4 flex items-center cursor-pointer">
+                  <img class="w-6 h-6" src="/images/pdf.svg" alt="logo" @click="downloadCarteaPdf()">
+                  <span class="text-xs ml-2" @click="downloadCarteaPdf()">  Descargar </span>
+                </div>
+              -->
+                <div class="flex justify-end space-x-4 border py-1 pr-4">
+                  <p class="ml-2">Totales</p>
+                  <p v-if="vencido == 0" class="text-azul font-semibold w-28 text-right">{{ vencido | NumeroEntero}}</p>
+                  <p v-if="vencido != 0" class="text-rojo font-semibold w-28 text-right">{{ vencido | NumeroEntero}}</p>
+                  <p class="text-azul font-semibold w-28 text-right">{{ cartera | NumeroEntero}}</p>
+                </div>
+            </div>
+
             </div>
         </div>
       </div>
@@ -101,6 +111,14 @@ export default {
   },
   
   methods: {
+    /*
+    downloadCarteaPdf() {
+        Terceros.carteraPdfPorCliente ( this.identificacion)
+        .then( response => {
+            console.log ( response.data );
+        })
+    },
+*/
     carteraClienteClose() {
           this.$emit('closeCarteraCliente')
         },

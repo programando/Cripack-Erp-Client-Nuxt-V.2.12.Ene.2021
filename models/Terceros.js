@@ -94,5 +94,9 @@ export default {
     return Api.post("clientes/busqueda/por/vendedor", { 'filtroBusqueda' :textoBuscar, 'idtercero_vendedor': idTerceroVendedor } ) ;
   },
 
+  async carteraPdfPorCliente( identificacion ) {
+    return Api.post("clientes/cartera/download/pdf", { 'identificacion' :identificacion} ) ;
+  },
+
   
 }

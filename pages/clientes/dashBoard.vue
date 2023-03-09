@@ -9,7 +9,7 @@
       <VueApexBar     :IdTercero="IdTercero"/>
 
     </div>
-    <div class="flex flex-wrap mt-6 justify-evenly xl:justify-between mx-10">
+    <div class="flex flex-wrap mt-6 justify-evenly xl:justify-between mx-10 items-center">
       <CardVisitas        :IdTercero="IdTercero"/>
       <CardCotizaciones   :Identificacion="identificacion" :CantCotizaciones="CantCotizaciones"/>
       <CardOrdenesTrabajo :Identificacion="identificacion" :OtsPendientes="OtsPendientes"/>

@@ -22,6 +22,7 @@ export default {
 </script>
 
 <style>
+
 .contenedor {
   height: 55px;
   width: 150px;
